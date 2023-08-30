@@ -8,7 +8,25 @@
 import SwiftUI
 
 struct WeeklyFinancesHomeView: View {
+    
+    // MARK: Properties
+    
+    
+    
+    // MARK: Body
+    
     var body: some View {
-        Text("Hello, Weekly")
+        VStack(spacing: 16) {
+            Text("There is no weekly financies yet")
+            Button {
+                didTapAddFinancial()
+            } label: {
+                Label("Add finance", systemImage: "pencil")
+            }
+        }
+    }
+    
+    func didTapAddFinancial() {
+        print("did add financial")
     }
 }
