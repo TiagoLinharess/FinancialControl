@@ -11,7 +11,7 @@ import SwiftUI
 struct FinancialControlApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabContainerView()
         }
     }
 }
