@@ -25,7 +25,7 @@ struct WeeklyFinancesHomeView<ViewModel: WeeklyFinancesHomeViewModelProtocol>: V
     var body: some View {
         VStack(spacing: .small) {
             Text(Constants.WeeklyHome.emptyTitle)
-                .configureWithSH(color: .white, font: .title3)
+                .font(.title3)
             Button {
                 didTapAddFinancial()
             } label: {
@@ -33,11 +33,17 @@ struct WeeklyFinancesHomeView<ViewModel: WeeklyFinancesHomeViewModelProtocol>: V
             }
             .primarySHStyle(backgroundColor: .blue, foregroundColor: .white, font: .body)
         }
+        .fullScreenCover(isPresented: $viewModel.addBudgetFlowPresented) {
+            // TODO WHEN CLOSE FLOW
+        } content: {
+            AddBudgetStartView()
+        }
+
     }
     
     // MARK: Methods
     
     func didTapAddFinancial() {
-        print("did add financial")
+        viewModel.addBudgetFlowPresented.toggle()
     }
 }

@@ -13,6 +13,7 @@ import SharpnezDesignSystem
 protocol WeeklyFinancesHomeViewModelProtocol: ObservableObject {
     var viewStatus: ViewStatus { get }
     var budgets: [WeeklyBudgetViewModel] { get }
+    var addBudgetFlowPresented: Bool { get set }
 }
 
 // MARK: View Model
@@ -22,6 +23,6 @@ final class WeeklyFinancesHomeViewModel: WeeklyFinancesHomeViewModelProtocol {
     // MARK: Properties
     
     @Published var viewStatus: ViewStatus = .none
+    @Published var addBudgetFlowPresented: Bool = false
     var budgets: [WeeklyBudgetViewModel] = []
-    
 }
