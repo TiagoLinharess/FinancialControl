@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SingleWeekFormView: View {
     
-    @Environment(\.dismiss) var dismiss
+    @Binding var closeFlow: Bool
     
     var body: some View {
         Text("form here")
@@ -17,7 +17,7 @@ struct SingleWeekFormView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button {
-                    dismiss()
+                    closeFlow.toggle()
                 } label: {
                     Label(String(), systemImage: "xmark")
                 }

@@ -12,7 +12,7 @@ struct AddBudgetStartView: View {
     
     // MARK: Properties
     
-    @Environment(\.dismiss) var dismiss
+    @Binding var closeFlow: Bool
     
     // MARK: Body
     
@@ -32,7 +32,7 @@ struct AddBudgetStartView: View {
                 }
                 Section {
                     NavigationLink {
-                        SingleWeekFormView()
+                        SingleWeekFormView(closeFlow: $closeFlow)
                     } label: {
                         VStack(alignment: .leading, spacing: .smaller) {
                             Text("One week")
@@ -46,7 +46,7 @@ struct AddBudgetStartView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button {
-                    dismiss()
+                    closeFlow.toggle()
                 } label: {
                     Label(String(), systemImage: "xmark")
                 }

@@ -36,9 +36,8 @@ struct WeeklyFinancesHomeView<ViewModel: WeeklyFinancesHomeViewModelProtocol>: V
         .fullScreenCover(isPresented: $viewModel.addBudgetFlowPresented) {
             // TODO WHEN CLOSE FLOW
         } content: {
-            AddBudgetStartView()
+            AddBudgetStartView(closeFlow: $viewModel.addBudgetFlowPresented)
         }
-
     }
     
     // MARK: Methods
