@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58B80F386A2FE2FEB7A223BE /* Pods_FinancialControlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF78198A5C97B7D8217F6F6 /* Pods_FinancialControlTests.framework */; };
 		EDF406F32A9F9F2A004AC8A9 /* FinancialControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF406F22A9F9F2A004AC8A9 /* FinancialControlApp.swift */; };
 		EDF406F52A9F9F2A004AC8A9 /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF406F42A9F9F2A004AC8A9 /* TabContainerView.swift */; };
 		EDF406F72A9F9F2B004AC8A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF406F62A9F9F2B004AC8A9 /* Assets.xcassets */; };
@@ -15,6 +16,11 @@
 		EDF407232A9FABFF004AC8A9 /* MonthlyFinancesHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407222A9FABFF004AC8A9 /* MonthlyFinancesHomeView.swift */; };
 		EDF407252A9FAC39004AC8A9 /* WeeklyFinancesHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407242A9FAC39004AC8A9 /* WeeklyFinancesHomeView.swift */; };
 		EDF4072E2A9FAE35004AC8A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4072D2A9FAE35004AC8A9 /* Constants.swift */; };
+		EDF407312AA00984004AC8A9 /* WeeklyFinancesHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407302AA00984004AC8A9 /* WeeklyFinancesHomeViewModel.swift */; };
+		EDF407332AA00D00004AC8A9 /* WeeklyBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407322AA00D00004AC8A9 /* WeeklyBudgetViewModel.swift */; };
+		EDF407352AA00DD3004AC8A9 /* WeeklyExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407342AA00DD3004AC8A9 /* WeeklyExpenseViewModel.swift */; };
+		EDF407382AA00EB5004AC8A9 /* PaymentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407372AA00EB5004AC8A9 /* PaymentMode.swift */; };
+		FB6978AA84D4013BF6F0176E /* Pods_FinancialControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8660836D6F21F1A7F8275CA8 /* Pods_FinancialControl.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +34,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EDF406EF2A9F9F2A004AC8A9 /* FinancialControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2151F8A8FC7AC5648641F29F /* Pods-FinancialControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.debug.xcconfig"; sourceTree = "<group>"; };
+		4BE9786696B8D315FCBA23A6 /* Pods-FinancialControlTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControlTests.release.xcconfig"; path = "Target Support Files/Pods-FinancialControlTests/Pods-FinancialControlTests.release.xcconfig"; sourceTree = "<group>"; };
+		8660836D6F21F1A7F8275CA8 /* Pods_FinancialControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9888B4BE44B6F4F9797EBBBE /* Pods-FinancialControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.release.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.release.xcconfig"; sourceTree = "<group>"; };
+		CAF78198A5C97B7D8217F6F6 /* Pods_FinancialControlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF406EF2A9F9F2A004AC8A9 /* Financial Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Financial Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF406F22A9F9F2A004AC8A9 /* FinancialControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialControlApp.swift; sourceTree = "<group>"; };
 		EDF406F42A9F9F2A004AC8A9 /* TabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
 		EDF406F62A9F9F2B004AC8A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +51,11 @@
 		EDF407222A9FABFF004AC8A9 /* MonthlyFinancesHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyFinancesHomeView.swift; sourceTree = "<group>"; };
 		EDF407242A9FAC39004AC8A9 /* WeeklyFinancesHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyFinancesHomeView.swift; sourceTree = "<group>"; };
 		EDF4072D2A9FAE35004AC8A9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EDF407302AA00984004AC8A9 /* WeeklyFinancesHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyFinancesHomeViewModel.swift; sourceTree = "<group>"; };
+		EDF407322AA00D00004AC8A9 /* WeeklyBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetViewModel.swift; sourceTree = "<group>"; };
+		EDF407342AA00DD3004AC8A9 /* WeeklyExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyExpenseViewModel.swift; sourceTree = "<group>"; };
+		EDF407372AA00EB5004AC8A9 /* PaymentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMode.swift; sourceTree = "<group>"; };
+		FBAD207E9F2BEA56CBBA3DE8 /* Pods-FinancialControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControlTests.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControlTests/Pods-FinancialControlTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB6978AA84D4013BF6F0176E /* Pods_FinancialControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,25 +71,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B80F386A2FE2FEB7A223BE /* Pods_FinancialControlTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A35F5D7D7C8451D2EDBC7B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8660836D6F21F1A7F8275CA8 /* Pods_FinancialControl.framework */,
+				CAF78198A5C97B7D8217F6F6 /* Pods_FinancialControlTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3023E3DC806F5ED0EB4CD410 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2151F8A8FC7AC5648641F29F /* Pods-FinancialControl.debug.xcconfig */,
+				9888B4BE44B6F4F9797EBBBE /* Pods-FinancialControl.release.xcconfig */,
+				FBAD207E9F2BEA56CBBA3DE8 /* Pods-FinancialControlTests.debug.xcconfig */,
+				4BE9786696B8D315FCBA23A6 /* Pods-FinancialControlTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EDF406E62A9F9F2A004AC8A9 = {
 			isa = PBXGroup;
 			children = (
 				EDF406F12A9F9F2A004AC8A9 /* FinancialControl */,
 				EDF407032A9F9F2B004AC8A9 /* FinancialControlTests */,
 				EDF406F02A9F9F2A004AC8A9 /* Products */,
+				3023E3DC806F5ED0EB4CD410 /* Pods */,
+				1A35F5D7D7C8451D2EDBC7B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		EDF406F02A9F9F2A004AC8A9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDF406EF2A9F9F2A004AC8A9 /* FinancialControl.app */,
+				EDF406EF2A9F9F2A004AC8A9 /* Financial Control.app */,
 				EDF407002A9F9F2B004AC8A9 /* FinancialControlTests.xctest */,
 			);
 			name = Products;
@@ -178,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF407242A9FAC39004AC8A9 /* WeeklyFinancesHomeView.swift */,
+				EDF407302AA00984004AC8A9 /* WeeklyFinancesHomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -185,6 +226,8 @@
 		EDF4072B2A9FAE17004AC8A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EDF407362AA00E9E004AC8A9 /* Commons */,
+				EDF4072F2A9FF429004AC8A9 /* Weekly */,
 				EDF4072C2A9FAE23004AC8A9 /* Constants */,
 			);
 			path = Models;
@@ -198,6 +241,23 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		EDF4072F2A9FF429004AC8A9 /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				EDF407322AA00D00004AC8A9 /* WeeklyBudgetViewModel.swift */,
+				EDF407342AA00DD3004AC8A9 /* WeeklyExpenseViewModel.swift */,
+			);
+			path = Weekly;
+			sourceTree = "<group>";
+		};
+		EDF407362AA00E9E004AC8A9 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				EDF407372AA00EB5004AC8A9 /* PaymentMode.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,9 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDF407142A9F9F2B004AC8A9 /* Build configuration list for PBXNativeTarget "FinancialControl" */;
 			buildPhases = (
+				BDAC3288E1ACA947DDA92385 /* [CP] Check Pods Manifest.lock */,
 				EDF406EB2A9F9F2A004AC8A9 /* Sources */,
 				EDF406EC2A9F9F2A004AC8A9 /* Frameworks */,
 				EDF406ED2A9F9F2A004AC8A9 /* Resources */,
+				12EEC5983BAC708CBE14E070 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,13 +277,14 @@
 			);
 			name = FinancialControl;
 			productName = FinancialControl;
-			productReference = EDF406EF2A9F9F2A004AC8A9 /* FinancialControl.app */;
+			productReference = EDF406EF2A9F9F2A004AC8A9 /* Financial Control.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EDF406FF2A9F9F2B004AC8A9 /* FinancialControlTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDF407172A9F9F2B004AC8A9 /* Build configuration list for PBXNativeTarget "FinancialControlTests" */;
 			buildPhases = (
+				572C7AEFD45FDF9B8ADD5F72 /* [CP] Check Pods Manifest.lock */,
 				EDF406FC2A9F9F2B004AC8A9 /* Sources */,
 				EDF406FD2A9F9F2B004AC8A9 /* Frameworks */,
 				EDF406FE2A9F9F2B004AC8A9 /* Resources */,
@@ -293,13 +356,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		12EEC5983BAC708CBE14E070 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinancialControl/Pods-FinancialControl-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinancialControl/Pods-FinancialControl-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinancialControl/Pods-FinancialControl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		572C7AEFD45FDF9B8ADD5F72 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinancialControlTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDAC3288E1ACA947DDA92385 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinancialControl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EDF406EB2A9F9F2A004AC8A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EDF4072E2A9FAE35004AC8A9 /* Constants.swift in Sources */,
+				EDF407382AA00EB5004AC8A9 /* PaymentMode.swift in Sources */,
 				EDF406F52A9F9F2A004AC8A9 /* TabContainerView.swift in Sources */,
+				EDF407332AA00D00004AC8A9 /* WeeklyBudgetViewModel.swift in Sources */,
+				EDF407312AA00984004AC8A9 /* WeeklyFinancesHomeViewModel.swift in Sources */,
+				EDF407352AA00DD3004AC8A9 /* WeeklyExpenseViewModel.swift in Sources */,
 				EDF406F32A9F9F2A004AC8A9 /* FinancialControlApp.swift in Sources */,
 				EDF407232A9FABFF004AC8A9 /* MonthlyFinancesHomeView.swift in Sources */,
 				EDF407252A9FAC39004AC8A9 /* WeeklyFinancesHomeView.swift in Sources */,
@@ -436,6 +567,7 @@
 		};
 		EDF407152A9F9F2B004AC8A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2151F8A8FC7AC5648641F29F /* Pods-FinancialControl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,18 +596,21 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.FinancialControl;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.FinancialControl.device;
+				PRODUCT_NAME = "Financial Control";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		EDF407162A9F9F2B004AC8A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9888B4BE44B6F4F9797EBBBE /* Pods-FinancialControl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -504,18 +639,21 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.FinancialControl;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.FinancialControl.device;
+				PRODUCT_NAME = "Financial Control";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		EDF407182A9F9F2B004AC8A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBAD207E9F2BEA56CBBA3DE8 /* Pods-FinancialControlTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -539,6 +677,7 @@
 		};
 		EDF407192A9F9F2B004AC8A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BE9786696B8D315FCBA23A6 /* Pods-FinancialControlTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
