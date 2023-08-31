@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SingleWeekFormView: View {
     
-    @Binding var closeFlow: Bool
+    @Environment(\.weeklyModalMode) var flowPresented
     
     var body: some View {
         Text("form here")
@@ -17,7 +17,7 @@ struct SingleWeekFormView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button {
-                    closeFlow.toggle()
+                    flowPresented.wrappedValue.toggle()
                 } label: {
                     Label(String(), systemImage: "xmark")
                 }
