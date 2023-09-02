@@ -12,7 +12,6 @@
 		EDF406F52A9F9F2A004AC8A9 /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF406F42A9F9F2A004AC8A9 /* TabContainerView.swift */; };
 		EDF406F72A9F9F2B004AC8A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF406F62A9F9F2B004AC8A9 /* Assets.xcassets */; };
 		EDF406FB2A9F9F2B004AC8A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF406FA2A9F9F2B004AC8A9 /* Preview Assets.xcassets */; };
-		EDF407052A9F9F2B004AC8A9 /* FinancialControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407042A9F9F2B004AC8A9 /* FinancialControlTests.swift */; };
 		EDF407232A9FABFF004AC8A9 /* MonthlyFinancesHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407222A9FABFF004AC8A9 /* MonthlyFinancesHomeView.swift */; };
 		EDF407252A9FAC39004AC8A9 /* WeeklyFinancesHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407242A9FAC39004AC8A9 /* WeeklyFinancesHomeView.swift */; };
 		EDF4072E2A9FAE35004AC8A9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4072D2A9FAE35004AC8A9 /* Constants.swift */; };
@@ -26,6 +25,9 @@
 		EDF407492AA0B1A2004AC8A9 /* WeeklyModalModeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407482AA0B1A2004AC8A9 /* WeeklyModalModeKey.swift */; };
 		EDF4074B2AA0C35B004AC8A9 /* SingleWeekFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4074A2AA0C35B004AC8A9 /* SingleWeekFormViewModel.swift */; };
 		EDF4074E2AA0C5DD004AC8A9 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4074D2AA0C5DD004AC8A9 /* Date+Extensions.swift */; };
+		EDF407562AA36898004AC8A9 /* TabContainerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407552AA36898004AC8A9 /* TabContainerViewTests.swift */; };
+		EDF407582AA36B70004AC8A9 /* WeeklyFinancesHomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407572AA36B70004AC8A9 /* WeeklyFinancesHomeViewTests.swift */; };
+		EDF4075B2AA36C3C004AC8A9 /* AddWeeklyBudgetStartViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4075A2AA36C3C004AC8A9 /* AddWeeklyBudgetStartViewTests.swift */; };
 		FB6978AA84D4013BF6F0176E /* Pods_FinancialControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8660836D6F21F1A7F8275CA8 /* Pods_FinancialControl.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +54,6 @@
 		EDF406F82A9F9F2B004AC8A9 /* FinancialControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinancialControl.entitlements; sourceTree = "<group>"; };
 		EDF406FA2A9F9F2B004AC8A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EDF407002A9F9F2B004AC8A9 /* FinancialControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinancialControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDF407042A9F9F2B004AC8A9 /* FinancialControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialControlTests.swift; sourceTree = "<group>"; };
 		EDF407212A9FA87F004AC8A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EDF407222A9FABFF004AC8A9 /* MonthlyFinancesHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyFinancesHomeView.swift; sourceTree = "<group>"; };
 		EDF407242A9FAC39004AC8A9 /* WeeklyFinancesHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyFinancesHomeView.swift; sourceTree = "<group>"; };
@@ -67,6 +68,9 @@
 		EDF407482AA0B1A2004AC8A9 /* WeeklyModalModeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyModalModeKey.swift; sourceTree = "<group>"; };
 		EDF4074A2AA0C35B004AC8A9 /* SingleWeekFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleWeekFormViewModel.swift; sourceTree = "<group>"; };
 		EDF4074D2AA0C5DD004AC8A9 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		EDF407552AA36898004AC8A9 /* TabContainerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerViewTests.swift; sourceTree = "<group>"; };
+		EDF407572AA36B70004AC8A9 /* WeeklyFinancesHomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyFinancesHomeViewTests.swift; sourceTree = "<group>"; };
+		EDF4075A2AA36C3C004AC8A9 /* AddWeeklyBudgetStartViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeeklyBudgetStartViewTests.swift; sourceTree = "<group>"; };
 		FBAD207E9F2BEA56CBBA3DE8 /* Pods-FinancialControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControlTests.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControlTests/Pods-FinancialControlTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,7 +155,8 @@
 		EDF407032A9F9F2B004AC8A9 /* FinancialControlTests */ = {
 			isa = PBXGroup;
 			children = (
-				EDF407042A9F9F2B004AC8A9 /* FinancialControlTests.swift */,
+				EDF407502AA3680B004AC8A9 /* Mocks */,
+				EDF4074F2AA36806004AC8A9 /* Tests */,
 			);
 			path = FinancialControlTests;
 			sourceTree = "<group>";
@@ -332,6 +337,63 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		EDF4074F2AA36806004AC8A9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EDF407512AA3682B004AC8A9 /* Scenes */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		EDF407502AA3680B004AC8A9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		EDF407512AA3682B004AC8A9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EDF407542AA3685C004AC8A9 /* Tab */,
+				EDF407522AA36834004AC8A9 /* Weekly */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EDF407522AA36834004AC8A9 /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				EDF407592AA36C2C004AC8A9 /* AddBudget */,
+				EDF407532AA36840004AC8A9 /* Home */,
+			);
+			path = Weekly;
+			sourceTree = "<group>";
+		};
+		EDF407532AA36840004AC8A9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EDF407572AA36B70004AC8A9 /* WeeklyFinancesHomeViewTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EDF407542AA3685C004AC8A9 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				EDF407552AA36898004AC8A9 /* TabContainerViewTests.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		EDF407592AA36C2C004AC8A9 /* AddBudget */ = {
+			isa = PBXGroup;
+			children = (
+				EDF4075A2AA36C3C004AC8A9 /* AddWeeklyBudgetStartViewTests.swift */,
+			);
+			path = AddBudget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,6 +424,7 @@
 				EDF406FC2A9F9F2B004AC8A9 /* Sources */,
 				EDF406FD2A9F9F2B004AC8A9 /* Frameworks */,
 				EDF406FE2A9F9F2B004AC8A9 /* Resources */,
+				916E687C3C960B08555381A4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -388,6 +451,7 @@
 					};
 					EDF406FF2A9F9F2B004AC8A9 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 						TestTargetID = EDF406EE2A9F9F2A004AC8A9;
 					};
 				};
@@ -470,6 +534,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		916E687C3C960B08555381A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinancialControlTests/Pods-FinancialControlTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinancialControlTests/Pods-FinancialControlTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinancialControlTests/Pods-FinancialControlTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BDAC3288E1ACA947DDA92385 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -521,7 +602,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF407052A9F9F2B004AC8A9 /* FinancialControlTests.swift in Sources */,
+				EDF4075B2AA36C3C004AC8A9 /* AddWeeklyBudgetStartViewTests.swift in Sources */,
+				EDF407562AA36898004AC8A9 /* TabContainerViewTests.swift in Sources */,
+				EDF407582AA36B70004AC8A9 /* WeeklyFinancesHomeViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,6 +818,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9Y7M54NCKD;
@@ -747,9 +831,10 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinancialControl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FinancialControl";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Financial Control.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Financial Control";
 			};
 			name = Debug;
 		};
@@ -759,6 +844,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9Y7M54NCKD;
@@ -773,7 +859,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinancialControl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FinancialControl";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Financial Control.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Financial Control";
 			};
 			name = Release;
 		};
