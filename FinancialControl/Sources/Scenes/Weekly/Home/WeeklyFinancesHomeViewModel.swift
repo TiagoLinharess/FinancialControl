@@ -8,22 +8,6 @@
 import SwiftUI
 import SharpnezDesignSystem
 
-struct WeeklyModalModeKey: EnvironmentKey {
-    static let defaultValue = Binding<Bool>.constant(false) // < required
-}
-
-// define modalMode value
-extension EnvironmentValues {
-    var weeklyModalMode: Binding<Bool> {
-        get {
-            return self[WeeklyModalModeKey.self]
-        }
-        set {
-            self[WeeklyModalModeKey.self] = newValue
-        }
-    }
-}
-
 // MARK: Protocol
 
 protocol WeeklyFinancesHomeViewModelProtocol: ObservableObject {

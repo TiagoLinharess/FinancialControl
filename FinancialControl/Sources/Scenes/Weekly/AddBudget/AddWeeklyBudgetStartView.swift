@@ -1,5 +1,5 @@
 //
-//  AddBudgetStartView.swift
+//  AddWeeklyBudgetStartView.swift
 //  FinancialControl
 //
 //  Created by Tiago Linhares on 30/08/23.
@@ -8,11 +8,11 @@
 import SharpnezDesignSystem
 import SwiftUI
 
-struct AddBudgetStartView: View {
+struct AddWeeklyBudgetStartView: View {
     
     // MARK: Properties
     
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.weeklyModalMode) var flowPresented
     
     // MARK: Body
     
@@ -24,31 +24,31 @@ struct AddBudgetStartView: View {
                         FullMonthFormView()
                     } label: {
                         VStack(alignment: .leading, spacing: .smaller) {
-                            Text("All month")
+                            Text(Constants.AddWeeklyBudgetStart.allMonthTitle)
                                 .font(.title2)
-                            Text("Add budget for all weeks in the month")
+                            Text(Constants.AddWeeklyBudgetStart.allMonthDescription)
                         }
                     }
                 }
                 Section {
                     NavigationLink {
-                        SingleWeekFormView()
+                        SingleWeekFormView(viewModel: SingleWeekFormViewModel())
                     } label: {
                         VStack(alignment: .leading, spacing: .smaller) {
-                            Text("One week")
+                            Text(Constants.AddWeeklyBudgetStart.singleWeekTitle)
                                 .font(.title2)
-                            Text("Add budget for only a single week")
+                            Text(Constants.AddWeeklyBudgetStart.singleWeekDescription)
                         }
                     }
                 }
             }
-            .navigationTitle("Add Budget")
+            .navigationTitle(Constants.AddWeeklyBudgetStart.title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button {
-                    dismiss()
+                    flowPresented.wrappedValue.toggle()
                 } label: {
-                    Label(String(), systemImage: "xmark")
+                    Label(String(), systemImage: Constants.Icons.close)
                 }
             }
         }

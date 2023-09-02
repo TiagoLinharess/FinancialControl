@@ -20,9 +20,12 @@
 		EDF407332AA00D00004AC8A9 /* WeeklyBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407322AA00D00004AC8A9 /* WeeklyBudgetViewModel.swift */; };
 		EDF407352AA00DD3004AC8A9 /* WeeklyExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407342AA00DD3004AC8A9 /* WeeklyExpenseViewModel.swift */; };
 		EDF407382AA00EB5004AC8A9 /* PaymentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407372AA00EB5004AC8A9 /* PaymentMode.swift */; };
-		EDF4073D2AA013D0004AC8A9 /* AddBudgetStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4073C2AA013D0004AC8A9 /* AddBudgetStartView.swift */; };
+		EDF4073D2AA013D0004AC8A9 /* AddWeeklyBudgetStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4073C2AA013D0004AC8A9 /* AddWeeklyBudgetStartView.swift */; };
 		EDF407422AA020AD004AC8A9 /* SingleWeekFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407412AA020AD004AC8A9 /* SingleWeekFormView.swift */; };
 		EDF407462AA02106004AC8A9 /* FullMonthFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407452AA02106004AC8A9 /* FullMonthFormView.swift */; };
+		EDF407492AA0B1A2004AC8A9 /* WeeklyModalModeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407482AA0B1A2004AC8A9 /* WeeklyModalModeKey.swift */; };
+		EDF4074B2AA0C35B004AC8A9 /* SingleWeekFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4074A2AA0C35B004AC8A9 /* SingleWeekFormViewModel.swift */; };
+		EDF4074E2AA0C5DD004AC8A9 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4074D2AA0C5DD004AC8A9 /* Date+Extensions.swift */; };
 		FB6978AA84D4013BF6F0176E /* Pods_FinancialControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8660836D6F21F1A7F8275CA8 /* Pods_FinancialControl.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,9 +61,12 @@
 		EDF407322AA00D00004AC8A9 /* WeeklyBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetViewModel.swift; sourceTree = "<group>"; };
 		EDF407342AA00DD3004AC8A9 /* WeeklyExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyExpenseViewModel.swift; sourceTree = "<group>"; };
 		EDF407372AA00EB5004AC8A9 /* PaymentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMode.swift; sourceTree = "<group>"; };
-		EDF4073C2AA013D0004AC8A9 /* AddBudgetStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetStartView.swift; sourceTree = "<group>"; };
+		EDF4073C2AA013D0004AC8A9 /* AddWeeklyBudgetStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeeklyBudgetStartView.swift; sourceTree = "<group>"; };
 		EDF407412AA020AD004AC8A9 /* SingleWeekFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleWeekFormView.swift; sourceTree = "<group>"; };
 		EDF407452AA02106004AC8A9 /* FullMonthFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMonthFormView.swift; sourceTree = "<group>"; };
+		EDF407482AA0B1A2004AC8A9 /* WeeklyModalModeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyModalModeKey.swift; sourceTree = "<group>"; };
+		EDF4074A2AA0C35B004AC8A9 /* SingleWeekFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleWeekFormViewModel.swift; sourceTree = "<group>"; };
+		EDF4074D2AA0C5DD004AC8A9 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		FBAD207E9F2BEA56CBBA3DE8 /* Pods-FinancialControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControlTests.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControlTests/Pods-FinancialControlTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +241,8 @@
 		EDF4072B2A9FAE17004AC8A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EDF4074C2AA0C5CA004AC8A9 /* Extensions */,
+				EDF407472AA0B186004AC8A9 /* EnvironmentKeys */,
 				EDF407362AA00E9E004AC8A9 /* Commons */,
 				EDF4072F2A9FF429004AC8A9 /* Weekly */,
 				EDF4072C2A9FAE23004AC8A9 /* Constants */,
@@ -270,7 +278,7 @@
 		EDF407392AA0139D004AC8A9 /* AddBudget */ = {
 			isa = PBXGroup;
 			children = (
-				EDF4073C2AA013D0004AC8A9 /* AddBudgetStartView.swift */,
+				EDF4073C2AA013D0004AC8A9 /* AddWeeklyBudgetStartView.swift */,
 			);
 			path = AddBudget;
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF407412AA020AD004AC8A9 /* SingleWeekFormView.swift */,
+				EDF4074A2AA0C35B004AC8A9 /* SingleWeekFormViewModel.swift */,
 			);
 			path = SingleWeekForm;
 			sourceTree = "<group>";
@@ -305,6 +314,22 @@
 				EDF407452AA02106004AC8A9 /* FullMonthFormView.swift */,
 			);
 			path = FullMonthForm;
+			sourceTree = "<group>";
+		};
+		EDF407472AA0B186004AC8A9 /* EnvironmentKeys */ = {
+			isa = PBXGroup;
+			children = (
+				EDF407482AA0B1A2004AC8A9 /* WeeklyModalModeKey.swift */,
+			);
+			path = EnvironmentKeys;
+			sourceTree = "<group>";
+		};
+		EDF4074C2AA0C5CA004AC8A9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EDF4074D2AA0C5DD004AC8A9 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,11 +504,14 @@
 				EDF407382AA00EB5004AC8A9 /* PaymentMode.swift in Sources */,
 				EDF406F52A9F9F2A004AC8A9 /* TabContainerView.swift in Sources */,
 				EDF407332AA00D00004AC8A9 /* WeeklyBudgetViewModel.swift in Sources */,
-				EDF4073D2AA013D0004AC8A9 /* AddBudgetStartView.swift in Sources */,
+				EDF4073D2AA013D0004AC8A9 /* AddWeeklyBudgetStartView.swift in Sources */,
 				EDF407312AA00984004AC8A9 /* WeeklyFinancesHomeViewModel.swift in Sources */,
 				EDF407352AA00DD3004AC8A9 /* WeeklyExpenseViewModel.swift in Sources */,
+				EDF4074E2AA0C5DD004AC8A9 /* Date+Extensions.swift in Sources */,
 				EDF406F32A9F9F2A004AC8A9 /* FinancialControlApp.swift in Sources */,
 				EDF407232A9FABFF004AC8A9 /* MonthlyFinancesHomeView.swift in Sources */,
+				EDF4074B2AA0C35B004AC8A9 /* SingleWeekFormViewModel.swift in Sources */,
+				EDF407492AA0B1A2004AC8A9 /* WeeklyModalModeKey.swift in Sources */,
 				EDF407462AA02106004AC8A9 /* FullMonthFormView.swift in Sources */,
 				EDF407252A9FAC39004AC8A9 /* WeeklyFinancesHomeView.swift in Sources */,
 			);

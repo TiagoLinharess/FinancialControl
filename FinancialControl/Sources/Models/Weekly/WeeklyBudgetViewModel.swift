@@ -10,7 +10,6 @@ import Foundation
 class WeeklyBudgetViewModel: Identifiable, Codable {
     
     let id: String
-    let month: String
     let week: String
     let originalBudget: Double
     let currentBudget: Double
@@ -20,7 +19,6 @@ class WeeklyBudgetViewModel: Identifiable, Codable {
     
     init(
         id: String,
-        month: String,
         week: String,
         originalBudget: Double,
         currentBudget: Double,
@@ -28,7 +26,6 @@ class WeeklyBudgetViewModel: Identifiable, Codable {
         creditCardRemainingLimit: Double
     ) {
         self.id = id
-        self.month = month
         self.week = week
         self.originalBudget = originalBudget
         self.currentBudget = currentBudget
