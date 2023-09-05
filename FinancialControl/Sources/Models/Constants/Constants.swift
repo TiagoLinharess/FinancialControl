@@ -18,7 +18,8 @@ enum Constants {
         static let pickerSelect: String = "select"
         static let AlertTitle: String = "Message"
         static let ok: String = "ok"
-        
+        static let create: String = "Create"
+        static let cash: String = "$%@"
     }
     
     // MARK: Icons
@@ -29,6 +30,8 @@ enum Constants {
         static let pencil: String = "pencil"
         static let close: String = "xmark"
         static let check: String = "checkmark"
+        static let cash: String = "dollarsign"
+        static let creditCard: String = "creditcard"
     }
     
     // MARK: WeeklyHome
@@ -62,5 +65,20 @@ enum Constants {
         static let selectWeekError: String = "Please, select a week to continue."
         static let fillAllFieldsError: String = "Please, fill all fields to continue."
         static let fillAllFieldsCorrectly: String = "Please, fill all fields correctly to continue."
+    }
+    
+    // MARK: WeeklyReviewView
+    
+    enum WeeklyReview {
+        static let title: String = "Review"
+        static let successMessage: String = "Budgets added with success"
+    }
+    
+    // MARK: WeekBudgetView
+    
+    enum WeekBudgetView {
+        static let weekTitle: String = "Week"
+        static let budgetTitle: String = "Budget"
+        static let creditCardTitle: String = "Credit card limit"
     }
 }

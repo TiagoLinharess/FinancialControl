@@ -54,11 +54,13 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
         if weekSelected == Constants.Commons.pickerSelect {
             presentAlert = true
             submitStatus = .error(Constants.SingleWeekForm.selectWeekError)
+            return
         }
         
         if weekBudget.isEmpty || creditCardLimit.isEmpty {
             presentAlert = true
             submitStatus = .error(Constants.SingleWeekForm.fillAllFieldsError)
+            return
         }
         
         guard let doubleWeekBudget = Double(weekBudget),

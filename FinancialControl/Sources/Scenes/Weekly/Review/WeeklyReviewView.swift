@@ -21,18 +21,34 @@ struct WeeklyReviewView<ViewModel: WeeklyReviewViewModelProtocol>: View {
     }
     
     var body: some View {
-        VStack(spacing: .small) {
-            ForEach(viewModel.weeks) { week in
-                List {
-                    Section {
-                        VStack(alignment: .leading, spacing: .small) {
-                            Label("Week \(week.week)", systemImage: Constants.Icons.monthlyCalendar)
-                            Label("Budget $\(week.originalBudget)", systemImage: "dollarsign")
-                            Label("Credit card limit $\(week.creditCardWeekLimit)", systemImage: "creditcard")
-                        }
-                    }
-                }
+        VStack(alignment: .leading, spacing: .small) {
+            WeekBudgetListView(weeks: viewModel.weeks)
+        }
+        .navigationTitle(Constants.WeeklyReview.title)
+        .toolbar {
+            Button {
+                submit()
+            } label: {
+                Text(Constants.Commons.create)
             }
         }
+        .alert(Constants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
+            Button {
+                alertDidTapped()
+            } label: {
+                Text(Constants.Commons.ok)
+            }
+        } message: {
+            Text(Constants.WeeklyReview.successMessage)
+        }
+    }
+    
+    func submit() {
+        viewModel.submit()
+    }
+    
+    func alertDidTapped() {
+        viewModel.presentAlert = false
+        flowPresented.wrappedValue = false
     }
 }
