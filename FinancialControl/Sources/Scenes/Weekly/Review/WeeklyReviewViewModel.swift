@@ -17,12 +17,20 @@ final class WeeklyReviewViewModel: WeeklyReviewViewModelProtocol {
     
     @Published var presentAlert: Bool = false
     let weeks: [WeeklyBudgetViewModel]
+    
+    private let worker: WeeklyWorkerProtocol
 
-    init(weeks: [WeeklyBudgetViewModel]) {
+    init(weeks: [WeeklyBudgetViewModel], worker: WeeklyWorkerProtocol = WeeklyWorker()) {
         self.weeks = weeks
+        self.worker = worker
     }
     
     func submit() {
-        presentAlert = true
+        do {
+            try worker.save(weekBudgets: weeks)
+            presentAlert = true
+        } catch {
+            print(error)
+        }
     }
 }

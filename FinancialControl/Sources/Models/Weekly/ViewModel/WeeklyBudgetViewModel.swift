@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeeklyBudgetViewModel: Identifiable, Codable {
+class WeeklyBudgetViewModel: Identifiable {
     
     let id: String
     let week: String
@@ -48,5 +48,19 @@ class WeeklyBudgetViewModel: Identifiable, Codable {
         self.currentBudget = originalBudget
         self.creditCardWeekLimit = creditCardWeekLimit
         self.creditCardRemainingLimit = creditCardWeekLimit
+    }
+    
+    // MARK: From Response
+    
+    init(from response: WeeklyBudgetResponse) {
+        self.id = response.id
+        self.week = response.week
+        self.originalBudget = response.originalBudget
+        self.currentBudget = response.currentBudget
+        self.creditCardWeekLimit = response.creditCardWeekLimit
+        self.creditCardRemainingLimit = response.creditCardRemainingLimit
+        self.expenses = response.expenses.map { response -> WeeklyExpenseViewModel in
+            return .init(from: response)
+        }
     }
 }

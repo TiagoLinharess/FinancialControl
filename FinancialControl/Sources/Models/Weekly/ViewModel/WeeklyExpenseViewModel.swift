@@ -22,4 +22,12 @@ class WeeklyExpenseViewModel: Identifiable, Codable {
         self.paymentMode = paymentMode
         self.value = value
     }
+    
+    init(from response: WeeklyExpenseResponse) {
+        self.id = response.id
+        self.title = response.title
+        self.description = response.description
+        self.paymentMode = response.paymentMode
+        self.value = response.value
+    }
 }
