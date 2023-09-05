@@ -17,6 +17,8 @@ class WeeklyBudgetViewModel: Identifiable, Codable {
     let creditCardRemainingLimit: Double
     var expenses: [WeeklyExpenseViewModel] = []
     
+    // MARK: Init
+    
     init(
         id: String,
         week: String,
@@ -31,5 +33,20 @@ class WeeklyBudgetViewModel: Identifiable, Codable {
         self.currentBudget = currentBudget
         self.creditCardWeekLimit = creditCardWeekLimit
         self.creditCardRemainingLimit = creditCardRemainingLimit
+    }
+    
+    // MARK: Add Week Form Init
+    
+    init(
+        week: String,
+        originalBudget: Double,
+        creditCardWeekLimit: Double
+    ) {
+        self.id = week
+        self.week = week
+        self.originalBudget = originalBudget
+        self.currentBudget = originalBudget
+        self.creditCardWeekLimit = creditCardWeekLimit
+        self.creditCardRemainingLimit = creditCardWeekLimit
     }
 }

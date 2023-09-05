@@ -15,6 +15,10 @@ enum Constants {
         static let monthly: String = "Monthly"
         static let weekly: String = "Weekly"
         static let addFinance: String = "Add finance"
+        static let pickerSelect: String = "select"
+        static let AlertTitle: String = "Message"
+        static let ok: String = "ok"
+        
     }
     
     // MARK: Icons
@@ -24,6 +28,7 @@ enum Constants {
         static let weeklyCalendar: String = "calendar.day.timeline.left"
         static let pencil: String = "pencil"
         static let close: String = "xmark"
+        static let check: String = "checkmark"
     }
     
     // MARK: WeeklyHome
@@ -47,6 +52,15 @@ enum Constants {
     // MARK: SingleWeekForm
     
     enum SingleWeekForm {
-        static let title: String = "Add Budget for single week"
+        static let title: String = "Single week"
+        static let pickerTitle: String = "Select a week"
+        static let pickerSelection: String = "week of %@"
+        static let budgetPlaceholder: String = "Week budget"
+        static let creditCardPlaceholder: String = "Credit card week limit"
+        
+        static let formSuccessMessage: String = "Weekly budget created with success"
+        static let selectWeekError: String = "Please, select a week to continue."
+        static let fillAllFieldsError: String = "Please, fill all fields to continue."
+        static let fillAllFieldsCorrectly: String = "Please, fill all fields correctly to continue."
     }
 }

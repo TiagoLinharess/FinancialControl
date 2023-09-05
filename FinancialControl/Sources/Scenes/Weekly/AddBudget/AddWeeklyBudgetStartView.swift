@@ -12,17 +12,16 @@ struct AddWeeklyBudgetStartView: View {
     
     // MARK: Properties
     
-    @Environment(\.weeklyModalMode) var flowPresented
+    @Environment(\.weeklyModalMode) private var flowPresented
+    @StateObject private var router = WeeklyRouter()
     
     // MARK: Body
     
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $router.path) {
             List {
                 Section {
-                    NavigationLink {
-                        FullMonthFormView()
-                    } label: {
+                    NavigationLink(value: WeeklyNavigationOption.fullMonthForm) {
                         VStack(alignment: .leading, spacing: .smaller) {
                             Text(Constants.AddWeeklyBudgetStart.allMonthTitle)
                                 .font(.title2)
@@ -31,9 +30,7 @@ struct AddWeeklyBudgetStartView: View {
                     }
                 }
                 Section {
-                    NavigationLink {
-                        SingleWeekFormView(viewModel: SingleWeekFormViewModel())
-                    } label: {
+                    NavigationLink(value: WeeklyNavigationOption.singleWeekForm) {
                         VStack(alignment: .leading, spacing: .smaller) {
                             Text(Constants.AddWeeklyBudgetStart.singleWeekTitle)
                                 .font(.title2)
@@ -41,6 +38,9 @@ struct AddWeeklyBudgetStartView: View {
                         }
                     }
                 }
+            }
+            .navigationDestination(for: WeeklyNavigationOption.self) { destination in
+                router.routeTo(destination)
             }
             .navigationTitle(Constants.AddWeeklyBudgetStart.title)
             .navigationBarTitleDisplayMode(.inline)

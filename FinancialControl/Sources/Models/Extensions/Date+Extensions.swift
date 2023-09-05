@@ -9,6 +9,18 @@ import SwiftUI
 
 extension Date {
     
+    // MARK: Locale Format
+    
+    var localeFormat: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.locale = Locale.current
+        
+        return dateFormatter.string(from: self)
+    }
+    
+    // MARK: First Week Day Of Month
+    
     func firstWeekDayOfMonth(with weekday: Int) -> [Date] {
         let calendar = Calendar.current
         var components = calendar.dateComponents([.year, .month, .weekdayOrdinal], from: self)
@@ -31,10 +43,5 @@ extension Date {
         }
         
         return result
-    }
-    
-    func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> String {
-        let moment = calendar.component(component, from: self)
-        return moment >= 10 ? String(moment) : "0\(moment)"
     }
 }
