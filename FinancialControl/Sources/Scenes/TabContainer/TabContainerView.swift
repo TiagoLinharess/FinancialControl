@@ -10,7 +10,7 @@ import SwiftUI
 struct TabContainerView: View {
     var body: some View {
         TabView {
-            WeeklyFinancesHomeView(viewModel: WeeklyFinancesHomeViewModel())
+            WeeklyBudgetsHomeView(viewModel: WeeklyBudgetsHomeViewModel())
                 .tabItem {
                     Label(Constants.Commons.weekly, systemImage: Constants.Icons.weeklyCalendar)
                 }

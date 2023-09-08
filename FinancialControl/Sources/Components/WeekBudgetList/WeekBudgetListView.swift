@@ -16,11 +16,12 @@ struct WeekBudgetListView: View {
     // MARK: Body
     
     var body: some View {
-        ForEach(weeks) { week in
-            List {
+        List {
+            ForEach(weeks) { week in
                 WeekBudgetView(weekBudget: week)
             }
         }
+        .listStyle(InsetGroupedListStyle())
     }
 }
 

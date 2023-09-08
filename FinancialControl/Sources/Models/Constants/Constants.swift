@@ -14,12 +14,12 @@ enum Constants {
     enum Commons {
         static let monthly: String = "Monthly"
         static let weekly: String = "Weekly"
-        static let addFinance: String = "Add finance"
         static let pickerSelect: String = "select"
         static let AlertTitle: String = "Message"
         static let ok: String = "ok"
         static let create: String = "Create"
         static let cash: String = "$%@"
+        static let tryAgain: String = "Try again"
     }
     
     // MARK: Icons
@@ -32,11 +32,13 @@ enum Constants {
         static let check: String = "checkmark"
         static let cash: String = "dollarsign"
         static let creditCard: String = "creditcard"
+        static let add: String = "plus"
     }
     
     // MARK: WeeklyHome
     
     enum WeeklyHome {
+        static let title: String = "Weekly Budgets"
         static let emptyTitle: String = "There is no weekly financies yet"
     }
     
