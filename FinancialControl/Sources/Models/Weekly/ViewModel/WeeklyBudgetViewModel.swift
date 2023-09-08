@@ -9,6 +9,8 @@ import Foundation
 
 class WeeklyBudgetViewModel: Identifiable {
     
+    // MARK: Properties
+    
     let id: String
     let week: String
     let originalBudget: Double
@@ -50,7 +52,7 @@ class WeeklyBudgetViewModel: Identifiable {
         self.creditCardRemainingLimit = creditCardWeekLimit
     }
     
-    // MARK: From Response
+    // MARK: Init From Response
     
     init(from response: WeeklyBudgetResponse) {
         self.id = response.id

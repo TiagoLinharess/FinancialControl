@@ -10,8 +10,12 @@ import SwiftUI
 
 struct HomeErrorView: View {
     
+    // MARK: Properties
+    
     let message: String
     let action: () -> Void
+    
+    // MARK: Body
     
     var body: some View {
         VStack(spacing: .small) {

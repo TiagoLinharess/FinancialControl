@@ -39,7 +39,7 @@ enum Constants {
     
     enum WeeklyHome {
         static let title: String = "Weekly Budgets"
-        static let emptyTitle: String = "There is no weekly financies yet"
+        static let emptyTitle: String = "There is nothing yet"
     }
     
     // MARK: WeeklyBudgetStartView
@@ -82,5 +82,13 @@ enum Constants {
         static let weekTitle: String = "Week"
         static let budgetTitle: String = "Budget"
         static let creditCardTitle: String = "Credit card limit"
+    }
+    
+    // MARK: Worker
+    
+    enum Worker {
+        static let weeklyDevelopKey: String = "DevWeeklyBudgets"
+        static let weeklyProductionKey: String = "ProdWeeklyBudgets"
+        static let developmentBundleID: String = "com.tiagolinharess.FinancialControl.dev"
     }
 }

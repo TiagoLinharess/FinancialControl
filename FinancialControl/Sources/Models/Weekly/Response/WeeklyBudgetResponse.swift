@@ -9,6 +9,8 @@ import Foundation
 
 class WeeklyBudgetResponse: Identifiable, Codable {
     
+    // MARK: Properties
+    
     let id: String
     let week: String
     let originalBudget: Double

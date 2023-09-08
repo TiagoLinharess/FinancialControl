@@ -9,11 +9,15 @@ import Foundation
 
 class WeeklyExpenseViewModel: Identifiable, Codable {
     
+    // MARK: Properties
+    
     let id: String
     let title: String
     let description: String
     let paymentMode: PaymentMode
     let value: Double
+    
+    // MARK: Init
     
     init(title: String, description: String, paymentMode: PaymentMode, value: Double) {
         self.id = UUID().uuidString
@@ -22,6 +26,8 @@ class WeeklyExpenseViewModel: Identifiable, Codable {
         self.paymentMode = paymentMode
         self.value = value
     }
+    
+    // MARK: Init From Response
     
     init(from response: WeeklyExpenseResponse) {
         self.id = response.id

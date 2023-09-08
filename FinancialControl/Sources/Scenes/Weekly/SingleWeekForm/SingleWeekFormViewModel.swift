@@ -8,9 +8,13 @@
 import SharpnezDesignSystem
 import SwiftUI
 
+// MARK: View Status
+
 enum SingleWeekFormViewStatus {
     case success(WeeklyBudgetViewModel), error(String), none
 }
+
+// MARK: Protocol
 
 protocol SingleWeekFormViewModelProtocol: AnyObject, ObservableObject {
     var presentAlert: Bool { get set }
@@ -22,7 +26,11 @@ protocol SingleWeekFormViewModelProtocol: AnyObject, ObservableObject {
     func submit()
 }
 
+// MARK: View Model
+
 final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
+    
+    // MARK: Properties
     
     @Published var creditCardLimit: String = String()
     @Published var weekSelected: String = Constants.Commons.pickerSelect
@@ -46,6 +54,8 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
         
         return weeks
     }
+    
+    // MARK: Methods
     
     func submit() {
         presentAlert = false

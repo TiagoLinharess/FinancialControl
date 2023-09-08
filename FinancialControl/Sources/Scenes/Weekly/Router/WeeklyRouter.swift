@@ -7,13 +7,15 @@
 
 import SwiftUI
 
+// MARK: Router
+
 final class WeeklyRouter: ObservableObject {
+    
+    // MARK: Properties
     
     @Published var path = NavigationPath()
     
-    func finish() {
-        path = NavigationPath()
-    }
+    // MARK: Methods
     
     func push(_ destination: WeeklyNavigationOption) {
         path.append(destination)
@@ -34,6 +36,8 @@ final class WeeklyRouter: ObservableObject {
         }
     }
 }
+
+// MARK: Navigation Option
 
 enum WeeklyNavigationOption: Hashable {
     case singleWeekForm

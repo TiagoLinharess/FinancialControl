@@ -7,10 +7,14 @@
 
 import Foundation
 
+// MARK: Protocol
+
 protocol WeeklyWorkerProtocol {
     func save(weekBudgets: [WeeklyBudgetViewModel]) throws
     func fetch() throws -> [WeeklyBudgetViewModel]
 }
+
+// MARK: Worker
 
 final class WeeklyWorker: WeeklyWorkerProtocol {
     
@@ -27,13 +31,13 @@ final class WeeklyWorker: WeeklyWorkerProtocol {
         )
         
         let data = try JSONEncoder().encode(response)
-        UserDefaults.standard.set(data, forKey: "WeeklyBudgets")
+        UserDefaults.standard.set(data, forKey: getEnvironmentKey())
     }
     
     // MARK: Fetch
     
     func fetch() throws -> [WeeklyBudgetViewModel] {
-        guard let data = UserDefaults.standard.data(forKey: "WeeklyBudgets") else { return [] }
+        guard let data = UserDefaults.standard.data(forKey: getEnvironmentKey()) else { return [] }
         
         let response = try JSONDecoder().decode(WeeklyBudgetListResponse.self, from: data)
         let weeks = response.weekBudgets.map { response -> WeeklyBudgetViewModel in
@@ -41,5 +45,18 @@ final class WeeklyWorker: WeeklyWorkerProtocol {
         }
         
         return weeks
+    }
+}
+
+private extension WeeklyWorker {
+    
+    // MARK: Private Methods
+    
+    func getEnvironmentKey() -> String {
+        if let bundleID = Bundle.main.bundleIdentifier, bundleID == Constants.Worker.developmentBundleID {
+            return Constants.Worker.weeklyDevelopKey
+        }
+        
+        return Constants.Worker.weeklyProductionKey
     }
 }

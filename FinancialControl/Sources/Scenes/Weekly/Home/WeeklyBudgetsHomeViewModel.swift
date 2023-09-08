@@ -36,9 +36,13 @@ final class WeeklyBudgetsHomeViewModel: WeeklyBudgetsHomeViewModelProtocol {
     
     private let worker: WeeklyWorkerProtocol
     
+    // MARK: Init
+    
     init(worker: WeeklyWorkerProtocol = WeeklyWorker()) {
         self.worker = worker
     }
+    
+    // MARK: Methods
     
     func fetchBudgets() {
         viewStatus = .empty

@@ -9,11 +9,15 @@ import Foundation
 
 class WeeklyExpenseResponse: Identifiable, Codable {
     
+    // MARK: Properties
+    
     let id: String
     let title: String
     let description: String
     let paymentMode: PaymentMode
     let value: Double
+    
+    // MARK: Init From ViewModel
     
     init(from viewModel: WeeklyExpenseViewModel) {
         self.id = viewModel.id

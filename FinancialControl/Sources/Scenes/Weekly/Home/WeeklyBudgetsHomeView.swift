@@ -28,7 +28,7 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
                 case .success:
                     WeekBudgetListView(weeks: viewModel.budgets)
                 case .empty:
-                    WeeklyBudgetsHomeEmptyView()
+                    HomeEmptyView()
                 case let .error(message):
                     HomeErrorView(message: message, action: viewModel.fetchBudgets)
                 }

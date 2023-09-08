@@ -20,6 +20,8 @@ struct WeeklyReviewView<ViewModel: WeeklyReviewViewModelProtocol>: View {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
     
+    // MARK: Body
+    
     var body: some View {
         VStack(alignment: .leading, spacing: .small) {
             WeekBudgetListView(weeks: viewModel.weeks)
@@ -42,6 +44,8 @@ struct WeeklyReviewView<ViewModel: WeeklyReviewViewModelProtocol>: View {
             Text(Constants.WeeklyReview.successMessage)
         }
     }
+    
+    // MARK: Methods
     
     func submit() {
         viewModel.submit()
