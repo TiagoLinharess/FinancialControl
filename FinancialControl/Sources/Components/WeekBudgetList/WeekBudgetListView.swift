@@ -11,7 +11,17 @@ struct WeekBudgetListView: View {
     
     // MARK: Properties
     
-    let weeks: [WeeklyBudgetViewModel]
+    @State var weeks: [WeeklyBudgetViewModel]
+    let deleteDisabled: Bool
+    let onDelete: ((IndexSet) -> Void)?
+    
+    // MARK: Init
+    
+    init(weeks: [WeeklyBudgetViewModel], deleteDisabled: Bool, onDelete: ((IndexSet) -> Void)? = nil) {
+        self.weeks = weeks
+        self.deleteDisabled = deleteDisabled
+        self.onDelete = onDelete
+    }
     
     // MARK: Body
     
@@ -20,8 +30,14 @@ struct WeekBudgetListView: View {
             ForEach(weeks) { week in
                 WeekBudgetView(weekBudget: week)
             }
+            .onDelete(perform: delete)
+            .deleteDisabled(deleteDisabled)
         }
         .listStyle(InsetGroupedListStyle())
+    }
+    
+    func delete(at offsets: IndexSet) {
+        onDelete?(offsets)
     }
 }
 

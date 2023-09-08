@@ -22,6 +22,7 @@ protocol WeeklyBudgetsHomeViewModelProtocol: ObservableObject {
     var addBudgetFlowPresented: Bool { get set }
     func fetchBudgets()
     func didTapAddBudget()
+    func delete(at offsets: IndexSet)
 }
 
 // MARK: View Model
@@ -44,6 +45,10 @@ final class WeeklyBudgetsHomeViewModel: WeeklyBudgetsHomeViewModelProtocol {
     
     // MARK: Methods
     
+    func didTapAddBudget() {
+        addBudgetFlowPresented.toggle()
+    }
+    
     func fetchBudgets() {
         viewStatus = .empty
         do {
@@ -54,7 +59,14 @@ final class WeeklyBudgetsHomeViewModel: WeeklyBudgetsHomeViewModelProtocol {
         }
     }
     
-    func didTapAddBudget() {
-        addBudgetFlowPresented.toggle()
+    func delete(at offsets: IndexSet) {
+        do {
+            let count = try worker.delete(at: offsets)
+            if count == 0 {
+                viewStatus = .empty
+            }
+        } catch {
+            viewStatus = .error(error.localizedDescription)
+        }
     }
 }

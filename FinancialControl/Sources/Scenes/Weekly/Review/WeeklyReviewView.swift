@@ -24,7 +24,7 @@ struct WeeklyReviewView<ViewModel: WeeklyReviewViewModelProtocol>: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: .small) {
-            WeekBudgetListView(weeks: viewModel.weeks)
+            WeekBudgetListView(weeks: viewModel.weeks, deleteDisabled: true)
         }
         .navigationTitle(Constants.WeeklyReview.title)
         .toolbar {

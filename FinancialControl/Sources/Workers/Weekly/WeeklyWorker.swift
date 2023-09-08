@@ -12,6 +12,7 @@ import Foundation
 protocol WeeklyWorkerProtocol {
     func save(weekBudgets: [WeeklyBudgetViewModel]) throws
     func fetch() throws -> [WeeklyBudgetViewModel]
+    func delete(at offsets: IndexSet) throws -> Int
 }
 
 // MARK: Worker
@@ -45,6 +46,23 @@ final class WeeklyWorker: WeeklyWorkerProtocol {
         }
         
         return weeks
+    }
+    
+    // MARK: Delete
+    
+    func delete(at offsets: IndexSet) throws -> Int {
+        var allWeekBudgets =  try fetch()
+        allWeekBudgets.remove(atOffsets: offsets)
+        
+        let response: WeeklyBudgetListResponse = .init(
+            weekBudgets: allWeekBudgets.map { viewModel -> WeeklyBudgetResponse in
+                return .init(from: viewModel)
+            }
+        )
+        
+        let data = try JSONEncoder().encode(response)
+        UserDefaults.standard.set(data, forKey: getEnvironmentKey())
+        return allWeekBudgets.count
     }
 }
 
