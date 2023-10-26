@@ -44,7 +44,7 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
                     Label(String(), systemImage: Constants.Icons.add)
                 }
             }
-            .fullScreenCover(isPresented: $viewModel.addBudgetFlowPresented) {
+            .sheet(isPresented: $viewModel.addBudgetFlowPresented) {
                 viewModel.fetchBudgets()
             } content: {
                 AddWeeklyBudgetStartView()
