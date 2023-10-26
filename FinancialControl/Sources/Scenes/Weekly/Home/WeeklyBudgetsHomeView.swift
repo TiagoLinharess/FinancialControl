@@ -26,7 +26,7 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
             VStack(spacing: .small) {
                 switch viewModel.viewStatus {
                 case .success:
-                    WeekBudgetListView(weeks: viewModel.budgets, deleteDisabled: false, onDelete: viewModel.delete)
+                    WeekBudgetListView(weeks: $viewModel.budgets, deleteDisabled: false, onDelete: viewModel.delete)
                 case .empty:
                     HomeEmptyView()
                 case let .error(message):
@@ -44,7 +44,7 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
                     Label(String(), systemImage: Constants.Icons.add)
                 }
             }
-            .sheet(isPresented: $viewModel.addBudgetFlowPresented) {
+            .fullScreenCover(isPresented: $viewModel.addBudgetFlowPresented) {
                 viewModel.fetchBudgets()
             } content: {
                 AddWeeklyBudgetStartView()

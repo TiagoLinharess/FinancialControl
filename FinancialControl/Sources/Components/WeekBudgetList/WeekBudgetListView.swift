@@ -11,14 +11,14 @@ struct WeekBudgetListView: View {
     
     // MARK: Properties
     
-    @State var weeks: [WeeklyBudgetViewModel]
+    @Binding var weeks: [WeeklyBudgetViewModel]
     let deleteDisabled: Bool
     let onDelete: ((IndexSet) -> Void)?
     
     // MARK: Init
     
-    init(weeks: [WeeklyBudgetViewModel], deleteDisabled: Bool, onDelete: ((IndexSet) -> Void)? = nil) {
-        self.weeks = weeks
+    init(weeks: Binding<[WeeklyBudgetViewModel]>, deleteDisabled: Bool, onDelete: ((IndexSet) -> Void)? = nil) {
+        self._weeks = weeks
         self.deleteDisabled = deleteDisabled
         self.onDelete = onDelete
     }

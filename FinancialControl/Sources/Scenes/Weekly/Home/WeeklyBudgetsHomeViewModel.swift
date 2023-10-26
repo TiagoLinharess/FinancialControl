@@ -19,7 +19,7 @@ enum WeeklyBudgetsHomeViewStatus: Equatable {
 
 protocol WeeklyBudgetsHomeViewModelProtocol: ObservableObject {
     var viewStatus: WeeklyBudgetsHomeViewStatus { get }
-    var budgets: [WeeklyBudgetViewModel] { get }
+    var budgets: [WeeklyBudgetViewModel] { get set }
     var addBudgetFlowPresented: Bool { get set }
     func fetchBudgets()
     func didTapAddBudget()
@@ -34,7 +34,7 @@ final class WeeklyBudgetsHomeViewModel: WeeklyBudgetsHomeViewModelProtocol {
     
     @Published var viewStatus: WeeklyBudgetsHomeViewStatus = .empty
     @Published var addBudgetFlowPresented: Bool = false
-    var budgets: [WeeklyBudgetViewModel] = []
+    @Published var budgets: [WeeklyBudgetViewModel] = []
     
     private let worker: WeeklyWorkerProtocol
     
@@ -66,8 +66,8 @@ final class WeeklyBudgetsHomeViewModel: WeeklyBudgetsHomeViewModelProtocol {
     
     func delete(at offsets: IndexSet) {
         do {
-            budgets.remove(atOffsets: offsets)
             let count = try worker.delete(at: offsets)
+            budgets.remove(atOffsets: offsets)
             if count == .zero {
                 viewStatus = .empty
             }

@@ -11,7 +11,7 @@ import Combine
 
 protocol WeeklyReviewViewModelProtocol: ObservableObject {
     var presentAlert: Bool { get set }
-    var weeks: [WeeklyBudgetViewModel] { get }
+    var weeks: [WeeklyBudgetViewModel] { get set }
     func submit()
 }
 
@@ -22,7 +22,7 @@ final class WeeklyReviewViewModel: WeeklyReviewViewModelProtocol {
     // MARK: Properties
     
     @Published var presentAlert: Bool = false
-    let weeks: [WeeklyBudgetViewModel]
+    @Published var weeks: [WeeklyBudgetViewModel]
     
     private let worker: WeeklyWorkerProtocol
     
