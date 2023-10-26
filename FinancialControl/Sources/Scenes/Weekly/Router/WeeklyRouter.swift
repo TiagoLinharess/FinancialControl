@@ -25,7 +25,7 @@ final class WeeklyRouter: ObservableObject {
         path.removeLast(viewsCount)
     }
     
-    @ViewBuilder func routeTo(_ destination: WeeklyNavigationOption) -> some View {
+    @ViewBuilder func getDestination(from destination: WeeklyNavigationOption) -> some View {
         switch destination {
         case .singleWeekForm:
             SingleWeekFormView(viewModel: SingleWeekFormViewModel(), router: self)

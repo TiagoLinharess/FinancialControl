@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import SharpnezCore
 import SharpnezDesignSystem
 
 // MARK: View Status
 
-enum WeeklyBudgetsHomeViewStatus {
+enum WeeklyBudgetsHomeViewStatus: Equatable {
     case success, error(String), empty
 }
 
@@ -54,19 +55,26 @@ final class WeeklyBudgetsHomeViewModel: WeeklyBudgetsHomeViewModelProtocol {
         do {
             budgets = try worker.fetch()
             viewStatus = budgets.isEmpty ? .empty : .success
+        } catch let error as CoreError {
+            viewStatus = .error(error.message)
+            budgets = []
         } catch {
-            viewStatus = .error(error.localizedDescription)
+            viewStatus = .error(Constants.Commons.defaultErrorMessage)
+            budgets = []
         }
     }
     
     func delete(at offsets: IndexSet) {
         do {
+            budgets.remove(atOffsets: offsets)
             let count = try worker.delete(at: offsets)
-            if count == 0 {
+            if count == .zero {
                 viewStatus = .empty
             }
+        } catch let error as CoreError {
+            viewStatus = .error(error.message)
         } catch {
-            viewStatus = .error(error.localizedDescription)
+            viewStatus = .error(Constants.Commons.defaultErrorMessage)
         }
     }
 }

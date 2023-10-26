@@ -2,11 +2,12 @@
 platform :ios, '16.4'
 
 def pods_for_tests
-  pod 'SnapshotTesting', '~> 1.9.0'
+  pod 'SnapshotTesting', '1.9.0'
 end
 
 def  sharpnez_pods
-  pod 'SharpnezDesignSystem', '~> 1.1.1'
+  pod 'SharpnezDesignSystem', '1.1.1'
+  pod 'SharpnezCore', '1.1.0'
 end
 
 target 'FinancialControl' do

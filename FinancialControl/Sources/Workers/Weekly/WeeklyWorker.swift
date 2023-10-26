@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SharpnezCore
 
 // MARK: Protocol
 
@@ -22,17 +23,21 @@ final class WeeklyWorker: WeeklyWorkerProtocol {
     // MARK: Save
     
     func save(weekBudgets: [WeeklyBudgetViewModel]) throws {
-        var allWeekBudgets = weekBudgets
-        allWeekBudgets.append(contentsOf: try fetch())
-        
-        let response: WeeklyBudgetListResponse = .init(
-            weekBudgets: allWeekBudgets.map { viewModel -> WeeklyBudgetResponse in
-                return .init(from: viewModel)
-            }
-        )
-        
-        let data = try JSONEncoder().encode(response)
-        UserDefaults.standard.set(data, forKey: getEnvironmentKey())
+        do {
+            var allWeekBudgets = weekBudgets
+            allWeekBudgets.append(contentsOf: try fetch())
+            
+            let response: WeeklyBudgetListResponse = .init(
+                weekBudgets: allWeekBudgets.map { viewModel -> WeeklyBudgetResponse in
+                    return .init(from: viewModel)
+                }
+            )
+            
+            let data = try JSONEncoder().encode(response)
+            UserDefaults.standard.set(data, forKey: getEnvironmentKey())
+        } catch {
+            throw CoreError.parseError
+        }
     }
     
     // MARK: Fetch
@@ -40,29 +45,37 @@ final class WeeklyWorker: WeeklyWorkerProtocol {
     func fetch() throws -> [WeeklyBudgetViewModel] {
         guard let data = UserDefaults.standard.data(forKey: getEnvironmentKey()) else { return [] }
         
-        let response = try JSONDecoder().decode(WeeklyBudgetListResponse.self, from: data)
-        let weeks = response.weekBudgets.map { response -> WeeklyBudgetViewModel in
-            return .init(from: response)
+        do {
+            let response = try JSONDecoder().decode(WeeklyBudgetListResponse.self, from: data)
+            let weeks = response.weekBudgets.map { response -> WeeklyBudgetViewModel in
+                return .init(from: response)
+            }
+            
+            return weeks
+        } catch {
+            throw CoreError.parseError
         }
-        
-        return weeks
     }
     
     // MARK: Delete
     
     func delete(at offsets: IndexSet) throws -> Int {
-        var allWeekBudgets =  try fetch()
-        allWeekBudgets.remove(atOffsets: offsets)
-        
-        let response: WeeklyBudgetListResponse = .init(
-            weekBudgets: allWeekBudgets.map { viewModel -> WeeklyBudgetResponse in
-                return .init(from: viewModel)
-            }
-        )
-        
-        let data = try JSONEncoder().encode(response)
-        UserDefaults.standard.set(data, forKey: getEnvironmentKey())
-        return allWeekBudgets.count
+        do {
+            var allWeekBudgets =  try fetch()
+            allWeekBudgets.remove(atOffsets: offsets)
+            
+            let response: WeeklyBudgetListResponse = .init(
+                weekBudgets: allWeekBudgets.map { viewModel -> WeeklyBudgetResponse in
+                    return .init(from: viewModel)
+                }
+            )
+            
+            let data = try JSONEncoder().encode(response)
+            UserDefaults.standard.set(data, forKey: getEnvironmentKey())
+            return allWeekBudgets.count
+        } catch {
+            throw CoreError.parseError
+        }
     }
 }
 

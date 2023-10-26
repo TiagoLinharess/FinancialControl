@@ -40,7 +40,7 @@ struct AddWeeklyBudgetStartView: View {
                 }
             }
             .navigationDestination(for: WeeklyNavigationOption.self) { destination in
-                router.routeTo(destination)
+                router.getDestination(from: destination)
             }
             .navigationTitle(Constants.AddWeeklyBudgetStart.title)
             .navigationBarTitleDisplayMode(.inline)

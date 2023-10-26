@@ -37,8 +37,8 @@ struct WeekBudgetView: View {
                     )
                     .foregroundColor(
                         .budgetColor(
-                            total: weekBudget.creditCardWeekLimit,
-                            current: weekBudget.creditCardRemainingLimit
+                            total: weekBudget.originalBudget,
+                            current: weekBudget.currentBudget
                         )
                     )
                 } icon: {

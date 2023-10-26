@@ -20,6 +20,7 @@ enum Constants {
         static let create: String = "Create"
         static let cash: String = "$%@"
         static let tryAgain: String = "Try again"
+        static let defaultErrorMessage: String = "Something went wrong, please try again later"
     }
     
     // MARK: Icons

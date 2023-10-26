@@ -40,6 +40,10 @@
 		EDF4077F2AA7ADAC004AC8A9 /* WeeklyBudgetListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4077E2AA7ADAC004AC8A9 /* WeeklyBudgetListResponse.swift */; };
 		EDF407842AA7B769004AC8A9 /* HomeEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407832AA7B769004AC8A9 /* HomeEmptyView.swift */; };
 		EDF407862AAA32F1004AC8A9 /* HomeErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407852AAA32F1004AC8A9 /* HomeErrorView.swift */; };
+		EDF4078A2AAB5CF8004AC8A9 /* WeeklyBudgetsHomeViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF407892AAB5CF8004AC8A9 /* WeeklyBudgetsHomeViewModelMock.swift */; };
+		EDF4078C2AAB5D70004AC8A9 /* WeeklyBudgetViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4078B2AAB5D70004AC8A9 /* WeeklyBudgetViewModelMock.swift */; };
+		EDF4078E2AAB63C1004AC8A9 /* WeeklyBudgetsHomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4078D2AAB63C1004AC8A9 /* WeeklyBudgetsHomeViewModelTests.swift */; };
+		EDF407902AB28069004AC8A9 /* WeeklyWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF4078F2AB28069004AC8A9 /* WeeklyWorkerMock.swift */; };
 		FB6978AA84D4013BF6F0176E /* Pods_FinancialControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8660836D6F21F1A7F8275CA8 /* Pods_FinancialControl.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +99,10 @@
 		EDF4077E2AA7ADAC004AC8A9 /* WeeklyBudgetListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetListResponse.swift; sourceTree = "<group>"; };
 		EDF407832AA7B769004AC8A9 /* HomeEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEmptyView.swift; sourceTree = "<group>"; };
 		EDF407852AAA32F1004AC8A9 /* HomeErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeErrorView.swift; sourceTree = "<group>"; };
+		EDF407892AAB5CF8004AC8A9 /* WeeklyBudgetsHomeViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeViewModelMock.swift; sourceTree = "<group>"; };
+		EDF4078B2AAB5D70004AC8A9 /* WeeklyBudgetViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetViewModelMock.swift; sourceTree = "<group>"; };
+		EDF4078D2AAB63C1004AC8A9 /* WeeklyBudgetsHomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeViewModelTests.swift; sourceTree = "<group>"; };
+		EDF4078F2AB28069004AC8A9 /* WeeklyWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWorkerMock.swift; sourceTree = "<group>"; };
 		FBAD207E9F2BEA56CBBA3DE8 /* Pods-FinancialControlTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControlTests.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControlTests/Pods-FinancialControlTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -361,6 +369,9 @@
 		EDF407502AA3680B004AC8A9 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				EDF407952AB280F9004AC8A9 /* Workers */,
+				EDF407932AB280E7004AC8A9 /* Models */,
+				EDF407912AB28084004AC8A9 /* Scenes */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -387,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				EDF407572AA36B70004AC8A9 /* WeeklyBudgetsHomeViewTests.swift */,
+				EDF4078D2AAB63C1004AC8A9 /* WeeklyBudgetsHomeViewModelTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -500,6 +512,46 @@
 				EDF407832AA7B769004AC8A9 /* HomeEmptyView.swift */,
 			);
 			path = Empty;
+			sourceTree = "<group>";
+		};
+		EDF407912AB28084004AC8A9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EDF407922AB2808F004AC8A9 /* Weekly */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EDF407922AB2808F004AC8A9 /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				EDF407892AAB5CF8004AC8A9 /* WeeklyBudgetsHomeViewModelMock.swift */,
+			);
+			path = Weekly;
+			sourceTree = "<group>";
+		};
+		EDF407932AB280E7004AC8A9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EDF407942AB280ED004AC8A9 /* Weekly */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EDF407942AB280ED004AC8A9 /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				EDF4078B2AAB5D70004AC8A9 /* WeeklyBudgetViewModelMock.swift */,
+			);
+			path = Weekly;
+			sourceTree = "<group>";
+		};
+		EDF407952AB280F9004AC8A9 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				EDF4078F2AB28069004AC8A9 /* WeeklyWorkerMock.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -722,7 +774,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF4078A2AAB5CF8004AC8A9 /* WeeklyBudgetsHomeViewModelMock.swift in Sources */,
 				EDF4075B2AA36C3C004AC8A9 /* AddWeeklyBudgetStartViewTests.swift in Sources */,
+				EDF407902AB28069004AC8A9 /* WeeklyWorkerMock.swift in Sources */,
+				EDF4078C2AAB5D70004AC8A9 /* WeeklyBudgetViewModelMock.swift in Sources */,
+				EDF4078E2AAB63C1004AC8A9 /* WeeklyBudgetsHomeViewModelTests.swift in Sources */,
 				EDF407562AA36898004AC8A9 /* TabContainerViewTests.swift in Sources */,
 				EDF407582AA36B70004AC8A9 /* WeeklyBudgetsHomeViewTests.swift in Sources */,
 			);
