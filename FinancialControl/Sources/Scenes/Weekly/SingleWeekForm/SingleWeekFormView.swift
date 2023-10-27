@@ -6,6 +6,7 @@
 //
 
 import Combine
+import SharpnezCore
 import SharpnezDesignSystem
 import SwiftUI
 
@@ -15,7 +16,7 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     
     @StateObject private var viewModel: ViewModel
     @StateObject private var router: WeeklyRouter
-    @State var value: Double? = nil
+    @State var errorMessage: String = String()
     
     // MARK: Init
     
@@ -53,34 +54,30 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
         }
         .alert(Constants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
             Button {
-                alertDidTapped()
+                viewModel.presentAlert = false
             } label: {
                 Text(Constants.Commons.ok)
             }
         } message: {
-            switch viewModel.submitStatus {
-            case let .error(message):
-                Text(message)
-            default:
-                Text(Constants.SingleWeekForm.formSuccessMessage)
-            }
+            Text(errorMessage)
         }
     }
     
     // MARK: Methods
     
     func submit() {
-        viewModel.submit()
+        viewModel.submit { result in
+            switch result {
+            case let .success(week):
+                self.router.push(.review([week]))
+            case let .failure(error):
+                self.handleError(error: error)
+            }
+        }
     }
     
-    func alertDidTapped() {
-        viewModel.presentAlert = false
-        
-        switch viewModel.submitStatus {
-        case let .success(week):
-            router.push(.review([week]))
-        default:
-            break
-        }
+    func handleError(error: CoreError) {
+        errorMessage = error.message
+        viewModel.presentAlert = true
     }
 }

@@ -5,14 +5,9 @@
 //  Created by Tiago Linhares on 31/08/23.
 //
 
+import SharpnezCore
 import SharpnezDesignSystem
 import SwiftUI
-
-// MARK: View Status
-
-enum SingleWeekFormViewStatus {
-    case success(WeeklyBudgetViewModel), error(String), none
-}
 
 // MARK: Protocol
 
@@ -21,9 +16,8 @@ protocol SingleWeekFormViewModelProtocol: AnyObject, ObservableObject {
     var creditCardLimit: Double? { get set }
     var weekSelected: String { get set }
     var weekBudget: Double? { get set }
-    var submitStatus: SingleWeekFormViewStatus { get set }
     var weeks: [String] { get }
-    func submit()
+    func submit(result: @escaping (Result<WeeklyBudgetViewModel, CoreError>) -> Void)
 }
 
 // MARK: View Model
@@ -35,7 +29,6 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
     @Published var creditCardLimit: Double? = nil
     @Published var weekSelected: String = Constants.Commons.pickerSelect
     @Published var weekBudget: Double? = nil
-    @Published var submitStatus: SingleWeekFormViewStatus = .none
     @Published var presentAlert: Bool = false
     
     var weeks: [String] {
@@ -57,19 +50,14 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
     
     // MARK: Methods
     
-    func submit() {
-        presentAlert = false
-        submitStatus = .none
-        
+    func submit(result: @escaping (Result<WeeklyBudgetViewModel, CoreError>) -> Void) {
         if weekSelected == Constants.Commons.pickerSelect {
-            presentAlert = true
-            submitStatus = .error(Constants.SingleWeekForm.selectWeekError)
+            result(.failure(.customError(Constants.SingleWeekForm.selectWeekError)))
             return
         }
         
         guard let weekBudget, let creditCardLimit else {
-            presentAlert = true
-            submitStatus = .error(Constants.SingleWeekForm.fillAllFieldsCorrectly)
+            result(.failure(.customError(Constants.SingleWeekForm.fillAllFieldsCorrectly)))
             return
         }
         
@@ -79,7 +67,6 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
             creditCardWeekLimit: creditCardLimit
         )
         
-        presentAlert = true
-        submitStatus = .success(weeklyBudget)
+        result(.success(weeklyBudget))
     }
 }
