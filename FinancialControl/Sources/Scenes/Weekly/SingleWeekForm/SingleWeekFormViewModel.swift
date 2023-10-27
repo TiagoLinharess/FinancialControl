@@ -18,9 +18,9 @@ enum SingleWeekFormViewStatus {
 
 protocol SingleWeekFormViewModelProtocol: AnyObject, ObservableObject {
     var presentAlert: Bool { get set }
-    var creditCardLimit: String { get set }
+    var creditCardLimit: Double? { get set }
     var weekSelected: String { get set }
-    var weekBudget: String { get set }
+    var weekBudget: Double? { get set }
     var submitStatus: SingleWeekFormViewStatus { get set }
     var weeks: [String] { get }
     func submit()
@@ -32,9 +32,9 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
     
     // MARK: Properties
     
-    @Published var creditCardLimit: String = String()
+    @Published var creditCardLimit: Double? = nil
     @Published var weekSelected: String = Constants.Commons.pickerSelect
-    @Published var weekBudget: String = String()
+    @Published var weekBudget: Double? = nil
     @Published var submitStatus: SingleWeekFormViewStatus = .none
     @Published var presentAlert: Bool = false
     
@@ -67,27 +67,19 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
             return
         }
         
-        if weekBudget.isEmpty || creditCardLimit.isEmpty {
-            presentAlert = true
-            submitStatus = .error(Constants.SingleWeekForm.fillAllFieldsError)
-            return
-        }
-        
-        guard let doubleWeekBudget = Double(weekBudget),
-              let doubleCreditCardLimit = Double(creditCardLimit)
-        else {
+        guard let weekBudget, let creditCardLimit else {
             presentAlert = true
             submitStatus = .error(Constants.SingleWeekForm.fillAllFieldsCorrectly)
             return
         }
         
-        let weekBudget = WeeklyBudgetViewModel(
+        let weeklyBudget = WeeklyBudgetViewModel(
             week: weekSelected,
-            originalBudget: doubleWeekBudget,
-            creditCardWeekLimit: doubleCreditCardLimit
+            originalBudget: weekBudget,
+            creditCardWeekLimit: creditCardLimit
         )
         
         presentAlert = true
-        submitStatus = .success(weekBudget)
+        submitStatus = .success(weeklyBudget)
     }
 }

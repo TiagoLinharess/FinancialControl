@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		58B80F386A2FE2FEB7A223BE /* Pods_FinancialControlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF78198A5C97B7D8217F6F6 /* Pods_FinancialControlTests.framework */; };
+		ED9F12342AEB3577004F58A5 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F12332AEB3577004F58A5 /* CurrencyTextField.swift */; };
+		ED9F12362AEB3FB6004F58A5 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F12352AEB3FB6004F58A5 /* Double+Extensions.swift */; };
 		EDF406F32A9F9F2A004AC8A9 /* FinancialControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF406F22A9F9F2A004AC8A9 /* FinancialControlApp.swift */; };
 		EDF406F52A9F9F2A004AC8A9 /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF406F42A9F9F2A004AC8A9 /* TabContainerView.swift */; };
 		EDF406F72A9F9F2B004AC8A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF406F62A9F9F2B004AC8A9 /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 		8660836D6F21F1A7F8275CA8 /* Pods_FinancialControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9888B4BE44B6F4F9797EBBBE /* Pods-FinancialControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.release.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.release.xcconfig"; sourceTree = "<group>"; };
 		CAF78198A5C97B7D8217F6F6 /* Pods_FinancialControlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9F12332AEB3577004F58A5 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
+		ED9F12352AEB3FB6004F58A5 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		EDF406EF2A9F9F2A004AC8A9 /* Financial Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Financial Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF406F22A9F9F2A004AC8A9 /* FinancialControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialControlApp.swift; sourceTree = "<group>"; };
 		EDF406F42A9F9F2A004AC8A9 /* TabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
@@ -144,6 +148,14 @@
 				4BE9786696B8D315FCBA23A6 /* Pods-FinancialControlTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		ED9F12322AEB355F004F58A5 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				ED9F12332AEB3577004F58A5 /* CurrencyTextField.swift */,
+			);
+			path = Currency;
 			sourceTree = "<group>";
 		};
 		EDF406E62A9F9F2A004AC8A9 = {
@@ -354,6 +366,7 @@
 			children = (
 				EDF4074D2AA0C5DD004AC8A9 /* Date+Extensions.swift */,
 				EDF407722AA7A155004AC8A9 /* Color+Extensions.swift */,
+				ED9F12352AEB3FB6004F58A5 /* Double+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -439,6 +452,7 @@
 		EDF407692AA7999B004AC8A9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				ED9F12322AEB355F004F58A5 /* Currency */,
 				EDF407882AAB4FC8004AC8A9 /* Empty */,
 				EDF407872AAA32F9004AC8A9 /* Error */,
 				EDF4076F2AA79A63004AC8A9 /* WeekBudgetList */,
@@ -746,6 +760,7 @@
 				EDF407772AA7AB79004AC8A9 /* WeeklyBudgetResponse.swift in Sources */,
 				EDF407382AA00EB5004AC8A9 /* PaymentMode.swift in Sources */,
 				EDF406F52A9F9F2A004AC8A9 /* TabContainerView.swift in Sources */,
+				ED9F12342AEB3577004F58A5 /* CurrencyTextField.swift in Sources */,
 				EDF407652AA64659004AC8A9 /* WeeklyRouter.swift in Sources */,
 				EDF407332AA00D00004AC8A9 /* WeeklyBudgetViewModel.swift in Sources */,
 				EDF4073D2AA013D0004AC8A9 /* AddWeeklyBudgetStartView.swift in Sources */,
@@ -763,6 +778,7 @@
 				EDF4074B2AA0C35B004AC8A9 /* SingleWeekFormViewModel.swift in Sources */,
 				EDF407492AA0B1A2004AC8A9 /* WeeklyModalModeKey.swift in Sources */,
 				EDF407462AA02106004AC8A9 /* FullMonthFormView.swift in Sources */,
+				ED9F12362AEB3FB6004F58A5 /* Double+Extensions.swift in Sources */,
 				EDF407252A9FAC39004AC8A9 /* WeeklyBudgetsHomeView.swift in Sources */,
 				EDF4077D2AA7ACFD004AC8A9 /* WeeklyWorker.swift in Sources */,
 				EDF407792AA7AC0C004AC8A9 /* WeeklyExpenseResponse.swift in Sources */,

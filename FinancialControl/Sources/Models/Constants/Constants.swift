@@ -21,6 +21,7 @@ enum Constants {
         static let cash: String = "$%@"
         static let tryAgain: String = "Try again"
         static let defaultErrorMessage: String = "Something went wrong, please try again later"
+        static let currencyPlaceholder: String = Double.zero.toCurrency()
     }
     
     // MARK: Icons
@@ -66,7 +67,6 @@ enum Constants {
         
         static let formSuccessMessage: String = "Weekly budget created with success"
         static let selectWeekError: String = "Please, select a week to continue."
-        static let fillAllFieldsError: String = "Please, fill all fields to continue."
         static let fillAllFieldsCorrectly: String = "Please, fill all fields correctly to continue."
     }
     

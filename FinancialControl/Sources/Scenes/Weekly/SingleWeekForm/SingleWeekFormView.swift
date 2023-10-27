@@ -6,22 +6,16 @@
 //
 
 import Combine
+import SharpnezDesignSystem
 import SwiftUI
 
 struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     
-    // MARK: Field
-    
-    enum Field {
-        case budget
-        case creditCard
-    }
-    
     // MARK: Properties
     
-    @FocusState private var focusedField: Field?
     @StateObject private var viewModel: ViewModel
     @StateObject private var router: WeeklyRouter
+    @State var value: Double? = nil
     
     // MARK: Init
     
@@ -34,33 +28,19 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     
     var body: some View {
         List {
-            Section {
-                Picker(Constants.SingleWeekForm.pickerTitle, selection: $viewModel.weekSelected) {
+            Section(header: Text(Constants.SingleWeekForm.pickerTitle)) {
+                Picker(Constants.WeekBudgetView.weekTitle, selection: $viewModel.weekSelected) {
                     ForEach(viewModel.weeks, id: \.self) {
-                        if let firstElement = viewModel.weeks.first, $0 == firstElement {
-                            Text($0)
-                        } else {
-                            Text(
-                                String(format: Constants.SingleWeekForm.pickerSelection, $0)
-                            )
-                        }
+                        Text($0)
                     }
                 }
-                .onChange(of: viewModel.weekSelected) { _ in
-                    focusedField = .budget
-                }
-                VStack(alignment: .leading) {
-                    TextField(Constants.SingleWeekForm.budgetPlaceholder, text: $viewModel.weekBudget)
-                        .keyboardType(.decimalPad)
-                        .focused($focusedField, equals: .budget)
-                        .submitLabel(.next)
-                }
-                VStack(alignment: .leading) {
-                    TextField(Constants.SingleWeekForm.creditCardPlaceholder, text: $viewModel.creditCardLimit)
-                        .keyboardType(.decimalPad)
-                        .focused($focusedField, equals: .creditCard)
-                        .submitLabel(.join)
-                }
+                .pickerStyle(.navigationLink)
+            }
+            Section(header: Text(Constants.SingleWeekForm.budgetPlaceholder)) {
+                CurrencyTextField(Constants.Commons.currencyPlaceholder, value: $viewModel.weekBudget)
+            }
+            Section(header: Text(Constants.SingleWeekForm.creditCardPlaceholder)) {
+                CurrencyTextField(Constants.Commons.currencyPlaceholder, value: $viewModel.creditCardLimit)
             }
         }
         .navigationTitle(Constants.SingleWeekForm.title)
@@ -69,22 +49,6 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
                 submit()
             } label: {
                 Label(String(), systemImage: Constants.Icons.check)
-            }
-        }
-        .toolbar {
-            ToolbarItem(placement: .keyboard) {
-                Button {
-                    switch focusedField {
-                    case .budget:
-                        focusedField = .creditCard
-                    case .creditCard:
-                        submit()
-                    case .none:
-                        break
-                    }
-                } label: {
-                    Label(String(), systemImage: Constants.Icons.check)
-                }
             }
         }
         .alert(Constants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
@@ -106,7 +70,6 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     // MARK: Methods
     
     func submit() {
-        focusedField = .none
         viewModel.submit()
     }
     

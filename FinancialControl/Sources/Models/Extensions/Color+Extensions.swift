@@ -15,6 +15,10 @@ extension Color {
         let half = total / 2
         let oneThird = total / 3
         
+        if current == 0 || total == 0 {
+            return .red
+        }
+        
         if current >= half {
             return .green
         }

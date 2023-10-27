@@ -28,13 +28,7 @@ struct WeekBudgetView: View {
                 Label {
                     Text(Constants.WeekBudgetView.budgetTitle)
                     Spacer()
-                    Text(
-                        String(
-                            format: Constants.Commons.cash,
-                            "\(weekBudget.currentBudget)"
-                        )
-                        .replacingOccurrences(of: ".", with: ",")
-                    )
+                    Text(weekBudget.currentBudget.toCurrency())
                     .foregroundColor(
                         .budgetColor(
                             total: weekBudget.originalBudget,
@@ -47,13 +41,7 @@ struct WeekBudgetView: View {
                 Label {
                     Text(Constants.WeekBudgetView.creditCardTitle)
                     Spacer()
-                    Text(
-                        String(
-                            format: Constants.Commons.cash,
-                            "\(weekBudget.creditCardRemainingLimit)"
-                        )
-                        .replacingOccurrences(of: ".", with: ",")
-                    )
+                    Text(weekBudget.creditCardRemainingLimit.toCurrency())
                     .foregroundColor(
                         .budgetColor(
                             total: weekBudget.creditCardWeekLimit,
