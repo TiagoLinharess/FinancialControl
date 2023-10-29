@@ -38,9 +38,9 @@ final class WeeklyReviewViewModel: WeeklyReviewViewModelProtocol {
     func submit() {
         do {
             try worker.save(weekBudgets: weeks)
-            presentAlert = true
         } catch {
             print(error)
         }
+        presentAlert = true
     }
 }

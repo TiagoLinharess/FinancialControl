@@ -66,18 +66,20 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     // MARK: Methods
     
     func submit() {
-        viewModel.submit { result in
-            switch result {
-            case let .success(week):
-                self.router.push(.review([week]))
-            case let .failure(error):
-                self.handleError(error: error)
-            }
+        do {
+            let budget = try viewModel.submit()
+            router.push(.review([budget]))
+        } catch {
+            handleError(error: error)
         }
     }
     
-    func handleError(error: CoreError) {
-        errorMessage = error.message
+    func handleError(error: Error) {
+        if let error = error as? CoreError {
+            errorMessage = error.message
+        } else {
+            errorMessage = error.localizedDescription
+        }
         viewModel.presentAlert = true
     }
 }

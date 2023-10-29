@@ -82,7 +82,7 @@ enum Constants {
     enum WeekBudgetView {
         static let weekTitle: String = "Week"
         static let budgetTitle: String = "Budget"
-        static let creditCardTitle: String = "Credit card limit"
+        static let creditCardTitle: String = "Credit"
     }
     
     // MARK: Worker

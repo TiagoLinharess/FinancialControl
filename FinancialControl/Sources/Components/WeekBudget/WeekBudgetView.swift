@@ -29,12 +29,11 @@ struct WeekBudgetView: View {
                     Text(Constants.WeekBudgetView.budgetTitle)
                     Spacer()
                     Text(weekBudget.currentBudget.toCurrency())
-                    .foregroundColor(
-                        .budgetColor(
-                            total: weekBudget.originalBudget,
-                            current: weekBudget.currentBudget
-                        )
-                    )
+                        .lineLimit(1)
+                        .foregroundColor(.budgetColor(
+                                total: weekBudget.originalBudget,
+                                current: weekBudget.currentBudget
+                            ))
                 } icon: {
                     Image(systemName: Constants.Icons.cash)
                 }
@@ -42,12 +41,11 @@ struct WeekBudgetView: View {
                     Text(Constants.WeekBudgetView.creditCardTitle)
                     Spacer()
                     Text(weekBudget.creditCardRemainingLimit.toCurrency())
-                    .foregroundColor(
-                        .budgetColor(
-                            total: weekBudget.creditCardWeekLimit,
-                            current: weekBudget.creditCardRemainingLimit
-                        )
-                    )
+                        .lineLimit(1)
+                        .foregroundColor(.budgetColor(
+                                total: weekBudget.creditCardWeekLimit,
+                                current: weekBudget.creditCardRemainingLimit
+                            ))
                 } icon: {
                     Image(systemName: Constants.Icons.creditCard)
                 }

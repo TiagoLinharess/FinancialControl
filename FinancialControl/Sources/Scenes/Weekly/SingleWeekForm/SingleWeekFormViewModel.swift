@@ -17,7 +17,7 @@ protocol SingleWeekFormViewModelProtocol: AnyObject, ObservableObject {
     var weekSelected: String { get set }
     var weekBudget: Double? { get set }
     var weeks: [String] { get }
-    func submit(result: @escaping (Result<WeeklyBudgetViewModel, CoreError>) -> Void)
+    func submit() throws -> WeeklyBudgetViewModel
 }
 
 // MARK: View Model
@@ -50,23 +50,19 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
     
     // MARK: Methods
     
-    func submit(result: @escaping (Result<WeeklyBudgetViewModel, CoreError>) -> Void) {
+    func submit() throws -> WeeklyBudgetViewModel {
         if weekSelected == Constants.Commons.pickerSelect {
-            result(.failure(.customError(Constants.SingleWeekForm.selectWeekError)))
-            return
+            throw CoreError.customError(Constants.SingleWeekForm.selectWeekError)
         }
         
         guard let weekBudget, let creditCardLimit else {
-            result(.failure(.customError(Constants.SingleWeekForm.fillAllFieldsCorrectly)))
-            return
+            throw CoreError.customError(Constants.SingleWeekForm.fillAllFieldsCorrectly)
         }
         
-        let weeklyBudget = WeeklyBudgetViewModel(
+        return WeeklyBudgetViewModel(
             week: weekSelected,
             originalBudget: weekBudget,
             creditCardWeekLimit: creditCardLimit
         )
-        
-        result(.success(weeklyBudget))
     }
 }
