@@ -75,6 +75,7 @@ enum Constants {
     enum WeeklyReview {
         static let title: String = "Review"
         static let successMessage: String = "Budgets added with success"
+        static let duplicatedBudget: String = "This week has already been added"
     }
     
     // MARK: WeekBudgetView

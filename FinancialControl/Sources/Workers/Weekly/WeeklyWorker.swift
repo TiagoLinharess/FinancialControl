@@ -23,21 +23,23 @@ final class WeeklyWorker: WeeklyWorkerProtocol {
     // MARK: Save
     
     func save(weekBudgets: [WeeklyBudgetViewModel]) throws {
-        do {
-            var allWeekBudgets = weekBudgets
-            allWeekBudgets.append(contentsOf: try fetch())
-            
-            let response: WeeklyBudgetListResponse = .init(
-                weekBudgets: allWeekBudgets.map { viewModel -> WeeklyBudgetResponse in
-                    return .init(from: viewModel)
-                }
-            )
-            
-            let data = try JSONEncoder().encode(response)
-            UserDefaults.standard.set(data, forKey: getEnvironmentKey())
-        } catch {
-            throw CoreError.parseError
+        var allWeekBudgets = weekBudgets
+        let currentWeekBudgets = try fetch()
+        
+        if compareBudgets(currentBudgets: currentWeekBudgets, newBudgets: weekBudgets) {
+            throw CoreError.customError(Constants.WeeklyReview.duplicatedBudget)
         }
+        
+        allWeekBudgets.append(contentsOf: currentWeekBudgets)
+        
+        let response: WeeklyBudgetListResponse = .init(
+            weekBudgets: allWeekBudgets.map { viewModel -> WeeklyBudgetResponse in
+                return .init(from: viewModel)
+            }
+        )
+        
+        let data = try JSONEncoder().encode(response)
+        UserDefaults.standard.set(data, forKey: getEnvironmentKey())
     }
     
     // MARK: Fetch
@@ -89,5 +91,13 @@ private extension WeeklyWorker {
         }
         
         return Constants.Worker.weeklyProductionKey
+    }
+    
+    func compareBudgets(currentBudgets: [WeeklyBudgetViewModel], newBudgets: [WeeklyBudgetViewModel]) -> Bool {
+        currentBudgets.contains { currentBudget in
+            newBudgets.contains { newBudget in
+                return currentBudget.id == newBudget.id
+            }
+        }
     }
 }

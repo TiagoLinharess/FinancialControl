@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 02/09/23.
 //
 
+import SharpnezCore
 import SwiftUI
 
 struct WeeklyReviewView<ViewModel: WeeklyReviewViewModelProtocol>: View {
@@ -41,18 +42,26 @@ struct WeeklyReviewView<ViewModel: WeeklyReviewViewModelProtocol>: View {
                 Text(Constants.Commons.ok)
             }
         } message: {
-            Text(Constants.WeeklyReview.successMessage)
+            Text(viewModel.alertMessage)
         }
     }
     
     // MARK: Methods
     
     func submit() {
-        viewModel.submit()
+        do {
+            try viewModel.submit()
+            viewModel.alertMessage = Constants.WeeklyReview.successMessage
+        } catch let error as CoreError {
+            viewModel.alertMessage = error.message
+        } catch {
+            viewModel.alertMessage = Constants.Commons.defaultErrorMessage
+        }
+        viewModel.presentAlert = true
     }
     
     func alertDidTapped() {
         viewModel.presentAlert = false
-        flowPresented.wrappedValue = false
+        flowPresented.wrappedValue = !viewModel.closeFlowAfterSubmit
     }
 }

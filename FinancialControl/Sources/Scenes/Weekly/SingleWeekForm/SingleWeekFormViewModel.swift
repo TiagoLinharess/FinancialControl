@@ -13,6 +13,7 @@ import SwiftUI
 
 protocol SingleWeekFormViewModelProtocol: AnyObject, ObservableObject {
     var presentAlert: Bool { get set }
+    var alertMessage: String { get set }
     var creditCardLimit: Double? { get set }
     var weekSelected: String { get set }
     var weekBudget: Double? { get set }
@@ -30,6 +31,7 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
     @Published var weekSelected: String = Constants.Commons.pickerSelect
     @Published var weekBudget: Double? = nil
     @Published var presentAlert: Bool = false
+    @Published var alertMessage: String = String()
     
     var weeks: [String] {
         var weeksDate: [Date] = []

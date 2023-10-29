@@ -11,8 +11,10 @@ import Combine
 
 protocol WeeklyReviewViewModelProtocol: ObservableObject {
     var presentAlert: Bool { get set }
+    var alertMessage: String { get set }
+    var closeFlowAfterSubmit: Bool { get set }
     var weeks: [WeeklyBudgetViewModel] { get set }
-    func submit()
+    func submit() throws
 }
 
 // MARK: View Model
@@ -22,6 +24,8 @@ final class WeeklyReviewViewModel: WeeklyReviewViewModelProtocol {
     // MARK: Properties
     
     @Published var presentAlert: Bool = false
+    @Published var alertMessage: String = String()
+    @Published var closeFlowAfterSubmit: Bool = false
     @Published var weeks: [WeeklyBudgetViewModel]
     
     private let worker: WeeklyWorkerProtocol
@@ -35,12 +39,13 @@ final class WeeklyReviewViewModel: WeeklyReviewViewModelProtocol {
     
     // MARK: Methods
     
-    func submit() {
+    func submit() throws {
         do {
             try worker.save(weekBudgets: weeks)
+            closeFlowAfterSubmit = true
         } catch {
-            print(error)
+            closeFlowAfterSubmit = false
+            throw error
         }
-        presentAlert = true
     }
 }

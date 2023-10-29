@@ -16,7 +16,6 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     
     @StateObject private var viewModel: ViewModel
     @StateObject private var router: WeeklyRouter
-    @State var errorMessage: String = String()
     
     // MARK: Init
     
@@ -59,7 +58,7 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
                 Text(Constants.Commons.ok)
             }
         } message: {
-            Text(errorMessage)
+            Text(viewModel.alertMessage)
         }
     }
     
@@ -76,9 +75,9 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     
     func handleError(error: Error) {
         if let error = error as? CoreError {
-            errorMessage = error.message
+            viewModel.alertMessage = error.message
         } else {
-            errorMessage = error.localizedDescription
+            viewModel.alertMessage = error.localizedDescription
         }
         viewModel.presentAlert = true
     }
