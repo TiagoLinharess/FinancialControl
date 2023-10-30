@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '16.4'
+platform :ios, '17.0'
 
 def pods_for_tests
   pod 'SnapshotTesting', '1.9.0'

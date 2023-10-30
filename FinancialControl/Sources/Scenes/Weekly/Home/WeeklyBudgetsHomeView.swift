@@ -12,6 +12,7 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
     // MARK: Properties
     
     @StateObject var viewModel: ViewModel
+    @Environment(\.weeklyDetailMode) private var weeklyDetailMode
     
     // MARK: Init
     

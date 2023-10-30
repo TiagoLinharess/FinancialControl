@@ -11,7 +11,8 @@ struct WeekBudgetView: View {
     
     // MARK: Properties
     
-    let weekBudget: WeeklyBudgetViewModel
+    @State var presentDetail: Bool = false
+    @Binding var weekBudget: WeeklyBudgetViewModel
     
     // MARK: Body
     
@@ -50,6 +51,16 @@ struct WeekBudgetView: View {
                     Image(systemName: Constants.Icons.creditCard)
                 }
             }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                presentDetail = true
+            }
+        }
+        .sheet(isPresented: $presentDetail) {
+            weekBudget.currentBudget = 10
+        } content: {
+            BudgetDetailView()
+                .environment(\.weeklyDetailMode, $presentDetail)
         }
     }
 }

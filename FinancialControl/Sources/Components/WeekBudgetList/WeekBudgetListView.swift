@@ -27,7 +27,7 @@ struct WeekBudgetListView: View {
     
     var body: some View {
         List {
-            ForEach(weeks) { week in
+            ForEach($weeks) { week in
                 WeekBudgetView(weekBudget: week)
             }
             .onDelete(perform: delete)

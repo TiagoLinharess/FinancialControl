@@ -14,9 +14,9 @@ class WeeklyBudgetViewModel: Identifiable {
     let id: String
     let week: String
     let originalBudget: Double
-    let currentBudget: Double
+    var currentBudget: Double
     let creditCardWeekLimit: Double
-    let creditCardRemainingLimit: Double
+    var creditCardRemainingLimit: Double
     var expenses: [WeeklyExpenseViewModel] = []
     
     // MARK: Init
