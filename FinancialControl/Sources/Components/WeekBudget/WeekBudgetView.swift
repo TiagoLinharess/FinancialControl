@@ -59,7 +59,7 @@ struct WeekBudgetView: View {
         .sheet(isPresented: $presentDetail) {
             weekBudget.currentBudget = 10
         } content: {
-            BudgetDetailView()
+            WeeklyBudgetDetailView(viewModel: WeeklyBudgetDetailViewModel(weekBudget: $weekBudget))
                 .environment(\.weeklyDetailMode, $presentDetail)
         }
     }

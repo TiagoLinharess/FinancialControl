@@ -78,6 +78,17 @@ enum Constants {
         static let duplicatedBudget: String = "This week has already been added"
     }
     
+    // MARK: WeeklyBudgetDetailView
+    
+    enum WeeklyBudgetDetailView {
+        static let original: String = "Original"
+        static let current: String = "Current"
+        static let limit: String = "Limit"
+        static let remainingLimit: String = "Remaining"
+        static let addExpense: String = "Add expense"
+        static let editBudget: String = "Edit budget"
+    }
+    
     // MARK: WeekBudgetView
     
     enum WeekBudgetView {

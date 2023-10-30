@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		58B80F386A2FE2FEB7A223BE /* Pods_FinancialControlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF78198A5C97B7D8217F6F6 /* Pods_FinancialControlTests.framework */; };
+		ED76B38A2AEFF818002E8483 /* WeeklyBudgetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76B3892AEFF818002E8483 /* WeeklyBudgetDetailViewModel.swift */; };
+		ED76B38C2AF07409002E8483 /* WeeklyDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76B38B2AF07409002E8483 /* WeeklyDetailRouter.swift */; };
 		ED9F12342AEB3577004F58A5 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F12332AEB3577004F58A5 /* CurrencyTextField.swift */; };
 		ED9F12362AEB3FB6004F58A5 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F12352AEB3FB6004F58A5 /* Double+Extensions.swift */; };
 		EDD706102AEF2B1E009884BC /* WeeklyDetailModeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7060F2AEF2B1E009884BC /* WeeklyDetailModeKey.swift */; };
-		EDD706132AEF2CBB009884BC /* BudgetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD706122AEF2CBB009884BC /* BudgetDetailView.swift */; };
+		EDD706132AEF2CBB009884BC /* WeeklyBudgetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD706122AEF2CBB009884BC /* WeeklyBudgetDetailView.swift */; };
 		EDF406F32A9F9F2A004AC8A9 /* FinancialControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF406F22A9F9F2A004AC8A9 /* FinancialControlApp.swift */; };
 		EDF406F52A9F9F2A004AC8A9 /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF406F42A9F9F2A004AC8A9 /* TabContainerView.swift */; };
 		EDF406F72A9F9F2B004AC8A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF406F62A9F9F2B004AC8A9 /* Assets.xcassets */; };
@@ -67,10 +69,12 @@
 		8660836D6F21F1A7F8275CA8 /* Pods_FinancialControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9888B4BE44B6F4F9797EBBBE /* Pods-FinancialControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.release.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.release.xcconfig"; sourceTree = "<group>"; };
 		CAF78198A5C97B7D8217F6F6 /* Pods_FinancialControlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED76B3892AEFF818002E8483 /* WeeklyBudgetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetDetailViewModel.swift; sourceTree = "<group>"; };
+		ED76B38B2AF07409002E8483 /* WeeklyDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailRouter.swift; sourceTree = "<group>"; };
 		ED9F12332AEB3577004F58A5 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		ED9F12352AEB3FB6004F58A5 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		EDD7060F2AEF2B1E009884BC /* WeeklyDetailModeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailModeKey.swift; sourceTree = "<group>"; };
-		EDD706122AEF2CBB009884BC /* BudgetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailView.swift; sourceTree = "<group>"; };
+		EDD706122AEF2CBB009884BC /* WeeklyBudgetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetDetailView.swift; sourceTree = "<group>"; };
 		EDF406EF2A9F9F2A004AC8A9 /* Financial Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Financial Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF406F22A9F9F2A004AC8A9 /* FinancialControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialControlApp.swift; sourceTree = "<group>"; };
 		EDF406F42A9F9F2A004AC8A9 /* TabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
@@ -165,7 +169,8 @@
 		EDD706112AEF2C98009884BC /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				EDD706122AEF2CBB009884BC /* BudgetDetailView.swift */,
+				EDD706122AEF2CBB009884BC /* WeeklyBudgetDetailView.swift */,
+				ED76B3892AEFF818002E8483 /* WeeklyBudgetDetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -284,13 +289,13 @@
 		EDF407292A9FAD53004AC8A9 /* Weekly */ = {
 			isa = PBXGroup;
 			children = (
-				EDD706112AEF2C98009884BC /* Detail */,
-				EDF407662AA675C1004AC8A9 /* Router */,
-				EDF4075F2AA37D30004AC8A9 /* Review */,
-				EDF407432AA020DB004AC8A9 /* FullMonthForm */,
-				EDF4073E2AA01FFA004AC8A9 /* SingleWeekForm */,
-				EDF407392AA0139D004AC8A9 /* AddBudget */,
+				EDF407662AA675C1004AC8A9 /* Routers */,
 				EDF4072A2A9FAD5A004AC8A9 /* Home */,
+				EDF407392AA0139D004AC8A9 /* AddBudget */,
+				EDF4073E2AA01FFA004AC8A9 /* SingleWeekForm */,
+				EDF407432AA020DB004AC8A9 /* FullMonthForm */,
+				EDF4075F2AA37D30004AC8A9 /* Review */,
+				EDD706112AEF2C98009884BC /* Detail */,
 			);
 			path = Weekly;
 			sourceTree = "<group>";
@@ -455,12 +460,13 @@
 			path = Review;
 			sourceTree = "<group>";
 		};
-		EDF407662AA675C1004AC8A9 /* Router */ = {
+		EDF407662AA675C1004AC8A9 /* Routers */ = {
 			isa = PBXGroup;
 			children = (
 				EDF407642AA64659004AC8A9 /* WeeklyRouter.swift */,
+				ED76B38B2AF07409002E8483 /* WeeklyDetailRouter.swift */,
 			);
-			path = Router;
+			path = Routers;
 			sourceTree = "<group>";
 		};
 		EDF407692AA7999B004AC8A9 /* Components */ = {
@@ -780,15 +786,17 @@
 				EDF4073D2AA013D0004AC8A9 /* AddWeeklyBudgetStartView.swift in Sources */,
 				EDF407312AA00984004AC8A9 /* WeeklyBudgetsHomeViewModel.swift in Sources */,
 				EDF407612AA37D4E004AC8A9 /* WeeklyReviewView.swift in Sources */,
+				ED76B38C2AF07409002E8483 /* WeeklyDetailRouter.swift in Sources */,
 				EDF407732AA7A155004AC8A9 /* Color+Extensions.swift in Sources */,
 				EDF4076E2AA799F7004AC8A9 /* WeekBudgetView.swift in Sources */,
 				EDF407352AA00DD3004AC8A9 /* WeeklyExpenseViewModel.swift in Sources */,
 				EDF4074E2AA0C5DD004AC8A9 /* Date+Extensions.swift in Sources */,
 				EDF406F32A9F9F2A004AC8A9 /* FinancialControlApp.swift in Sources */,
-				EDD706132AEF2CBB009884BC /* BudgetDetailView.swift in Sources */,
+				EDD706132AEF2CBB009884BC /* WeeklyBudgetDetailView.swift in Sources */,
 				EDF407842AA7B769004AC8A9 /* HomeEmptyView.swift in Sources */,
 				EDF407232A9FABFF004AC8A9 /* MonthlyFinancesHomeView.swift in Sources */,
 				EDF4077F2AA7ADAC004AC8A9 /* WeeklyBudgetListResponse.swift in Sources */,
+				ED76B38A2AEFF818002E8483 /* WeeklyBudgetDetailViewModel.swift in Sources */,
 				EDD706102AEF2B1E009884BC /* WeeklyDetailModeKey.swift in Sources */,
 				EDF407712AA79A7B004AC8A9 /* WeekBudgetListView.swift in Sources */,
 				EDF4074B2AA0C35B004AC8A9 /* SingleWeekFormViewModel.swift in Sources */,
