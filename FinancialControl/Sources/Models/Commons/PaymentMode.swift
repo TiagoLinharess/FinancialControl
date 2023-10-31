@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum PaymentMode: Codable {
+enum PaymentMode: String, Codable, CaseIterable {
     case debit
     case credit
 }

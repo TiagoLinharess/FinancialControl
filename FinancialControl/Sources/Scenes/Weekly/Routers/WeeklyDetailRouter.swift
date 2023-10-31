@@ -27,8 +27,8 @@ final class WeeklyDetailRouter: ObservableObject {
     
     @ViewBuilder func getDestination(from destination: WeeklyDetailNavigationOption) -> some View {
         switch destination {
-        case .addExpense:
-            Text("addExpense")
+        case let .addExpense(budget):
+            AddWeeklyExpenseView(viewModel: AddWeeklyExpenseViewModel(weekBudget: budget), router: self)
         case .editBudget:
             Text("editBudget")
         case .review:
@@ -40,9 +40,9 @@ final class WeeklyDetailRouter: ObservableObject {
 // MARK: Navigation Option
 
 enum WeeklyDetailNavigationOption: Hashable {
-    case addExpense
-    case editBudget
-    case review
+    case addExpense(Binding<WeeklyBudgetViewModel>)
+    case editBudget(Binding<WeeklyBudgetViewModel>)
+    case review(Binding<WeeklyBudgetViewModel>)
     
     var intValue: Int {
         switch self {

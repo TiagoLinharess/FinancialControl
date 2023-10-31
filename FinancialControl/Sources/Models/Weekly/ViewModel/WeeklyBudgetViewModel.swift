@@ -13,9 +13,9 @@ class WeeklyBudgetViewModel: Identifiable {
     
     let id: String
     let week: String
-    let originalBudget: Double
+    var originalBudget: Double
     var currentBudget: Double
-    let creditCardWeekLimit: Double
+    var creditCardWeekLimit: Double
     var creditCardRemainingLimit: Double
     var expenses: [WeeklyExpenseViewModel] = []
     
@@ -64,5 +64,11 @@ class WeeklyBudgetViewModel: Identifiable {
         self.expenses = response.expenses.map { response -> WeeklyExpenseViewModel in
             return .init(from: response)
         }
+    }
+    
+    // MARK: Methods
+    
+    func addExpense(expense: WeeklyExpenseViewModel) {
+        expenses.append(expense)
     }
 }

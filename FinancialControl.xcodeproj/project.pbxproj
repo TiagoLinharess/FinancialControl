@@ -10,6 +10,8 @@
 		58B80F386A2FE2FEB7A223BE /* Pods_FinancialControlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF78198A5C97B7D8217F6F6 /* Pods_FinancialControlTests.framework */; };
 		ED76B38A2AEFF818002E8483 /* WeeklyBudgetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76B3892AEFF818002E8483 /* WeeklyBudgetDetailViewModel.swift */; };
 		ED76B38C2AF07409002E8483 /* WeeklyDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76B38B2AF07409002E8483 /* WeeklyDetailRouter.swift */; };
+		ED76B38F2AF0799A002E8483 /* AddWeeklyExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76B38E2AF0799A002E8483 /* AddWeeklyExpenseView.swift */; };
+		ED76B3912AF07BDF002E8483 /* AddWeeklyExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76B3902AF07BDF002E8483 /* AddWeeklyExpenseViewModel.swift */; };
 		ED9F12342AEB3577004F58A5 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F12332AEB3577004F58A5 /* CurrencyTextField.swift */; };
 		ED9F12362AEB3FB6004F58A5 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9F12352AEB3FB6004F58A5 /* Double+Extensions.swift */; };
 		EDD706102AEF2B1E009884BC /* WeeklyDetailModeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7060F2AEF2B1E009884BC /* WeeklyDetailModeKey.swift */; };
@@ -71,6 +73,8 @@
 		CAF78198A5C97B7D8217F6F6 /* Pods_FinancialControlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED76B3892AEFF818002E8483 /* WeeklyBudgetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetDetailViewModel.swift; sourceTree = "<group>"; };
 		ED76B38B2AF07409002E8483 /* WeeklyDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailRouter.swift; sourceTree = "<group>"; };
+		ED76B38E2AF0799A002E8483 /* AddWeeklyExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseView.swift; sourceTree = "<group>"; };
+		ED76B3902AF07BDF002E8483 /* AddWeeklyExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseViewModel.swift; sourceTree = "<group>"; };
 		ED9F12332AEB3577004F58A5 /* CurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		ED9F12352AEB3FB6004F58A5 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		EDD7060F2AEF2B1E009884BC /* WeeklyDetailModeKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailModeKey.swift; sourceTree = "<group>"; };
@@ -156,6 +160,15 @@
 				4BE9786696B8D315FCBA23A6 /* Pods-FinancialControlTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		ED76B38D2AF07948002E8483 /* AddExpense */ = {
+			isa = PBXGroup;
+			children = (
+				ED76B38E2AF0799A002E8483 /* AddWeeklyExpenseView.swift */,
+				ED76B3902AF07BDF002E8483 /* AddWeeklyExpenseViewModel.swift */,
+			);
+			path = AddExpense;
 			sourceTree = "<group>";
 		};
 		ED9F12322AEB355F004F58A5 /* Currency */ = {
@@ -296,6 +309,7 @@
 				EDF407432AA020DB004AC8A9 /* FullMonthForm */,
 				EDF4075F2AA37D30004AC8A9 /* Review */,
 				EDD706112AEF2C98009884BC /* Detail */,
+				ED76B38D2AF07948002E8483 /* AddExpense */,
 			);
 			path = Weekly;
 			sourceTree = "<group>";
@@ -796,6 +810,7 @@
 				EDF407842AA7B769004AC8A9 /* HomeEmptyView.swift in Sources */,
 				EDF407232A9FABFF004AC8A9 /* MonthlyFinancesHomeView.swift in Sources */,
 				EDF4077F2AA7ADAC004AC8A9 /* WeeklyBudgetListResponse.swift in Sources */,
+				ED76B3912AF07BDF002E8483 /* AddWeeklyExpenseViewModel.swift in Sources */,
 				ED76B38A2AEFF818002E8483 /* WeeklyBudgetDetailViewModel.swift in Sources */,
 				EDD706102AEF2B1E009884BC /* WeeklyDetailModeKey.swift in Sources */,
 				EDF407712AA79A7B004AC8A9 /* WeekBudgetListView.swift in Sources */,
@@ -807,6 +822,7 @@
 				EDF4077D2AA7ACFD004AC8A9 /* WeeklyWorker.swift in Sources */,
 				EDF407792AA7AC0C004AC8A9 /* WeeklyExpenseResponse.swift in Sources */,
 				EDF407632AA37D6B004AC8A9 /* WeeklyReviewViewModel.swift in Sources */,
+				ED76B38F2AF0799A002E8483 /* AddWeeklyExpenseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

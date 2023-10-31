@@ -12,6 +12,7 @@ class WeeklyExpenseResponse: Identifiable, Codable {
     // MARK: Properties
     
     let id: String
+    let date: Date
     let title: String
     let description: String
     let paymentMode: PaymentMode
@@ -21,6 +22,7 @@ class WeeklyExpenseResponse: Identifiable, Codable {
     
     init(from viewModel: WeeklyExpenseViewModel) {
         self.id = viewModel.id
+        self.date = viewModel.date
         self.title = viewModel.title
         self.description = viewModel.description
         self.paymentMode = viewModel.paymentMode

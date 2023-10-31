@@ -12,15 +12,17 @@ class WeeklyExpenseViewModel: Identifiable, Codable {
     // MARK: Properties
     
     let id: String
-    let title: String
-    let description: String
-    let paymentMode: PaymentMode
-    let value: Double
+    var date: Date
+    var title: String
+    var description: String
+    var paymentMode: PaymentMode
+    var value: Double
     
     // MARK: Init
     
     init(title: String, description: String, paymentMode: PaymentMode, value: Double) {
         self.id = UUID().uuidString
+        self.date = Date.now
         self.title = title
         self.description = description
         self.paymentMode = paymentMode
@@ -31,6 +33,7 @@ class WeeklyExpenseViewModel: Identifiable, Codable {
     
     init(from response: WeeklyExpenseResponse) {
         self.id = response.id
+        self.date = response.date
         self.title = response.title
         self.description = response.description
         self.paymentMode = response.paymentMode

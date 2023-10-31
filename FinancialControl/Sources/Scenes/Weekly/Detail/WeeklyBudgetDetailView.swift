@@ -55,12 +55,12 @@ struct WeeklyBudgetDetailView<ViewModel: WeeklyBudgetDetailViewModelProtocol>: V
                     }
                 }
                 Section {
-                    NavigationLink(value: WeeklyDetailNavigationOption.addExpense) {
+                    NavigationLink(value: WeeklyDetailNavigationOption.addExpense($viewModel.weekBudget)) {
                         Text(Constants.WeeklyBudgetDetailView.addExpense)
                     }
                 }
                 Section {
-                    NavigationLink(value: WeeklyDetailNavigationOption.editBudget) {
+                    NavigationLink(value: WeeklyDetailNavigationOption.editBudget($viewModel.weekBudget)) {
                         Text(Constants.WeeklyBudgetDetailView.editBudget)
                     }
                 }

@@ -89,6 +89,18 @@ enum Constants {
         static let editBudget: String = "Edit budget"
     }
     
+    // MARK: AddWeeklyExpenseView
+    
+    enum AddWeeklyExpenseView {
+        static let title = "Title*"
+        static let titlePlaceholder = "Iphone 15 Pro"
+        static let description = "Description"
+        static let descriptionPlaceholder = "Purchased from the Apple store"
+        static let selectPaymentMode = "Select payment mode*"
+        static let paymentMode = "Payment mode"
+        static let value = "Value*"
+    }
+    
     // MARK: WeekBudgetView
     
     enum WeekBudgetView {
