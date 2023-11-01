@@ -44,7 +44,7 @@ class WeeklyBudgetViewModel: Identifiable {
         originalBudget: Double,
         creditCardWeekLimit: Double
     ) {
-        self.id = week
+        self.id = UUID().uuidString
         self.week = week
         self.originalBudget = originalBudget
         self.currentBudget = originalBudget
@@ -69,6 +69,12 @@ class WeeklyBudgetViewModel: Identifiable {
     // MARK: Methods
     
     func addExpense(expense: WeeklyExpenseViewModel) {
+        if expense.paymentMode == .debit {
+            currentBudget -= expense.value
+        } else {
+            creditCardRemainingLimit -= expense.value
+        }
+        
         expenses.append(expense)
     }
 }

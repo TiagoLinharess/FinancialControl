@@ -55,7 +55,7 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
         }
         .alert(Constants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
             Button {
-                viewModel.presentAlert = false
+                viewModel.alertAction?()
             } label: {
                 Text(Constants.Commons.ok)
             }
@@ -68,8 +68,13 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
     
     private func submit() {
         do {
-            let expense = try viewModel.submit()
-//            router.push(.review())
+            try viewModel.submit()
+            viewModel.alertAction = {
+                viewModel.presentAlert = false
+                router.pop()
+            }
+            viewModel.alertMessage = Constants.AddWeeklyExpenseView.successMessage
+            viewModel.presentAlert = true
         } catch {
             handleError(error: error)
         }
@@ -80,6 +85,9 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
             viewModel.alertMessage = error.message
         } else {
             viewModel.alertMessage = error.localizedDescription
+        }
+        viewModel.alertAction = {
+            viewModel.presentAlert = false
         }
         viewModel.presentAlert = true
     }

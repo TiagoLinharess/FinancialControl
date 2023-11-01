@@ -19,7 +19,8 @@ protocol AddWeeklyExpenseViewModelProtocol: ObservableObject {
     var paymentModes: [String] { get }
     var presentAlert: Bool { get set }
     var alertMessage: String { get set }
-    func submit() throws -> WeeklyExpenseViewModel
+    var alertAction: (() -> Void)? { get set }
+    func submit() throws
 }
 
 // MARK: View Model
@@ -28,13 +29,14 @@ final class AddWeeklyExpenseViewModel: AddWeeklyExpenseViewModelProtocol {
 
     // MARK: Properties
     
-    var weekBudget: WeeklyBudgetViewModel
+    @Binding var weekBudget: WeeklyBudgetViewModel
     @Published var title: String = String()
     @Published var description: String = String()
     @Published var paymentMode: String = Constants.Commons.pickerSelect
     @Published var value: Double?
     @Published var presentAlert: Bool = false
     @Published var alertMessage: String = String()
+    var alertAction: (() -> Void)?
     
     var paymentModes: [String] {
         var options = [Constants.Commons.pickerSelect]
@@ -42,15 +44,18 @@ final class AddWeeklyExpenseViewModel: AddWeeklyExpenseViewModelProtocol {
         return options
     }
     
+    private let worker: WeeklyWorkerProtocol
+    
     // MARK: Init
     
-    init(weekBudget: WeeklyBudgetViewModel) {
-        self.weekBudget = weekBudget
+    init(weekBudget: Binding<WeeklyBudgetViewModel>, worker: WeeklyWorkerProtocol = WeeklyWorker()) {
+        self._weekBudget = weekBudget
+        self.worker = worker
     }
     
     // MARK: Methods
     
-    func submit() throws -> WeeklyExpenseViewModel {
+    func submit() throws {
         guard let value,
               value > 0,
               let paymentMode = PaymentMode(rawValue: paymentMode),
@@ -59,11 +64,21 @@ final class AddWeeklyExpenseViewModel: AddWeeklyExpenseViewModelProtocol {
             throw CoreError.customError(Constants.SingleWeekForm.fillAllFieldsCorrectly)
         }
         
-        return WeeklyExpenseViewModel(
+        let expense = WeeklyExpenseViewModel(
             title: title,
             description: description,
             paymentMode: paymentMode,
             value: value
         )
+        
+        let newWeekBudget = weekBudget
+        newWeekBudget.addExpense(expense: expense)
+        
+        do {
+            try worker.update(weekBudget: newWeekBudget)
+            weekBudget = newWeekBudget
+        } catch {
+            throw error
+        }
     }
 }

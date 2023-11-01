@@ -99,6 +99,7 @@ enum Constants {
         static let selectPaymentMode = "Select payment mode*"
         static let paymentMode = "Payment mode"
         static let value = "Value*"
+        static let successMessage: String = "Expense added with success"
     }
     
     // MARK: WeekBudgetView
@@ -115,5 +116,6 @@ enum Constants {
         static let weeklyDevelopKey: String = "DevWeeklyBudgets"
         static let weeklyProductionKey: String = "ProdWeeklyBudgets"
         static let developmentBundleID: String = "com.tiagolinharess.FinancialControl.dev"
+        static let weekDoesNotExist: String = "The item you are editing does not exist"
     }
 }

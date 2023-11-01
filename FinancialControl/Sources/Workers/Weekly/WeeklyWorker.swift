@@ -13,6 +13,7 @@ import SharpnezCore
 protocol WeeklyWorkerProtocol {
     func save(weekBudgets: [WeeklyBudgetViewModel]) throws
     func fetch() throws -> [WeeklyBudgetViewModel]
+    func update(weekBudget: WeeklyBudgetViewModel) throws
     func delete(at offsets: IndexSet) throws -> Int
 }
 
@@ -59,6 +60,29 @@ final class WeeklyWorker: WeeklyWorkerProtocol {
         }
     }
     
+    // MARK: Update
+    
+    func update(weekBudget: WeeklyBudgetViewModel) throws {
+        var currentWeekBudgets = try fetch()
+        
+        guard let index = currentWeekBudgets.firstIndex(where: { currentWeekBudget in
+            currentWeekBudget.id == weekBudget.id
+        }) else {
+            throw CoreError.customError(Constants.Worker.weekDoesNotExist)
+        }
+        
+        currentWeekBudgets[index] = weekBudget
+        
+        let response: WeeklyBudgetListResponse = .init(
+            weekBudgets: currentWeekBudgets.map { viewModel -> WeeklyBudgetResponse in
+                return .init(from: viewModel)
+            }
+        )
+        
+        let data = try JSONEncoder().encode(response)
+        UserDefaults.standard.set(data, forKey: getEnvironmentKey())
+    }
+    
     // MARK: Delete
     
     func delete(at offsets: IndexSet) throws -> Int {
@@ -96,7 +120,7 @@ private extension WeeklyWorker {
     func compareBudgets(currentBudgets: [WeeklyBudgetViewModel], newBudgets: [WeeklyBudgetViewModel]) -> Bool {
         currentBudgets.contains { currentBudget in
             newBudgets.contains { newBudget in
-                return currentBudget.id == newBudget.id
+                return currentBudget.week == newBudget.week
             }
         }
     }

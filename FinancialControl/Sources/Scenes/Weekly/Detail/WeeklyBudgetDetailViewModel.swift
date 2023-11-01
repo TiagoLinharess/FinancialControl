@@ -19,7 +19,7 @@ final class WeeklyBudgetDetailViewModel: WeeklyBudgetDetailViewModelProtocol {
 
     // MARK: Properties
     
-    var weekBudget: WeeklyBudgetViewModel
+    @Published var weekBudget: WeeklyBudgetViewModel
     
     init(weekBudget: WeeklyBudgetViewModel) {
         self.weekBudget = weekBudget

@@ -31,8 +31,6 @@ final class WeeklyDetailRouter: ObservableObject {
             AddWeeklyExpenseView(viewModel: AddWeeklyExpenseViewModel(weekBudget: budget), router: self)
         case .editBudget:
             Text("editBudget")
-        case .review:
-            Text("review")
         }
     }
 }
@@ -40,15 +38,13 @@ final class WeeklyDetailRouter: ObservableObject {
 // MARK: Navigation Option
 
 enum WeeklyDetailNavigationOption: Hashable {
-    case addExpense(WeeklyBudgetViewModel)
-    case editBudget(WeeklyBudgetViewModel)
-    case review(WeeklyBudgetViewModel)
+    case addExpense(Binding<WeeklyBudgetViewModel>)
+    case editBudget(Binding<WeeklyBudgetViewModel>)
     
     var intValue: Int {
         switch self {
         case .addExpense: return 0
         case .editBudget: return 1
-        case .review: return 2
         }
     }
     
