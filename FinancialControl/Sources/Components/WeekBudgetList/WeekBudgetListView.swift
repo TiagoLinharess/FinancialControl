@@ -13,14 +13,18 @@ struct WeekBudgetListView: View {
     
     @Binding var weeks: [WeeklyBudgetViewModel]
     let deleteDisabled: Bool
+    var detailDisabled: Bool
     let onDelete: ((IndexSet) -> Void)?
+    let onUpdate: (() -> Void)?
     
     // MARK: Init
     
-    init(weeks: Binding<[WeeklyBudgetViewModel]>, deleteDisabled: Bool, onDelete: ((IndexSet) -> Void)? = nil) {
+    init(weeks: Binding<[WeeklyBudgetViewModel]>, deleteDisabled: Bool, detailDisabled: Bool, onDelete: ((IndexSet) -> Void)? = nil, onUpdate: (() -> Void)?) {
         self._weeks = weeks
         self.deleteDisabled = deleteDisabled
+        self.detailDisabled = detailDisabled
         self.onDelete = onDelete
+        self.onUpdate = onUpdate
     }
     
     // MARK: Body
@@ -28,7 +32,7 @@ struct WeekBudgetListView: View {
     var body: some View {
         List {
             ForEach($weeks) { week in
-                WeekBudgetView(weekBudget: week)
+                WeekBudgetView(weekBudget: week, detailDisabled: detailDisabled, onUpdate: onUpdate)
             }
             .onDelete(perform: delete)
             .deleteDisabled(deleteDisabled)

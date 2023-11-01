@@ -69,7 +69,7 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
     private func submit() {
         do {
             let expense = try viewModel.submit()
-            router.push(.review(<#T##Binding<WeeklyBudgetViewModel>#>))
+//            router.push(.review())
         } catch {
             handleError(error: error)
         }

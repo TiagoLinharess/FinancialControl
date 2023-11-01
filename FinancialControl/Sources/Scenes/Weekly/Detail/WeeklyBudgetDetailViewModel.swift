@@ -19,9 +19,9 @@ final class WeeklyBudgetDetailViewModel: WeeklyBudgetDetailViewModelProtocol {
 
     // MARK: Properties
     
-    @Binding var weekBudget: WeeklyBudgetViewModel
+    var weekBudget: WeeklyBudgetViewModel
     
-    init(weekBudget: Binding<WeeklyBudgetViewModel>) {
-        self._weekBudget = weekBudget
+    init(weekBudget: WeeklyBudgetViewModel) {
+        self.weekBudget = weekBudget
     }
 }

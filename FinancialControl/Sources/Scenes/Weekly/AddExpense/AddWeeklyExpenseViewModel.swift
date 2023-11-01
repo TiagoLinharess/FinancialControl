@@ -28,7 +28,7 @@ final class AddWeeklyExpenseViewModel: AddWeeklyExpenseViewModelProtocol {
 
     // MARK: Properties
     
-    @Binding var weekBudget: WeeklyBudgetViewModel
+    var weekBudget: WeeklyBudgetViewModel
     @Published var title: String = String()
     @Published var description: String = String()
     @Published var paymentMode: String = Constants.Commons.pickerSelect
@@ -44,8 +44,8 @@ final class AddWeeklyExpenseViewModel: AddWeeklyExpenseViewModelProtocol {
     
     // MARK: Init
     
-    init(weekBudget: Binding<WeeklyBudgetViewModel>) {
-        self._weekBudget = weekBudget
+    init(weekBudget: WeeklyBudgetViewModel) {
+        self.weekBudget = weekBudget
     }
     
     // MARK: Methods

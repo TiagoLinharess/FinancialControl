@@ -40,9 +40,9 @@ final class WeeklyDetailRouter: ObservableObject {
 // MARK: Navigation Option
 
 enum WeeklyDetailNavigationOption: Hashable {
-    case addExpense(Binding<WeeklyBudgetViewModel>)
-    case editBudget(Binding<WeeklyBudgetViewModel>)
-    case review(Binding<WeeklyBudgetViewModel>)
+    case addExpense(WeeklyBudgetViewModel)
+    case editBudget(WeeklyBudgetViewModel)
+    case review(WeeklyBudgetViewModel)
     
     var intValue: Int {
         switch self {

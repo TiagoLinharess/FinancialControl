@@ -11,8 +11,10 @@ struct WeekBudgetView: View {
     
     // MARK: Properties
     
-    @State var presentDetail: Bool = false
     @Binding var weekBudget: WeeklyBudgetViewModel
+    @State private var presentDetail: Bool = false
+    var detailDisabled: Bool
+    let onUpdate: (() -> Void)?
     
     // MARK: Body
     
@@ -53,13 +55,13 @@ struct WeekBudgetView: View {
             }
             .contentShape(Rectangle())
             .onTapGesture {
-                presentDetail = true
+                presentDetail = !detailDisabled
             }
         }
         .sheet(isPresented: $presentDetail) {
-            weekBudget.currentBudget = 10
+            onUpdate?()
         } content: {
-            WeeklyBudgetDetailView(viewModel: WeeklyBudgetDetailViewModel(weekBudget: $weekBudget))
+            WeeklyBudgetDetailView(viewModel: WeeklyBudgetDetailViewModel(weekBudget: weekBudget))
                 .environment(\.weeklyDetailMode, $presentDetail)
         }
     }
