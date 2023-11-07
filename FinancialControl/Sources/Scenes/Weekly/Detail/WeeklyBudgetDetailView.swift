@@ -54,7 +54,11 @@ struct WeeklyBudgetDetailView<ViewModel: WeeklyBudgetDetailViewModelProtocol>: V
                             .foregroundColor(Color.budgetColor(total: viewModel.weekBudget.creditCardWeekLimit, current: viewModel.weekBudget.creditCardRemainingLimit))
                     }
                 }
-                Section {
+                Section(Constants.WeeklyBudgetDetailView.expenses) {
+                    ForEach(viewModel.weekBudget.expenses) { expense in
+                        WeekExpenseView(expense: expense)
+                    }
+                    .onDelete(perform: deleteExpense)
                     NavigationLink(value: WeeklyDetailNavigationOption.addExpense($viewModel.weekBudget)) {
                         Text(Constants.WeeklyBudgetDetailView.addExpense)
                     }
@@ -77,5 +81,9 @@ struct WeeklyBudgetDetailView<ViewModel: WeeklyBudgetDetailViewModelProtocol>: V
                 }
             }
         }
+    }
+    
+    func deleteExpense(at offsets: IndexSet) {
+        try? viewModel.deleteExpense(at: offsets)
     }
 }

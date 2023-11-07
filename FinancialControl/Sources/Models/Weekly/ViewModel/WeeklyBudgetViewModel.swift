@@ -75,6 +75,18 @@ class WeeklyBudgetViewModel: Identifiable {
             creditCardRemainingLimit -= expense.value
         }
         
-        expenses.append(expense)
+        expenses.insert(expense, at: .zero)
+    }
+    
+    func removeExpense(at offsets: IndexSet) {
+        let expensesToRemove = offsets.map { expenses[$0] }[.zero]
+        
+        if expensesToRemove.paymentMode == .debit {
+            currentBudget += expensesToRemove.value
+        } else {
+            creditCardRemainingLimit += expensesToRemove.value
+        }
+        
+        expenses.remove(atOffsets: offsets)
     }
 }

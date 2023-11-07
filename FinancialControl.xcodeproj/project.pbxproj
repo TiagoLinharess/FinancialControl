@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		58B80F386A2FE2FEB7A223BE /* Pods_FinancialControlTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF78198A5C97B7D8217F6F6 /* Pods_FinancialControlTests.framework */; };
+		ED07F4E52AF2C15300216ECB /* WeekExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07F4E42AF2C15300216ECB /* WeekExpenseView.swift */; };
 		ED76B38A2AEFF818002E8483 /* WeeklyBudgetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76B3892AEFF818002E8483 /* WeeklyBudgetDetailViewModel.swift */; };
 		ED76B38C2AF07409002E8483 /* WeeklyDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76B38B2AF07409002E8483 /* WeeklyDetailRouter.swift */; };
 		ED76B38F2AF0799A002E8483 /* AddWeeklyExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED76B38E2AF0799A002E8483 /* AddWeeklyExpenseView.swift */; };
@@ -71,6 +72,7 @@
 		8660836D6F21F1A7F8275CA8 /* Pods_FinancialControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9888B4BE44B6F4F9797EBBBE /* Pods-FinancialControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.release.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.release.xcconfig"; sourceTree = "<group>"; };
 		CAF78198A5C97B7D8217F6F6 /* Pods_FinancialControlTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControlTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED07F4E42AF2C15300216ECB /* WeekExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekExpenseView.swift; sourceTree = "<group>"; };
 		ED76B3892AEFF818002E8483 /* WeeklyBudgetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetDetailViewModel.swift; sourceTree = "<group>"; };
 		ED76B38B2AF07409002E8483 /* WeeklyDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailRouter.swift; sourceTree = "<group>"; };
 		ED76B38E2AF0799A002E8483 /* AddWeeklyExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseView.swift; sourceTree = "<group>"; };
@@ -160,6 +162,14 @@
 				4BE9786696B8D315FCBA23A6 /* Pods-FinancialControlTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		ED07F4E32AF2C13F00216ECB /* WeekExpense */ = {
+			isa = PBXGroup;
+			children = (
+				ED07F4E42AF2C15300216ECB /* WeekExpenseView.swift */,
+			);
+			path = WeekExpense;
 			sourceTree = "<group>";
 		};
 		ED76B38D2AF07948002E8483 /* AddExpense */ = {
@@ -486,6 +496,7 @@
 		EDF407692AA7999B004AC8A9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				ED07F4E32AF2C13F00216ECB /* WeekExpense */,
 				ED9F12322AEB355F004F58A5 /* Currency */,
 				EDF407882AAB4FC8004AC8A9 /* Empty */,
 				EDF407872AAA32F9004AC8A9 /* Error */,
@@ -819,6 +830,7 @@
 				EDF407462AA02106004AC8A9 /* FullMonthFormView.swift in Sources */,
 				ED9F12362AEB3FB6004F58A5 /* Double+Extensions.swift in Sources */,
 				EDF407252A9FAC39004AC8A9 /* WeeklyBudgetsHomeView.swift in Sources */,
+				ED07F4E52AF2C15300216ECB /* WeekExpenseView.swift in Sources */,
 				EDF4077D2AA7ACFD004AC8A9 /* WeeklyWorker.swift in Sources */,
 				EDF407792AA7AC0C004AC8A9 /* WeeklyExpenseResponse.swift in Sources */,
 				EDF407632AA37D6B004AC8A9 /* WeeklyReviewViewModel.swift in Sources */,

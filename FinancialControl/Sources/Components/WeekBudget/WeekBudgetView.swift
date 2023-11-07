@@ -58,7 +58,7 @@ struct WeekBudgetView: View {
                 presentDetail = !detailDisabled
             }
         }
-        .sheet(isPresented: $presentDetail) {
+        .fullScreenCover(isPresented: $presentDetail) {
             onUpdate?()
         } content: {
             WeeklyBudgetDetailView(viewModel: WeeklyBudgetDetailViewModel(weekBudget: weekBudget))
