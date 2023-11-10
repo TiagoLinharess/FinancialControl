@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9F78E3CF5E0074C157CFAD2 /* Pods_FinancialControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA95495461BDB8B9B3F2C315 /* Pods_FinancialControl.framework */; };
 		ED753C182AFE6176002B469D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C172AFE6176002B469D /* AppDelegate.swift */; };
 		ED753C1A2AFE6176002B469D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C192AFE6176002B469D /* SceneDelegate.swift */; };
 		ED753C1C2AFE6176002B469D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C1B2AFE6176002B469D /* ViewController.swift */; };
 		ED753C212AFE6177002B469D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED753C202AFE6177002B469D /* Assets.xcassets */; };
 		ED753C322AFE6222002B469D /* FinancialControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C312AFE6222002B469D /* FinancialControlTests.swift */; };
+		ED753C3E2AFE642E002B469D /* TabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C3D2AFE642E002B469D /* TabBarFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6F430FE0FE4A944CBEF8653 /* Pods-FinancialControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.release.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.release.xcconfig"; sourceTree = "<group>"; };
+		E06AACB87B243CA7C918DC65 /* Pods-FinancialControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.debug.xcconfig"; sourceTree = "<group>"; };
+		EA95495461BDB8B9B3F2C315 /* Pods_FinancialControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED753C142AFE6176002B469D /* FinancialControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED753C172AFE6176002B469D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED753C192AFE6176002B469D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +38,7 @@
 		ED753C252AFE6177002B469D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED753C2F2AFE6222002B469D /* FinancialControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinancialControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED753C312AFE6222002B469D /* FinancialControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialControlTests.swift; sourceTree = "<group>"; };
+		ED753C3D2AFE642E002B469D /* TabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F78E3CF5E0074C157CFAD2 /* Pods_FinancialControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,12 +60,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84449ACFAF3D656EC09445DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E06AACB87B243CA7C918DC65 /* Pods-FinancialControl.debug.xcconfig */,
+				B6F430FE0FE4A944CBEF8653 /* Pods-FinancialControl.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		A5D97DD6453E2D704546D890 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA95495461BDB8B9B3F2C315 /* Pods_FinancialControl.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED753C0B2AFE6176002B469D = {
 			isa = PBXGroup;
 			children = (
 				ED753C162AFE6176002B469D /* FinancialControl */,
 				ED753C302AFE6222002B469D /* FinancialControlTests */,
 				ED753C152AFE6176002B469D /* Products */,
+				A5D97DD6453E2D704546D890 /* Frameworks */,
+				84449ACFAF3D656EC09445DC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,11 +101,10 @@
 		ED753C162AFE6176002B469D /* FinancialControl */ = {
 			isa = PBXGroup;
 			children = (
-				ED753C172AFE6176002B469D /* AppDelegate.swift */,
-				ED753C192AFE6176002B469D /* SceneDelegate.swift */,
+				ED753C3A2AFE630A002B469D /* Sources */,
+				ED753C392AFE62C6002B469D /* Resources */,
+				ED753C382AFE62B9002B469D /* Core */,
 				ED753C1B2AFE6176002B469D /* ViewController.swift */,
-				ED753C202AFE6177002B469D /* Assets.xcassets */,
-				ED753C252AFE6177002B469D /* Info.plist */,
 			);
 			path = FinancialControl;
 			sourceTree = "<group>";
@@ -91,6 +117,48 @@
 			path = FinancialControlTests;
 			sourceTree = "<group>";
 		};
+		ED753C382AFE62B9002B469D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C192AFE6176002B469D /* SceneDelegate.swift */,
+				ED753C172AFE6176002B469D /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		ED753C392AFE62C6002B469D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C252AFE6177002B469D /* Info.plist */,
+				ED753C202AFE6177002B469D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ED753C3A2AFE630A002B469D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C3B2AFE63F3002B469D /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		ED753C3B2AFE63F3002B469D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C3C2AFE63FA002B469D /* TabBar */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		ED753C3C2AFE63FA002B469D /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C3D2AFE642E002B469D /* TabBarFactory.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,6 +166,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED753C282AFE6177002B469D /* Build configuration list for PBXNativeTarget "FinancialControl" */;
 			buildPhases = (
+				1F5A857785F5E1D7840B934C /* [CP] Check Pods Manifest.lock */,
 				ED753C102AFE6176002B469D /* Sources */,
 				ED753C112AFE6176002B469D /* Frameworks */,
 				ED753C122AFE6176002B469D /* Resources */,
@@ -185,6 +254,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F5A857785F5E1D7840B934C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinancialControl-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED753C102AFE6176002B469D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -192,6 +286,7 @@
 			files = (
 				ED753C1C2AFE6176002B469D /* ViewController.swift in Sources */,
 				ED753C182AFE6176002B469D /* AppDelegate.swift in Sources */,
+				ED753C3E2AFE642E002B469D /* TabBarFactory.swift in Sources */,
 				ED753C1A2AFE6176002B469D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +431,7 @@
 		};
 		ED753C292AFE6177002B469D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E06AACB87B243CA7C918DC65 /* Pods-FinancialControl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -343,7 +439,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9Y7M54NCKD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FinancialControl/Info.plist;
+				INFOPLIST_FILE = FinancialControl/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -363,6 +459,7 @@
 		};
 		ED753C2A2AFE6177002B469D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6F430FE0FE4A944CBEF8653 /* Pods-FinancialControl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -370,7 +467,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9Y7M54NCKD;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FinancialControl/Info.plist;
+				INFOPLIST_FILE = FinancialControl/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
