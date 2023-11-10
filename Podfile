@@ -10,12 +10,21 @@ def  sharpnez_pods
   pod 'SharpnezCore', '1.1.0'
 end
 
+def pods_for_tests
+  pod 'SnapshotTesting', '~> 1.9.0'
+end
+
 target 'FinancialControl' do
-    project 'FinancialControl/FinancialControl.project'
     sharpnez_pods
+    project 'FinancialControl/FinancialControl.project'
 end
 
 target 'WeeklyBudgets' do
-    project 'WeeklyBudgets/WeeklyBudgets.project'
     sharpnez_pods
+    project 'WeeklyBudgets/WeeklyBudgets.project'
+end
+
+target 'WeeklyBudgetsTests' do
+    pods_for_tests
+    project 'WeeklyBudgets/WeeklyBudgets.project'
 end

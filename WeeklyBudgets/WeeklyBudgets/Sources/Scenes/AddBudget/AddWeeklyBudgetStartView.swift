@@ -21,15 +21,6 @@ struct AddWeeklyBudgetStartView: View {
         NavigationStack(path: $router.path) {
             List {
                 Section {
-                    NavigationLink(value: WeeklyNavigationOption.fullMonthForm) {
-                        VStack(alignment: .leading, spacing: .smaller) {
-                            Text(Constants.AddWeeklyBudgetStart.allMonthTitle)
-                                .font(.title2)
-                            Text(Constants.AddWeeklyBudgetStart.allMonthDescription)
-                        }
-                    }
-                }
-                Section {
                     NavigationLink(value: WeeklyNavigationOption.singleWeekForm) {
                         VStack(alignment: .leading, spacing: .smaller) {
                             Text(Constants.AddWeeklyBudgetStart.singleWeekTitle)

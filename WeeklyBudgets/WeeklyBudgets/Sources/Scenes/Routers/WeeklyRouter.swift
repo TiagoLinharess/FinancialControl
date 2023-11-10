@@ -29,8 +29,6 @@ final class WeeklyRouter: ObservableObject {
         switch destination {
         case .singleWeekForm:
             SingleWeekFormView(viewModel: SingleWeekFormViewModel(), router: self)
-        case .fullMonthForm:
-            FullMonthFormView()
         case let .review(weeks):
             WeeklyReviewView(viewModel: WeeklyReviewViewModel(weeks: weeks))
         }
@@ -41,13 +39,11 @@ final class WeeklyRouter: ObservableObject {
 
 enum WeeklyNavigationOption: Hashable {
     case singleWeekForm
-    case fullMonthForm
     case review([WeeklyBudgetViewModel])
     
     var intValue: Int {
         switch self {
         case .singleWeekForm: return 0
-        case .fullMonthForm: return 1
         case .review: return 2
         }
     }

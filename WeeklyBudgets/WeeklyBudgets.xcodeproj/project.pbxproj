@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6083CAAE95B0DD3AD15C020 /* Pods_WeeklyBudgetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BE456B892A562790F3621B /* Pods_WeeklyBudgetsTests.framework */; };
 		B2CBBC7A3998F5403460573D /* Pods_WeeklyBudgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC7AC38D631D20DE88D2A31 /* Pods_WeeklyBudgets.framework */; };
+		ED13B7312AFE817A003161D7 /* WeeklyBudgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED753C872AFE7061002B469D /* WeeklyBudgets.framework */; };
+		ED13B7562AFEB958003161D7 /* WeeklyBudgetsHomeViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13B7372AFEB958003161D7 /* WeeklyBudgetsHomeViewModelMock.swift */; };
+		ED13B7572AFEB958003161D7 /* WeeklyBudgetViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13B73A2AFEB958003161D7 /* WeeklyBudgetViewModelMock.swift */; };
+		ED13B7582AFEB958003161D7 /* WeeklyWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13B73C2AFEB958003161D7 /* WeeklyWorkerMock.swift */; };
+		ED13B75A2AFEB958003161D7 /* WeeklyBudgetsHomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13B7452AFEB958003161D7 /* WeeklyBudgetsHomeViewTests.swift */; };
+		ED13B75B2AFEB958003161D7 /* WeeklyBudgetsHomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13B7462AFEB958003161D7 /* WeeklyBudgetsHomeViewModelTests.swift */; };
+		ED13B7602AFEB958003161D7 /* AddWeeklyBudgetStartViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13B74F2AFEB958003161D7 /* AddWeeklyBudgetStartViewTests.swift */; };
 		ED753C8C2AFE7061002B469D /* WeeklyBudgets.docc in Sources */ = {isa = PBXBuildFile; fileRef = ED753C8B2AFE7061002B469D /* WeeklyBudgets.docc */; };
 		ED753C8D2AFE7061002B469D /* WeeklyBudgets.h in Headers */ = {isa = PBXBuildFile; fileRef = ED753C8A2AFE7061002B469D /* WeeklyBudgets.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED753CD92AFE712E002B469D /* WeekBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C972AFE712E002B469D /* WeekBudgetView.swift */; };
@@ -40,17 +48,40 @@
 		ED753CF62AFE712E002B469D /* WeeklyReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CCC2AFE712E002B469D /* WeeklyReviewViewModel.swift */; };
 		ED753CF72AFE712E002B469D /* AddWeeklyExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CCE2AFE712E002B469D /* AddWeeklyExpenseView.swift */; };
 		ED753CF82AFE712E002B469D /* AddWeeklyExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CCF2AFE712E002B469D /* AddWeeklyExpenseViewModel.swift */; };
-		ED753CF92AFE712E002B469D /* FullMonthFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CD12AFE712E002B469D /* FullMonthFormView.swift */; };
 		ED753CFA2AFE712E002B469D /* AddWeeklyBudgetStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CD32AFE712E002B469D /* AddWeeklyBudgetStartView.swift */; };
 		ED753CFB2AFE712E002B469D /* WeeklyWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CD62AFE712E002B469D /* WeeklyWorker.swift */; };
 		ED753CFF2AFE726B002B469D /* WBFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CFE2AFE726B002B469D /* WBFacade.swift */; };
 		ED753D012AFE72B5002B469D /* WeeklyBudgetsHomeHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753D002AFE72B5002B469D /* WeeklyBudgetsHomeHostingController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		ED13B7322AFE8185003161D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED753C7E2AFE7061002B469D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED753C862AFE7061002B469D;
+			remoteInfo = WeeklyBudgets;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		30BE456B892A562790F3621B /* Pods_WeeklyBudgetsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeklyBudgetsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41240AFE558BBC3520BE066F /* Pods-WeeklyBudgets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyBudgets.release.xcconfig"; path = "Target Support Files/Pods-WeeklyBudgets/Pods-WeeklyBudgets.release.xcconfig"; sourceTree = "<group>"; };
+		7D349B24BC6A0C5775C3C785 /* Pods-WeeklyBudgetsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyBudgetsTests.release.xcconfig"; path = "Target Support Files/Pods-WeeklyBudgetsTests/Pods-WeeklyBudgetsTests.release.xcconfig"; sourceTree = "<group>"; };
 		8AC7AC38D631D20DE88D2A31 /* Pods_WeeklyBudgets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeklyBudgets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97F2CB64CAB69DFAAAF289A0 /* Pods-WeeklyBudgetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyBudgetsTests.debug.xcconfig"; path = "Target Support Files/Pods-WeeklyBudgetsTests/Pods-WeeklyBudgetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9CAB98D6243823ABB595C077 /* Pods-WeeklyBudgets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyBudgets.debug.xcconfig"; path = "Target Support Files/Pods-WeeklyBudgets/Pods-WeeklyBudgets.debug.xcconfig"; sourceTree = "<group>"; };
+		ED1077152AFE7DEC0062A6B1 /* WeeklyBudgetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeeklyBudgetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED13B7372AFEB958003161D7 /* WeeklyBudgetsHomeViewModelMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeViewModelMock.swift; sourceTree = "<group>"; };
+		ED13B73A2AFEB958003161D7 /* WeeklyBudgetViewModelMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetViewModelMock.swift; sourceTree = "<group>"; };
+		ED13B73C2AFEB958003161D7 /* WeeklyWorkerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyWorkerMock.swift; sourceTree = "<group>"; };
+		ED13B7452AFEB958003161D7 /* WeeklyBudgetsHomeViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeViewTests.swift; sourceTree = "<group>"; };
+		ED13B7462AFEB958003161D7 /* WeeklyBudgetsHomeViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeViewModelTests.swift; sourceTree = "<group>"; };
+		ED13B7492AFEB958003161D7 /* test_snapshot_empty.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_empty.1.png; sourceTree = "<group>"; };
+		ED13B74A2AFEB958003161D7 /* test_snapshot_with_error.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_with_error.1.png; sourceTree = "<group>"; };
+		ED13B74B2AFEB958003161D7 /* test_snapshot_with_budget.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_with_budget.1.png; sourceTree = "<group>"; };
+		ED13B74F2AFEB958003161D7 /* AddWeeklyBudgetStartViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeeklyBudgetStartViewTests.swift; sourceTree = "<group>"; };
+		ED13B7522AFEB958003161D7 /* test_snapshot.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot.1.png; sourceTree = "<group>"; };
 		ED753C872AFE7061002B469D /* WeeklyBudgets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeeklyBudgets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED753C8A2AFE7061002B469D /* WeeklyBudgets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeeklyBudgets.h; sourceTree = "<group>"; };
 		ED753C8B2AFE7061002B469D /* WeeklyBudgets.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = WeeklyBudgets.docc; sourceTree = "<group>"; };
@@ -84,7 +115,6 @@
 		ED753CCC2AFE712E002B469D /* WeeklyReviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyReviewViewModel.swift; sourceTree = "<group>"; };
 		ED753CCE2AFE712E002B469D /* AddWeeklyExpenseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseView.swift; sourceTree = "<group>"; };
 		ED753CCF2AFE712E002B469D /* AddWeeklyExpenseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseViewModel.swift; sourceTree = "<group>"; };
-		ED753CD12AFE712E002B469D /* FullMonthFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullMonthFormView.swift; sourceTree = "<group>"; };
 		ED753CD32AFE712E002B469D /* AddWeeklyBudgetStartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeeklyBudgetStartView.swift; sourceTree = "<group>"; };
 		ED753CD62AFE712E002B469D /* WeeklyWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyWorker.swift; sourceTree = "<group>"; };
 		ED753CFE2AFE726B002B469D /* WBFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBFacade.swift; sourceTree = "<group>"; };
@@ -92,6 +122,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ED1077122AFE7DEC0062A6B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED13B7312AFE817A003161D7 /* WeeklyBudgets.framework in Frameworks */,
+				A6083CAAE95B0DD3AD15C020 /* Pods_WeeklyBudgetsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED753C842AFE7061002B469D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -107,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				8AC7AC38D631D20DE88D2A31 /* Pods_WeeklyBudgets.framework */,
+				30BE456B892A562790F3621B /* Pods_WeeklyBudgetsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,15 +156,155 @@
 			children = (
 				9CAB98D6243823ABB595C077 /* Pods-WeeklyBudgets.debug.xcconfig */,
 				41240AFE558BBC3520BE066F /* Pods-WeeklyBudgets.release.xcconfig */,
+				97F2CB64CAB69DFAAAF289A0 /* Pods-WeeklyBudgetsTests.debug.xcconfig */,
+				7D349B24BC6A0C5775C3C785 /* Pods-WeeklyBudgetsTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		ED1077162AFE7DEC0062A6B1 /* WeeklyBudgetsTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B7342AFEB958003161D7 /* Mocks */,
+				ED13B73D2AFEB958003161D7 /* Tests */,
+			);
+			path = WeeklyBudgetsTests;
+			sourceTree = "<group>";
+		};
+		ED13B7342AFEB958003161D7 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B7352AFEB958003161D7 /* Scenes */,
+				ED13B7382AFEB958003161D7 /* Models */,
+				ED13B73B2AFEB958003161D7 /* Workers */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		ED13B7352AFEB958003161D7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B7362AFEB958003161D7 /* Weekly */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		ED13B7362AFEB958003161D7 /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B7372AFEB958003161D7 /* WeeklyBudgetsHomeViewModelMock.swift */,
+			);
+			path = Weekly;
+			sourceTree = "<group>";
+		};
+		ED13B7382AFEB958003161D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B7392AFEB958003161D7 /* Weekly */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED13B7392AFEB958003161D7 /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B73A2AFEB958003161D7 /* WeeklyBudgetViewModelMock.swift */,
+			);
+			path = Weekly;
+			sourceTree = "<group>";
+		};
+		ED13B73B2AFEB958003161D7 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B73C2AFEB958003161D7 /* WeeklyWorkerMock.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		ED13B73D2AFEB958003161D7 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B73E2AFEB958003161D7 /* Scenes */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		ED13B73E2AFEB958003161D7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B7432AFEB958003161D7 /* Weekly */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		ED13B7432AFEB958003161D7 /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B7442AFEB958003161D7 /* Home */,
+				ED13B74E2AFEB958003161D7 /* AddBudget */,
+			);
+			path = Weekly;
+			sourceTree = "<group>";
+		};
+		ED13B7442AFEB958003161D7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B7452AFEB958003161D7 /* WeeklyBudgetsHomeViewTests.swift */,
+				ED13B7462AFEB958003161D7 /* WeeklyBudgetsHomeViewModelTests.swift */,
+				ED13B7472AFEB958003161D7 /* __Snapshots__ */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		ED13B7472AFEB958003161D7 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B7482AFEB958003161D7 /* WeeklyBudgetsHomeViewTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		ED13B7482AFEB958003161D7 /* WeeklyBudgetsHomeViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B7492AFEB958003161D7 /* test_snapshot_empty.1.png */,
+				ED13B74A2AFEB958003161D7 /* test_snapshot_with_error.1.png */,
+				ED13B74B2AFEB958003161D7 /* test_snapshot_with_budget.1.png */,
+			);
+			path = WeeklyBudgetsHomeViewTests;
+			sourceTree = "<group>";
+		};
+		ED13B74E2AFEB958003161D7 /* AddBudget */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B74F2AFEB958003161D7 /* AddWeeklyBudgetStartViewTests.swift */,
+				ED13B7502AFEB958003161D7 /* __Snapshots__ */,
+			);
+			path = AddBudget;
+			sourceTree = "<group>";
+		};
+		ED13B7502AFEB958003161D7 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B7512AFEB958003161D7 /* AddWeeklyBudgetStartViewTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		ED13B7512AFEB958003161D7 /* AddWeeklyBudgetStartViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED13B7522AFEB958003161D7 /* test_snapshot.1.png */,
+			);
+			path = AddWeeklyBudgetStartViewTests;
 			sourceTree = "<group>";
 		};
 		ED753C7D2AFE7061002B469D = {
 			isa = PBXGroup;
 			children = (
 				ED753C892AFE7061002B469D /* WeeklyBudgets */,
+				ED1077162AFE7DEC0062A6B1 /* WeeklyBudgetsTests */,
 				ED753C882AFE7061002B469D /* Products */,
 				E9AA68FFD53DD12B63356A96 /* Pods */,
 				72B66BE0B9E3322C93AE821A /* Frameworks */,
@@ -135,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				ED753C872AFE7061002B469D /* WeeklyBudgets.framework */,
+				ED1077152AFE7DEC0062A6B1 /* WeeklyBudgetsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,7 +496,6 @@
 				ED753CC72AFE712E002B469D /* Detail */,
 				ED753CCA2AFE712E002B469D /* Review */,
 				ED753CCD2AFE712E002B469D /* AddExpense */,
-				ED753CD02AFE712E002B469D /* FullMonthForm */,
 				ED753CD22AFE712E002B469D /* AddBudget */,
 			);
 			path = Scenes;
@@ -383,14 +563,6 @@
 			path = AddExpense;
 			sourceTree = "<group>";
 		};
-		ED753CD02AFE712E002B469D /* FullMonthForm */ = {
-			isa = PBXGroup;
-			children = (
-				ED753CD12AFE712E002B469D /* FullMonthFormView.swift */,
-			);
-			path = FullMonthForm;
-			sourceTree = "<group>";
-		};
 		ED753CD22AFE712E002B469D /* AddBudget */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,6 +609,26 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		ED1077142AFE7DEC0062A6B1 /* WeeklyBudgetsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED10771C2AFE7DEC0062A6B1 /* Build configuration list for PBXNativeTarget "WeeklyBudgetsTests" */;
+			buildPhases = (
+				789E53C6855BD3B7F08B4C2F /* [CP] Check Pods Manifest.lock */,
+				ED1077112AFE7DEC0062A6B1 /* Sources */,
+				ED1077122AFE7DEC0062A6B1 /* Frameworks */,
+				ED1077132AFE7DEC0062A6B1 /* Resources */,
+				F1CC794290D7D2538FDA096B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED13B7332AFE8185003161D7 /* PBXTargetDependency */,
+			);
+			name = WeeklyBudgetsTests;
+			productName = WeeklyBudgetsTests;
+			productReference = ED1077152AFE7DEC0062A6B1 /* WeeklyBudgetsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ED753C862AFE7061002B469D /* WeeklyBudgets */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED753C902AFE7061002B469D /* Build configuration list for PBXNativeTarget "WeeklyBudgets" */;
@@ -463,8 +655,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					ED1077142AFE7DEC0062A6B1 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					ED753C862AFE7061002B469D = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -484,11 +680,19 @@
 			projectRoot = "";
 			targets = (
 				ED753C862AFE7061002B469D /* WeeklyBudgets */,
+				ED1077142AFE7DEC0062A6B1 /* WeeklyBudgetsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ED1077132AFE7DEC0062A6B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED753C852AFE7061002B469D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -521,9 +725,61 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		789E53C6855BD3B7F08B4C2F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeeklyBudgetsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1CC794290D7D2538FDA096B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeeklyBudgetsTests/Pods-WeeklyBudgetsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeeklyBudgetsTests/Pods-WeeklyBudgetsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeeklyBudgetsTests/Pods-WeeklyBudgetsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ED1077112AFE7DEC0062A6B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED13B75B2AFEB958003161D7 /* WeeklyBudgetsHomeViewModelTests.swift in Sources */,
+				ED13B7572AFEB958003161D7 /* WeeklyBudgetViewModelMock.swift in Sources */,
+				ED13B7582AFEB958003161D7 /* WeeklyWorkerMock.swift in Sources */,
+				ED13B7602AFEB958003161D7 /* AddWeeklyBudgetStartViewTests.swift in Sources */,
+				ED13B75A2AFEB958003161D7 /* WeeklyBudgetsHomeViewTests.swift in Sources */,
+				ED13B7562AFEB958003161D7 /* WeeklyBudgetsHomeViewModelMock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ED753C832AFE7061002B469D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -551,7 +807,6 @@
 				ED753CEF2AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift in Sources */,
 				ED753CE92AFE712E002B469D /* WeeklyExpenseResponse.swift in Sources */,
 				ED753CDB2AFE712E002B469D /* WeekExpenseView.swift in Sources */,
-				ED753CF92AFE712E002B469D /* FullMonthFormView.swift in Sources */,
 				ED753CF12AFE712E002B469D /* SingleWeekFormView.swift in Sources */,
 				ED753CDF2AFE712E002B469D /* PaymentMode.swift in Sources */,
 				ED753CE02AFE712E002B469D /* Constants.swift in Sources */,
@@ -569,7 +824,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		ED13B7332AFE8185003161D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED753C862AFE7061002B469D /* WeeklyBudgets */;
+			targetProxy = ED13B7322AFE8185003161D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		ED10771D2AFE7DEC0062A6B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97F2CB64CAB69DFAAAF289A0 /* Pods-WeeklyBudgetsTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9Y7M54NCKD;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.WeeklyBudgetsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED10771E2AFE7DEC0062A6B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D349B24BC6A0C5775C3C785 /* Pods-WeeklyBudgetsTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9Y7M54NCKD;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.WeeklyBudgetsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		ED753C8E2AFE7061002B469D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -762,6 +1061,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ED10771C2AFE7DEC0062A6B1 /* Build configuration list for PBXNativeTarget "WeeklyBudgetsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED10771D2AFE7DEC0062A6B1 /* Debug */,
+				ED10771E2AFE7DEC0062A6B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ED753C812AFE7061002B469D /* Build configuration list for PBXProject "WeeklyBudgets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
