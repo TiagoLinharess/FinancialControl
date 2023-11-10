@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WeeklyBudgets
 
 enum TabBarFactory {
     
@@ -14,11 +15,25 @@ enum TabBarFactory {
     static func configure() -> UITabBarController {
         let tabBar = UITabBarController()
         
-        let billsController = UINavigationController(rootViewController: ViewController())
-        billsController.tabBarItem = UITabBarItem(title: "Monthly", image: UIImage(systemName: "calendar"), selectedImage: UIImage(systemName: "calendar"))
+        let billsController = getMonthlyBillsController()
+        let budgetsController = getWeeklyBudgetsController()
         
-        tabBar.viewControllers = [billsController]
+        tabBar.viewControllers = [budgetsController, billsController]
         
         return tabBar
+    }
+    
+    static private func getMonthlyBillsController() -> UIViewController {
+        let billsController = UINavigationController(rootViewController: ViewController())
+        billsController.tabBarItem = UITabBarItem(title: "Bills", image: UIImage(systemName: "calendar"), selectedImage: UIImage(systemName: "calendar"))
+        
+        return billsController
+    }
+    
+    static private func getWeeklyBudgetsController() -> UIViewController {
+        let weeklyBudgetsController = WBFacade().start()
+        weeklyBudgetsController.tabBarItem = UITabBarItem(title: "Budgets", image: UIImage(systemName: "calendar.day.timeline.left"), selectedImage: UIImage(systemName: "calendar.day.timeline.left"))
+        
+        return weeklyBudgetsController
     }
 }

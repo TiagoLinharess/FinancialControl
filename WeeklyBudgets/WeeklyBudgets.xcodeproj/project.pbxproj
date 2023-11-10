@@ -1,0 +1,786 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B2CBBC7A3998F5403460573D /* Pods_WeeklyBudgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC7AC38D631D20DE88D2A31 /* Pods_WeeklyBudgets.framework */; };
+		ED753C8C2AFE7061002B469D /* WeeklyBudgets.docc in Sources */ = {isa = PBXBuildFile; fileRef = ED753C8B2AFE7061002B469D /* WeeklyBudgets.docc */; };
+		ED753C8D2AFE7061002B469D /* WeeklyBudgets.h in Headers */ = {isa = PBXBuildFile; fileRef = ED753C8A2AFE7061002B469D /* WeeklyBudgets.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED753CD92AFE712E002B469D /* WeekBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C972AFE712E002B469D /* WeekBudgetView.swift */; };
+		ED753CDA2AFE712E002B469D /* HomeEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C992AFE712E002B469D /* HomeEmptyView.swift */; };
+		ED753CDB2AFE712E002B469D /* WeekExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C9B2AFE712E002B469D /* WeekExpenseView.swift */; };
+		ED753CDC2AFE712E002B469D /* HomeErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C9D2AFE712E002B469D /* HomeErrorView.swift */; };
+		ED753CDD2AFE712E002B469D /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C9F2AFE712E002B469D /* CurrencyTextField.swift */; };
+		ED753CDE2AFE712E002B469D /* WeekBudgetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CA12AFE712E002B469D /* WeekBudgetListView.swift */; };
+		ED753CDF2AFE712E002B469D /* PaymentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CA42AFE712E002B469D /* PaymentMode.swift */; };
+		ED753CE02AFE712E002B469D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CA62AFE712E002B469D /* Constants.swift */; };
+		ED753CE12AFE712E002B469D /* WeeklyDetailModeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CA82AFE712E002B469D /* WeeklyDetailModeKey.swift */; };
+		ED753CE22AFE712E002B469D /* WeeklyModalModeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CA92AFE712E002B469D /* WeeklyModalModeKey.swift */; };
+		ED753CE32AFE712E002B469D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CAB2AFE712E002B469D /* Color+Extensions.swift */; };
+		ED753CE42AFE712E002B469D /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CAC2AFE712E002B469D /* Date+Extensions.swift */; };
+		ED753CE52AFE712E002B469D /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CAD2AFE712E002B469D /* Double+Extensions.swift */; };
+		ED753CE62AFE712E002B469D /* WeeklyExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CB02AFE712E002B469D /* WeeklyExpenseViewModel.swift */; };
+		ED753CE72AFE712E002B469D /* WeeklyBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CB12AFE712E002B469D /* WeeklyBudgetViewModel.swift */; };
+		ED753CE82AFE712E002B469D /* WeeklyBudgetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CB32AFE712E002B469D /* WeeklyBudgetResponse.swift */; };
+		ED753CE92AFE712E002B469D /* WeeklyExpenseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CB42AFE712E002B469D /* WeeklyExpenseResponse.swift */; };
+		ED753CEA2AFE712E002B469D /* WeeklyBudgetListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CB52AFE712E002B469D /* WeeklyBudgetListResponse.swift */; };
+		ED753CED2AFE712E002B469D /* WeeklyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CBE2AFE712E002B469D /* WeeklyRouter.swift */; };
+		ED753CEE2AFE712E002B469D /* WeeklyDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CBF2AFE712E002B469D /* WeeklyDetailRouter.swift */; };
+		ED753CEF2AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC12AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift */; };
+		ED753CF02AFE712E002B469D /* WeeklyBudgetsHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC22AFE712E002B469D /* WeeklyBudgetsHomeView.swift */; };
+		ED753CF12AFE712E002B469D /* SingleWeekFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC42AFE712E002B469D /* SingleWeekFormView.swift */; };
+		ED753CF22AFE712E002B469D /* SingleWeekFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC52AFE712E002B469D /* SingleWeekFormViewModel.swift */; };
+		ED753CF32AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC82AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift */; };
+		ED753CF42AFE712E002B469D /* WeeklyBudgetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC92AFE712E002B469D /* WeeklyBudgetDetailView.swift */; };
+		ED753CF52AFE712E002B469D /* WeeklyReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CCB2AFE712E002B469D /* WeeklyReviewView.swift */; };
+		ED753CF62AFE712E002B469D /* WeeklyReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CCC2AFE712E002B469D /* WeeklyReviewViewModel.swift */; };
+		ED753CF72AFE712E002B469D /* AddWeeklyExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CCE2AFE712E002B469D /* AddWeeklyExpenseView.swift */; };
+		ED753CF82AFE712E002B469D /* AddWeeklyExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CCF2AFE712E002B469D /* AddWeeklyExpenseViewModel.swift */; };
+		ED753CF92AFE712E002B469D /* FullMonthFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CD12AFE712E002B469D /* FullMonthFormView.swift */; };
+		ED753CFA2AFE712E002B469D /* AddWeeklyBudgetStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CD32AFE712E002B469D /* AddWeeklyBudgetStartView.swift */; };
+		ED753CFB2AFE712E002B469D /* WeeklyWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CD62AFE712E002B469D /* WeeklyWorker.swift */; };
+		ED753CFF2AFE726B002B469D /* WBFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CFE2AFE726B002B469D /* WBFacade.swift */; };
+		ED753D012AFE72B5002B469D /* WeeklyBudgetsHomeHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753D002AFE72B5002B469D /* WeeklyBudgetsHomeHostingController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		41240AFE558BBC3520BE066F /* Pods-WeeklyBudgets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyBudgets.release.xcconfig"; path = "Target Support Files/Pods-WeeklyBudgets/Pods-WeeklyBudgets.release.xcconfig"; sourceTree = "<group>"; };
+		8AC7AC38D631D20DE88D2A31 /* Pods_WeeklyBudgets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeklyBudgets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CAB98D6243823ABB595C077 /* Pods-WeeklyBudgets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyBudgets.debug.xcconfig"; path = "Target Support Files/Pods-WeeklyBudgets/Pods-WeeklyBudgets.debug.xcconfig"; sourceTree = "<group>"; };
+		ED753C872AFE7061002B469D /* WeeklyBudgets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeeklyBudgets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED753C8A2AFE7061002B469D /* WeeklyBudgets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeeklyBudgets.h; sourceTree = "<group>"; };
+		ED753C8B2AFE7061002B469D /* WeeklyBudgets.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = WeeklyBudgets.docc; sourceTree = "<group>"; };
+		ED753C972AFE712E002B469D /* WeekBudgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekBudgetView.swift; sourceTree = "<group>"; };
+		ED753C992AFE712E002B469D /* HomeEmptyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEmptyView.swift; sourceTree = "<group>"; };
+		ED753C9B2AFE712E002B469D /* WeekExpenseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekExpenseView.swift; sourceTree = "<group>"; };
+		ED753C9D2AFE712E002B469D /* HomeErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeErrorView.swift; sourceTree = "<group>"; };
+		ED753C9F2AFE712E002B469D /* CurrencyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
+		ED753CA12AFE712E002B469D /* WeekBudgetListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekBudgetListView.swift; sourceTree = "<group>"; };
+		ED753CA42AFE712E002B469D /* PaymentMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMode.swift; sourceTree = "<group>"; };
+		ED753CA62AFE712E002B469D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ED753CA82AFE712E002B469D /* WeeklyDetailModeKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyDetailModeKey.swift; sourceTree = "<group>"; };
+		ED753CA92AFE712E002B469D /* WeeklyModalModeKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyModalModeKey.swift; sourceTree = "<group>"; };
+		ED753CAB2AFE712E002B469D /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		ED753CAC2AFE712E002B469D /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		ED753CAD2AFE712E002B469D /* Double+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		ED753CB02AFE712E002B469D /* WeeklyExpenseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyExpenseViewModel.swift; sourceTree = "<group>"; };
+		ED753CB12AFE712E002B469D /* WeeklyBudgetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetViewModel.swift; sourceTree = "<group>"; };
+		ED753CB32AFE712E002B469D /* WeeklyBudgetResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetResponse.swift; sourceTree = "<group>"; };
+		ED753CB42AFE712E002B469D /* WeeklyExpenseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyExpenseResponse.swift; sourceTree = "<group>"; };
+		ED753CB52AFE712E002B469D /* WeeklyBudgetListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetListResponse.swift; sourceTree = "<group>"; };
+		ED753CBE2AFE712E002B469D /* WeeklyRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyRouter.swift; sourceTree = "<group>"; };
+		ED753CBF2AFE712E002B469D /* WeeklyDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyDetailRouter.swift; sourceTree = "<group>"; };
+		ED753CC12AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeViewModel.swift; sourceTree = "<group>"; };
+		ED753CC22AFE712E002B469D /* WeeklyBudgetsHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeView.swift; sourceTree = "<group>"; };
+		ED753CC42AFE712E002B469D /* SingleWeekFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleWeekFormView.swift; sourceTree = "<group>"; };
+		ED753CC52AFE712E002B469D /* SingleWeekFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleWeekFormViewModel.swift; sourceTree = "<group>"; };
+		ED753CC82AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetDetailViewModel.swift; sourceTree = "<group>"; };
+		ED753CC92AFE712E002B469D /* WeeklyBudgetDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetDetailView.swift; sourceTree = "<group>"; };
+		ED753CCB2AFE712E002B469D /* WeeklyReviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyReviewView.swift; sourceTree = "<group>"; };
+		ED753CCC2AFE712E002B469D /* WeeklyReviewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyReviewViewModel.swift; sourceTree = "<group>"; };
+		ED753CCE2AFE712E002B469D /* AddWeeklyExpenseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseView.swift; sourceTree = "<group>"; };
+		ED753CCF2AFE712E002B469D /* AddWeeklyExpenseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseViewModel.swift; sourceTree = "<group>"; };
+		ED753CD12AFE712E002B469D /* FullMonthFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullMonthFormView.swift; sourceTree = "<group>"; };
+		ED753CD32AFE712E002B469D /* AddWeeklyBudgetStartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeeklyBudgetStartView.swift; sourceTree = "<group>"; };
+		ED753CD62AFE712E002B469D /* WeeklyWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyWorker.swift; sourceTree = "<group>"; };
+		ED753CFE2AFE726B002B469D /* WBFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBFacade.swift; sourceTree = "<group>"; };
+		ED753D002AFE72B5002B469D /* WeeklyBudgetsHomeHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeHostingController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED753C842AFE7061002B469D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2CBBC7A3998F5403460573D /* Pods_WeeklyBudgets.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		72B66BE0B9E3322C93AE821A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8AC7AC38D631D20DE88D2A31 /* Pods_WeeklyBudgets.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9AA68FFD53DD12B63356A96 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9CAB98D6243823ABB595C077 /* Pods-WeeklyBudgets.debug.xcconfig */,
+				41240AFE558BBC3520BE066F /* Pods-WeeklyBudgets.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		ED753C7D2AFE7061002B469D = {
+			isa = PBXGroup;
+			children = (
+				ED753C892AFE7061002B469D /* WeeklyBudgets */,
+				ED753C882AFE7061002B469D /* Products */,
+				E9AA68FFD53DD12B63356A96 /* Pods */,
+				72B66BE0B9E3322C93AE821A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ED753C882AFE7061002B469D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C872AFE7061002B469D /* WeeklyBudgets.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED753C892AFE7061002B469D /* WeeklyBudgets */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C942AFE70AA002B469D /* Sources */,
+				ED753C932AFE709C002B469D /* Resources */,
+			);
+			path = WeeklyBudgets;
+			sourceTree = "<group>";
+		};
+		ED753C932AFE709C002B469D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C8A2AFE7061002B469D /* WeeklyBudgets.h */,
+				ED753C8B2AFE7061002B469D /* WeeklyBudgets.docc */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ED753C942AFE70AA002B469D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CFD2AFE721A002B469D /* Facade */,
+				ED753C952AFE712E002B469D /* Components */,
+				ED753CA22AFE712E002B469D /* Models */,
+				ED753CB62AFE712E002B469D /* Scenes */,
+				ED753CD42AFE712E002B469D /* Workers */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		ED753C952AFE712E002B469D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C962AFE712E002B469D /* WeekBudget */,
+				ED753C982AFE712E002B469D /* Empty */,
+				ED753C9A2AFE712E002B469D /* WeekExpense */,
+				ED753C9C2AFE712E002B469D /* Error */,
+				ED753C9E2AFE712E002B469D /* Currency */,
+				ED753CA02AFE712E002B469D /* WeekBudgetList */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		ED753C962AFE712E002B469D /* WeekBudget */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C972AFE712E002B469D /* WeekBudgetView.swift */,
+			);
+			path = WeekBudget;
+			sourceTree = "<group>";
+		};
+		ED753C982AFE712E002B469D /* Empty */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C992AFE712E002B469D /* HomeEmptyView.swift */,
+			);
+			path = Empty;
+			sourceTree = "<group>";
+		};
+		ED753C9A2AFE712E002B469D /* WeekExpense */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C9B2AFE712E002B469D /* WeekExpenseView.swift */,
+			);
+			path = WeekExpense;
+			sourceTree = "<group>";
+		};
+		ED753C9C2AFE712E002B469D /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C9D2AFE712E002B469D /* HomeErrorView.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		ED753C9E2AFE712E002B469D /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				ED753C9F2AFE712E002B469D /* CurrencyTextField.swift */,
+			);
+			path = Currency;
+			sourceTree = "<group>";
+		};
+		ED753CA02AFE712E002B469D /* WeekBudgetList */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CA12AFE712E002B469D /* WeekBudgetListView.swift */,
+			);
+			path = WeekBudgetList;
+			sourceTree = "<group>";
+		};
+		ED753CA22AFE712E002B469D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CA32AFE712E002B469D /* Commons */,
+				ED753CA52AFE712E002B469D /* Constants */,
+				ED753CA72AFE712E002B469D /* EnvironmentKeys */,
+				ED753CAA2AFE712E002B469D /* Extensions */,
+				ED753CAE2AFE712E002B469D /* Weekly */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED753CA32AFE712E002B469D /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CA42AFE712E002B469D /* PaymentMode.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		ED753CA52AFE712E002B469D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CA62AFE712E002B469D /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		ED753CA72AFE712E002B469D /* EnvironmentKeys */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CA82AFE712E002B469D /* WeeklyDetailModeKey.swift */,
+				ED753CA92AFE712E002B469D /* WeeklyModalModeKey.swift */,
+			);
+			path = EnvironmentKeys;
+			sourceTree = "<group>";
+		};
+		ED753CAA2AFE712E002B469D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CAB2AFE712E002B469D /* Color+Extensions.swift */,
+				ED753CAC2AFE712E002B469D /* Date+Extensions.swift */,
+				ED753CAD2AFE712E002B469D /* Double+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED753CAE2AFE712E002B469D /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CAF2AFE712E002B469D /* ViewModel */,
+				ED753CB22AFE712E002B469D /* Response */,
+			);
+			path = Weekly;
+			sourceTree = "<group>";
+		};
+		ED753CAF2AFE712E002B469D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CB02AFE712E002B469D /* WeeklyExpenseViewModel.swift */,
+				ED753CB12AFE712E002B469D /* WeeklyBudgetViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED753CB22AFE712E002B469D /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CB32AFE712E002B469D /* WeeklyBudgetResponse.swift */,
+				ED753CB42AFE712E002B469D /* WeeklyExpenseResponse.swift */,
+				ED753CB52AFE712E002B469D /* WeeklyBudgetListResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		ED753CB62AFE712E002B469D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CBD2AFE712E002B469D /* Routers */,
+				ED753CC02AFE712E002B469D /* Home */,
+				ED753CC32AFE712E002B469D /* SingleWeekForm */,
+				ED753CC62AFE712E002B469D /* Edit */,
+				ED753CC72AFE712E002B469D /* Detail */,
+				ED753CCA2AFE712E002B469D /* Review */,
+				ED753CCD2AFE712E002B469D /* AddExpense */,
+				ED753CD02AFE712E002B469D /* FullMonthForm */,
+				ED753CD22AFE712E002B469D /* AddBudget */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		ED753CBD2AFE712E002B469D /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CBE2AFE712E002B469D /* WeeklyRouter.swift */,
+				ED753CBF2AFE712E002B469D /* WeeklyDetailRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		ED753CC02AFE712E002B469D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ED753D002AFE72B5002B469D /* WeeklyBudgetsHomeHostingController.swift */,
+				ED753CC12AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift */,
+				ED753CC22AFE712E002B469D /* WeeklyBudgetsHomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		ED753CC32AFE712E002B469D /* SingleWeekForm */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CC42AFE712E002B469D /* SingleWeekFormView.swift */,
+				ED753CC52AFE712E002B469D /* SingleWeekFormViewModel.swift */,
+			);
+			path = SingleWeekForm;
+			sourceTree = "<group>";
+		};
+		ED753CC62AFE712E002B469D /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		ED753CC72AFE712E002B469D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CC82AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift */,
+				ED753CC92AFE712E002B469D /* WeeklyBudgetDetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		ED753CCA2AFE712E002B469D /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CCB2AFE712E002B469D /* WeeklyReviewView.swift */,
+				ED753CCC2AFE712E002B469D /* WeeklyReviewViewModel.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		ED753CCD2AFE712E002B469D /* AddExpense */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CCE2AFE712E002B469D /* AddWeeklyExpenseView.swift */,
+				ED753CCF2AFE712E002B469D /* AddWeeklyExpenseViewModel.swift */,
+			);
+			path = AddExpense;
+			sourceTree = "<group>";
+		};
+		ED753CD02AFE712E002B469D /* FullMonthForm */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CD12AFE712E002B469D /* FullMonthFormView.swift */,
+			);
+			path = FullMonthForm;
+			sourceTree = "<group>";
+		};
+		ED753CD22AFE712E002B469D /* AddBudget */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CD32AFE712E002B469D /* AddWeeklyBudgetStartView.swift */,
+			);
+			path = AddBudget;
+			sourceTree = "<group>";
+		};
+		ED753CD42AFE712E002B469D /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CD52AFE712E002B469D /* Weekly */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		ED753CD52AFE712E002B469D /* Weekly */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CD62AFE712E002B469D /* WeeklyWorker.swift */,
+			);
+			path = Weekly;
+			sourceTree = "<group>";
+		};
+		ED753CFD2AFE721A002B469D /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				ED753CFE2AFE726B002B469D /* WBFacade.swift */,
+			);
+			path = Facade;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		ED753C822AFE7061002B469D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED753C8D2AFE7061002B469D /* WeeklyBudgets.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		ED753C862AFE7061002B469D /* WeeklyBudgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED753C902AFE7061002B469D /* Build configuration list for PBXNativeTarget "WeeklyBudgets" */;
+			buildPhases = (
+				0FCE5AAD30E7C22914ACD60A /* [CP] Check Pods Manifest.lock */,
+				ED753C822AFE7061002B469D /* Headers */,
+				ED753C832AFE7061002B469D /* Sources */,
+				ED753C842AFE7061002B469D /* Frameworks */,
+				ED753C852AFE7061002B469D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeeklyBudgets;
+			productName = WeeklyBudgets;
+			productReference = ED753C872AFE7061002B469D /* WeeklyBudgets.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED753C7E2AFE7061002B469D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					ED753C862AFE7061002B469D = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = ED753C812AFE7061002B469D /* Build configuration list for PBXProject "WeeklyBudgets" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED753C7D2AFE7061002B469D;
+			productRefGroup = ED753C882AFE7061002B469D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED753C862AFE7061002B469D /* WeeklyBudgets */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED753C852AFE7061002B469D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FCE5AAD30E7C22914ACD60A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeeklyBudgets-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED753C832AFE7061002B469D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED753CE12AFE712E002B469D /* WeeklyDetailModeKey.swift in Sources */,
+				ED753CF62AFE712E002B469D /* WeeklyReviewViewModel.swift in Sources */,
+				ED753CF72AFE712E002B469D /* AddWeeklyExpenseView.swift in Sources */,
+				ED753CDE2AFE712E002B469D /* WeekBudgetListView.swift in Sources */,
+				ED753CE52AFE712E002B469D /* Double+Extensions.swift in Sources */,
+				ED753CEE2AFE712E002B469D /* WeeklyDetailRouter.swift in Sources */,
+				ED753D012AFE72B5002B469D /* WeeklyBudgetsHomeHostingController.swift in Sources */,
+				ED753CDD2AFE712E002B469D /* CurrencyTextField.swift in Sources */,
+				ED753CE42AFE712E002B469D /* Date+Extensions.swift in Sources */,
+				ED753CDC2AFE712E002B469D /* HomeErrorView.swift in Sources */,
+				ED753CF02AFE712E002B469D /* WeeklyBudgetsHomeView.swift in Sources */,
+				ED753CFB2AFE712E002B469D /* WeeklyWorker.swift in Sources */,
+				ED753C8C2AFE7061002B469D /* WeeklyBudgets.docc in Sources */,
+				ED753CE62AFE712E002B469D /* WeeklyExpenseViewModel.swift in Sources */,
+				ED753CDA2AFE712E002B469D /* HomeEmptyView.swift in Sources */,
+				ED753CF42AFE712E002B469D /* WeeklyBudgetDetailView.swift in Sources */,
+				ED753CFF2AFE726B002B469D /* WBFacade.swift in Sources */,
+				ED753CD92AFE712E002B469D /* WeekBudgetView.swift in Sources */,
+				ED753CF52AFE712E002B469D /* WeeklyReviewView.swift in Sources */,
+				ED753CEA2AFE712E002B469D /* WeeklyBudgetListResponse.swift in Sources */,
+				ED753CEF2AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift in Sources */,
+				ED753CE92AFE712E002B469D /* WeeklyExpenseResponse.swift in Sources */,
+				ED753CDB2AFE712E002B469D /* WeekExpenseView.swift in Sources */,
+				ED753CF92AFE712E002B469D /* FullMonthFormView.swift in Sources */,
+				ED753CF12AFE712E002B469D /* SingleWeekFormView.swift in Sources */,
+				ED753CDF2AFE712E002B469D /* PaymentMode.swift in Sources */,
+				ED753CE02AFE712E002B469D /* Constants.swift in Sources */,
+				ED753CE82AFE712E002B469D /* WeeklyBudgetResponse.swift in Sources */,
+				ED753CF22AFE712E002B469D /* SingleWeekFormViewModel.swift in Sources */,
+				ED753CE22AFE712E002B469D /* WeeklyModalModeKey.swift in Sources */,
+				ED753CE72AFE712E002B469D /* WeeklyBudgetViewModel.swift in Sources */,
+				ED753CFA2AFE712E002B469D /* AddWeeklyBudgetStartView.swift in Sources */,
+				ED753CF32AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift in Sources */,
+				ED753CE32AFE712E002B469D /* Color+Extensions.swift in Sources */,
+				ED753CED2AFE712E002B469D /* WeeklyRouter.swift in Sources */,
+				ED753CF82AFE712E002B469D /* AddWeeklyExpenseViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		ED753C8E2AFE7061002B469D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED753C8F2AFE7061002B469D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ED753C912AFE7061002B469D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CAB98D6243823ABB595C077 /* Pods-WeeklyBudgets.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9Y7M54NCKD;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.WeeklyBudgets;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED753C922AFE7061002B469D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41240AFE558BBC3520BE066F /* Pods-WeeklyBudgets.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 9Y7M54NCKD;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.WeeklyBudgets;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED753C812AFE7061002B469D /* Build configuration list for PBXProject "WeeklyBudgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED753C8E2AFE7061002B469D /* Debug */,
+				ED753C8F2AFE7061002B469D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED753C902AFE7061002B469D /* Build configuration list for PBXNativeTarget "WeeklyBudgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED753C912AFE7061002B469D /* Debug */,
+				ED753C922AFE7061002B469D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED753C7E2AFE7061002B469D /* Project object */;
+}

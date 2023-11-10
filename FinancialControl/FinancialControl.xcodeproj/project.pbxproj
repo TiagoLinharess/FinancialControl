@@ -14,6 +14,8 @@
 		ED753C212AFE6177002B469D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED753C202AFE6177002B469D /* Assets.xcassets */; };
 		ED753C322AFE6222002B469D /* FinancialControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C312AFE6222002B469D /* FinancialControlTests.swift */; };
 		ED753C3E2AFE642E002B469D /* TabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C3D2AFE642E002B469D /* TabBarFactory.swift */; };
+		ED753D032AFE751A002B469D /* WeeklyBudgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED753D022AFE751A002B469D /* WeeklyBudgets.framework */; };
+		ED753D042AFE751A002B469D /* WeeklyBudgets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED753D022AFE751A002B469D /* WeeklyBudgets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +27,20 @@
 			remoteInfo = FinancialControl;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED753D052AFE751A002B469D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ED753D042AFE751A002B469D /* WeeklyBudgets.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B6F430FE0FE4A944CBEF8653 /* Pods-FinancialControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.release.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.release.xcconfig"; sourceTree = "<group>"; };
@@ -39,6 +55,7 @@
 		ED753C2F2AFE6222002B469D /* FinancialControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinancialControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED753C312AFE6222002B469D /* FinancialControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialControlTests.swift; sourceTree = "<group>"; };
 		ED753C3D2AFE642E002B469D /* TabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFactory.swift; sourceTree = "<group>"; };
+		ED753D022AFE751A002B469D /* WeeklyBudgets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeeklyBudgets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED753D032AFE751A002B469D /* WeeklyBudgets.framework in Frameworks */,
 				E9F78E3CF5E0074C157CFAD2 /* Pods_FinancialControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +91,7 @@
 		A5D97DD6453E2D704546D890 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED753D022AFE751A002B469D /* WeeklyBudgets.framework */,
 				EA95495461BDB8B9B3F2C315 /* Pods_FinancialControl.framework */,
 			);
 			name = Frameworks;
@@ -170,6 +189,8 @@
 				ED753C102AFE6176002B469D /* Sources */,
 				ED753C112AFE6176002B469D /* Frameworks */,
 				ED753C122AFE6176002B469D /* Resources */,
+				ED753D052AFE751A002B469D /* Embed Frameworks */,
+				10DDA43C967C14572DFE3FAE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +276,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		10DDA43C967C14572DFE3FAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinancialControl/Pods-FinancialControl-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinancialControl/Pods-FinancialControl-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinancialControl/Pods-FinancialControl-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1F5A857785F5E1D7840B934C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,7 +385,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -410,7 +448,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
