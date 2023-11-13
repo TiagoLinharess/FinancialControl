@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 31/08/23.
 //
 
+import Core
 import SharpnezCore
 import SharpnezDesignSystem
 import SwiftUI

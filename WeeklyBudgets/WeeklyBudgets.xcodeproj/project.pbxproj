@@ -11,6 +11,8 @@
 		B2CBBC7A3998F5403460573D /* Pods_WeeklyBudgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC7AC38D631D20DE88D2A31 /* Pods_WeeklyBudgets.framework */; };
 		ED11D2872B025EFB00514D7C /* Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2862B025EFB00514D7C /* Provider.framework */; };
 		ED11D2882B025EFB00514D7C /* Provider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2862B025EFB00514D7C /* Provider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED11D2D32B02B02300514D7C /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2D22B02B02300514D7C /* Core.framework */; };
+		ED11D2D42B02B02300514D7C /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2D22B02B02300514D7C /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED13B7312AFE817A003161D7 /* WeeklyBudgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED753C872AFE7061002B469D /* WeeklyBudgets.framework */; };
 		ED13B7562AFEB958003161D7 /* WeeklyBudgetsHomeViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13B7372AFEB958003161D7 /* WeeklyBudgetsHomeViewModelMock.swift */; };
 		ED13B7572AFEB958003161D7 /* WeeklyBudgetViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13B73A2AFEB958003161D7 /* WeeklyBudgetViewModelMock.swift */; };
@@ -33,7 +35,6 @@
 		ED753CE22AFE712E002B469D /* WeeklyModalModeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CA92AFE712E002B469D /* WeeklyModalModeKey.swift */; };
 		ED753CE32AFE712E002B469D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CAB2AFE712E002B469D /* Color+Extensions.swift */; };
 		ED753CE42AFE712E002B469D /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CAC2AFE712E002B469D /* Date+Extensions.swift */; };
-		ED753CE52AFE712E002B469D /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CAD2AFE712E002B469D /* Double+Extensions.swift */; };
 		ED753CE62AFE712E002B469D /* WeeklyExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CB02AFE712E002B469D /* WeeklyExpenseViewModel.swift */; };
 		ED753CE72AFE712E002B469D /* WeeklyBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CB12AFE712E002B469D /* WeeklyBudgetViewModel.swift */; };
 		ED753CED2AFE712E002B469D /* WeeklyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CBE2AFE712E002B469D /* WeeklyRouter.swift */; };
@@ -72,6 +73,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				ED11D2882B025EFB00514D7C /* Provider.framework in Embed Frameworks */,
+				ED11D2D42B02B02300514D7C /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +90,7 @@
 		ED1077152AFE7DEC0062A6B1 /* WeeklyBudgetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeeklyBudgetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D2822B0250ED00514D7C /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D2862B025EFB00514D7C /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED11D2D22B02B02300514D7C /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED13B7372AFEB958003161D7 /* WeeklyBudgetsHomeViewModelMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeViewModelMock.swift; sourceTree = "<group>"; };
 		ED13B73A2AFEB958003161D7 /* WeeklyBudgetViewModelMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetViewModelMock.swift; sourceTree = "<group>"; };
 		ED13B73C2AFEB958003161D7 /* WeeklyWorkerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyWorkerMock.swift; sourceTree = "<group>"; };
@@ -114,7 +117,6 @@
 		ED753CA92AFE712E002B469D /* WeeklyModalModeKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyModalModeKey.swift; sourceTree = "<group>"; };
 		ED753CAB2AFE712E002B469D /* Color+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		ED753CAC2AFE712E002B469D /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		ED753CAD2AFE712E002B469D /* Double+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		ED753CB02AFE712E002B469D /* WeeklyExpenseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyExpenseViewModel.swift; sourceTree = "<group>"; };
 		ED753CB12AFE712E002B469D /* WeeklyBudgetViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetViewModel.swift; sourceTree = "<group>"; };
 		ED753CBE2AFE712E002B469D /* WeeklyRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyRouter.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2CBBC7A3998F5403460573D /* Pods_WeeklyBudgets.framework in Frameworks */,
+				ED11D2D32B02B02300514D7C /* Core.framework in Frameworks */,
 				ED11D2872B025EFB00514D7C /* Provider.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +163,7 @@
 		72B66BE0B9E3322C93AE821A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED11D2D22B02B02300514D7C /* Core.framework */,
 				ED11D2862B025EFB00514D7C /* Provider.framework */,
 				ED11D2822B0250ED00514D7C /* Provider.framework */,
 				8AC7AC38D631D20DE88D2A31 /* Pods_WeeklyBudgets.framework */,
@@ -487,7 +491,6 @@
 			children = (
 				ED753CAB2AFE712E002B469D /* Color+Extensions.swift */,
 				ED753CAC2AFE712E002B469D /* Date+Extensions.swift */,
-				ED753CAD2AFE712E002B469D /* Double+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -805,7 +808,6 @@
 				ED753CF62AFE712E002B469D /* WeeklyReviewViewModel.swift in Sources */,
 				ED753CF72AFE712E002B469D /* AddWeeklyExpenseView.swift in Sources */,
 				ED753CDE2AFE712E002B469D /* WeekBudgetListView.swift in Sources */,
-				ED753CE52AFE712E002B469D /* Double+Extensions.swift in Sources */,
 				ED753CEE2AFE712E002B469D /* WeeklyDetailRouter.swift in Sources */,
 				ED753D012AFE72B5002B469D /* WeeklyBudgetsHomeHostingController.swift in Sources */,
 				ED753CDD2AFE712E002B469D /* CurrencyTextField.swift in Sources */,

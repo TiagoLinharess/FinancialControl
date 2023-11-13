@@ -9,16 +9,6 @@ import SwiftUI
 
 extension Date {
     
-    // MARK: Locale Format
-    
-    var localeFormat: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.locale = Locale.current
-        
-        return dateFormatter.string(from: self)
-    }
-    
     // MARK: First Week Day Of Month
     
     func firstWeekDayOfMonth(with weekday: Int) -> [Date] {

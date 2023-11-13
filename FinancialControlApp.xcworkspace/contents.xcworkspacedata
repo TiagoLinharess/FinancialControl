@@ -5,6 +5,9 @@
       location = "group:FinancialControl/FinancialControl.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Core/Core.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Provider/Provider.xcodeproj">
    </FileRef>
    <FileRef
