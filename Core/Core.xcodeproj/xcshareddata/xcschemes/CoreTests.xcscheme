@@ -18,10 +18,10 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ED1077142AFE7DEC0062A6B1"
-               BuildableName = "WeeklyBudgetsTests.xctest"
-               BlueprintName = "WeeklyBudgetsTests"
-               ReferencedContainer = "container:WeeklyBudgets.xcodeproj">
+               BlueprintIdentifier = "ED11D2B92B02AE4D00514D7C"
+               BuildableName = "CoreTests.xctest"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:Core.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
