@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		E9F78E3CF5E0074C157CFAD2 /* Pods_FinancialControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA95495461BDB8B9B3F2C315 /* Pods_FinancialControl.framework */; };
+		ED11D2E02B02BA7700514D7C /* TabBarFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2DF2B02BA7700514D7C /* TabBarFactoryTests.swift */; };
 		ED753C182AFE6176002B469D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C172AFE6176002B469D /* AppDelegate.swift */; };
 		ED753C1A2AFE6176002B469D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C192AFE6176002B469D /* SceneDelegate.swift */; };
 		ED753C1C2AFE6176002B469D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C1B2AFE6176002B469D /* ViewController.swift */; };
 		ED753C212AFE6177002B469D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED753C202AFE6177002B469D /* Assets.xcassets */; };
-		ED753C322AFE6222002B469D /* FinancialControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C312AFE6222002B469D /* FinancialControlTests.swift */; };
 		ED753C3E2AFE642E002B469D /* TabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C3D2AFE642E002B469D /* TabBarFactory.swift */; };
 		ED753D032AFE751A002B469D /* WeeklyBudgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED753D022AFE751A002B469D /* WeeklyBudgets.framework */; };
 		ED753D042AFE751A002B469D /* WeeklyBudgets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED753D022AFE751A002B469D /* WeeklyBudgets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -46,6 +46,7 @@
 		B6F430FE0FE4A944CBEF8653 /* Pods-FinancialControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.release.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.release.xcconfig"; sourceTree = "<group>"; };
 		E06AACB87B243CA7C918DC65 /* Pods-FinancialControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.debug.xcconfig"; sourceTree = "<group>"; };
 		EA95495461BDB8B9B3F2C315 /* Pods_FinancialControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED11D2DF2B02BA7700514D7C /* TabBarFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFactoryTests.swift; sourceTree = "<group>"; };
 		ED753C142AFE6176002B469D /* FinancialControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED753C172AFE6176002B469D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED753C192AFE6176002B469D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		ED753C202AFE6177002B469D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED753C252AFE6177002B469D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED753C2F2AFE6222002B469D /* FinancialControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinancialControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED753C312AFE6222002B469D /* FinancialControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialControlTests.swift; sourceTree = "<group>"; };
 		ED753C3D2AFE642E002B469D /* TabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFactory.swift; sourceTree = "<group>"; };
 		ED753D022AFE751A002B469D /* WeeklyBudgets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeeklyBudgets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -97,6 +97,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED11D2DC2B02BA4900514D7C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				ED11D2DD2B02BA5900514D7C /* Scenes */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		ED11D2DD2B02BA5900514D7C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ED11D2DE2B02BA5E00514D7C /* TabBar */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		ED11D2DE2B02BA5E00514D7C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				ED11D2DF2B02BA7700514D7C /* TabBarFactoryTests.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		ED753C0B2AFE6176002B469D = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +154,7 @@
 		ED753C302AFE6222002B469D /* FinancialControlTests */ = {
 			isa = PBXGroup;
 			children = (
-				ED753C312AFE6222002B469D /* FinancialControlTests.swift */,
+				ED11D2DC2B02BA4900514D7C /* Tests */,
 			);
 			path = FinancialControlTests;
 			sourceTree = "<group>";
@@ -234,6 +258,7 @@
 					};
 					ED753C2E2AFE6222002B469D = {
 						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 						TestTargetID = ED753C132AFE6176002B469D;
 					};
 				};
@@ -333,7 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED753C322AFE6222002B469D /* FinancialControlTests.swift in Sources */,
+				ED11D2E02B02BA7700514D7C /* TabBarFactoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +552,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9Y7M54NCKD;
@@ -535,6 +561,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.FinancialControlTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinancialControl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FinancialControl";
@@ -545,6 +572,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9Y7M54NCKD;
