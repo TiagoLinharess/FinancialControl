@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		ED13B7722AFEBB65003161D7 /* MonthlyBills.docc in Sources */ = {isa = PBXBuildFile; fileRef = ED13B7712AFEBB65003161D7 /* MonthlyBills.docc */; };
 		ED13B7732AFEBB65003161D7 /* MonthlyBills.h in Headers */ = {isa = PBXBuildFile; fileRef = ED13B7702AFEBB65003161D7 /* MonthlyBills.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED13B7822AFEC159003161D7 /* MonthlyBillsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13B7812AFEC159003161D7 /* MonthlyBillsHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED13B76D2AFEBB65003161D7 /* MonthlyBills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MonthlyBills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED13B7702AFEBB65003161D7 /* MonthlyBills.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthlyBills.h; sourceTree = "<group>"; };
 		ED13B7712AFEBB65003161D7 /* MonthlyBills.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = MonthlyBills.docc; sourceTree = "<group>"; };
+		ED13B7812AFEC159003161D7 /* MonthlyBillsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		ED13B77C2AFEBBBC003161D7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				ED13B7812AFEC159003161D7 /* MonthlyBillsHomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED13B7822AFEC159003161D7 /* MonthlyBillsHomeViewController.swift in Sources */,
 				ED13B7722AFEBB65003161D7 /* MonthlyBills.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,7 +213,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -275,7 +279,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

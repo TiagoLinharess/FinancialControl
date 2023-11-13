@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct WeeklyBudgetListResponse: Codable {
+public struct WeeklyBudgetListResponse: Codable {
     let weekBudgets: [WeeklyBudgetResponse]
 }

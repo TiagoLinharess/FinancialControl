@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 30/08/23.
 //
 
+import Provider
 import Foundation
 
 class WeeklyExpenseViewModel: Identifiable, Codable {
@@ -36,7 +37,7 @@ class WeeklyExpenseViewModel: Identifiable, Codable {
         self.date = response.date
         self.title = response.title
         self.description = response.description
-        self.paymentMode = response.paymentMode
+        self.paymentMode = .init(rawValue: response.paymentMode.rawValue) ?? .debit
         self.value = response.value
     }
 }

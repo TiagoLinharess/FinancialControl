@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Provider
 
 class WeeklyBudgetViewModel: Identifiable {
     

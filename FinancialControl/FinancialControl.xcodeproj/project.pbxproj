@@ -122,7 +122,6 @@
 			children = (
 				ED753C3A2AFE630A002B469D /* Sources */,
 				ED753C392AFE62C6002B469D /* Resources */,
-				ED753C382AFE62B9002B469D /* Core */,
 				ED753C1B2AFE6176002B469D /* ViewController.swift */,
 			);
 			path = FinancialControl;
@@ -157,6 +156,7 @@
 		ED753C3A2AFE630A002B469D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				ED753C382AFE62B9002B469D /* Core */,
 				ED753C3B2AFE63F3002B469D /* Scenes */,
 			);
 			path = Sources;

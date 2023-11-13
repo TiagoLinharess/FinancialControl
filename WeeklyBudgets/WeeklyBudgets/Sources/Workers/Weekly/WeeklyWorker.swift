@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Provider
 import SharpnezCore
 
 // MARK: Protocol
@@ -21,107 +22,87 @@ protocol WeeklyWorkerProtocol {
 
 final class WeeklyWorker: WeeklyWorkerProtocol {
     
+    private let repository: WeeklyBudgetsRepositoryProtocol
+    
+    init(repository: WeeklyBudgetsRepositoryProtocol = WeeklyBudgetsRepository()) {
+        self.repository = repository
+    }
+    
     // MARK: Save
     
     func save(weekBudgets: [WeeklyBudgetViewModel]) throws {
-        var allWeekBudgets = weekBudgets
-        let currentWeekBudgets = try fetch()
-        
-        if compareBudgets(currentBudgets: currentWeekBudgets, newBudgets: weekBudgets) {
-            throw CoreError.customError(Constants.WeeklyReview.duplicatedBudget)
-        }
-        
-        allWeekBudgets.append(contentsOf: currentWeekBudgets)
-        
-        let response: WeeklyBudgetListResponse = .init(
-            weekBudgets: allWeekBudgets.map { viewModel -> WeeklyBudgetResponse in
-                return .init(from: viewModel)
-            }
-        )
-        
-        let data = try JSONEncoder().encode(response)
-        UserDefaults.standard.set(data, forKey: getEnvironmentKey())
+        try repository.create(weekBudgets: viewModelBudgetListToResponseList(viewModels: weekBudgets))
     }
     
     // MARK: Fetch
     
     func fetch() throws -> [WeeklyBudgetViewModel] {
-        guard let data = UserDefaults.standard.data(forKey: getEnvironmentKey()) else { return [] }
-        
-        do {
-            let response = try JSONDecoder().decode(WeeklyBudgetListResponse.self, from: data)
-            let weeks = response.weekBudgets.map { response -> WeeklyBudgetViewModel in
-                return .init(from: response)
-            }
-            
-            return weeks
-        } catch {
-            throw CoreError.parseError
-        }
+        let responseList = try repository.read()
+        return responseBudgetListToViewModelList(responseList: responseList)
     }
     
     // MARK: Update
     
     func update(weekBudget: WeeklyBudgetViewModel) throws {
-        var currentWeekBudgets = try fetch()
-        
-        guard let index = currentWeekBudgets.firstIndex(where: { currentWeekBudget in
-            currentWeekBudget.id == weekBudget.id
-        }) else {
-            throw CoreError.customError(Constants.Worker.weekDoesNotExist)
-        }
-        
-        currentWeekBudgets[index] = weekBudget
-        
-        let response: WeeklyBudgetListResponse = .init(
-            weekBudgets: currentWeekBudgets.map { viewModel -> WeeklyBudgetResponse in
-                return .init(from: viewModel)
-            }
-        )
-        
-        let data = try JSONEncoder().encode(response)
-        UserDefaults.standard.set(data, forKey: getEnvironmentKey())
+        try repository.update(weekBudget: viewModelBudgetToResponse(viewModel: weekBudget))
     }
     
     // MARK: Delete
     
     func delete(at offsets: IndexSet) throws -> Int {
-        do {
-            var allWeekBudgets =  try fetch()
-            allWeekBudgets.remove(atOffsets: offsets)
-            
-            let response: WeeklyBudgetListResponse = .init(
-                weekBudgets: allWeekBudgets.map { viewModel -> WeeklyBudgetResponse in
-                    return .init(from: viewModel)
-                }
-            )
-            
-            let data = try JSONEncoder().encode(response)
-            UserDefaults.standard.set(data, forKey: getEnvironmentKey())
-            return allWeekBudgets.count
-        } catch {
-            throw CoreError.parseError
+        return try repository.delete(at: offsets)
+    }
+}
+
+// MARK: Private Methods
+
+private extension WeeklyWorker {
+    
+    // MARK: View Model To Response
+    
+    func viewModelBudgetListToResponseList(viewModels: [WeeklyBudgetViewModel]) -> [WeeklyBudgetResponse] {
+        return viewModels.map { viewModel -> WeeklyBudgetResponse in
+            return viewModelBudgetToResponse(viewModel: viewModel)
         }
+    }
+    
+    func viewModelBudgetToResponse(viewModel: WeeklyBudgetViewModel) -> WeeklyBudgetResponse {
+        return WeeklyBudgetResponse(
+            id: viewModel.id,
+            week: viewModel.week,
+            originalBudget: viewModel.originalBudget,
+            currentBudget: viewModel.currentBudget,
+            creditCardWeekLimit: viewModel.creditCardWeekLimit,
+            creditCardRemainingLimit: viewModel.creditCardRemainingLimit,
+            expenses: viewModelExpenseListToResponseList(viewModels: viewModel.expenses)
+        )
+    }
+    
+    func viewModelExpenseListToResponseList(viewModels: [WeeklyExpenseViewModel]) -> [WeeklyExpenseResponse] {
+        return viewModels.map { viewModel -> WeeklyExpenseResponse in
+            return viewModelExpenseToResponse(viewModel: viewModel)
+        }
+    }
+    
+    func viewModelExpenseToResponse(viewModel: WeeklyExpenseViewModel) -> WeeklyExpenseResponse {
+        return WeeklyExpenseResponse(
+            id: viewModel.id,
+            date: viewModel.date,
+            title: viewModel.title,
+            description: viewModel.description,
+            paymentMode: .init(rawValue: viewModel.paymentMode.rawValue) ?? .debit,
+            value: viewModel.value
+        )
     }
 }
 
 private extension WeeklyWorker {
     
-    // MARK: Private Methods
+    // MARK: Response To View Model
     
-    func getEnvironmentKey() -> String {
-        if let bundleID = Bundle.main.bundleIdentifier, bundleID == Constants.Worker.developmentBundleID {
-            return Constants.Worker.weeklyDevelopKey
-        }
-        
-        return Constants.Worker.weeklyProductionKey
-    }
-    
-    func compareBudgets(currentBudgets: [WeeklyBudgetViewModel], newBudgets: [WeeklyBudgetViewModel]) -> Bool {
-        currentBudgets.contains { currentBudget in
-            newBudgets.contains { newBudget in
-                return currentBudget.week == newBudget.week
-            }
+    func responseBudgetListToViewModelList(responseList: [WeeklyBudgetResponse]) -> [WeeklyBudgetViewModel] {
+        return responseList.map { response -> WeeklyBudgetViewModel in
+            return WeeklyBudgetViewModel(from: response)
         }
     }
 }

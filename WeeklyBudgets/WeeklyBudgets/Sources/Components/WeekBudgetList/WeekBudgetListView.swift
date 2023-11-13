@@ -19,7 +19,7 @@ struct WeekBudgetListView: View {
     
     // MARK: Init
     
-    init(weeks: Binding<[WeeklyBudgetViewModel]>, deleteDisabled: Bool, detailDisabled: Bool, onDelete: ((IndexSet) -> Void)? = nil, onUpdate: (() -> Void)?) {
+    init(weeks: Binding<[WeeklyBudgetViewModel]>, deleteDisabled: Bool, detailDisabled: Bool, onDelete: ((IndexSet) -> Void)? = nil, onUpdate: (() -> Void)? = nil) {
         self._weeks = weeks
         self.deleteDisabled = deleteDisabled
         self.detailDisabled = detailDisabled
