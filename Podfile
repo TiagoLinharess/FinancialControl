@@ -18,7 +18,7 @@ def  sharpnez_pods
 end
 
 def pods_for_tests
-  pod 'SnapshotTesting', '~> 1.9.0'
+  pod 'SnapshotTesting', '~> 1.9'
 end
 
 ## Cores Targets

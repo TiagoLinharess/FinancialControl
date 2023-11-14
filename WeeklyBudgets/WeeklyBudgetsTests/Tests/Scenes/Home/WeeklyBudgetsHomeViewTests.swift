@@ -41,4 +41,16 @@ final class WeeklyBudgetsHomeViewTests: XCTestCase {
         vc.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         assertSnapshot(matching: vc, as: .image)
     }
+    
+    func test_snapshot_with_addBudgetFlowPresented() throws {
+        let viewModel = WeeklyBudgetsHomeViewModelMock(
+            viewStatus: .error("Error"),
+            budgets: [],
+            addBudgetFlowPresented: true
+        )
+        let sut = WeeklyBudgetsHomeView(viewModel: viewModel)
+        let vc = UINavigationController(rootViewController: UIHostingController(rootView: sut))
+        
+        assertSnapshot(matching: vc, as: .image)
+    }
 }
