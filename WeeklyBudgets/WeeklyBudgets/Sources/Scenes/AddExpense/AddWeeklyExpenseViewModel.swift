@@ -15,7 +15,7 @@ protocol AddWeeklyExpenseViewModelProtocol: ObservableObject {
     var title: String { get set }
     var description: String { get set }
     var paymentMode: String { get set }
-    var value: Double? { get set }
+    var value: String { get set }
     var paymentModes: [String] { get }
     var presentAlert: Bool { get set }
     var alertMessage: String { get set }
@@ -33,7 +33,7 @@ final class AddWeeklyExpenseViewModel: AddWeeklyExpenseViewModelProtocol {
     @Published var title: String = String()
     @Published var description: String = String()
     @Published var paymentMode: String = Constants.Commons.pickerSelect
-    @Published var value: Double?
+    @Published var value: String = String()
     @Published var presentAlert: Bool = false
     @Published var alertMessage: String = String()
     var alertAction: (() -> Void)?
@@ -56,7 +56,7 @@ final class AddWeeklyExpenseViewModel: AddWeeklyExpenseViewModelProtocol {
     // MARK: Methods
     
     func submit() throws {
-        guard let value,
+        guard let value = value.currencyToDouble,
               value > 0,
               let paymentMode = PaymentMode(rawValue: paymentMode),
               !title.isEmpty

@@ -14,7 +14,5 @@ class ViewController: UIViewController {
         print("aaaaaa")
         view.backgroundColor = .systemBackground
     }
-
-
 }
 

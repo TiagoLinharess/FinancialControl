@@ -5,7 +5,7 @@
 //  Created by Tiago Linhares on 30/08/23.
 //
 
-import Combine
+import CurrencyText
 import SharpnezCore
 import SharpnezDesignSystem
 import SwiftUI
@@ -16,6 +16,7 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     
     @StateObject private var viewModel: ViewModel
     @StateObject private var router: WeeklyRouter
+    @State private var currencyFormatter = CurrencyFormatter.internationalDefault
     
     // MARK: Init
     
@@ -37,10 +38,20 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
                 .pickerStyle(.navigationLink)
             }
             Section(header: Text(Constants.SingleWeekForm.budgetPlaceholder)) {
-                CurrencyTextField(Constants.Commons.currencyPlaceholder, value: $viewModel.weekBudget)
+                CurrencyTextField(configuration: .init(
+                    placeholder: Constants.Commons.currencyPlaceholder,
+                    text: $viewModel.weekBudget,
+                    formatter: $currencyFormatter,
+                    textFieldConfiguration: nil
+                ))
             }
             Section(header: Text(Constants.SingleWeekForm.creditCardPlaceholder)) {
-                CurrencyTextField(Constants.Commons.currencyPlaceholder, value: $viewModel.creditCardLimit)
+                CurrencyTextField(configuration: .init(
+                    placeholder: Constants.Commons.currencyPlaceholder,
+                    text: $viewModel.creditCardLimit,
+                    formatter: $currencyFormatter,
+                    textFieldConfiguration: nil
+                ))
             }
         }
         .navigationTitle(Constants.SingleWeekForm.title)

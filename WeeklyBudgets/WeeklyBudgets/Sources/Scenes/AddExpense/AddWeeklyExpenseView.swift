@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 30/10/23.
 //
 
+import CurrencyText
 import SharpnezCore
 import SwiftUI
 
@@ -14,6 +15,7 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
     
     @StateObject private var viewModel: ViewModel
     @StateObject private var router: WeeklyDetailRouter
+    @State private var currencyFormatter = CurrencyFormatter.internationalDefault
     
     // MARK: Init
     
@@ -41,7 +43,12 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
                 .pickerStyle(.navigationLink)
             }
             Section(Constants.AddWeeklyExpenseView.value) {
-                CurrencyTextField(Constants.Commons.currencyPlaceholder, value: $viewModel.value)
+                CurrencyTextField(configuration: .init(
+                    placeholder: Constants.Commons.currencyPlaceholder,
+                    text: $viewModel.value,
+                    formatter: $currencyFormatter,
+                    textFieldConfiguration: nil
+                ))
             }
         }
         .navigationTitle(Constants.WeeklyBudgetDetailView.addExpense)

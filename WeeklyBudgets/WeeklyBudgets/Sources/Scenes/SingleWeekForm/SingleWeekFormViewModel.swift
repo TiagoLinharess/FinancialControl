@@ -15,9 +15,9 @@ import SwiftUI
 protocol SingleWeekFormViewModelProtocol: AnyObject, ObservableObject {
     var presentAlert: Bool { get set }
     var alertMessage: String { get set }
-    var creditCardLimit: Double? { get set }
+    var creditCardLimit: String { get set }
     var weekSelected: String { get set }
-    var weekBudget: Double? { get set }
+    var weekBudget: String { get set }
     var weeks: [String] { get }
     func submit() throws -> WeeklyBudgetViewModel
 }
@@ -28,9 +28,9 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
     
     // MARK: Properties
     
-    @Published var creditCardLimit: Double? = nil
+    @Published var creditCardLimit: String = String()
     @Published var weekSelected: String = Constants.Commons.pickerSelect
-    @Published var weekBudget: Double? = nil
+    @Published var weekBudget: String = String()
     @Published var presentAlert: Bool = false
     @Published var alertMessage: String = String()
     
@@ -58,7 +58,7 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
             throw CoreError.customError(Constants.SingleWeekForm.selectWeekError)
         }
         
-        guard let weekBudget, let creditCardLimit else {
+        guard let weekBudget = weekBudget.currencyToDouble, let creditCardLimit = creditCardLimit.currencyToDouble else {
             throw CoreError.customError(Constants.SingleWeekForm.fillAllFieldsCorrectly)
         }
         

@@ -21,6 +21,10 @@ def pods_for_tests
   pod 'SnapshotTesting', '~> 1.9'
 end
 
+def currency_pod
+  pod 'CurrencyText', :git => 'https://github.com/TiagoLinharess/CurrencyText.git'
+end
+
 ## Cores Targets
 target 'Provider' do
     sharpnez_core_pod
@@ -29,12 +33,14 @@ end
 
 ## Main Target
 target 'FinancialControl' do
+    currency_pod
     sharpnez_pods
     project 'FinancialControl/FinancialControl.project'
 end
 
 ## Modules Targets
 target 'WeeklyBudgets' do
+    currency_pod
     sharpnez_pods
     project 'WeeklyBudgets/WeeklyBudgets.project'
 end

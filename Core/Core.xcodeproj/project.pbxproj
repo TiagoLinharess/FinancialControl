@@ -14,6 +14,8 @@
 		ED11D2D12B02AF6C00514D7C /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2D02B02AF6C00514D7C /* Date+Extensions.swift */; };
 		ED11D2D92B02B23300514D7C /* Double+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2D82B02B23300514D7C /* Double+ExtensionsTests.swift */; };
 		ED11D2DB2B02B59500514D7C /* Date+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2DA2B02B59500514D7C /* Date+ExtensionsTests.swift */; };
+		ED3718342B07A37100477C6C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3718332B07A37100477C6C /* String+Extensions.swift */; };
+		ED3718362B07AA5400477C6C /* String+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3718352B07AA5400477C6C /* String+ExtensionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		ED11D2D02B02AF6C00514D7C /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		ED11D2D82B02B23300514D7C /* Double+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+ExtensionsTests.swift"; sourceTree = "<group>"; };
 		ED11D2DA2B02B59500514D7C /* Date+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		ED3718332B07A37100477C6C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		ED3718352B07AA5400477C6C /* String+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtensionsTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 			children = (
 				ED11D2CE2B02AF2900514D7C /* Double+Extensions.swift */,
 				ED11D2D02B02AF6C00514D7C /* Date+Extensions.swift */,
+				ED3718332B07A37100477C6C /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			children = (
 				ED11D2D82B02B23300514D7C /* Double+ExtensionsTests.swift */,
 				ED11D2DA2B02B59500514D7C /* Date+ExtensionsTests.swift */,
+				ED3718352B07AA5400477C6C /* String+ExtensionsTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED3718342B07A37100477C6C /* String+Extensions.swift in Sources */,
 				ED11D2CF2B02AF2900514D7C /* Double+Extensions.swift in Sources */,
 				ED11D2B52B02AE4D00514D7C /* Core.docc in Sources */,
 				ED11D2D12B02AF6C00514D7C /* Date+Extensions.swift in Sources */,
@@ -272,6 +279,7 @@
 			files = (
 				ED11D2D92B02B23300514D7C /* Double+ExtensionsTests.swift in Sources */,
 				ED11D2DB2B02B59500514D7C /* Date+ExtensionsTests.swift in Sources */,
+				ED3718362B07AA5400477C6C /* String+ExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
