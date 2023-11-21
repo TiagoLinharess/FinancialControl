@@ -10,47 +10,49 @@ import SwiftUI
 import XCTest
 
 final class WeeklyBudgetsHomeViewTests: XCTestCase {
+    
+    var sut: WeeklyBudgetsHomeView<WeeklyBudgetsHomeViewModelMock>!
+    var mock: WeeklyBudgetsHomeViewModelMock!
+    
+    override func setUpWithError() throws {
+        mock = .init(
+            viewStatus: .empty,
+            budgets: [],
+            addBudgetFlowPresented: false
+        )
+        sut = .init(viewModel: mock)
+    }
+    
+    override func tearDownWithError() throws {
+        mock = nil
+        sut = nil
+    }
 
     func test_snapshot_empty() throws {
-        let sut = WeeklyBudgetsHomeView(viewModel: WeeklyBudgetsHomeViewModel())
-        let vc = UIHostingController(rootView: sut)
-        vc.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
     
     func test_snapshot_with_budget() throws {
-        let viewModel = WeeklyBudgetsHomeViewModelMock(
-            viewStatus: .success,
-            budgets: WeeklyBudgetViewModelMock.getThree(),
-            addBudgetFlowPresented: false
-        )
-        let sut = WeeklyBudgetsHomeView(viewModel: viewModel)
-        let vc = UIHostingController(rootView: sut)
-        vc.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        mock.viewStatus = .success
+        mock.budgets = WeeklyBudgetViewModelMock.getThree()
+        
+        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
     
     func test_snapshot_with_error() throws {
-        let viewModel = WeeklyBudgetsHomeViewModelMock(
-            viewStatus: .error("Error"),
-            budgets: [],
-            addBudgetFlowPresented: false
-        )
-        let sut = WeeklyBudgetsHomeView(viewModel: viewModel)
-        let vc = UIHostingController(rootView: sut)
-        vc.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        mock.viewStatus = .error("Error")
+        
+        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
     
     func test_snapshot_with_addBudgetFlowPresented() throws {
-        let viewModel = WeeklyBudgetsHomeViewModelMock(
-            viewStatus: .error("Error"),
-            budgets: [],
-            addBudgetFlowPresented: true
-        )
-        let sut = WeeklyBudgetsHomeView(viewModel: viewModel)
-        let vc = UINavigationController(rootViewController: UIHostingController(rootView: sut))
+        mock.viewStatus = .error("Error")
+        mock.addBudgetFlowPresented = true
         
+        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
 }

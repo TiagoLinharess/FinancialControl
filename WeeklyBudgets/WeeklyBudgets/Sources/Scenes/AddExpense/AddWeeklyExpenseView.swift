@@ -73,7 +73,7 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
     
     // MARK: Methods
     
-    private func submit() {
+    func submit() {
         do {
             try viewModel.submit()
             viewModel.alertAction = {

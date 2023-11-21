@@ -35,7 +35,7 @@ public final class WeeklyBudgetsRepository: WeeklyBudgetsRepositoryProtocol {
         
         allWeekBudgets.append(contentsOf: currentWeekBudgets)
         
-        let response: WeeklyBudgetListResponse = WeeklyBudgetListResponse(weekBudgets: weekBudgets)
+        let response: WeeklyBudgetListResponse = WeeklyBudgetListResponse(weekBudgets: allWeekBudgets)
         
         let data = try JSONEncoder().encode(response)
         UserDefaults.standard.set(data, forKey: key)

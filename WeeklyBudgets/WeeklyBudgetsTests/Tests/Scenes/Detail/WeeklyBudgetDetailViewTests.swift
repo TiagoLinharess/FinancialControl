@@ -11,21 +11,29 @@ import SwiftUI
 import XCTest
 
 final class WeeklyBudgetDetailViewTests: XCTestCase {
+    
+    var sut: WeeklyBudgetDetailView<WeeklyBudgetDetailViewModel>!
+    var mock: WeeklyBudgetViewModel!
+    
+    override func setUpWithError() throws {
+        mock = WeeklyBudgetViewModelMock.getOne()
+        sut = .init(viewModel: WeeklyBudgetDetailViewModel(weekBudget: mock))
+    }
+    
+    override func tearDownWithError() throws {
+        mock = nil
+        sut = nil
+    }
 
     func test_snapshot() throws {
-        let sut = WeeklyBudgetDetailView(viewModel: WeeklyBudgetDetailViewModel(weekBudget: WeeklyBudgetViewModelMock.getOne()))
-        let vc = UIHostingController(rootView: sut)
-        vc.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
     
     func test_snapshot_with_expenses() throws {
-        let mock = WeeklyBudgetViewModelMock.getOne()
         mock.addExpense(expense: .init(title: "iphone", description: "", paymentMode: .credit, value: 10))
         
-        let sut = WeeklyBudgetDetailView(viewModel: WeeklyBudgetDetailViewModel(weekBudget: mock))
-        let vc = UIHostingController(rootView: sut)
-        vc.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
 }

@@ -12,42 +12,43 @@ import SwiftUI
 import XCTest
 
 final class WeeklyReviewViewTests: XCTestCase {
+    
+    var sut: WeeklyReviewView<WeeklyReviewViewModelMock>!
+    var mock: WeeklyReviewViewModelMock!
+    
+    override func setUpWithError() throws {
+        mock = .init(weeks: [WeeklyBudgetViewModelMock.getOne()])
+        sut = .init(viewModel: mock)
+    }
+    
+    override func tearDownWithError() throws {
+        mock = nil
+        sut = nil
+    }
 
     func test_snapshot() throws {
-        let sut = WeeklyReviewView(viewModel: WeeklyReviewViewModel(weeks: [WeeklyBudgetViewModelMock.getOne()]))
-        let vc = UIHostingController(rootView: sut)
-        vc.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
     
     func test_alert_did_tapped() throws {
-        let viewModelMock = WeeklyReviewViewModelMock(weeks: [WeeklyBudgetViewModelMock.getOne()])
-        let sut = WeeklyReviewView(viewModel: viewModelMock)
-        
         sut.alertDidTapped()
-        
-        XCTAssertTrue(viewModelMock.presentAlert == false)
+        XCTAssertTrue(mock.presentAlert == false)
     }
     
     func test_submit_success() throws {
-        let viewModelMock = WeeklyReviewViewModelMock(weeks: [WeeklyBudgetViewModelMock.getOne()])
-        let sut = WeeklyReviewView(viewModel: viewModelMock)
-        
-        viewModelMock.presentError = false
+        mock.presentError = false
         sut.submit()
         
-        XCTAssertTrue(viewModelMock.alertMessage == "Budgets added with success")
-        XCTAssertTrue(viewModelMock.closeFlowAfterSubmit == true)
+        XCTAssertTrue(mock.alertMessage == "Budgets added with success")
+        XCTAssertTrue(mock.closeFlowAfterSubmit == true)
     }
     
     func test_submit_error() throws {
-        let viewModelMock = WeeklyReviewViewModelMock(weeks: [WeeklyBudgetViewModelMock.getOne()])
-        let sut = WeeklyReviewView(viewModel: viewModelMock)
-        
-        viewModelMock.presentError = true
+        mock.presentError = true
         sut.submit()
         
-        XCTAssertTrue(viewModelMock.alertMessage == CoreError.parseError.message)
-        XCTAssertTrue(viewModelMock.closeFlowAfterSubmit == false)
+        XCTAssertTrue(mock.alertMessage == CoreError.parseError.message)
+        XCTAssertTrue(mock.closeFlowAfterSubmit == false)
     }
 }

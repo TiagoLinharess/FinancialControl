@@ -39,8 +39,8 @@ struct WeeklyBudgetViewModelMock {
         ]
     }
     
-    static func getOne() -> WeeklyBudgetViewModel {
-        return .init(
+    static func getOne(addExpense: Bool = false) -> WeeklyBudgetViewModel {
+        let mock = WeeklyBudgetViewModel(
             id: "10/09/2023",
             week: "10/09/2023",
             originalBudget: 200,
@@ -48,5 +48,11 @@ struct WeeklyBudgetViewModelMock {
             creditCardWeekLimit: 200,
             creditCardRemainingLimit: 160.20
         )
+        
+        if addExpense {
+            mock.addExpense(expense: .init(title: "iphone", description: "", paymentMode: .debit, value: 1000.99))
+        }
+        
+        return mock
     }
 }

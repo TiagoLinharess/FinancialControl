@@ -10,11 +10,19 @@ import SwiftUI
 import XCTest
 
 final class AddWeeklyBudgetStartViewTests: XCTestCase {
+    
+    var sut: AddWeeklyBudgetStartView!
+    
+    override func setUpWithError() throws {
+        sut = .init()
+    }
+    
+    override func tearDownWithError() throws {
+        sut = nil
+    }
 
     func test_snapshot() throws {
-        let sut = AddWeeklyBudgetStartView()
-        let vc = UIHostingController(rootView: sut)
-        vc.view.frame = .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
 }
