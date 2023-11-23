@@ -64,6 +64,12 @@
 		ED8D23112B0AB611009E8326 /* AddWeeklyExpenseViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23102B0AB611009E8326 /* AddWeeklyExpenseViewModelMock.swift */; };
 		ED8D231A2B0CDBDB009E8326 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23192B0CDBDB009E8326 /* XCTestCase+Extensions.swift */; };
 		ED8D231C2B0CEB8F009E8326 /* AddWeeklyExpenseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D231B2B0CEB8F009E8326 /* AddWeeklyExpenseViewModelTests.swift */; };
+		ED8D231F2B0F82C4009E8326 /* WeeklyDetailRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D231E2B0F82C4009E8326 /* WeeklyDetailRouterTests.swift */; };
+		ED8D23212B0F88A8009E8326 /* WeeklyDetailNavigationOptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23202B0F88A8009E8326 /* WeeklyDetailNavigationOptionTests.swift */; };
+		ED8D23232B0F9C9C009E8326 /* WeeklyRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23222B0F9C9C009E8326 /* WeeklyRouterTests.swift */; };
+		ED8D23252B0F9DC3009E8326 /* WeeklyNavigationOptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23242B0F9DC3009E8326 /* WeeklyNavigationOptionTests.swift */; };
+		ED8D23282B0F9E6B009E8326 /* WeeklyWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23272B0F9E6B009E8326 /* WeeklyWorkerTests.swift */; };
+		ED8D232A2B0F9EBB009E8326 /* WeeklyBudgetsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23292B0F9EBB009E8326 /* WeeklyBudgetsRepositoryMock.swift */; };
 		EDED116E2B07B50D0015D430 /* WeeklyBudgetDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDED116D2B07B50D0015D430 /* WeeklyBudgetDetailViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +170,12 @@
 		ED8D23142B0AB757009E8326 /* test_snapshot.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot.1.png; sourceTree = "<group>"; };
 		ED8D23192B0CDBDB009E8326 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		ED8D231B2B0CEB8F009E8326 /* AddWeeklyExpenseViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseViewModelTests.swift; sourceTree = "<group>"; };
+		ED8D231E2B0F82C4009E8326 /* WeeklyDetailRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailRouterTests.swift; sourceTree = "<group>"; };
+		ED8D23202B0F88A8009E8326 /* WeeklyDetailNavigationOptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailNavigationOptionTests.swift; sourceTree = "<group>"; };
+		ED8D23222B0F9C9C009E8326 /* WeeklyRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyRouterTests.swift; sourceTree = "<group>"; };
+		ED8D23242B0F9DC3009E8326 /* WeeklyNavigationOptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyNavigationOptionTests.swift; sourceTree = "<group>"; };
+		ED8D23272B0F9E6B009E8326 /* WeeklyWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWorkerTests.swift; sourceTree = "<group>"; };
+		ED8D23292B0F9EBB009E8326 /* WeeklyBudgetsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsRepositoryMock.swift; sourceTree = "<group>"; };
 		EDED116D2B07B50D0015D430 /* WeeklyBudgetDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetDetailViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -351,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				ED13B73C2AFEB958003161D7 /* WeeklyWorkerMock.swift */,
+				ED8D23292B0F9EBB009E8326 /* WeeklyBudgetsRepositoryMock.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -362,6 +375,7 @@
 				ED13B7802AFEBD6E003161D7 /* Components */,
 				ED13B77D2AFEBC5F003161D7 /* Facade */,
 				ED13B73E2AFEB958003161D7 /* Scenes */,
+				ED8D23262B0F9E39009E8326 /* Workers */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -369,6 +383,7 @@
 		ED13B73E2AFEB958003161D7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				ED8D231D2B0F82AA009E8326 /* Routers */,
 				ED13B7442AFEB958003161D7 /* Home */,
 				ED8D22FE2B0A59C0009E8326 /* SingleWeekForm */,
 				ED11D2E72B039A1400514D7C /* Detail */,
@@ -693,17 +708,9 @@
 		ED753CD42AFE712E002B469D /* Workers */ = {
 			isa = PBXGroup;
 			children = (
-				ED753CD52AFE712E002B469D /* Weekly */,
-			);
-			path = Workers;
-			sourceTree = "<group>";
-		};
-		ED753CD52AFE712E002B469D /* Weekly */ = {
-			isa = PBXGroup;
-			children = (
 				ED753CD62AFE712E002B469D /* WeeklyWorker.swift */,
 			);
-			path = Weekly;
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		ED753CFD2AFE721A002B469D /* Facade */ = {
@@ -787,6 +794,25 @@
 			children = (
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		ED8D231D2B0F82AA009E8326 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D231E2B0F82C4009E8326 /* WeeklyDetailRouterTests.swift */,
+				ED8D23202B0F88A8009E8326 /* WeeklyDetailNavigationOptionTests.swift */,
+				ED8D23222B0F9C9C009E8326 /* WeeklyRouterTests.swift */,
+				ED8D23242B0F9DC3009E8326 /* WeeklyNavigationOptionTests.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		ED8D23262B0F9E39009E8326 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D23272B0F9E6B009E8326 /* WeeklyWorkerTests.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -966,18 +992,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8D23232B0F9C9C009E8326 /* WeeklyRouterTests.swift in Sources */,
 				ED8D231A2B0CDBDB009E8326 /* XCTestCase+Extensions.swift in Sources */,
 				ED8D23112B0AB611009E8326 /* AddWeeklyExpenseViewModelMock.swift in Sources */,
+				ED8D231F2B0F82C4009E8326 /* WeeklyDetailRouterTests.swift in Sources */,
 				ED13B75B2AFEB958003161D7 /* WeeklyBudgetsHomeViewModelTests.swift in Sources */,
 				ED8D23002B0A5A37009E8326 /* SingleWeekFormViewTests.swift in Sources */,
 				ED11D2F02B039EBC00514D7C /* WeeklyReviewViewTests.swift in Sources */,
+				ED8D23212B0F88A8009E8326 /* WeeklyDetailNavigationOptionTests.swift in Sources */,
 				ED11D2E62B02C16200514D7C /* Date+ExtensionsTests.swift in Sources */,
 				ED13B7572AFEB958003161D7 /* WeeklyBudgetViewModelMock.swift in Sources */,
 				ED13B77F2AFEBC77003161D7 /* WBFacadeTests.swift in Sources */,
+				ED8D23252B0F9DC3009E8326 /* WeeklyNavigationOptionTests.swift in Sources */,
 				ED8D230E2B0AB54D009E8326 /* AddWeeklyExpenseViewTests.swift in Sources */,
 				ED13B7582AFEB958003161D7 /* WeeklyWorkerMock.swift in Sources */,
 				ED13B7602AFEB958003161D7 /* AddWeeklyBudgetStartViewTests.swift in Sources */,
 				ED8D23092B0A611C009E8326 /* SingleWeekFormViewModelTests.swift in Sources */,
+				ED8D23282B0F9E6B009E8326 /* WeeklyWorkerTests.swift in Sources */,
+				ED8D232A2B0F9EBB009E8326 /* WeeklyBudgetsRepositoryMock.swift in Sources */,
 				ED8D231C2B0CEB8F009E8326 /* AddWeeklyExpenseViewModelTests.swift in Sources */,
 				EDED116E2B07B50D0015D430 /* WeeklyBudgetDetailViewModelTests.swift in Sources */,
 				ED8D230B2B0A6598009E8326 /* WeeklyReviewViewModelTests.swift in Sources */,

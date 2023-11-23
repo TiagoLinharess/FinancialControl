@@ -44,7 +44,7 @@ enum WeeklyNavigationOption: Hashable {
     var intValue: Int {
         switch self {
         case .singleWeekForm: return 0
-        case .review: return 2
+        case .review: return 1
         }
     }
     
