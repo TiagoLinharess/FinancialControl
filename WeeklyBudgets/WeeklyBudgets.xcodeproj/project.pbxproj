@@ -10,9 +10,7 @@
 		A6083CAAE95B0DD3AD15C020 /* Pods_WeeklyBudgetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BE456B892A562790F3621B /* Pods_WeeklyBudgetsTests.framework */; };
 		B2CBBC7A3998F5403460573D /* Pods_WeeklyBudgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC7AC38D631D20DE88D2A31 /* Pods_WeeklyBudgets.framework */; };
 		ED11D2872B025EFB00514D7C /* Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2862B025EFB00514D7C /* Provider.framework */; };
-		ED11D2882B025EFB00514D7C /* Provider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2862B025EFB00514D7C /* Provider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED11D2D32B02B02300514D7C /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2D22B02B02300514D7C /* Core.framework */; };
-		ED11D2D42B02B02300514D7C /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2D22B02B02300514D7C /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED11D2E62B02C16200514D7C /* Date+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2E52B02C16200514D7C /* Date+ExtensionsTests.swift */; };
 		ED11D2E92B039A3E00514D7C /* WeeklyBudgetDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2E82B039A3E00514D7C /* WeeklyBudgetDetailViewTests.swift */; };
 		ED11D2F02B039EBC00514D7C /* WeeklyReviewViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2EF2B039EBC00514D7C /* WeeklyReviewViewTests.swift */; };
@@ -82,21 +80,6 @@
 			remoteInfo = WeeklyBudgets;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		ED11D2892B025EFB00514D7C /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				ED11D2882B025EFB00514D7C /* Provider.framework in Embed Frameworks */,
-				ED11D2D42B02B02300514D7C /* Core.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		30BE456B892A562790F3621B /* Pods_WeeklyBudgetsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeklyBudgetsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -858,7 +841,6 @@
 				ED753C832AFE7061002B469D /* Sources */,
 				ED753C842AFE7061002B469D /* Frameworks */,
 				ED753C852AFE7061002B469D /* Resources */,
-				ED11D2892B025EFB00514D7C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -24,7 +24,7 @@ final class WeeklyBudgetsRepositoryMock: WeeklyBudgetsRepositoryProtocol {
             throw CoreError.customError("test error")
         }
         
-        return [.init(id: UUID().uuidString, week: "12/12/2023", originalBudget: 200, currentBudget: 190, creditCardWeekLimit: 300, creditCardRemainingLimit: 100, expenses: [])]
+        return [.init(id: UUID().uuidString, week: "12/12/2023", originalBudget: 200, currentBudget: 190, creditCardWeekLimit: 300, creditCardRemainingLimit: 100, expenses: [.init(id: UUID().uuidString, date: .now, title: "iphone", description: "", paymentMode: .credit, value: 200)])]
     }
     
     func update(weekBudget: Provider.WeeklyBudgetResponse) throws {
