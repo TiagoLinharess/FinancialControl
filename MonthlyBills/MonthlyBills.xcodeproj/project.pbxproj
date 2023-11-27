@@ -7,16 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0FC0F1CA856B55505C61240 /* Pods_MonthlyBills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55F144A912F0EDFC76C81F4 /* Pods_MonthlyBills.framework */; };
 		ED13B7722AFEBB65003161D7 /* MonthlyBills.docc in Sources */ = {isa = PBXBuildFile; fileRef = ED13B7712AFEBB65003161D7 /* MonthlyBills.docc */; };
 		ED13B7732AFEBB65003161D7 /* MonthlyBills.h in Headers */ = {isa = PBXBuildFile; fileRef = ED13B7702AFEBB65003161D7 /* MonthlyBills.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ED13B7822AFEC159003161D7 /* MonthlyBillsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13B7812AFEC159003161D7 /* MonthlyBillsHomeViewController.swift */; };
+		ED13B7822AFEC159003161D7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13B7812AFEC159003161D7 /* HomeViewController.swift */; };
+		ED8D232C2B141E20009E8326 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D232B2B141E20009E8326 /* HomeView.swift */; };
+		ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D232D2B141EE6009E8326 /* HomeInteractor.swift */; };
+		ED8D23302B141F70009E8326 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D232F2B141F70009E8326 /* HomePresenter.swift */; };
+		ED8D23322B141FC2009E8326 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23312B141FC2009E8326 /* HomeRouter.swift */; };
+		ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23332B142079009E8326 /* HomeFactory.swift */; };
+		ED8D23372B1421C2009E8326 /* MBFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23362B1421C2009E8326 /* MBFacade.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28E6AC1C580865543B2AD8BA /* Pods-MonthlyBills.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonthlyBills.release.xcconfig"; path = "Target Support Files/Pods-MonthlyBills/Pods-MonthlyBills.release.xcconfig"; sourceTree = "<group>"; };
+		B976CEC4C99063AD0B8B33D9 /* Pods-MonthlyBills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonthlyBills.debug.xcconfig"; path = "Target Support Files/Pods-MonthlyBills/Pods-MonthlyBills.debug.xcconfig"; sourceTree = "<group>"; };
+		C55F144A912F0EDFC76C81F4 /* Pods_MonthlyBills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonthlyBills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED13B76D2AFEBB65003161D7 /* MonthlyBills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MonthlyBills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED13B7702AFEBB65003161D7 /* MonthlyBills.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthlyBills.h; sourceTree = "<group>"; };
 		ED13B7712AFEBB65003161D7 /* MonthlyBills.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = MonthlyBills.docc; sourceTree = "<group>"; };
-		ED13B7812AFEC159003161D7 /* MonthlyBillsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsHomeViewController.swift; sourceTree = "<group>"; };
+		ED13B7812AFEC159003161D7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ED8D232B2B141E20009E8326 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		ED8D232D2B141EE6009E8326 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		ED8D232F2B141F70009E8326 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		ED8D23312B141FC2009E8326 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		ED8D23332B142079009E8326 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
+		ED8D23362B1421C2009E8326 /* MBFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBFacade.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,17 +40,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0FC0F1CA856B55505C61240 /* Pods_MonthlyBills.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		130B8DF7A4D61E22A04388B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B976CEC4C99063AD0B8B33D9 /* Pods-MonthlyBills.debug.xcconfig */,
+				28E6AC1C580865543B2AD8BA /* Pods-MonthlyBills.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		5107D7F79E2A3F2158A22AB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C55F144A912F0EDFC76C81F4 /* Pods_MonthlyBills.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED13B7632AFEBB65003161D7 = {
 			isa = PBXGroup;
 			children = (
 				ED13B76F2AFEBB65003161D7 /* MonthlyBills */,
 				ED13B76E2AFEBB65003161D7 /* Products */,
+				130B8DF7A4D61E22A04388B9 /* Pods */,
+				5107D7F79E2A3F2158A22AB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +104,7 @@
 		ED13B77A2AFEBB9F003161D7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				ED8D23352B1421B2009E8326 /* Facade */,
 				ED13B77B2AFEBBA7003161D7 /* Scenes */,
 			);
 			path = Sources;
@@ -83,9 +121,22 @@
 		ED13B77C2AFEBBBC003161D7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				ED13B7812AFEC159003161D7 /* MonthlyBillsHomeViewController.swift */,
+				ED8D23332B142079009E8326 /* HomeFactory.swift */,
+				ED13B7812AFEC159003161D7 /* HomeViewController.swift */,
+				ED8D232B2B141E20009E8326 /* HomeView.swift */,
+				ED8D232D2B141EE6009E8326 /* HomeInteractor.swift */,
+				ED8D232F2B141F70009E8326 /* HomePresenter.swift */,
+				ED8D23312B141FC2009E8326 /* HomeRouter.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		ED8D23352B1421B2009E8326 /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D23362B1421C2009E8326 /* MBFacade.swift */,
+			);
+			path = Facade;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +157,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED13B7762AFEBB65003161D7 /* Build configuration list for PBXNativeTarget "MonthlyBills" */;
 			buildPhases = (
+				8E782F9E7FA988BA570B9093 /* [CP] Check Pods Manifest.lock */,
 				ED13B7682AFEBB65003161D7 /* Headers */,
 				ED13B7692AFEBB65003161D7 /* Sources */,
 				ED13B76A2AFEBB65003161D7 /* Frameworks */,
@@ -162,12 +214,43 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8E782F9E7FA988BA570B9093 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MonthlyBills-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED13B7692AFEBB65003161D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED13B7822AFEC159003161D7 /* MonthlyBillsHomeViewController.swift in Sources */,
+				ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */,
+				ED8D23322B141FC2009E8326 /* HomeRouter.swift in Sources */,
+				ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */,
+				ED13B7822AFEC159003161D7 /* HomeViewController.swift in Sources */,
+				ED8D23372B1421C2009E8326 /* MBFacade.swift in Sources */,
+				ED8D232C2B141E20009E8326 /* HomeView.swift in Sources */,
+				ED8D23302B141F70009E8326 /* HomePresenter.swift in Sources */,
 				ED13B7722AFEBB65003161D7 /* MonthlyBills.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +385,7 @@
 		};
 		ED13B7772AFEBB65003161D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B976CEC4C99063AD0B8B33D9 /* Pods-MonthlyBills.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -333,6 +417,7 @@
 		};
 		ED13B7782AFEBB65003161D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28E6AC1C580865543B2AD8BA /* Pods-MonthlyBills.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

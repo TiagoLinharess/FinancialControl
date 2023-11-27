@@ -45,6 +45,11 @@ target 'WeeklyBudgets' do
     project 'WeeklyBudgets/WeeklyBudgets.project'
 end
 
+target 'MonthlyBills' do
+    sharpnez_pods
+    project 'MonthlyBills/MonthlyBills.project'
+end
+
 ## Tests Targets
 target 'ProviderTests' do
     sharpnez_core_pod

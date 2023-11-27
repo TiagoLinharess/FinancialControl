@@ -11,11 +11,10 @@
 		ED11D2E02B02BA7700514D7C /* TabBarFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2DF2B02BA7700514D7C /* TabBarFactoryTests.swift */; };
 		ED753C182AFE6176002B469D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C172AFE6176002B469D /* AppDelegate.swift */; };
 		ED753C1A2AFE6176002B469D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C192AFE6176002B469D /* SceneDelegate.swift */; };
-		ED753C1C2AFE6176002B469D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C1B2AFE6176002B469D /* ViewController.swift */; };
 		ED753C212AFE6177002B469D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED753C202AFE6177002B469D /* Assets.xcassets */; };
 		ED753C3E2AFE642E002B469D /* TabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C3D2AFE642E002B469D /* TabBarFactory.swift */; };
 		ED753D032AFE751A002B469D /* WeeklyBudgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED753D022AFE751A002B469D /* WeeklyBudgets.framework */; };
-		ED753D042AFE751A002B469D /* WeeklyBudgets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED753D022AFE751A002B469D /* WeeklyBudgets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED8D23392B14224D009E8326 /* MonthlyBills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D23382B14224D009E8326 /* MonthlyBills.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,20 +27,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		ED753D052AFE751A002B469D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				ED753D042AFE751A002B469D /* WeeklyBudgets.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		B6F430FE0FE4A944CBEF8653 /* Pods-FinancialControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.release.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.release.xcconfig"; sourceTree = "<group>"; };
 		E06AACB87B243CA7C918DC65 /* Pods-FinancialControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.debug.xcconfig"; sourceTree = "<group>"; };
@@ -50,12 +35,12 @@
 		ED753C142AFE6176002B469D /* FinancialControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED753C172AFE6176002B469D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED753C192AFE6176002B469D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ED753C1B2AFE6176002B469D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED753C202AFE6177002B469D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED753C252AFE6177002B469D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED753C2F2AFE6222002B469D /* FinancialControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinancialControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED753C3D2AFE642E002B469D /* TabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFactory.swift; sourceTree = "<group>"; };
 		ED753D022AFE751A002B469D /* WeeklyBudgets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeeklyBudgets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8D23382B14224D009E8326 /* MonthlyBills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MonthlyBills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED753D032AFE751A002B469D /* WeeklyBudgets.framework in Frameworks */,
+				ED8D23392B14224D009E8326 /* MonthlyBills.framework in Frameworks */,
 				E9F78E3CF5E0074C157CFAD2 /* Pods_FinancialControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +77,7 @@
 		A5D97DD6453E2D704546D890 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED8D23382B14224D009E8326 /* MonthlyBills.framework */,
 				ED753D022AFE751A002B469D /* WeeklyBudgets.framework */,
 				EA95495461BDB8B9B3F2C315 /* Pods_FinancialControl.framework */,
 			);
@@ -146,7 +133,6 @@
 			children = (
 				ED753C3A2AFE630A002B469D /* Sources */,
 				ED753C392AFE62C6002B469D /* Resources */,
-				ED753C1B2AFE6176002B469D /* ViewController.swift */,
 			);
 			path = FinancialControl;
 			sourceTree = "<group>";
@@ -213,7 +199,6 @@
 				ED753C102AFE6176002B469D /* Sources */,
 				ED753C112AFE6176002B469D /* Frameworks */,
 				ED753C122AFE6176002B469D /* Resources */,
-				ED753D052AFE751A002B469D /* Embed Frameworks */,
 				10DDA43C967C14572DFE3FAE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -347,7 +332,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED753C1C2AFE6176002B469D /* ViewController.swift in Sources */,
 				ED753C182AFE6176002B469D /* AppDelegate.swift in Sources */,
 				ED753C3E2AFE642E002B469D /* TabBarFactory.swift in Sources */,
 				ED753C1A2AFE6176002B469D /* SceneDelegate.swift in Sources */,
