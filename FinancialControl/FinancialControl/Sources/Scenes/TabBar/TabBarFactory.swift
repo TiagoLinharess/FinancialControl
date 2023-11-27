@@ -25,7 +25,7 @@ enum TabBarFactory {
     }
     
     static private func getMonthlyBillsController() -> UIViewController {
-        let billsController = MBFacade().start()
+        let billsController = UINavigationController(rootViewController: MBFacade().start())
         billsController.tabBarItem = UITabBarItem(title: "Bills", image: UIImage(systemName: "calendar"), selectedImage: UIImage(systemName: "calendar"))
         
         return billsController

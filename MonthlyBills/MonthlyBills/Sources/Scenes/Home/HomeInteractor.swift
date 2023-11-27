@@ -6,10 +6,19 @@
 //
 
 import Foundation
+import SharpnezCore
 import SharpnezDesignSystem
 
-protocol HomeInteracting { }
+protocol HomeInteracting {
+    func fetchBills()
+}
 
 final class HomeInteractor: UIVIPInteractor<HomePresenting>, HomeInteracting {
     
+    // MARK: - Methods
+    
+    func fetchBills() {
+        let bills: [AnnualBillsViewModel] = [.init(year: "2023")]
+        presenter.presentSuccess(bills: bills)
+    }
 }

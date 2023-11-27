@@ -17,6 +17,14 @@
 		ED8D23322B141FC2009E8326 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23312B141FC2009E8326 /* HomeRouter.swift */; };
 		ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23332B142079009E8326 /* HomeFactory.swift */; };
 		ED8D23372B1421C2009E8326 /* MBFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23362B1421C2009E8326 /* MBFacade.swift */; };
+		ED8D233E2B1428F4009E8326 /* MonthlyBillViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D233D2B1428F4009E8326 /* MonthlyBillViewModel.swift */; };
+		ED8D23422B143031009E8326 /* AnnualBillsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23412B143031009E8326 /* AnnualBillsViewModel.swift */; };
+		ED8D23442B14BFC1009E8326 /* IncomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23432B14BFC1009E8326 /* IncomeViewModel.swift */; };
+		ED8D23462B14BFEC009E8326 /* InvestmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23452B14BFEC009E8326 /* InvestmentViewModel.swift */; };
+		ED8D23482B14C034009E8326 /* ExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23472B14C034009E8326 /* ExpenseViewModel.swift */; };
+		ED8D234A2B14CCDF009E8326 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D23492B14CCDF009E8326 /* Core.framework */; };
+		ED8D23502B14CF5E009E8326 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D234F2B14CF5E009E8326 /* EmptyView.swift */; };
+		ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23522B14D360009E8326 /* ErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +41,14 @@
 		ED8D23312B141FC2009E8326 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		ED8D23332B142079009E8326 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		ED8D23362B1421C2009E8326 /* MBFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBFacade.swift; sourceTree = "<group>"; };
+		ED8D233D2B1428F4009E8326 /* MonthlyBillViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillViewModel.swift; sourceTree = "<group>"; };
+		ED8D23412B143031009E8326 /* AnnualBillsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualBillsViewModel.swift; sourceTree = "<group>"; };
+		ED8D23432B14BFC1009E8326 /* IncomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewModel.swift; sourceTree = "<group>"; };
+		ED8D23452B14BFEC009E8326 /* InvestmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvestmentViewModel.swift; sourceTree = "<group>"; };
+		ED8D23472B14C034009E8326 /* ExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewModel.swift; sourceTree = "<group>"; };
+		ED8D23492B14CCDF009E8326 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8D234F2B14CF5E009E8326 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		ED8D23522B14D360009E8326 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +57,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0FC0F1CA856B55505C61240 /* Pods_MonthlyBills.framework in Frameworks */,
+				ED8D234A2B14CCDF009E8326 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +77,7 @@
 		5107D7F79E2A3F2158A22AB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED8D23492B14CCDF009E8326 /* Core.framework */,
 				C55F144A912F0EDFC76C81F4 /* Pods_MonthlyBills.framework */,
 			);
 			name = Frameworks;
@@ -104,6 +122,7 @@
 		ED13B77A2AFEBB9F003161D7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				ED8D234D2B14CF45009E8326 /* Components */,
 				ED8D23352B1421B2009E8326 /* Facade */,
 				ED8D233B2B14289C009E8326 /* Models */,
 				ED13B77B2AFEBBA7003161D7 /* Scenes */,
@@ -143,8 +162,54 @@
 		ED8D233B2B14289C009E8326 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ED8D23402B142FFA009E8326 /* BillsControl */,
+				ED8D233C2B1428D1009E8326 /* MonthlyBill */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ED8D233C2B1428D1009E8326 /* MonthlyBill */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D233D2B1428F4009E8326 /* MonthlyBillViewModel.swift */,
+				ED8D23432B14BFC1009E8326 /* IncomeViewModel.swift */,
+				ED8D23452B14BFEC009E8326 /* InvestmentViewModel.swift */,
+				ED8D23472B14C034009E8326 /* ExpenseViewModel.swift */,
+			);
+			path = MonthlyBill;
+			sourceTree = "<group>";
+		};
+		ED8D23402B142FFA009E8326 /* BillsControl */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D23412B143031009E8326 /* AnnualBillsViewModel.swift */,
+			);
+			path = BillsControl;
+			sourceTree = "<group>";
+		};
+		ED8D234D2B14CF45009E8326 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D23512B14D351009E8326 /* ErrorView */,
+				ED8D234E2B14CF4C009E8326 /* EmptyView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		ED8D234E2B14CF4C009E8326 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D234F2B14CF5E009E8326 /* EmptyView.swift */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
+		ED8D23512B14D351009E8326 /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D23522B14D360009E8326 /* ErrorView.swift */,
+			);
+			path = ErrorView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,13 +317,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8D23422B143031009E8326 /* AnnualBillsViewModel.swift in Sources */,
 				ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */,
 				ED8D23322B141FC2009E8326 /* HomeRouter.swift in Sources */,
+				ED8D23442B14BFC1009E8326 /* IncomeViewModel.swift in Sources */,
 				ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */,
 				ED13B7822AFEC159003161D7 /* HomeViewController.swift in Sources */,
 				ED8D23372B1421C2009E8326 /* MBFacade.swift in Sources */,
 				ED8D232C2B141E20009E8326 /* HomeView.swift in Sources */,
 				ED8D23302B141F70009E8326 /* HomePresenter.swift in Sources */,
+				ED8D23462B14BFEC009E8326 /* InvestmentViewModel.swift in Sources */,
+				ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */,
+				ED8D233E2B1428F4009E8326 /* MonthlyBillViewModel.swift in Sources */,
+				ED8D23482B14C034009E8326 /* ExpenseViewModel.swift in Sources */,
+				ED8D23502B14CF5E009E8326 /* EmptyView.swift in Sources */,
 				ED13B7722AFEBB65003161D7 /* MonthlyBills.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

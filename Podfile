@@ -25,6 +25,10 @@ def currency_pod
   pod 'CurrencyText', :git => 'https://github.com/TiagoLinharess/CurrencyText.git'
 end
 
+def snapkit_pod
+  pod 'SnapKit', '~> 5.6'
+end
+
 ## Cores Targets
 target 'Provider' do
     sharpnez_core_pod
@@ -35,6 +39,7 @@ end
 target 'FinancialControl' do
     currency_pod
     sharpnez_pods
+    snapkit_pod
     project 'FinancialControl/FinancialControl.project'
 end
 
@@ -47,6 +52,7 @@ end
 
 target 'MonthlyBills' do
     sharpnez_pods
+    snapkit_pod
     project 'MonthlyBills/MonthlyBills.project'
 end
 
