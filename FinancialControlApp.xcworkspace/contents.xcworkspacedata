@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:FinancialControl/FinancialControl.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Core/Core.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Provider/Provider.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MonthlyBills/MonthlyBills.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WeeklyBudgets/WeeklyBudgets.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
