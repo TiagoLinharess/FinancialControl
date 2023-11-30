@@ -1,5 +1,5 @@
 //
-//  AddAnnualBillView.swift
+//  AddAnnualCalendarView.swift
 //  MonthlyBills
 //
 //  Created by Tiago Linhares on 27/11/23.
@@ -11,7 +11,7 @@ import SharpnezDesignSystem
 import SnapKit
 import UIKit
 
-final class AddAnnualBillView: UIView {
+final class AddAnnualCalendarView: UIView {
     
     // MARK: Properties
     
@@ -21,7 +21,7 @@ final class AddAnnualBillView: UIView {
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.text = Constants.AddAnnualBillView.mainLabel
+        label.text = Constants.AddAnnualCalendarView.mainLabel
         label.font = .systemFont(ofSize: .xBig, weight: .medium)
         label.numberOfLines = .zero
         return label
@@ -59,7 +59,7 @@ final class AddAnnualBillView: UIView {
     }
 }
 
-extension AddAnnualBillView: UIViewCode {
+extension AddAnnualCalendarView: UIViewCode {
     
     // MARK: View Setup
     
@@ -86,7 +86,7 @@ extension AddAnnualBillView: UIViewCode {
     }
 }
 
-extension AddAnnualBillView: UIPickerViewDelegate, UIPickerViewDataSource {
+extension AddAnnualCalendarView: UIPickerViewDelegate, UIPickerViewDataSource {
     
     // MARK: UIPickerView Delegate & DataSource
     

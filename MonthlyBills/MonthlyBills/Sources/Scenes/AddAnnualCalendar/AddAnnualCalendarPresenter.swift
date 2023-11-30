@@ -1,5 +1,5 @@
 //
-//  AddAnnualBillPresenter.swift
+//  AddAnnualCalendarPresenter.swift
 //  MonthlyBills
 //
 //  Created by Tiago Linhares on 27/11/23.
@@ -8,13 +8,13 @@ import Foundation
 import SharpnezCore
 import SharpnezDesignSystem
 
-protocol AddAnnualBillPresenting {
+protocol AddAnnualCalendarPresenting {
     func setYears(years: [String])
     func presentSuccess()
     func presentError(error: Error)
 }
 
-final class AddAnnualBillPresenter: UIVIPPresenter<AddAnnualBillViewControlling>, AddAnnualBillPresenting {
+final class AddAnnualCalendarPresenter: UIVIPPresenter<AddAnnualCalendarViewControlling>, AddAnnualCalendarPresenting {
     
     // MARK: Methods
     

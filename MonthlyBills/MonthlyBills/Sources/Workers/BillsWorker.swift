@@ -10,21 +10,21 @@ import Provider
 import SharpnezCore
 
 protocol BillsWorking {
-    func create(annualBills: AnnualBillsViewModel) throws
-    func read() throws -> [AnnualBillsViewModel]
+    func create(annualCalendar: AnnualCalendarViewModel) throws
+    func read() throws -> [AnnualCalendarViewModel]
 }
 
 final class BillsWorker: BillsWorking {
     
     // MARK: Create
     
-    func create(annualBills: AnnualBillsViewModel) throws {
+    func create(annualCalendar: AnnualCalendarViewModel) throws {
         // todo
     }
     
     // MARK: Read
     
-    func read() throws -> [AnnualBillsViewModel] {
+    func read() throws -> [AnnualCalendarViewModel] {
         return []
     }
 }

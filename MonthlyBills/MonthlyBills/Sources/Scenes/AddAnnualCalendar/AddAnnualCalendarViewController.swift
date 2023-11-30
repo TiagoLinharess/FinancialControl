@@ -1,5 +1,5 @@
 //
-//  AddAnnualBillViewController.swift
+//  AddAnnualCalendarViewController.swift
 //  MonthlyBills
 //
 //  Created by Tiago Linhares on 27/11/23.
@@ -10,13 +10,13 @@ import SharpnezCore
 import SharpnezDesignSystem
 import UIKit
 
-protocol AddAnnualBillViewControlling {
+protocol AddAnnualCalendarViewControlling {
     func setYears(years: [String])
     func presentSuccess()
     func presentError(message: String?)
 }
 
-final class AddAnnualBillViewController: UIVIPBaseViewController<AddAnnualBillView, AddAnnualBillInteracting, AddAnnualBillRouting> {
+final class AddAnnualCalendarViewController: UIVIPBaseViewController<AddAnnualCalendarView, AddAnnualCalendarInteracting, AddAnnualCalendarRouting> {
     
     // MARK: View Life Cicle
     
@@ -29,7 +29,7 @@ final class AddAnnualBillViewController: UIVIPBaseViewController<AddAnnualBillVi
     // MARK: Configure
     
     private func configure() {
-        title = Constants.AddAnnualBillView.title
+        title = Constants.AddAnnualCalendarView.title
         
         let cancelButton = UIBarButtonItem(image: .init(systemName: CoreConstants.Icons.close), style: .plain, target: self, action: #selector(cancelAction))
         let doneButton = UIBarButtonItem(image: .init(systemName: CoreConstants.Icons.check), style: .plain, target: self, action: #selector(doneAction))
@@ -52,7 +52,7 @@ final class AddAnnualBillViewController: UIVIPBaseViewController<AddAnnualBillVi
     }
 }
 
-extension AddAnnualBillViewController: AddAnnualBillViewControlling {
+extension AddAnnualCalendarViewController: AddAnnualCalendarViewControlling {
     
     // MARK: Controller Input
     
@@ -64,7 +64,7 @@ extension AddAnnualBillViewController: AddAnnualBillViewControlling {
         presentFeedbackDialog(
             with: .init(
                 title: CoreConstants.Commons.AlertTitle,
-                description: Constants.AddAnnualBillView.successMessage,
+                description: Constants.AddAnnualCalendarView.successMessage,
                 buttons: [
                     .init(title: CoreConstants.Commons.ok, style: .default) { [weak self] _ in
                         self?.router.close()

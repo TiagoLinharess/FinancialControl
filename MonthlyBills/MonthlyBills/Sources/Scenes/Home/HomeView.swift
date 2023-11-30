@@ -16,7 +16,7 @@ final class HomeView: UIView {
     // MARK: Properties
     
     var onActionError: (() -> Void)?
-    var bills: [AnnualBillsViewModel]?
+    var calendars: [AnnualCalendarViewModel]?
     let reuseIdentifier: String = Constants.HomeView.cellReuseIdentifier
     
     // MARK: UI Elements
@@ -57,8 +57,8 @@ final class HomeView: UIView {
     
     // MARK: Public Methods
     
-    func presentSuccess(bills: [AnnualBillsViewModel]) {
-        self.bills = bills
+    func presentSuccess(calendars: [AnnualCalendarViewModel]) {
+        self.calendars = calendars
         tableView.isHidden = false
         emptyView.isHidden = true
         errorView.isHidden = true
@@ -66,7 +66,7 @@ final class HomeView: UIView {
     }
     
     func presentError(message: String?) {
-        self.bills = []
+        self.calendars = []
         tableView.isHidden = true
         emptyView.isHidden = true
         errorView.isHidden = false
@@ -78,7 +78,7 @@ final class HomeView: UIView {
     }
     
     func presentEmpty() {
-        self.bills = []
+        self.calendars = []
         tableView.isHidden = true
         emptyView.isHidden = false
         errorView.isHidden = true
@@ -120,18 +120,18 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     // MARK: UITableview Delegate & DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bills?.count ?? .zero
+        return calendars?.count ?? .zero
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let bills else { return UITableViewCell() }
+        guard let calendars else { return UITableViewCell() }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath)
-        let yearBills = bills[indexPath.row]
+        let calendar = calendars[indexPath.row]
         
         var content = cell.defaultContentConfiguration()
-        content.text = yearBills.year
-        content.secondaryText = yearBills.balance.toCurrency()
+        content.text = calendar.year
+        content.secondaryText = calendar.balance.toCurrency()
         content.prefersSideBySideTextAndSecondaryText = true
         
         cell.contentConfiguration = content

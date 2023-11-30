@@ -1,5 +1,5 @@
 //
-//  AddAnnualBillInteractor.swift
+//  AddAnnualCalendarInteractor.swift
 //  MonthlyBills
 //
 //  Created by Tiago Linhares on 27/11/23.
@@ -10,12 +10,12 @@ import Foundation
 import SharpnezCore
 import SharpnezDesignSystem
 
-protocol AddAnnualBillInteracting { 
+protocol AddAnnualCalendarInteracting { 
     func fetchAvailableYears()
     func submit(year: String)
 }
 
-final class AddAnnualBillInteractor: UIVIPInteractor<AddAnnualBillPresenting>, AddAnnualBillInteracting {
+final class AddAnnualCalendarInteractor: UIVIPInteractor<AddAnnualCalendarPresenting>, AddAnnualCalendarInteracting {
     
     // MARK: Methods
     
@@ -33,7 +33,7 @@ final class AddAnnualBillInteractor: UIVIPInteractor<AddAnnualBillPresenting>, A
     
     func submit(year: String) {
         guard !year.isEmpty, year != CoreConstants.Commons.pickerSelect else {
-            presenter.presentError(error: CoreError.customError(Constants.AddAnnualBillView.errorMessage))
+            presenter.presentError(error: CoreError.customError(Constants.AddAnnualCalendarView.errorMessage))
             return
         }
         

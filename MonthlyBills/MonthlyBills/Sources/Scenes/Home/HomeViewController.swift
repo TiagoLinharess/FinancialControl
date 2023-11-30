@@ -14,7 +14,7 @@ protocol AddBillDelegate {
 }
 
 protocol HomeViewControlling {
-    func presentSuccess(bills: [AnnualBillsViewModel])
+    func presentSuccess(calendars: [AnnualCalendarViewModel])
     func presentEmpty()
     func presentError(message: String?)
 }
@@ -25,7 +25,7 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor.fetchBills()
+        interactor.fetchCalendars()
         configure()
     }
     
@@ -35,7 +35,7 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
         title = CoreConstants.Commons.bills
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
-        customView.onActionError = interactor.fetchBills
+        customView.onActionError = interactor.fetchCalendars
         
         let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
         navigationItem.rightBarButtonItems = [button]
@@ -53,8 +53,8 @@ extension HomeViewController: HomeViewControlling {
     
     // MARK: Controller Input
     
-    func presentSuccess(bills: [AnnualBillsViewModel]) {
-        customView.presentSuccess(bills: bills)
+    func presentSuccess(calendars: [AnnualCalendarViewModel]) {
+        customView.presentSuccess(calendars: calendars)
     }
     
     func presentEmpty() {
@@ -71,6 +71,6 @@ extension HomeViewController: AddBillDelegate {
     // MARK: Add Bill Delegate
     
     func didAddBill() {
-        interactor.fetchBills()
+        interactor.fetchCalendars()
     }
 }

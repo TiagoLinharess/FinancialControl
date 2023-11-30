@@ -1,5 +1,5 @@
 //
-//  AnnualBillsViewModel.swift
+//  AnnualCalendarViewModel.swift
 //  MonthlyBills
 //
 //  Created by Tiago Linhares on 26/11/23.
@@ -9,7 +9,7 @@ import Core
 import Foundation
 import SharpnezCore
 
-class AnnualBillsViewModel {
+class AnnualCalendarViewModel {
     
     // MARK: Properties
     

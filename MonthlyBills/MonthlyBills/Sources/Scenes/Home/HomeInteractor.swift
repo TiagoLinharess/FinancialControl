@@ -10,15 +10,15 @@ import SharpnezCore
 import SharpnezDesignSystem
 
 protocol HomeInteracting {
-    func fetchBills()
+    func fetchCalendars()
 }
 
 final class HomeInteractor: UIVIPInteractor<HomePresenting>, HomeInteracting {
     
     // MARK: Methods
     
-    func fetchBills() {
-        let bills: [AnnualBillsViewModel] = [.init(year: "2023"), .init(year: "2024"), .init(year: "2025")]
-        presenter.presentSuccess(bills: bills)
+    func fetchCalendars() {
+        let calendars: [AnnualCalendarViewModel] = [.init(year: "2023"), .init(year: "2024"), .init(year: "2025")]
+        presenter.presentSuccess(calendars: calendars)
     }
 }

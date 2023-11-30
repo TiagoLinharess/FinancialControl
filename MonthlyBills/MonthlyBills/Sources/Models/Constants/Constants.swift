@@ -15,11 +15,11 @@ enum Constants {
         static let cellReuseIdentifier: String = "billCell"
     }
     
-    // MARK: AddAnnualBillView
+    // MARK: AddAnnualCalendarView
     
-    enum AddAnnualBillView {
-        static let title: String = "Add Annual Bills"
-        static let mainLabel: String = "Select the year to create the annual bills calendar."
+    enum AddAnnualCalendarView {
+        static let title: String = "Add Annual Calendar"
+        static let mainLabel: String = "Select the year to create the annual calendar."
         static let successMessage: String = "annual bill added with success"
         static let errorMessage: String = "please, select a year to continue"
     }
