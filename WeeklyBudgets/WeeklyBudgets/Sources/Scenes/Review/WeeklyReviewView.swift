@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 02/09/23.
 //
 
+import Core
 import SharpnezCore
 import SwiftUI
 
@@ -32,14 +33,14 @@ struct WeeklyReviewView<ViewModel: WeeklyReviewViewModelProtocol>: View {
             Button {
                 submit()
             } label: {
-                Text(Constants.Commons.create)
+                Text(CoreConstants.Commons.create)
             }
         }
-        .alert(Constants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
+        .alert(CoreConstants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
             Button {
                 alertDidTapped()
             } label: {
-                Text(Constants.Commons.ok)
+                Text(CoreConstants.Commons.ok)
             }
         } message: {
             Text(viewModel.alertMessage)
@@ -55,7 +56,7 @@ struct WeeklyReviewView<ViewModel: WeeklyReviewViewModelProtocol>: View {
         } catch let error as CoreError {
             viewModel.alertMessage = error.message
         } catch {
-            viewModel.alertMessage = Constants.Commons.defaultErrorMessage
+            viewModel.alertMessage = CoreConstants.Commons.defaultErrorMessage
         }
         viewModel.presentAlert = true
     }

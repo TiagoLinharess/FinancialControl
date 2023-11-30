@@ -13,13 +13,13 @@ import UIKit
 
 final class HomeView: UIView {
     
-    // MARK: - Properties
+    // MARK: Properties
     
     var onActionError: (() -> Void)?
     var bills: [AnnualBillsViewModel]?
-    let reuseIdentifier: String = "billCell"
+    let reuseIdentifier: String = Constants.HomeView.cellReuseIdentifier
     
-    // MARK: - UI Elements
+    // MARK: UI Elements
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
@@ -44,7 +44,7 @@ final class HomeView: UIView {
         return view
     }()
     
-    // MARK: - Init
+    // MARK: Init
     
     required init() {
         super.init(frame: .zero)
@@ -52,10 +52,10 @@ final class HomeView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(CoreConstants.Init.coder)
     }
     
-    // MARK: - Public Methods
+    // MARK: Public Methods
     
     func presentSuccess(bills: [AnnualBillsViewModel]) {
         self.bills = bills
@@ -88,7 +88,7 @@ final class HomeView: UIView {
 
 extension HomeView: UIViewCode {
     
-    // MARK: - View Setup
+    // MARK: View Setup
     
     func setupView() {
         backgroundColor = .systemBackground
@@ -117,7 +117,7 @@ extension HomeView: UIViewCode {
 
 extension HomeView: UITableViewDelegate, UITableViewDataSource {
     
-    // MARK: - UITableview Delegate & DataSource
+    // MARK: UITableview Delegate & DataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return bills?.count ?? .zero

@@ -15,7 +15,7 @@ protocol HomeInteracting {
 
 final class HomeInteractor: UIVIPInteractor<HomePresenting>, HomeInteracting {
     
-    // MARK: - Methods
+    // MARK: Methods
     
     func fetchBills() {
         let bills: [AnnualBillsViewModel] = [.init(year: "2023")]

@@ -29,7 +29,7 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
     // MARK: Properties
     
     @Published var creditCardLimit: String = String()
-    @Published var weekSelected: String = Constants.Commons.pickerSelect
+    @Published var weekSelected: String = CoreConstants.Commons.pickerSelect
     @Published var weekBudget: String = String()
     @Published var presentAlert: Bool = false
     @Published var alertMessage: String = String()
@@ -46,7 +46,7 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
             return date.localeFormat
         }
         
-        weeks.insert(Constants.Commons.pickerSelect, at: .zero)
+        weeks.insert(CoreConstants.Commons.pickerSelect, at: .zero)
         
         return weeks
     }
@@ -54,7 +54,7 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
     // MARK: Methods
     
     func submit() throws -> WeeklyBudgetViewModel {
-        if weekSelected == Constants.Commons.pickerSelect {
+        if weekSelected == CoreConstants.Commons.pickerSelect {
             throw CoreError.customError(Constants.SingleWeekForm.selectWeekError)
         }
         

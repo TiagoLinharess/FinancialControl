@@ -9,7 +9,7 @@ import Foundation
 
 struct ExpenseViewModel {
     
-    // MARK: - Properties
+    // MARK: Properties
     
     var housing: Double
     var transport: Double

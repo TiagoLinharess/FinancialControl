@@ -10,36 +10,10 @@ import Core
 
 enum Constants {
     
-    // MARK: Commons
-    
-    enum Commons {
-        static let weekly: String = "Weekly"
-        static let pickerSelect: String = "select"
-        static let AlertTitle: String = "Message"
-        static let ok: String = "ok"
-        static let create: String = "Create"
-        static let cash: String = "$%@"
-        static let tryAgain: String = "Try again"
-        static let defaultErrorMessage: String = "Something went wrong, please try again later"
-        static let currencyPlaceholder: String = Double.zero.toCurrency()
-    }
-    
-    // MARK: Icons
-    
-    enum Icons {
-        static let monthlyCalendar: String = "calendar"
-        static let close: String = "xmark"
-        static let check: String = "checkmark"
-        static let cash: String = "dollarsign"
-        static let creditCard: String = "creditcard"
-        static let add: String = "plus"
-    }
-    
     // MARK: WeeklyHome
     
     enum WeeklyHome {
         static let title: String = "Weekly Budgets"
-        static let emptyTitle: String = "There is nothing yet"
     }
     
     // MARK: WeeklyBudgetStartView

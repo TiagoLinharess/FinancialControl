@@ -14,6 +14,8 @@ protocol HomeRouting {
 
 final class HomeRouter: UIVIPRouter, HomeRouting {
     
+    // MARK: Methods
+    
     func routeToAdd() {
         let addAnnualBillController = AddAnnualBillFactory.configure()
         viewController?.navigationController?.present(addAnnualBillController, animated: true)

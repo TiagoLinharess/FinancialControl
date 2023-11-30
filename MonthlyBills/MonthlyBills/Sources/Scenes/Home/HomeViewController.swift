@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 10/11/23.
 //
 
+import Core
 import SharpnezDesignSystem
 import UIKit
 
@@ -20,7 +21,7 @@ protocol HomeViewControlling {
 
 final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteracting, HomeRouting> {
     
-    // MARK: - View Life Cicle
+    // MARK: View Life Cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +29,10 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
         configure()
     }
     
-    // MARK: - Configure
+    // MARK: Configure
     
     private func configure() {
-        title = "Bills"
+        title = CoreConstants.Commons.bills
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         customView.onActionError = interactor.fetchBills
@@ -40,7 +41,7 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
         navigationItem.rightBarButtonItems = [button]
     }
     
-    // MARK: - Actions
+    // MARK: Actions
     
     @objc
     func didTapAddButton() {
@@ -50,7 +51,7 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
 
 extension HomeViewController: HomeViewControlling {
     
-    // MARK: - Controller Input
+    // MARK: Controller Input
     
     func presentSuccess(bills: [AnnualBillsViewModel]) {
         customView.presentSuccess(bills: bills)
@@ -67,7 +68,7 @@ extension HomeViewController: HomeViewControlling {
 
 extension HomeViewController: AddBillDelegate {
     
-    // MARK: - Add Bill Delegate
+    // MARK: Add Bill Delegate
     
     func didAddBill() {
         interactor.fetchBills()

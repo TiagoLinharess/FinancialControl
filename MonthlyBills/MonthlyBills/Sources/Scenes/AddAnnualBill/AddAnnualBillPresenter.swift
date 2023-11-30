@@ -16,7 +16,7 @@ protocol AddAnnualBillPresenting {
 
 final class AddAnnualBillPresenter: UIVIPPresenter<AddAnnualBillViewControlling>, AddAnnualBillPresenting {
     
-    // MARK: - Methods
+    // MARK: Methods
     
     func setYears(years: [String]) {
         viewController?.setYears(years: years)

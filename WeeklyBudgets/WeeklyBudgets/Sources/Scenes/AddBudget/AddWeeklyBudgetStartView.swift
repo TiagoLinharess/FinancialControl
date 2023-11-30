@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 30/08/23.
 //
 
+import Core
 import SharpnezDesignSystem
 import SwiftUI
 
@@ -39,7 +40,7 @@ struct AddWeeklyBudgetStartView: View {
                 Button {
                     flowPresented.wrappedValue.toggle()
                 } label: {
-                    Label(String(), systemImage: Constants.Icons.close)
+                    Label(String(), systemImage: CoreConstants.Icons.close)
                 }
             }
         }

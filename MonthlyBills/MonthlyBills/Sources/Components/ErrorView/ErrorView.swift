@@ -5,21 +5,22 @@
 //  Created by Tiago Linhares on 27/11/23.
 //
 
+import Core
 import SharpnezDesignSystem
 import SnapKit
 import UIKit
 
 final class ErrorView: UIView {
     
-    // MARK: - Properties
+    // MARK: Properties
     
     var didTap: (() -> Void)
     
-    // MARK: - UI Elements
+    // MARK: UI Elements
     
     private lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "something happened, try again later"
+        label.text = CoreConstants.Error.generic
         label.font = label.font.withSize(.big)
         return label
     }()
@@ -29,14 +30,14 @@ final class ErrorView: UIView {
             self?.didTap()
         }
         var configuration = UIButton.Configuration.filled()
-        configuration.title = "try again"
+        configuration.title = CoreConstants.Commons.tryAgain
         configuration.buttonSize = .large
         configuration.cornerStyle = .medium
         let button = UIButton(configuration: configuration, primaryAction: action)
         return button
     }()
     
-    // MARK: - Init
+    // MARK: Init
     
     init(didTap: @escaping () -> Void) {
         self.didTap = didTap
@@ -45,10 +46,10 @@ final class ErrorView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(CoreConstants.Init.coder)
     }
     
-    // MARK: - Public Mehtods
+    // MARK: Public Mehtods
     
     func updateText(text: String) {
         label.text = text
@@ -57,7 +58,7 @@ final class ErrorView: UIView {
 
 extension ErrorView: UIViewCode {
     
-    // MARK: - View Setup
+    // MARK: View Setup
     
     func setupView() { }
     

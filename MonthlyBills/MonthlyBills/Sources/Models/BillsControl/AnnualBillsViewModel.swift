@@ -5,17 +5,18 @@
 //  Created by Tiago Linhares on 26/11/23.
 //
 
+import Core
 import Foundation
 import SharpnezCore
 
 class AnnualBillsViewModel {
     
-    // MARK: - Properties
+    // MARK: Properties
     
     let year: String
     private(set) var monthlyBills: [MonthlyBillViewModel]
     
-    // MARK: - Init
+    // MARK: Init
     
     init(year: String) {
         self.year = year
@@ -24,11 +25,11 @@ class AnnualBillsViewModel {
         }
     }
     
-    // MARK: - Methods
+    // MARK: Methods
     
     func set(bill: MonthlyBillViewModel, at index: Int) throws {
         if index > 11 || index < 0 {
-            throw CoreError.customError("index out of bounds")
+            throw CoreError.customError(CoreConstants.Error.indexOutOfBounds)
         }
         
         monthlyBills[index] = bill

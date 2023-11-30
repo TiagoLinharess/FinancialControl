@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 01/11/23.
 //
 
+import Core
 import SharpnezDesignSystem
 import SwiftUI
 
@@ -23,7 +24,7 @@ struct WeekExpenseView: View {
                     .lineLimit(1)
                     .layoutPriority(1)
             } icon: {
-                Image(systemName: expense.paymentMode == .debit ? Constants.Icons.cash : Constants.Icons.creditCard)
+                Image(systemName: expense.paymentMode == .debit ? CoreConstants.Icons.cash : CoreConstants.Icons.creditCard)
             }
             .frame(height: .xxBig)
             if showDescription && !expense.description.isEmpty {

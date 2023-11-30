@@ -9,7 +9,7 @@ import Foundation
 
 struct MonthlyBillViewModel {
     
-    // MARK: - Properties
+    // MARK: Properties
     
     let month: String
     var income: IncomeViewModel?
@@ -23,7 +23,7 @@ struct MonthlyBillViewModel {
         return income.total - (investment.total + expense.total)
     }
     
-    // MARK: - Init
+    // MARK: Init
     
     init(
         month: String,
@@ -37,7 +37,7 @@ struct MonthlyBillViewModel {
         self.expense = expense
     }
     
-    // MARK: - Methods
+    // MARK: Methods
     
     func percentageOfRevenue(value: Double) -> Double {
         guard let income else { return 100 }

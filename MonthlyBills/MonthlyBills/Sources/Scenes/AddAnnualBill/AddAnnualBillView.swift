@@ -13,28 +13,30 @@ import UIKit
 
 final class AddAnnualBillView: UIView {
     
-    // MARK: - Properties
+    // MARK: Properties
     
     var years: [String] = []
     
-    // MARK: - UI Elements
+    // MARK: UI Elements
     
-    private lazy var yearTextField: UITextField = {
-        let textField = UITextField()
-        textField.inputView = pickerView
-        textField.text = "select"
-        textField.backgroundColor = .secondarySystemBackground
-        return textField
+    private lazy var label: UILabel = {
+        let label = UILabel()
+        label.text = Constants.AddAnnualBillView.mainLabel
+        label.font = .systemFont(ofSize: .xBig, weight: .medium)
+        label.numberOfLines = .zero
+        return label
     }()
     
     private lazy var pickerView: UIPickerView = {
         let picker = UIPickerView()
         picker.delegate = self
         picker.dataSource = self
+        picker.backgroundColor = .secondarySystemBackground
+        picker.layer.cornerRadius = .smaller
         return picker
     }()
     
-    // MARK: - Init
+    // MARK: Init
     
     required init() {
         super.init(frame: .zero)
@@ -42,38 +44,51 @@ final class AddAnnualBillView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(CoreConstants.Init.coder)
     }
     
-    // MARK: - Public Methods
+    // MARK: Public Methods
     
     func setYears(years: [String]) {
         self.years = years
         pickerView.reloadAllComponents()
     }
+    
+    func getSelectedYear() -> String {
+        return years[pickerView.selectedRow(inComponent: .zero)]
+    }
 }
 
 extension AddAnnualBillView: UIViewCode {
     
-    // MARK: - View Setup
+    // MARK: View Setup
     
     func setupView() {
-        backgroundColor = .secondarySystemBackground
+        backgroundColor = .systemBackground
     }
     
     func setupHierarchy() {
-        addSubview(yearTextField)
+        addSubview(label)
+        addSubview(pickerView)
     }
     
     func setupConstraints() {
-        yearTextField.snp.makeConstraints {
+        label.snp.makeConstraints {
             $0.top.equalTo(safeAreaLayoutGuide).inset(CGFloat.small)
             $0.horizontalEdges.equalToSuperview().inset(CGFloat.small)
+        }
+        
+        pickerView.snp.makeConstraints {
+            $0.top.equalTo(self.label.snp.bottom).offset(CGFloat.xBig)
+            $0.horizontalEdges.equalToSuperview().inset(CGFloat.small)
+            $0.height.equalTo(CoreConstants.Sizes.pickerHeight)
         }
     }
 }
 
 extension AddAnnualBillView: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    // MARK: UIPickerView Delegate & DataSource
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -85,9 +100,5 @@ extension AddAnnualBillView: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return years[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        yearTextField.text = years[row]
     }
 }

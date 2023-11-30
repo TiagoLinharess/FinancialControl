@@ -9,7 +9,7 @@ import Foundation
 
 struct IncomeViewModel {
     
-    // MARK: - Properties
+    // MARK: Properties
     
     var salary: Double
     var bonus: Double

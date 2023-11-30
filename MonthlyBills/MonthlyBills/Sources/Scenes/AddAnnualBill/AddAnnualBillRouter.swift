@@ -14,6 +14,8 @@ protocol AddAnnualBillRouting {
 
 final class AddAnnualBillRouter: UIVIPRouter, AddAnnualBillRouting {
     
+    // MARK: Methods
+    
     func close() {
         viewController?.navigationController?.dismiss(animated: true)
     }

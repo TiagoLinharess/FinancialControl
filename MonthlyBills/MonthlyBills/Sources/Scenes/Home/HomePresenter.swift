@@ -16,7 +16,7 @@ protocol HomePresenting {
 
 final class HomePresenter: UIVIPPresenter<HomeViewControlling>, HomePresenting {
     
-    // MARK: - Methods
+    // MARK: Methods
     
     func presentSuccess(bills: [AnnualBillsViewModel]) {
         if bills.isEmpty {

@@ -9,7 +9,7 @@ import Foundation
 
 struct InvestmentViewModel {
     
-    // MARK: - Properties
+    // MARK: Properties
     
     var shares: Double
     var privatePension: Double
