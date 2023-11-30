@@ -13,9 +13,10 @@ struct InvestmentViewModel {
     
     var shares: Double
     var privatePension: Double
+    var fixedIncome: Double
     var other: Double
     
     var total: Double {
-        shares + privatePension + other
+        shares + fixedIncome + privatePension + other
     }
 }

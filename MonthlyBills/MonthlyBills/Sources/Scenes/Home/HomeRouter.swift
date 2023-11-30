@@ -8,8 +8,14 @@
 import Foundation
 import SharpnezDesignSystem
 
-protocol HomeRouting { }
+protocol HomeRouting {
+    func routeToAdd()
+}
 
 final class HomeRouter: UIVIPRouter, HomeRouting {
     
+    func routeToAdd() {
+        let addAnnualBillController = AddAnnualBillFactory.configure()
+        viewController?.navigationController?.present(addAnnualBillController, animated: true)
+    }
 }

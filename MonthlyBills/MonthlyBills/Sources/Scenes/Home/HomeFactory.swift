@@ -17,7 +17,7 @@ enum HomeFactory {
         
         let controller = HomeViewController(customView: view, interactor: interactor, router: router)
         
-        router.navigationController = controller.navigationController
+        router.viewController = controller
         presenter.viewController = controller
         
         return controller

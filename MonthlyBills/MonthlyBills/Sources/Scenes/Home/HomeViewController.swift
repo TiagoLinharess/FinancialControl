@@ -8,6 +8,10 @@
 import SharpnezDesignSystem
 import UIKit
 
+protocol AddBillDelegate {
+    func didAddBill()
+}
+
 protocol HomeViewControlling {
     func presentSuccess(bills: [AnnualBillsViewModel])
     func presentEmpty()
@@ -31,6 +35,16 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         customView.onActionError = interactor.fetchBills
+        
+        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
+        navigationItem.rightBarButtonItems = [button]
+    }
+    
+    // MARK: - Actions
+    
+    @objc
+    func didTapAddButton() {
+        router.routeToAdd()
     }
 }
 
@@ -48,5 +62,14 @@ extension HomeViewController: HomeViewControlling {
     
     func presentError(message: String?) {
         customView.presentError(message: message)
+    }
+}
+
+extension HomeViewController: AddBillDelegate {
+    
+    // MARK: - Add Bill Delegate
+    
+    func didAddBill() {
+        interactor.fetchBills()
     }
 }

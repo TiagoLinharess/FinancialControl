@@ -23,6 +23,20 @@ struct MonthlyBillViewModel {
         return income.total - (investment.total + expense.total)
     }
     
+    // MARK: - Init
+    
+    init(
+        month: String,
+        income: IncomeViewModel? = nil,
+        investment: InvestmentViewModel? = nil,
+        expense: ExpenseViewModel? = nil
+    ) {
+        self.month = month
+        self.income = income
+        self.investment = investment
+        self.expense = expense
+    }
+    
     // MARK: - Methods
     
     func percentageOfRevenue(value: Double) -> Double {

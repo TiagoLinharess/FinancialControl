@@ -25,6 +25,12 @@
 		ED8D234A2B14CCDF009E8326 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D23492B14CCDF009E8326 /* Core.framework */; };
 		ED8D23502B14CF5E009E8326 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D234F2B14CF5E009E8326 /* EmptyView.swift */; };
 		ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23522B14D360009E8326 /* ErrorView.swift */; };
+		ED8D23562B156119009E8326 /* AddAnnualBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23552B156119009E8326 /* AddAnnualBillView.swift */; };
+		ED8D23582B1561A7009E8326 /* AddAnnualBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23572B1561A7009E8326 /* AddAnnualBillViewController.swift */; };
+		ED8D235A2B15625E009E8326 /* AddAnnualBillInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23592B15625E009E8326 /* AddAnnualBillInteractor.swift */; };
+		ED8D235C2B1562C9009E8326 /* AddAnnualBillPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D235B2B1562C9009E8326 /* AddAnnualBillPresenter.swift */; };
+		ED8D235E2B1564CD009E8326 /* AddAnnualBillRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D235D2B1564CD009E8326 /* AddAnnualBillRouter.swift */; };
+		ED8D23602B15654C009E8326 /* AddAnnualBillFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D235F2B15654C009E8326 /* AddAnnualBillFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +55,12 @@
 		ED8D23492B14CCDF009E8326 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED8D234F2B14CF5E009E8326 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		ED8D23522B14D360009E8326 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		ED8D23552B156119009E8326 /* AddAnnualBillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualBillView.swift; sourceTree = "<group>"; };
+		ED8D23572B1561A7009E8326 /* AddAnnualBillViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualBillViewController.swift; sourceTree = "<group>"; };
+		ED8D23592B15625E009E8326 /* AddAnnualBillInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualBillInteractor.swift; sourceTree = "<group>"; };
+		ED8D235B2B1562C9009E8326 /* AddAnnualBillPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualBillPresenter.swift; sourceTree = "<group>"; };
+		ED8D235D2B1564CD009E8326 /* AddAnnualBillRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualBillRouter.swift; sourceTree = "<group>"; };
+		ED8D235F2B15654C009E8326 /* AddAnnualBillFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualBillFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +145,7 @@
 		ED13B77B2AFEBBA7003161D7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				ED8D23542B1560F0009E8326 /* AddAnnualBill */,
 				ED13B77C2AFEBBBC003161D7 /* Home */,
 			);
 			path = Scenes;
@@ -210,6 +223,19 @@
 				ED8D23522B14D360009E8326 /* ErrorView.swift */,
 			);
 			path = ErrorView;
+			sourceTree = "<group>";
+		};
+		ED8D23542B1560F0009E8326 /* AddAnnualBill */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D235F2B15654C009E8326 /* AddAnnualBillFactory.swift */,
+				ED8D23572B1561A7009E8326 /* AddAnnualBillViewController.swift */,
+				ED8D23552B156119009E8326 /* AddAnnualBillView.swift */,
+				ED8D23592B15625E009E8326 /* AddAnnualBillInteractor.swift */,
+				ED8D235B2B1562C9009E8326 /* AddAnnualBillPresenter.swift */,
+				ED8D235D2B1564CD009E8326 /* AddAnnualBillRouter.swift */,
+			);
+			path = AddAnnualBill;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,20 +343,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8D235E2B1564CD009E8326 /* AddAnnualBillRouter.swift in Sources */,
 				ED8D23422B143031009E8326 /* AnnualBillsViewModel.swift in Sources */,
 				ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */,
+				ED8D23582B1561A7009E8326 /* AddAnnualBillViewController.swift in Sources */,
 				ED8D23322B141FC2009E8326 /* HomeRouter.swift in Sources */,
 				ED8D23442B14BFC1009E8326 /* IncomeViewModel.swift in Sources */,
 				ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */,
 				ED13B7822AFEC159003161D7 /* HomeViewController.swift in Sources */,
 				ED8D23372B1421C2009E8326 /* MBFacade.swift in Sources */,
 				ED8D232C2B141E20009E8326 /* HomeView.swift in Sources */,
+				ED8D23602B15654C009E8326 /* AddAnnualBillFactory.swift in Sources */,
+				ED8D23562B156119009E8326 /* AddAnnualBillView.swift in Sources */,
 				ED8D23302B141F70009E8326 /* HomePresenter.swift in Sources */,
 				ED8D23462B14BFEC009E8326 /* InvestmentViewModel.swift in Sources */,
+				ED8D235C2B1562C9009E8326 /* AddAnnualBillPresenter.swift in Sources */,
 				ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */,
 				ED8D233E2B1428F4009E8326 /* MonthlyBillViewModel.swift in Sources */,
 				ED8D23482B14C034009E8326 /* ExpenseViewModel.swift in Sources */,
 				ED8D23502B14CF5E009E8326 /* EmptyView.swift in Sources */,
+				ED8D235A2B15625E009E8326 /* AddAnnualBillInteractor.swift in Sources */,
 				ED13B7722AFEBB65003161D7 /* MonthlyBills.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,9 +521,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.MonthlyBills;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -521,9 +556,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.MonthlyBills;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
