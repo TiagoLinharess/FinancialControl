@@ -119,28 +119,19 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     
     // MARK: UITableview Delegate & DataSource
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return bills?.count ?? .zero
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bills?[section].monthlyBills.count ?? .zero
-    }
-    
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return bills?[section].year ?? String()
+        return bills?.count ?? .zero
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let bills else { return UITableViewCell() }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath)
-        let bill = bills[indexPath.section].monthlyBills[indexPath.row]
+        let yearBills = bills[indexPath.row]
         
         var content = cell.defaultContentConfiguration()
-        content.text = bill.month
-        content.secondaryText = bill.balance.toCurrency()
+        content.text = yearBills.year
+        content.secondaryText = yearBills.balance.toCurrency()
         content.prefersSideBySideTextAndSecondaryText = true
         
         cell.contentConfiguration = content

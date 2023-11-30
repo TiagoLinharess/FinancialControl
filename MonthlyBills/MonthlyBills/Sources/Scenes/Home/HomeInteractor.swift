@@ -18,7 +18,7 @@ final class HomeInteractor: UIVIPInteractor<HomePresenting>, HomeInteracting {
     // MARK: Methods
     
     func fetchBills() {
-        let bills: [AnnualBillsViewModel] = [.init(year: "2023")]
+        let bills: [AnnualBillsViewModel] = [.init(year: "2023"), .init(year: "2024"), .init(year: "2025")]
         presenter.presentSuccess(bills: bills)
     }
 }

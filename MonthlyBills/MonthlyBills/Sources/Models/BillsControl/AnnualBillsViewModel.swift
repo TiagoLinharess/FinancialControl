@@ -16,6 +16,16 @@ class AnnualBillsViewModel {
     let year: String
     private(set) var monthlyBills: [MonthlyBillViewModel]
     
+    var balance: Double {
+        var balance: Double = .zero
+        
+        monthlyBills.forEach { bill in
+            balance += bill.balance
+        }
+        
+        return balance
+    }
+    
     // MARK: Init
     
     init(year: String) {

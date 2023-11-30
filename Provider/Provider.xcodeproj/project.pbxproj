@@ -135,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				ED11D28A2B0267B100514D7C /* Commons */,
+				ED2C680A2B194CCB00B831C6 /* MonthlyBills */,
 				ED11D2772B02486400514D7C /* WeeklyBudgets */,
 			);
 			path = Sources;
@@ -230,6 +231,13 @@
 				ED11D2A42B02762C00514D7C /* WeeklyResponseMock.swift */,
 			);
 			path = WeeklyBudgets;
+			sourceTree = "<group>";
+		};
+		ED2C680A2B194CCB00B831C6 /* MonthlyBills */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MonthlyBills;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
