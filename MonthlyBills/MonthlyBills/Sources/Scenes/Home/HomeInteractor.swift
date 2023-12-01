@@ -15,10 +15,25 @@ protocol HomeInteracting {
 
 final class HomeInteractor: UIVIPInteractor<HomePresenting>, HomeInteracting {
     
+    // MARK: Properties
+    
+    let worker: BillsWorking
+    
+    // MARK: Init
+    
+    init(presenter: HomePresenting, worker: BillsWorking = BillsWorker()) {
+        self.worker = worker
+        super.init(presenter: presenter)
+    }
+    
     // MARK: Methods
     
     func fetchCalendars() {
-        let calendars: [AnnualCalendarViewModel] = [.init(year: "2023"), .init(year: "2024"), .init(year: "2025")]
-        presenter.presentSuccess(calendars: calendars)
+        do {
+            let calendars = try worker.read()
+            presenter.presentSuccess(calendars: calendars)
+        } catch {
+            presenter.presentError(error: error)
+        }
     }
 }

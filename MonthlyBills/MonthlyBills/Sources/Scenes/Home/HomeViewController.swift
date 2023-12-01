@@ -45,7 +45,7 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
     
     @objc
     func didTapAddButton() {
-        router.routeToAdd()
+        router.routeToAdd(delegate: self)
     }
 }
 

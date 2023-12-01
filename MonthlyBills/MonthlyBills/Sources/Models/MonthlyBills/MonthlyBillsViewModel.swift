@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Provider
 
-struct MonthlyBillViewModel {
+struct MonthlyBillsViewModel {
     
     // MARK: Properties
     
@@ -37,10 +38,28 @@ struct MonthlyBillViewModel {
         self.expense = expense
     }
     
+    // MARK: Init from response
+    
+    init(from response: MonthlyBillsResponse) {
+        self.month = response.month
+        self.income = IncomeViewModel(from: response.income)
+        self.investment = InvestmentViewModel(from: response.investment)
+        self.expense = ExpenseViewModel(from: response.expense)
+    }
+    
     // MARK: Methods
     
     func percentageOfRevenue(value: Double) -> Double {
         guard let income else { return 100 }
         return (value / income.total) * 100
+    }
+    
+    func getResponse() -> MonthlyBillsResponse {
+        return .init(
+            month: month,
+            income: income?.getResponse(),
+            investment: investment?.getResponse(),
+            expense: expense?.getResponse()
+        )
     }
 }

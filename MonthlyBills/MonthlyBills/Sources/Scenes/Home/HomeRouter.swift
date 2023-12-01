@@ -9,15 +9,15 @@ import Foundation
 import SharpnezDesignSystem
 
 protocol HomeRouting {
-    func routeToAdd()
+    func routeToAdd(delegate: AddBillDelegate)
 }
 
 final class HomeRouter: UIVIPRouter, HomeRouting {
     
     // MARK: Methods
     
-    func routeToAdd() {
-        let addAnnualCalendarController = AddAnnualCalendarFactory.configure()
+    func routeToAdd(delegate: AddBillDelegate) {
+        let addAnnualCalendarController = AddAnnualCalendarFactory.configure(delegate: delegate)
         viewController?.navigationController?.present(addAnnualCalendarController, animated: true)
     }
 }

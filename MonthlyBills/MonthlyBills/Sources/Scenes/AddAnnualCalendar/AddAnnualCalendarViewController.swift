@@ -67,7 +67,7 @@ extension AddAnnualCalendarViewController: AddAnnualCalendarViewControlling {
                 description: Constants.AddAnnualCalendarView.successMessage,
                 buttons: [
                     .init(title: CoreConstants.Commons.ok, style: .default) { [weak self] _ in
-                        self?.router.close()
+                        self?.router.finish()
                     }
                 ]
             )

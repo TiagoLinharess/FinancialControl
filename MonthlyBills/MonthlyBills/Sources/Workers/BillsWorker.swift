@@ -16,15 +16,25 @@ protocol BillsWorking {
 
 final class BillsWorker: BillsWorking {
     
+    let repository: MonthlyBillsRepositoryProtocol
+    
+    init(repository: MonthlyBillsRepositoryProtocol = MonthlyBillsRepository()) {
+        self.repository = repository
+    }
+    
     // MARK: Create
     
     func create(annualCalendar: AnnualCalendarViewModel) throws {
-        // todo
+        try repository.create(annualCalendar: annualCalendar.getResponse())
     }
     
     // MARK: Read
     
     func read() throws -> [AnnualCalendarViewModel] {
-        return []
+        let annualCalendars = try repository.read()
+        
+        return annualCalendars.map { response -> AnnualCalendarViewModel in
+            return .init(from: response)
+        }
     }
 }

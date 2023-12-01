@@ -17,6 +17,17 @@ protocol AddAnnualCalendarInteracting {
 
 final class AddAnnualCalendarInteractor: UIVIPInteractor<AddAnnualCalendarPresenting>, AddAnnualCalendarInteracting {
     
+    // MARK: Properties
+    
+    let worker: BillsWorking
+    
+    // MARK: Init
+    
+    init(presenter: AddAnnualCalendarPresenting, worker: BillsWorking = BillsWorker()) {
+        self.worker = worker
+        super.init(presenter: presenter)
+    }
+    
     // MARK: Methods
     
     func fetchAvailableYears() {
@@ -37,6 +48,11 @@ final class AddAnnualCalendarInteractor: UIVIPInteractor<AddAnnualCalendarPresen
             return
         }
         
-        presenter.presentSuccess()
+        do {
+            try worker.create(annualCalendar: AnnualCalendarViewModel(year: year))
+            presenter.presentSuccess()
+        } catch {
+            presenter.presentError(error: error)
+        }
     }
 }
