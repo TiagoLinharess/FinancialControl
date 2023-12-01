@@ -14,6 +14,12 @@
 		ED2C68092B19492800B831C6 /* BillsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68082B19492800B831C6 /* BillsWorker.swift */; };
 		ED2C681A2B19566B00B831C6 /* Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C68192B19566B00B831C6 /* Provider.framework */; };
 		ED2C681B2B19566B00B831C6 /* Provider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C68192B19566B00B831C6 /* Provider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED2C68742B1A4A0200B831C6 /* CalendarDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C686E2B1A4A0200B831C6 /* CalendarDetailFactory.swift */; };
+		ED2C68752B1A4A0200B831C6 /* CalendarDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C686F2B1A4A0200B831C6 /* CalendarDetailPresenter.swift */; };
+		ED2C68762B1A4A0200B831C6 /* CalendarDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68702B1A4A0200B831C6 /* CalendarDetailRouter.swift */; };
+		ED2C68772B1A4A0200B831C6 /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68712B1A4A0200B831C6 /* CalendarDetailViewController.swift */; };
+		ED2C68782B1A4A0200B831C6 /* CalendarDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68722B1A4A0200B831C6 /* CalendarDetailInteractor.swift */; };
+		ED2C68792B1A4A0200B831C6 /* CalendarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68732B1A4A0200B831C6 /* CalendarDetailView.swift */; };
 		ED8D232C2B141E20009E8326 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D232B2B141E20009E8326 /* HomeView.swift */; };
 		ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D232D2B141EE6009E8326 /* HomeInteractor.swift */; };
 		ED8D23302B141F70009E8326 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D232F2B141F70009E8326 /* HomePresenter.swift */; };
@@ -61,6 +67,12 @@
 		ED13B7812AFEC159003161D7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ED2C68082B19492800B831C6 /* BillsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsWorker.swift; sourceTree = "<group>"; };
 		ED2C68192B19566B00B831C6 /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED2C686E2B1A4A0200B831C6 /* CalendarDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailFactory.swift; sourceTree = "<group>"; };
+		ED2C686F2B1A4A0200B831C6 /* CalendarDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailPresenter.swift; sourceTree = "<group>"; };
+		ED2C68702B1A4A0200B831C6 /* CalendarDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailRouter.swift; sourceTree = "<group>"; };
+		ED2C68712B1A4A0200B831C6 /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
+		ED2C68722B1A4A0200B831C6 /* CalendarDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailInteractor.swift; sourceTree = "<group>"; };
+		ED2C68732B1A4A0200B831C6 /* CalendarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailView.swift; sourceTree = "<group>"; };
 		ED8D232B2B141E20009E8326 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ED8D232D2B141EE6009E8326 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		ED8D232F2B141F70009E8326 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -169,6 +181,7 @@
 		ED13B77B2AFEBBA7003161D7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				ED2C68232B1A308300B831C6 /* CalendarDetail */,
 				ED8D23542B1560F0009E8326 /* AddAnnualCalendar */,
 				ED13B77C2AFEBBBC003161D7 /* Home */,
 			);
@@ -194,6 +207,19 @@
 				ED2C68082B19492800B831C6 /* BillsWorker.swift */,
 			);
 			path = Workers;
+			sourceTree = "<group>";
+		};
+		ED2C68232B1A308300B831C6 /* CalendarDetail */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C686E2B1A4A0200B831C6 /* CalendarDetailFactory.swift */,
+				ED2C686F2B1A4A0200B831C6 /* CalendarDetailPresenter.swift */,
+				ED2C68702B1A4A0200B831C6 /* CalendarDetailRouter.swift */,
+				ED2C68712B1A4A0200B831C6 /* CalendarDetailViewController.swift */,
+				ED2C68722B1A4A0200B831C6 /* CalendarDetailInteractor.swift */,
+				ED2C68732B1A4A0200B831C6 /* CalendarDetailView.swift */,
+			);
+			path = CalendarDetail;
 			sourceTree = "<group>";
 		};
 		ED8D23352B1421B2009E8326 /* Facade */ = {
@@ -385,25 +411,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2C68752B1A4A0200B831C6 /* CalendarDetailPresenter.swift in Sources */,
 				ED8D235E2B1564CD009E8326 /* AddAnnualCalendarRouter.swift in Sources */,
 				ED8D23702B19098C009E8326 /* Constants.swift in Sources */,
 				ED8D23422B143031009E8326 /* AnnualCalendarViewModel.swift in Sources */,
+				ED2C68772B1A4A0200B831C6 /* CalendarDetailViewController.swift in Sources */,
+				ED2C68742B1A4A0200B831C6 /* CalendarDetailFactory.swift in Sources */,
 				ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */,
 				ED8D23582B1561A7009E8326 /* AddAnnualCalendarViewController.swift in Sources */,
 				ED8D23322B141FC2009E8326 /* HomeRouter.swift in Sources */,
 				ED8D23442B14BFC1009E8326 /* IncomeViewModel.swift in Sources */,
 				ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */,
 				ED13B7822AFEC159003161D7 /* HomeViewController.swift in Sources */,
+				ED2C68762B1A4A0200B831C6 /* CalendarDetailRouter.swift in Sources */,
 				ED8D23372B1421C2009E8326 /* MBFacade.swift in Sources */,
 				ED8D232C2B141E20009E8326 /* HomeView.swift in Sources */,
 				ED8D23602B15654C009E8326 /* AddAnnualCalendarFactory.swift in Sources */,
 				ED8D23562B156119009E8326 /* AddAnnualCalendarView.swift in Sources */,
+				ED2C68782B1A4A0200B831C6 /* CalendarDetailInteractor.swift in Sources */,
 				ED8D23302B141F70009E8326 /* HomePresenter.swift in Sources */,
 				ED2C68092B19492800B831C6 /* BillsWorker.swift in Sources */,
 				ED8D23462B14BFEC009E8326 /* InvestmentViewModel.swift in Sources */,
 				ED8D235C2B1562C9009E8326 /* AddAnnualCalendarPresenter.swift in Sources */,
 				ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */,
 				ED8D233E2B1428F4009E8326 /* MonthlyBillsViewModel.swift in Sources */,
+				ED2C68792B1A4A0200B831C6 /* CalendarDetailView.swift in Sources */,
 				ED8D23482B14C034009E8326 /* ExpenseViewModel.swift in Sources */,
 				ED8D23502B14CF5E009E8326 /* EmptyView.swift in Sources */,
 				ED8D235A2B15625E009E8326 /* AddAnnualCalendarInteractor.swift in Sources */,

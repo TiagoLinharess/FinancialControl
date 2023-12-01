@@ -15,8 +15,7 @@ final class HomeView: UIView {
     
     // MARK: Properties
     
-    var onActionError: (() -> Void)?
-    var calendars: [AnnualCalendarViewModel]?
+    var delegate: HomeViewControllerDelegate?
     let reuseIdentifier: String = Constants.HomeView.cellReuseIdentifier
     
     // MARK: UI Elements
@@ -38,7 +37,7 @@ final class HomeView: UIView {
     
     private lazy var errorView: ErrorView = {
         let view = ErrorView { [weak self] in
-            self?.onActionError?()
+            self?.delegate?.errorAction()
         }
         view.isHidden = true
         return view
@@ -57,8 +56,7 @@ final class HomeView: UIView {
     
     // MARK: Public Methods
     
-    func presentSuccess(calendars: [AnnualCalendarViewModel]) {
-        self.calendars = calendars
+    func presentSuccess() {
         tableView.isHidden = false
         emptyView.isHidden = true
         errorView.isHidden = true
@@ -66,7 +64,6 @@ final class HomeView: UIView {
     }
     
     func presentError(message: String?) {
-        self.calendars = []
         tableView.isHidden = true
         emptyView.isHidden = true
         errorView.isHidden = false
@@ -78,7 +75,6 @@ final class HomeView: UIView {
     }
     
     func presentEmpty() {
-        self.calendars = []
         tableView.isHidden = true
         emptyView.isHidden = false
         errorView.isHidden = true
@@ -120,11 +116,11 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     // MARK: UITableview Delegate & DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return calendars?.count ?? .zero
+        return delegate?.getCalendars().count ?? .zero
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let calendars else { return UITableViewCell() }
+        guard let calendars = delegate?.getCalendars() else { return UITableViewCell() }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath)
         let calendar = calendars[indexPath.row]
@@ -137,5 +133,9 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
         cell.contentConfiguration = content
         cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.didSelectCalendar(at: indexPath.row)
     }
 }

@@ -13,6 +13,12 @@ protocol AddBillDelegate {
     func didAddBill()
 }
 
+protocol HomeViewControllerDelegate {
+    func getCalendars() -> [AnnualCalendarViewModel]
+    func didSelectCalendar(at row: Int)
+    func errorAction()
+}
+
 protocol HomeViewControlling {
     func presentSuccess(calendars: [AnnualCalendarViewModel])
     func presentEmpty()
@@ -20,6 +26,10 @@ protocol HomeViewControlling {
 }
 
 final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteracting, HomeRouting> {
+    
+    // MARK: Properties
+    
+    var calendars: [AnnualCalendarViewModel] = []
     
     // MARK: View Life Cicle
     
@@ -35,7 +45,6 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
         title = CoreConstants.Commons.bills
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
-        customView.onActionError = interactor.fetchCalendars
         
         let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
         navigationItem.rightBarButtonItems = [button]
@@ -54,7 +63,8 @@ extension HomeViewController: HomeViewControlling {
     // MARK: Controller Input
     
     func presentSuccess(calendars: [AnnualCalendarViewModel]) {
-        customView.presentSuccess(calendars: calendars)
+        self.calendars = calendars
+        customView.presentSuccess()
     }
     
     func presentEmpty() {
@@ -63,6 +73,24 @@ extension HomeViewController: HomeViewControlling {
     
     func presentError(message: String?) {
         customView.presentError(message: message)
+    }
+}
+
+extension HomeViewController: HomeViewControllerDelegate {
+    
+    // MARK: Controller Delegate
+    
+    func getCalendars() -> [AnnualCalendarViewModel] {
+        return calendars
+    }
+    
+    func didSelectCalendar(at row: Int) {
+        let calendar = calendars[row]
+        router.routeToDetail(calendar: calendar)
+    }
+    
+    func errorAction() {
+        interactor.fetchCalendars()
     }
 }
 

@@ -17,6 +17,7 @@ enum HomeFactory {
         
         let controller = HomeViewController(customView: view, interactor: interactor, router: router)
         
+        view.delegate = controller
         router.viewController = controller
         presenter.viewController = controller
         
