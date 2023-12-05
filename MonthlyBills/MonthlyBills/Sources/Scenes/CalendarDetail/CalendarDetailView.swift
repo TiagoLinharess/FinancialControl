@@ -14,7 +14,7 @@ final class CalendarDetailView: UIView {
     // MARK: Properties
     
     var delegate: CalendarDetailViewControllerDelegate?
-    let reuseIdentifier: String = "CalendarDetailViewCellIdentifier"
+    let reuseIdentifier: String = Constants.CalendarDetailView.reuseIdentifier
     
     // MARK: UI Elements
     

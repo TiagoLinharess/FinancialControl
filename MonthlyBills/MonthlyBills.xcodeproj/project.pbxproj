@@ -41,6 +41,12 @@
 		ED8D235E2B1564CD009E8326 /* AddAnnualCalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D235D2B1564CD009E8326 /* AddAnnualCalendarRouter.swift */; };
 		ED8D23602B15654C009E8326 /* AddAnnualCalendarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D235F2B15654C009E8326 /* AddAnnualCalendarFactory.swift */; };
 		ED8D23702B19098C009E8326 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D236F2B19098C009E8326 /* Constants.swift */; };
+		EDDAD69E2B1F6D4500C0BCB6 /* BillDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6982B1F6D4500C0BCB6 /* BillDetailFactory.swift */; };
+		EDDAD69F2B1F6D4500C0BCB6 /* BillDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6992B1F6D4500C0BCB6 /* BillDetailPresenter.swift */; };
+		EDDAD6A02B1F6D4500C0BCB6 /* BillDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69A2B1F6D4500C0BCB6 /* BillDetailRouter.swift */; };
+		EDDAD6A12B1F6D4500C0BCB6 /* BillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69B2B1F6D4500C0BCB6 /* BillDetailViewController.swift */; };
+		EDDAD6A22B1F6D4500C0BCB6 /* BillDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */; };
+		EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,6 +100,12 @@
 		ED8D235D2B1564CD009E8326 /* AddAnnualCalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarRouter.swift; sourceTree = "<group>"; };
 		ED8D235F2B15654C009E8326 /* AddAnnualCalendarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarFactory.swift; sourceTree = "<group>"; };
 		ED8D236F2B19098C009E8326 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EDDAD6982B1F6D4500C0BCB6 /* BillDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailFactory.swift; sourceTree = "<group>"; };
+		EDDAD6992B1F6D4500C0BCB6 /* BillDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailPresenter.swift; sourceTree = "<group>"; };
+		EDDAD69A2B1F6D4500C0BCB6 /* BillDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailRouter.swift; sourceTree = "<group>"; };
+		EDDAD69B2B1F6D4500C0BCB6 /* BillDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailViewController.swift; sourceTree = "<group>"; };
+		EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailInteractor.swift; sourceTree = "<group>"; };
+		EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +193,7 @@
 		ED13B77B2AFEBBA7003161D7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EDDAD6972B1F6D1200C0BCB6 /* BillDetail */,
 				ED2C68232B1A308300B831C6 /* CalendarDetail */,
 				ED8D23542B1560F0009E8326 /* AddAnnualCalendar */,
 				ED13B77C2AFEBBBC003161D7 /* Home */,
@@ -305,6 +318,19 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		EDDAD6972B1F6D1200C0BCB6 /* BillDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD6982B1F6D4500C0BCB6 /* BillDetailFactory.swift */,
+				EDDAD6992B1F6D4500C0BCB6 /* BillDetailPresenter.swift */,
+				EDDAD69A2B1F6D4500C0BCB6 /* BillDetailRouter.swift */,
+				EDDAD69B2B1F6D4500C0BCB6 /* BillDetailViewController.swift */,
+				EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */,
+				EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */,
+			);
+			path = BillDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -419,8 +445,12 @@
 				ED2C68742B1A4A0200B831C6 /* CalendarDetailFactory.swift in Sources */,
 				ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */,
 				ED8D23582B1561A7009E8326 /* AddAnnualCalendarViewController.swift in Sources */,
+				EDDAD6A22B1F6D4500C0BCB6 /* BillDetailInteractor.swift in Sources */,
+				EDDAD6A02B1F6D4500C0BCB6 /* BillDetailRouter.swift in Sources */,
+				EDDAD69E2B1F6D4500C0BCB6 /* BillDetailFactory.swift in Sources */,
 				ED8D23322B141FC2009E8326 /* HomeRouter.swift in Sources */,
 				ED8D23442B14BFC1009E8326 /* IncomeViewModel.swift in Sources */,
+				EDDAD69F2B1F6D4500C0BCB6 /* BillDetailPresenter.swift in Sources */,
 				ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */,
 				ED13B7822AFEC159003161D7 /* HomeViewController.swift in Sources */,
 				ED2C68762B1A4A0200B831C6 /* CalendarDetailRouter.swift in Sources */,
@@ -434,6 +464,8 @@
 				ED8D23462B14BFEC009E8326 /* InvestmentViewModel.swift in Sources */,
 				ED8D235C2B1562C9009E8326 /* AddAnnualCalendarPresenter.swift in Sources */,
 				ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */,
+				EDDAD6A12B1F6D4500C0BCB6 /* BillDetailViewController.swift in Sources */,
+				EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */,
 				ED8D233E2B1428F4009E8326 /* MonthlyBillsViewModel.swift in Sources */,
 				ED2C68792B1A4A0200B831C6 /* CalendarDetailView.swift in Sources */,
 				ED8D23482B14C034009E8326 /* ExpenseViewModel.swift in Sources */,

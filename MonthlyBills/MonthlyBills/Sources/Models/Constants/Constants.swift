@@ -23,4 +23,11 @@ enum Constants {
         static let successMessage: String = "annual bill added with success"
         static let errorMessage: String = "please, select a year to continue"
     }
+    
+    // MARK: CalendarDetailView
+    
+    enum CalendarDetailView {
+        static let title: String = "Calendar %@"
+        static let reuseIdentifier: String = "CalendarDetailViewCellIdentifier"
+    }
 }

@@ -7,6 +7,7 @@
 //
 //
 
+import Core
 import SharpnezDesignSystem
 import UIKit
 
@@ -16,14 +17,15 @@ protocol CalendarDetailViewControllerDelegate {
 }
 
 protocol CalendarDetailViewControlling {
-    
+    func presentSuccess(newCalendar: AnnualCalendarViewModel)
+    func presentError(message: String)
 }
 
 final class CalendarDetailViewController: UIVIPBaseViewController<CalendarDetailView, CalendarDetailInteracting, CalendarDetailRouting> {
     
     // MARK: Properties
     
-    private let calendar: AnnualCalendarViewModel
+    private var calendar: AnnualCalendarViewModel
     
     // MARK: Init
     
@@ -44,11 +46,26 @@ final class CalendarDetailViewController: UIVIPBaseViewController<CalendarDetail
         configure()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor.update(calendar: calendar)
+    }
+    
     // MARK: Configure
     
     private func configure() {
-        title = "Calendar \(calendar.year)"
+        title = String(format: Constants.CalendarDetailView.title, calendar.year)
         customView.reloadData()
+        
+        let cancelButton = UIBarButtonItem(image: .init(systemName: CoreConstants.Icons.close), style: .plain, target: self, action: #selector(cancelAction))
+        navigationItem.rightBarButtonItems = [cancelButton]
+    }
+    
+    // MARK: Actions
+    
+    @objc
+    func cancelAction() {
+        router.close()
     }
 }
 
@@ -56,7 +73,19 @@ extension CalendarDetailViewController: CalendarDetailViewControlling {
     
     // MARK: Controller Input
     
+    func presentSuccess(newCalendar: AnnualCalendarViewModel) {
+        self.calendar = newCalendar
+    }
     
+    func presentError(message: String) {
+        presentFeedbackDialog(
+            with: FeedbackModel(
+                title: CoreConstants.Commons.AlertTitle,
+                description: message,
+                buttons: [.init(title: CoreConstants.Commons.ok, style: .default)]
+            )
+        )
+    }
 }
 
 extension CalendarDetailViewController: CalendarDetailViewControllerDelegate {
@@ -68,6 +97,7 @@ extension CalendarDetailViewController: CalendarDetailViewControllerDelegate {
     }
     
     func didSelectMonthlyBill(at row: Int) {
-        let _ = calendar.monthlyBills[row]
+        let bill = calendar.monthlyBills[row]
+        router.routeToBill(bill: bill)
     }
 }
