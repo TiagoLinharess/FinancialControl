@@ -12,7 +12,7 @@ import SharpnezDesignSystem
 import UIKit
 
 protocol CalendarDetailViewControllerDelegate {
-    func getCalendar() -> AnnualCalendarViewModel
+    func getCalendar() -> AnnualCalendarViewModel?
     func didSelectMonthlyBill(at row: Int)
 }
 
@@ -25,35 +25,33 @@ final class CalendarDetailViewController: UIVIPBaseViewController<CalendarDetail
     
     // MARK: Properties
     
-    private var calendar: AnnualCalendarViewModel
+    private let currentYear: String
+    private var calendar: AnnualCalendarViewModel?
     
     // MARK: Init
     
     init(
-        calendar: AnnualCalendarViewModel,
+        currentYear: String,
         customView: CalendarDetailView,
         interactor: CalendarDetailInteracting,
         router: CalendarDetailRouting
     ) {
-        self.calendar = calendar
+        self.currentYear = currentYear
         super.init(customView: customView, interactor: interactor, router: router)
     }
     
     // MARK: View Life Cicle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configure()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        interactor.update(calendar: calendar)
+        interactor.update(at: currentYear)
     }
     
     // MARK: Configure
     
     private func configure() {
+        guard let calendar else { return }
+        
         title = String(format: Constants.CalendarDetailView.title, calendar.year)
         customView.reloadData()
         
@@ -75,6 +73,7 @@ extension CalendarDetailViewController: CalendarDetailViewControlling {
     
     func presentSuccess(newCalendar: AnnualCalendarViewModel) {
         self.calendar = newCalendar
+        configure()
     }
     
     func presentError(message: String) {
@@ -92,12 +91,12 @@ extension CalendarDetailViewController: CalendarDetailViewControllerDelegate {
     
     // MARK: Controller Delegate
     
-    func getCalendar() -> AnnualCalendarViewModel {
+    func getCalendar() -> AnnualCalendarViewModel? {
         return calendar
     }
     
     func didSelectMonthlyBill(at row: Int) {
-        let bill = calendar.monthlyBills[row]
-        router.routeToBill(bill: bill)
+        guard let bill = calendar?.monthlyBills[row] else { return }
+        router.routeToBill(billId: bill.id)
     }
 }

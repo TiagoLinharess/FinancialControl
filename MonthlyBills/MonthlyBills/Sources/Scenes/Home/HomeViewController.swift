@@ -86,7 +86,7 @@ extension HomeViewController: HomeViewControllerDelegate {
     
     func didSelectCalendar(at row: Int) {
         let calendar = calendars[row]
-        router.routeToDetail(calendar: calendar)
+        router.routeToDetail(year: calendar.year)
     }
     
     func errorAction() {

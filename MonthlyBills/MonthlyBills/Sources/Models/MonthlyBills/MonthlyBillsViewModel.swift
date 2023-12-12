@@ -12,6 +12,7 @@ struct MonthlyBillsViewModel {
     
     // MARK: Properties
     
+    let id: String
     let month: String
     var income: IncomeViewModel?
     var investment: InvestmentViewModel?
@@ -32,6 +33,7 @@ struct MonthlyBillsViewModel {
         investment: InvestmentViewModel? = nil,
         expense: ExpenseViewModel? = nil
     ) {
+        self.id = UUID().uuidString
         self.month = month
         self.income = income
         self.investment = investment
@@ -41,6 +43,7 @@ struct MonthlyBillsViewModel {
     // MARK: Init from response
     
     init(from response: MonthlyBillsResponse) {
+        self.id = response.id
         self.month = response.month
         self.income = IncomeViewModel(from: response.income)
         self.investment = InvestmentViewModel(from: response.investment)
@@ -56,6 +59,7 @@ struct MonthlyBillsViewModel {
     
     func getResponse() -> MonthlyBillsResponse {
         return .init(
+            id: id,
             month: month,
             income: income?.getResponse(),
             investment: investment?.getResponse(),

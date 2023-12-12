@@ -11,7 +11,7 @@ import SharpnezDesignSystem
 import UIKit
 
 protocol CalendarDetailRouting {
-    func routeToBill(bill: MonthlyBillsViewModel)
+    func routeToBill(billId: String)
     func close()
 }
 
@@ -19,8 +19,8 @@ final class CalendarDetailRouter: UIVIPRouter, CalendarDetailRouting {
     
     // MARK: Methods
     
-    func routeToBill(bill: MonthlyBillsViewModel) {
-        let controller = BillDetailFactory.configure(bill: bill)
+    func routeToBill(billId: String) {
+        let controller = BillDetailFactory.configure(billId: billId)
         viewController?.navigationController?.pushViewController(controller, animated: true)
     }
     

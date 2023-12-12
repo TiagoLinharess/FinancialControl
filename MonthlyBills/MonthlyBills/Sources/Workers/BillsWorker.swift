@@ -12,7 +12,8 @@ import SharpnezCore
 protocol BillsWorking {
     func create(annualCalendar: AnnualCalendarViewModel) throws
     func read() throws -> [AnnualCalendarViewModel]
-    func readAt(year: String) throws -> AnnualCalendarViewModel
+    func readAtYear(year: String) throws -> AnnualCalendarViewModel
+    func readAtMonth(id: String) throws -> MonthlyBillsViewModel
 }
 
 final class BillsWorker: BillsWorking {
@@ -39,17 +40,11 @@ final class BillsWorker: BillsWorking {
         }
     }
     
-    func readAt(year: String) throws -> AnnualCalendarViewModel {
-        let annualCalendars = try repository.read().map { response -> AnnualCalendarViewModel in
-            return .init(from: response)
-        }
-        
-        guard let calendar = annualCalendars.first(where: { calendar in
-            calendar.year == year
-        }) else {
-            throw CoreError.customError("Could not find calendar")
-        }
-        
-        return calendar
+    func readAtYear(year: String) throws -> AnnualCalendarViewModel {
+        return try .init(from: repository.readAtYear(year: year))
+    }
+    
+    func readAtMonth(id: String) throws -> MonthlyBillsViewModel {
+        return try .init(from: repository.readAtMonth(id: id))
     }
 }

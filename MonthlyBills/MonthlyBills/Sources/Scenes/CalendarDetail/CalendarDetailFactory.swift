@@ -11,14 +11,14 @@ import UIKit
 
 enum CalendarDetailFactory {
     
-    static func configure(calendar: AnnualCalendarViewModel) -> UIViewController {
+    static func configure(year: String) -> UIViewController {
         let router = CalendarDetailRouter()
         let presenter = CalendarDetailPresenter()
         let interactor = CalendarDetailInteractor(presenter: presenter)
         let view = CalendarDetailView()
         
         let controller = CalendarDetailViewController(
-            calendar: calendar,
+            currentYear: year,
             customView: view,
             interactor: interactor,
             router: router

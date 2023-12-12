@@ -68,7 +68,7 @@ extension CalendarDetailView: UITableViewDelegate, UITableViewDataSource {
     // MARK: UITableview Delegate & DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return delegate?.getCalendar().monthlyBills.count ?? .zero
+        return delegate?.getCalendar()?.monthlyBills.count ?? .zero
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

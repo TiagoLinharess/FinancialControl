@@ -47,6 +47,7 @@
 		EDDAD6A12B1F6D4500C0BCB6 /* BillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69B2B1F6D4500C0BCB6 /* BillDetailViewController.swift */; };
 		EDDAD6A22B1F6D4500C0BCB6 /* BillDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */; };
 		EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */; };
+		EDDAD6A62B1F867E00C0BCB6 /* ExtractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6A52B1F867E00C0BCB6 /* ExtractView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,6 +107,7 @@
 		EDDAD69B2B1F6D4500C0BCB6 /* BillDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailViewController.swift; sourceTree = "<group>"; };
 		EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailInteractor.swift; sourceTree = "<group>"; };
 		EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailView.swift; sourceTree = "<group>"; };
+		EDDAD6A52B1F867E00C0BCB6 /* ExtractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +323,7 @@
 		EDDAD6972B1F6D1200C0BCB6 /* BillDetail */ = {
 			isa = PBXGroup;
 			children = (
+				EDDAD6A42B1F865C00C0BCB6 /* SubViews */,
 				EDDAD6982B1F6D4500C0BCB6 /* BillDetailFactory.swift */,
 				EDDAD6992B1F6D4500C0BCB6 /* BillDetailPresenter.swift */,
 				EDDAD69A2B1F6D4500C0BCB6 /* BillDetailRouter.swift */,
@@ -329,6 +332,14 @@
 				EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */,
 			);
 			path = BillDetail;
+			sourceTree = "<group>";
+		};
+		EDDAD6A42B1F865C00C0BCB6 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD6A52B1F867E00C0BCB6 /* ExtractView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED2C68752B1A4A0200B831C6 /* CalendarDetailPresenter.swift in Sources */,
+				EDDAD6A62B1F867E00C0BCB6 /* ExtractView.swift in Sources */,
 				ED8D235E2B1564CD009E8326 /* AddAnnualCalendarRouter.swift in Sources */,
 				ED8D23702B19098C009E8326 /* Constants.swift in Sources */,
 				ED8D23422B143031009E8326 /* AnnualCalendarViewModel.swift in Sources */,

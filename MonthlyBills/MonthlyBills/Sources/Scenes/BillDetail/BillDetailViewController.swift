@@ -7,46 +7,54 @@
 //
 //
 
+import Core
 import SharpnezDesignSystem
 import UIKit
 
 protocol BillDetailViewControlling {
-    
+    func presentSuccess(newBill: MonthlyBillsViewModel)
+    func presentError(message: String)
 }
 
 protocol BillDetailViewControllerDelegate {
-    func getBill() -> MonthlyBillsViewModel
+    func getBill() -> MonthlyBillsViewModel?
+    func navigateToIncomes()
+    func navigateToInvestments()
+    func navigateToExpenses()
 }
 
 final class BillDetailViewController: UIVIPBaseViewController<BillDetailView, BillDetailInteracting, BillDetailRouting> {
     
     // MARK: Properties
     
-    private var bill: MonthlyBillsViewModel
+    private let billId: String
+    private var bill: MonthlyBillsViewModel?
     
     // MARK: View Life Cicle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configure()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        interactor.update(with: billId)
     }
     
     // MARK: Init
     
     init(
-        bill: MonthlyBillsViewModel,
+        billId: String,
         customView: BillDetailView,
         interactor: BillDetailInteracting,
         router: BillDetailRouting
     ) {
-        self.bill = bill
+        self.billId = billId
         super.init(customView: customView, interactor: interactor, router: router)
     }
     
     // MARK: Configure
     
     private func configure() {
+        guard let bill else { return }
         title = bill.month
+        customView.configure()
     }
 }
 
@@ -54,14 +62,39 @@ extension BillDetailViewController: BillDetailViewControlling {
     
     // MARK: Controller Input
     
+    func presentSuccess(newBill: MonthlyBillsViewModel) {
+        self.bill = newBill
+        configure()
+    }
     
+    func presentError(message: String) {
+        presentFeedbackDialog(
+            with: FeedbackModel(
+                title: CoreConstants.Commons.AlertTitle,
+                description: message,
+                buttons: [.init(title: CoreConstants.Commons.ok, style: .default)]
+            )
+        )
+    }
 }
 
 extension BillDetailViewController: BillDetailViewControllerDelegate {
     
     // MARK: Controller Delegate
     
-    func getBill() -> MonthlyBillsViewModel {
+    func getBill() -> MonthlyBillsViewModel? {
         return bill
+    }
+    
+    func navigateToIncomes() {
+        //todo
+    }
+    
+    func navigateToInvestments() {
+        //todo
+    }
+    
+    func navigateToExpenses() {
+        //todo
     }
 }

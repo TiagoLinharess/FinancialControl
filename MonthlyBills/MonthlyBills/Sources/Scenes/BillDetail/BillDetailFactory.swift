@@ -11,14 +11,14 @@ import UIKit
 
 enum BillDetailFactory {
     
-    static func configure(bill: MonthlyBillsViewModel) -> UIViewController {
+    static func configure(billId: String) -> UIViewController {
         let router = BillDetailRouter()
         let presenter = BillDetailPresenter()
         let interactor = BillDetailInteractor(presenter: presenter)
         let view = BillDetailView()
         
         let controller = BillDetailViewController(
-            bill: bill,
+            billId: billId,
             customView: view,
             interactor: interactor,
             router: router

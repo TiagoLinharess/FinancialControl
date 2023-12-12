@@ -10,7 +10,7 @@ import SharpnezDesignSystem
 
 protocol HomeRouting {
     func routeToAdd(delegate: AddBillDelegate)
-    func routeToDetail(calendar: AnnualCalendarViewModel)
+    func routeToDetail(year: String)
 }
 
 final class HomeRouter: UIVIPRouter, HomeRouting {
@@ -22,8 +22,8 @@ final class HomeRouter: UIVIPRouter, HomeRouting {
         viewController?.navigationController?.present(controller, animated: true)
     }
     
-    func routeToDetail(calendar: AnnualCalendarViewModel) {
-        let controller = CalendarDetailFactory.configure(calendar: calendar)
+    func routeToDetail(year: String) {
+        let controller = CalendarDetailFactory.configure(year: year)
         viewController?.navigationController?.present(controller, animated: true)
     }
 }

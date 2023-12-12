@@ -11,12 +11,16 @@ import Foundation
 import SharpnezDesignSystem
 
 protocol CalendarDetailInteracting { 
-    func update(calendar: AnnualCalendarViewModel)
+    func update(at year: String)
 }
 
 final class CalendarDetailInteractor: UIVIPInteractor<CalendarDetailPresenting>, CalendarDetailInteracting {
     
+    // MARK: Properties
+    
     private let worker: BillsWorking
+    
+    // MARK: Init
     
     init(presenter: CalendarDetailPresenting, worker: BillsWorking = BillsWorker()) {
         self.worker = worker
@@ -25,9 +29,9 @@ final class CalendarDetailInteractor: UIVIPInteractor<CalendarDetailPresenting>,
     
     // MARK: Methods
     
-    func update(calendar: AnnualCalendarViewModel) {
+    func update(at year: String) {
         do {
-            let updatedCalendar = try worker.readAt(year: calendar.year)
+            let updatedCalendar = try worker.readAtYear(year: year)
             presenter.presentSuccess(newCalendar: updatedCalendar)
         } catch {
             presenter.presentError(error: error)

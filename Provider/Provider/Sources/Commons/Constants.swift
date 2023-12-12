@@ -27,5 +27,7 @@ enum Constants {
     
     enum MonthlyBillsRepository {
         static let existentCalendar: String = "Calendar already been added"
+        static let calendarNotFound: String = "Could not find calendar"
+        static let billNotFound: String = "Could not find bill"
     }
 }

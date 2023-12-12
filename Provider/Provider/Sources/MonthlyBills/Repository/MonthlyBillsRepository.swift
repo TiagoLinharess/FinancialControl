@@ -11,6 +11,8 @@ import SharpnezCore
 public protocol MonthlyBillsRepositoryProtocol {
     func create(annualCalendar: AnnualCalendarResponse) throws
     func read() throws -> [AnnualCalendarResponse]
+    func readAtYear(year: String) throws -> AnnualCalendarResponse
+    func readAtMonth(id: String) throws -> MonthlyBillsResponse
 }
 
 public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
@@ -42,6 +44,30 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
         guard let data = UserDefaults.standard.data(forKey: key) else { return [] }
         let response = try JSONDecoder().decode([AnnualCalendarResponse].self, from: data)
         return response
+    }
+    
+    public func readAtYear(year: String) throws -> AnnualCalendarResponse {
+        let currentCalendars = try read()
+        
+        guard let calendar = currentCalendars.first(where: { calendar in
+            calendar.year == year
+        }) else {
+            throw CoreError.customError(Constants.MonthlyBillsRepository.calendarNotFound)
+        }
+        
+        return calendar
+    }
+    
+    public func readAtMonth(id: String) throws -> MonthlyBillsResponse {
+        let calendars = try read()
+        
+        for calendar in calendars {
+            if let bill = calendar.monthlyBills.first(where: { $0.id == id }) {
+                return bill
+            }
+        }
+        
+        throw CoreError.customError(Constants.MonthlyBillsRepository.billNotFound)
     }
 }
 

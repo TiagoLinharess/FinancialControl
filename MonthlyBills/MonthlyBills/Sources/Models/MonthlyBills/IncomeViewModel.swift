@@ -12,6 +12,7 @@ struct IncomeViewModel {
     
     // MARK: Properties
     
+    let id: String
     var salary: Double
     var bonus: Double
     var extra: Double
@@ -25,6 +26,7 @@ struct IncomeViewModel {
     
     init?(from response: IncomeResponse?) {
         guard let response else { return nil }
+        self.id = response.id
         self.salary = response.salary
         self.bonus = response.bonus
         self.extra = response.extra
@@ -35,6 +37,7 @@ struct IncomeViewModel {
     
     func getResponse() -> IncomeResponse {
         return .init(
+            id: id,
             salary: salary,
             bonus: bonus,
             extra: extra,

@@ -12,6 +12,7 @@ struct InvestmentViewModel {
     
     // MARK: Properties
     
+    let id: String
     var shares: Double
     var privatePension: Double
     var fixedIncome: Double
@@ -25,6 +26,7 @@ struct InvestmentViewModel {
     
     init?(from response: InvestmentResponse?) {
         guard let response else { return nil }
+        self.id = response.id
         self.shares = response.shares
         self.privatePension = response.privatePension
         self.fixedIncome = response.fixedIncome
@@ -35,6 +37,7 @@ struct InvestmentViewModel {
     
     func getResponse() -> InvestmentResponse {
         return .init(
+            id: id,
             shares: shares,
             privatePension: privatePension,
             fixedIncome: fixedIncome,
