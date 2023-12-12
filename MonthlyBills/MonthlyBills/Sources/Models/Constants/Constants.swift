@@ -30,4 +30,8 @@ enum Constants {
         static let title: String = "Calendar %@"
         static let reuseIdentifier: String = "CalendarDetailViewCellIdentifier"
     }
+    
+    enum BillDetailView {
+        static let balanceKey: String = "Balance:"
+    }
 }

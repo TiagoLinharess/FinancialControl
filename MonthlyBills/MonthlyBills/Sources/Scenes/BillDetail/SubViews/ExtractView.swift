@@ -10,23 +10,6 @@ import SharpnezDesignSystem
 import SnapKit
 import UIKit
 
-struct ExtractViewModel {
-    
-    struct RowViewModel {
-        
-        let title: String
-        let value: String
-        
-        init(title: String, value: Double?) {
-            self.title = title
-            self.value = (value ?? 0).toCurrency()
-        }
-    }
-    
-    let title: String
-    let rows: [RowViewModel]
-}
-
 final class ExtractView: UIView {
     
     // MARK: Properties
@@ -47,7 +30,7 @@ final class ExtractView: UIView {
             self?.didTapEdit?()
         }
         var configuration = UIButton.Configuration.plain()
-        configuration.title = "Edit"
+        configuration.title = CoreConstants.Commons.edit
         let button = UIButton(configuration: configuration, primaryAction: action)
         return button
     }()
@@ -81,12 +64,12 @@ final class ExtractView: UIView {
         
         viewModel.rows.forEach { row in
             let keyLabel = UILabel()
-            keyLabel.text = row.title + ":"
+            keyLabel.text = String(format: CoreConstants.Commons.key, row.title)
             
             let valueLabel = UILabel()
             valueLabel.text = row.value
             
-            if row.title == "Total" {
+            if row.title == CoreConstants.Commons.total {
                 keyLabel.font = .systemFont(ofSize: .medium, weight: .medium)
                 valueLabel.font = .systemFont(ofSize: .medium, weight: .medium)
             }

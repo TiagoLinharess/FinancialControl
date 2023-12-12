@@ -48,6 +48,8 @@
 		EDDAD6A22B1F6D4500C0BCB6 /* BillDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */; };
 		EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */; };
 		EDDAD6A62B1F867E00C0BCB6 /* ExtractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6A52B1F867E00C0BCB6 /* ExtractView.swift */; };
+		EDDAD6A92B28CA8700C0BCB6 /* ExtractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6A82B28CA8700C0BCB6 /* ExtractViewModel.swift */; };
+		EDDAD6AB2B28CAEA00C0BCB6 /* RowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6AA2B28CAEA00C0BCB6 /* RowViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -108,6 +110,8 @@
 		EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailInteractor.swift; sourceTree = "<group>"; };
 		EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailView.swift; sourceTree = "<group>"; };
 		EDDAD6A52B1F867E00C0BCB6 /* ExtractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractView.swift; sourceTree = "<group>"; };
+		EDDAD6A82B28CA8700C0BCB6 /* ExtractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewModel.swift; sourceTree = "<group>"; };
+		EDDAD6AA2B28CAEA00C0BCB6 /* RowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +327,7 @@
 		EDDAD6972B1F6D1200C0BCB6 /* BillDetail */ = {
 			isa = PBXGroup;
 			children = (
+				EDDAD6A72B28CA7200C0BCB6 /* Models */,
 				EDDAD6A42B1F865C00C0BCB6 /* SubViews */,
 				EDDAD6982B1F6D4500C0BCB6 /* BillDetailFactory.swift */,
 				EDDAD6992B1F6D4500C0BCB6 /* BillDetailPresenter.swift */,
@@ -340,6 +345,15 @@
 				EDDAD6A52B1F867E00C0BCB6 /* ExtractView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		EDDAD6A72B28CA7200C0BCB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD6A82B28CA8700C0BCB6 /* ExtractViewModel.swift */,
+				EDDAD6AA2B28CAEA00C0BCB6 /* RowViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +471,7 @@
 				ED2C68742B1A4A0200B831C6 /* CalendarDetailFactory.swift in Sources */,
 				ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */,
 				ED8D23582B1561A7009E8326 /* AddAnnualCalendarViewController.swift in Sources */,
+				EDDAD6A92B28CA8700C0BCB6 /* ExtractViewModel.swift in Sources */,
 				EDDAD6A22B1F6D4500C0BCB6 /* BillDetailInteractor.swift in Sources */,
 				EDDAD6A02B1F6D4500C0BCB6 /* BillDetailRouter.swift in Sources */,
 				EDDAD69E2B1F6D4500C0BCB6 /* BillDetailFactory.swift in Sources */,
@@ -466,6 +481,7 @@
 				ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */,
 				ED13B7822AFEC159003161D7 /* HomeViewController.swift in Sources */,
 				ED2C68762B1A4A0200B831C6 /* CalendarDetailRouter.swift in Sources */,
+				EDDAD6AB2B28CAEA00C0BCB6 /* RowViewModel.swift in Sources */,
 				ED8D23372B1421C2009E8326 /* MBFacade.swift in Sources */,
 				ED8D232C2B141E20009E8326 /* HomeView.swift in Sources */,
 				ED8D23602B15654C009E8326 /* AddAnnualCalendarFactory.swift in Sources */,

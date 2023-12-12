@@ -52,7 +52,7 @@ final class BillDetailView: UIView {
     private lazy var balanceKeyLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = .zero
-        label.text = "Balance:"
+        label.text = Constants.BillDetailView.balanceKey
         label.font = .systemFont(ofSize: .big, weight: .semibold)
         return label
     }()
@@ -110,19 +110,19 @@ extension BillDetailView: UIViewCode {
         
         incomesView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview().inset(CGFloat.small)
-            $0.width.equalTo(UIScreen.main.bounds.width - 32)
+            $0.width.equalTo(CGFloat.deviceWidth - CGFloat.xxBig)
         }
         
         investimentsView.snp.makeConstraints {
             $0.top.equalTo(incomesView.snp.bottom).offset(CGFloat.medium)
             $0.leading.trailing.equalToSuperview().inset(CGFloat.small)
-            $0.width.equalTo(UIScreen.main.bounds.width - 32)
+            $0.width.equalTo(CGFloat.deviceWidth - CGFloat.xxBig)
         }
         
         expensesView.snp.makeConstraints {
             $0.top.equalTo(investimentsView.snp.bottom).offset(CGFloat.medium)
             $0.leading.trailing.equalToSuperview().inset(CGFloat.small)
-            $0.width.equalTo(UIScreen.main.bounds.width - 32)
+            $0.width.equalTo(CGFloat.deviceWidth - CGFloat.xxBig)
         }
         
         balanceKeyLabel.snp.makeConstraints {
@@ -145,59 +145,17 @@ private extension BillDetailView {
     
     func configureIncomes() {
         guard let bill = delegate?.getBill() else { return }
-        
-        incomesView.configure(
-            viewModel: ExtractViewModel(
-                title: "Incomes",
-                rows: [
-                    .init(title: "Salary", value: bill.income?.salary),
-                    .init(title: "Bonus", value: bill.income?.bonus),
-                    .init(title: "Extra", value: bill.income?.extra),
-                    .init(title: "Other", value: bill.income?.other),
-                    .init(title: "Total", value: bill.income?.total),
-                ]
-            )
-        )
+        incomesView.configure(viewModel: bill.getIncomesExtractViewModel())
     }
     
     func configureInvestiments() {
         guard let bill = delegate?.getBill() else { return }
-        
-        investimentsView.configure(
-            viewModel: ExtractViewModel(
-                title: "Investments",
-                rows: [
-                    .init(title: "Shares", value: bill.investment?.shares),
-                    .init(title: "Private pension", value: bill.investment?.privatePension),
-                    .init(title: "Fixed income", value: bill.investment?.fixedIncome),
-                    .init(title: "Other", value: bill.investment?.other),
-                    .init(title: "Total", value: bill.investment?.total),
-                ]
-            )
-        )
+        investimentsView.configure(viewModel: bill.getInvestmentsExtractViewModel())
     }
     
     func configureExpenses() {
         guard let bill = delegate?.getBill() else { return }
-        
-        expensesView.configure(
-            viewModel: ExtractViewModel(
-                title: "Expenses",
-                rows: [
-                    .init(title: "Housing", value: bill.expense?.housing),
-                    .init(title: "Transport", value: bill.expense?.transport),
-                    .init(title: "Feed", value: bill.expense?.feed),
-                    .init(title: "Health", value: bill.expense?.health),
-                    .init(title: "Education", value: bill.expense?.education),
-                    .init(title: "Taxes", value: bill.expense?.taxes),
-                    .init(title: "Laisure", value: bill.expense?.laisure),
-                    .init(title: "Clothing", value: bill.expense?.clothing),
-                    .init(title: "Credit card", value: bill.expense?.creditCard),
-                    .init(title: "Other", value: bill.expense?.other),
-                    .init(title: "Total", value: bill.expense?.total),
-                ]
-            )
-        )
+        expensesView.configure(viewModel: bill.getExpensesExtractViewModel())
     }
     
     func configureBalance() {
@@ -211,8 +169,8 @@ extension BillDetailView: UIScrollViewDelegate {
     // MARK: UIScrollView Delegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.x != 0 {
-            scrollView.contentOffset.x = 0
+        if scrollView.contentOffset.x != .zero {
+            scrollView.contentOffset.x = .zero
         }
     }
 }
