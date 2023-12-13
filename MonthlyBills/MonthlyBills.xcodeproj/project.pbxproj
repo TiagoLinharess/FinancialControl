@@ -50,6 +50,12 @@
 		EDDAD6A62B1F867E00C0BCB6 /* ExtractView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6A52B1F867E00C0BCB6 /* ExtractView.swift */; };
 		EDDAD6A92B28CA8700C0BCB6 /* ExtractViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6A82B28CA8700C0BCB6 /* ExtractViewModel.swift */; };
 		EDDAD6AB2B28CAEA00C0BCB6 /* RowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6AA2B28CAEA00C0BCB6 /* RowViewModel.swift */; };
+		EDDAD6C02B28D57F00C0BCB6 /* IncomeFormFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6BA2B28D57F00C0BCB6 /* IncomeFormFactory.swift */; };
+		EDDAD6C12B28D57F00C0BCB6 /* IncomeFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6BB2B28D57F00C0BCB6 /* IncomeFormPresenter.swift */; };
+		EDDAD6C22B28D57F00C0BCB6 /* IncomeFormRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6BC2B28D57F00C0BCB6 /* IncomeFormRouter.swift */; };
+		EDDAD6C32B28D57F00C0BCB6 /* IncomeFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6BD2B28D57F00C0BCB6 /* IncomeFormViewController.swift */; };
+		EDDAD6C42B28D57F00C0BCB6 /* IncomeFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6BE2B28D57F00C0BCB6 /* IncomeFormInteractor.swift */; };
+		EDDAD6C52B28D57F00C0BCB6 /* IncomeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6BF2B28D57F00C0BCB6 /* IncomeFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -112,6 +118,12 @@
 		EDDAD6A52B1F867E00C0BCB6 /* ExtractView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractView.swift; sourceTree = "<group>"; };
 		EDDAD6A82B28CA8700C0BCB6 /* ExtractViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractViewModel.swift; sourceTree = "<group>"; };
 		EDDAD6AA2B28CAEA00C0BCB6 /* RowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewModel.swift; sourceTree = "<group>"; };
+		EDDAD6BA2B28D57F00C0BCB6 /* IncomeFormFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFormFactory.swift; sourceTree = "<group>"; };
+		EDDAD6BB2B28D57F00C0BCB6 /* IncomeFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFormPresenter.swift; sourceTree = "<group>"; };
+		EDDAD6BC2B28D57F00C0BCB6 /* IncomeFormRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFormRouter.swift; sourceTree = "<group>"; };
+		EDDAD6BD2B28D57F00C0BCB6 /* IncomeFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFormViewController.swift; sourceTree = "<group>"; };
+		EDDAD6BE2B28D57F00C0BCB6 /* IncomeFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFormInteractor.swift; sourceTree = "<group>"; };
+		EDDAD6BF2B28D57F00C0BCB6 /* IncomeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +211,7 @@
 		ED13B77B2AFEBBA7003161D7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EDDAD6B92B28D56F00C0BCB6 /* IncomeForm */,
 				EDDAD6972B1F6D1200C0BCB6 /* BillDetail */,
 				ED2C68232B1A308300B831C6 /* CalendarDetail */,
 				ED8D23542B1560F0009E8326 /* AddAnnualCalendar */,
@@ -356,6 +369,19 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		EDDAD6B92B28D56F00C0BCB6 /* IncomeForm */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD6BA2B28D57F00C0BCB6 /* IncomeFormFactory.swift */,
+				EDDAD6BB2B28D57F00C0BCB6 /* IncomeFormPresenter.swift */,
+				EDDAD6BC2B28D57F00C0BCB6 /* IncomeFormRouter.swift */,
+				EDDAD6BD2B28D57F00C0BCB6 /* IncomeFormViewController.swift */,
+				EDDAD6BE2B28D57F00C0BCB6 /* IncomeFormInteractor.swift */,
+				EDDAD6BF2B28D57F00C0BCB6 /* IncomeFormView.swift */,
+			);
+			path = IncomeForm;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -462,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDDAD6C02B28D57F00C0BCB6 /* IncomeFormFactory.swift in Sources */,
 				ED2C68752B1A4A0200B831C6 /* CalendarDetailPresenter.swift in Sources */,
 				EDDAD6A62B1F867E00C0BCB6 /* ExtractView.swift in Sources */,
 				ED8D235E2B1564CD009E8326 /* AddAnnualCalendarRouter.swift in Sources */,
@@ -472,13 +499,17 @@
 				ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */,
 				ED8D23582B1561A7009E8326 /* AddAnnualCalendarViewController.swift in Sources */,
 				EDDAD6A92B28CA8700C0BCB6 /* ExtractViewModel.swift in Sources */,
+				EDDAD6C12B28D57F00C0BCB6 /* IncomeFormPresenter.swift in Sources */,
 				EDDAD6A22B1F6D4500C0BCB6 /* BillDetailInteractor.swift in Sources */,
 				EDDAD6A02B1F6D4500C0BCB6 /* BillDetailRouter.swift in Sources */,
+				EDDAD6C22B28D57F00C0BCB6 /* IncomeFormRouter.swift in Sources */,
+				EDDAD6C32B28D57F00C0BCB6 /* IncomeFormViewController.swift in Sources */,
 				EDDAD69E2B1F6D4500C0BCB6 /* BillDetailFactory.swift in Sources */,
 				ED8D23322B141FC2009E8326 /* HomeRouter.swift in Sources */,
 				ED8D23442B14BFC1009E8326 /* IncomeViewModel.swift in Sources */,
 				EDDAD69F2B1F6D4500C0BCB6 /* BillDetailPresenter.swift in Sources */,
 				ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */,
+				EDDAD6C52B28D57F00C0BCB6 /* IncomeFormView.swift in Sources */,
 				ED13B7822AFEC159003161D7 /* HomeViewController.swift in Sources */,
 				ED2C68762B1A4A0200B831C6 /* CalendarDetailRouter.swift in Sources */,
 				EDDAD6AB2B28CAEA00C0BCB6 /* RowViewModel.swift in Sources */,
@@ -489,6 +520,7 @@
 				ED2C68782B1A4A0200B831C6 /* CalendarDetailInteractor.swift in Sources */,
 				ED8D23302B141F70009E8326 /* HomePresenter.swift in Sources */,
 				ED2C68092B19492800B831C6 /* BillsWorker.swift in Sources */,
+				EDDAD6C42B28D57F00C0BCB6 /* IncomeFormInteractor.swift in Sources */,
 				ED8D23462B14BFEC009E8326 /* InvestmentViewModel.swift in Sources */,
 				ED8D235C2B1562C9009E8326 /* AddAnnualCalendarPresenter.swift in Sources */,
 				ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */,
