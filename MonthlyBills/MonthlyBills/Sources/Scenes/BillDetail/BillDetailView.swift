@@ -33,19 +33,25 @@ final class BillDetailView: UIView {
     
     private lazy var incomesView: ExtractView = {
         let view = ExtractView()
-        view.didTapEdit = delegate?.navigateToIncomes
+        view.didTapEdit = { [weak self] in
+            self?.delegate?.navigateToIncomes()
+        }
         return view
     }()
     
     private lazy var investimentsView: ExtractView = {
         let view = ExtractView()
-        view.didTapEdit = delegate?.navigateToInvestments
+        view.didTapEdit =  { [weak self] in
+            self?.delegate?.navigateToInvestments()
+        }
         return view
     }()
     
     private lazy var expensesView: ExtractView = {
         let view = ExtractView()
-        view.didTapEdit = delegate?.navigateToExpenses
+        view.didTapEdit =  { [weak self] in
+            self?.delegate?.navigateToExpenses()
+        }
         return view
     }()
     

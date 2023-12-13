@@ -21,7 +21,11 @@ extension ExtractViewModel {
         
         init(title: String, value: Double?) {
             self.title = title
-            self.value = (value ?? .zero).toCurrency()
+            
+            let value = value ?? .zero
+            self.value = title == CoreConstants.Commons.percentage 
+            ? String(format: CoreConstants.Commons.percentageIcon, String(value))
+            : value.toCurrency()
         }
     }
 }

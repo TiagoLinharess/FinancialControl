@@ -69,7 +69,7 @@ final class ExtractView: UIView {
             let valueLabel = UILabel()
             valueLabel.text = row.value
             
-            if row.title == CoreConstants.Commons.total {
+            if row.title == CoreConstants.Commons.total || row.title == CoreConstants.Commons.percentage {
                 keyLabel.font = .systemFont(ofSize: .medium, weight: .medium)
                 valueLabel.font = .systemFont(ofSize: .medium, weight: .medium)
             }

@@ -22,6 +22,7 @@ public enum CoreConstants {
         public static let create: String = "Create"
         public static let cash: String = "$%@"
         public static let key: String = "%@:"
+        public static let percentageIcon: String = "%@%%"
         public static let incomesKey: String = "Incomes"
         public static let salaryKey: String = "Salary"
         public static let bonusKey: String = "Bonus"
@@ -42,6 +43,7 @@ public enum CoreConstants {
         public static let clothingKey: String = "Clothing"
         public static let creditCardKey: String = "Credit card"
         public static let total: String = "Total"
+        public static let percentage: String = "Percentage"
         public static let tryAgain: String = "Try again"
         public static let defaultErrorMessage: String = "Something went wrong, please try again later"
         public static let currencyPlaceholder: String = Double.zero.toCurrency()
