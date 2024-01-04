@@ -22,7 +22,7 @@ final class AddAnnualCalendarView: UIView {
     private lazy var label: UILabel = {
         let label = UILabel()
         label.text = Constants.AddAnnualCalendarView.mainLabel
-        label.font = .systemFont(ofSize: .xBig, weight: .medium)
+        label.font = .systemFont(ofSize: .big, weight: .regular)
         label.numberOfLines = .zero
         return label
     }()

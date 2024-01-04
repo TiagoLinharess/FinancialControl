@@ -11,7 +11,8 @@ import Foundation
 import SharpnezDesignSystem
 
 protocol IncomeFormInteracting { 
-    func fetchIncome(from monthId: String)
+    func fetchIncome(from billId: String)
+    func submit(incomeViewModel: IncomeViewModel, billId: String)
 }
 
 final class IncomeFormInteractor: UIVIPInteractor<IncomeFormPresenting>, IncomeFormInteracting {
@@ -29,10 +30,19 @@ final class IncomeFormInteractor: UIVIPInteractor<IncomeFormPresenting>, IncomeF
     
     // MARK: Methods
     
-    func fetchIncome(from monthId: String) {
+    func fetchIncome(from billId: String) {
         do {
-            let monthlyBillsViewModel = try worker.readAtMonth(id: monthId)
+            let monthlyBillsViewModel = try worker.readAtMonth(id: billId)
             presenter.presentSuccess(monthlyBillsViewModel: monthlyBillsViewModel)
+        } catch {
+            presenter.presentError(error: error)
+        }
+    }
+    
+    func submit(incomeViewModel: IncomeViewModel, billId: String) {
+        do {
+            try worker.updateIncome(incomeViewModel: incomeViewModel, billId: billId)
+            presenter.finishEdit()
         } catch {
             presenter.presentError(error: error)
         }

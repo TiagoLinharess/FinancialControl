@@ -22,6 +22,16 @@ struct IncomeViewModel {
         salary + bonus + extra + other
     }
     
+    // MARK: Init
+    
+    init() {
+        self.id = UUID().uuidString
+        self.salary = .zero
+        self.bonus = .zero
+        self.extra = .zero
+        self.other = .zero
+    }
+    
     // MARK: Init from response
     
     init?(from response: IncomeResponse?) {

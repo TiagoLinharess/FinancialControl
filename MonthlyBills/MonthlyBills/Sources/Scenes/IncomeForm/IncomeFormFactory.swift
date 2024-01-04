@@ -11,14 +11,14 @@ import UIKit
 
 enum IncomeFormFactory {
     
-    static func configure(monthId: String) -> UIViewController {
+    static func configure(billId: String) -> UIViewController {
         let router = IncomeFormRouter()
         let presenter = IncomeFormPresenter()
         let interactor = IncomeFormInteractor(presenter: presenter)
         let view = IncomeFormView()
         
         let controller = IncomeFormViewController(
-            monthId: monthId,
+            billId: billId,
             customView: view,
             interactor: interactor,
             router: router

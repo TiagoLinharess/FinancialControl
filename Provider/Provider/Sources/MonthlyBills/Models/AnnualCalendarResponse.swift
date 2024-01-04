@@ -12,7 +12,7 @@ public struct AnnualCalendarResponse: Codable {
     // MARK: Properties
     
     public let year: String
-    public let monthlyBills: [MonthlyBillsResponse]
+    public var monthlyBills: [MonthlyBillsResponse]
     
     // MARK: Init
     

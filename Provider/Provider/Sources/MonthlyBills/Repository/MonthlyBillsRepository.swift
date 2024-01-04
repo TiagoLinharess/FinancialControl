@@ -13,6 +13,7 @@ public protocol MonthlyBillsRepositoryProtocol {
     func read() throws -> [AnnualCalendarResponse]
     func readAtYear(year: String) throws -> AnnualCalendarResponse
     func readAtMonth(id: String) throws -> MonthlyBillsResponse
+    func updateIncome(response: IncomeResponse, billId: String) throws
 }
 
 public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
@@ -69,13 +70,39 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
         
         throw CoreError.customError(Constants.MonthlyBillsRepository.billNotFound)
     }
+    
+    // MARK: Update
+    
+    public func updateIncome(response: IncomeResponse, billId: String) throws {
+        var calendars = try read()
+        let (calendarIndex, billIndex) = try findCalendarAndBillIndices(for: billId)
+        
+        calendars[calendarIndex].monthlyBills[billIndex].income = response
+        
+        let data = try JSONEncoder().encode(calendars)
+        UserDefaults.standard.set(data, forKey: key)
+    }
 }
 
 private extension MonthlyBillsRepository {
+    
+    // MARK: Private Methods
     
     func compareCalendars(calendar: AnnualCalendarResponse, currentCalendars: [AnnualCalendarResponse]) -> Bool {
         currentCalendars.contains { currentCalendar in
             return currentCalendar.year == calendar.year
         }
+    }
+    
+    func findCalendarAndBillIndices(for billId: String) throws -> (calendarIndex: Int, billIndex: Int) {
+        let calendars = try read()
+        
+        for (calendarIndex, calendar) in calendars.enumerated() {
+            if let billIndex = calendar.monthlyBills.firstIndex(where: { $0.id == billId }) {
+                return (calendarIndex, billIndex)
+            }
+        }
+        
+        throw CoreError.customError(Constants.MonthlyBillsRepository.billNotFound)
     }
 }

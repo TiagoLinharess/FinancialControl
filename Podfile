@@ -51,6 +51,7 @@ target 'WeeklyBudgets' do
 end
 
 target 'MonthlyBills' do
+    currency_pod
     sharpnez_pods
     snapkit_pod
     project 'MonthlyBills/MonthlyBills.project'

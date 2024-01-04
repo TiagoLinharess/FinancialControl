@@ -56,6 +56,7 @@
 		EDDAD6C32B28D57F00C0BCB6 /* IncomeFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6BD2B28D57F00C0BCB6 /* IncomeFormViewController.swift */; };
 		EDDAD6C42B28D57F00C0BCB6 /* IncomeFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6BE2B28D57F00C0BCB6 /* IncomeFormInteractor.swift */; };
 		EDDAD6C52B28D57F00C0BCB6 /* IncomeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6BF2B28D57F00C0BCB6 /* IncomeFormView.swift */; };
+		EDDAD6C82B29EB3F00C0BCB6 /* UICurrencyFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6C72B29EB3F00C0BCB6 /* UICurrencyFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -124,6 +125,7 @@
 		EDDAD6BD2B28D57F00C0BCB6 /* IncomeFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFormViewController.swift; sourceTree = "<group>"; };
 		EDDAD6BE2B28D57F00C0BCB6 /* IncomeFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFormInteractor.swift; sourceTree = "<group>"; };
 		EDDAD6BF2B28D57F00C0BCB6 /* IncomeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFormView.swift; sourceTree = "<group>"; };
+		EDDAD6C72B29EB3F00C0BCB6 /* UICurrencyFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICurrencyFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 		ED8D234D2B14CF45009E8326 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EDDAD6C62B29EB0F00C0BCB6 /* UICurrencyFieldView */,
 				ED8D23512B14D351009E8326 /* ErrorView */,
 				ED8D234E2B14CF4C009E8326 /* EmptyView */,
 			);
@@ -380,6 +383,14 @@
 				EDDAD6BF2B28D57F00C0BCB6 /* IncomeFormView.swift */,
 			);
 			path = IncomeForm;
+			sourceTree = "<group>";
+		};
+		EDDAD6C62B29EB0F00C0BCB6 /* UICurrencyFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD6C72B29EB3F00C0BCB6 /* UICurrencyFieldView.swift */,
+			);
+			path = UICurrencyFieldView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -489,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDDAD6C02B28D57F00C0BCB6 /* IncomeFormFactory.swift in Sources */,
+				EDDAD6C82B29EB3F00C0BCB6 /* UICurrencyFieldView.swift in Sources */,
 				ED2C68752B1A4A0200B831C6 /* CalendarDetailPresenter.swift in Sources */,
 				EDDAD6A62B1F867E00C0BCB6 /* ExtractView.swift in Sources */,
 				ED8D235E2B1564CD009E8326 /* AddAnnualCalendarRouter.swift in Sources */,

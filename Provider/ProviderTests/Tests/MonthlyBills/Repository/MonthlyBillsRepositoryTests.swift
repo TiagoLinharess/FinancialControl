@@ -11,6 +11,8 @@ import SharpnezCore
 
 final class MonthlyBillsRepositoryTests: XCTestCase {
     
+    let annualCalendarMock: AnnualCalendarResponse = .init(year: "2023", monthlyBills: [.init(id: UUID().uuidString, month: "January", income: .init(id: UUID().uuidString, salary: 0, bonus: 0, extra: 0, other: 0), investment: .init(id: UUID().uuidString, shares: 0, privatePension: 0, fixedIncome: 0, other: 0), expense: .init(id: UUID().uuidString, housing: 0, transport: 0, feed: 0, health: 0, education: 0, taxes: 0, laisure: 0, clothing: 0, creditCard: 0, other: 0))])
+    
     override func setUpWithError() throws {
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_create")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_create_existent_week")
@@ -20,8 +22,10 @@ final class MonthlyBillsRepositoryTests: XCTestCase {
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_year_error")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_month_success")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_month_error")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_income_success")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_income_error")
     }
-
+    
     func test_key() throws {
         let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_key")
         XCTAssertTrue(sut.key == "MonthlyBillsRepository_test_key")
@@ -31,11 +35,11 @@ final class MonthlyBillsRepositoryTests: XCTestCase {
         let sut = MonthlyBillsRepository()
         XCTAssertTrue(sut.key == Constants.UserDefaultsKeys.bills)
     }
-
-
+    
+    
     func test_create_success() throws {
         let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_create")
-        try sut.create(annualCalendar: .init(year: "2023", monthlyBills: [.init(id: UUID().uuidString, month: "January", income: .init(id: UUID().uuidString, salary: 0, bonus: 0, extra: 0, other: 0), investment: .init(id: UUID().uuidString, shares: 0, privatePension: 0, fixedIncome: 0, other: 0), expense: .init(id: UUID().uuidString, housing: 0, transport: 0, feed: 0, health: 0, education: 0, taxes: 0, laisure: 0, clothing: 0, creditCard: 0, other: 0))]))
+        try sut.create(annualCalendar: annualCalendarMock)
         
         let response = try sut.read()
         XCTAssertTrue(response[0].year == "2023")
@@ -102,6 +106,33 @@ final class MonthlyBillsRepositoryTests: XCTestCase {
         do {
             let _ = try sut.readAtMonth(id: UUID().uuidString)
             throw CoreError.genericError
+        } catch {
+            XCTAssertTrue((error as? CoreError)?.message == "Could not find bill")
+        }
+    }
+    
+    func test_update_income_success() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_update_income_success")
+        try sut.create(annualCalendar: annualCalendarMock)
+        
+        guard let firstMonthlyBill = annualCalendarMock.monthlyBills.first else {
+            throw CoreError.genericError
+        }
+        
+        let newIncome = IncomeResponse(id: UUID().uuidString, salary: 200, bonus: 126, extra: 234, other: 987)
+        try sut.updateIncome(response: newIncome, billId: firstMonthlyBill.id)
+        let updatedMonth = try sut.readAtMonth(id: firstMonthlyBill.id)
+        
+        XCTAssertEqual(updatedMonth.income?.salary, newIncome.salary)
+    }
+    
+    func test_update_income_error() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_update_income_error")
+        try sut.create(annualCalendar: annualCalendarMock)
+        let newIncome = IncomeResponse(id: UUID().uuidString, salary: 200, bonus: 126, extra: 234, other: 987)
+        
+        do {
+            try sut.updateIncome(response: newIncome, billId: UUID().uuidString)
         } catch {
             XCTAssertTrue((error as? CoreError)?.message == "Could not find bill")
         }

@@ -13,9 +13,9 @@ public struct MonthlyBillsResponse: Codable {
     
     public let id: String
     public let month: String
-    public let income: IncomeResponse?
-    public let investment: InvestmentResponse?
-    public let expense: ExpenseResponse?
+    public var income: IncomeResponse?
+    public var investment: InvestmentResponse?
+    public var expense: ExpenseResponse?
     
     // MARK: Init
     

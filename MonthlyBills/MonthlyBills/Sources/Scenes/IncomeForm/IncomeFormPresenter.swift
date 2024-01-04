@@ -14,11 +14,16 @@ import SharpnezDesignSystem
 protocol IncomeFormPresenting {
     func presentSuccess(monthlyBillsViewModel: MonthlyBillsViewModel)
     func presentError(error: Error)
+    func finishEdit()
 }
 
 final class IncomeFormPresenter: UIVIPPresenter<IncomeFormViewControlling>, IncomeFormPresenting {
     
     // MARK: Methods
+    
+    func finishEdit() {
+        viewController?.finishEdit()
+    }
     
     func presentSuccess(monthlyBillsViewModel: MonthlyBillsViewModel) {
         viewController?.presentSuccess(incomeViewModel: monthlyBillsViewModel.income)

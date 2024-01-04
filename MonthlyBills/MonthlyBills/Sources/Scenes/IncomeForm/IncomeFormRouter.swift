@@ -11,12 +11,14 @@ import SharpnezDesignSystem
 import UIKit
 
 protocol IncomeFormRouting {
-    
+    func finish()
 }
 
 final class IncomeFormRouter: UIVIPRouter, IncomeFormRouting {
     
     // MARK: Methods
     
-    
+    func finish() {
+        viewController?.navigationController?.popViewController(animated: true)
+    }
 }
