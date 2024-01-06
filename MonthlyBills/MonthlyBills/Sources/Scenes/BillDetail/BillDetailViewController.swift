@@ -101,7 +101,7 @@ extension BillDetailViewController: BillDetailViewControllerDelegate {
     }
     
     func navigateToInvestments() {
-        //todo
+        router.routeToInvestment(monthId: billId)
     }
     
     func navigateToExpenses() {

@@ -1,16 +1,16 @@
 //
-//  IncomeFormView.swift
+//  InvestmentFormView.swift
 //  MonthlyBills
 //
-//  Created by Tiago Linhares on 12/12/23.
+//  Created by Tiago Linhares on 04/01/24.
 //
 
 import Core
 import SharpnezDesignSystem
-import SnapKit
 import UIKit
+import SnapKit
 
-final class IncomeFormView: UIView {
+final class InvestmentFormView: UIView {
     
     // MARK: UI Elements
     
@@ -26,7 +26,7 @@ final class IncomeFormView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Please enter your monthly incomes in the fields below."
+        label.text = "Please enter your monthly investments in the fields below."
         label.font = .systemFont(ofSize: .big, weight: .regular)
         label.numberOfLines = .zero
         return label
@@ -40,18 +40,23 @@ final class IncomeFormView: UIView {
         return stackView
     }()
     
-    private lazy var salaryTextField: UICurrencyFieldView = {
-        let textfield = UICurrencyFieldView(title: CoreConstants.Commons.salaryKey)
+    private lazy var notesField: UINotesView = {
+        let notesView = UINotesView(title: "NOTES FOR YOUR INVESTMENTS")
+        return notesView
+    }()
+    
+    private lazy var sharesTextField: UICurrencyFieldView = {
+        let textfield = UICurrencyFieldView(title: CoreConstants.Commons.sharesKey)
         return textfield
     }()
     
-    private lazy var bonusTextField: UICurrencyFieldView = {
-        let textfield = UICurrencyFieldView(title: CoreConstants.Commons.bonusKey)
+    private lazy var privatePensionTextField: UICurrencyFieldView = {
+        let textfield = UICurrencyFieldView(title: CoreConstants.Commons.privatePensionKey)
         return textfield
     }()
     
-    private lazy var extraTextField: UICurrencyFieldView = {
-        let textfield = UICurrencyFieldView(title: CoreConstants.Commons.extraKey)
+    private lazy var fixedIncomeTextField: UICurrencyFieldView = {
+        let textfield = UICurrencyFieldView(title: CoreConstants.Commons.fixedIncomeKey)
         return textfield
     }()
     
@@ -73,24 +78,29 @@ final class IncomeFormView: UIView {
     
     // MARK: Public Methods
     
-    func configure(viewModel: IncomeViewModel?) {
-        salaryTextField.textField.text = viewModel?.salary.toCurrency()
-        bonusTextField.textField.text = viewModel?.bonus.toCurrency()
-        extraTextField.textField.text = viewModel?.extra.toCurrency()
+    func configure(notes: String, viewModel: InvestmentViewModel?) {
+        notesField.textView.text = notes
+        sharesTextField.textField.text = viewModel?.shares.toCurrency()
+        privatePensionTextField.textField.text = viewModel?.privatePension.toCurrency()
+        fixedIncomeTextField.textField.text = viewModel?.fixedIncome.toCurrency()
         otherTextField.textField.text = viewModel?.other.toCurrency()
     }
     
-    func buildViewModel() -> IncomeViewModel {
-        return IncomeViewModel(
-            salary: salaryTextField.textField.text?.currencyToDouble ?? .zero,
-            bonus: bonusTextField.textField.text?.currencyToDouble ?? .zero,
-            extra: extraTextField.textField.text?.currencyToDouble ?? .zero,
+    func buildViewModel() -> InvestmentViewModel {
+        return InvestmentViewModel(
+            shares: sharesTextField.textField.text?.currencyToDouble ?? .zero,
+            privatePension: privatePensionTextField.textField.text?.currencyToDouble ?? .zero,
+            fixedIncome: fixedIncomeTextField.textField.text?.currencyToDouble ?? .zero,
             other: otherTextField.textField.text?.currencyToDouble ?? .zero
         )
     }
+    
+    func buildNotes() -> String {
+        return notesField.textView.text
+    }
 }
 
-extension IncomeFormView: UIViewCode {
+extension InvestmentFormView: UIViewCode {
     
     // MARK: View Setup
     
@@ -102,9 +112,10 @@ extension IncomeFormView: UIViewCode {
         addSubview(scrollView)
         scrollView.addSubview(titleLabel)
         scrollView.addSubview(fieldsStackView)
-        fieldsStackView.addArrangedSubview(salaryTextField)
-        fieldsStackView.addArrangedSubview(bonusTextField)
-        fieldsStackView.addArrangedSubview(extraTextField)
+        fieldsStackView.addArrangedSubview(notesField)
+        fieldsStackView.addArrangedSubview(sharesTextField)
+        fieldsStackView.addArrangedSubview(privatePensionTextField)
+        fieldsStackView.addArrangedSubview(fixedIncomeTextField)
         fieldsStackView.addArrangedSubview(otherTextField)
     }
     
@@ -126,7 +137,7 @@ extension IncomeFormView: UIViewCode {
     }
 }
 
-extension IncomeFormView: UIScrollViewDelegate {
+extension InvestmentFormView: UIScrollViewDelegate {
     
     // MARK: UIScrollView Delegate
     

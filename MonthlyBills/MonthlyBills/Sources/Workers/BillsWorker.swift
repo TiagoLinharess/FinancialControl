@@ -14,7 +14,10 @@ protocol BillsWorking {
     func read() throws -> [AnnualCalendarViewModel]
     func readAtYear(year: String) throws -> AnnualCalendarViewModel
     func readAtMonth(id: String) throws -> MonthlyBillsViewModel
+    func readNotes(at key: BillsNotesKey) throws -> String
     func updateIncome(incomeViewModel: IncomeViewModel, billId: String) throws
+    func updateInvestment(investmentViewModel: InvestmentViewModel, billId: String) throws
+    func updateNotes(notes: String, for key: BillsNotesKey) throws
 }
 
 final class BillsWorker: BillsWorking {
@@ -49,10 +52,23 @@ final class BillsWorker: BillsWorking {
         return try .init(from: repository.readAtMonth(id: id))
     }
     
+    func readNotes(at key: BillsNotesKey) throws -> String {
+        return try repository.readNotes(at: key.rawValue)
+    }
+    
     // MARK: Update
     
     func updateIncome(incomeViewModel: IncomeViewModel, billId: String) throws {
         let response = incomeViewModel.getResponse()
         try repository.updateIncome(response: response, billId: billId)
+    }
+    
+    func updateInvestment(investmentViewModel: InvestmentViewModel, billId: String) throws {
+        let response = investmentViewModel.getResponse()
+        try repository.updateInvestment(response: response, billId: billId)
+    }
+    
+    func updateNotes(notes: String, for key: BillsNotesKey) throws {
+        try repository.updateNotes(notes: notes, for: key.rawValue)
     }
 }

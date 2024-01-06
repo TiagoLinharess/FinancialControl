@@ -12,7 +12,6 @@ struct IncomeViewModel {
     
     // MARK: Properties
     
-    let id: String
     var salary: Double
     var bonus: Double
     var extra: Double
@@ -24,19 +23,17 @@ struct IncomeViewModel {
     
     // MARK: Init
     
-    init() {
-        self.id = UUID().uuidString
-        self.salary = .zero
-        self.bonus = .zero
-        self.extra = .zero
-        self.other = .zero
+    init(salary: Double, bonus: Double, extra: Double, other: Double) {
+        self.salary = salary
+        self.bonus = bonus
+        self.extra = extra
+        self.other = other
     }
     
     // MARK: Init from response
     
     init?(from response: IncomeResponse?) {
         guard let response else { return nil }
-        self.id = response.id
         self.salary = response.salary
         self.bonus = response.bonus
         self.extra = response.extra
@@ -47,7 +44,6 @@ struct IncomeViewModel {
     
     func getResponse() -> IncomeResponse {
         return .init(
-            id: id,
             salary: salary,
             bonus: bonus,
             extra: extra,

@@ -57,6 +57,14 @@
 		EDDAD6C42B28D57F00C0BCB6 /* IncomeFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6BE2B28D57F00C0BCB6 /* IncomeFormInteractor.swift */; };
 		EDDAD6C52B28D57F00C0BCB6 /* IncomeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6BF2B28D57F00C0BCB6 /* IncomeFormView.swift */; };
 		EDDAD6C82B29EB3F00C0BCB6 /* UICurrencyFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6C72B29EB3F00C0BCB6 /* UICurrencyFieldView.swift */; };
+		EDDAD6E42B479AF300C0BCB6 /* UINotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6E32B479AF300C0BCB6 /* UINotesView.swift */; };
+		EDDAD6E62B497D0F00C0BCB6 /* BillsNotesKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6E52B497D0F00C0BCB6 /* BillsNotesKey.swift */; };
+		EDDAD6EF2B4988AA00C0BCB6 /* InvestmentFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6E92B4988AA00C0BCB6 /* InvestmentFormInteractor.swift */; };
+		EDDAD6F02B4988AA00C0BCB6 /* InvestmentFormFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6EA2B4988AA00C0BCB6 /* InvestmentFormFactory.swift */; };
+		EDDAD6F12B4988AA00C0BCB6 /* InvestmentFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6EB2B4988AA00C0BCB6 /* InvestmentFormPresenter.swift */; };
+		EDDAD6F22B4988AA00C0BCB6 /* InvestmentFormRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6EC2B4988AA00C0BCB6 /* InvestmentFormRouter.swift */; };
+		EDDAD6F32B4988AA00C0BCB6 /* InvestmentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6ED2B4988AA00C0BCB6 /* InvestmentFormView.swift */; };
+		EDDAD6F42B4988AA00C0BCB6 /* InvestmentFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6EE2B4988AA00C0BCB6 /* InvestmentFormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -126,6 +134,14 @@
 		EDDAD6BE2B28D57F00C0BCB6 /* IncomeFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFormInteractor.swift; sourceTree = "<group>"; };
 		EDDAD6BF2B28D57F00C0BCB6 /* IncomeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeFormView.swift; sourceTree = "<group>"; };
 		EDDAD6C72B29EB3F00C0BCB6 /* UICurrencyFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICurrencyFieldView.swift; sourceTree = "<group>"; };
+		EDDAD6E32B479AF300C0BCB6 /* UINotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINotesView.swift; sourceTree = "<group>"; };
+		EDDAD6E52B497D0F00C0BCB6 /* BillsNotesKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsNotesKey.swift; sourceTree = "<group>"; };
+		EDDAD6E92B4988AA00C0BCB6 /* InvestmentFormInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentFormInteractor.swift; sourceTree = "<group>"; };
+		EDDAD6EA2B4988AA00C0BCB6 /* InvestmentFormFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentFormFactory.swift; sourceTree = "<group>"; };
+		EDDAD6EB2B4988AA00C0BCB6 /* InvestmentFormPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentFormPresenter.swift; sourceTree = "<group>"; };
+		EDDAD6EC2B4988AA00C0BCB6 /* InvestmentFormRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentFormRouter.swift; sourceTree = "<group>"; };
+		EDDAD6ED2B4988AA00C0BCB6 /* InvestmentFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentFormView.swift; sourceTree = "<group>"; };
+		EDDAD6EE2B4988AA00C0BCB6 /* InvestmentFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentFormViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +229,7 @@
 		ED13B77B2AFEBBA7003161D7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EDDAD6E82B49888D00C0BCB6 /* InvestmentForm */,
 				EDDAD6B92B28D56F00C0BCB6 /* IncomeForm */,
 				EDDAD6972B1F6D1200C0BCB6 /* BillDetail */,
 				ED2C68232B1A308300B831C6 /* CalendarDetail */,
@@ -281,6 +298,7 @@
 				ED8D23432B14BFC1009E8326 /* IncomeViewModel.swift */,
 				ED8D23452B14BFEC009E8326 /* InvestmentViewModel.swift */,
 				ED8D23472B14C034009E8326 /* ExpenseViewModel.swift */,
+				EDDAD6E52B497D0F00C0BCB6 /* BillsNotesKey.swift */,
 			);
 			path = MonthlyBills;
 			sourceTree = "<group>";
@@ -296,6 +314,7 @@
 		ED8D234D2B14CF45009E8326 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EDDAD6E22B479AD700C0BCB6 /* NotesView */,
 				EDDAD6C62B29EB0F00C0BCB6 /* UICurrencyFieldView */,
 				ED8D23512B14D351009E8326 /* ErrorView */,
 				ED8D234E2B14CF4C009E8326 /* EmptyView */,
@@ -391,6 +410,27 @@
 				EDDAD6C72B29EB3F00C0BCB6 /* UICurrencyFieldView.swift */,
 			);
 			path = UICurrencyFieldView;
+			sourceTree = "<group>";
+		};
+		EDDAD6E22B479AD700C0BCB6 /* NotesView */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD6E32B479AF300C0BCB6 /* UINotesView.swift */,
+			);
+			path = NotesView;
+			sourceTree = "<group>";
+		};
+		EDDAD6E82B49888D00C0BCB6 /* InvestmentForm */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD6EA2B4988AA00C0BCB6 /* InvestmentFormFactory.swift */,
+				EDDAD6E92B4988AA00C0BCB6 /* InvestmentFormInteractor.swift */,
+				EDDAD6EB2B4988AA00C0BCB6 /* InvestmentFormPresenter.swift */,
+				EDDAD6EC2B4988AA00C0BCB6 /* InvestmentFormRouter.swift */,
+				EDDAD6ED2B4988AA00C0BCB6 /* InvestmentFormView.swift */,
+				EDDAD6EE2B4988AA00C0BCB6 /* InvestmentFormViewController.swift */,
+			);
+			path = InvestmentForm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,7 +545,9 @@
 				EDDAD6A62B1F867E00C0BCB6 /* ExtractView.swift in Sources */,
 				ED8D235E2B1564CD009E8326 /* AddAnnualCalendarRouter.swift in Sources */,
 				ED8D23702B19098C009E8326 /* Constants.swift in Sources */,
+				EDDAD6F02B4988AA00C0BCB6 /* InvestmentFormFactory.swift in Sources */,
 				ED8D23422B143031009E8326 /* AnnualCalendarViewModel.swift in Sources */,
+				EDDAD6F22B4988AA00C0BCB6 /* InvestmentFormRouter.swift in Sources */,
 				ED2C68772B1A4A0200B831C6 /* CalendarDetailViewController.swift in Sources */,
 				ED2C68742B1A4A0200B831C6 /* CalendarDetailFactory.swift in Sources */,
 				ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */,
@@ -519,7 +561,9 @@
 				EDDAD69E2B1F6D4500C0BCB6 /* BillDetailFactory.swift in Sources */,
 				ED8D23322B141FC2009E8326 /* HomeRouter.swift in Sources */,
 				ED8D23442B14BFC1009E8326 /* IncomeViewModel.swift in Sources */,
+				EDDAD6E42B479AF300C0BCB6 /* UINotesView.swift in Sources */,
 				EDDAD69F2B1F6D4500C0BCB6 /* BillDetailPresenter.swift in Sources */,
+				EDDAD6F12B4988AA00C0BCB6 /* InvestmentFormPresenter.swift in Sources */,
 				ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */,
 				EDDAD6C52B28D57F00C0BCB6 /* IncomeFormView.swift in Sources */,
 				ED13B7822AFEC159003161D7 /* HomeViewController.swift in Sources */,
@@ -535,9 +579,13 @@
 				EDDAD6C42B28D57F00C0BCB6 /* IncomeFormInteractor.swift in Sources */,
 				ED8D23462B14BFEC009E8326 /* InvestmentViewModel.swift in Sources */,
 				ED8D235C2B1562C9009E8326 /* AddAnnualCalendarPresenter.swift in Sources */,
+				EDDAD6F42B4988AA00C0BCB6 /* InvestmentFormViewController.swift in Sources */,
+				EDDAD6EF2B4988AA00C0BCB6 /* InvestmentFormInteractor.swift in Sources */,
 				ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */,
 				EDDAD6A12B1F6D4500C0BCB6 /* BillDetailViewController.swift in Sources */,
+				EDDAD6F32B4988AA00C0BCB6 /* InvestmentFormView.swift in Sources */,
 				EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */,
+				EDDAD6E62B497D0F00C0BCB6 /* BillsNotesKey.swift in Sources */,
 				ED8D233E2B1428F4009E8326 /* MonthlyBillsViewModel.swift in Sources */,
 				ED2C68792B1A4A0200B831C6 /* CalendarDetailView.swift in Sources */,
 				ED8D23482B14C034009E8326 /* ExpenseViewModel.swift in Sources */,

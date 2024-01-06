@@ -11,7 +11,6 @@ public struct ExpenseResponse: Codable {
     
     // MARK: Properties
     
-    public let id: String
     public let housing: Double
     public let transport: Double
     public let feed: Double
@@ -25,8 +24,7 @@ public struct ExpenseResponse: Codable {
     
     // MARK: Init
     
-    public init(id: String, housing: Double, transport: Double, feed: Double, health: Double, education: Double, taxes: Double, laisure: Double, clothing: Double, creditCard: Double, other: Double) {
-        self.id = id
+    public init(housing: Double, transport: Double, feed: Double, health: Double, education: Double, taxes: Double, laisure: Double, clothing: Double, creditCard: Double, other: Double) {
         self.housing = housing
         self.transport = transport
         self.feed = feed

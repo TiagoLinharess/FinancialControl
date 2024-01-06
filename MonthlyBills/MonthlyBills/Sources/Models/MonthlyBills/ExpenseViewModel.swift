@@ -12,7 +12,6 @@ struct ExpenseViewModel {
     
     // MARK: Properties
     
-    let id: String
     var housing: Double
     var transport: Double
     var feed: Double
@@ -32,7 +31,6 @@ struct ExpenseViewModel {
     
     init?(from response: ExpenseResponse?) {
         guard let response else { return nil }
-        self.id = response.id
         self.housing = response.housing
         self.transport = response.transport
         self.feed = response.feed
@@ -49,7 +47,6 @@ struct ExpenseViewModel {
     
     func getResponse() -> ExpenseResponse {
         return .init(
-            id: id,
             housing: housing,
             transport: transport,
             feed: feed,

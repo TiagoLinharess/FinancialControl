@@ -2,6 +2,7 @@
 //  MonthlyBillsRepository.swift
 //  Provider
 //
+//
 //  Created by Tiago Linhares on 30/11/23.
 //
 
@@ -13,7 +14,10 @@ public protocol MonthlyBillsRepositoryProtocol {
     func read() throws -> [AnnualCalendarResponse]
     func readAtYear(year: String) throws -> AnnualCalendarResponse
     func readAtMonth(id: String) throws -> MonthlyBillsResponse
+    func readNotes(at key: String) throws -> String
     func updateIncome(response: IncomeResponse, billId: String) throws
+    func updateInvestment(response: InvestmentResponse, billId: String) throws
+    func updateNotes(notes: String, for key: String) throws
 }
 
 public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
@@ -71,6 +75,10 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
         throw CoreError.customError(Constants.MonthlyBillsRepository.billNotFound)
     }
     
+    public func readNotes(at key: String) throws -> String {
+        UserDefaults.standard.string(forKey: key) ?? String()
+    }
+    
     // MARK: Update
     
     public func updateIncome(response: IncomeResponse, billId: String) throws {
@@ -81,6 +89,20 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
         
         let data = try JSONEncoder().encode(calendars)
         UserDefaults.standard.set(data, forKey: key)
+    }
+    
+    public func updateInvestment(response: InvestmentResponse, billId: String) throws {
+        var calendars = try read()
+        let (calendarIndex, billIndex) = try findCalendarAndBillIndices(for: billId)
+        
+        calendars[calendarIndex].monthlyBills[billIndex].investment = response
+        
+        let data = try JSONEncoder().encode(calendars)
+        UserDefaults.standard.set(data, forKey: key)
+    }
+    
+    public func updateNotes(notes: String, for key: String) throws {
+        UserDefaults.standard.setValue(notes, forKey: key)
     }
 }
 

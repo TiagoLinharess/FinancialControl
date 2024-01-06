@@ -13,6 +13,7 @@ import UIKit
 protocol BillDetailRouting {
     func close()
     func routeToIncome(monthId: String)
+    func routeToInvestment(monthId: String)
 }
 
 final class BillDetailRouter: UIVIPRouter, BillDetailRouting {
@@ -25,6 +26,11 @@ final class BillDetailRouter: UIVIPRouter, BillDetailRouting {
     
     func routeToIncome(monthId: String) {
         let controller = IncomeFormFactory.configure(billId: monthId)
+        viewController?.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func routeToInvestment(monthId: String) {
+        let controller = InvestmentFormFactory.configure(billId: monthId)
         viewController?.navigationController?.pushViewController(controller, animated: true)
     }
 }

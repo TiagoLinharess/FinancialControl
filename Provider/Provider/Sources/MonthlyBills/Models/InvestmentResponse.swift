@@ -11,7 +11,6 @@ public struct InvestmentResponse: Codable {
     
     // MARK: Properties
     
-    public let id: String
     public let shares: Double
     public let privatePension: Double
     public let fixedIncome: Double
@@ -19,8 +18,7 @@ public struct InvestmentResponse: Codable {
     
     // MARK: Init
     
-    public init(id: String, shares: Double, privatePension: Double, fixedIncome: Double, other: Double) {
-        self.id = id
+    public init(shares: Double, privatePension: Double, fixedIncome: Double, other: Double) {
         self.shares = shares
         self.privatePension = privatePension
         self.fixedIncome = fixedIncome

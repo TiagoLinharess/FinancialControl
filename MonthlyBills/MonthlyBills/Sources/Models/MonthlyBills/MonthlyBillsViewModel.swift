@@ -21,9 +21,7 @@ struct MonthlyBillsViewModel {
     
     var balance: Double {
         guard let income else { return .zero }
-        guard let investment, let expense else { return income.total }
-        
-        return income.total - (investment.total + expense.total)
+        return income.total - ((investment?.total ?? .zero) + (expense?.total ?? .zero))
     }
     
     // MARK: Init
