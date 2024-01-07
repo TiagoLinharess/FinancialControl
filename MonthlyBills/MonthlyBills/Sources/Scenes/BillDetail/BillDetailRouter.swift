@@ -1,5 +1,5 @@
 //
-//  
+//
 //  BillDetailRouter.swift
 //  MonthlyBills
 //
@@ -14,6 +14,7 @@ protocol BillDetailRouting {
     func close()
     func routeToIncome(monthId: String)
     func routeToInvestment(monthId: String)
+    func routeToExpense(monthId: String)
 }
 
 final class BillDetailRouter: UIVIPRouter, BillDetailRouting {
@@ -31,6 +32,11 @@ final class BillDetailRouter: UIVIPRouter, BillDetailRouting {
     
     func routeToInvestment(monthId: String) {
         let controller = InvestmentFormFactory.configure(billId: monthId)
+        viewController?.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func routeToExpense(monthId: String) {
+        let controller = ExpenseFormFactory.configure(billId: monthId)
         viewController?.navigationController?.pushViewController(controller, animated: true)
     }
 }

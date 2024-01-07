@@ -17,6 +17,7 @@ public protocol MonthlyBillsRepositoryProtocol {
     func readNotes(at key: String) throws -> String
     func updateIncome(response: IncomeResponse, billId: String) throws
     func updateInvestment(response: InvestmentResponse, billId: String) throws
+    func updateExpense(response: ExpenseResponse, billId: String) throws
     func updateNotes(notes: String, for key: String) throws
 }
 
@@ -96,6 +97,16 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
         let (calendarIndex, billIndex) = try findCalendarAndBillIndices(for: billId)
         
         calendars[calendarIndex].monthlyBills[billIndex].investment = response
+        
+        let data = try JSONEncoder().encode(calendars)
+        UserDefaults.standard.set(data, forKey: key)
+    }
+    
+    public func updateExpense(response: ExpenseResponse, billId: String) throws {
+        var calendars = try read()
+        let (calendarIndex, billIndex) = try findCalendarAndBillIndices(for: billId)
+        
+        calendars[calendarIndex].monthlyBills[billIndex].expense = response
         
         let data = try JSONEncoder().encode(calendars)
         UserDefaults.standard.set(data, forKey: key)

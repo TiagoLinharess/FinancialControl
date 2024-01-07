@@ -27,6 +27,21 @@ struct ExpenseViewModel {
         housing + transport + feed + health + education + taxes + creditCard + laisure + clothing + other
     }
     
+    // MARK: Init
+    
+    init(housing: Double, transport: Double, feed: Double, health: Double, education: Double, taxes: Double, laisure: Double, clothing: Double, creditCard: Double, other: Double) {
+        self.housing = housing
+        self.transport = transport
+        self.feed = feed
+        self.health = health
+        self.education = education
+        self.taxes = taxes
+        self.laisure = laisure
+        self.clothing = clothing
+        self.creditCard = creditCard
+        self.other = other
+    }
+    
     // MARK: Init from response
     
     init?(from response: ExpenseResponse?) {

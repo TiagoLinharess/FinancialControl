@@ -65,6 +65,12 @@
 		EDDAD6F22B4988AA00C0BCB6 /* InvestmentFormRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6EC2B4988AA00C0BCB6 /* InvestmentFormRouter.swift */; };
 		EDDAD6F32B4988AA00C0BCB6 /* InvestmentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6ED2B4988AA00C0BCB6 /* InvestmentFormView.swift */; };
 		EDDAD6F42B4988AA00C0BCB6 /* InvestmentFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6EE2B4988AA00C0BCB6 /* InvestmentFormViewController.swift */; };
+		EDDAD6FC2B49990600C0BCB6 /* ExpenseFormFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6F62B49990600C0BCB6 /* ExpenseFormFactory.swift */; };
+		EDDAD6FD2B49990600C0BCB6 /* ExpenseFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6F72B49990600C0BCB6 /* ExpenseFormPresenter.swift */; };
+		EDDAD6FE2B49990600C0BCB6 /* ExpenseFormRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6F82B49990600C0BCB6 /* ExpenseFormRouter.swift */; };
+		EDDAD6FF2B49990600C0BCB6 /* ExpenseFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6F92B49990600C0BCB6 /* ExpenseFormViewController.swift */; };
+		EDDAD7002B49990600C0BCB6 /* ExpenseFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6FA2B49990600C0BCB6 /* ExpenseFormInteractor.swift */; };
+		EDDAD7012B49990600C0BCB6 /* ExpenseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6FB2B49990600C0BCB6 /* ExpenseFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -142,6 +148,12 @@
 		EDDAD6EC2B4988AA00C0BCB6 /* InvestmentFormRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentFormRouter.swift; sourceTree = "<group>"; };
 		EDDAD6ED2B4988AA00C0BCB6 /* InvestmentFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentFormView.swift; sourceTree = "<group>"; };
 		EDDAD6EE2B4988AA00C0BCB6 /* InvestmentFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvestmentFormViewController.swift; sourceTree = "<group>"; };
+		EDDAD6F62B49990600C0BCB6 /* ExpenseFormFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormFactory.swift; sourceTree = "<group>"; };
+		EDDAD6F72B49990600C0BCB6 /* ExpenseFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormPresenter.swift; sourceTree = "<group>"; };
+		EDDAD6F82B49990600C0BCB6 /* ExpenseFormRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormRouter.swift; sourceTree = "<group>"; };
+		EDDAD6F92B49990600C0BCB6 /* ExpenseFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormViewController.swift; sourceTree = "<group>"; };
+		EDDAD6FA2B49990600C0BCB6 /* ExpenseFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormInteractor.swift; sourceTree = "<group>"; };
+		EDDAD6FB2B49990600C0BCB6 /* ExpenseFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +241,7 @@
 		ED13B77B2AFEBBA7003161D7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EDDAD6F52B49892000C0BCB6 /* ExpenseForm */,
 				EDDAD6E82B49888D00C0BCB6 /* InvestmentForm */,
 				EDDAD6B92B28D56F00C0BCB6 /* IncomeForm */,
 				EDDAD6972B1F6D1200C0BCB6 /* BillDetail */,
@@ -433,6 +446,19 @@
 			path = InvestmentForm;
 			sourceTree = "<group>";
 		};
+		EDDAD6F52B49892000C0BCB6 /* ExpenseForm */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD6F62B49990600C0BCB6 /* ExpenseFormFactory.swift */,
+				EDDAD6F72B49990600C0BCB6 /* ExpenseFormPresenter.swift */,
+				EDDAD6F82B49990600C0BCB6 /* ExpenseFormRouter.swift */,
+				EDDAD6F92B49990600C0BCB6 /* ExpenseFormViewController.swift */,
+				EDDAD6FA2B49990600C0BCB6 /* ExpenseFormInteractor.swift */,
+				EDDAD6FB2B49990600C0BCB6 /* ExpenseFormView.swift */,
+			);
+			path = ExpenseForm;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -575,10 +601,15 @@
 				ED8D23562B156119009E8326 /* AddAnnualCalendarView.swift in Sources */,
 				ED2C68782B1A4A0200B831C6 /* CalendarDetailInteractor.swift in Sources */,
 				ED8D23302B141F70009E8326 /* HomePresenter.swift in Sources */,
+				EDDAD6FD2B49990600C0BCB6 /* ExpenseFormPresenter.swift in Sources */,
 				ED2C68092B19492800B831C6 /* BillsWorker.swift in Sources */,
+				EDDAD6FC2B49990600C0BCB6 /* ExpenseFormFactory.swift in Sources */,
+				EDDAD6FE2B49990600C0BCB6 /* ExpenseFormRouter.swift in Sources */,
 				EDDAD6C42B28D57F00C0BCB6 /* IncomeFormInteractor.swift in Sources */,
 				ED8D23462B14BFEC009E8326 /* InvestmentViewModel.swift in Sources */,
 				ED8D235C2B1562C9009E8326 /* AddAnnualCalendarPresenter.swift in Sources */,
+				EDDAD7002B49990600C0BCB6 /* ExpenseFormInteractor.swift in Sources */,
+				EDDAD6FF2B49990600C0BCB6 /* ExpenseFormViewController.swift in Sources */,
 				EDDAD6F42B4988AA00C0BCB6 /* InvestmentFormViewController.swift in Sources */,
 				EDDAD6EF2B4988AA00C0BCB6 /* InvestmentFormInteractor.swift in Sources */,
 				ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */,
@@ -586,6 +617,7 @@
 				EDDAD6F32B4988AA00C0BCB6 /* InvestmentFormView.swift in Sources */,
 				EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */,
 				EDDAD6E62B497D0F00C0BCB6 /* BillsNotesKey.swift in Sources */,
+				EDDAD7012B49990600C0BCB6 /* ExpenseFormView.swift in Sources */,
 				ED8D233E2B1428F4009E8326 /* MonthlyBillsViewModel.swift in Sources */,
 				ED2C68792B1A4A0200B831C6 /* CalendarDetailView.swift in Sources */,
 				ED8D23482B14C034009E8326 /* ExpenseViewModel.swift in Sources */,
