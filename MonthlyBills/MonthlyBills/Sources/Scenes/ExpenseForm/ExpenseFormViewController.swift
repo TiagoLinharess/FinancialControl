@@ -40,6 +40,7 @@ final class ExpenseFormViewController: UIVIPBaseViewController<ExpenseFormView, 
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        interactor.fetchInvestment(from: billId)
     }
     
     // MARK: Configure
@@ -68,7 +69,7 @@ extension ExpenseFormViewController: ExpenseFormViewControlling {
         presentFeedbackDialog(
             with: .init(
                 title: CoreConstants.Commons.AlertTitle,
-                description: Constants.AddAnnualCalendarView.successMessage,
+                description: String(format: Constants.Form.successMessage, CoreConstants.Commons.expensesKey),
                 buttons: [
                     .init(title: CoreConstants.Commons.ok, style: .default) { [weak self] _ in
                         self?.router.finish()

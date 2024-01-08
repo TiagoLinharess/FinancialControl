@@ -43,7 +43,7 @@ final class ExpenseFormInteractor: UIVIPInteractor<ExpenseFormPresenting>, Expen
     func submit(notes: String, expenseViewModel: ExpenseViewModel, billId: String) {
         do {
             try worker.updateExpense(expenseViewModel: expenseViewModel, billId: billId)
-            try worker.updateNotes(notes: notes, for: .investments)
+            try worker.updateNotes(notes: notes, for: .expenses)
             presenter.finishEdit()
         } catch {
             presenter.presentError(error: error)

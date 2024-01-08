@@ -26,7 +26,7 @@ final class ExpenseFormView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Please enter your monthly expenses in the fields below."
+        label.text = String(format: Constants.Form.title, CoreConstants.Commons.expensesKey.lowercased())
         label.font = .systemFont(ofSize: .big, weight: .regular)
         label.numberOfLines = .zero
         return label
@@ -41,7 +41,7 @@ final class ExpenseFormView: UIView {
     }()
     
     private lazy var notesField: UINotesView = {
-        let notesView = UINotesView(title: "NOTES FOR YOUR EXPENSES")
+        let notesView = UINotesView(title: String(format: Constants.Form.notes, CoreConstants.Commons.expensesKey))
         return notesView
     }()
     
