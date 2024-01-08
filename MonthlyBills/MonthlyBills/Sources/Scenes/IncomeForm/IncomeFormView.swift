@@ -26,7 +26,7 @@ final class IncomeFormView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Please enter your monthly incomes in the fields below."
+        label.text = String(format: Constants.Form.title, CoreConstants.Commons.incomesKey.lowercased())
         label.font = .systemFont(ofSize: .big, weight: .regular)
         label.numberOfLines = .zero
         return label

@@ -69,7 +69,7 @@ extension InvestmentFormViewController: InvestmentFormViewControlling {
         presentFeedbackDialog(
             with: .init(
                 title: CoreConstants.Commons.AlertTitle,
-                description: Constants.AddAnnualCalendarView.successMessage,
+                description: String(format: Constants.Form.successMessage, CoreConstants.Commons.investmentsKey),
                 buttons: [
                     .init(title: CoreConstants.Commons.ok, style: .default) { [weak self] _ in
                         self?.router.finish()

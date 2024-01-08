@@ -68,7 +68,7 @@ extension IncomeFormViewController: IncomeFormViewControlling {
         presentFeedbackDialog(
             with: .init(
                 title: CoreConstants.Commons.AlertTitle,
-                description: Constants.AddAnnualCalendarView.successMessage,
+                description: String(format: Constants.Form.successMessage, CoreConstants.Commons.incomesKey),
                 buttons: [
                     .init(title: CoreConstants.Commons.ok, style: .default) { [weak self] _ in
                         self?.router.finish()
