@@ -23,7 +23,11 @@ protocol BillsWorking {
 
 final class BillsWorker: BillsWorking {
     
+    // MARK: Properties
+    
     let repository: MonthlyBillsRepositoryProtocol
+    
+    // MARK: Init
     
     init(repository: MonthlyBillsRepositoryProtocol = MonthlyBillsRepository()) {
         self.repository = repository

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5224C0FFDC0D06BC285310FE /* Pods_MonthlyBillsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A5E59726E718042C9396F2 /* Pods_MonthlyBillsTests.framework */; };
 		A0FC0F1CA856B55505C61240 /* Pods_MonthlyBills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55F144A912F0EDFC76C81F4 /* Pods_MonthlyBills.framework */; };
 		ED13B7722AFEBB65003161D7 /* MonthlyBills.docc in Sources */ = {isa = PBXBuildFile; fileRef = ED13B7712AFEBB65003161D7 /* MonthlyBills.docc */; };
 		ED13B7732AFEBB65003161D7 /* MonthlyBills.h in Headers */ = {isa = PBXBuildFile; fileRef = ED13B7702AFEBB65003161D7 /* MonthlyBills.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,7 +72,24 @@
 		EDDAD6FF2B49990600C0BCB6 /* ExpenseFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6F92B49990600C0BCB6 /* ExpenseFormViewController.swift */; };
 		EDDAD7002B49990600C0BCB6 /* ExpenseFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6FA2B49990600C0BCB6 /* ExpenseFormInteractor.swift */; };
 		EDDAD7012B49990600C0BCB6 /* ExpenseFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6FB2B49990600C0BCB6 /* ExpenseFormView.swift */; };
+		EDDAD70C2B4CC2DB00C0BCB6 /* MonthlyBills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED13B76D2AFEBB65003161D7 /* MonthlyBills.framework */; platformFilter = ios; };
+		EDDAD7172B4CC36E00C0BCB6 /* BillsWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD7162B4CC36E00C0BCB6 /* BillsWorkerTests.swift */; };
+		EDDAD71B2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD71A2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift */; };
+		EDDAD71E2B503D0E00C0BCB6 /* BillsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD71D2B503D0E00C0BCB6 /* BillsMock.swift */; };
+		EDF976902B5052F500133036 /* HomeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF9768F2B5052F500133036 /* HomeRouterTests.swift */; };
+		EDF976932B50533C00133036 /* HomeMockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976922B50533C00133036 /* HomeMockController.swift */; };
+		EDF976952B506E8900133036 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976942B506E8900133036 /* HomePresenterTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDDAD70D2B4CC2DB00C0BCB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED13B7642AFEBB65003161D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED13B76C2AFEBB65003161D7;
+			remoteInfo = MonthlyBills;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		ED2C681C2B19566B00B831C6 /* Embed Frameworks */ = {
@@ -89,8 +107,11 @@
 
 /* Begin PBXFileReference section */
 		28E6AC1C580865543B2AD8BA /* Pods-MonthlyBills.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonthlyBills.release.xcconfig"; path = "Target Support Files/Pods-MonthlyBills/Pods-MonthlyBills.release.xcconfig"; sourceTree = "<group>"; };
+		34A5E59726E718042C9396F2 /* Pods_MonthlyBillsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonthlyBillsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B976CEC4C99063AD0B8B33D9 /* Pods-MonthlyBills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonthlyBills.debug.xcconfig"; path = "Target Support Files/Pods-MonthlyBills/Pods-MonthlyBills.debug.xcconfig"; sourceTree = "<group>"; };
 		C55F144A912F0EDFC76C81F4 /* Pods_MonthlyBills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonthlyBills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9A4EA3A1AACF72B64D25685 /* Pods-MonthlyBillsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonthlyBillsTests.release.xcconfig"; path = "Target Support Files/Pods-MonthlyBillsTests/Pods-MonthlyBillsTests.release.xcconfig"; sourceTree = "<group>"; };
+		EABD483C49CA17BDD6C27C2E /* Pods-MonthlyBillsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonthlyBillsTests.debug.xcconfig"; path = "Target Support Files/Pods-MonthlyBillsTests/Pods-MonthlyBillsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED13B76D2AFEBB65003161D7 /* MonthlyBills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MonthlyBills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED13B7702AFEBB65003161D7 /* MonthlyBills.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthlyBills.h; sourceTree = "<group>"; };
 		ED13B7712AFEBB65003161D7 /* MonthlyBills.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = MonthlyBills.docc; sourceTree = "<group>"; };
@@ -154,6 +175,13 @@
 		EDDAD6F92B49990600C0BCB6 /* ExpenseFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormViewController.swift; sourceTree = "<group>"; };
 		EDDAD6FA2B49990600C0BCB6 /* ExpenseFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormInteractor.swift; sourceTree = "<group>"; };
 		EDDAD6FB2B49990600C0BCB6 /* ExpenseFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseFormView.swift; sourceTree = "<group>"; };
+		EDDAD7082B4CC2DB00C0BCB6 /* MonthlyBillsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonthlyBillsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDDAD7162B4CC36E00C0BCB6 /* BillsWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsWorkerTests.swift; sourceTree = "<group>"; };
+		EDDAD71A2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsRepositoryMock.swift; sourceTree = "<group>"; };
+		EDDAD71D2B503D0E00C0BCB6 /* BillsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsMock.swift; sourceTree = "<group>"; };
+		EDF9768F2B5052F500133036 /* HomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTests.swift; sourceTree = "<group>"; };
+		EDF976922B50533C00133036 /* HomeMockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMockController.swift; sourceTree = "<group>"; };
+		EDF976942B506E8900133036 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +195,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDDAD7052B4CC2DB00C0BCB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDDAD70C2B4CC2DB00C0BCB6 /* MonthlyBills.framework in Frameworks */,
+				5224C0FFDC0D06BC285310FE /* Pods_MonthlyBillsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -175,6 +212,8 @@
 			children = (
 				B976CEC4C99063AD0B8B33D9 /* Pods-MonthlyBills.debug.xcconfig */,
 				28E6AC1C580865543B2AD8BA /* Pods-MonthlyBills.release.xcconfig */,
+				EABD483C49CA17BDD6C27C2E /* Pods-MonthlyBillsTests.debug.xcconfig */,
+				E9A4EA3A1AACF72B64D25685 /* Pods-MonthlyBillsTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -186,6 +225,7 @@
 				ED2C68192B19566B00B831C6 /* Provider.framework */,
 				ED8D23492B14CCDF009E8326 /* Core.framework */,
 				C55F144A912F0EDFC76C81F4 /* Pods_MonthlyBills.framework */,
+				34A5E59726E718042C9396F2 /* Pods_MonthlyBillsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -194,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				ED13B76F2AFEBB65003161D7 /* MonthlyBills */,
+				EDDAD7092B4CC2DB00C0BCB6 /* MonthlyBillsTests */,
 				ED13B76E2AFEBB65003161D7 /* Products */,
 				130B8DF7A4D61E22A04388B9 /* Pods */,
 				5107D7F79E2A3F2158A22AB4 /* Frameworks */,
@@ -204,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				ED13B76D2AFEBB65003161D7 /* MonthlyBills.framework */,
+				EDDAD7082B4CC2DB00C0BCB6 /* MonthlyBillsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -459,6 +501,83 @@
 			path = ExpenseForm;
 			sourceTree = "<group>";
 		};
+		EDDAD7092B4CC2DB00C0BCB6 /* MonthlyBillsTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD7182B4CC58700C0BCB6 /* Mocks */,
+				EDDAD7122B4CC30000C0BCB6 /* Tests */,
+			);
+			path = MonthlyBillsTests;
+			sourceTree = "<group>";
+		};
+		EDDAD7122B4CC30000C0BCB6 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EDF9768B2B5052AA00133036 /* Scenes */,
+				EDDAD7132B4CC31900C0BCB6 /* Workers */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		EDDAD7132B4CC31900C0BCB6 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD7162B4CC36E00C0BCB6 /* BillsWorkerTests.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		EDDAD7182B4CC58700C0BCB6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976912B50532D00133036 /* Controller */,
+				EDDAD71C2B503CFB00C0BCB6 /* Models */,
+				EDDAD7192B4CC5AB00C0BCB6 /* Workers */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		EDDAD7192B4CC5AB00C0BCB6 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD71A2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		EDDAD71C2B503CFB00C0BCB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD71D2B503D0E00C0BCB6 /* BillsMock.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EDF9768B2B5052AA00133036 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EDF9768C2B5052B200133036 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EDF9768C2B5052B200133036 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EDF9768F2B5052F500133036 /* HomeRouterTests.swift */,
+				EDF976942B506E8900133036 /* HomePresenterTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EDF976912B50532D00133036 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976922B50533C00133036 /* HomeMockController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -493,6 +612,26 @@
 			productReference = ED13B76D2AFEBB65003161D7 /* MonthlyBills.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		EDDAD7072B4CC2DB00C0BCB6 /* MonthlyBillsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDDAD70F2B4CC2DB00C0BCB6 /* Build configuration list for PBXNativeTarget "MonthlyBillsTests" */;
+			buildPhases = (
+				000E388DE7FDACC2948C3B95 /* [CP] Check Pods Manifest.lock */,
+				EDDAD7042B4CC2DB00C0BCB6 /* Sources */,
+				EDDAD7052B4CC2DB00C0BCB6 /* Frameworks */,
+				EDDAD7062B4CC2DB00C0BCB6 /* Resources */,
+				402D93C73ECEFCAA04068AF7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDDAD70E2B4CC2DB00C0BCB6 /* PBXTargetDependency */,
+			);
+			name = MonthlyBillsTests;
+			productName = MonthlyBillsTests;
+			productReference = EDDAD7082B4CC2DB00C0BCB6 /* MonthlyBillsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -500,10 +639,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					ED13B76C2AFEBB65003161D7 = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					EDDAD7072B4CC2DB00C0BCB6 = {
+						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -521,6 +665,7 @@
 			projectRoot = "";
 			targets = (
 				ED13B76C2AFEBB65003161D7 /* MonthlyBills */,
+				EDDAD7072B4CC2DB00C0BCB6 /* MonthlyBillsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -533,9 +678,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDDAD7062B4CC2DB00C0BCB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		000E388DE7FDACC2948C3B95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MonthlyBillsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		402D93C73ECEFCAA04068AF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MonthlyBillsTests/Pods-MonthlyBillsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MonthlyBillsTests/Pods-MonthlyBillsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MonthlyBillsTests/Pods-MonthlyBillsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8E782F9E7FA988BA570B9093 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -627,7 +818,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDDAD7042B4CC2DB00C0BCB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF976932B50533C00133036 /* HomeMockController.swift in Sources */,
+				EDDAD71E2B503D0E00C0BCB6 /* BillsMock.swift in Sources */,
+				EDF976902B5052F500133036 /* HomeRouterTests.swift in Sources */,
+				EDDAD71B2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift in Sources */,
+				EDDAD7172B4CC36E00C0BCB6 /* BillsWorkerTests.swift in Sources */,
+				EDF976952B506E8900133036 /* HomePresenterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDDAD70E2B4CC2DB00C0BCB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = ED13B76C2AFEBB65003161D7 /* MonthlyBills */;
+			targetProxy = EDDAD70D2B4CC2DB00C0BCB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		ED13B7742AFEBB65003161D7 /* Debug */ = {
@@ -827,6 +1040,45 @@
 			};
 			name = Release;
 		};
+		EDDAD7102B4CC2DB00C0BCB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EABD483C49CA17BDD6C27C2E /* Pods-MonthlyBillsTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9Y7M54NCKD;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.MonthlyBillsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDDAD7112B4CC2DB00C0BCB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9A4EA3A1AACF72B64D25685 /* Pods-MonthlyBillsTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9Y7M54NCKD;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.MonthlyBillsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -844,6 +1096,15 @@
 			buildConfigurations = (
 				ED13B7772AFEBB65003161D7 /* Debug */,
 				ED13B7782AFEBB65003161D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDDAD70F2B4CC2DB00C0BCB6 /* Build configuration list for PBXNativeTarget "MonthlyBillsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDDAD7102B4CC2DB00C0BCB6 /* Debug */,
+				EDDAD7112B4CC2DB00C0BCB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

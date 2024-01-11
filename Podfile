@@ -67,3 +67,9 @@ target 'WeeklyBudgetsTests' do
     pods_for_tests
     project 'WeeklyBudgets/WeeklyBudgets.project'
 end
+
+target 'MonthlyBillsTests' do
+    sharpnez_core_pod
+    pods_for_tests
+    project 'MonthlyBills/MonthlyBills.project'
+end
