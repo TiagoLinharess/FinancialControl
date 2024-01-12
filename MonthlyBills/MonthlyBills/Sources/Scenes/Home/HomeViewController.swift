@@ -29,7 +29,7 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
     
     // MARK: Properties
     
-    var calendars: [AnnualCalendarViewModel] = []
+    private var calendars: [AnnualCalendarViewModel] = []
     
     // MARK: View Life Cicle
     

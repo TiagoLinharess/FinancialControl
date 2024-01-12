@@ -17,6 +17,7 @@
 		ED3718342B07A37100477C6C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3718332B07A37100477C6C /* String+Extensions.swift */; };
 		ED3718362B07AA5400477C6C /* String+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3718352B07AA5400477C6C /* String+ExtensionsTests.swift */; };
 		ED8D23732B190B0E009E8326 /* CoreConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23722B190B0E009E8326 /* CoreConstants.swift */; };
+		EDF976A92B51E26100133036 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976A82B51E26100133036 /* TestUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		ED3718332B07A37100477C6C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		ED3718352B07AA5400477C6C /* String+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtensionsTests.swift"; sourceTree = "<group>"; };
 		ED8D23722B190B0E009E8326 /* CoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreConstants.swift; sourceTree = "<group>"; };
+		EDF976A82B51E26100133036 /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		ED11D2CC2B02AEF100514D7C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EDF976AA2B51E42D00133036 /* TestUtils */,
 				ED8D23712B190AFB009E8326 /* Constants */,
 				ED11D2CD2B02AEF800514D7C /* Extensions */,
 			);
@@ -165,6 +168,14 @@
 				ED8D23722B190B0E009E8326 /* CoreConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		EDF976AA2B51E42D00133036 /* TestUtils */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976A82B51E26100133036 /* TestUtils.swift */,
+			);
+			path = TestUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 				ED3718342B07A37100477C6C /* String+Extensions.swift in Sources */,
 				ED11D2CF2B02AF2900514D7C /* Double+Extensions.swift in Sources */,
 				ED11D2B52B02AE4D00514D7C /* Core.docc in Sources */,
+				EDF976A92B51E26100133036 /* TestUtils.swift in Sources */,
 				ED11D2D12B02AF6C00514D7C /* Date+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

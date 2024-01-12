@@ -11,7 +11,7 @@ import SharpnezDesignSystem
 import SnapKit
 import UIKit
 
-final class HomeView: UIView {
+class HomeView: UIView {
     
     // MARK: Properties
     
@@ -20,7 +20,7 @@ final class HomeView: UIView {
     
     // MARK: UI Elements
     
-    private lazy var tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.delegate = self
         tableView.dataSource = self

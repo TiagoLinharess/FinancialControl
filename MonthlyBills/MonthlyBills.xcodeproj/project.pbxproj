@@ -79,6 +79,12 @@
 		EDF976902B5052F500133036 /* HomeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF9768F2B5052F500133036 /* HomeRouterTests.swift */; };
 		EDF976932B50533C00133036 /* HomeMockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976922B50533C00133036 /* HomeMockController.swift */; };
 		EDF976952B506E8900133036 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976942B506E8900133036 /* HomePresenterTests.swift */; };
+		EDF976972B5093EE00133036 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976962B5093EE00133036 /* HomeInteractorTests.swift */; };
+		EDF976992B5094A100133036 /* HomePresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976982B5094A100133036 /* HomePresenterMock.swift */; };
+		EDF9769C2B50966F00133036 /* BillsWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF9769B2B50966F00133036 /* BillsWorkerMock.swift */; };
+		EDF9769E2B51D79300133036 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF9769D2B51D79300133036 /* HomeViewControllerTests.swift */; };
+		EDF976A22B51D86B00133036 /* HomeInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976A12B51D86B00133036 /* HomeInteractorMock.swift */; };
+		EDF976A42B51D90B00133036 /* HomeRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976A32B51D90B00133036 /* HomeRouterMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +188,16 @@
 		EDF9768F2B5052F500133036 /* HomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTests.swift; sourceTree = "<group>"; };
 		EDF976922B50533C00133036 /* HomeMockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMockController.swift; sourceTree = "<group>"; };
 		EDF976942B506E8900133036 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		EDF976962B5093EE00133036 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		EDF976982B5094A100133036 /* HomePresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterMock.swift; sourceTree = "<group>"; };
+		EDF9769B2B50966F00133036 /* BillsWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsWorkerMock.swift; sourceTree = "<group>"; };
+		EDF9769D2B51D79300133036 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		EDF976A12B51D86B00133036 /* HomeInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorMock.swift; sourceTree = "<group>"; };
+		EDF976A32B51D90B00133036 /* HomeRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterMock.swift; sourceTree = "<group>"; };
+		EDF976B22B51F00500133036 /* test_snapshot_success.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_success.1.png; sourceTree = "<group>"; };
+		EDF976B32B51F00500133036 /* test_snapshot_empty.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_empty.1.png; sourceTree = "<group>"; };
+		EDF976B42B51F00500133036 /* test_snapshot_error.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_error.1.png; sourceTree = "<group>"; };
+		EDF976B52B51F0C900133036 /* test_view_did_load.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_view_did_load.1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -530,7 +546,7 @@
 		EDDAD7182B4CC58700C0BCB6 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				EDF976912B50532D00133036 /* Controller */,
+				EDF9769F2B51D80200133036 /* Scenes */,
 				EDDAD71C2B503CFB00C0BCB6 /* Models */,
 				EDDAD7192B4CC5AB00C0BCB6 /* Workers */,
 			);
@@ -541,6 +557,7 @@
 			isa = PBXGroup;
 			children = (
 				EDDAD71A2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift */,
+				EDF9769B2B50966F00133036 /* BillsWorkerMock.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -564,18 +581,51 @@
 		EDF9768C2B5052B200133036 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EDF976B02B51F00400133036 /* __Snapshots__ */,
 				EDF9768F2B5052F500133036 /* HomeRouterTests.swift */,
 				EDF976942B506E8900133036 /* HomePresenterTests.swift */,
+				EDF976962B5093EE00133036 /* HomeInteractorTests.swift */,
+				EDF9769D2B51D79300133036 /* HomeViewControllerTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		EDF976912B50532D00133036 /* Controller */ = {
+		EDF9769F2B51D80200133036 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976A02B51D80D00133036 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EDF976A02B51D80D00133036 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				EDF976922B50533C00133036 /* HomeMockController.swift */,
+				EDF976982B5094A100133036 /* HomePresenterMock.swift */,
+				EDF976A12B51D86B00133036 /* HomeInteractorMock.swift */,
+				EDF976A32B51D90B00133036 /* HomeRouterMock.swift */,
 			);
-			path = Controller;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EDF976B02B51F00400133036 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976B12B51F00500133036 /* HomeViewControllerTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		EDF976B12B51F00500133036 /* HomeViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976B52B51F0C900133036 /* test_view_did_load.1.png */,
+				EDF976B22B51F00500133036 /* test_snapshot_success.1.png */,
+				EDF976B32B51F00500133036 /* test_snapshot_empty.1.png */,
+				EDF976B42B51F00500133036 /* test_snapshot_error.1.png */,
+			);
+			path = HomeViewControllerTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -825,8 +875,14 @@
 				EDF976932B50533C00133036 /* HomeMockController.swift in Sources */,
 				EDDAD71E2B503D0E00C0BCB6 /* BillsMock.swift in Sources */,
 				EDF976902B5052F500133036 /* HomeRouterTests.swift in Sources */,
+				EDF976972B5093EE00133036 /* HomeInteractorTests.swift in Sources */,
+				EDF9769C2B50966F00133036 /* BillsWorkerMock.swift in Sources */,
+				EDF9769E2B51D79300133036 /* HomeViewControllerTests.swift in Sources */,
 				EDDAD71B2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift in Sources */,
+				EDF976A42B51D90B00133036 /* HomeRouterMock.swift in Sources */,
+				EDF976992B5094A100133036 /* HomePresenterMock.swift in Sources */,
 				EDDAD7172B4CC36E00C0BCB6 /* BillsWorkerTests.swift in Sources */,
+				EDF976A22B51D86B00133036 /* HomeInteractorMock.swift in Sources */,
 				EDF976952B506E8900133036 /* HomePresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

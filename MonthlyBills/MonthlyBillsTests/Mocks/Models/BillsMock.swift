@@ -22,4 +22,12 @@ struct BillsMock {
     static var billComplete = MonthlyBillsViewModel(month: "January", income: income, investment: investment, expense: expense)
     
     static var annualCalendar = AnnualCalendarViewModel(year: "2023")
+    
+    static var billCompleteId: String {
+        return billComplete.id
+    }
+    
+    static var billIncompleteId: String {
+        return billIncomplete.id
+    }
 }

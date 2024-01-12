@@ -8,7 +8,7 @@
 @testable import MonthlyBills
 import UIKit
 
-class HomeMockController: UIViewController {
+final class HomeMockController: UIViewController {
     
     var calendars: [MonthlyBills.AnnualCalendarViewModel] = []
     var didPresentSuccess = false
