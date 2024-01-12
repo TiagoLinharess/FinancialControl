@@ -85,6 +85,7 @@
 		EDF9769E2B51D79300133036 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF9769D2B51D79300133036 /* HomeViewControllerTests.swift */; };
 		EDF976A22B51D86B00133036 /* HomeInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976A12B51D86B00133036 /* HomeInteractorMock.swift */; };
 		EDF976A42B51D90B00133036 /* HomeRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976A32B51D90B00133036 /* HomeRouterMock.swift */; };
+		EDF976B82B51F80400133036 /* HomeFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976B72B51F80400133036 /* HomeFactoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,7 @@
 		EDF976B32B51F00500133036 /* test_snapshot_empty.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_empty.1.png; sourceTree = "<group>"; };
 		EDF976B42B51F00500133036 /* test_snapshot_error.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_error.1.png; sourceTree = "<group>"; };
 		EDF976B52B51F0C900133036 /* test_view_did_load.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_view_did_load.1.png; sourceTree = "<group>"; };
+		EDF976B72B51F80400133036 /* HomeFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -593,6 +595,7 @@
 		EDF9769F2B51D80200133036 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EDF976B62B51F5E700133036 /* AddAnnualCalendar */,
 				EDF976A02B51D80D00133036 /* Home */,
 			);
 			path = Scenes;
@@ -605,6 +608,7 @@
 				EDF976982B5094A100133036 /* HomePresenterMock.swift */,
 				EDF976A12B51D86B00133036 /* HomeInteractorMock.swift */,
 				EDF976A32B51D90B00133036 /* HomeRouterMock.swift */,
+				EDF976B72B51F80400133036 /* HomeFactoryTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -626,6 +630,13 @@
 				EDF976B42B51F00500133036 /* test_snapshot_error.1.png */,
 			);
 			path = HomeViewControllerTests;
+			sourceTree = "<group>";
+		};
+		EDF976B62B51F5E700133036 /* AddAnnualCalendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddAnnualCalendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -876,6 +887,7 @@
 				EDDAD71E2B503D0E00C0BCB6 /* BillsMock.swift in Sources */,
 				EDF976902B5052F500133036 /* HomeRouterTests.swift in Sources */,
 				EDF976972B5093EE00133036 /* HomeInteractorTests.swift in Sources */,
+				EDF976B82B51F80400133036 /* HomeFactoryTests.swift in Sources */,
 				EDF9769C2B50966F00133036 /* BillsWorkerMock.swift in Sources */,
 				EDF9769E2B51D79300133036 /* HomeViewControllerTests.swift in Sources */,
 				EDDAD71B2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift in Sources */,
