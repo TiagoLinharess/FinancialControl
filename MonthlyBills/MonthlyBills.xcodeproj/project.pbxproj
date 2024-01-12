@@ -575,6 +575,7 @@
 		EDF9768B2B5052AA00133036 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EDF976B92B51FA1600133036 /* AddAnnualCalendar */,
 				EDF9768C2B5052B200133036 /* Home */,
 			);
 			path = Scenes;
@@ -588,6 +589,7 @@
 				EDF976942B506E8900133036 /* HomePresenterTests.swift */,
 				EDF976962B5093EE00133036 /* HomeInteractorTests.swift */,
 				EDF9769D2B51D79300133036 /* HomeViewControllerTests.swift */,
+				EDF976B72B51F80400133036 /* HomeFactoryTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -608,7 +610,6 @@
 				EDF976982B5094A100133036 /* HomePresenterMock.swift */,
 				EDF976A12B51D86B00133036 /* HomeInteractorMock.swift */,
 				EDF976A32B51D90B00133036 /* HomeRouterMock.swift */,
-				EDF976B72B51F80400133036 /* HomeFactoryTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -633,6 +634,13 @@
 			sourceTree = "<group>";
 		};
 		EDF976B62B51F5E700133036 /* AddAnnualCalendar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddAnnualCalendar;
+			sourceTree = "<group>";
+		};
+		EDF976B92B51FA1600133036 /* AddAnnualCalendar */ = {
 			isa = PBXGroup;
 			children = (
 			);
