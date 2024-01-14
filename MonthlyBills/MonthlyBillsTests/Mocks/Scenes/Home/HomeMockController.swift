@@ -14,6 +14,7 @@ final class HomeMockController: UIViewController {
     var didPresentSuccess = false
     var didPresentEmpty = false
     var didPresentError = false
+    var didAddBillCalled = false
     var errorMessage: String?
     
     let router: HomeRouter?
@@ -31,7 +32,7 @@ final class HomeMockController: UIViewController {
 extension HomeMockController: AddBillDelegate {
 
     func didAddBill() {
-        // do nothing
+        didAddBillCalled = true
     }
 }
 

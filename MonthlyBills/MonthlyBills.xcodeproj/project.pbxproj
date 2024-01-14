@@ -86,6 +86,9 @@
 		EDF976A22B51D86B00133036 /* HomeInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976A12B51D86B00133036 /* HomeInteractorMock.swift */; };
 		EDF976A42B51D90B00133036 /* HomeRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976A32B51D90B00133036 /* HomeRouterMock.swift */; };
 		EDF976B82B51F80400133036 /* HomeFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976B72B51F80400133036 /* HomeFactoryTests.swift */; };
+		EDF976BB2B5213FC00133036 /* AddAnnualCalendarFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976BA2B5213FC00133036 /* AddAnnualCalendarFactoryTests.swift */; };
+		EDF976BD2B52154A00133036 /* AddAnnualCalendarRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976BC2B52154A00133036 /* AddAnnualCalendarRouterTests.swift */; };
+		EDF976BF2B521D7C00133036 /* AddAnnualCalendarViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976BE2B521D7C00133036 /* AddAnnualCalendarViewControllerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +203,9 @@
 		EDF976B42B51F00500133036 /* test_snapshot_error.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_error.1.png; sourceTree = "<group>"; };
 		EDF976B52B51F0C900133036 /* test_view_did_load.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_view_did_load.1.png; sourceTree = "<group>"; };
 		EDF976B72B51F80400133036 /* HomeFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactoryTests.swift; sourceTree = "<group>"; };
+		EDF976BA2B5213FC00133036 /* AddAnnualCalendarFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarFactoryTests.swift; sourceTree = "<group>"; };
+		EDF976BC2B52154A00133036 /* AddAnnualCalendarRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarRouterTests.swift; sourceTree = "<group>"; };
+		EDF976BE2B521D7C00133036 /* AddAnnualCalendarViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarViewControllerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -636,6 +642,7 @@
 		EDF976B62B51F5E700133036 /* AddAnnualCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				EDF976BE2B521D7C00133036 /* AddAnnualCalendarViewControllerMock.swift */,
 			);
 			path = AddAnnualCalendar;
 			sourceTree = "<group>";
@@ -643,6 +650,8 @@
 		EDF976B92B51FA1600133036 /* AddAnnualCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				EDF976BA2B5213FC00133036 /* AddAnnualCalendarFactoryTests.swift */,
+				EDF976BC2B52154A00133036 /* AddAnnualCalendarRouterTests.swift */,
 			);
 			path = AddAnnualCalendar;
 			sourceTree = "<group>";
@@ -896,6 +905,7 @@
 				EDF976902B5052F500133036 /* HomeRouterTests.swift in Sources */,
 				EDF976972B5093EE00133036 /* HomeInteractorTests.swift in Sources */,
 				EDF976B82B51F80400133036 /* HomeFactoryTests.swift in Sources */,
+				EDF976BB2B5213FC00133036 /* AddAnnualCalendarFactoryTests.swift in Sources */,
 				EDF9769C2B50966F00133036 /* BillsWorkerMock.swift in Sources */,
 				EDF9769E2B51D79300133036 /* HomeViewControllerTests.swift in Sources */,
 				EDDAD71B2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift in Sources */,
@@ -903,7 +913,9 @@
 				EDF976992B5094A100133036 /* HomePresenterMock.swift in Sources */,
 				EDDAD7172B4CC36E00C0BCB6 /* BillsWorkerTests.swift in Sources */,
 				EDF976A22B51D86B00133036 /* HomeInteractorMock.swift in Sources */,
+				EDF976BD2B52154A00133036 /* AddAnnualCalendarRouterTests.swift in Sources */,
 				EDF976952B506E8900133036 /* HomePresenterTests.swift in Sources */,
+				EDF976BF2B521D7C00133036 /* AddAnnualCalendarViewControllerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
