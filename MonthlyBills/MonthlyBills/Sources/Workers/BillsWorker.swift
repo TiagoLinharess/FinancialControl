@@ -37,7 +37,7 @@ final class BillsWorker: BillsWorking {
     }
     
     func createBillItem() throws {
-        // todo
+        // todo worker
     }
     
     // MARK: Read
@@ -61,6 +61,6 @@ final class BillsWorker: BillsWorking {
     // MARK: Update
     
     func updateBillItem(at itemToEdit: EditBillItemViewModel, item: BillItemProtocol) {
-        // todo
+        // todo worker
     }
 }

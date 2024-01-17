@@ -11,12 +11,19 @@ import SharpnezDesignSystem
 import UIKit
 
 protocol BillDetailRouting {
-    // todo
+    func addItem(billId: String)
+    func editItem(at itemToEdit: EditBillItemViewModel)
 }
 
 final class BillDetailRouter: UIVIPRouter, BillDetailRouting {
     
     // MARK: Methods
     
-    // todo
+    func addItem(billId: String) {
+        // todo
+    }
+    
+    func editItem(at itemToEdit: EditBillItemViewModel) {
+        // todo
+    }
 }

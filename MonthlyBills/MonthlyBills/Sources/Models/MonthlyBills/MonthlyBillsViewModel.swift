@@ -47,11 +47,11 @@ struct MonthlyBillsViewModel {
     init(from response: MonthlyBillsResponse) {
         self.id = response.id
         self.month = response.month
-        self.incomes = [.init(id: UUID().uuidString, name: "Salario", value: 6400, status: .payed)]
-        self.investments = [.init(id: UUID().uuidString, name: "previdencia", value: 300, status: .pending, installment: nil)]
-        self.expenses = [.init(id: UUID().uuidString, name: "luz", value: 590, status: .payed, installment: nil)]
-        self.creditCard = [.init(id: UUID().uuidString, name: "Dunk", value: 90, status: .pending, installment: .init(current: 3, max: 12))]
-        // todo all init
+        self.incomes = []
+        self.investments = []
+        self.expenses = []
+        self.creditCard = []
+        // todo implement service after form
     }
     
     // MARK: Methods

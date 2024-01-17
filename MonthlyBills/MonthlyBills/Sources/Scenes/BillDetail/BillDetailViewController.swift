@@ -18,7 +18,7 @@ protocol BillDetailViewControlling {
 
 protocol BillDetailViewControllerDelegate {
     func getBill() -> MonthlyBillsViewModel?
-    func addItem()
+    func addItem(billId: String)
     func editItem(at itemToEdit: EditBillItemViewModel)
 }
 
@@ -85,11 +85,11 @@ extension BillDetailViewController: BillDetailViewControllerDelegate {
         return bill
     }
     
-    func addItem() {
-        // todo
+    func addItem(billId: String) {
+        router.addItem(billId: billId)
     }
     
     func editItem(at itemToEdit: EditBillItemViewModel) {
-        // todo
+        router.editItem(at: itemToEdit)
     }
 }

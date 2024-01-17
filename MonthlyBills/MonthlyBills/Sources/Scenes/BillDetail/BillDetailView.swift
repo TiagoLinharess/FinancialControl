@@ -19,7 +19,7 @@ final class BillDetailView: UIView {
         }
     }
 
-    let reuseIdentifier: String = "billDetailIdentifier" // todo
+    let reuseIdentifier: String = Constants.BillDetailView.reuseIdentifier
     
     // MARK: UI Elements
     

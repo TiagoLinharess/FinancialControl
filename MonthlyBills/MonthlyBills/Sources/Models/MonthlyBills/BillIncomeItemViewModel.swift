@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 17/01/24.
 //
 
+import Core
 import Foundation
 
 struct BillIncomeItemViewModel: BillItemProtocol {
@@ -24,6 +25,10 @@ struct BillIncomeItemViewModel: BillItemProtocol {
     }
     
     func getValue() -> String {
-        return status.rawValue + " | " + value.toCurrency() // todo
+        return String(
+            format: CoreConstants.Commons.divider,
+            status.rawValue,
+            value.toCurrency()
+        )
     }
 }

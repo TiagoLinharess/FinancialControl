@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 17/01/24.
 //
 
+import Core
 import Foundation
 
 struct BillItemViewModel: BillItemProtocol {
@@ -21,7 +22,7 @@ struct BillItemViewModel: BillItemProtocol {
     
     func getName() -> String {
         if let installment = installment {
-            return name + " " + installment.getFormatted() // todo
+            return String(format: CoreConstants.Commons.spaceCompletion, name, installment.getFormatted())
         }
         
         return name
@@ -32,6 +33,10 @@ struct BillItemViewModel: BillItemProtocol {
             return value.toCurrency()
         }
         
-        return status.rawValue + " | " + value.toCurrency() // todo
+        return String(
+            format: CoreConstants.Commons.divider,
+            status.rawValue,
+            value.toCurrency()
+        )
     }
 }

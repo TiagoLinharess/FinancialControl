@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 17/01/24.
 //
 
+import Core
 import Foundation
 
 struct BillInstallment {
@@ -17,6 +18,6 @@ struct BillInstallment {
     // MARK: Methods
     
     func getFormatted() -> String {
-        "\(current)/\(max)" // todo
+        return String(format: CoreConstants.Commons.barCompletion, String(current), String(max))
     }
 }

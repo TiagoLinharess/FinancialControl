@@ -24,6 +24,7 @@ public enum CoreConstants {
         public static let key: String = "%@:"
         public static let percentageIcon: String = "%@%%"
         public static let divider: String = "%@ | %@"
+        public static let barCompletion: String = "%@/%@"
         public static let spaceCompletion: String = "%@ %@"
         public static let incomesKey: String = "Incomes"
         public static let salaryKey: String = "Salary"
