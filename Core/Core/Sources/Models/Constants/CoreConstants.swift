@@ -23,6 +23,8 @@ public enum CoreConstants {
         public static let cash: String = "$%@"
         public static let key: String = "%@:"
         public static let percentageIcon: String = "%@%%"
+        public static let divider: String = "%@ | %@"
+        public static let spaceCompletion: String = "%@ %@"
         public static let incomesKey: String = "Incomes"
         public static let salaryKey: String = "Salary"
         public static let bonusKey: String = "Bonus"

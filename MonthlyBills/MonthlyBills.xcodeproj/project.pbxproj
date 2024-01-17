@@ -46,8 +46,6 @@
 		EDDAD6A22B1F6D4500C0BCB6 /* BillDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */; };
 		EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */; };
 		EDDAD6C82B29EB3F00C0BCB6 /* UICurrencyFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6C72B29EB3F00C0BCB6 /* UICurrencyFieldView.swift */; };
-		EDDAD6E42B479AF300C0BCB6 /* UINotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6E32B479AF300C0BCB6 /* UINotesView.swift */; };
-		EDDAD6E62B497D0F00C0BCB6 /* BillsNotesKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6E52B497D0F00C0BCB6 /* BillsNotesKey.swift */; };
 		EDDAD70C2B4CC2DB00C0BCB6 /* MonthlyBills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED13B76D2AFEBB65003161D7 /* MonthlyBills.framework */; platformFilter = ios; };
 		EDDAD7172B4CC36E00C0BCB6 /* BillsWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD7162B4CC36E00C0BCB6 /* BillsWorkerTests.swift */; };
 		EDDAD71B2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD71A2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift */; };
@@ -143,8 +141,6 @@
 		EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailInteractor.swift; sourceTree = "<group>"; };
 		EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailView.swift; sourceTree = "<group>"; };
 		EDDAD6C72B29EB3F00C0BCB6 /* UICurrencyFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICurrencyFieldView.swift; sourceTree = "<group>"; };
-		EDDAD6E32B479AF300C0BCB6 /* UINotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINotesView.swift; sourceTree = "<group>"; };
-		EDDAD6E52B497D0F00C0BCB6 /* BillsNotesKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsNotesKey.swift; sourceTree = "<group>"; };
 		EDDAD7082B4CC2DB00C0BCB6 /* MonthlyBillsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonthlyBillsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDAD7162B4CC36E00C0BCB6 /* BillsWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsWorkerTests.swift; sourceTree = "<group>"; };
 		EDDAD71A2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsRepositoryMock.swift; sourceTree = "<group>"; };
@@ -346,7 +342,6 @@
 				EDF976CC2B58492500133036 /* BillIncomeItemViewModel.swift */,
 				EDF976C02B5807A700133036 /* BillItemViewModel.swift */,
 				EDF976CE2B584BEC00133036 /* BillTotalItemViewModel.swift */,
-				EDDAD6E52B497D0F00C0BCB6 /* BillsNotesKey.swift */,
 				EDF976D22B58593400133036 /* EditBillItemViewModel.swift */,
 			);
 			path = MonthlyBills;
@@ -363,7 +358,6 @@
 		ED8D234D2B14CF45009E8326 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				EDDAD6E22B479AD700C0BCB6 /* NotesView */,
 				EDDAD6C62B29EB0F00C0BCB6 /* UICurrencyFieldView */,
 				ED8D23512B14D351009E8326 /* ErrorView */,
 				ED8D234E2B14CF4C009E8326 /* EmptyView */,
@@ -427,14 +421,6 @@
 				EDDAD6C72B29EB3F00C0BCB6 /* UICurrencyFieldView.swift */,
 			);
 			path = UICurrencyFieldView;
-			sourceTree = "<group>";
-		};
-		EDDAD6E22B479AD700C0BCB6 /* NotesView */ = {
-			isa = PBXGroup;
-			children = (
-				EDDAD6E32B479AF300C0BCB6 /* UINotesView.swift */,
-			);
-			path = NotesView;
 			sourceTree = "<group>";
 		};
 		EDDAD7092B4CC2DB00C0BCB6 /* MonthlyBillsTests */ = {
@@ -762,7 +748,6 @@
 				EDDAD6A02B1F6D4500C0BCB6 /* BillDetailRouter.swift in Sources */,
 				EDDAD69E2B1F6D4500C0BCB6 /* BillDetailFactory.swift in Sources */,
 				ED8D23322B141FC2009E8326 /* HomeRouter.swift in Sources */,
-				EDDAD6E42B479AF300C0BCB6 /* UINotesView.swift in Sources */,
 				EDDAD69F2B1F6D4500C0BCB6 /* BillDetailPresenter.swift in Sources */,
 				EDF976C92B5847DF00133036 /* BillStatus.swift in Sources */,
 				ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */,
@@ -781,7 +766,6 @@
 				ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */,
 				EDDAD6A12B1F6D4500C0BCB6 /* BillDetailViewController.swift in Sources */,
 				EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */,
-				EDDAD6E62B497D0F00C0BCB6 /* BillsNotesKey.swift in Sources */,
 				EDF976CB2B58483200133036 /* BillInstallment.swift in Sources */,
 				EDF976D12B58528300133036 /* BillType.swift in Sources */,
 				ED8D233E2B1428F4009E8326 /* MonthlyBillsViewModel.swift in Sources */,

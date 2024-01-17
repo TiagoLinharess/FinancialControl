@@ -22,8 +22,6 @@ final class MonthlyBillsRepositoryTests: XCTestCase {
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_year_error")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_month_success")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_month_error")
-        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_notes")
-        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_notes_empty")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_income_success")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_income_error")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_investment_success")
@@ -115,21 +113,6 @@ final class MonthlyBillsRepositoryTests: XCTestCase {
         } catch {
             XCTAssertTrue((error as? CoreError)?.message == "Could not find bill")
         }
-    }
-    
-    func test_notes() throws {
-        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_notes")
-        try sut.updateNotes(notes: "notes test", for: "MonthlyBillsRepository_test_notes")
-        
-        let notes = try sut.readNotes(at: "MonthlyBillsRepository_test_notes")
-        XCTAssertTrue(notes == "notes test")
-    }
-    
-    func test_notes_empty() throws {
-        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_notes_empty")
-        
-        let notes = try sut.readNotes(at: "MonthlyBillsRepository_test_notes_empty")
-        XCTAssertTrue(notes.isEmpty)
     }
     
     func test_update_income_success() throws {

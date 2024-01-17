@@ -36,8 +36,6 @@ enum Constants {
     }
     
     enum Form {
-        static let title: String = "Please enter your monthly %@ in the fields below."
         static let successMessage: String = "%@ added with success."
-        static let notes: String = "Notes for your %@"
     }
 }

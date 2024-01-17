@@ -49,14 +49,6 @@ final class MonthlyBillsRepositoryMock: MonthlyBillsRepositoryProtocol {
         return monthlyBillsMock
     }
     
-    func readNotes(at key: String) throws -> String {
-        if isError {
-            throw CoreError.customError("test error")
-        }
-        
-        return "test notes key \(key)"
-    }
-    
     func updateIncome(response: Provider.IncomeResponse, billId: String) throws {
         if isError {
             throw CoreError.customError("test error")
@@ -70,12 +62,6 @@ final class MonthlyBillsRepositoryMock: MonthlyBillsRepositoryProtocol {
     }
     
     func updateExpense(response: Provider.ExpenseResponse, billId: String) throws {
-        if isError {
-            throw CoreError.customError("test error")
-        }
-    }
-    
-    func updateNotes(notes: String, for key: String) throws {
         if isError {
             throw CoreError.customError("test error")
         }

@@ -76,11 +76,27 @@ struct MonthlyBillsViewModel {
     
     func sectionTitle(at section: Int) -> String {
         switch section {
-        case 0: return CoreConstants.Commons.incomesKey + " | \(CoreConstants.Commons.total) \(getTotalAt(items: incomes).toCurrency())"
-        case 1: return CoreConstants.Commons.investmentsKey + " | \(CoreConstants.Commons.total) \(getTotalAt(items: investments).toCurrency())"
-        case 2: return CoreConstants.Commons.expensesKey + " | \(CoreConstants.Commons.total) \(getTotalAt(items: expenses).toCurrency())"
-        case 3: return CoreConstants.Commons.creditCardKey + " | \(CoreConstants.Commons.total) \(getTotalAt(items: creditCard).toCurrency())"
-        default: return Constants.BillDetailView.balanceKey // todo all func
+        case 0: return String(
+            format: CoreConstants.Commons.divider,
+            CoreConstants.Commons.incomesKey,
+            formatTotal(value: getTotalAt(items: incomes).toCurrency())
+        )
+        case 1: return String(
+            format: CoreConstants.Commons.divider,
+            CoreConstants.Commons.investmentsKey,
+            formatTotal(value: getTotalAt(items: investments).toCurrency())
+        )
+        case 2: return String(
+            format: CoreConstants.Commons.divider,
+            CoreConstants.Commons.expensesKey,
+            formatTotal(value: getTotalAt(items: expenses).toCurrency())
+        )
+        case 3: return String(
+            format: CoreConstants.Commons.divider,
+            CoreConstants.Commons.creditCardKey,
+            formatTotal(value: getTotalAt(items: creditCard).toCurrency())
+        )
+        default: return Constants.BillDetailView.balanceKey
         }
     }
     
@@ -116,5 +132,9 @@ struct MonthlyBillsViewModel {
     
     func getBillType(at section: Int) -> BillType? {
         return BillType(rawValue: section)
+    }
+    
+    func formatTotal(value: String) -> String {
+        return String(format: CoreConstants.Commons.spaceCompletion, CoreConstants.Commons.total, value)
     }
 }

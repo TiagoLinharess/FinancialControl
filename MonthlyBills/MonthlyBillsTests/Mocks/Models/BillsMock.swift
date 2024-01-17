@@ -11,15 +11,15 @@ import SharpnezCore
 
 struct BillsMock {
     
-    static var expense = ExpenseViewModel(housing: 200, transport: 100, feed: 20, health: 40, education: 200, taxes: 300, laisure: 10, clothing: 10, creditCard: 2000, other: 0)
+    static var expense = BillItemViewModel(id: "BillExpenseItemViewModel", name: "iphone", value: 100, status: .pending, installment: .init(current: 5, max: 6))
     
-    static var investment = InvestmentViewModel(shares: 100, privatePension: 0, fixedIncome: 200, other: 0)
+    static var investment = BillItemViewModel(id: "BillInvestmentItemViewModel", name: "share", value: 10, status: .payed, installment: nil)
     
-    static var income = IncomeViewModel(salary: 5000, bonus: 200, extra: 0, other: 0)
+    static var income = BillIncomeItemViewModel(id: "BillIncomeItemViewModel", name: "salary", value: 3000, status: .payed)
     
     static var billIncomplete = MonthlyBillsViewModel(month: "January")
     
-    static var billComplete = MonthlyBillsViewModel(month: "January", income: income, investment: investment, expense: expense)
+    static var billComplete = MonthlyBillsViewModel(month: "January", incomes: [income], investments: [investment], expenses: [expense])
     
     static var annualCalendar = AnnualCalendarViewModel(year: "2023")
     

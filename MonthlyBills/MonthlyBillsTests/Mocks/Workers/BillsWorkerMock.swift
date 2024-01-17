@@ -19,6 +19,10 @@ final class BillsWorkerMock: BillsWorking {
         }
     }
     
+    func createBillItem() throws {
+        // todo
+    }
+    
     func read() throws -> [MonthlyBills.AnnualCalendarViewModel] {
         if isError {
             throw CoreError.customError("test error")
@@ -43,35 +47,7 @@ final class BillsWorkerMock: BillsWorking {
         return BillsMock.billIncomplete
     }
     
-    func readNotes(at key: MonthlyBills.BillsNotesKey) throws -> String {
-        if isError {
-            throw CoreError.customError("test error")
-        }
-        
-        return "test notes key \(key)"
-    }
-    
-    func updateIncome(incomeViewModel: MonthlyBills.IncomeViewModel, billId: String) throws {
-        if isError {
-            throw CoreError.customError("test error")
-        }
-    }
-    
-    func updateInvestment(investmentViewModel: MonthlyBills.InvestmentViewModel, billId: String) throws {
-        if isError {
-            throw CoreError.customError("test error")
-        }
-    }
-    
-    func updateExpense(expenseViewModel: MonthlyBills.ExpenseViewModel, billId: String) throws {
-        if isError {
-            throw CoreError.customError("test error")
-        }
-    }
-    
-    func updateNotes(notes: String, for key: MonthlyBills.BillsNotesKey) throws {
-        if isError {
-            throw CoreError.customError("test error")
-        }
+    func updateBillItem(at itemToEdit: EditBillItemViewModel, item: BillItemProtocol) {
+        // todo
     }
 }
