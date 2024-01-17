@@ -32,7 +32,7 @@ enum Constants {
     }
     
     enum BillDetailView {
-        static let balanceKey: String = "Balance:"
+        static let balanceKey: String = "Balance"
     }
     
     enum Form {

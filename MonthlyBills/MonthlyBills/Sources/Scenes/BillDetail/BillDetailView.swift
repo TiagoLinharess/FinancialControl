@@ -18,6 +18,8 @@ final class BillDetailView: UIView {
             configure()
         }
     }
+
+    let reuseIdentifier: String = "billDetailIdentifier" // todo
     
     // MARK: UI Elements
     
@@ -31,43 +33,12 @@ final class BillDetailView: UIView {
         return scrollView
     }()
     
-    private lazy var incomesView: ExtractView = {
-        let view = ExtractView()
-        view.didTapEdit = { [weak self] in
-            self?.delegate?.navigateToIncomes()
-        }
-        return view
-    }()
-    
-    private lazy var investimentsView: ExtractView = {
-        let view = ExtractView()
-        view.didTapEdit =  { [weak self] in
-            self?.delegate?.navigateToInvestments()
-        }
-        return view
-    }()
-    
-    private lazy var expensesView: ExtractView = {
-        let view = ExtractView()
-        view.didTapEdit =  { [weak self] in
-            self?.delegate?.navigateToExpenses()
-        }
-        return view
-    }()
-    
-    private lazy var balanceKeyLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = .zero
-        label.text = Constants.BillDetailView.balanceKey
-        label.font = .systemFont(ofSize: .big, weight: .semibold)
-        return label
-    }()
-    
-    private lazy var balanceValueLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = .zero
-        label.font = .systemFont(ofSize: .big, weight: .semibold)
-        return label
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        return tableView
     }()
     
     // MARK: Init
@@ -85,10 +56,7 @@ final class BillDetailView: UIView {
     // MARK: Public Methods
     
     func configure() {
-        configureIncomes()
-        configureInvestiments()
-        configureExpenses()
-        configureBalance()
+        tableView.reloadData()
     }
 }
 
@@ -101,72 +69,52 @@ extension BillDetailView: UIViewCode {
     }
     
     func setupHierarchy() {
-        addSubview(scrollView)
-        scrollView.addSubview(incomesView)
-        scrollView.addSubview(investimentsView)
-        scrollView.addSubview(expensesView)
-        scrollView.addSubview(balanceKeyLabel)
-        scrollView.addSubview(balanceValueLabel)
+        addSubview(tableView)
     }
     
     func setupConstraints() {
-        scrollView.snp.makeConstraints {
+        tableView.snp.makeConstraints {
             $0.edges.equalToSuperview()
-        }
-        
-        incomesView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview().inset(CGFloat.small)
-            $0.width.equalTo(CGFloat.deviceWidth - CGFloat.xxBig)
-        }
-        
-        investimentsView.snp.makeConstraints {
-            $0.top.equalTo(incomesView.snp.bottom).offset(CGFloat.medium)
-            $0.leading.trailing.equalToSuperview().inset(CGFloat.small)
-            $0.width.equalTo(CGFloat.deviceWidth - CGFloat.xxBig)
-        }
-        
-        expensesView.snp.makeConstraints {
-            $0.top.equalTo(investimentsView.snp.bottom).offset(CGFloat.medium)
-            $0.leading.trailing.equalToSuperview().inset(CGFloat.small)
-            $0.width.equalTo(CGFloat.deviceWidth - CGFloat.xxBig)
-        }
-        
-        balanceKeyLabel.snp.makeConstraints {
-            $0.top.equalTo(expensesView.snp.bottom).offset(CGFloat.small)
-            $0.bottom.leading.equalToSuperview().inset(CGFloat.small)
-            $0.trailing.lessThanOrEqualTo(balanceValueLabel.snp.leading).inset(CGFloat.small)
-        }
-        
-        balanceValueLabel.snp.makeConstraints {
-            $0.top.equalTo(expensesView.snp.bottom).offset(CGFloat.small)
-            $0.bottom.trailing.equalToSuperview().inset(CGFloat.small)
-            $0.leading.greaterThanOrEqualTo(balanceKeyLabel.snp.trailing).inset(CGFloat.small)
         }
     }
 }
 
-private extension BillDetailView {
+extension BillDetailView: UITableViewDelegate, UITableViewDataSource {
     
-    // MARK: Configure
+    // MARK: UITableview Delegate & DataSource
     
-    func configureIncomes() {
-        guard let bill = delegate?.getBill() else { return }
-        incomesView.configure(viewModel: bill.getIncomesExtractViewModel())
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 5
     }
     
-    func configureInvestiments() {
-        guard let bill = delegate?.getBill() else { return }
-        investimentsView.configure(viewModel: bill.getInvestmentsExtractViewModel())
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return delegate?.getBill()?.sectionTitle(at: section) ?? String()
     }
     
-    func configureExpenses() {
-        guard let bill = delegate?.getBill() else { return }
-        expensesView.configure(viewModel: bill.getExpensesExtractViewModel())
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return delegate?.getBill()?.numberOfRowsInSection(at: section) ?? .zero
     }
     
-    func configureBalance() {
-        guard let bill = delegate?.getBill() else { return }
-        balanceValueLabel.text = bill.balance.toCurrency()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let item = delegate?.getBill()?.getItem(at: indexPath) else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath)
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = item.getName()
+        content.secondaryText = item.getValue()
+        content.prefersSideBySideTextAndSecondaryText = true
+        
+        cell.contentConfiguration = content
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let item = delegate?.getBill()?.getItem(at: indexPath),
+              let billType = delegate?.getBill()?.getBillType(at: indexPath.section)
+        else { return }
+        
+        print("[click] [name: \(item.name)] [value: \(item.value)] [status: \(item.status)], [type: \(billType.rawValue)]")
     }
 }
 

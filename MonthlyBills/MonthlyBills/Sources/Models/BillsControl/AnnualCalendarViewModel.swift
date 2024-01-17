@@ -21,7 +21,7 @@ class AnnualCalendarViewModel {
         var balance: Double = .zero
         
         monthlyBills.forEach { bill in
-            balance += bill.balance
+            balance += bill.balance.value
         }
         
         return balance

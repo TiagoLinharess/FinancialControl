@@ -11,14 +11,13 @@ import SharpnezCore
 
 protocol BillsWorking {
     func create(annualCalendar: AnnualCalendarViewModel) throws
+    func createBillItem() throws
     func read() throws -> [AnnualCalendarViewModel]
     func readAtYear(year: String) throws -> AnnualCalendarViewModel
     func readAtMonth(id: String) throws -> MonthlyBillsViewModel
     func readNotes(at key: BillsNotesKey) throws -> String
-    func updateIncome(incomeViewModel: IncomeViewModel, billId: String) throws
-    func updateInvestment(investmentViewModel: InvestmentViewModel, billId: String) throws
-    func updateExpense(expenseViewModel: ExpenseViewModel, billId: String) throws
-    func updateNotes(notes: String, for key: BillsNotesKey) throws
+    func updateBillItem(at itemToEdit: EditBillItemViewModel, item: BillItemProtocol)
+    func updateNotes(notes: String, for key: BillsNotesKey) throws // todo
 }
 
 final class BillsWorker: BillsWorking {
@@ -37,6 +36,10 @@ final class BillsWorker: BillsWorking {
     
     func create(annualCalendar: AnnualCalendarViewModel) throws {
         try repository.create(annualCalendar: annualCalendar.getResponse())
+    }
+    
+    func createBillItem() throws {
+        // todo
     }
     
     // MARK: Read
@@ -63,19 +66,8 @@ final class BillsWorker: BillsWorking {
     
     // MARK: Update
     
-    func updateIncome(incomeViewModel: IncomeViewModel, billId: String) throws {
-        let response = incomeViewModel.getResponse()
-        try repository.updateIncome(response: response, billId: billId)
-    }
-    
-    func updateInvestment(investmentViewModel: InvestmentViewModel, billId: String) throws {
-        let response = investmentViewModel.getResponse()
-        try repository.updateInvestment(response: response, billId: billId)
-    }
-    
-    func updateExpense(expenseViewModel: ExpenseViewModel, billId: String) throws {
-        let response = expenseViewModel.getResponse()
-        try repository.updateExpense(response: response, billId: billId)
+    func updateBillItem(at itemToEdit: EditBillItemViewModel, item: BillItemProtocol) {
+        // todo
     }
     
     func updateNotes(notes: String, for key: BillsNotesKey) throws {
