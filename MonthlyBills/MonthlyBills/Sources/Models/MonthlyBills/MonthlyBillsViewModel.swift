@@ -1,5 +1,5 @@
 //
-//  BillViewModel.swift
+//  MonthlyBillsViewModel.swift
 //  MonthlyBills
 //
 //  Created by Tiago Linhares on 26/11/23.
@@ -75,28 +75,28 @@ struct MonthlyBillsViewModel {
     }
     
     func sectionTitle(at section: Int) -> String {
-        switch section {
-        case 0: return String(
+        switch getBillType(at: section) {
+        case .income: return String(
             format: CoreConstants.Commons.divider,
             CoreConstants.Commons.incomesKey,
             formatTotal(value: getTotalAt(items: incomes).toCurrency())
         )
-        case 1: return String(
+        case .investment: return String(
             format: CoreConstants.Commons.divider,
             CoreConstants.Commons.investmentsKey,
             formatTotal(value: getTotalAt(items: investments).toCurrency())
         )
-        case 2: return String(
+        case .expense: return String(
             format: CoreConstants.Commons.divider,
             CoreConstants.Commons.expensesKey,
             formatTotal(value: getTotalAt(items: expenses).toCurrency())
         )
-        case 3: return String(
+        case .creditCard: return String(
             format: CoreConstants.Commons.divider,
             CoreConstants.Commons.creditCardKey,
             formatTotal(value: getTotalAt(items: creditCard).toCurrency())
         )
-        default: return Constants.BillDetailView.balanceKey
+        case nil: return Constants.BillDetailView.balanceKey
         }
     }
     
