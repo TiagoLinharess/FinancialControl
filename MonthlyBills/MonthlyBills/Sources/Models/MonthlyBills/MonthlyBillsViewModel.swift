@@ -15,10 +15,10 @@ struct MonthlyBillsViewModel {
     
     let id: String
     let month: String
-    var incomes: [BillIncomeItemViewModel]
-    var investments: [BillItemViewModel]
-    var expenses: [BillItemViewModel]
-    var creditCard: [BillItemViewModel]
+    let incomes: [BillIncomeItemViewModel]
+    let investments: [BillItemViewModel]
+    let expenses: [BillItemViewModel]
+    let creditCard: [BillItemViewModel]
     
     var balance: BillTotalItemViewModel {
         let balance = getTotalAt(items: incomes) - (getTotalAt(items: investments) + getTotalAt(items: expenses) + getTotalAt(items: creditCard))
