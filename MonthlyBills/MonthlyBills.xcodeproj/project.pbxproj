@@ -77,6 +77,7 @@
 		EDF976E42B594F4900133036 /* BillItemFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DE2B594F4900133036 /* BillItemFormViewController.swift */; };
 		EDF976E52B594F4900133036 /* BillItemFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DF2B594F4900133036 /* BillItemFormInteractor.swift */; };
 		EDF976E62B594F4900133036 /* BillItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976E02B594F4900133036 /* BillItemFormView.swift */; };
+		EDF976E82B5E9CC700133036 /* BillSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976E72B5E9CC700133036 /* BillSectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		EDF976DE2B594F4900133036 /* BillItemFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormViewController.swift; sourceTree = "<group>"; };
 		EDF976DF2B594F4900133036 /* BillItemFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormInteractor.swift; sourceTree = "<group>"; };
 		EDF976E02B594F4900133036 /* BillItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormView.swift; sourceTree = "<group>"; };
+		EDF976E72B5E9CC700133036 /* BillSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				ED8D233D2B1428F4009E8326 /* MonthlyBillsViewModel.swift */,
+				EDF976E72B5E9CC700133036 /* BillSectionViewModel.swift */,
 				EDF976C62B58473B00133036 /* BillItemProtocol.swift */,
 				EDF976C82B5847DF00133036 /* BillStatus.swift */,
 				EDF976CA2B58483200133036 /* BillInstallment.swift */,
@@ -767,6 +770,7 @@
 				ED8D23702B19098C009E8326 /* Constants.swift in Sources */,
 				ED8D23422B143031009E8326 /* AnnualCalendarViewModel.swift in Sources */,
 				ED2C68772B1A4A0200B831C6 /* CalendarDetailViewController.swift in Sources */,
+				EDF976E82B5E9CC700133036 /* BillSectionViewModel.swift in Sources */,
 				EDF976C72B58473B00133036 /* BillItemProtocol.swift in Sources */,
 				ED2C68742B1A4A0200B831C6 /* CalendarDetailFactory.swift in Sources */,
 				ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */,

@@ -15,31 +15,30 @@ struct MonthlyBillsViewModel {
     
     let id: String
     let month: String
-    let incomes: [BillIncomeItemViewModel]
-    let investments: [BillItemViewModel]
-    let expenses: [BillItemViewModel]
-    let creditCard: [BillItemViewModel]
+    let sections: [BillSectionViewModel]
     
-    var balance: BillTotalItemViewModel {
-        let balance = getTotalAt(items: incomes) - (getTotalAt(items: investments) + getTotalAt(items: expenses) + getTotalAt(items: creditCard))
-        return .init(name: CoreConstants.Commons.total, value: balance)
+    var balance: Double {
+        let incomesTotal = getSection(at: .income)?.total ?? .zero
+        var expenses: Double = .zero
+        
+        sections.forEach { section in
+            if section.type != .income {
+                expenses += section.total
+            }
+        }
+        
+        return incomesTotal - expenses
     }
     
     // MARK: Init
     
     init(
         month: String,
-        incomes: [BillIncomeItemViewModel] = [],
-        investments: [BillItemViewModel] = [],
-        expenses: [BillItemViewModel] = [],
-        creditCard: [BillItemViewModel] = []
+        sections: [BillSectionViewModel] = []
     ) {
         self.id = UUID().uuidString
         self.month = month
-        self.incomes = incomes
-        self.investments = investments
-        self.expenses = expenses
-        self.creditCard = creditCard
+        self.sections = sections
     }
     
     // MARK: Init from response
@@ -47,22 +46,15 @@ struct MonthlyBillsViewModel {
     init(from response: MonthlyBillsResponse) {
         self.id = response.id
         self.month = response.month
-        self.incomes = []
-        self.investments = []
-        self.expenses = []
-        self.creditCard = []
+        self.sections = [
+            .init(items: [BillIncomeItemViewModel(id: String(), name: "salario", value: 6000, status: .payed)], type: .income),
+            .init(items: [BillItemViewModel(id: "", name: "iphone", value: 3000, status: .pending, installment: nil)], type: .creditCard),
+            .init(items: [BillItemViewModel(id: "", name: "ação", value: 340, status: .pending, installment: nil)], type: .investment),
+        ]
         // todo implement service after form
     }
     
     // MARK: Methods
-    
-    func percentageOfRevenue(value: Double) -> Double {
-        if getTotalAt(items: incomes) == .zero {
-            return 100
-        }
-        
-        return (value / getTotalAt(items: incomes)) * 100
-    }
     
     func getResponse() -> MonthlyBillsResponse {
         return .init(
@@ -74,67 +66,30 @@ struct MonthlyBillsViewModel {
         )
     }
     
-    func sectionTitle(at section: Int) -> String {
-        switch getBillType(at: section) {
-        case .income: return String(
-            format: CoreConstants.Commons.divider,
-            CoreConstants.Commons.incomesKey,
-            formatTotal(value: getTotalAt(items: incomes).toCurrency())
-        )
-        case .investment: return String(
-            format: CoreConstants.Commons.divider,
-            CoreConstants.Commons.investmentsKey,
-            formatTotal(value: getTotalAt(items: investments).toCurrency())
-        )
-        case .expense: return String(
-            format: CoreConstants.Commons.divider,
-            CoreConstants.Commons.expensesKey,
-            formatTotal(value: getTotalAt(items: expenses).toCurrency())
-        )
-        case .creditCard: return String(
-            format: CoreConstants.Commons.divider,
-            CoreConstants.Commons.creditCardKey,
-            formatTotal(value: getTotalAt(items: creditCard).toCurrency())
-        )
-        case nil: return Constants.BillDetailView.balanceKey
-        }
-    }
-    
-    func numberOfRowsInSection(at section: Int) -> Int {
-        switch getBillType(at: section) {
-        case .income: return incomes.count
-        case .investment: return investments.count
-        case .expense: return expenses.count
-        case .creditCard: return creditCard.count
-        case nil: return 1
-        }
-    }
-    
-    func getItem(at indexPath: IndexPath) -> BillItemProtocol {
-        switch getBillType(at: indexPath.section) {
-        case .income: return incomes[indexPath.row]
-        case .investment: return investments[indexPath.row]
-        case .expense: return expenses[indexPath.row]
-        case .creditCard: return creditCard[indexPath.row]
-        case nil: return balance
-        }
-    }
-    
-    func getTotalAt(items: [BillItemProtocol]) -> Double {
-        var total: Double = .zero
+    func sectionFooter(at section: Int) -> String? {
+        let section = sections[section]
+        let incomesTotal = getSection(at: .income)?.total ?? .zero
         
-        items.forEach { item in
-            total += item.value
+        if section.type == .income {
+            return nil
         }
         
-        return total
+        if incomesTotal == .zero {
+            return "100% of total entries"
+        }
+        
+        let percentage = (section.total / incomesTotal) * 100
+        return "\(percentage)% of total entries"
     }
+}
+
+private extension MonthlyBillsViewModel {
     
-    func getBillType(at section: Int) -> BillType? {
-        return BillType(rawValue: section)
-    }
+    // MARK: Private Methods
     
-    func formatTotal(value: String) -> String {
-        return String(format: CoreConstants.Commons.spaceCompletion, CoreConstants.Commons.total, value)
+    func getSection(at billType: BillType) -> BillSectionViewModel? {
+        return sections.first { section in
+            section.type == billType
+        }
     }
 }

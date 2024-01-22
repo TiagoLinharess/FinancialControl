@@ -79,7 +79,7 @@ extension CalendarDetailView: UITableViewDelegate, UITableViewDataSource {
         
         var content = cell.defaultContentConfiguration()
         content.text = monthlyBill.month
-        content.secondaryText = monthlyBill.balance.value.toCurrency()
+        content.secondaryText = monthlyBill.balance.toCurrency()
         content.prefersSideBySideTextAndSecondaryText = true
         
         cell.contentConfiguration = content
