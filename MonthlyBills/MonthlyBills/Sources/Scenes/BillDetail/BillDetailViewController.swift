@@ -18,8 +18,7 @@ protocol BillDetailViewControlling {
 
 protocol BillDetailViewControllerDelegate {
     func getBill() -> MonthlyBillsViewModel?
-    func addItem(billId: String)
-    func editItem(at itemToEdit: EditBillItemViewModel)
+    func select(at item: BillItemFormViewModel)
 }
 
 final class BillDetailViewController: UIVIPBaseViewController<BillDetailView, BillDetailInteracting, BillDetailRouting> {
@@ -34,6 +33,13 @@ final class BillDetailViewController: UIVIPBaseViewController<BillDetailView, Bi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         interactor.update(with: billId)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let addButton = UIBarButtonItem(image: .init(systemName: CoreConstants.Icons.add), style: .plain, target: self, action: #selector(addAction))
+        navigationItem.rightBarButtonItems = [addButton]
     }
     
     // MARK: Init
@@ -54,6 +60,13 @@ final class BillDetailViewController: UIVIPBaseViewController<BillDetailView, Bi
         guard let bill else { return }
         title = bill.month
         customView.configure()
+    }
+    
+    // MARK: Actions
+    
+    @objc
+    func addAction() {
+        router.routeToItemForm(at: .init(billId: billId))
     }
 }
 
@@ -85,11 +98,7 @@ extension BillDetailViewController: BillDetailViewControllerDelegate {
         return bill
     }
     
-    func addItem(billId: String) {
-        router.addItem(billId: billId)
-    }
-    
-    func editItem(at itemToEdit: EditBillItemViewModel) {
-        router.editItem(at: itemToEdit)
+    func select(at item: BillItemFormViewModel) {
+        router.routeToItemForm(at: item)
     }
 }

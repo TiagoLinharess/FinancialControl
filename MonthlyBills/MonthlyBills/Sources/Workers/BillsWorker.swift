@@ -15,7 +15,7 @@ protocol BillsWorking {
     func read() throws -> [AnnualCalendarViewModel]
     func readAtYear(year: String) throws -> AnnualCalendarViewModel
     func readAtMonth(id: String) throws -> MonthlyBillsViewModel
-    func updateBillItem(at itemToEdit: EditBillItemViewModel, item: BillItemProtocol)
+    func updateBillItem(at itemForm: BillItemFormViewModel, item: BillItemProtocol)
 }
 
 final class BillsWorker: BillsWorking {
@@ -60,7 +60,7 @@ final class BillsWorker: BillsWorking {
     
     // MARK: Update
     
-    func updateBillItem(at itemToEdit: EditBillItemViewModel, item: BillItemProtocol) {
+    func updateBillItem(at itemForm: BillItemFormViewModel, item: BillItemProtocol) {
         // todo implement service after form
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum BillStatus: String {
+enum BillStatus: String, CaseIterable {
     case payed
     case pending
     case none

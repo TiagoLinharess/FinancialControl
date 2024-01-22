@@ -47,7 +47,7 @@ final class BillsWorkerMock: BillsWorking {
         return BillsMock.billIncomplete
     }
     
-    func updateBillItem(at itemToEdit: EditBillItemViewModel, item: BillItemProtocol) {
+    func updateBillItem(at itemForm: BillItemFormViewModel, item: BillItemProtocol) {
         // todo
     }
 }

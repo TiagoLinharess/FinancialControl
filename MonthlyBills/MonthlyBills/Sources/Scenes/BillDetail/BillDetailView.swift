@@ -110,11 +110,12 @@ extension BillDetailView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = delegate?.getBill()?.getItem(at: indexPath),
+        guard let bill = delegate?.getBill(),
               let billType = delegate?.getBill()?.getBillType(at: indexPath.section)
         else { return }
         
-        print("[click] [name: \(item.name)] [value: \(item.value)] [status: \(item.status)], [type: \(billType.rawValue)]")
+        let item = bill.getItem(at: indexPath)
+        delegate?.select(at: .init(itemType: billType, itemId: item.id, billId: bill.id))
     }
 }
 

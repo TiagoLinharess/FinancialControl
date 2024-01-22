@@ -1,5 +1,5 @@
 //
-//  EditBillItemViewModel.swift
+//  BillItemFormViewModel.swift
 //  MonthlyBills
 //
 //  Created by Tiago Linhares on 17/01/24.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct EditBillItemViewModel {
+struct BillItemFormViewModel {
     
     // MARK: Properties
     
-    var itemType: BillType
-    var itemId: String
+    var itemType: BillType?
+    var itemId: String?
     var billId: String
 }
