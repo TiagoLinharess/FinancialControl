@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 05/12/23.
 //
 
+import Core
 import SharpnezDesignSystem
 import SnapKit
 import UIKit
@@ -31,6 +32,23 @@ final class BillDetailView: UIView {
         return tableView
     }()
     
+    private lazy var separatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        return view
+    }()
+    
+    private lazy var totalLabel: UILabel = {
+        let label = UILabel()
+        label.text = CoreConstants.Commons.total
+        return label
+    }()
+    
+    private lazy var valueLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
     // MARK: Init
     
     init() {
@@ -47,6 +65,7 @@ final class BillDetailView: UIView {
     
     func configure() {
         tableView.reloadData()
+        valueLabel.text = delegate?.getBill()?.balance.toCurrency()
     }
 }
 
@@ -60,11 +79,34 @@ extension BillDetailView: UIViewCode {
     
     func setupHierarchy() {
         addSubview(tableView)
+        addSubview(separatorView)
+        addSubview(totalLabel)
+        addSubview(valueLabel)
     }
     
     func setupConstraints() {
         tableView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.horizontalEdges.top.equalToSuperview()
+        }
+        
+        separatorView.snp.makeConstraints {
+            $0.top.equalTo(self.tableView.snp.bottom)
+            $0.horizontalEdges.equalToSuperview().inset(CGFloat.small)
+            $0.height.equalTo(CGFloat.one)
+        }
+        
+        totalLabel.snp.makeConstraints {
+            $0.top.equalTo(self.separatorView.snp.bottom).offset(CGFloat.medium)
+            $0.leading.equalToSuperview().inset(CGFloat.xBig)
+            $0.trailing.lessThanOrEqualTo(self.valueLabel.snp.leading).offset(CGFloat.small)
+            $0.bottom.equalTo(safeAreaLayoutGuide).inset(CGFloat.medium)
+        }
+        
+        valueLabel.snp.makeConstraints {
+            $0.top.equalTo(self.separatorView.snp.bottom).offset(CGFloat.medium)
+            $0.trailing.equalToSuperview().inset(CGFloat.xBig)
+            $0.leading.greaterThanOrEqualTo(self.totalLabel.snp.trailing).offset(CGFloat.small)
+            $0.bottom.equalTo(safeAreaLayoutGuide).inset(CGFloat.medium)
         }
     }
 }

@@ -46,11 +46,7 @@ struct MonthlyBillsViewModel {
     init(from response: MonthlyBillsResponse) {
         self.id = response.id
         self.month = response.month
-        self.sections = [
-            .init(items: [BillIncomeItemViewModel(id: String(), name: "salario", value: 6000, status: .payed)], type: .income),
-            .init(items: [BillItemViewModel(id: "", name: "iphone", value: 3000, status: .pending, installment: nil)], type: .creditCard),
-            .init(items: [BillItemViewModel(id: "", name: "ação", value: 340, status: .pending, installment: nil)], type: .investment),
-        ]
+        self.sections = []
         // todo implement service after form
     }
     
@@ -75,11 +71,11 @@ struct MonthlyBillsViewModel {
         }
         
         if incomesTotal == .zero {
-            return "100% of total entries"
+            return Constants.BillDetailView.zeroIncomePercentage
         }
         
         let percentage = (section.total / incomesTotal) * 100
-        return "\(percentage)% of total entries"
+        return String(format: CoreConstants.Commons.percentageIcon, String(percentage))
     }
 }
 
