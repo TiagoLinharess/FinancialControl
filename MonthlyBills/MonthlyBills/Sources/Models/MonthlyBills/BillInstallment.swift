@@ -20,4 +20,8 @@ struct BillInstallment {
     func getFormatted() -> String {
         return String(format: CoreConstants.Commons.barCompletion, String(current), String(max))
     }
+    
+    func isValid() -> Bool {
+        return current <= max && max > .zero && current > .zero
+    }
 }

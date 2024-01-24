@@ -45,7 +45,7 @@
 		EDDAD6A12B1F6D4500C0BCB6 /* BillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69B2B1F6D4500C0BCB6 /* BillDetailViewController.swift */; };
 		EDDAD6A22B1F6D4500C0BCB6 /* BillDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */; };
 		EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */; };
-		EDDAD6C82B29EB3F00C0BCB6 /* UICurrencyFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6C72B29EB3F00C0BCB6 /* UICurrencyFieldView.swift */; };
+		EDDAD6C82B29EB3F00C0BCB6 /* FCUICurrencyFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6C72B29EB3F00C0BCB6 /* FCUICurrencyFieldView.swift */; };
 		EDDAD70C2B4CC2DB00C0BCB6 /* MonthlyBills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED13B76D2AFEBB65003161D7 /* MonthlyBills.framework */; platformFilter = ios; };
 		EDDAD7172B4CC36E00C0BCB6 /* BillsWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD7162B4CC36E00C0BCB6 /* BillsWorkerTests.swift */; };
 		EDDAD71B2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD71A2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift */; };
@@ -68,9 +68,8 @@
 		EDF976C92B5847DF00133036 /* BillStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976C82B5847DF00133036 /* BillStatus.swift */; };
 		EDF976CB2B58483200133036 /* BillInstallment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976CA2B58483200133036 /* BillInstallment.swift */; };
 		EDF976CD2B58492500133036 /* BillIncomeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976CC2B58492500133036 /* BillIncomeItemViewModel.swift */; };
-		EDF976CF2B584BEC00133036 /* BillTotalItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976CE2B584BEC00133036 /* BillTotalItemViewModel.swift */; };
 		EDF976D12B58528300133036 /* BillType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976D02B58528300133036 /* BillType.swift */; };
-		EDF976D32B58593400133036 /* BillItemFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976D22B58593400133036 /* BillItemFormViewModel.swift */; };
+		EDF976D32B58593400133036 /* BillItemFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976D22B58593400133036 /* BillItemFormType.swift */; };
 		EDF976E12B594F4900133036 /* BillItemFormFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DB2B594F4900133036 /* BillItemFormFactory.swift */; };
 		EDF976E22B594F4900133036 /* BillItemFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DC2B594F4900133036 /* BillItemFormPresenter.swift */; };
 		EDF976E32B594F4900133036 /* BillItemFormRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DD2B594F4900133036 /* BillItemFormRouter.swift */; };
@@ -78,6 +77,10 @@
 		EDF976E52B594F4900133036 /* BillItemFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DF2B594F4900133036 /* BillItemFormInteractor.swift */; };
 		EDF976E62B594F4900133036 /* BillItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976E02B594F4900133036 /* BillItemFormView.swift */; };
 		EDF976E82B5E9CC700133036 /* BillSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976E72B5E9CC700133036 /* BillSectionViewModel.swift */; };
+		EDF976EE2B5EEF7300133036 /* FCUIPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976ED2B5EEF7300133036 /* FCUIPickerView.swift */; };
+		EDF976F32B5EF2DF00133036 /* FCUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976F22B5EF2DF00133036 /* FCUITextField.swift */; };
+		EDF976F62B5FFC2600133036 /* FCUISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976F52B5FFC2600133036 /* FCUISwitch.swift */; };
+		EDF976F82B607EC400133036 /* BillItemFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976F72B607EC400133036 /* BillItemFormViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,7 +150,7 @@
 		EDDAD69B2B1F6D4500C0BCB6 /* BillDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailViewController.swift; sourceTree = "<group>"; };
 		EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailInteractor.swift; sourceTree = "<group>"; };
 		EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailView.swift; sourceTree = "<group>"; };
-		EDDAD6C72B29EB3F00C0BCB6 /* UICurrencyFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICurrencyFieldView.swift; sourceTree = "<group>"; };
+		EDDAD6C72B29EB3F00C0BCB6 /* FCUICurrencyFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCUICurrencyFieldView.swift; sourceTree = "<group>"; };
 		EDDAD7082B4CC2DB00C0BCB6 /* MonthlyBillsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonthlyBillsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDAD7162B4CC36E00C0BCB6 /* BillsWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsWorkerTests.swift; sourceTree = "<group>"; };
 		EDDAD71A2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsRepositoryMock.swift; sourceTree = "<group>"; };
@@ -174,9 +177,8 @@
 		EDF976C82B5847DF00133036 /* BillStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillStatus.swift; sourceTree = "<group>"; };
 		EDF976CA2B58483200133036 /* BillInstallment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillInstallment.swift; sourceTree = "<group>"; };
 		EDF976CC2B58492500133036 /* BillIncomeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillIncomeItemViewModel.swift; sourceTree = "<group>"; };
-		EDF976CE2B584BEC00133036 /* BillTotalItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTotalItemViewModel.swift; sourceTree = "<group>"; };
 		EDF976D02B58528300133036 /* BillType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillType.swift; sourceTree = "<group>"; };
-		EDF976D22B58593400133036 /* BillItemFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormViewModel.swift; sourceTree = "<group>"; };
+		EDF976D22B58593400133036 /* BillItemFormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormType.swift; sourceTree = "<group>"; };
 		EDF976DB2B594F4900133036 /* BillItemFormFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormFactory.swift; sourceTree = "<group>"; };
 		EDF976DC2B594F4900133036 /* BillItemFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormPresenter.swift; sourceTree = "<group>"; };
 		EDF976DD2B594F4900133036 /* BillItemFormRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormRouter.swift; sourceTree = "<group>"; };
@@ -184,6 +186,10 @@
 		EDF976DF2B594F4900133036 /* BillItemFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormInteractor.swift; sourceTree = "<group>"; };
 		EDF976E02B594F4900133036 /* BillItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormView.swift; sourceTree = "<group>"; };
 		EDF976E72B5E9CC700133036 /* BillSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSectionViewModel.swift; sourceTree = "<group>"; };
+		EDF976ED2B5EEF7300133036 /* FCUIPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCUIPickerView.swift; sourceTree = "<group>"; };
+		EDF976F22B5EF2DF00133036 /* FCUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCUITextField.swift; sourceTree = "<group>"; };
+		EDF976F52B5FFC2600133036 /* FCUISwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCUISwitch.swift; sourceTree = "<group>"; };
+		EDF976F72B607EC400133036 /* BillItemFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,8 +363,8 @@
 				EDF976D02B58528300133036 /* BillType.swift */,
 				EDF976CC2B58492500133036 /* BillIncomeItemViewModel.swift */,
 				EDF976C02B5807A700133036 /* BillItemViewModel.swift */,
-				EDF976CE2B584BEC00133036 /* BillTotalItemViewModel.swift */,
-				EDF976D22B58593400133036 /* BillItemFormViewModel.swift */,
+				EDF976D22B58593400133036 /* BillItemFormType.swift */,
+				EDF976F72B607EC400133036 /* BillItemFormViewModel.swift */,
 			);
 			path = MonthlyBills;
 			sourceTree = "<group>";
@@ -374,7 +380,10 @@
 		ED8D234D2B14CF45009E8326 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				EDDAD6C62B29EB0F00C0BCB6 /* UICurrencyFieldView */,
+				EDF976F42B5FFC0B00133036 /* FCUISwitch */,
+				EDF976F12B5EF22A00133036 /* FCUITextField */,
+				EDF976F02B5EF03200133036 /* FCUIPickerView */,
+				EDDAD6C62B29EB0F00C0BCB6 /* FCUICurrencyFieldView */,
 				ED8D23512B14D351009E8326 /* ErrorView */,
 				ED8D234E2B14CF4C009E8326 /* EmptyView */,
 			);
@@ -431,12 +440,12 @@
 			path = BillDetail;
 			sourceTree = "<group>";
 		};
-		EDDAD6C62B29EB0F00C0BCB6 /* UICurrencyFieldView */ = {
+		EDDAD6C62B29EB0F00C0BCB6 /* FCUICurrencyFieldView */ = {
 			isa = PBXGroup;
 			children = (
-				EDDAD6C72B29EB3F00C0BCB6 /* UICurrencyFieldView.swift */,
+				EDDAD6C72B29EB3F00C0BCB6 /* FCUICurrencyFieldView.swift */,
 			);
-			path = UICurrencyFieldView;
+			path = FCUICurrencyFieldView;
 			sourceTree = "<group>";
 		};
 		EDDAD7092B4CC2DB00C0BCB6 /* MonthlyBillsTests */ = {
@@ -581,6 +590,30 @@
 				EDF976E02B594F4900133036 /* BillItemFormView.swift */,
 			);
 			path = BillItemForm;
+			sourceTree = "<group>";
+		};
+		EDF976F02B5EF03200133036 /* FCUIPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976ED2B5EEF7300133036 /* FCUIPickerView.swift */,
+			);
+			path = FCUIPickerView;
+			sourceTree = "<group>";
+		};
+		EDF976F12B5EF22A00133036 /* FCUITextField */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976F22B5EF2DF00133036 /* FCUITextField.swift */,
+			);
+			path = FCUITextField;
+			sourceTree = "<group>";
+		};
+		EDF976F42B5FFC0B00133036 /* FCUISwitch */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976F52B5FFC2600133036 /* FCUISwitch.swift */,
+			);
+			path = FCUISwitch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -761,16 +794,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDDAD6C82B29EB3F00C0BCB6 /* UICurrencyFieldView.swift in Sources */,
+				EDF976F82B607EC400133036 /* BillItemFormViewModel.swift in Sources */,
+				EDDAD6C82B29EB3F00C0BCB6 /* FCUICurrencyFieldView.swift in Sources */,
 				EDF976CD2B58492500133036 /* BillIncomeItemViewModel.swift in Sources */,
 				ED2C68752B1A4A0200B831C6 /* CalendarDetailPresenter.swift in Sources */,
-				EDF976D32B58593400133036 /* BillItemFormViewModel.swift in Sources */,
+				EDF976D32B58593400133036 /* BillItemFormType.swift in Sources */,
 				EDF976E52B594F4900133036 /* BillItemFormInteractor.swift in Sources */,
 				ED8D235E2B1564CD009E8326 /* AddAnnualCalendarRouter.swift in Sources */,
 				ED8D23702B19098C009E8326 /* Constants.swift in Sources */,
 				ED8D23422B143031009E8326 /* AnnualCalendarViewModel.swift in Sources */,
 				ED2C68772B1A4A0200B831C6 /* CalendarDetailViewController.swift in Sources */,
 				EDF976E82B5E9CC700133036 /* BillSectionViewModel.swift in Sources */,
+				EDF976F32B5EF2DF00133036 /* FCUITextField.swift in Sources */,
 				EDF976C72B58473B00133036 /* BillItemProtocol.swift in Sources */,
 				ED2C68742B1A4A0200B831C6 /* CalendarDetailFactory.swift in Sources */,
 				ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */,
@@ -789,7 +824,6 @@
 				ED8D232C2B141E20009E8326 /* HomeView.swift in Sources */,
 				ED8D23602B15654C009E8326 /* AddAnnualCalendarFactory.swift in Sources */,
 				EDF976E22B594F4900133036 /* BillItemFormPresenter.swift in Sources */,
-				EDF976CF2B584BEC00133036 /* BillTotalItemViewModel.swift in Sources */,
 				ED8D23562B156119009E8326 /* AddAnnualCalendarView.swift in Sources */,
 				ED2C68782B1A4A0200B831C6 /* CalendarDetailInteractor.swift in Sources */,
 				ED8D23302B141F70009E8326 /* HomePresenter.swift in Sources */,
@@ -799,6 +833,7 @@
 				EDF976E62B594F4900133036 /* BillItemFormView.swift in Sources */,
 				ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */,
 				EDDAD6A12B1F6D4500C0BCB6 /* BillDetailViewController.swift in Sources */,
+				EDF976EE2B5EEF7300133036 /* FCUIPickerView.swift in Sources */,
 				EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */,
 				EDF976E12B594F4900133036 /* BillItemFormFactory.swift in Sources */,
 				EDF976CB2B58483200133036 /* BillInstallment.swift in Sources */,
@@ -808,6 +843,7 @@
 				EDF976E42B594F4900133036 /* BillItemFormViewController.swift in Sources */,
 				ED8D23502B14CF5E009E8326 /* EmptyView.swift in Sources */,
 				ED8D235A2B15625E009E8326 /* AddAnnualCalendarInteractor.swift in Sources */,
+				EDF976F62B5FFC2600133036 /* FCUISwitch.swift in Sources */,
 				ED13B7722AFEBB65003161D7 /* MonthlyBills.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

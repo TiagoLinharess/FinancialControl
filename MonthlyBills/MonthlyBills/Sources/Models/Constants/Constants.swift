@@ -36,7 +36,21 @@ enum Constants {
         static let zeroIncomePercentage: String = "100%"
     }
     
-    enum Form {
-        static let successMessage: String = "%@ added with success."
+    enum BillItemFormView {
+        static let editMessage: String = "edited"
+        static let newMessage: String = "added"
+        static let successMessage: String = "Item %@ with success."
+        static let billTypeTitle: String = "bill type*"
+        static let paymentStatusTitle: String = "payment status*"
+        static let nameTitle: String = "name*"
+        static let namePlaceholder: String = "EX: Food"
+        static let valueSwitchTitle: String = "implements value"
+        static let valuePlaceholder: String = "value*"
+        static let installmentSwitchTitle: String = "implements installment"
+        static let installmentCurrentTitle: String = "current*"
+        static let installmentCurrentPlaceholder: String = "EX: 10"
+        static let installmentMaxTitle: String = "EX: 10"
+        static let installmentMaxPlaceholder: String = "EX: 12"
+        
     }
 }

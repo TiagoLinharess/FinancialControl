@@ -29,10 +29,6 @@ struct BillItemViewModel: BillItemProtocol {
     }
     
     func getValue() -> String {
-        if status == .none {
-            return value.toCurrency()
-        }
-        
         return String(
             format: CoreConstants.Commons.divider,
             status.rawValue,

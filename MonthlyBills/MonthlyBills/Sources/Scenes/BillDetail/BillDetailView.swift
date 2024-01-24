@@ -151,6 +151,6 @@ extension BillDetailView: UITableViewDelegate, UITableViewDataSource {
         
         let item = bill.sections[indexPath.section].items[indexPath.row]
         let sectionType = bill.sections[indexPath.section].type
-        delegate?.select(at: .init(itemType: sectionType, itemId: item.id, billId: bill.id))
+        delegate?.select(at: .edit(bill.id, item.id, sectionType))
     }
 }

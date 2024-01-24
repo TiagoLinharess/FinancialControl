@@ -11,14 +11,14 @@ import UIKit
 
 enum BillItemFormFactory {
     
-    static func configure(item: BillItemFormViewModel) -> UIViewController {
+    static func configure(formType: BillItemFormType) -> UIViewController {
         let router = BillItemFormRouter()
         let presenter = BillItemFormPresenter()
         let interactor = BillItemFormInteractor(presenter: presenter)
         let view = BillItemFormView()
         
         let controller = BillItemFormViewController(
-            billItemFormViewModel: item,
+            formType: formType,
             customView: view,
             interactor: interactor,
             router: router
@@ -26,6 +26,7 @@ enum BillItemFormFactory {
         
         router.viewController = controller
         presenter.viewController = controller
+        view.delegate = controller
         
         return controller
     }

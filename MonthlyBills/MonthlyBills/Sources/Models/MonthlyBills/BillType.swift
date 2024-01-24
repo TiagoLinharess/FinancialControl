@@ -8,7 +8,7 @@
 import Core
 import Foundation
 
-enum BillType: Int, CaseIterable {
+enum BillType: String, CaseIterable {
     case income
     case investment
     case expense

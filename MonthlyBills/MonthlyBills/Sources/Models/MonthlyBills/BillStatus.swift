@@ -10,5 +10,4 @@ import Foundation
 enum BillStatus: String, CaseIterable {
     case payed
     case pending
-    case none
 }

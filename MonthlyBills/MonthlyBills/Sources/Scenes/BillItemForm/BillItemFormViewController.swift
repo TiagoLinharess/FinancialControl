@@ -11,6 +11,10 @@ import Core
 import SharpnezDesignSystem
 import UIKit
 
+protocol BillItemFormViewControllerDelegate {
+    func getFormType() -> BillItemFormType
+}
+
 protocol BillItemFormViewControlling {
     /* Impements protocol code */
 }
@@ -19,17 +23,17 @@ final class BillItemFormViewController: UIVIPBaseViewController<BillItemFormView
     
     // MARK: Properties
     
-    private let billItemFormViewModel: BillItemFormViewModel
+    private let formType: BillItemFormType
     
     // MARK: Init
     
     init(
-        billItemFormViewModel: BillItemFormViewModel,
+        formType: BillItemFormType,
         customView: BillItemFormView,
         interactor: BillItemFormInteracting,
         router: BillItemFormRouting
     ) {
-        self.billItemFormViewModel = billItemFormViewModel
+        self.formType = formType
         super.init(customView: customView, interactor: interactor, router: router)
     }
     
@@ -52,7 +56,8 @@ final class BillItemFormViewController: UIVIPBaseViewController<BillItemFormView
     
     @objc
     func checkAction() {
-        
+        let viewModel = customView.builViewModel()
+        interactor.submit(viewModel: viewModel)
     }
 }
 
@@ -61,4 +66,13 @@ extension BillItemFormViewController: BillItemFormViewControlling {
     // MARK: Controller Input
     
     /* Impements controller code */
+}
+
+extension BillItemFormViewController: BillItemFormViewControllerDelegate {
+    
+    // MARK: Controller Delegate
+    
+    func getFormType() -> BillItemFormType {
+        return formType
+    }
 }

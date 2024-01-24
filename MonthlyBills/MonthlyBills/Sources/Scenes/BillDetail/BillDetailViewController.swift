@@ -18,7 +18,7 @@ protocol BillDetailViewControlling {
 
 protocol BillDetailViewControllerDelegate {
     func getBill() -> MonthlyBillsViewModel?
-    func select(at item: BillItemFormViewModel)
+    func select(at item: BillItemFormType)
 }
 
 final class BillDetailViewController: UIVIPBaseViewController<BillDetailView, BillDetailInteracting, BillDetailRouting> {
@@ -66,7 +66,7 @@ final class BillDetailViewController: UIVIPBaseViewController<BillDetailView, Bi
     
     @objc
     func addAction() {
-        router.routeToItemForm(at: .init(billId: billId))
+        router.routeToItemForm(at: .new(billId))
     }
 }
 
@@ -98,7 +98,7 @@ extension BillDetailViewController: BillDetailViewControllerDelegate {
         return bill
     }
     
-    func select(at item: BillItemFormViewModel) {
+    func select(at item: BillItemFormType) {
         router.routeToItemForm(at: item)
     }
 }

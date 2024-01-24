@@ -11,15 +11,15 @@ import SharpnezDesignSystem
 import UIKit
 
 protocol BillDetailRouting {
-    func routeToItemForm(at item: BillItemFormViewModel)
+    func routeToItemForm(at item: BillItemFormType)
 }
 
 final class BillDetailRouter: UIVIPRouter, BillDetailRouting {
     
     // MARK: Methods
     
-    func routeToItemForm(at item: BillItemFormViewModel) {
-        let controller = BillItemFormFactory.configure(item: item)
+    func routeToItemForm(at item: BillItemFormType) {
+        let controller = BillItemFormFactory.configure(formType: item)
         viewController?.navigationController?.pushViewController(controller, animated: true)
     }
 }

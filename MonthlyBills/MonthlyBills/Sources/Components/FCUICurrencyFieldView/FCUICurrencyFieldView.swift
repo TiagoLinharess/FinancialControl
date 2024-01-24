@@ -1,5 +1,5 @@
 //
-//  UICurrencyFieldView.swift
+//  FCUICurrencyFieldView.swift
 //  MonthlyBills
 //
 //  Created by Tiago Linhares on 13/12/23.
@@ -11,11 +11,21 @@ import SharpnezDesignSystem
 import SnapKit
 import UIKit
 
-final class UICurrencyFieldView: UIView {
+final class FCUICurrencyFieldView: UIView {
     
     // MARK: Properties
     
     private var currencyDelegate: CurrencyUITextFieldDelegate?
+    
+    var isEnable: Bool {
+        get { return textField.isEnabled }
+        set { handleEnable(isEnable: newValue) }
+    }
+    
+    var text: String? {
+        get { return textField.text }
+        set { textField.text = newValue }
+    }
     
     // MARK: UI Elements
     
@@ -28,7 +38,7 @@ final class UICurrencyFieldView: UIView {
         return label
     }()
     
-    lazy var textField: UITextField = {
+    private lazy var textField: UITextField = {
         let textField = UITextField()
         textField.layer.cornerRadius = .smaller
         textField.backgroundColor = .secondarySystemBackground
@@ -55,7 +65,7 @@ final class UICurrencyFieldView: UIView {
     }
 }
 
-extension UICurrencyFieldView: UIViewCode {
+extension FCUICurrencyFieldView: UIViewCode {
     
     // MARK: View Setup
     
@@ -85,4 +95,16 @@ extension UICurrencyFieldView: UIViewCode {
     }
 }
 
-extension UICurrencyFieldView: UITextFieldDelegate { }
+private extension FCUICurrencyFieldView {
+    
+    // MARK: Private Methods
+    
+    func handleEnable(isEnable: Bool) {
+        let alpha = isEnable ? 1 : 0.5
+        textField.isEnabled = isEnable
+        textField.alpha = alpha
+        titleLabel.alpha = alpha
+    }
+}
+
+extension FCUICurrencyFieldView: UITextFieldDelegate { }

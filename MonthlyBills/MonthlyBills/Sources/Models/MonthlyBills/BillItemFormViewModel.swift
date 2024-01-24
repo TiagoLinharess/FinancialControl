@@ -2,7 +2,7 @@
 //  BillItemFormViewModel.swift
 //  MonthlyBills
 //
-//  Created by Tiago Linhares on 17/01/24.
+//  Created by Tiago Linhares on 23/01/24.
 //
 
 import Foundation
@@ -11,7 +11,12 @@ struct BillItemFormViewModel {
     
     // MARK: Properties
     
-    var itemType: BillType?
-    var itemId: String?
-    var billId: String
+    var formType: BillItemFormType?
+    var billType: BillType?
+    var status: BillStatus?
+    var name: String?
+    var validateTemplateValue: Bool
+    var value: Double?
+    var validateInstallment: Bool
+    var installment: BillInstallment?
 }
