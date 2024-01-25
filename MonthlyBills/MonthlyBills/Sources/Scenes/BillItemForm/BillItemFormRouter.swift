@@ -11,12 +11,14 @@ import SharpnezDesignSystem
 import UIKit
 
 protocol BillItemFormRouting {
-    /* Impements protocol code */
+    func close()
 }
 
 final class BillItemFormRouter: UIVIPRouter, BillItemFormRouting {
     
     // MARK: Methods
     
-    /* Impements router code */
+    func close() {
+        viewController?.navigationController?.popViewController(animated: true)
+    }
 }

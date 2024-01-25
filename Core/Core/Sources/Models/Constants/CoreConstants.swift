@@ -51,6 +51,7 @@ public enum CoreConstants {
         public static let defaultErrorMessage: String = "Something went wrong, please try again later"
         public static let currencyPlaceholder: String = Double.zero.toCurrency()
         public static let emptyTitle: String = "There is nothing yet"
+        public static let success: String = "success"
     }
     
     // MARK: Init

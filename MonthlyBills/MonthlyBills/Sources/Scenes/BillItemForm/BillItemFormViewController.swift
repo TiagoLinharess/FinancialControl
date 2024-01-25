@@ -16,7 +16,8 @@ protocol BillItemFormViewControllerDelegate {
 }
 
 protocol BillItemFormViewControlling {
-    /* Impements protocol code */
+    func presentSuccess()
+    func presentError(errorMessage: String)
 }
 
 final class BillItemFormViewController: UIVIPBaseViewController<BillItemFormView, BillItemFormInteracting, BillItemFormRouting> {
@@ -65,7 +66,27 @@ extension BillItemFormViewController: BillItemFormViewControlling {
     
     // MARK: Controller Input
     
-    /* Impements controller code */
+    func presentSuccess() {
+        presentFeedbackDialog(
+            with: FeedbackModel(
+                title: CoreConstants.Commons.AlertTitle,
+                description: CoreConstants.Commons.success,
+                buttons: [.init(title: CoreConstants.Commons.ok, style: .default, handler: { [weak self] _ in
+                    self?.router.close()
+                })]
+            )
+        )
+    }
+    
+    func presentError(errorMessage: String) {
+        presentFeedbackDialog(
+            with: FeedbackModel(
+                title: CoreConstants.Commons.AlertTitle,
+                description: errorMessage,
+                buttons: [.init(title: CoreConstants.Commons.ok, style: .default)]
+            )
+        )
+    }
 }
 
 extension BillItemFormViewController: BillItemFormViewControllerDelegate {

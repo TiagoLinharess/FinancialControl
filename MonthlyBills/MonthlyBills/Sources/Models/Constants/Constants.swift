@@ -37,9 +37,8 @@ enum Constants {
     }
     
     enum BillItemFormView {
-        static let editMessage: String = "edited"
-        static let newMessage: String = "added"
-        static let successMessage: String = "Item %@ with success."
+        static let fieldsError: String = "Please, fill all fields corretly"
+        static let installmentError: String = "Please, use installment corretly"
         static let billTypeTitle: String = "bill type*"
         static let paymentStatusTitle: String = "payment status*"
         static let nameTitle: String = "name*"

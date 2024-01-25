@@ -51,7 +51,7 @@ struct BillSectionViewModel {
     
     func getResponse() -> BillSectionResponse {
         return BillSectionResponse(
-            items: items.map({ viewModel -> BillItemResponse in viewModel.getResponse() }),
+            items: items.map({ viewModel -> BillItemResponse in return viewModel.getResponse() }),
             type: .init(rawValue: type.rawValue) ?? .expense
         )
     }
