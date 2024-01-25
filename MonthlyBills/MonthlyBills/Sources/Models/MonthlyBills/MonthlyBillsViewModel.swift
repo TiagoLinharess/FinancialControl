@@ -41,13 +41,14 @@ struct MonthlyBillsViewModel {
         self.sections = sections
     }
     
-    // MARK: Init from response
+    // MARK: Init From Response
     
     init(from response: MonthlyBillsResponse) {
         self.id = response.id
         self.month = response.month
-        self.sections = []
-        // todo implement service after form
+        self.sections = response.sections.map({ response -> BillSectionViewModel in
+            return .init(from: response)
+        })
     }
     
     // MARK: Methods
@@ -56,9 +57,9 @@ struct MonthlyBillsViewModel {
         return .init(
             id: id,
             month: month,
-            income: nil,
-            investment: nil,
-            expense: nil
+            sections: sections.map({ viewModel -> BillSectionResponse in
+                return viewModel.getResponse()
+            })
         )
     }
     

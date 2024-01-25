@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Provider
 
 protocol BillItemProtocol {
     var id: String { get }
@@ -16,4 +17,5 @@ protocol BillItemProtocol {
     
     func getName() -> String
     func getValue() -> String
+    func getResponse() -> BillItemResponse
 }

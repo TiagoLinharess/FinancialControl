@@ -7,6 +7,7 @@
 
 import Core
 import Foundation
+import Provider
 
 struct BillSectionViewModel {
     
@@ -30,6 +31,28 @@ struct BillSectionViewModel {
             format: CoreConstants.Commons.divider,
             type.name,
             total.toCurrency()
+        )
+    }
+    
+    // MARK: Init From Response
+    
+    init(from response: BillSectionResponse) {
+        self.type = .init(from: response.type)
+        self.items = response.items.map({ itemResponse -> BillItemProtocol in
+            if response.type == .income {
+                return BillIncomeItemViewModel(from: itemResponse)
+            } else {
+                return BillItemViewModel(from: itemResponse)
+            }
+        })
+    }
+    
+    // MARK: Methods
+    
+    func getResponse() -> BillSectionResponse {
+        return BillSectionResponse(
+            items: items.map({ viewModel -> BillItemResponse in viewModel.getResponse() }),
+            type: .init(rawValue: type.rawValue) ?? .expense
         )
     }
 }

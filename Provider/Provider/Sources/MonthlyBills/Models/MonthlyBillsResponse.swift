@@ -13,24 +13,18 @@ public struct MonthlyBillsResponse: Codable {
     
     public let id: String
     public let month: String
-    public var income: IncomeResponse?
-    public var investment: InvestmentResponse?
-    public var expense: ExpenseResponse?
+    public var sections: [BillSectionResponse]
     
     // MARK: Init
     
     public init(
         id: String,
         month: String,
-        income: IncomeResponse?,
-        investment: InvestmentResponse?,
-        expense: ExpenseResponse?
+        sections: [BillSectionResponse]
     ) {
         self.id = id
         self.month = month
-        self.income = income
-        self.investment = investment
-        self.expense = expense
+        self.sections = sections
     }
 }
 

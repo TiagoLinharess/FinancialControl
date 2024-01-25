@@ -7,6 +7,7 @@
 
 import Core
 import Foundation
+import Provider
 
 enum BillType: String, CaseIterable {
     case income
@@ -25,5 +26,9 @@ enum BillType: String, CaseIterable {
         case .creditCard:
             return CoreConstants.Commons.creditCardKey
         }
+    }
+    
+    init(from response: BillSectionResponse.BillType) {
+        self = .init(rawValue: response.rawValue) ?? .expense
     }
 }
