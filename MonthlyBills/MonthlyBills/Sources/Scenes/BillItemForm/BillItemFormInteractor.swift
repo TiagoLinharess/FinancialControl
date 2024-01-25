@@ -13,6 +13,7 @@ import SharpnezDesignSystem
 
 protocol BillItemFormInteracting {
     func submit(viewModel: BillItemFormViewModel)
+    func configure(formType: BillItemFormType)
 }
 
 final class BillItemFormInteractor: UIVIPInteractor<BillItemFormPresenting>, BillItemFormInteracting {
@@ -30,6 +31,19 @@ final class BillItemFormInteractor: UIVIPInteractor<BillItemFormPresenting>, Bil
     
     // MARK: Methods
     
+    func configure(formType: BillItemFormType) {
+        switch formType {
+        case .new:
+            break
+        case let .edit(billId, itemId, billType):
+            fetchItem(billId: billId, itemId: itemId, sectionType: billType)
+        case .template:
+            break
+        case .templateEdit:
+            break
+        }
+    }
+    
     func submit(viewModel: BillItemFormViewModel) {
         guard let formType = viewModel.formType else { return }
         
@@ -37,8 +51,8 @@ final class BillItemFormInteractor: UIVIPInteractor<BillItemFormPresenting>, Bil
             switch formType {
             case let .new(billId):
                 try submitItem(viewModel: viewModel, billId: billId)
-            case .edit( _, _, _):
-                break
+            case let .edit(billId, itemId, _):
+                try submitItem(viewModel: viewModel, billId: billId, currentItemId: itemId)
             case .template:
                 break
             case .templateEdit:
@@ -52,9 +66,23 @@ final class BillItemFormInteractor: UIVIPInteractor<BillItemFormPresenting>, Bil
 
 private extension BillItemFormInteractor {
     
+    // MARK: Configure Methods
+    
+    func fetchItem(billId: String, itemId: String, sectionType: BillType) {
+        do {
+            let bill = try worker.readAtMonth(id: billId)
+            presenter.presentItem(bill: bill, itemId: itemId, sectionType: sectionType)
+        } catch {
+            presenter.presentError(error: error)
+        }
+    }
+}
+private extension BillItemFormInteractor {
+    
     // MARK: Submit Methods
     
-    func submitItem(viewModel: BillItemFormViewModel, billId: String) throws {
+    func submitItem(viewModel: BillItemFormViewModel, billId: String, currentItemId: String? = nil) throws {
+        let itemId = currentItemId ?? UUID().uuidString
         var item: BillItemProtocol
         guard let billType = viewModel.billType,
               let status = viewModel.status,
@@ -65,7 +93,7 @@ private extension BillItemFormInteractor {
         }
         
         if billType == .income {
-            item = BillIncomeItemViewModel(name: name, value: value, status: status)
+            item = BillIncomeItemViewModel(id: itemId, name: name, value: value, status: status)
         } else {
             let installment = viewModel.validateInstallment ? viewModel.installment : nil
             
@@ -77,10 +105,14 @@ private extension BillItemFormInteractor {
                 throw CoreError.customError(Constants.BillItemFormView.installmentError)
             }
             
-            item = BillItemViewModel(name: name, value: value, status: status, installment: installment)
+            item = BillItemViewModel(id: itemId, name: name, value: value, status: status, installment: installment)
         }
         
-        try worker.createBillItem(item: item, billId: billId, billType: billType)
+        if currentItemId != nil {
+            try worker.updateBillItem(item: item, billId: billId)
+        } else {
+            try worker.createBillItem(item: item, billId: billId, billType: billType)
+        }
         presenter.presentSuccess()
     }
 }

@@ -136,6 +136,23 @@ final class BillItemFormView: UIView {
             installment: installment
         )
     }
+    
+    func configureItem(viewModel: BillItemFormViewModel) {
+        sectionPickerView.select(item: viewModel.billType?.rawValue)
+        statusPickerView.select(item: viewModel.status?.rawValue)
+        nameTextField.text = viewModel.name
+        valueTextField.text = viewModel.value?.toCurrency()
+        installmentSwitch.isHidden = viewModel.billType == .income
+        installmentStackView.isHidden = viewModel.billType == .income
+        
+        if let installment = viewModel.installment {
+            installmentSwitch.isOn = viewModel.validateInstallment
+            currentMonthTextField.text = String(installment.current)
+            maxMonthTextField.text = String(installment.max)
+            currentMonthTextField.isEnable = true
+            maxMonthTextField.isEnable = true
+        }
+    }
 }
 
 extension BillItemFormView: UIViewCode {
@@ -188,7 +205,7 @@ private extension BillItemFormView {
         case .new:
             setupNewForm()
         case .edit:
-            break // todo
+            setupEditForm()
         case .template:
             break // todo
         case .templateEdit:
@@ -200,6 +217,11 @@ private extension BillItemFormView {
         valueSwitch.isHidden = true
         installmentSwitch.isHidden = true
         installmentStackView.isHidden = true
+    }
+    
+    func setupEditForm() {
+        sectionPickerView.isHidden = true
+        valueSwitch.isHidden = true
     }
 }
 

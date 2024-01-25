@@ -31,4 +31,8 @@ enum BillType: String, CaseIterable {
     init(from response: BillSectionResponse.BillType) {
         self = .init(rawValue: response.rawValue) ?? .expense
     }
+    
+    func getResponse() -> BillSectionResponse.BillType {
+        return .init(rawValue: self.rawValue) ?? .expense
+    }
 }

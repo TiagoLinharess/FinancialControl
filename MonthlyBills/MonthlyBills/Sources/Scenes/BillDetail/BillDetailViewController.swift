@@ -32,7 +32,7 @@ final class BillDetailViewController: UIVIPBaseViewController<BillDetailView, Bi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        interactor.update(with: billId)
+        interactor.fetch(with: billId)
     }
     
     override func viewDidLoad() {

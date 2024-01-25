@@ -7,6 +7,7 @@
 
 import Core
 import Foundation
+import Provider
 
 struct BillInstallment {
     
@@ -23,5 +24,9 @@ struct BillInstallment {
     
     func isValid() -> Bool {
         return current <= max && max > .zero && current > .zero
+    }
+    
+    func getResponse() -> BillItemResponse.BillInstallment {
+        return .init(current: current, max: max)
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 import SharpnezDesignSystem
 
 protocol BillDetailInteracting { 
-    func update(with id: String)
+    func fetch(with id: String)
 }
 
 final class BillDetailInteractor: UIVIPInteractor<BillDetailPresenting>, BillDetailInteracting {
@@ -29,7 +29,7 @@ final class BillDetailInteractor: UIVIPInteractor<BillDetailPresenting>, BillDet
     
     // MARK: Methods
     
-    func update(with id: String) {
+    func fetch(with id: String) {
         do {
             let updatedBill = try worker.readAtMonth(id: id)
             presenter.presentSuccess(newBill: updatedBill)

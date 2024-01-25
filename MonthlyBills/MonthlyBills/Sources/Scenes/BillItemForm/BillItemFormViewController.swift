@@ -16,6 +16,7 @@ protocol BillItemFormViewControllerDelegate {
 }
 
 protocol BillItemFormViewControlling {
+    func presentItem(viewModel: BillItemFormViewModel)
     func presentSuccess()
     func presentError(errorMessage: String)
 }
@@ -43,6 +44,7 @@ final class BillItemFormViewController: UIVIPBaseViewController<BillItemFormView
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        interactor.configure(formType: formType)
     }
     
     // MARK: Configure
@@ -65,6 +67,10 @@ final class BillItemFormViewController: UIVIPBaseViewController<BillItemFormView
 extension BillItemFormViewController: BillItemFormViewControlling {
     
     // MARK: Controller Input
+    
+    func presentItem(viewModel: BillItemFormViewModel) {
+        customView.configureItem(viewModel: viewModel)
+    }
     
     func presentSuccess() {
         presentFeedbackDialog(

@@ -54,7 +54,6 @@ final class BillDetailView: UIView {
     init() {
         super.init(frame: .zero)
         setup()
-        configure()
     }
     
     required init?(coder: NSCoder) {

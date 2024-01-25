@@ -86,6 +86,13 @@ extension FCUIPickerView: UIViewCode {
             $0.height.equalTo(CoreConstants.Sizes.pickerHeight)
         }
     }
+    
+    // MARK: Public Methods
+    
+    func select(item: String?) {
+        guard let item, let index = items.firstIndex(of: item) else { return }
+        pickerView.selectRow(index, inComponent: .zero, animated: true)
+    }
 }
 
 extension FCUIPickerView: UIPickerViewDelegate, UIPickerViewDataSource {

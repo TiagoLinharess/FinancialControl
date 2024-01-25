@@ -68,7 +68,7 @@ struct BillItemViewModel: BillItemProtocol {
             name: name,
             value: value,
             status: .init(rawValue: status.rawValue) ?? .pending,
-            installment: BillItemResponse.BillInstallment(current: installment?.current ?? .zero, max: installment?.max ?? .zero)
+            installment: installment?.getResponse()
         )
     }
 }
