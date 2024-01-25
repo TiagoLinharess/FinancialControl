@@ -152,4 +152,10 @@ extension BillDetailView: UITableViewDelegate, UITableViewDataSource {
         let sectionType = bill.sections[indexPath.section].type
         delegate?.select(at: .edit(bill.id, item.id, sectionType))
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            delegate?.delete(at: indexPath)
+        }
+    }
 }

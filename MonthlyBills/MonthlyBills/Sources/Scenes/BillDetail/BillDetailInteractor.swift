@@ -12,6 +12,7 @@ import SharpnezDesignSystem
 
 protocol BillDetailInteracting { 
     func fetch(with id: String)
+    func delete(itemId: String, billId: String)
 }
 
 final class BillDetailInteractor: UIVIPInteractor<BillDetailPresenting>, BillDetailInteracting {
@@ -33,6 +34,15 @@ final class BillDetailInteractor: UIVIPInteractor<BillDetailPresenting>, BillDet
         do {
             let updatedBill = try worker.readAtMonth(id: id)
             presenter.presentSuccess(newBill: updatedBill)
+        } catch {
+            presenter.presentError(error: error)
+        }
+    }
+    
+    func delete(itemId: String, billId: String) {
+        do {
+            try worker.deleteItem(itemId: itemId, billId: billId)
+            fetch(with: billId)
         } catch {
             presenter.presentError(error: error)
         }

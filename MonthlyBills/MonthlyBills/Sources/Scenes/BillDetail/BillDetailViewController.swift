@@ -19,6 +19,7 @@ protocol BillDetailViewControlling {
 protocol BillDetailViewControllerDelegate {
     func getBill() -> MonthlyBillsViewModel?
     func select(at item: BillItemFormType)
+    func delete(at indexPath: IndexPath)
 }
 
 final class BillDetailViewController: UIVIPBaseViewController<BillDetailView, BillDetailInteracting, BillDetailRouting> {
@@ -100,5 +101,11 @@ extension BillDetailViewController: BillDetailViewControllerDelegate {
     
     func select(at item: BillItemFormType) {
         router.routeToItemForm(at: item)
+    }
+    
+    func delete(at indexPath: IndexPath) {
+        guard let bill else { return }
+        let itemId = bill.sections[indexPath.section].items[indexPath.row].id
+        interactor.delete(itemId: itemId, billId: billId)
     }
 }
