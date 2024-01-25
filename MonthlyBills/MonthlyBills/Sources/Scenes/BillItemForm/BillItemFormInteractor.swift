@@ -1,5 +1,5 @@
 //
-//  
+//
 //  BillItemFormInteractor.swift
 //  MonthlyBills
 //
@@ -8,9 +8,10 @@
 //
 
 import Foundation
+import SharpnezCore
 import SharpnezDesignSystem
 
-protocol BillItemFormInteracting { 
+protocol BillItemFormInteracting {
     func submit(viewModel: BillItemFormViewModel)
 }
 
@@ -18,7 +19,7 @@ final class BillItemFormInteractor: UIVIPInteractor<BillItemFormPresenting>, Bil
     
     // MARK: Properties
     
-    let worker: BillsWorking
+    private let worker: BillsWorking
     
     // MARK: Init
     
@@ -30,17 +31,56 @@ final class BillItemFormInteractor: UIVIPInteractor<BillItemFormPresenting>, Bil
     // MARK: Methods
     
     func submit(viewModel: BillItemFormViewModel) {
-        switch viewModel.formType {
-        case let .new(billId):
-            break
-        case .edit( _, _, _):
-            break
-        case .template:
-            break
-        case .templateEdit:
-            break
-        case .none:
-            break
+        guard let formType = viewModel.formType else { return }
+        
+        do {
+            switch formType {
+            case let .new(billId):
+                try submitItem(viewModel: viewModel, billId: billId)
+            case .edit( _, _, _):
+                break
+            case .template:
+                break
+            case .templateEdit:
+                break
+            }
+        } catch {
+            presenter.presentError(error: error)
         }
+    }
+}
+
+private extension BillItemFormInteractor {
+    
+    // MARK: Submit Methods
+    
+    func submitItem(viewModel: BillItemFormViewModel, billId: String) throws {
+        var item: BillItemProtocol
+        guard let billType = viewModel.billType,
+              let status = viewModel.status,
+              let name = viewModel.name,
+              let value = viewModel.value
+        else {
+            throw CoreError.customError(Constants.BillItemFormView.fieldsError)
+        }
+        
+        if billType == .income {
+            item = BillIncomeItemViewModel(name: name, value: value, status: status)
+        } else {
+            let installment = viewModel.validateInstallment ? viewModel.installment : nil
+            
+            if viewModel.validateInstallment && installment == nil {
+                throw CoreError.customError(Constants.BillItemFormView.fieldsError)
+            }
+            
+            if let installment = installment, viewModel.validateInstallment, !installment.isValid() {
+                throw CoreError.customError(Constants.BillItemFormView.installmentError)
+            }
+            
+            item = BillItemViewModel(name: name, value: value, status: status, installment: installment)
+        }
+        
+        try worker.createBillItem(item: item, billId: billId, billType: billType)
+        presenter.presentSuccess()
     }
 }
