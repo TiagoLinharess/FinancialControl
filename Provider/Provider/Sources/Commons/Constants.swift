@@ -29,5 +29,6 @@ enum Constants {
         static let existentCalendar: String = "Calendar already been added"
         static let calendarNotFound: String = "Could not find calendar"
         static let billNotFound: String = "Could not find bill"
+        static let itemNotFound: String = "Could not find item"
     }
 }

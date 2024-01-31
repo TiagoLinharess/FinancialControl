@@ -11,24 +11,31 @@ import SharpnezCore
 
 final class MonthlyBillsRepositoryTests: XCTestCase {
     
-    let annualCalendarMock: AnnualCalendarResponse = .init(year: "2023", monthlyBills: [.init(id: UUID().uuidString, month: "January", income: .init(salary: 0, bonus: 0, extra: 0, other: 0), investment: .init(shares: 0, privatePension: 0, fixedIncome: 0, other: 0), expense: .init(housing: 0, transport: 0, feed: 0, health: 0, education: 0, taxes: 0, laisure: 0, clothing: 0, creditCard: 0, other: 0))])
+    let annualCalendarMock: AnnualCalendarResponse = .init(year: "2023", monthlyBills: [.init(id: UUID().uuidString, month: "January", sections: [.init(items: [.init(id: UUID().uuidString, name: "bill", value: 100, status: .payed, installment: .init(current: 1, max: 10))], type: .expense)])])
+    
+    // MARK: Setup
     
     override func setUpWithError() throws {
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_create")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_create_existent_week")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_create_item_in_new_section")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_create_item_in_income_section")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_create_item_in_existent_section")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_empty")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_year_success")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_year_error")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_month_success")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_month_error")
-        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_income_success")
-        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_income_error")
-        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_investment_success")
-        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_investment_error")
-        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_expense_success")
-        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_expense_error")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_item_success")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_item_without_bill")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_item_without_existent_item")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_delete_item_success")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_delete_item_without_bill")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_delete_item_without_existent_item")
     }
+    
+    // MARK: Test Key
     
     func test_key() throws {
         let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_key")
@@ -40,39 +47,58 @@ final class MonthlyBillsRepositoryTests: XCTestCase {
         XCTAssertTrue(sut.key == Constants.UserDefaultsKeys.bills)
     }
     
+    // MARK: Create
     
     func test_create_success() throws {
         let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_create")
-        try sut.create(annualCalendar: annualCalendarMock)
-        
-        let response = try sut.read()
-        XCTAssertTrue(response[0].year == "2023")
+        XCTAssertNoThrow(try sut.create(annualCalendar: annualCalendarMock))
     }
     
     func test_create_existent_week() throws {
         let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_create_existent_week")
         try sut.create(annualCalendar: .init(year: "2023", monthlyBills: []))
         
-        do {
-            try sut.create(annualCalendar: .init(year: "2023", monthlyBills: []))
-            throw CoreError.genericError
-        } catch {
-            guard let error = error as? CoreError else { throw CoreError.genericError }
-            XCTAssertTrue(error.message == Constants.MonthlyBillsRepository.existentCalendar)
-        }
+        XCTAssertThrowsError(try sut.create(annualCalendar: .init(year: "2023", monthlyBills: [])))
     }
+    
+    func test_create_item_in_new_section() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_create_item_in_new_section")
+        let response = BillItemResponse(id: "test", name: "bill2", value: 300, status: .payed, installment: nil)
+        try sut.create(annualCalendar: annualCalendarMock)
+        
+        XCTAssertNoThrow(try sut.createBillItem(item: response, billId: annualCalendarMock.monthlyBills[0].id, billType: .investment))
+    }
+    
+    func test_create_item_in_income_section() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_create_item_in_income_section")
+        let response = BillItemResponse(id: "test", name: "bill2", value: 300, status: .payed, installment: nil)
+        try sut.create(annualCalendar: annualCalendarMock)
+        
+        XCTAssertNoThrow(try sut.createBillItem(item: response, billId: annualCalendarMock.monthlyBills[0].id, billType: .income))
+    }
+    
+    func test_create_item_in_existent_section() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_create_item_in_existent_section")
+        let response = BillItemResponse(id: "test", name: "bill2", value: 300, status: .payed, installment: nil)
+        try sut.create(annualCalendar: annualCalendarMock)
+        
+        XCTAssertNoThrow(try sut.createBillItem(item: response, billId: annualCalendarMock.monthlyBills[0].id, billType: .expense))
+    }
+    
+    // MARK: Read
     
     func test_read() throws {
         let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_read")
         try sut.create(annualCalendar: .init(year: "2023", monthlyBills: []))
-        
         let response = try sut.read()
+        
         XCTAssertTrue(response[0].year == "2023")
     }
     
     func test_read_empty() throws {
         let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_read_empty")
         let response = try sut.read()
+    
         XCTAssertTrue(response.isEmpty)
     }
     
@@ -86,18 +112,12 @@ final class MonthlyBillsRepositoryTests: XCTestCase {
     
     func test_read_at_year_error() throws {
         let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_read_at_year_error")
-        
-        do {
-            let _ = try sut.readAtYear(year: "2023")
-            throw CoreError.genericError
-        } catch {
-            XCTAssertTrue((error as? CoreError)?.message == "Could not find calendar")
-        }
+        XCTAssertThrowsError(try sut.readAtYear(year: "2023"))
     }
     
     func test_read_at_month_success() throws {
         let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_read_at_month_success")
-        let calendar = AnnualCalendarResponse(year: "2023", monthlyBills: [.init(id: UUID().uuidString, month: "January", income: nil, investment: nil, expense: nil)])
+        let calendar = AnnualCalendarResponse(year: "2023", monthlyBills: [.init(id: UUID().uuidString, month: "January", sections: [])])
         try sut.create(annualCalendar: calendar)
         let matchingBill = try sut.readAtMonth(id: calendar.monthlyBills[0].id)
         
@@ -106,108 +126,57 @@ final class MonthlyBillsRepositoryTests: XCTestCase {
     
     func test_read_at_month_error() throws {
         let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_read_at_month_error")
-        
-        do {
-            let _ = try sut.readAtMonth(id: UUID().uuidString)
-            throw CoreError.genericError
-        } catch {
-            XCTAssertTrue((error as? CoreError)?.message == "Could not find bill")
-        }
+        XCTAssertThrowsError(try sut.readAtMonth(id: UUID().uuidString))
     }
     
-    func test_update_income_success() throws {
-        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_update_income_success")
+    // MARK: Update
+    
+    func test_update_item_success() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_update_item_success")
+        let item = annualCalendarMock.monthlyBills[0].sections[0].items[0]
+        let itemToEdit = BillItemResponse(id: item.id, name: "", value: 40000, status: .payed, installment: nil)
         try sut.create(annualCalendar: annualCalendarMock)
         
-        guard let firstMonthlyBill = annualCalendarMock.monthlyBills.first else {
-            throw CoreError.genericError
-        }
-        
-        let newIncome = IncomeResponse(salary: 200, bonus: 126, extra: 234, other: 987)
-        try sut.updateIncome(response: newIncome, billId: firstMonthlyBill.id)
-        let updatedMonth = try sut.readAtMonth(id: firstMonthlyBill.id)
-        
-        XCTAssertEqual(updatedMonth.income?.salary, newIncome.salary)
-        XCTAssertEqual(updatedMonth.income?.bonus, newIncome.bonus)
-        XCTAssertEqual(updatedMonth.income?.extra, newIncome.extra)
-        XCTAssertEqual(updatedMonth.income?.other, newIncome.other)
+        XCTAssertNoThrow(try sut.updateBillItem(item: itemToEdit, billId: annualCalendarMock.monthlyBills[0].id))
     }
     
-    func test_update_income_error() throws {
-        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_update_income_error")
-        try sut.create(annualCalendar: annualCalendarMock)
-        let newIncome = IncomeResponse(salary: 200, bonus: 126, extra: 234, other: 987)
+    func test_update_item_without_bill() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_update_item_without_bill")
+        let item = annualCalendarMock.monthlyBills[0].sections[0].items[0]
+        let itemToEdit = BillItemResponse(id: item.id, name: "", value: 40000, status: .payed, installment: nil)
         
-        do {
-            try sut.updateIncome(response: newIncome, billId: UUID().uuidString)
-        } catch {
-            XCTAssertTrue((error as? CoreError)?.message == "Could not find bill")
-        }
+        XCTAssertThrowsError(try sut.updateBillItem(item: itemToEdit, billId: annualCalendarMock.monthlyBills[0].id))
     }
     
-    func test_update_investment_success() throws {
-        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_update_investment_success")
+    func test_update_item_without_existent_item() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_update_item_without_existent_item")
+        let itemToEdit = BillItemResponse(id: UUID().uuidString, name: "", value: 40000, status: .payed, installment: nil)
         try sut.create(annualCalendar: annualCalendarMock)
         
-        guard let firstMonthlyBill = annualCalendarMock.monthlyBills.first else {
-            throw CoreError.genericError
-        }
-        
-        let newInvestment = InvestmentResponse(shares: 200, privatePension: 200, fixedIncome: 200, other: 200)
-        try sut.updateInvestment(response: newInvestment, billId: firstMonthlyBill.id)
-        let updatedMonth = try sut.readAtMonth(id: firstMonthlyBill.id)
-        
-        XCTAssertEqual(updatedMonth.investment?.shares, newInvestment.shares)
-        XCTAssertEqual(updatedMonth.investment?.fixedIncome, newInvestment.fixedIncome)
-        XCTAssertEqual(updatedMonth.investment?.privatePension, newInvestment.privatePension)
-        XCTAssertEqual(updatedMonth.investment?.other, newInvestment.other)
+        XCTAssertThrowsError(try sut.updateBillItem(item: itemToEdit, billId: annualCalendarMock.monthlyBills[0].id))
     }
     
-    func test_update_investment_error() throws {
-        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_update_investment_error")
+    // MARK: Delete
+    
+    func test_delete_item_success() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_delete_item_success")
+        let item = annualCalendarMock.monthlyBills[0].sections[0].items[0]
         try sut.create(annualCalendar: annualCalendarMock)
-        let newInvestment = InvestmentResponse(shares: 200, privatePension: 200, fixedIncome: 200, other: 200)
         
-        do {
-            try sut.updateInvestment(response: newInvestment, billId: UUID().uuidString)
-        } catch {
-            XCTAssertTrue((error as? CoreError)?.message == "Could not find bill")
-        }
+        XCTAssertNoThrow(try sut.deleteItem(itemId: item.id, billId: annualCalendarMock.monthlyBills[0].id))
     }
     
-    func test_update_expense_success() throws {
-        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_update_expense_success")
-        try sut.create(annualCalendar: annualCalendarMock)
+    func test_delete_item_without_bill() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_delete_item_without_bill")
+        let item = annualCalendarMock.monthlyBills[0].sections[0].items[0]
         
-        guard let firstMonthlyBill = annualCalendarMock.monthlyBills.first else {
-            throw CoreError.genericError
-        }
-        
-        let newExpense = ExpenseResponse(housing: 200, transport: 200200, feed: 200, health: 200, education: 200, taxes: 200, laisure: 200, clothing: 200, creditCard: 200, other: 200)
-        try sut.updateExpense(response: newExpense, billId: firstMonthlyBill.id)
-        let updatedMonth = try sut.readAtMonth(id: firstMonthlyBill.id)
-        
-        XCTAssertEqual(updatedMonth.expense?.housing, newExpense.housing)
-        XCTAssertEqual(updatedMonth.expense?.transport, newExpense.transport)
-        XCTAssertEqual(updatedMonth.expense?.feed, newExpense.feed)
-        XCTAssertEqual(updatedMonth.expense?.health, newExpense.health)
-        XCTAssertEqual(updatedMonth.expense?.education, newExpense.education)
-        XCTAssertEqual(updatedMonth.expense?.taxes, newExpense.taxes)
-        XCTAssertEqual(updatedMonth.expense?.laisure, newExpense.laisure)
-        XCTAssertEqual(updatedMonth.expense?.clothing, newExpense.clothing)
-        XCTAssertEqual(updatedMonth.expense?.creditCard, newExpense.creditCard)
-        XCTAssertEqual(updatedMonth.expense?.other, newExpense.other)
+        XCTAssertThrowsError(try sut.deleteItem(itemId: item.id, billId: annualCalendarMock.monthlyBills[0].id))
     }
     
-    func test_update_expense_error() throws {
-        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_update_expense_error")
+    func test_delete_item_without_existent_item() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_delete_item_without_existent_item")
         try sut.create(annualCalendar: annualCalendarMock)
-        let newExpense = ExpenseResponse(housing: 200, transport: 200200, feed: 200, health: 200, education: 200, taxes: 200, laisure: 200, clothing: 200, creditCard: 200, other: 200)
         
-        do {
-            try sut.updateExpense(response: newExpense, billId: UUID().uuidString)
-        } catch {
-            XCTAssertTrue((error as? CoreError)?.message == "Could not find bill")
-        }
+        XCTAssertThrowsError(try sut.deleteItem(itemId: UUID().uuidString, billId: annualCalendarMock.monthlyBills[0].id))
     }
 }
