@@ -34,6 +34,13 @@ struct BillSectionViewModel {
         )
     }
     
+    // MARK: Init
+    
+    init(items: [BillItemProtocol], type: BillType) {
+        self.items = items
+        self.type = type
+    }
+    
     // MARK: Init From Response
     
     init(from response: BillSectionResponse) {

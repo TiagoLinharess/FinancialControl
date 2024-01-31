@@ -19,7 +19,7 @@ final class BillsWorkerMock: BillsWorking {
         }
     }
     
-    func createBillItem() throws {
+    func createBillItem(item: MonthlyBills.BillItemProtocol, billId: String, billType: MonthlyBills.BillType) throws {
         // todo
     }
     
@@ -47,7 +47,11 @@ final class BillsWorkerMock: BillsWorking {
         return BillsMock.billIncomplete
     }
     
-    func updateBillItem(at itemForm: BillItemFormViewModel, item: BillItemProtocol) {
+    func updateBillItem(item: MonthlyBills.BillItemProtocol, billId: String) throws {
+        // todo
+    }
+    
+    func deleteItem(itemId: String, billId: String) throws {
         // todo
     }
 }

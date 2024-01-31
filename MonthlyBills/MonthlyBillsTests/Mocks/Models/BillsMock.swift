@@ -11,15 +11,21 @@ import SharpnezCore
 
 struct BillsMock {
     
-    static var expense = BillItemViewModel(id: "BillExpenseItemViewModel", name: "iphone", value: 100, status: .pending, installment: .init(current: 5, max: 6))
+    static var incomeSection = BillSectionViewModel(items: [incomeItem], type: .income)
     
-    static var investment = BillItemViewModel(id: "BillInvestmentItemViewModel", name: "share", value: 10, status: .payed, installment: nil)
+    static var investmentSection = BillSectionViewModel(items: [item], type: .investment)
     
-    static var income = BillIncomeItemViewModel(id: "BillIncomeItemViewModel", name: "salary", value: 3000, status: .payed)
+    static var expenseSection = BillSectionViewModel(items: [item], type: .expense)
+    
+    static var creditCardSection = BillSectionViewModel(items: [item], type: .creditCard)
+    
+    static var item = BillItemViewModel(id: "BillInvestmentItemViewModel", name: "share", value: 10, status: .payed, installment: nil)
+    
+    static var incomeItem = BillIncomeItemViewModel(id: "BillIncomeItemViewModel", name: "salary", value: 3000, status: .payed)
     
     static var billIncomplete = MonthlyBillsViewModel(month: "January")
     
-    static var billComplete = MonthlyBillsViewModel(month: "January", incomes: [income], investments: [investment], expenses: [expense])
+    static var billComplete = MonthlyBillsViewModel(month: "January", sections: [incomeSection, investmentSection, expenseSection, creditCardSection])
     
     static var annualCalendar = AnnualCalendarViewModel(year: "2023")
     

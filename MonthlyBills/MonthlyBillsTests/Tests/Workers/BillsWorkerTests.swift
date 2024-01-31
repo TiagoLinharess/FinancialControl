@@ -33,6 +33,15 @@ final class BillsWorkerTests: XCTestCase {
         XCTAssertThrowsError(try sut.create(annualCalendar: BillsMock.annualCalendar))
     }
     
+    func test_create_bill_item_success() throws {
+        XCTAssertNoThrow(try sut.createBillItem(item: BillsMock.incomeItem, billId: BillsMock.billIncompleteId, billType: .income))
+    }
+    
+    func test_create_bill_item_error() throws {
+        mock.isError = true
+        XCTAssertThrowsError(try sut.createBillItem(item: BillsMock.incomeItem, billId: BillsMock.billIncompleteId, billType: .income))
+    }
+    
     func test_read_success() throws {
         let annualCalendars = try sut.read()
         XCTAssertTrue(annualCalendars.count > 0)
@@ -61,5 +70,23 @@ final class BillsWorkerTests: XCTestCase {
     func test_read_at_month_error() throws {
         mock.isError = true
         XCTAssertThrowsError(try sut.readAtMonth(id: mock.billId))
+    }
+    
+    func test_edit_bill_item_success() throws {
+        XCTAssertNoThrow(try sut.updateBillItem(item: BillsMock.incomeItem, billId: BillsMock.billIncompleteId))
+    }
+    
+    func test_edit_bill_item_error() throws {
+        mock.isError = true
+        XCTAssertThrowsError(try sut.updateBillItem(item: BillsMock.incomeItem, billId: BillsMock.billIncompleteId))
+    }
+    
+    func test_delete_bill_item_success() throws {
+        XCTAssertNoThrow(try sut.deleteItem(itemId: BillsMock.incomeItem.id, billId: BillsMock.billIncompleteId))
+    }
+    
+    func test_delete_bill_item_error() throws {
+        mock.isError = true
+        XCTAssertThrowsError(try sut.deleteItem(itemId: BillsMock.incomeItem.id, billId: BillsMock.billIncompleteId))
     }
 }
