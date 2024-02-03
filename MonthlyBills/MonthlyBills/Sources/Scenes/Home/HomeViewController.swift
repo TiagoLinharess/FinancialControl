@@ -46,8 +46,10 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
         navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
-        navigationItem.rightBarButtonItems = [button]
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
+        let templateButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapTemplateButton))
+        
+        navigationItem.rightBarButtonItems = [addButton, templateButton]
     }
     
     // MARK: Actions
@@ -55,6 +57,11 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
     @objc
     func didTapAddButton() {
         router.routeToAdd(delegate: self)
+    }
+    
+    @objc
+    func didTapTemplateButton() {
+        router.routeToTemplate()
     }
 }
 

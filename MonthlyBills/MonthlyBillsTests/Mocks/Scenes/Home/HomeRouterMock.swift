@@ -13,6 +13,7 @@ final class HomeRouterMock: HomeRouting {
     
     var didRouteToAdd = false
     var didRouteToDetail = false
+    var didRouteToTemplate = false
     
     func routeToAdd(delegate: MonthlyBills.AddBillDelegate) {
         didRouteToAdd = true
@@ -20,5 +21,9 @@ final class HomeRouterMock: HomeRouting {
     
     func routeToDetail(year: String) {
         didRouteToDetail = true
+    }
+    
+    func routeToTemplate() {
+        didRouteToTemplate = true
     }
 }
