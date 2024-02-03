@@ -18,16 +18,17 @@ struct MonthlyBillsViewModel {
     let sections: [BillSectionViewModel]
     
     var balance: Double {
-        let incomesTotal = getSection(at: .income)?.total ?? .zero
-        var expenses: Double = .zero
-        
-        sections.forEach { section in
-            if section.type != .income {
-                expenses += section.total
-            }
-        }
-        
-        return incomesTotal - expenses
+        return payedBalance + pendingBalance
+    }
+    
+    var payedBalance: Double {
+        let incomesTotal = getSection(at: .income)?.totalPayed ?? .zero
+        return incomesTotal - total(for: .payed)
+    }
+    
+    var pendingBalance: Double {
+        let incomesTotal = getSection(at: .income)?.totalPending ?? .zero
+        return incomesTotal - total(for: .pending)
     }
     
     // MARK: Init
@@ -88,5 +89,17 @@ private extension MonthlyBillsViewModel {
         return sections.first { section in
             section.type == billType
         }
+    }
+    
+    func total(for status: BillStatus) -> Double {
+        return sections
+            .filter { $0.type != .income }
+            .reduce(0) {
+                if status == .payed {
+                    return $0 + $1.totalPayed
+                }
+                
+                return $0 + $1.totalPending
+            }
     }
 }

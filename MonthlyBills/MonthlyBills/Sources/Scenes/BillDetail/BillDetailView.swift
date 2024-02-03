@@ -14,12 +14,7 @@ final class BillDetailView: UIView {
     
     // MARK: Properties
     
-    var delegate: BillDetailViewControllerDelegate? {
-        didSet {
-            configure()
-        }
-    }
-
+    var delegate: BillDetailViewControllerDelegate?
     let reuseIdentifier: String = Constants.BillDetailView.reuseIdentifier
     
     // MARK: UI Elements
@@ -38,15 +33,19 @@ final class BillDetailView: UIView {
         return view
     }()
     
-    private lazy var totalLabel: UILabel = {
-        let label = UILabel()
-        label.text = CoreConstants.Commons.total
-        return label
+    private lazy var totalPayedView: FCTotalView = {
+        let view = FCTotalView(title: "Total payed", value: "00,00")
+        return view
     }()
     
-    private lazy var valueLabel: UILabel = {
-        let label = UILabel()
-        return label
+    private lazy var totalPendingView: FCTotalView = {
+        let view = FCTotalView(title: "Total pending", value: "00,00")
+        return view
+    }()
+    
+    private lazy var totalView: FCTotalView = {
+        let view = FCTotalView(title: "Total", value: "00,00")
+        return view
     }()
     
     // MARK: Init
@@ -64,7 +63,9 @@ final class BillDetailView: UIView {
     
     func configure() {
         tableView.reloadData()
-        valueLabel.text = delegate?.getBill()?.balance.toCurrency()
+        totalPayedView.valueText = delegate?.getBill()?.payedBalance.toCurrency()
+        totalPendingView.valueText = delegate?.getBill()?.pendingBalance.toCurrency()
+        totalView.valueText = delegate?.getBill()?.balance.toCurrency()
     }
 }
 
@@ -79,8 +80,9 @@ extension BillDetailView: UIViewCode {
     func setupHierarchy() {
         addSubview(tableView)
         addSubview(separatorView)
-        addSubview(totalLabel)
-        addSubview(valueLabel)
+        addSubview(totalPayedView)
+        addSubview(totalPendingView)
+        addSubview(totalView)
     }
     
     func setupConstraints() {
@@ -94,17 +96,19 @@ extension BillDetailView: UIViewCode {
             $0.height.equalTo(CGFloat.one)
         }
         
-        totalLabel.snp.makeConstraints {
-            $0.top.equalTo(self.separatorView.snp.bottom).offset(CGFloat.medium)
-            $0.leading.equalToSuperview().inset(CGFloat.xBig)
-            $0.trailing.lessThanOrEqualTo(self.valueLabel.snp.leading).offset(CGFloat.small)
-            $0.bottom.equalTo(safeAreaLayoutGuide).inset(CGFloat.medium)
+        totalPayedView.snp.makeConstraints {
+            $0.top.equalTo(self.separatorView.snp.bottom).offset(CGFloat.extraSmall)
+            $0.horizontalEdges.equalToSuperview().inset(CGFloat.xBig)
         }
         
-        valueLabel.snp.makeConstraints {
-            $0.top.equalTo(self.separatorView.snp.bottom).offset(CGFloat.medium)
-            $0.trailing.equalToSuperview().inset(CGFloat.xBig)
-            $0.leading.greaterThanOrEqualTo(self.totalLabel.snp.trailing).offset(CGFloat.small)
+        totalPendingView.snp.makeConstraints {
+            $0.top.equalTo(self.totalPayedView.snp.bottom).offset(CGFloat.extraSmall)
+            $0.horizontalEdges.equalToSuperview().inset(CGFloat.xBig)
+        }
+        
+        totalView.snp.makeConstraints {
+            $0.top.equalTo(self.totalPendingView.snp.bottom).offset(CGFloat.extraSmall)
+            $0.horizontalEdges.equalToSuperview().inset(CGFloat.xBig)
             $0.bottom.equalTo(safeAreaLayoutGuide).inset(CGFloat.medium)
         }
     }

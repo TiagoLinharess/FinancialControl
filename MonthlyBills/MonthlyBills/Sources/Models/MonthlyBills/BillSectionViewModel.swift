@@ -16,14 +16,16 @@ struct BillSectionViewModel {
     let items: [BillItemProtocol]
     let type: BillType
     
+    var totalPending: Double {
+        return total(for: .pending)
+    }
+    
+    var totalPayed: Double {
+        return total(for: .payed)
+    }
+    
     var total: Double {
-        var total: Double = .zero
-        
-        items.forEach { item in
-            total += item.value
-        }
-        
-        return total
+        return totalPayed + totalPending
     }
     
     var title: String {
@@ -61,5 +63,11 @@ struct BillSectionViewModel {
             items: items.map({ viewModel -> BillItemResponse in return viewModel.getResponse() }),
             type: .init(rawValue: type.rawValue) ?? .expense
         )
+    }
+    
+    private func total(for status: BillStatus) -> Double {
+        return items
+            .filter { $0.status == status }
+            .reduce(0) { $0 + $1.value }
     }
 }
