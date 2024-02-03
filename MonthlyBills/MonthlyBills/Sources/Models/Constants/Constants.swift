@@ -54,4 +54,8 @@ enum Constants {
         static let installmentMaxPlaceholder: String = "EX: 12"
         
     }
+    
+    enum TemplateFormView {
+        static let reuseIdentifier: String = "TemplateIdentifier"
+    }
 }
