@@ -176,7 +176,11 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
         var templates = try readTemplates()
         let (templateIndex, itemIndex) = try findTemplateAndItemIndices(itemId: itemId)
         
-        templates[templateIndex].items.remove(at: itemIndex)
+        if templates[templateIndex].items.count == 1 {
+            templates.remove(at: templateIndex)
+        } else {
+            templates[templateIndex].items.remove(at: itemIndex)
+        }
         
         let data = try JSONEncoder().encode(templates)
         UserDefaults.standard.set(data, forKey: templateKey)
