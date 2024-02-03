@@ -53,6 +53,7 @@ final class BillItemFormView: UIView {
         stackView.axis = .horizontal
         stackView.spacing = .small
         stackView.distribution = .fillEqually
+        stackView.isHidden = true
         return stackView
     }()
     
@@ -86,6 +87,7 @@ final class BillItemFormView: UIView {
     
     private lazy var installmentSwitch: FCUISwitch = {
         let view = FCUISwitch(title: Constants.BillItemFormView.installmentSwitchTitle, action: handleInstallmentSwitch)
+        view.isHidden = true
         return view
     }()
     
@@ -207,21 +209,32 @@ private extension BillItemFormView {
         case .edit:
             setupEditForm()
         case .template:
-            break // todo
+            setupTemplateForm()
         case .templateEdit:
-            break // todo
+            setupTemplateEditForm()
         }
     }
     
     func setupNewForm() {
         valueSwitch.isHidden = true
-        installmentSwitch.isHidden = true
-        installmentStackView.isHidden = true
+        valueTextField.isEnable = true
     }
     
     func setupEditForm() {
-        sectionPickerView.isHidden = true
         valueSwitch.isHidden = true
+        valueTextField.isEnable = true
+        sectionPickerView.isHidden = true
+    }
+    
+    func setupTemplateForm() {
+        valueTextField.isEnable = false
+        statusPickerView.isHidden = true
+    }
+    
+    func setupTemplateEditForm() {
+        valueTextField.isEnable = false
+        statusPickerView.isHidden = true
+        sectionPickerView.isHidden = true
     }
 }
 

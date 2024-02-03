@@ -16,6 +16,7 @@ protocol BillItemFormPresenting {
     func presentError(error: Error)
     func presentSuccess()
     func presentItem(bill: MonthlyBillsViewModel, itemId: String, sectionType: BillType)
+    func presentTemplate(templateItem: BillItemProtocol, sectionType: BillType)
 }
 
 final class BillItemFormPresenter: UIVIPPresenter<BillItemFormViewControlling>, BillItemFormPresenting {
@@ -47,5 +48,19 @@ final class BillItemFormPresenter: UIVIPPresenter<BillItemFormViewControlling>, 
         } else {
             presentError(error: CoreError.parseError)
         }
+    }
+    
+    func presentTemplate(templateItem: BillItemProtocol, sectionType: BillType) {
+        let viewModel = BillItemFormViewModel(
+            formType: .templateEdit(templateItem.id, sectionType),
+            billType: sectionType,
+            status: templateItem.status,
+            name: templateItem.name,
+            validateTemplateValue: templateItem.value != .zero,
+            value: templateItem.value,
+            validateInstallment: templateItem.installment != nil,
+            installment: templateItem.installment
+        )
+        viewController?.presentItem(viewModel: viewModel)
     }
 }

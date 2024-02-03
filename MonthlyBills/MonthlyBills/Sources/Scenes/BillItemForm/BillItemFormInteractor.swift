@@ -33,14 +33,12 @@ final class BillItemFormInteractor: UIVIPInteractor<BillItemFormPresenting>, Bil
     
     func configure(formType: BillItemFormType) {
         switch formType {
-        case .new:
+        case .new, .template:
             break
         case let .edit(billId, itemId, billType):
             fetchItem(billId: billId, itemId: itemId, sectionType: billType)
-        case .template:
-            break
-        case .templateEdit:
-            break
+        case let .templateEdit(itemId, billType):
+            fetchTemplate(id: itemId, sectionType: billType)
         }
     }
     
@@ -54,9 +52,9 @@ final class BillItemFormInteractor: UIVIPInteractor<BillItemFormPresenting>, Bil
             case let .edit(billId, itemId, _):
                 try submitItem(viewModel: viewModel, billId: billId, currentItemId: itemId)
             case .template:
-                break
-            case .templateEdit:
-                break
+                try submitTemplate(viewModel: viewModel)
+            case let .templateEdit(itemId, _):
+                try submitTemplate(viewModel: viewModel, currentItemId: itemId)
             }
         } catch {
             presenter.presentError(error: error)
@@ -72,6 +70,15 @@ private extension BillItemFormInteractor {
         do {
             let bill = try worker.readAtMonth(id: billId)
             presenter.presentItem(bill: bill, itemId: itemId, sectionType: sectionType)
+        } catch {
+            presenter.presentError(error: error)
+        }
+    }
+    
+    func fetchTemplate(id: String, sectionType: BillType) {
+        do {
+            let item = try worker.readTemplateAt(id: id)
+            presenter.presentTemplate(templateItem: item, sectionType: sectionType)
         } catch {
             presenter.presentError(error: error)
         }
@@ -112,6 +119,45 @@ private extension BillItemFormInteractor {
             try worker.updateBillItem(item: item, billId: billId)
         } else {
             try worker.createBillItem(item: item, billId: billId, billType: billType)
+        }
+        presenter.presentSuccess()
+    }
+    
+    func submitTemplate(viewModel: BillItemFormViewModel, currentItemId: String? = nil) throws {
+        let itemId = currentItemId ?? UUID().uuidString
+        let value = viewModel.value ?? .zero
+        var item: BillItemProtocol
+        
+        guard let billType = viewModel.billType,
+              let name = viewModel.name
+        else {
+            throw CoreError.customError(Constants.BillItemFormView.fieldsError)
+        }
+        
+        if viewModel.validateTemplateValue && viewModel.value == nil {
+            throw CoreError.customError(Constants.BillItemFormView.fieldsError)
+        }
+        
+        if billType == .income {
+            item = BillIncomeItemViewModel(id: itemId, name: name, value: value, status: .pending)
+        } else {
+            let installment = viewModel.validateInstallment ? viewModel.installment : nil
+            
+            if viewModel.validateInstallment && installment == nil {
+                throw CoreError.customError(Constants.BillItemFormView.fieldsError)
+            }
+            
+            if let installment = installment, viewModel.validateInstallment, !installment.isValid() {
+                throw CoreError.customError(Constants.BillItemFormView.installmentError)
+            }
+            
+            item = BillItemViewModel(id: itemId, name: name, value: value, status: .pending, installment: installment)
+        }
+        
+        if currentItemId != nil {
+            try worker.updateTemplateItem(item: item)
+        } else {
+            try worker.createTemplateItem(item: item, billType: billType)
         }
         presenter.presentSuccess()
     }
