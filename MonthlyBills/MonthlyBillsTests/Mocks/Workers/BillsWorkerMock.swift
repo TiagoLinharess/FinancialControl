@@ -20,7 +20,15 @@ final class BillsWorkerMock: BillsWorking {
     }
     
     func createBillItem(item: MonthlyBills.BillItemProtocol, billId: String, billType: MonthlyBills.BillType) throws {
-        // todo
+        if isError {
+            throw CoreError.customError("test error")
+        }
+    }
+    
+    func createTemplateItem(item: BillItemProtocol, billType: BillType) throws {
+        if isError {
+            throw CoreError.customError("test error")
+        }
     }
     
     func read() throws -> [MonthlyBills.AnnualCalendarViewModel] {
@@ -47,11 +55,43 @@ final class BillsWorkerMock: BillsWorking {
         return BillsMock.billIncomplete
     }
     
+    func readTemplates() throws -> [BillSectionViewModel] {
+        if isError {
+            throw CoreError.customError("test error")
+        }
+        
+        return [BillsMock.expenseSection]
+    }
+    
+    func readTemplateAt(id: String) throws -> BillItemProtocol {
+        if isError {
+            throw CoreError.customError("test error")
+        }
+        
+        return BillsMock.item
+    }
+    
     func updateBillItem(item: MonthlyBills.BillItemProtocol, billId: String) throws {
-        // todo
+        if isError {
+            throw CoreError.customError("test error")
+        }
+    }
+    
+    func updateTemplateItem(item: BillItemProtocol) throws {
+        if isError {
+            throw CoreError.customError("test error")
+        }
     }
     
     func deleteItem(itemId: String, billId: String) throws {
-        // todo
+        if isError {
+            throw CoreError.customError("test error")
+        }
+    }
+    
+    func deleteTemplateItem(itemId: String) throws {
+        if isError {
+            throw CoreError.customError("test error")
+        }
     }
 }

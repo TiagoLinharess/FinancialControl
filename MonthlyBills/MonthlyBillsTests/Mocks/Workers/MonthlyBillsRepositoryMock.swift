@@ -8,6 +8,7 @@
 import Foundation
 import Provider
 import SharpnezCore
+@testable import MonthlyBills
 
 final class MonthlyBillsRepositoryMock: MonthlyBillsRepositoryProtocol {
     
@@ -15,7 +16,7 @@ final class MonthlyBillsRepositoryMock: MonthlyBillsRepositoryProtocol {
     
     private lazy var monthlyBillsMock: MonthlyBillsResponse = .init(id: billId, month: "January", sections: [])
     
-    private lazy var annualCalendarMock: AnnualCalendarResponse = .init(year: "2024", monthlyBills: [monthlyBillsMock])
+    private lazy var annualCalendarMock: AnnualCalendarResponse = .init(year: "2023", monthlyBills: [monthlyBillsMock])
     
     var isError: Bool = false
     
@@ -26,6 +27,12 @@ final class MonthlyBillsRepositoryMock: MonthlyBillsRepositoryProtocol {
     }
     
     func createBillItem(item: Provider.BillItemResponse, billId: String, billType: Provider.BillSectionResponse.BillType) throws {
+        if isError {
+            throw CoreError.customError("test error")
+        }
+    }
+    
+    func createTemplateItem(item: BillItemResponse, billType: BillSectionResponse.BillType) throws {
         if isError {
             throw CoreError.customError("test error")
         }
@@ -55,13 +62,41 @@ final class MonthlyBillsRepositoryMock: MonthlyBillsRepositoryProtocol {
         return monthlyBillsMock
     }
     
+    func readTemplates() throws -> [BillSectionResponse] {
+        if isError {
+            throw CoreError.customError("test error")
+        }
+        
+        return [BillsMock.expenseSection.getResponse()]
+    }
+    
+    func readTemplateAt(id: String) throws -> BillItemResponse {
+        if isError {
+            throw CoreError.customError("test error")
+        }
+        
+        return BillsMock.item.getResponse()
+    }
+    
     func updateBillItem(item: Provider.BillItemResponse, billId: String) throws {
         if isError {
             throw CoreError.customError("test error")
         }
     }
     
+    func updateTemplateItem(item: BillItemResponse) throws {
+        if isError {
+            throw CoreError.customError("test error")
+        }
+    }
+    
     func deleteItem(itemId: String, billId: String) throws {
+        if isError {
+            throw CoreError.customError("test error")
+        }
+    }
+    
+    func deleteTemplateItem(itemId: String) throws {
         if isError {
             throw CoreError.customError("test error")
         }
