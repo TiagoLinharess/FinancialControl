@@ -12,19 +12,26 @@ import SharpnezCore
 public protocol MonthlyBillsRepositoryProtocol {
     func create(annualCalendar: AnnualCalendarResponse) throws
     func createBillItem(item: BillItemResponse, billId: String, billType: BillSectionResponse.BillType) throws
+    func createTemplateItem(item: BillItemResponse, billType: BillSectionResponse.BillType) throws
     func read() throws -> [AnnualCalendarResponse]
     func readAtYear(year: String) throws -> AnnualCalendarResponse
     func readAtMonth(id: String) throws -> MonthlyBillsResponse
+    func readTemplates() throws -> [BillSectionResponse]
+    func readTemplateAt(id: String) throws -> BillItemResponse
     func updateBillItem(item: BillItemResponse, billId: String) throws
+    func updateTemplateItem(item: BillItemResponse) throws
     func deleteItem(itemId: String, billId: String) throws
+    func deleteTemplateItem(itemId: String) throws
 }
 
 public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     
     let key: String
+    let templateKey: String
     
-    public init(key: String? = nil) {
+    public init(key: String? = nil, templateKey: String? = nil) {
         self.key = key ?? Constants.UserDefaultsKeys.bills
+        self.templateKey = templateKey ?? Constants.UserDefaultsKeys.billsTemplate
     }
     
     // MARK: Create
@@ -61,6 +68,21 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
         UserDefaults.standard.set(data, forKey: key)
     }
     
+    public func createTemplateItem(item: BillItemResponse, billType: BillSectionResponse.BillType) throws {
+        var templates = try readTemplates()
+        
+        if let sectionIndex = templates.firstIndex(where: { $0.type == billType }) {
+            templates[sectionIndex].items.append(item)
+        } else if billType == .income {
+            templates.insert(BillSectionResponse(items: [item], type: billType), at: 0)
+        } else {
+            templates.append(BillSectionResponse(items: [item], type: billType))
+        }
+        
+        let data = try JSONEncoder().encode(templates)
+        UserDefaults.standard.set(data, forKey: templateKey)
+    }
+    
     // MARK: Read
     
     public func read() throws -> [AnnualCalendarResponse] {
@@ -93,6 +115,24 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
         throw CoreError.customError(Constants.MonthlyBillsRepository.billNotFound)
     }
     
+    public func readTemplates() throws -> [BillSectionResponse] {
+        guard let data = UserDefaults.standard.data(forKey: templateKey) else { return [] }
+        let response = try JSONDecoder().decode([BillSectionResponse].self, from: data)
+        return response
+    }
+    
+    public func readTemplateAt(id: String) throws -> BillItemResponse {
+        let templates = try readTemplates()
+        
+        for template in templates {
+            if let bill = template.items.first(where: { $0.id == id }) {
+                return bill
+            }
+        }
+        
+        throw CoreError.customError(Constants.MonthlyBillsRepository.templateNotFound)
+    }
+    
     // MARK: Update
     
     public func updateBillItem(item: BillItemResponse, billId: String) throws {
@@ -103,6 +143,16 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
         calendars[calendarIndex].monthlyBills[billIndex].sections[sectionIndex].items[itemIndex] = item
         let data = try JSONEncoder().encode(calendars)
         UserDefaults.standard.set(data, forKey: key)
+    }
+    
+    public func updateTemplateItem(item: BillItemResponse) throws {
+        var templates = try readTemplates()
+        let (templateIndex, itemIndex) = try findTemplateAndItemIndices(itemId: item.id)
+        
+        templates[templateIndex].items[itemIndex] = item
+        
+        let data = try JSONEncoder().encode(templates)
+        UserDefaults.standard.set(data, forKey: templateKey)
     }
     
     // MARK: Delete
@@ -120,6 +170,16 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
         
         let data = try JSONEncoder().encode(calendars)
         UserDefaults.standard.set(data, forKey: key)
+    }
+    
+    public func deleteTemplateItem(itemId: String) throws {
+        var templates = try readTemplates()
+        let (templateIndex, itemIndex) = try findTemplateAndItemIndices(itemId: itemId)
+        
+        templates[templateIndex].items.remove(at: itemIndex)
+        
+        let data = try JSONEncoder().encode(templates)
+        UserDefaults.standard.set(data, forKey: templateKey)
     }
 }
 
@@ -151,6 +211,18 @@ private extension MonthlyBillsRepository {
         for (sectionIndex, section) in bill.sections.enumerated() {
             if let itemIndex = section.items.firstIndex(where: { $0.id == itemId }) {
                 return (sectionIndex, itemIndex)
+            }
+        }
+        
+        throw CoreError.customError(Constants.MonthlyBillsRepository.itemNotFound)
+    }
+    
+    func findTemplateAndItemIndices(itemId: String) throws -> (sectionIndex: Int, itemIndex: Int) {
+        let templates = try readTemplates()
+        
+        for (templateIndex, template) in templates.enumerated() {
+            if let itemIndex = template.items.firstIndex(where: { $0.id == itemId }) {
+                return (templateIndex, itemIndex)
             }
         }
         

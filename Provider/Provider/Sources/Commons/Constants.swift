@@ -14,6 +14,7 @@ enum Constants {
     enum UserDefaultsKeys {
         static let weekly: String = "WeeklyBudgetsKey"
         static let bills: String = "MonthlyBillsKey"
+        static let billsTemplate: String = "MonthlyBillsTemplateKey"
     }
     
     // MARK: WeeklyBudgetsRepository
@@ -30,5 +31,6 @@ enum Constants {
         static let calendarNotFound: String = "Could not find calendar"
         static let billNotFound: String = "Could not find bill"
         static let itemNotFound: String = "Could not find item"
+        static let templateNotFound: String = "Template not found"
     }
 }
