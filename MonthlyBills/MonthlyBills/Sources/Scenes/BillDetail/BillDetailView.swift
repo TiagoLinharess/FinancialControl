@@ -34,17 +34,17 @@ final class BillDetailView: UIView {
     }()
     
     private lazy var totalPayedView: FCTotalView = {
-        let view = FCTotalView(title: "Total payed", value: "00,00")
+        let view = FCTotalView(title: Constants.BillDetailView.totalPayed, value: CoreConstants.Commons.currencyPlaceholder)
         return view
     }()
     
     private lazy var totalPendingView: FCTotalView = {
-        let view = FCTotalView(title: "Total pending", value: "00,00")
+        let view = FCTotalView(title: Constants.BillDetailView.totalPending, value: CoreConstants.Commons.currencyPlaceholder)
         return view
     }()
     
     private lazy var totalView: FCTotalView = {
-        let view = FCTotalView(title: "Total", value: "00,00")
+        let view = FCTotalView(title: CoreConstants.Commons.total, value: CoreConstants.Commons.currencyPlaceholder)
         return view
     }()
     

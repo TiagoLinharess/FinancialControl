@@ -34,6 +34,8 @@ enum Constants {
     enum BillDetailView {
         static let reuseIdentifier: String = "billDetailIdentifier"
         static let zeroIncomePercentage: String = "100%"
+        static let totalPayed: String = "Total payed"
+        static let totalPending: String = "Total pending"
     }
     
     enum BillItemFormView {
