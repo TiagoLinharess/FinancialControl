@@ -11,6 +11,14 @@ import SharpnezCore
 @testable import MonthlyBills
 
 final class MonthlyBillsRepositoryMock: MonthlyBillsRepositoryProtocol {
+    func readAtMonthWithTemplates(billId: String) throws -> Provider.MonthlyBillsResponse {
+        // todo
+    }
+    
+    func updateBill(bill: Provider.MonthlyBillsResponse) throws {
+        // todo
+    }
+    
     
     lazy var billId = UUID().uuidString
     

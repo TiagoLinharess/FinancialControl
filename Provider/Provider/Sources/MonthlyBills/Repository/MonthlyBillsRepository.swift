@@ -16,8 +16,10 @@ public protocol MonthlyBillsRepositoryProtocol {
     func read() throws -> [AnnualCalendarResponse]
     func readAtYear(year: String) throws -> AnnualCalendarResponse
     func readAtMonth(id: String) throws -> MonthlyBillsResponse
+    func readAtMonthWithTemplates(billId: String) throws -> MonthlyBillsResponse
     func readTemplates() throws -> [BillSectionResponse]
     func readTemplateAt(id: String) throws -> BillItemResponse
+    func updateBill(bill: MonthlyBillsResponse) throws
     func updateBillItem(item: BillItemResponse, billId: String) throws
     func updateTemplateItem(item: BillItemResponse) throws
     func deleteItem(itemId: String, billId: String) throws
@@ -115,6 +117,21 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
         throw CoreError.customError(Constants.MonthlyBillsRepository.billNotFound)
     }
     
+    public func readAtMonthWithTemplates(billId: String) throws -> MonthlyBillsResponse {
+        let calendars = try read()
+        let templates = try readTemplates()
+        
+        for calendar in calendars {
+            if var bill = calendar.monthlyBills.first(where: { $0.id == billId }) {
+                bill.sections = templates
+                try updateBill(bill: bill)
+                return bill
+            }
+        }
+        
+        throw CoreError.customError(Constants.MonthlyBillsRepository.billNotFound)
+    }
+    
     public func readTemplates() throws -> [BillSectionResponse] {
         guard let data = UserDefaults.standard.data(forKey: templateKey) else { return [] }
         let response = try JSONDecoder().decode([BillSectionResponse].self, from: data)
@@ -134,6 +151,15 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     }
     
     // MARK: Update
+    
+    public func updateBill(bill: MonthlyBillsResponse) throws {
+        var calendars = try read()
+        let (calendarIndex, billIndex) = try findCalendarAndBillIndices(for: bill.id)
+        
+        calendars[calendarIndex].monthlyBills[billIndex] = bill
+        let data = try JSONEncoder().encode(calendars)
+        UserDefaults.standard.set(data, forKey: key)
+    }
     
     public func updateBillItem(item: BillItemResponse, billId: String) throws {
         var calendars = try read()

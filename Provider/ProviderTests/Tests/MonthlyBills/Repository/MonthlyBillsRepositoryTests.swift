@@ -30,10 +30,16 @@ final class MonthlyBillsRepositoryTests: XCTestCase {
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_year_error")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_month_success")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_month_error")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_month_with_templates_success1")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_month_with_templates_error1")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_month_with_templates_success2")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_at_month_with_templates_error2")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_template")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_template_empty")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_template_at_item_success")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_read_template_at_item_error")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_bill_success")
+        UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_bill_error")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_item_success")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_item_without_bill")
         UserDefaults.standard.removeObject(forKey: "MonthlyBillsRepository_test_update_item_without_existent_item")
@@ -171,6 +177,21 @@ final class MonthlyBillsRepositoryTests: XCTestCase {
     func test_read_at_month_error() throws {
         let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_read_at_month_error")
         XCTAssertThrowsError(try sut.readAtMonth(id: UUID().uuidString))
+    }
+    
+    func test_read_at_month_with_templates_success() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_read_at_month_with_templates_success1", templateKey: "MonthlyBillsRepository_test_read_at_month_with_templates_success2")
+        try sut.create(annualCalendar: annualCalendarMock)
+        try sut.createTemplateItem(item: .init(id: "id", name: "name", value: 200, status: .pending, installment: nil), billType: .income)
+        let matchingBill = try sut.readAtMonthWithTemplates(billId: annualCalendarMock.monthlyBills[0].id)
+        
+        XCTAssertTrue(matchingBill.id == annualCalendarMock.monthlyBills[0].id)
+        XCTAssertTrue(matchingBill.sections[0].items[0].id == "id")
+    }
+    
+    func test_read_at_month_with_templates_error() throws {
+        let sut = MonthlyBillsRepository(key: "MonthlyBillsRepository_test_read_at_month_with_templates_error1", templateKey: "MonthlyBillsRepository_test_read_at_month_with_templates_error2")
+        XCTAssertThrowsError(try sut.readAtMonthWithTemplates(billId: UUID().uuidString))
     }
     
     func test_read_template() throws {
