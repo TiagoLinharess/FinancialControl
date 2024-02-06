@@ -11,15 +11,6 @@ import SharpnezCore
 @testable import MonthlyBills
 
 final class MonthlyBillsRepositoryMock: MonthlyBillsRepositoryProtocol {
-    func readAtMonthWithTemplates(billId: String) throws -> Provider.MonthlyBillsResponse {
-        // todo
-    }
-    
-    func updateBill(bill: Provider.MonthlyBillsResponse) throws {
-        // todo
-    }
-    
-    
     lazy var billId = UUID().uuidString
     
     private lazy var monthlyBillsMock: MonthlyBillsResponse = .init(id: billId, month: "January", sections: [])
@@ -84,6 +75,20 @@ final class MonthlyBillsRepositoryMock: MonthlyBillsRepositoryProtocol {
         }
         
         return BillsMock.item.getResponse()
+    }
+    
+    func readAtMonthWithTemplates(billId: String) throws -> Provider.MonthlyBillsResponse {
+        if isError {
+            throw CoreError.customError("test error")
+        }
+        
+        return BillsMock.billComplete.getResponse()
+    }
+    
+    func updateBill(bill: Provider.MonthlyBillsResponse) throws {
+        if isError {
+            throw CoreError.customError("test error")
+        }
     }
     
     func updateBillItem(item: Provider.BillItemResponse, billId: String) throws {

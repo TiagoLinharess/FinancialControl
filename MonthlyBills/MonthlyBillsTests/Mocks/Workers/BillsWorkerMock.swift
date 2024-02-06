@@ -71,6 +71,20 @@ final class BillsWorkerMock: BillsWorking {
         return BillsMock.item
     }
     
+    func readAtMonthWithTemplates(billId: String) throws -> MonthlyBillsViewModel {
+        if isError {
+            throw CoreError.customError("test error")
+        }
+        
+        return BillsMock.billComplete
+    }
+    
+    func updateBill(bill: MonthlyBillsViewModel) throws {
+        if isError {
+            throw CoreError.customError("test error")
+        }
+    }
+    
     func updateBillItem(item: MonthlyBills.BillItemProtocol, billId: String) throws {
         if isError {
             throw CoreError.customError("test error")
