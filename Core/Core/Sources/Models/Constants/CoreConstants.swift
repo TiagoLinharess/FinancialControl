@@ -20,6 +20,8 @@ public enum CoreConstants {
         public static let edit: String = "Edit"
         public static let ok: String = "ok"
         public static let create: String = "Create"
+        public static let cancel: String = "Cancel"
+        public static let download: String = "Download"
         public static let cash: String = "$%@"
         public static let key: String = "%@:"
         public static let percentageIcon: String = "%@%%"

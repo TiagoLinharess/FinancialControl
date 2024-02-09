@@ -40,7 +40,9 @@ final class BillDetailViewController: UIVIPBaseViewController<BillDetailView, Bi
         super.viewDidLoad()
         
         let addButton = UIBarButtonItem(image: .init(systemName: CoreConstants.Icons.add), style: .plain, target: self, action: #selector(addAction))
-        navigationItem.rightBarButtonItems = [addButton]
+        let templateButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapTemplateButton))
+        
+        navigationItem.rightBarButtonItems = [addButton, templateButton]
     }
     
     // MARK: Init
@@ -68,6 +70,30 @@ final class BillDetailViewController: UIVIPBaseViewController<BillDetailView, Bi
     @objc
     func addAction() {
         router.routeToItemForm(at: .new(billId))
+    }
+    
+    @objc
+    func didTapTemplateButton() {
+        if let bill, bill.sections.count > 0 {
+            presentFeedbackDialog(
+                with: FeedbackModel(
+                    title: CoreConstants.Commons.AlertTitle,
+                    description: Constants.BillDetailView.templateWraning,
+                    buttons: [
+                        .init(title: CoreConstants.Commons.cancel, style: .cancel),
+                        .init(title: CoreConstants.Commons.download, style: .default, handler: { [weak self] _ in
+                            self?.fetchTemplates()
+                        })
+                    ]
+                )
+            )
+        } else {
+            fetchTemplates()
+        }
+    }
+    
+    private func fetchTemplates() {
+        interactor.fetchTemplates(billId: billId)
     }
 }
 
