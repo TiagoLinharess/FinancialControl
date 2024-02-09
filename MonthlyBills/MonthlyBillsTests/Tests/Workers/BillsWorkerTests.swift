@@ -91,6 +91,16 @@ final class BillsWorkerTests: XCTestCase {
         XCTAssertThrowsError(try sut.readTemplates())
     }
     
+    func test_read_at_month_with_templates_success() throws {
+        let bill = try sut.readAtMonthWithTemplates(billId: BillsMock.billCompleteId)
+        XCTAssertTrue(bill.id == BillsMock.billCompleteId)
+    }
+    
+    func test_read_at_month_with_templates_error() throws {
+        mock.isError = true
+        XCTAssertThrowsError(try sut.readAtMonthWithTemplates(billId: BillsMock.billCompleteId))
+    }
+    
     func test_read_template_at_item_success() throws {
         let item = try sut.readTemplateAt(id: "BillInvestmentItemViewModel")
         XCTAssertTrue(item.id == "BillInvestmentItemViewModel")
@@ -99,6 +109,15 @@ final class BillsWorkerTests: XCTestCase {
     func test_read_template_at_item_error() throws {
         mock.isError = true
         XCTAssertThrowsError(try sut.readTemplateAt(id: "BillInvestmentItemViewModel"))
+    }
+    
+    func test_edit_bill_success() throws {
+        XCTAssertNoThrow(try sut.updateBill(bill: BillsMock.billComplete))
+    }
+    
+    func test_edit_bill_error() throws {
+        mock.isError = true
+        XCTAssertThrowsError(try sut.updateBill(bill: BillsMock.billComplete))
     }
     
     func test_edit_bill_item_success() throws {
