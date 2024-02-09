@@ -127,8 +127,6 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
         
         var content = cell.defaultContentConfiguration()
         content.text = calendar.year
-        content.secondaryText = calendar.balance.toCurrency()
-        content.prefersSideBySideTextAndSecondaryText = true
         
         cell.contentConfiguration = content
         cell.selectionStyle = .none
