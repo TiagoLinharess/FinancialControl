@@ -43,7 +43,7 @@ final class TemplateFormViewController: UIVIPBaseViewController<TemplateFormView
     // MARK: Configure
     
     private func configure() {
-        title = "Template"
+        title = Constants.TemplateFormView.title
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
         navigationItem.rightBarButtonItems = [addButton]

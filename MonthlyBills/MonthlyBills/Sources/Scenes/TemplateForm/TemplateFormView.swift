@@ -20,14 +20,14 @@ final class TemplateFormView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Here you can create your bills template"
+        label.text = Constants.TemplateFormView.subTitle
         label.numberOfLines = .zero
         return label
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "For example, when creating a template for fixed bills with a fixed or variable value, this can help you always remember to pay and fill them in a simpler and faster way"
+        label.text = Constants.TemplateFormView.description
         label.font = .systemFont(ofSize: 12)
         label.numberOfLines = .zero
         return label

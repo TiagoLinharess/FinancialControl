@@ -58,5 +58,8 @@ enum Constants {
     
     enum TemplateFormView {
         static let reuseIdentifier: String = "TemplateIdentifier"
+        static let title: String = "Template"
+        static let subTitle: String = "Here you can create your bills template"
+        static let description: String = "For example, when creating a template for fixed bills with a fixed or variable value, this can help you always remember to pay and fill them in a simpler and faster way"
     }
 }
