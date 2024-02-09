@@ -12,6 +12,7 @@ import UIKit
 
 protocol TemplateFormRouting {
     func routeToItemForm(at item: BillItemFormType)
+    func close()
 }
 
 final class TemplateFormRouter: UIVIPRouter, TemplateFormRouting {
@@ -21,5 +22,9 @@ final class TemplateFormRouter: UIVIPRouter, TemplateFormRouting {
     func routeToItemForm(at item: BillItemFormType) {
         let controller = BillItemFormFactory.configure(formType: item)
         viewController?.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func close() {
+        viewController?.navigationController?.dismiss(animated: true)
     }
 }

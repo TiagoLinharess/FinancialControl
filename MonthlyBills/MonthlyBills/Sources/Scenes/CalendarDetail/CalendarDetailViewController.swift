@@ -56,7 +56,7 @@ final class CalendarDetailViewController: UIVIPBaseViewController<CalendarDetail
         customView.reloadData()
         
         let cancelButton = UIBarButtonItem(image: .init(systemName: CoreConstants.Icons.close), style: .plain, target: self, action: #selector(cancelAction))
-        navigationItem.rightBarButtonItems = [cancelButton]
+        navigationItem.leftBarButtonItems = [cancelButton]
     }
     
     // MARK: Actions
