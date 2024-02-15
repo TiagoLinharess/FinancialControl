@@ -83,4 +83,9 @@ final class HomeViewControllerTests: XCTestCase {
         sut.didAddBill()
         XCTAssertTrue(interactorMock.didFetchCalendars)
     }
+    
+    func test_did_tap_template_button() throws {
+        sut.didTapTemplateButton()
+        XCTAssertTrue(routerMock.didRouteToTemplate)
+    }
 }
