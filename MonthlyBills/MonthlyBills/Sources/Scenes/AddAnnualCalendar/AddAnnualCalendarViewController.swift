@@ -50,6 +50,10 @@ final class AddAnnualCalendarViewController: UIVIPBaseViewController<AddAnnualCa
         let year = customView.getSelectedYear()
         interactor.submit(year: year)
     }
+    
+    func finishAction() {
+        router.finish()
+    }
 }
 
 extension AddAnnualCalendarViewController: AddAnnualCalendarViewControlling {
@@ -67,7 +71,7 @@ extension AddAnnualCalendarViewController: AddAnnualCalendarViewControlling {
                 description: Constants.AddAnnualCalendarView.successMessage,
                 buttons: [
                     .init(title: CoreConstants.Commons.ok, style: .default) { [weak self] _ in
-                        self?.router.finish()
+                        self?.finishAction()
                     }
                 ]
             )

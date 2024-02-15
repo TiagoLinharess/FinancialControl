@@ -9,7 +9,10 @@
 import UIKit
 
 final class AddAnnualCalendarViewControllerMock: UIViewController, AddAnnualCalendarViewControlling {
-    
+
+    var didSetYears = false
+    var didPresentSuccess = false
+    var didPresentError = false
     let router: AddAnnualCalendarRouter?
     
     init(router: AddAnnualCalendarRouter? = nil) {
@@ -22,14 +25,14 @@ final class AddAnnualCalendarViewControllerMock: UIViewController, AddAnnualCale
     }
     
     func setYears(years: [String]) {
-        // todo
+        didSetYears = true
     }
     
     func presentSuccess() {
-        // todo
+        didPresentSuccess = true
     }
     
     func presentError(message: String?) {
-        // todo
+        didPresentError = true
     }
 }
