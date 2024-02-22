@@ -25,6 +25,8 @@
 		ED3B8BD72B86A53B00611C58 /* TemplateFormRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BD62B86A53B00611C58 /* TemplateFormRouterTests.swift */; };
 		ED3B8BDA2B86A6B600611C58 /* TemplateFormViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BD92B86A6B600611C58 /* TemplateFormViewControllerMock.swift */; };
 		ED3B8BDC2B87640300611C58 /* TemplateFormPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BDB2B87640300611C58 /* TemplateFormPresenterTests.swift */; };
+		ED3B8BE02B876A1200611C58 /* TemplateFormInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BDF2B876A1200611C58 /* TemplateFormInteractorTests.swift */; };
+		ED3B8BE22B876B1200611C58 /* TemplateFormPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BE12B876B1200611C58 /* TemplateFormPresenterMock.swift */; };
 		ED53156E2B6AAACC004C60FC /* FCTotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53156D2B6AAACC004C60FC /* FCTotalView.swift */; };
 		ED621FB12B7B9C2C00E4867E /* AddAnnualCalendarPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED621FB02B7B9C2B00E4867E /* AddAnnualCalendarPresenterTests.swift */; };
 		ED621FB32B7B9F5000E4867E /* AddAnnualCalendarInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED621FB22B7B9F5000E4867E /* AddAnnualCalendarInteractorTests.swift */; };
@@ -149,6 +151,8 @@
 		ED3B8BD62B86A53B00611C58 /* TemplateFormRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormRouterTests.swift; sourceTree = "<group>"; };
 		ED3B8BD92B86A6B600611C58 /* TemplateFormViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormViewControllerMock.swift; sourceTree = "<group>"; };
 		ED3B8BDB2B87640300611C58 /* TemplateFormPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormPresenterTests.swift; sourceTree = "<group>"; };
+		ED3B8BDF2B876A1200611C58 /* TemplateFormInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormInteractorTests.swift; sourceTree = "<group>"; };
+		ED3B8BE12B876B1200611C58 /* TemplateFormPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormPresenterMock.swift; sourceTree = "<group>"; };
 		ED53156D2B6AAACC004C60FC /* FCTotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCTotalView.swift; sourceTree = "<group>"; };
 		ED621FB02B7B9C2B00E4867E /* AddAnnualCalendarPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarPresenterTests.swift; sourceTree = "<group>"; };
 		ED621FB22B7B9F5000E4867E /* AddAnnualCalendarInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarInteractorTests.swift; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 				ED3B8BD42B860DDF00611C58 /* TemplateFormFactoryTests.swift */,
 				ED3B8BD62B86A53B00611C58 /* TemplateFormRouterTests.swift */,
 				ED3B8BDB2B87640300611C58 /* TemplateFormPresenterTests.swift */,
+				ED3B8BDF2B876A1200611C58 /* TemplateFormInteractorTests.swift */,
 			);
 			path = TemplateForm;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				ED3B8BD92B86A6B600611C58 /* TemplateFormViewControllerMock.swift */,
+				ED3B8BE12B876B1200611C58 /* TemplateFormPresenterMock.swift */,
 			);
 			path = TemplateForm;
 			sourceTree = "<group>";
@@ -991,10 +997,12 @@
 				EDF976992B5094A100133036 /* HomePresenterMock.swift in Sources */,
 				EDDAD7172B4CC36E00C0BCB6 /* BillsWorkerTests.swift in Sources */,
 				ED3B8BD72B86A53B00611C58 /* TemplateFormRouterTests.swift in Sources */,
+				ED3B8BE02B876A1200611C58 /* TemplateFormInteractorTests.swift in Sources */,
 				ED3B8BDA2B86A6B600611C58 /* TemplateFormViewControllerMock.swift in Sources */,
 				EDF976A22B51D86B00133036 /* HomeInteractorMock.swift in Sources */,
 				EDF976BD2B52154A00133036 /* AddAnnualCalendarRouterTests.swift in Sources */,
 				ED621FC82B7ED6BA00E4867E /* MBFacadeTests.swift in Sources */,
+				ED3B8BE22B876B1200611C58 /* TemplateFormPresenterMock.swift in Sources */,
 				EDF976952B506E8900133036 /* HomePresenterTests.swift in Sources */,
 				ED621FBB2B7CE49500E4867E /* AddAnnualCalendarRouterMock.swift in Sources */,
 				EDF976BF2B521D7C00133036 /* AddAnnualCalendarViewControllerMock.swift in Sources */,
