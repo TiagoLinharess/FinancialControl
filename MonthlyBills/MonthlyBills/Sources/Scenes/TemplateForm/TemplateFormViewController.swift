@@ -56,12 +56,12 @@ final class TemplateFormViewController: UIVIPBaseViewController<TemplateFormView
     
     @objc
     func didTapAddButton() {
-        router.routeToItemForm(at: .template)
+        router.routeToItemForm(at: .template, animated: true)
     }
     
     @objc
     func cancelAction() {
-        router.close()
+        router.close(animated: true)
     }
 }
 
@@ -94,7 +94,7 @@ extension TemplateFormViewController: TemplateFormViewControllerDelegate {
     }
     
     func select(at item: BillItemFormType) {
-        router.routeToItemForm(at: item)
+        router.routeToItemForm(at: item, animated: true)
     }
     
     func delete(at indexPath: IndexPath) {

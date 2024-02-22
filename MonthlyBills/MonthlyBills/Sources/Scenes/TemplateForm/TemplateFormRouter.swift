@@ -11,20 +11,20 @@ import SharpnezDesignSystem
 import UIKit
 
 protocol TemplateFormRouting {
-    func routeToItemForm(at item: BillItemFormType)
-    func close()
+    func routeToItemForm(at item: BillItemFormType, animated: Bool)
+    func close(animated: Bool)
 }
 
 final class TemplateFormRouter: UIVIPRouter, TemplateFormRouting {
     
     // MARK: Methods
     
-    func routeToItemForm(at item: BillItemFormType) {
+    func routeToItemForm(at item: BillItemFormType, animated: Bool) {
         let controller = BillItemFormFactory.configure(formType: item)
-        viewController?.navigationController?.pushViewController(controller, animated: true)
+        viewController?.navigationController?.pushViewController(controller, animated: animated)
     }
     
-    func close() {
-        viewController?.navigationController?.dismiss(animated: true)
+    func close(animated: Bool) {
+        viewController?.navigationController?.dismiss(animated: animated)
     }
 }
