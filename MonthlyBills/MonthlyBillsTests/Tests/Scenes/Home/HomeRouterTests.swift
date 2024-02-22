@@ -39,4 +39,9 @@ final class HomeRouterTests: XCTestCase {
         sut.routeToDetail(year: "2023")
         XCTAssertTrue((sut.viewController?.navigationController?.presentedViewController as? UINavigationController)?.topViewController is CalendarDetailViewController)
     }
+    
+    func test_route_to_template() throws {
+        sut.routeToTemplate()
+        XCTAssertTrue((sut.viewController?.navigationController?.presentedViewController as? UINavigationController)?.topViewController is TemplateFormViewController)
+    }
 }
