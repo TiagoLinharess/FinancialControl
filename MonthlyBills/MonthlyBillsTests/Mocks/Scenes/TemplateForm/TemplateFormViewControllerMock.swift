@@ -8,7 +8,7 @@
 @testable import MonthlyBills
 import UIKit
 
-final class TemplateFormViewControllerMock: UIViewController, AddAnnualCalendarViewControlling {
+final class TemplateFormViewControllerMock: UIViewController, TemplateFormViewControlling {
     let router: TemplateFormRouting?
     var didSetYears: Bool = false
     var didPresentSuccess: Bool = false
@@ -27,11 +27,11 @@ final class TemplateFormViewControllerMock: UIViewController, AddAnnualCalendarV
         didSetYears = true
     }
     
-    func presentSuccess() {
+    func presentSuccess(templates: [MonthlyBills.BillSectionViewModel]) {
         didPresentSuccess = true
     }
     
-    func presentError(message: String?) {
+    func presentError(errorMessage: String) {
         didPresentError = true
     }
 }
