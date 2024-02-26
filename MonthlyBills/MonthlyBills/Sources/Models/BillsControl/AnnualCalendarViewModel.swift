@@ -17,16 +17,6 @@ class AnnualCalendarViewModel {
     let year: String
     private(set) var monthlyBills: [MonthlyBillsViewModel]
     
-    var balance: Double {
-        var balance: Double = .zero
-        
-        monthlyBills.forEach { bill in
-            balance += bill.balance
-        }
-        
-        return balance
-    }
-    
     // MARK: Init
     
     init(year: String) {
@@ -44,14 +34,6 @@ class AnnualCalendarViewModel {
     }
     
     // MARK: Methods
-    
-    func set(bill: MonthlyBillsViewModel, at index: Int) throws {
-        if index > 11 || index < 0 {
-            throw CoreError.customError(CoreConstants.Error.indexOutOfBounds)
-        }
-        
-        monthlyBills[index] = bill
-    }
     
     func getResponse() -> AnnualCalendarResponse {
         return .init(year: year, monthlyBills: monthlyBills.map { $0.getResponse() })

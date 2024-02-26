@@ -78,7 +78,7 @@ extension BillItemFormViewController: BillItemFormViewControlling {
                 title: CoreConstants.Commons.AlertTitle,
                 description: CoreConstants.Commons.success,
                 buttons: [.init(title: CoreConstants.Commons.ok, style: .default, handler: { [weak self] _ in
-                    self?.router.close()
+                    self?.router.close(animated: true)
                 })]
             )
         )

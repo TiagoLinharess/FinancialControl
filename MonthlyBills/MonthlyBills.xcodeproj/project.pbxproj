@@ -41,14 +41,23 @@
 		ED3B8C032B8B798300611C58 /* CalendarDetailInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C022B8B798300611C58 /* CalendarDetailInteractorMock.swift */; };
 		ED3B8C052B8B79DE00611C58 /* CalendarDetailRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C042B8B79DD00611C58 /* CalendarDetailRouterMock.swift */; };
 		ED3B8C0B2B8C9B2F00611C58 /* BillDetailFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C0A2B8C9B2F00611C58 /* BillDetailFactoryTests.swift */; };
-		ED3B8C0D2B8C9CC500611C58 /* BillDetailRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C0C2B8C9CC500611C58 /* BillDetailRouterTests.swift */; };
 		ED3B8C102B8C9D7000611C58 /* BillDetailViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C0F2B8C9D7000611C58 /* BillDetailViewControllerMock.swift */; };
-		ED3B8C122B8C9F1400611C58 /* BillDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C112B8C9F1400611C58 /* BillDetailPresenterTests.swift */; };
-		ED3B8C142B8C9FDB00611C58 /* BillDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C132B8C9FDB00611C58 /* BillDetailInteractorTests.swift */; };
 		ED3B8C162B8C9FF900611C58 /* BillDetailPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C152B8C9FF900611C58 /* BillDetailPresenterMock.swift */; };
 		ED3B8C182B8CA15A00611C58 /* BillDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C172B8CA15A00611C58 /* BillDetailViewControllerTests.swift */; };
 		ED3B8C1A2B8CA19800611C58 /* BillDetailInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C192B8CA19800611C58 /* BillDetailInteractorMock.swift */; };
 		ED3B8C1C2B8CA2EF00611C58 /* BillDetailRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C1B2B8CA2EF00611C58 /* BillDetailRouterMock.swift */; };
+		ED3B8C272B8CA7AE00611C58 /* BillItemFormFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C262B8CA7AE00611C58 /* BillItemFormFactoryTests.swift */; };
+		ED3B8C2A2B8CA81A00611C58 /* BillDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C282B8CA81A00611C58 /* BillDetailPresenterTests.swift */; };
+		ED3B8C2D2B8CA82400611C58 /* BillDetailRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C2C2B8CA82400611C58 /* BillDetailRouterTests.swift */; };
+		ED3B8C2F2B8CA84900611C58 /* BillDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C2E2B8CA84900611C58 /* BillDetailInteractorTests.swift */; };
+		ED3B8C312B8CA86E00611C58 /* BillItemFormRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C302B8CA86E00611C58 /* BillItemFormRouterTests.swift */; };
+		ED3B8C342B8CA8BE00611C58 /* BillItemFormViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C332B8CA8BE00611C58 /* BillItemFormViewControllerMock.swift */; };
+		ED3B8C362B8CAA5C00611C58 /* BillItemFormPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C352B8CAA5C00611C58 /* BillItemFormPresenterTests.swift */; };
+		ED3B8C382B8CAD3100611C58 /* BillItemFormInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C372B8CAD3100611C58 /* BillItemFormInteractorTests.swift */; };
+		ED3B8C3A2B8CAE1800611C58 /* BillItemFormPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C392B8CAE1800611C58 /* BillItemFormPresenterMock.swift */; };
+		ED3B8C3C2B8CB65800611C58 /* BillItemFormViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C3B2B8CB65800611C58 /* BillItemFormViewControllerTests.swift */; };
+		ED3B8C3E2B8CB6B100611C58 /* BillItemFormInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C3D2B8CB6B100611C58 /* BillItemFormInteractorMock.swift */; };
+		ED3B8C402B8CB71B00611C58 /* BillItemFormRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C3F2B8CB71B00611C58 /* BillItemFormRouterMock.swift */; };
 		ED53156E2B6AAACC004C60FC /* FCTotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53156D2B6AAACC004C60FC /* FCTotalView.swift */; };
 		ED621FB12B7B9C2C00E4867E /* AddAnnualCalendarPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED621FB02B7B9C2B00E4867E /* AddAnnualCalendarPresenterTests.swift */; };
 		ED621FB32B7B9F5000E4867E /* AddAnnualCalendarInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED621FB22B7B9F5000E4867E /* AddAnnualCalendarInteractorTests.swift */; };
@@ -191,14 +200,25 @@
 		ED3B8C042B8B79DD00611C58 /* CalendarDetailRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailRouterMock.swift; sourceTree = "<group>"; };
 		ED3B8C082B8B7ADD00611C58 /* test_snapshot.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot.1.png; sourceTree = "<group>"; };
 		ED3B8C0A2B8C9B2F00611C58 /* BillDetailFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailFactoryTests.swift; sourceTree = "<group>"; };
-		ED3B8C0C2B8C9CC500611C58 /* BillDetailRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailRouterTests.swift; sourceTree = "<group>"; };
 		ED3B8C0F2B8C9D7000611C58 /* BillDetailViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailViewControllerMock.swift; sourceTree = "<group>"; };
-		ED3B8C112B8C9F1400611C58 /* BillDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailPresenterTests.swift; sourceTree = "<group>"; };
-		ED3B8C132B8C9FDB00611C58 /* BillDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailInteractorTests.swift; sourceTree = "<group>"; };
 		ED3B8C152B8C9FF900611C58 /* BillDetailPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailPresenterMock.swift; sourceTree = "<group>"; };
 		ED3B8C172B8CA15A00611C58 /* BillDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		ED3B8C192B8CA19800611C58 /* BillDetailInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailInteractorMock.swift; sourceTree = "<group>"; };
 		ED3B8C1B2B8CA2EF00611C58 /* BillDetailRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailRouterMock.swift; sourceTree = "<group>"; };
+		ED3B8C262B8CA7AE00611C58 /* BillItemFormFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormFactoryTests.swift; sourceTree = "<group>"; };
+		ED3B8C282B8CA81A00611C58 /* BillDetailPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillDetailPresenterTests.swift; sourceTree = "<group>"; };
+		ED3B8C2C2B8CA82400611C58 /* BillDetailRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillDetailRouterTests.swift; sourceTree = "<group>"; };
+		ED3B8C2E2B8CA84900611C58 /* BillDetailInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillDetailInteractorTests.swift; sourceTree = "<group>"; };
+		ED3B8C302B8CA86E00611C58 /* BillItemFormRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillItemFormRouterTests.swift; sourceTree = "<group>"; };
+		ED3B8C332B8CA8BE00611C58 /* BillItemFormViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormViewControllerMock.swift; sourceTree = "<group>"; };
+		ED3B8C352B8CAA5C00611C58 /* BillItemFormPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillItemFormPresenterTests.swift; sourceTree = "<group>"; };
+		ED3B8C372B8CAD3100611C58 /* BillItemFormInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillItemFormInteractorTests.swift; sourceTree = "<group>"; };
+		ED3B8C392B8CAE1800611C58 /* BillItemFormPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormPresenterMock.swift; sourceTree = "<group>"; };
+		ED3B8C3B2B8CB65800611C58 /* BillItemFormViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillItemFormViewControllerTests.swift; sourceTree = "<group>"; };
+		ED3B8C3D2B8CB6B100611C58 /* BillItemFormInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormInteractorMock.swift; sourceTree = "<group>"; };
+		ED3B8C3F2B8CB71B00611C58 /* BillItemFormRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormRouterMock.swift; sourceTree = "<group>"; };
+		ED3B8C432B8CBC9800611C58 /* test_snapshot_empty.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_empty.1.png; sourceTree = "<group>"; };
+		ED3B8C442B8CBC9800611C58 /* test_snapshot.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot.1.png; sourceTree = "<group>"; };
 		ED53156D2B6AAACC004C60FC /* FCTotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCTotalView.swift; sourceTree = "<group>"; };
 		ED621FB02B7B9C2B00E4867E /* AddAnnualCalendarPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarPresenterTests.swift; sourceTree = "<group>"; };
 		ED621FB22B7B9F5000E4867E /* AddAnnualCalendarInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarInteractorTests.swift; sourceTree = "<group>"; };
@@ -508,10 +528,11 @@
 		ED3B8C092B8C9AE100611C58 /* BillDetail */ = {
 			isa = PBXGroup;
 			children = (
+				ED3B8C412B8CBC9800611C58 /* __Snapshots__ */,
+				ED3B8C2E2B8CA84900611C58 /* BillDetailInteractorTests.swift */,
+				ED3B8C2C2B8CA82400611C58 /* BillDetailRouterTests.swift */,
+				ED3B8C282B8CA81A00611C58 /* BillDetailPresenterTests.swift */,
 				ED3B8C0A2B8C9B2F00611C58 /* BillDetailFactoryTests.swift */,
-				ED3B8C0C2B8C9CC500611C58 /* BillDetailRouterTests.swift */,
-				ED3B8C112B8C9F1400611C58 /* BillDetailPresenterTests.swift */,
-				ED3B8C132B8C9FDB00611C58 /* BillDetailInteractorTests.swift */,
 				ED3B8C172B8CA15A00611C58 /* BillDetailViewControllerTests.swift */,
 			);
 			path = BillDetail;
@@ -526,6 +547,46 @@
 				ED3B8C1B2B8CA2EF00611C58 /* BillDetailRouterMock.swift */,
 			);
 			path = BillDetail;
+			sourceTree = "<group>";
+		};
+		ED3B8C252B8CA79B00611C58 /* BillItemForm */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C3B2B8CB65800611C58 /* BillItemFormViewControllerTests.swift */,
+				ED3B8C372B8CAD3100611C58 /* BillItemFormInteractorTests.swift */,
+				ED3B8C352B8CAA5C00611C58 /* BillItemFormPresenterTests.swift */,
+				ED3B8C302B8CA86E00611C58 /* BillItemFormRouterTests.swift */,
+				ED3B8C262B8CA7AE00611C58 /* BillItemFormFactoryTests.swift */,
+			);
+			path = BillItemForm;
+			sourceTree = "<group>";
+		};
+		ED3B8C322B8CA8A100611C58 /* BillItemForm */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C332B8CA8BE00611C58 /* BillItemFormViewControllerMock.swift */,
+				ED3B8C392B8CAE1800611C58 /* BillItemFormPresenterMock.swift */,
+				ED3B8C3D2B8CB6B100611C58 /* BillItemFormInteractorMock.swift */,
+				ED3B8C3F2B8CB71B00611C58 /* BillItemFormRouterMock.swift */,
+			);
+			path = BillItemForm;
+			sourceTree = "<group>";
+		};
+		ED3B8C412B8CBC9800611C58 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C422B8CBC9800611C58 /* BillDetailViewControllerTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		ED3B8C422B8CBC9800611C58 /* BillDetailViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C432B8CBC9800611C58 /* test_snapshot_empty.1.png */,
+				ED3B8C442B8CBC9800611C58 /* test_snapshot.1.png */,
+			);
+			path = BillDetailViewControllerTests;
 			sourceTree = "<group>";
 		};
 		ED53156C2B6AAAA7004C60FC /* FCTotalView */ = {
@@ -745,6 +806,7 @@
 		EDF9768B2B5052AA00133036 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				ED3B8C252B8CA79B00611C58 /* BillItemForm */,
 				ED3B8C092B8C9AE100611C58 /* BillDetail */,
 				ED3B8BF02B8B708A00611C58 /* CalendarDetail */,
 				ED3B8BD32B860D5D00611C58 /* TemplateForm */,
@@ -770,6 +832,7 @@
 		EDF9769F2B51D80200133036 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				ED3B8C322B8CA8A100611C58 /* BillItemForm */,
 				ED3B8C0E2B8C9D6600611C58 /* BillDetail */,
 				ED3B8BF72B8B72C200611C58 /* CalendarDetail */,
 				ED3B8BD82B86A69B00611C58 /* TemplateForm */,
@@ -1114,13 +1177,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED3B8C312B8CA86E00611C58 /* BillItemFormRouterTests.swift in Sources */,
+				ED3B8C382B8CAD3100611C58 /* BillItemFormInteractorTests.swift in Sources */,
 				ED3B8C0B2B8C9B2F00611C58 /* BillDetailFactoryTests.swift in Sources */,
 				ED3B8BF42B8B70F600611C58 /* CalendarDetailFactoryTests.swift in Sources */,
 				EDF976932B50533C00133036 /* HomeMockController.swift in Sources */,
 				EDDAD71E2B503D0E00C0BCB6 /* BillsMock.swift in Sources */,
 				ED3B8BFD2B8B774600611C58 /* CalendarDetailInteractorTests.swift in Sources */,
+				ED3B8C362B8CAA5C00611C58 /* BillItemFormPresenterTests.swift in Sources */,
 				EDF976902B5052F500133036 /* HomeRouterTests.swift in Sources */,
-				ED3B8C142B8C9FDB00611C58 /* BillDetailInteractorTests.swift in Sources */,
+				ED3B8C272B8CA7AE00611C58 /* BillItemFormFactoryTests.swift in Sources */,
+				ED3B8C3A2B8CAE1800611C58 /* BillItemFormPresenterMock.swift in Sources */,
 				EDF976972B5093EE00133036 /* HomeInteractorTests.swift in Sources */,
 				ED3B8BFB2B8B769200611C58 /* CalendarDetailPresenterTests.swift in Sources */,
 				ED3B8BF92B8B741100611C58 /* CalendarDetailViewControllerMock.swift in Sources */,
@@ -1129,19 +1196,22 @@
 				ED621FB12B7B9C2C00E4867E /* AddAnnualCalendarPresenterTests.swift in Sources */,
 				EDF976BB2B5213FC00133036 /* AddAnnualCalendarFactoryTests.swift in Sources */,
 				ED3B8C102B8C9D7000611C58 /* BillDetailViewControllerMock.swift in Sources */,
+				ED3B8C2F2B8CA84900611C58 /* BillDetailInteractorTests.swift in Sources */,
 				ED3B8BE62B876EA300611C58 /* TemplateFormInteractorMock.swift in Sources */,
 				EDF9769C2B50966F00133036 /* BillsWorkerMock.swift in Sources */,
+				ED3B8C342B8CA8BE00611C58 /* BillItemFormViewControllerMock.swift in Sources */,
 				ED3B8C052B8B79DE00611C58 /* CalendarDetailRouterMock.swift in Sources */,
 				ED3B8C1C2B8CA2EF00611C58 /* BillDetailRouterMock.swift in Sources */,
 				EDF9769E2B51D79300133036 /* HomeViewControllerTests.swift in Sources */,
 				ED621FB32B7B9F5000E4867E /* AddAnnualCalendarInteractorTests.swift in Sources */,
-				ED3B8C0D2B8C9CC500611C58 /* BillDetailRouterTests.swift in Sources */,
 				ED3B8C1A2B8CA19800611C58 /* BillDetailInteractorMock.swift in Sources */,
 				EDDAD71B2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift in Sources */,
 				ED3B8BD52B860DDF00611C58 /* TemplateFormFactoryTests.swift in Sources */,
+				ED3B8C2A2B8CA81A00611C58 /* BillDetailPresenterTests.swift in Sources */,
 				ED3B8BF62B8B71FC00611C58 /* CalendarDetailRouterTests.swift in Sources */,
 				ED3B8C032B8B798300611C58 /* CalendarDetailInteractorMock.swift in Sources */,
 				ED621FB92B7CE42200E4867E /* AddAnnualCalendarInteractorMock.swift in Sources */,
+				ED3B8C3E2B8CB6B100611C58 /* BillItemFormInteractorMock.swift in Sources */,
 				EDF976A42B51D90B00133036 /* HomeRouterMock.swift in Sources */,
 				EDF976992B5094A100133036 /* HomePresenterMock.swift in Sources */,
 				EDDAD7172B4CC36E00C0BCB6 /* BillsWorkerTests.swift in Sources */,
@@ -1149,19 +1219,21 @@
 				ED3B8BD72B86A53B00611C58 /* TemplateFormRouterTests.swift in Sources */,
 				ED3B8C012B8B790400611C58 /* CalendarDetailViewControllerTests.swift in Sources */,
 				ED3B8BE02B876A1200611C58 /* TemplateFormInteractorTests.swift in Sources */,
+				ED3B8C402B8CB71B00611C58 /* BillItemFormRouterMock.swift in Sources */,
 				ED3B8BDA2B86A6B600611C58 /* TemplateFormViewControllerMock.swift in Sources */,
 				ED3B8BE42B876E0E00611C58 /* TemplateFormViewControllerTests.swift in Sources */,
 				EDF976A22B51D86B00133036 /* HomeInteractorMock.swift in Sources */,
 				EDF976BD2B52154A00133036 /* AddAnnualCalendarRouterTests.swift in Sources */,
 				ED621FC82B7ED6BA00E4867E /* MBFacadeTests.swift in Sources */,
 				ED3B8C182B8CA15A00611C58 /* BillDetailViewControllerTests.swift in Sources */,
+				ED3B8C3C2B8CB65800611C58 /* BillItemFormViewControllerTests.swift in Sources */,
 				ED3B8BFF2B8B779800611C58 /* CalendarDetailPresenterMock.swift in Sources */,
 				ED3B8BE22B876B1200611C58 /* TemplateFormPresenterMock.swift in Sources */,
 				ED3B8C162B8C9FF900611C58 /* BillDetailPresenterMock.swift in Sources */,
+				ED3B8C2D2B8CA82400611C58 /* BillDetailRouterTests.swift in Sources */,
 				EDF976952B506E8900133036 /* HomePresenterTests.swift in Sources */,
 				ED621FBB2B7CE49500E4867E /* AddAnnualCalendarRouterMock.swift in Sources */,
 				EDF976BF2B521D7C00133036 /* AddAnnualCalendarViewControllerMock.swift in Sources */,
-				ED3B8C122B8C9F1400611C58 /* BillDetailPresenterTests.swift in Sources */,
 				ED3B8BDC2B87640300611C58 /* TemplateFormPresenterTests.swift in Sources */,
 				ED621FB52B7B9F7E00E4867E /* AddAnnualCalendarPresenterMock.swift in Sources */,
 			);

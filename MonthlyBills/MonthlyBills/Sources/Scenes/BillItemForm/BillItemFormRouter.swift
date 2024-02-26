@@ -11,14 +11,14 @@ import SharpnezDesignSystem
 import UIKit
 
 protocol BillItemFormRouting {
-    func close()
+    func close(animated: Bool)
 }
 
 final class BillItemFormRouter: UIVIPRouter, BillItemFormRouting {
     
     // MARK: Methods
     
-    func close() {
-        viewController?.navigationController?.popViewController(animated: true)
+    func close(animated: Bool) {
+        viewController?.navigationController?.popViewController(animated: animated)
     }
 }

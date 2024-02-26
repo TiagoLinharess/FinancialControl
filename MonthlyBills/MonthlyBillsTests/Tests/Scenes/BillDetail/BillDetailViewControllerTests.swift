@@ -38,7 +38,7 @@ final class BillDetailViewControllerTests: XCTestCase {
     }
     
     func test_snapshot() throws {
-        sut.presentSuccess(newBill: BillsMock.billComplete)
+        sut.presentSuccess(newBill: BillsMock.billCompleteWithInstallment)
         let window = TestUtils.get_window_for_snapshot(controller: UIViewController())
         window.rootViewController?.present(UINavigationController(rootViewController: sut), animated: false)
         view.frame = .init(x: .zero, y: .zero, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
