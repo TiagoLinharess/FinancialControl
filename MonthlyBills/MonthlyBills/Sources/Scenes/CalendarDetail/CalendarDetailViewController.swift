@@ -97,6 +97,6 @@ extension CalendarDetailViewController: CalendarDetailViewControllerDelegate {
     
     func didSelectMonthlyBill(at row: Int) {
         guard let bill = calendar?.monthlyBills[row] else { return }
-        router.routeToBill(billId: bill.id)
+        router.routeToBill(billId: bill.id, animated: true)
     }
 }
