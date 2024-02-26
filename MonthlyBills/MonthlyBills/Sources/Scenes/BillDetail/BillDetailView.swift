@@ -19,7 +19,7 @@ final class BillDetailView: UIView {
     
     // MARK: UI Elements
     
-    private lazy var tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.delegate = self
         tableView.dataSource = self

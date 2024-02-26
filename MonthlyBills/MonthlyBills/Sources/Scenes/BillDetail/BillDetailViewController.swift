@@ -69,7 +69,7 @@ final class BillDetailViewController: UIVIPBaseViewController<BillDetailView, Bi
     
     @objc
     func addAction() {
-        router.routeToItemForm(at: .new(billId))
+        router.routeToItemForm(at: .new(billId), animated: true)
     }
     
     @objc
@@ -126,7 +126,7 @@ extension BillDetailViewController: BillDetailViewControllerDelegate {
     }
     
     func select(at item: BillItemFormType) {
-        router.routeToItemForm(at: item)
+        router.routeToItemForm(at: item, animated: true)
     }
     
     func delete(at indexPath: IndexPath) {
