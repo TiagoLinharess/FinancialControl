@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 14/11/23.
 //
 
+import Core
 @testable import WeeklyBudgets
 import SnapshotTesting
 import SwiftUI
@@ -26,14 +27,14 @@ final class WeeklyBudgetDetailViewTests: XCTestCase {
     }
 
     func test_snapshot() throws {
-        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
+        let vc = TestUtils.get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
     
     func test_snapshot_with_expenses() throws {
         mock.addExpense(expense: .init(title: "iphone", description: "", paymentMode: .credit, value: 10))
         
-        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
+        let vc = TestUtils.get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
 }
