@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 30/10/23.
 //
 
+import Core
 import SharpnezCore
 import SwiftUI
 
@@ -32,14 +33,14 @@ final class AddWeeklyExpenseViewModel: AddWeeklyExpenseViewModelProtocol {
     @Binding var weekBudget: WeeklyBudgetViewModel
     @Published var title: String = String()
     @Published var description: String = String()
-    @Published var paymentMode: String = Constants.Commons.pickerSelect
+    @Published var paymentMode: String = CoreConstants.Commons.pickerSelect
     @Published var value: String = String()
     @Published var presentAlert: Bool = false
     @Published var alertMessage: String = String()
     var alertAction: (() -> Void)?
     
     var paymentModes: [String] {
-        var options = [Constants.Commons.pickerSelect]
+        var options = [CoreConstants.Commons.pickerSelect]
         options.append(contentsOf: PaymentMode.allCases.map { return $0.rawValue })
         return options
     }

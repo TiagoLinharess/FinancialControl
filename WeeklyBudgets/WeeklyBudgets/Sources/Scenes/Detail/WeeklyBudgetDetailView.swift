@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 29/10/23.
 //
 
+import Core
 import SwiftUI
 
 struct WeeklyBudgetDetailView<ViewModel: WeeklyBudgetDetailViewModelProtocol>: View {
@@ -77,7 +78,7 @@ struct WeeklyBudgetDetailView<ViewModel: WeeklyBudgetDetailViewModelProtocol>: V
                 Button {
                     weeklyDetailMode.wrappedValue.toggle()
                 } label: {
-                    Label(String(), systemImage: Constants.Icons.close)
+                    Label(String(), systemImage: CoreConstants.Icons.close)
                 }
             }
         }

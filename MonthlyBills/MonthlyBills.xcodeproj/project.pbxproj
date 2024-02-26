@@ -7,32 +7,297 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5224C0FFDC0D06BC285310FE /* Pods_MonthlyBillsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34A5E59726E718042C9396F2 /* Pods_MonthlyBillsTests.framework */; };
 		A0FC0F1CA856B55505C61240 /* Pods_MonthlyBills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55F144A912F0EDFC76C81F4 /* Pods_MonthlyBills.framework */; };
 		ED13B7722AFEBB65003161D7 /* MonthlyBills.docc in Sources */ = {isa = PBXBuildFile; fileRef = ED13B7712AFEBB65003161D7 /* MonthlyBills.docc */; };
 		ED13B7732AFEBB65003161D7 /* MonthlyBills.h in Headers */ = {isa = PBXBuildFile; fileRef = ED13B7702AFEBB65003161D7 /* MonthlyBills.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED13B7822AFEC159003161D7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13B7812AFEC159003161D7 /* HomeViewController.swift */; };
+		ED2C68092B19492800B831C6 /* BillsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68082B19492800B831C6 /* BillsWorker.swift */; };
+		ED2C681A2B19566B00B831C6 /* Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C68192B19566B00B831C6 /* Provider.framework */; };
+		ED2C681B2B19566B00B831C6 /* Provider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED2C68192B19566B00B831C6 /* Provider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED2C68742B1A4A0200B831C6 /* CalendarDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C686E2B1A4A0200B831C6 /* CalendarDetailFactory.swift */; };
+		ED2C68752B1A4A0200B831C6 /* CalendarDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C686F2B1A4A0200B831C6 /* CalendarDetailPresenter.swift */; };
+		ED2C68762B1A4A0200B831C6 /* CalendarDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68702B1A4A0200B831C6 /* CalendarDetailRouter.swift */; };
+		ED2C68772B1A4A0200B831C6 /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68712B1A4A0200B831C6 /* CalendarDetailViewController.swift */; };
+		ED2C68782B1A4A0200B831C6 /* CalendarDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68722B1A4A0200B831C6 /* CalendarDetailInteractor.swift */; };
+		ED2C68792B1A4A0200B831C6 /* CalendarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68732B1A4A0200B831C6 /* CalendarDetailView.swift */; };
+		ED3B8BD52B860DDF00611C58 /* TemplateFormFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BD42B860DDF00611C58 /* TemplateFormFactoryTests.swift */; };
+		ED3B8BD72B86A53B00611C58 /* TemplateFormRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BD62B86A53B00611C58 /* TemplateFormRouterTests.swift */; };
+		ED3B8BDA2B86A6B600611C58 /* TemplateFormViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BD92B86A6B600611C58 /* TemplateFormViewControllerMock.swift */; };
+		ED3B8BDC2B87640300611C58 /* TemplateFormPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BDB2B87640300611C58 /* TemplateFormPresenterTests.swift */; };
+		ED3B8BE02B876A1200611C58 /* TemplateFormInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BDF2B876A1200611C58 /* TemplateFormInteractorTests.swift */; };
+		ED3B8BE22B876B1200611C58 /* TemplateFormPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BE12B876B1200611C58 /* TemplateFormPresenterMock.swift */; };
+		ED3B8BE42B876E0E00611C58 /* TemplateFormViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BE32B876E0E00611C58 /* TemplateFormViewControllerTests.swift */; };
+		ED3B8BE62B876EA300611C58 /* TemplateFormInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BE52B876EA300611C58 /* TemplateFormInteractorMock.swift */; };
+		ED3B8BE82B876F4500611C58 /* TemplateFormRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BE72B876F4500611C58 /* TemplateFormRouterMock.swift */; };
+		ED3B8BEE2B87716F00611C58 /* test_snapshot_success.1.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3B8BED2B87716F00611C58 /* test_snapshot_success.1.png */; };
+		ED3B8BF42B8B70F600611C58 /* CalendarDetailFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BF32B8B70F600611C58 /* CalendarDetailFactoryTests.swift */; };
+		ED3B8BF62B8B71FC00611C58 /* CalendarDetailRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BF52B8B71FC00611C58 /* CalendarDetailRouterTests.swift */; };
+		ED3B8BF92B8B741100611C58 /* CalendarDetailViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BF82B8B741100611C58 /* CalendarDetailViewControllerMock.swift */; };
+		ED3B8BFB2B8B769200611C58 /* CalendarDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BFA2B8B769200611C58 /* CalendarDetailPresenterTests.swift */; };
+		ED3B8BFD2B8B774600611C58 /* CalendarDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BFC2B8B774600611C58 /* CalendarDetailInteractorTests.swift */; };
+		ED3B8BFF2B8B779800611C58 /* CalendarDetailPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8BFE2B8B779800611C58 /* CalendarDetailPresenterMock.swift */; };
+		ED3B8C012B8B790400611C58 /* CalendarDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C002B8B790400611C58 /* CalendarDetailViewControllerTests.swift */; };
+		ED3B8C032B8B798300611C58 /* CalendarDetailInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C022B8B798300611C58 /* CalendarDetailInteractorMock.swift */; };
+		ED3B8C052B8B79DE00611C58 /* CalendarDetailRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C042B8B79DD00611C58 /* CalendarDetailRouterMock.swift */; };
+		ED3B8C0B2B8C9B2F00611C58 /* BillDetailFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C0A2B8C9B2F00611C58 /* BillDetailFactoryTests.swift */; };
+		ED3B8C102B8C9D7000611C58 /* BillDetailViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C0F2B8C9D7000611C58 /* BillDetailViewControllerMock.swift */; };
+		ED3B8C162B8C9FF900611C58 /* BillDetailPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C152B8C9FF900611C58 /* BillDetailPresenterMock.swift */; };
+		ED3B8C182B8CA15A00611C58 /* BillDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C172B8CA15A00611C58 /* BillDetailViewControllerTests.swift */; };
+		ED3B8C1A2B8CA19800611C58 /* BillDetailInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C192B8CA19800611C58 /* BillDetailInteractorMock.swift */; };
+		ED3B8C1C2B8CA2EF00611C58 /* BillDetailRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C1B2B8CA2EF00611C58 /* BillDetailRouterMock.swift */; };
+		ED3B8C272B8CA7AE00611C58 /* BillItemFormFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C262B8CA7AE00611C58 /* BillItemFormFactoryTests.swift */; };
+		ED3B8C2A2B8CA81A00611C58 /* BillDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C282B8CA81A00611C58 /* BillDetailPresenterTests.swift */; };
+		ED3B8C2D2B8CA82400611C58 /* BillDetailRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C2C2B8CA82400611C58 /* BillDetailRouterTests.swift */; };
+		ED3B8C2F2B8CA84900611C58 /* BillDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C2E2B8CA84900611C58 /* BillDetailInteractorTests.swift */; };
+		ED3B8C312B8CA86E00611C58 /* BillItemFormRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C302B8CA86E00611C58 /* BillItemFormRouterTests.swift */; };
+		ED3B8C342B8CA8BE00611C58 /* BillItemFormViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C332B8CA8BE00611C58 /* BillItemFormViewControllerMock.swift */; };
+		ED3B8C362B8CAA5C00611C58 /* BillItemFormPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C352B8CAA5C00611C58 /* BillItemFormPresenterTests.swift */; };
+		ED3B8C382B8CAD3100611C58 /* BillItemFormInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C372B8CAD3100611C58 /* BillItemFormInteractorTests.swift */; };
+		ED3B8C3A2B8CAE1800611C58 /* BillItemFormPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C392B8CAE1800611C58 /* BillItemFormPresenterMock.swift */; };
+		ED3B8C3C2B8CB65800611C58 /* BillItemFormViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C3B2B8CB65800611C58 /* BillItemFormViewControllerTests.swift */; };
+		ED3B8C3E2B8CB6B100611C58 /* BillItemFormInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C3D2B8CB6B100611C58 /* BillItemFormInteractorMock.swift */; };
+		ED3B8C402B8CB71B00611C58 /* BillItemFormRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3B8C3F2B8CB71B00611C58 /* BillItemFormRouterMock.swift */; };
+		ED53156E2B6AAACC004C60FC /* FCTotalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED53156D2B6AAACC004C60FC /* FCTotalView.swift */; };
+		ED621FB12B7B9C2C00E4867E /* AddAnnualCalendarPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED621FB02B7B9C2B00E4867E /* AddAnnualCalendarPresenterTests.swift */; };
+		ED621FB32B7B9F5000E4867E /* AddAnnualCalendarInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED621FB22B7B9F5000E4867E /* AddAnnualCalendarInteractorTests.swift */; };
+		ED621FB52B7B9F7E00E4867E /* AddAnnualCalendarPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED621FB42B7B9F7E00E4867E /* AddAnnualCalendarPresenterMock.swift */; };
+		ED621FB72B7BA28700E4867E /* AddAnnualCalendarViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED621FB62B7BA28700E4867E /* AddAnnualCalendarViewControllerTests.swift */; };
+		ED621FB92B7CE42200E4867E /* AddAnnualCalendarInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED621FB82B7CE42200E4867E /* AddAnnualCalendarInteractorMock.swift */; };
+		ED621FBB2B7CE49500E4867E /* AddAnnualCalendarRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED621FBA2B7CE49500E4867E /* AddAnnualCalendarRouterMock.swift */; };
+		ED621FC82B7ED6BA00E4867E /* MBFacadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED621FC72B7ED6BA00E4867E /* MBFacadeTests.swift */; };
+		ED789E782B6DD8E000A4E188 /* TemplateFormFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED789E722B6DD8E000A4E188 /* TemplateFormFactory.swift */; };
+		ED789E792B6DD8E000A4E188 /* TemplateFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED789E732B6DD8E000A4E188 /* TemplateFormPresenter.swift */; };
+		ED789E7A2B6DD8E000A4E188 /* TemplateFormRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED789E742B6DD8E000A4E188 /* TemplateFormRouter.swift */; };
+		ED789E7B2B6DD8E000A4E188 /* TemplateFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED789E752B6DD8E000A4E188 /* TemplateFormViewController.swift */; };
+		ED789E7C2B6DD8E000A4E188 /* TemplateFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED789E762B6DD8E000A4E188 /* TemplateFormInteractor.swift */; };
+		ED789E7D2B6DD8E000A4E188 /* TemplateFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED789E772B6DD8E000A4E188 /* TemplateFormView.swift */; };
 		ED8D232C2B141E20009E8326 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D232B2B141E20009E8326 /* HomeView.swift */; };
 		ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D232D2B141EE6009E8326 /* HomeInteractor.swift */; };
 		ED8D23302B141F70009E8326 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D232F2B141F70009E8326 /* HomePresenter.swift */; };
 		ED8D23322B141FC2009E8326 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23312B141FC2009E8326 /* HomeRouter.swift */; };
 		ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23332B142079009E8326 /* HomeFactory.swift */; };
 		ED8D23372B1421C2009E8326 /* MBFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23362B1421C2009E8326 /* MBFacade.swift */; };
+		ED8D233E2B1428F4009E8326 /* MonthlyBillsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D233D2B1428F4009E8326 /* MonthlyBillsViewModel.swift */; };
+		ED8D23422B143031009E8326 /* AnnualCalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23412B143031009E8326 /* AnnualCalendarViewModel.swift */; };
+		ED8D234A2B14CCDF009E8326 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D23492B14CCDF009E8326 /* Core.framework */; };
+		ED8D23502B14CF5E009E8326 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D234F2B14CF5E009E8326 /* EmptyView.swift */; };
+		ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23522B14D360009E8326 /* ErrorView.swift */; };
+		ED8D23562B156119009E8326 /* AddAnnualCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23552B156119009E8326 /* AddAnnualCalendarView.swift */; };
+		ED8D23582B1561A7009E8326 /* AddAnnualCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23572B1561A7009E8326 /* AddAnnualCalendarViewController.swift */; };
+		ED8D235A2B15625E009E8326 /* AddAnnualCalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23592B15625E009E8326 /* AddAnnualCalendarInteractor.swift */; };
+		ED8D235C2B1562C9009E8326 /* AddAnnualCalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D235B2B1562C9009E8326 /* AddAnnualCalendarPresenter.swift */; };
+		ED8D235E2B1564CD009E8326 /* AddAnnualCalendarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D235D2B1564CD009E8326 /* AddAnnualCalendarRouter.swift */; };
+		ED8D23602B15654C009E8326 /* AddAnnualCalendarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D235F2B15654C009E8326 /* AddAnnualCalendarFactory.swift */; };
+		ED8D23702B19098C009E8326 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D236F2B19098C009E8326 /* Constants.swift */; };
+		EDDAD69E2B1F6D4500C0BCB6 /* BillDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6982B1F6D4500C0BCB6 /* BillDetailFactory.swift */; };
+		EDDAD69F2B1F6D4500C0BCB6 /* BillDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6992B1F6D4500C0BCB6 /* BillDetailPresenter.swift */; };
+		EDDAD6A02B1F6D4500C0BCB6 /* BillDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69A2B1F6D4500C0BCB6 /* BillDetailRouter.swift */; };
+		EDDAD6A12B1F6D4500C0BCB6 /* BillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69B2B1F6D4500C0BCB6 /* BillDetailViewController.swift */; };
+		EDDAD6A22B1F6D4500C0BCB6 /* BillDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */; };
+		EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */; };
+		EDDAD6C82B29EB3F00C0BCB6 /* FCUICurrencyFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD6C72B29EB3F00C0BCB6 /* FCUICurrencyFieldView.swift */; };
+		EDDAD70C2B4CC2DB00C0BCB6 /* MonthlyBills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED13B76D2AFEBB65003161D7 /* MonthlyBills.framework */; platformFilter = ios; };
+		EDDAD7172B4CC36E00C0BCB6 /* BillsWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD7162B4CC36E00C0BCB6 /* BillsWorkerTests.swift */; };
+		EDDAD71B2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD71A2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift */; };
+		EDDAD71E2B503D0E00C0BCB6 /* BillsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDAD71D2B503D0E00C0BCB6 /* BillsMock.swift */; };
+		EDF976902B5052F500133036 /* HomeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF9768F2B5052F500133036 /* HomeRouterTests.swift */; };
+		EDF976932B50533C00133036 /* HomeMockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976922B50533C00133036 /* HomeMockController.swift */; };
+		EDF976952B506E8900133036 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976942B506E8900133036 /* HomePresenterTests.swift */; };
+		EDF976972B5093EE00133036 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976962B5093EE00133036 /* HomeInteractorTests.swift */; };
+		EDF976992B5094A100133036 /* HomePresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976982B5094A100133036 /* HomePresenterMock.swift */; };
+		EDF9769C2B50966F00133036 /* BillsWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF9769B2B50966F00133036 /* BillsWorkerMock.swift */; };
+		EDF9769E2B51D79300133036 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF9769D2B51D79300133036 /* HomeViewControllerTests.swift */; };
+		EDF976A22B51D86B00133036 /* HomeInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976A12B51D86B00133036 /* HomeInteractorMock.swift */; };
+		EDF976A42B51D90B00133036 /* HomeRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976A32B51D90B00133036 /* HomeRouterMock.swift */; };
+		EDF976B82B51F80400133036 /* HomeFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976B72B51F80400133036 /* HomeFactoryTests.swift */; };
+		EDF976BB2B5213FC00133036 /* AddAnnualCalendarFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976BA2B5213FC00133036 /* AddAnnualCalendarFactoryTests.swift */; };
+		EDF976BD2B52154A00133036 /* AddAnnualCalendarRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976BC2B52154A00133036 /* AddAnnualCalendarRouterTests.swift */; };
+		EDF976BF2B521D7C00133036 /* AddAnnualCalendarViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976BE2B521D7C00133036 /* AddAnnualCalendarViewControllerMock.swift */; };
+		EDF976C12B5807A700133036 /* BillItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976C02B5807A700133036 /* BillItemViewModel.swift */; };
+		EDF976C72B58473B00133036 /* BillItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976C62B58473B00133036 /* BillItemProtocol.swift */; };
+		EDF976C92B5847DF00133036 /* BillStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976C82B5847DF00133036 /* BillStatus.swift */; };
+		EDF976CB2B58483200133036 /* BillInstallment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976CA2B58483200133036 /* BillInstallment.swift */; };
+		EDF976CD2B58492500133036 /* BillIncomeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976CC2B58492500133036 /* BillIncomeItemViewModel.swift */; };
+		EDF976D12B58528300133036 /* BillType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976D02B58528300133036 /* BillType.swift */; };
+		EDF976D32B58593400133036 /* BillItemFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976D22B58593400133036 /* BillItemFormType.swift */; };
+		EDF976E12B594F4900133036 /* BillItemFormFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DB2B594F4900133036 /* BillItemFormFactory.swift */; };
+		EDF976E22B594F4900133036 /* BillItemFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DC2B594F4900133036 /* BillItemFormPresenter.swift */; };
+		EDF976E32B594F4900133036 /* BillItemFormRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DD2B594F4900133036 /* BillItemFormRouter.swift */; };
+		EDF976E42B594F4900133036 /* BillItemFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DE2B594F4900133036 /* BillItemFormViewController.swift */; };
+		EDF976E52B594F4900133036 /* BillItemFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DF2B594F4900133036 /* BillItemFormInteractor.swift */; };
+		EDF976E62B594F4900133036 /* BillItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976E02B594F4900133036 /* BillItemFormView.swift */; };
+		EDF976E82B5E9CC700133036 /* BillSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976E72B5E9CC700133036 /* BillSectionViewModel.swift */; };
+		EDF976EE2B5EEF7300133036 /* FCUIPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976ED2B5EEF7300133036 /* FCUIPickerView.swift */; };
+		EDF976F32B5EF2DF00133036 /* FCUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976F22B5EF2DF00133036 /* FCUITextField.swift */; };
+		EDF976F62B5FFC2600133036 /* FCUISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976F52B5FFC2600133036 /* FCUISwitch.swift */; };
+		EDF976F82B607EC400133036 /* BillItemFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976F72B607EC400133036 /* BillItemFormViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EDDAD70D2B4CC2DB00C0BCB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED13B7642AFEBB65003161D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED13B76C2AFEBB65003161D7;
+			remoteInfo = MonthlyBills;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED2C681C2B19566B00B831C6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ED2C681B2B19566B00B831C6 /* Provider.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		28E6AC1C580865543B2AD8BA /* Pods-MonthlyBills.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonthlyBills.release.xcconfig"; path = "Target Support Files/Pods-MonthlyBills/Pods-MonthlyBills.release.xcconfig"; sourceTree = "<group>"; };
+		34A5E59726E718042C9396F2 /* Pods_MonthlyBillsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonthlyBillsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B976CEC4C99063AD0B8B33D9 /* Pods-MonthlyBills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonthlyBills.debug.xcconfig"; path = "Target Support Files/Pods-MonthlyBills/Pods-MonthlyBills.debug.xcconfig"; sourceTree = "<group>"; };
 		C55F144A912F0EDFC76C81F4 /* Pods_MonthlyBills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MonthlyBills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9A4EA3A1AACF72B64D25685 /* Pods-MonthlyBillsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonthlyBillsTests.release.xcconfig"; path = "Target Support Files/Pods-MonthlyBillsTests/Pods-MonthlyBillsTests.release.xcconfig"; sourceTree = "<group>"; };
+		EABD483C49CA17BDD6C27C2E /* Pods-MonthlyBillsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MonthlyBillsTests.debug.xcconfig"; path = "Target Support Files/Pods-MonthlyBillsTests/Pods-MonthlyBillsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED13B76D2AFEBB65003161D7 /* MonthlyBills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MonthlyBills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED13B7702AFEBB65003161D7 /* MonthlyBills.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthlyBills.h; sourceTree = "<group>"; };
 		ED13B7712AFEBB65003161D7 /* MonthlyBills.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = MonthlyBills.docc; sourceTree = "<group>"; };
 		ED13B7812AFEC159003161D7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ED2C68082B19492800B831C6 /* BillsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsWorker.swift; sourceTree = "<group>"; };
+		ED2C68192B19566B00B831C6 /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED2C686E2B1A4A0200B831C6 /* CalendarDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailFactory.swift; sourceTree = "<group>"; };
+		ED2C686F2B1A4A0200B831C6 /* CalendarDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailPresenter.swift; sourceTree = "<group>"; };
+		ED2C68702B1A4A0200B831C6 /* CalendarDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailRouter.swift; sourceTree = "<group>"; };
+		ED2C68712B1A4A0200B831C6 /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
+		ED2C68722B1A4A0200B831C6 /* CalendarDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailInteractor.swift; sourceTree = "<group>"; };
+		ED2C68732B1A4A0200B831C6 /* CalendarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailView.swift; sourceTree = "<group>"; };
+		ED3B8BD42B860DDF00611C58 /* TemplateFormFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormFactoryTests.swift; sourceTree = "<group>"; };
+		ED3B8BD62B86A53B00611C58 /* TemplateFormRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormRouterTests.swift; sourceTree = "<group>"; };
+		ED3B8BD92B86A6B600611C58 /* TemplateFormViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormViewControllerMock.swift; sourceTree = "<group>"; };
+		ED3B8BDB2B87640300611C58 /* TemplateFormPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormPresenterTests.swift; sourceTree = "<group>"; };
+		ED3B8BDF2B876A1200611C58 /* TemplateFormInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormInteractorTests.swift; sourceTree = "<group>"; };
+		ED3B8BE12B876B1200611C58 /* TemplateFormPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormPresenterMock.swift; sourceTree = "<group>"; };
+		ED3B8BE32B876E0E00611C58 /* TemplateFormViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormViewControllerTests.swift; sourceTree = "<group>"; };
+		ED3B8BE52B876EA300611C58 /* TemplateFormInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormInteractorMock.swift; sourceTree = "<group>"; };
+		ED3B8BE72B876F4500611C58 /* TemplateFormRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormRouterMock.swift; sourceTree = "<group>"; };
+		ED3B8BEB2B87710E00611C58 /* test_snapshot_empty.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_empty.1.png; sourceTree = "<group>"; };
+		ED3B8BED2B87716F00611C58 /* test_snapshot_success.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_success.1.png; sourceTree = "<group>"; };
+		ED3B8BEF2B87779A00611C58 /* test_snapshot_with_delegate_nil.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_with_delegate_nil.1.png; sourceTree = "<group>"; };
+		ED3B8BF32B8B70F600611C58 /* CalendarDetailFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailFactoryTests.swift; sourceTree = "<group>"; };
+		ED3B8BF52B8B71FC00611C58 /* CalendarDetailRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailRouterTests.swift; sourceTree = "<group>"; };
+		ED3B8BF82B8B741100611C58 /* CalendarDetailViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewControllerMock.swift; sourceTree = "<group>"; };
+		ED3B8BFA2B8B769200611C58 /* CalendarDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailPresenterTests.swift; sourceTree = "<group>"; };
+		ED3B8BFC2B8B774600611C58 /* CalendarDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailInteractorTests.swift; sourceTree = "<group>"; };
+		ED3B8BFE2B8B779800611C58 /* CalendarDetailPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailPresenterMock.swift; sourceTree = "<group>"; };
+		ED3B8C002B8B790400611C58 /* CalendarDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		ED3B8C022B8B798300611C58 /* CalendarDetailInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailInteractorMock.swift; sourceTree = "<group>"; };
+		ED3B8C042B8B79DD00611C58 /* CalendarDetailRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailRouterMock.swift; sourceTree = "<group>"; };
+		ED3B8C082B8B7ADD00611C58 /* test_snapshot.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot.1.png; sourceTree = "<group>"; };
+		ED3B8C0A2B8C9B2F00611C58 /* BillDetailFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailFactoryTests.swift; sourceTree = "<group>"; };
+		ED3B8C0F2B8C9D7000611C58 /* BillDetailViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailViewControllerMock.swift; sourceTree = "<group>"; };
+		ED3B8C152B8C9FF900611C58 /* BillDetailPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailPresenterMock.swift; sourceTree = "<group>"; };
+		ED3B8C172B8CA15A00611C58 /* BillDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		ED3B8C192B8CA19800611C58 /* BillDetailInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailInteractorMock.swift; sourceTree = "<group>"; };
+		ED3B8C1B2B8CA2EF00611C58 /* BillDetailRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailRouterMock.swift; sourceTree = "<group>"; };
+		ED3B8C262B8CA7AE00611C58 /* BillItemFormFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormFactoryTests.swift; sourceTree = "<group>"; };
+		ED3B8C282B8CA81A00611C58 /* BillDetailPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillDetailPresenterTests.swift; sourceTree = "<group>"; };
+		ED3B8C2C2B8CA82400611C58 /* BillDetailRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillDetailRouterTests.swift; sourceTree = "<group>"; };
+		ED3B8C2E2B8CA84900611C58 /* BillDetailInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillDetailInteractorTests.swift; sourceTree = "<group>"; };
+		ED3B8C302B8CA86E00611C58 /* BillItemFormRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillItemFormRouterTests.swift; sourceTree = "<group>"; };
+		ED3B8C332B8CA8BE00611C58 /* BillItemFormViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormViewControllerMock.swift; sourceTree = "<group>"; };
+		ED3B8C352B8CAA5C00611C58 /* BillItemFormPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillItemFormPresenterTests.swift; sourceTree = "<group>"; };
+		ED3B8C372B8CAD3100611C58 /* BillItemFormInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillItemFormInteractorTests.swift; sourceTree = "<group>"; };
+		ED3B8C392B8CAE1800611C58 /* BillItemFormPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormPresenterMock.swift; sourceTree = "<group>"; };
+		ED3B8C3B2B8CB65800611C58 /* BillItemFormViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillItemFormViewControllerTests.swift; sourceTree = "<group>"; };
+		ED3B8C3D2B8CB6B100611C58 /* BillItemFormInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormInteractorMock.swift; sourceTree = "<group>"; };
+		ED3B8C3F2B8CB71B00611C58 /* BillItemFormRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormRouterMock.swift; sourceTree = "<group>"; };
+		ED3B8C432B8CBC9800611C58 /* test_snapshot_empty.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_empty.1.png; sourceTree = "<group>"; };
+		ED3B8C442B8CBC9800611C58 /* test_snapshot.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot.1.png; sourceTree = "<group>"; };
+		ED53156D2B6AAACC004C60FC /* FCTotalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCTotalView.swift; sourceTree = "<group>"; };
+		ED621FB02B7B9C2B00E4867E /* AddAnnualCalendarPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarPresenterTests.swift; sourceTree = "<group>"; };
+		ED621FB22B7B9F5000E4867E /* AddAnnualCalendarInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarInteractorTests.swift; sourceTree = "<group>"; };
+		ED621FB42B7B9F7E00E4867E /* AddAnnualCalendarPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarPresenterMock.swift; sourceTree = "<group>"; };
+		ED621FB62B7BA28700E4867E /* AddAnnualCalendarViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarViewControllerTests.swift; sourceTree = "<group>"; };
+		ED621FB82B7CE42200E4867E /* AddAnnualCalendarInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarInteractorMock.swift; sourceTree = "<group>"; };
+		ED621FBA2B7CE49500E4867E /* AddAnnualCalendarRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarRouterMock.swift; sourceTree = "<group>"; };
+		ED621FC02B7ED32600E4867E /* test_snapshot_set_years.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_set_years.1.png; sourceTree = "<group>"; };
+		ED621FC72B7ED6BA00E4867E /* MBFacadeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBFacadeTests.swift; sourceTree = "<group>"; };
+		ED789E722B6DD8E000A4E188 /* TemplateFormFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormFactory.swift; sourceTree = "<group>"; };
+		ED789E732B6DD8E000A4E188 /* TemplateFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormPresenter.swift; sourceTree = "<group>"; };
+		ED789E742B6DD8E000A4E188 /* TemplateFormRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormRouter.swift; sourceTree = "<group>"; };
+		ED789E752B6DD8E000A4E188 /* TemplateFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormViewController.swift; sourceTree = "<group>"; };
+		ED789E762B6DD8E000A4E188 /* TemplateFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormInteractor.swift; sourceTree = "<group>"; };
+		ED789E772B6DD8E000A4E188 /* TemplateFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateFormView.swift; sourceTree = "<group>"; };
 		ED8D232B2B141E20009E8326 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ED8D232D2B141EE6009E8326 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		ED8D232F2B141F70009E8326 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		ED8D23312B141FC2009E8326 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		ED8D23332B142079009E8326 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		ED8D23362B1421C2009E8326 /* MBFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBFacade.swift; sourceTree = "<group>"; };
+		ED8D233D2B1428F4009E8326 /* MonthlyBillsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsViewModel.swift; sourceTree = "<group>"; };
+		ED8D23412B143031009E8326 /* AnnualCalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualCalendarViewModel.swift; sourceTree = "<group>"; };
+		ED8D23492B14CCDF009E8326 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8D234F2B14CF5E009E8326 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		ED8D23522B14D360009E8326 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		ED8D23552B156119009E8326 /* AddAnnualCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarView.swift; sourceTree = "<group>"; };
+		ED8D23572B1561A7009E8326 /* AddAnnualCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarViewController.swift; sourceTree = "<group>"; };
+		ED8D23592B15625E009E8326 /* AddAnnualCalendarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarInteractor.swift; sourceTree = "<group>"; };
+		ED8D235B2B1562C9009E8326 /* AddAnnualCalendarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarPresenter.swift; sourceTree = "<group>"; };
+		ED8D235D2B1564CD009E8326 /* AddAnnualCalendarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarRouter.swift; sourceTree = "<group>"; };
+		ED8D235F2B15654C009E8326 /* AddAnnualCalendarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarFactory.swift; sourceTree = "<group>"; };
+		ED8D236F2B19098C009E8326 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EDDAD6982B1F6D4500C0BCB6 /* BillDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailFactory.swift; sourceTree = "<group>"; };
+		EDDAD6992B1F6D4500C0BCB6 /* BillDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailPresenter.swift; sourceTree = "<group>"; };
+		EDDAD69A2B1F6D4500C0BCB6 /* BillDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailRouter.swift; sourceTree = "<group>"; };
+		EDDAD69B2B1F6D4500C0BCB6 /* BillDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailViewController.swift; sourceTree = "<group>"; };
+		EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailInteractor.swift; sourceTree = "<group>"; };
+		EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillDetailView.swift; sourceTree = "<group>"; };
+		EDDAD6C72B29EB3F00C0BCB6 /* FCUICurrencyFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCUICurrencyFieldView.swift; sourceTree = "<group>"; };
+		EDDAD7082B4CC2DB00C0BCB6 /* MonthlyBillsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonthlyBillsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDDAD7162B4CC36E00C0BCB6 /* BillsWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsWorkerTests.swift; sourceTree = "<group>"; };
+		EDDAD71A2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsRepositoryMock.swift; sourceTree = "<group>"; };
+		EDDAD71D2B503D0E00C0BCB6 /* BillsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsMock.swift; sourceTree = "<group>"; };
+		EDF9768F2B5052F500133036 /* HomeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterTests.swift; sourceTree = "<group>"; };
+		EDF976922B50533C00133036 /* HomeMockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMockController.swift; sourceTree = "<group>"; };
+		EDF976942B506E8900133036 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		EDF976962B5093EE00133036 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		EDF976982B5094A100133036 /* HomePresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterMock.swift; sourceTree = "<group>"; };
+		EDF9769B2B50966F00133036 /* BillsWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsWorkerMock.swift; sourceTree = "<group>"; };
+		EDF9769D2B51D79300133036 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		EDF976A12B51D86B00133036 /* HomeInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorMock.swift; sourceTree = "<group>"; };
+		EDF976A32B51D90B00133036 /* HomeRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterMock.swift; sourceTree = "<group>"; };
+		EDF976B22B51F00500133036 /* test_snapshot_success.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_success.1.png; sourceTree = "<group>"; };
+		EDF976B32B51F00500133036 /* test_snapshot_empty.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_empty.1.png; sourceTree = "<group>"; };
+		EDF976B42B51F00500133036 /* test_snapshot_error.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot_error.1.png; sourceTree = "<group>"; };
+		EDF976B52B51F0C900133036 /* test_view_did_load.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_view_did_load.1.png; sourceTree = "<group>"; };
+		EDF976B72B51F80400133036 /* HomeFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactoryTests.swift; sourceTree = "<group>"; };
+		EDF976BA2B5213FC00133036 /* AddAnnualCalendarFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarFactoryTests.swift; sourceTree = "<group>"; };
+		EDF976BC2B52154A00133036 /* AddAnnualCalendarRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarRouterTests.swift; sourceTree = "<group>"; };
+		EDF976BE2B521D7C00133036 /* AddAnnualCalendarViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAnnualCalendarViewControllerMock.swift; sourceTree = "<group>"; };
+		EDF976C02B5807A700133036 /* BillItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemViewModel.swift; sourceTree = "<group>"; };
+		EDF976C62B58473B00133036 /* BillItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemProtocol.swift; sourceTree = "<group>"; };
+		EDF976C82B5847DF00133036 /* BillStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillStatus.swift; sourceTree = "<group>"; };
+		EDF976CA2B58483200133036 /* BillInstallment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillInstallment.swift; sourceTree = "<group>"; };
+		EDF976CC2B58492500133036 /* BillIncomeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillIncomeItemViewModel.swift; sourceTree = "<group>"; };
+		EDF976D02B58528300133036 /* BillType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillType.swift; sourceTree = "<group>"; };
+		EDF976D22B58593400133036 /* BillItemFormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormType.swift; sourceTree = "<group>"; };
+		EDF976DB2B594F4900133036 /* BillItemFormFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormFactory.swift; sourceTree = "<group>"; };
+		EDF976DC2B594F4900133036 /* BillItemFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormPresenter.swift; sourceTree = "<group>"; };
+		EDF976DD2B594F4900133036 /* BillItemFormRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormRouter.swift; sourceTree = "<group>"; };
+		EDF976DE2B594F4900133036 /* BillItemFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormViewController.swift; sourceTree = "<group>"; };
+		EDF976DF2B594F4900133036 /* BillItemFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormInteractor.swift; sourceTree = "<group>"; };
+		EDF976E02B594F4900133036 /* BillItemFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormView.swift; sourceTree = "<group>"; };
+		EDF976E72B5E9CC700133036 /* BillSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSectionViewModel.swift; sourceTree = "<group>"; };
+		EDF976ED2B5EEF7300133036 /* FCUIPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCUIPickerView.swift; sourceTree = "<group>"; };
+		EDF976F22B5EF2DF00133036 /* FCUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCUITextField.swift; sourceTree = "<group>"; };
+		EDF976F52B5FFC2600133036 /* FCUISwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCUISwitch.swift; sourceTree = "<group>"; };
+		EDF976F72B607EC400133036 /* BillItemFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +305,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2C681A2B19566B00B831C6 /* Provider.framework in Frameworks */,
 				A0FC0F1CA856B55505C61240 /* Pods_MonthlyBills.framework in Frameworks */,
+				ED8D234A2B14CCDF009E8326 /* Core.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDDAD7052B4CC2DB00C0BCB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDDAD70C2B4CC2DB00C0BCB6 /* MonthlyBills.framework in Frameworks */,
+				5224C0FFDC0D06BC285310FE /* Pods_MonthlyBillsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +328,8 @@
 			children = (
 				B976CEC4C99063AD0B8B33D9 /* Pods-MonthlyBills.debug.xcconfig */,
 				28E6AC1C580865543B2AD8BA /* Pods-MonthlyBills.release.xcconfig */,
+				EABD483C49CA17BDD6C27C2E /* Pods-MonthlyBillsTests.debug.xcconfig */,
+				E9A4EA3A1AACF72B64D25685 /* Pods-MonthlyBillsTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -60,7 +338,10 @@
 		5107D7F79E2A3F2158A22AB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED2C68192B19566B00B831C6 /* Provider.framework */,
+				ED8D23492B14CCDF009E8326 /* Core.framework */,
 				C55F144A912F0EDFC76C81F4 /* Pods_MonthlyBills.framework */,
+				34A5E59726E718042C9396F2 /* Pods_MonthlyBillsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -69,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				ED13B76F2AFEBB65003161D7 /* MonthlyBills */,
+				EDDAD7092B4CC2DB00C0BCB6 /* MonthlyBillsTests */,
 				ED13B76E2AFEBB65003161D7 /* Products */,
 				130B8DF7A4D61E22A04388B9 /* Pods */,
 				5107D7F79E2A3F2158A22AB4 /* Frameworks */,
@@ -79,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				ED13B76D2AFEBB65003161D7 /* MonthlyBills.framework */,
+				EDDAD7082B4CC2DB00C0BCB6 /* MonthlyBillsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,9 +387,11 @@
 		ED13B77A2AFEBB9F003161D7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				ED8D234D2B14CF45009E8326 /* Components */,
 				ED8D23352B1421B2009E8326 /* Facade */,
 				ED8D233B2B14289C009E8326 /* Models */,
 				ED13B77B2AFEBBA7003161D7 /* Scenes */,
+				ED2C68072B19490F00B831C6 /* Workers */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -114,6 +399,11 @@
 		ED13B77B2AFEBBA7003161D7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				ED789E712B6DD8C100A4E188 /* TemplateForm */,
+				EDF976D42B594E9700133036 /* BillItemForm */,
+				EDDAD6972B1F6D1200C0BCB6 /* BillDetail */,
+				ED2C68232B1A308300B831C6 /* CalendarDetail */,
+				ED8D23542B1560F0009E8326 /* AddAnnualCalendar */,
 				ED13B77C2AFEBBBC003161D7 /* Home */,
 			);
 			path = Scenes;
@@ -132,6 +422,218 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		ED2C68072B19490F00B831C6 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C68082B19492800B831C6 /* BillsWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		ED2C68232B1A308300B831C6 /* CalendarDetail */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C686E2B1A4A0200B831C6 /* CalendarDetailFactory.swift */,
+				ED2C686F2B1A4A0200B831C6 /* CalendarDetailPresenter.swift */,
+				ED2C68702B1A4A0200B831C6 /* CalendarDetailRouter.swift */,
+				ED2C68712B1A4A0200B831C6 /* CalendarDetailViewController.swift */,
+				ED2C68722B1A4A0200B831C6 /* CalendarDetailInteractor.swift */,
+				ED2C68732B1A4A0200B831C6 /* CalendarDetailView.swift */,
+			);
+			path = CalendarDetail;
+			sourceTree = "<group>";
+		};
+		ED3B8BD32B860D5D00611C58 /* TemplateForm */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8BE92B87710E00611C58 /* __Snapshots__ */,
+				ED3B8BD42B860DDF00611C58 /* TemplateFormFactoryTests.swift */,
+				ED3B8BD62B86A53B00611C58 /* TemplateFormRouterTests.swift */,
+				ED3B8BDB2B87640300611C58 /* TemplateFormPresenterTests.swift */,
+				ED3B8BDF2B876A1200611C58 /* TemplateFormInteractorTests.swift */,
+				ED3B8BE32B876E0E00611C58 /* TemplateFormViewControllerTests.swift */,
+			);
+			path = TemplateForm;
+			sourceTree = "<group>";
+		};
+		ED3B8BD82B86A69B00611C58 /* TemplateForm */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8BD92B86A6B600611C58 /* TemplateFormViewControllerMock.swift */,
+				ED3B8BE12B876B1200611C58 /* TemplateFormPresenterMock.swift */,
+				ED3B8BE52B876EA300611C58 /* TemplateFormInteractorMock.swift */,
+				ED3B8BE72B876F4500611C58 /* TemplateFormRouterMock.swift */,
+			);
+			path = TemplateForm;
+			sourceTree = "<group>";
+		};
+		ED3B8BE92B87710E00611C58 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8BEA2B87710E00611C58 /* TemplateFormViewControllerTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		ED3B8BEA2B87710E00611C58 /* TemplateFormViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8BEF2B87779A00611C58 /* test_snapshot_with_delegate_nil.1.png */,
+				ED3B8BED2B87716F00611C58 /* test_snapshot_success.1.png */,
+				ED3B8BEB2B87710E00611C58 /* test_snapshot_empty.1.png */,
+			);
+			path = TemplateFormViewControllerTests;
+			sourceTree = "<group>";
+		};
+		ED3B8BF02B8B708A00611C58 /* CalendarDetail */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C062B8B7ADD00611C58 /* __Snapshots__ */,
+				ED3B8BF32B8B70F600611C58 /* CalendarDetailFactoryTests.swift */,
+				ED3B8BF52B8B71FC00611C58 /* CalendarDetailRouterTests.swift */,
+				ED3B8BFA2B8B769200611C58 /* CalendarDetailPresenterTests.swift */,
+				ED3B8BFC2B8B774600611C58 /* CalendarDetailInteractorTests.swift */,
+				ED3B8C002B8B790400611C58 /* CalendarDetailViewControllerTests.swift */,
+			);
+			path = CalendarDetail;
+			sourceTree = "<group>";
+		};
+		ED3B8BF72B8B72C200611C58 /* CalendarDetail */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8BF82B8B741100611C58 /* CalendarDetailViewControllerMock.swift */,
+				ED3B8BFE2B8B779800611C58 /* CalendarDetailPresenterMock.swift */,
+				ED3B8C022B8B798300611C58 /* CalendarDetailInteractorMock.swift */,
+				ED3B8C042B8B79DD00611C58 /* CalendarDetailRouterMock.swift */,
+			);
+			path = CalendarDetail;
+			sourceTree = "<group>";
+		};
+		ED3B8C062B8B7ADD00611C58 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C072B8B7ADD00611C58 /* CalendarDetailViewControllerTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		ED3B8C072B8B7ADD00611C58 /* CalendarDetailViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C082B8B7ADD00611C58 /* test_snapshot.1.png */,
+			);
+			path = CalendarDetailViewControllerTests;
+			sourceTree = "<group>";
+		};
+		ED3B8C092B8C9AE100611C58 /* BillDetail */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C412B8CBC9800611C58 /* __Snapshots__ */,
+				ED3B8C2E2B8CA84900611C58 /* BillDetailInteractorTests.swift */,
+				ED3B8C2C2B8CA82400611C58 /* BillDetailRouterTests.swift */,
+				ED3B8C282B8CA81A00611C58 /* BillDetailPresenterTests.swift */,
+				ED3B8C0A2B8C9B2F00611C58 /* BillDetailFactoryTests.swift */,
+				ED3B8C172B8CA15A00611C58 /* BillDetailViewControllerTests.swift */,
+			);
+			path = BillDetail;
+			sourceTree = "<group>";
+		};
+		ED3B8C0E2B8C9D6600611C58 /* BillDetail */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C0F2B8C9D7000611C58 /* BillDetailViewControllerMock.swift */,
+				ED3B8C152B8C9FF900611C58 /* BillDetailPresenterMock.swift */,
+				ED3B8C192B8CA19800611C58 /* BillDetailInteractorMock.swift */,
+				ED3B8C1B2B8CA2EF00611C58 /* BillDetailRouterMock.swift */,
+			);
+			path = BillDetail;
+			sourceTree = "<group>";
+		};
+		ED3B8C252B8CA79B00611C58 /* BillItemForm */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C3B2B8CB65800611C58 /* BillItemFormViewControllerTests.swift */,
+				ED3B8C372B8CAD3100611C58 /* BillItemFormInteractorTests.swift */,
+				ED3B8C352B8CAA5C00611C58 /* BillItemFormPresenterTests.swift */,
+				ED3B8C302B8CA86E00611C58 /* BillItemFormRouterTests.swift */,
+				ED3B8C262B8CA7AE00611C58 /* BillItemFormFactoryTests.swift */,
+			);
+			path = BillItemForm;
+			sourceTree = "<group>";
+		};
+		ED3B8C322B8CA8A100611C58 /* BillItemForm */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C332B8CA8BE00611C58 /* BillItemFormViewControllerMock.swift */,
+				ED3B8C392B8CAE1800611C58 /* BillItemFormPresenterMock.swift */,
+				ED3B8C3D2B8CB6B100611C58 /* BillItemFormInteractorMock.swift */,
+				ED3B8C3F2B8CB71B00611C58 /* BillItemFormRouterMock.swift */,
+			);
+			path = BillItemForm;
+			sourceTree = "<group>";
+		};
+		ED3B8C412B8CBC9800611C58 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C422B8CBC9800611C58 /* BillDetailViewControllerTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		ED3B8C422B8CBC9800611C58 /* BillDetailViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C432B8CBC9800611C58 /* test_snapshot_empty.1.png */,
+				ED3B8C442B8CBC9800611C58 /* test_snapshot.1.png */,
+			);
+			path = BillDetailViewControllerTests;
+			sourceTree = "<group>";
+		};
+		ED53156C2B6AAAA7004C60FC /* FCTotalView */ = {
+			isa = PBXGroup;
+			children = (
+				ED53156D2B6AAACC004C60FC /* FCTotalView.swift */,
+			);
+			path = FCTotalView;
+			sourceTree = "<group>";
+		};
+		ED621FBC2B7CE68A00E4867E /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				ED621FBD2B7CE68A00E4867E /* AddAnnualCalendarViewControllerTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		ED621FBD2B7CE68A00E4867E /* AddAnnualCalendarViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED621FC02B7ED32600E4867E /* test_snapshot_set_years.1.png */,
+			);
+			path = AddAnnualCalendarViewControllerTests;
+			sourceTree = "<group>";
+		};
+		ED621FC62B7ED6A900E4867E /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				ED621FC72B7ED6BA00E4867E /* MBFacadeTests.swift */,
+			);
+			path = Facade;
+			sourceTree = "<group>";
+		};
+		ED789E712B6DD8C100A4E188 /* TemplateForm */ = {
+			isa = PBXGroup;
+			children = (
+				ED789E722B6DD8E000A4E188 /* TemplateFormFactory.swift */,
+				ED789E732B6DD8E000A4E188 /* TemplateFormPresenter.swift */,
+				ED789E742B6DD8E000A4E188 /* TemplateFormRouter.swift */,
+				ED789E752B6DD8E000A4E188 /* TemplateFormViewController.swift */,
+				ED789E762B6DD8E000A4E188 /* TemplateFormInteractor.swift */,
+				ED789E772B6DD8E000A4E188 /* TemplateFormView.swift */,
+			);
+			path = TemplateForm;
+			sourceTree = "<group>";
+		};
 		ED8D23352B1421B2009E8326 /* Facade */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,8 +645,292 @@
 		ED8D233B2B14289C009E8326 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ED8D236E2B190978009E8326 /* Constants */,
+				ED8D23402B142FFA009E8326 /* BillsControl */,
+				ED8D233C2B1428D1009E8326 /* MonthlyBills */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ED8D233C2B1428D1009E8326 /* MonthlyBills */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D233D2B1428F4009E8326 /* MonthlyBillsViewModel.swift */,
+				EDF976E72B5E9CC700133036 /* BillSectionViewModel.swift */,
+				EDF976C62B58473B00133036 /* BillItemProtocol.swift */,
+				EDF976C82B5847DF00133036 /* BillStatus.swift */,
+				EDF976CA2B58483200133036 /* BillInstallment.swift */,
+				EDF976D02B58528300133036 /* BillType.swift */,
+				EDF976CC2B58492500133036 /* BillIncomeItemViewModel.swift */,
+				EDF976C02B5807A700133036 /* BillItemViewModel.swift */,
+				EDF976D22B58593400133036 /* BillItemFormType.swift */,
+				EDF976F72B607EC400133036 /* BillItemFormViewModel.swift */,
+			);
+			path = MonthlyBills;
+			sourceTree = "<group>";
+		};
+		ED8D23402B142FFA009E8326 /* BillsControl */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D23412B143031009E8326 /* AnnualCalendarViewModel.swift */,
+			);
+			path = BillsControl;
+			sourceTree = "<group>";
+		};
+		ED8D234D2B14CF45009E8326 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				ED53156C2B6AAAA7004C60FC /* FCTotalView */,
+				EDF976F42B5FFC0B00133036 /* FCUISwitch */,
+				EDF976F12B5EF22A00133036 /* FCUITextField */,
+				EDF976F02B5EF03200133036 /* FCUIPickerView */,
+				EDDAD6C62B29EB0F00C0BCB6 /* FCUICurrencyFieldView */,
+				ED8D23512B14D351009E8326 /* ErrorView */,
+				ED8D234E2B14CF4C009E8326 /* EmptyView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		ED8D234E2B14CF4C009E8326 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D234F2B14CF5E009E8326 /* EmptyView.swift */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
+		ED8D23512B14D351009E8326 /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D23522B14D360009E8326 /* ErrorView.swift */,
+			);
+			path = ErrorView;
+			sourceTree = "<group>";
+		};
+		ED8D23542B1560F0009E8326 /* AddAnnualCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D235F2B15654C009E8326 /* AddAnnualCalendarFactory.swift */,
+				ED8D23572B1561A7009E8326 /* AddAnnualCalendarViewController.swift */,
+				ED8D23552B156119009E8326 /* AddAnnualCalendarView.swift */,
+				ED8D23592B15625E009E8326 /* AddAnnualCalendarInteractor.swift */,
+				ED8D235B2B1562C9009E8326 /* AddAnnualCalendarPresenter.swift */,
+				ED8D235D2B1564CD009E8326 /* AddAnnualCalendarRouter.swift */,
+			);
+			path = AddAnnualCalendar;
+			sourceTree = "<group>";
+		};
+		ED8D236E2B190978009E8326 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D236F2B19098C009E8326 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		EDDAD6972B1F6D1200C0BCB6 /* BillDetail */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD6982B1F6D4500C0BCB6 /* BillDetailFactory.swift */,
+				EDDAD6992B1F6D4500C0BCB6 /* BillDetailPresenter.swift */,
+				EDDAD69A2B1F6D4500C0BCB6 /* BillDetailRouter.swift */,
+				EDDAD69B2B1F6D4500C0BCB6 /* BillDetailViewController.swift */,
+				EDDAD69C2B1F6D4500C0BCB6 /* BillDetailInteractor.swift */,
+				EDDAD69D2B1F6D4500C0BCB6 /* BillDetailView.swift */,
+			);
+			path = BillDetail;
+			sourceTree = "<group>";
+		};
+		EDDAD6C62B29EB0F00C0BCB6 /* FCUICurrencyFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD6C72B29EB3F00C0BCB6 /* FCUICurrencyFieldView.swift */,
+			);
+			path = FCUICurrencyFieldView;
+			sourceTree = "<group>";
+		};
+		EDDAD7092B4CC2DB00C0BCB6 /* MonthlyBillsTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD7182B4CC58700C0BCB6 /* Mocks */,
+				EDDAD7122B4CC30000C0BCB6 /* Tests */,
+			);
+			path = MonthlyBillsTests;
+			sourceTree = "<group>";
+		};
+		EDDAD7122B4CC30000C0BCB6 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				ED621FC62B7ED6A900E4867E /* Facade */,
+				EDF9768B2B5052AA00133036 /* Scenes */,
+				EDDAD7132B4CC31900C0BCB6 /* Workers */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		EDDAD7132B4CC31900C0BCB6 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD7162B4CC36E00C0BCB6 /* BillsWorkerTests.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		EDDAD7182B4CC58700C0BCB6 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				EDF9769F2B51D80200133036 /* Scenes */,
+				EDDAD71C2B503CFB00C0BCB6 /* Models */,
+				EDDAD7192B4CC5AB00C0BCB6 /* Workers */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		EDDAD7192B4CC5AB00C0BCB6 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD71A2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift */,
+				EDF9769B2B50966F00133036 /* BillsWorkerMock.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		EDDAD71C2B503CFB00C0BCB6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EDDAD71D2B503D0E00C0BCB6 /* BillsMock.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EDF9768B2B5052AA00133036 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C252B8CA79B00611C58 /* BillItemForm */,
+				ED3B8C092B8C9AE100611C58 /* BillDetail */,
+				ED3B8BF02B8B708A00611C58 /* CalendarDetail */,
+				ED3B8BD32B860D5D00611C58 /* TemplateForm */,
+				EDF976B92B51FA1600133036 /* AddAnnualCalendar */,
+				EDF9768C2B5052B200133036 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EDF9768C2B5052B200133036 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976B02B51F00400133036 /* __Snapshots__ */,
+				EDF9768F2B5052F500133036 /* HomeRouterTests.swift */,
+				EDF976942B506E8900133036 /* HomePresenterTests.swift */,
+				EDF976962B5093EE00133036 /* HomeInteractorTests.swift */,
+				EDF9769D2B51D79300133036 /* HomeViewControllerTests.swift */,
+				EDF976B72B51F80400133036 /* HomeFactoryTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EDF9769F2B51D80200133036 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				ED3B8C322B8CA8A100611C58 /* BillItemForm */,
+				ED3B8C0E2B8C9D6600611C58 /* BillDetail */,
+				ED3B8BF72B8B72C200611C58 /* CalendarDetail */,
+				ED3B8BD82B86A69B00611C58 /* TemplateForm */,
+				EDF976B62B51F5E700133036 /* AddAnnualCalendar */,
+				EDF976A02B51D80D00133036 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EDF976A02B51D80D00133036 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976922B50533C00133036 /* HomeMockController.swift */,
+				EDF976982B5094A100133036 /* HomePresenterMock.swift */,
+				EDF976A12B51D86B00133036 /* HomeInteractorMock.swift */,
+				EDF976A32B51D90B00133036 /* HomeRouterMock.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EDF976B02B51F00400133036 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976B12B51F00500133036 /* HomeViewControllerTests */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		EDF976B12B51F00500133036 /* HomeViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976B52B51F0C900133036 /* test_view_did_load.1.png */,
+				EDF976B22B51F00500133036 /* test_snapshot_success.1.png */,
+				EDF976B32B51F00500133036 /* test_snapshot_empty.1.png */,
+				EDF976B42B51F00500133036 /* test_snapshot_error.1.png */,
+			);
+			path = HomeViewControllerTests;
+			sourceTree = "<group>";
+		};
+		EDF976B62B51F5E700133036 /* AddAnnualCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976BE2B521D7C00133036 /* AddAnnualCalendarViewControllerMock.swift */,
+				ED621FB42B7B9F7E00E4867E /* AddAnnualCalendarPresenterMock.swift */,
+				ED621FB82B7CE42200E4867E /* AddAnnualCalendarInteractorMock.swift */,
+				ED621FBA2B7CE49500E4867E /* AddAnnualCalendarRouterMock.swift */,
+			);
+			path = AddAnnualCalendar;
+			sourceTree = "<group>";
+		};
+		EDF976B92B51FA1600133036 /* AddAnnualCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				ED621FBC2B7CE68A00E4867E /* __Snapshots__ */,
+				EDF976BA2B5213FC00133036 /* AddAnnualCalendarFactoryTests.swift */,
+				EDF976BC2B52154A00133036 /* AddAnnualCalendarRouterTests.swift */,
+				ED621FB02B7B9C2B00E4867E /* AddAnnualCalendarPresenterTests.swift */,
+				ED621FB22B7B9F5000E4867E /* AddAnnualCalendarInteractorTests.swift */,
+				ED621FB62B7BA28700E4867E /* AddAnnualCalendarViewControllerTests.swift */,
+			);
+			path = AddAnnualCalendar;
+			sourceTree = "<group>";
+		};
+		EDF976D42B594E9700133036 /* BillItemForm */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976DB2B594F4900133036 /* BillItemFormFactory.swift */,
+				EDF976DC2B594F4900133036 /* BillItemFormPresenter.swift */,
+				EDF976DD2B594F4900133036 /* BillItemFormRouter.swift */,
+				EDF976DE2B594F4900133036 /* BillItemFormViewController.swift */,
+				EDF976DF2B594F4900133036 /* BillItemFormInteractor.swift */,
+				EDF976E02B594F4900133036 /* BillItemFormView.swift */,
+			);
+			path = BillItemForm;
+			sourceTree = "<group>";
+		};
+		EDF976F02B5EF03200133036 /* FCUIPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976ED2B5EEF7300133036 /* FCUIPickerView.swift */,
+			);
+			path = FCUIPickerView;
+			sourceTree = "<group>";
+		};
+		EDF976F12B5EF22A00133036 /* FCUITextField */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976F22B5EF2DF00133036 /* FCUITextField.swift */,
+			);
+			path = FCUITextField;
+			sourceTree = "<group>";
+		};
+		EDF976F42B5FFC0B00133036 /* FCUISwitch */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976F52B5FFC2600133036 /* FCUISwitch.swift */,
+			);
+			path = FCUISwitch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +956,7 @@
 				ED13B7692AFEBB65003161D7 /* Sources */,
 				ED13B76A2AFEBB65003161D7 /* Frameworks */,
 				ED13B76B2AFEBB65003161D7 /* Resources */,
+				ED2C681C2B19566B00B831C6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +967,26 @@
 			productReference = ED13B76D2AFEBB65003161D7 /* MonthlyBills.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		EDDAD7072B4CC2DB00C0BCB6 /* MonthlyBillsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDDAD70F2B4CC2DB00C0BCB6 /* Build configuration list for PBXNativeTarget "MonthlyBillsTests" */;
+			buildPhases = (
+				000E388DE7FDACC2948C3B95 /* [CP] Check Pods Manifest.lock */,
+				EDDAD7042B4CC2DB00C0BCB6 /* Sources */,
+				EDDAD7052B4CC2DB00C0BCB6 /* Frameworks */,
+				EDDAD7062B4CC2DB00C0BCB6 /* Resources */,
+				402D93C73ECEFCAA04068AF7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EDDAD70E2B4CC2DB00C0BCB6 /* PBXTargetDependency */,
+			);
+			name = MonthlyBillsTests;
+			productName = MonthlyBillsTests;
+			productReference = EDDAD7082B4CC2DB00C0BCB6 /* MonthlyBillsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -187,10 +994,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					ED13B76C2AFEBB65003161D7 = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					EDDAD7072B4CC2DB00C0BCB6 = {
+						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -208,6 +1020,7 @@
 			projectRoot = "";
 			targets = (
 				ED13B76C2AFEBB65003161D7 /* MonthlyBills */,
+				EDDAD7072B4CC2DB00C0BCB6 /* MonthlyBillsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -220,9 +1033,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDDAD7062B4CC2DB00C0BCB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED3B8BEE2B87716F00611C58 /* test_snapshot_success.1.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		000E388DE7FDACC2948C3B95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MonthlyBillsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		402D93C73ECEFCAA04068AF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MonthlyBillsTests/Pods-MonthlyBillsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MonthlyBillsTests/Pods-MonthlyBillsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MonthlyBillsTests/Pods-MonthlyBillsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8E782F9E7FA988BA570B9093 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,18 +1112,143 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDF976F82B607EC400133036 /* BillItemFormViewModel.swift in Sources */,
+				EDDAD6C82B29EB3F00C0BCB6 /* FCUICurrencyFieldView.swift in Sources */,
+				EDF976CD2B58492500133036 /* BillIncomeItemViewModel.swift in Sources */,
+				ED2C68752B1A4A0200B831C6 /* CalendarDetailPresenter.swift in Sources */,
+				EDF976D32B58593400133036 /* BillItemFormType.swift in Sources */,
+				EDF976E52B594F4900133036 /* BillItemFormInteractor.swift in Sources */,
+				ED8D235E2B1564CD009E8326 /* AddAnnualCalendarRouter.swift in Sources */,
+				ED8D23702B19098C009E8326 /* Constants.swift in Sources */,
+				ED8D23422B143031009E8326 /* AnnualCalendarViewModel.swift in Sources */,
+				ED2C68772B1A4A0200B831C6 /* CalendarDetailViewController.swift in Sources */,
+				EDF976E82B5E9CC700133036 /* BillSectionViewModel.swift in Sources */,
+				EDF976F32B5EF2DF00133036 /* FCUITextField.swift in Sources */,
+				EDF976C72B58473B00133036 /* BillItemProtocol.swift in Sources */,
+				ED2C68742B1A4A0200B831C6 /* CalendarDetailFactory.swift in Sources */,
 				ED8D232E2B141EE6009E8326 /* HomeInteractor.swift in Sources */,
+				ED8D23582B1561A7009E8326 /* AddAnnualCalendarViewController.swift in Sources */,
+				EDDAD6A22B1F6D4500C0BCB6 /* BillDetailInteractor.swift in Sources */,
+				EDDAD6A02B1F6D4500C0BCB6 /* BillDetailRouter.swift in Sources */,
+				EDF976E32B594F4900133036 /* BillItemFormRouter.swift in Sources */,
+				EDDAD69E2B1F6D4500C0BCB6 /* BillDetailFactory.swift in Sources */,
+				ED789E7B2B6DD8E000A4E188 /* TemplateFormViewController.swift in Sources */,
 				ED8D23322B141FC2009E8326 /* HomeRouter.swift in Sources */,
+				EDDAD69F2B1F6D4500C0BCB6 /* BillDetailPresenter.swift in Sources */,
+				EDF976C92B5847DF00133036 /* BillStatus.swift in Sources */,
 				ED8D23342B142079009E8326 /* HomeFactory.swift in Sources */,
 				ED13B7822AFEC159003161D7 /* HomeViewController.swift in Sources */,
+				ED2C68762B1A4A0200B831C6 /* CalendarDetailRouter.swift in Sources */,
 				ED8D23372B1421C2009E8326 /* MBFacade.swift in Sources */,
 				ED8D232C2B141E20009E8326 /* HomeView.swift in Sources */,
+				ED8D23602B15654C009E8326 /* AddAnnualCalendarFactory.swift in Sources */,
+				ED789E782B6DD8E000A4E188 /* TemplateFormFactory.swift in Sources */,
+				EDF976E22B594F4900133036 /* BillItemFormPresenter.swift in Sources */,
+				ED8D23562B156119009E8326 /* AddAnnualCalendarView.swift in Sources */,
+				ED789E792B6DD8E000A4E188 /* TemplateFormPresenter.swift in Sources */,
+				ED2C68782B1A4A0200B831C6 /* CalendarDetailInteractor.swift in Sources */,
+				ED53156E2B6AAACC004C60FC /* FCTotalView.swift in Sources */,
 				ED8D23302B141F70009E8326 /* HomePresenter.swift in Sources */,
+				ED2C68092B19492800B831C6 /* BillsWorker.swift in Sources */,
+				EDF976C12B5807A700133036 /* BillItemViewModel.swift in Sources */,
+				ED789E7A2B6DD8E000A4E188 /* TemplateFormRouter.swift in Sources */,
+				ED8D235C2B1562C9009E8326 /* AddAnnualCalendarPresenter.swift in Sources */,
+				EDF976E62B594F4900133036 /* BillItemFormView.swift in Sources */,
+				ED8D23532B14D360009E8326 /* ErrorView.swift in Sources */,
+				EDDAD6A12B1F6D4500C0BCB6 /* BillDetailViewController.swift in Sources */,
+				EDF976EE2B5EEF7300133036 /* FCUIPickerView.swift in Sources */,
+				EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */,
+				EDF976E12B594F4900133036 /* BillItemFormFactory.swift in Sources */,
+				EDF976CB2B58483200133036 /* BillInstallment.swift in Sources */,
+				EDF976D12B58528300133036 /* BillType.swift in Sources */,
+				ED8D233E2B1428F4009E8326 /* MonthlyBillsViewModel.swift in Sources */,
+				ED789E7D2B6DD8E000A4E188 /* TemplateFormView.swift in Sources */,
+				ED2C68792B1A4A0200B831C6 /* CalendarDetailView.swift in Sources */,
+				EDF976E42B594F4900133036 /* BillItemFormViewController.swift in Sources */,
+				ED8D23502B14CF5E009E8326 /* EmptyView.swift in Sources */,
+				ED8D235A2B15625E009E8326 /* AddAnnualCalendarInteractor.swift in Sources */,
+				EDF976F62B5FFC2600133036 /* FCUISwitch.swift in Sources */,
 				ED13B7722AFEBB65003161D7 /* MonthlyBills.docc in Sources */,
+				ED789E7C2B6DD8E000A4E188 /* TemplateFormInteractor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDDAD7042B4CC2DB00C0BCB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED3B8C312B8CA86E00611C58 /* BillItemFormRouterTests.swift in Sources */,
+				ED3B8C382B8CAD3100611C58 /* BillItemFormInteractorTests.swift in Sources */,
+				ED3B8C0B2B8C9B2F00611C58 /* BillDetailFactoryTests.swift in Sources */,
+				ED3B8BF42B8B70F600611C58 /* CalendarDetailFactoryTests.swift in Sources */,
+				EDF976932B50533C00133036 /* HomeMockController.swift in Sources */,
+				EDDAD71E2B503D0E00C0BCB6 /* BillsMock.swift in Sources */,
+				ED3B8BFD2B8B774600611C58 /* CalendarDetailInteractorTests.swift in Sources */,
+				ED3B8C362B8CAA5C00611C58 /* BillItemFormPresenterTests.swift in Sources */,
+				EDF976902B5052F500133036 /* HomeRouterTests.swift in Sources */,
+				ED3B8C272B8CA7AE00611C58 /* BillItemFormFactoryTests.swift in Sources */,
+				ED3B8C3A2B8CAE1800611C58 /* BillItemFormPresenterMock.swift in Sources */,
+				EDF976972B5093EE00133036 /* HomeInteractorTests.swift in Sources */,
+				ED3B8BFB2B8B769200611C58 /* CalendarDetailPresenterTests.swift in Sources */,
+				ED3B8BF92B8B741100611C58 /* CalendarDetailViewControllerMock.swift in Sources */,
+				EDF976B82B51F80400133036 /* HomeFactoryTests.swift in Sources */,
+				ED621FB72B7BA28700E4867E /* AddAnnualCalendarViewControllerTests.swift in Sources */,
+				ED621FB12B7B9C2C00E4867E /* AddAnnualCalendarPresenterTests.swift in Sources */,
+				EDF976BB2B5213FC00133036 /* AddAnnualCalendarFactoryTests.swift in Sources */,
+				ED3B8C102B8C9D7000611C58 /* BillDetailViewControllerMock.swift in Sources */,
+				ED3B8C2F2B8CA84900611C58 /* BillDetailInteractorTests.swift in Sources */,
+				ED3B8BE62B876EA300611C58 /* TemplateFormInteractorMock.swift in Sources */,
+				EDF9769C2B50966F00133036 /* BillsWorkerMock.swift in Sources */,
+				ED3B8C342B8CA8BE00611C58 /* BillItemFormViewControllerMock.swift in Sources */,
+				ED3B8C052B8B79DE00611C58 /* CalendarDetailRouterMock.swift in Sources */,
+				ED3B8C1C2B8CA2EF00611C58 /* BillDetailRouterMock.swift in Sources */,
+				EDF9769E2B51D79300133036 /* HomeViewControllerTests.swift in Sources */,
+				ED621FB32B7B9F5000E4867E /* AddAnnualCalendarInteractorTests.swift in Sources */,
+				ED3B8C1A2B8CA19800611C58 /* BillDetailInteractorMock.swift in Sources */,
+				EDDAD71B2B4CC5DC00C0BCB6 /* MonthlyBillsRepositoryMock.swift in Sources */,
+				ED3B8BD52B860DDF00611C58 /* TemplateFormFactoryTests.swift in Sources */,
+				ED3B8C2A2B8CA81A00611C58 /* BillDetailPresenterTests.swift in Sources */,
+				ED3B8BF62B8B71FC00611C58 /* CalendarDetailRouterTests.swift in Sources */,
+				ED3B8C032B8B798300611C58 /* CalendarDetailInteractorMock.swift in Sources */,
+				ED621FB92B7CE42200E4867E /* AddAnnualCalendarInteractorMock.swift in Sources */,
+				ED3B8C3E2B8CB6B100611C58 /* BillItemFormInteractorMock.swift in Sources */,
+				EDF976A42B51D90B00133036 /* HomeRouterMock.swift in Sources */,
+				EDF976992B5094A100133036 /* HomePresenterMock.swift in Sources */,
+				EDDAD7172B4CC36E00C0BCB6 /* BillsWorkerTests.swift in Sources */,
+				ED3B8BE82B876F4500611C58 /* TemplateFormRouterMock.swift in Sources */,
+				ED3B8BD72B86A53B00611C58 /* TemplateFormRouterTests.swift in Sources */,
+				ED3B8C012B8B790400611C58 /* CalendarDetailViewControllerTests.swift in Sources */,
+				ED3B8BE02B876A1200611C58 /* TemplateFormInteractorTests.swift in Sources */,
+				ED3B8C402B8CB71B00611C58 /* BillItemFormRouterMock.swift in Sources */,
+				ED3B8BDA2B86A6B600611C58 /* TemplateFormViewControllerMock.swift in Sources */,
+				ED3B8BE42B876E0E00611C58 /* TemplateFormViewControllerTests.swift in Sources */,
+				EDF976A22B51D86B00133036 /* HomeInteractorMock.swift in Sources */,
+				EDF976BD2B52154A00133036 /* AddAnnualCalendarRouterTests.swift in Sources */,
+				ED621FC82B7ED6BA00E4867E /* MBFacadeTests.swift in Sources */,
+				ED3B8C182B8CA15A00611C58 /* BillDetailViewControllerTests.swift in Sources */,
+				ED3B8C3C2B8CB65800611C58 /* BillItemFormViewControllerTests.swift in Sources */,
+				ED3B8BFF2B8B779800611C58 /* CalendarDetailPresenterMock.swift in Sources */,
+				ED3B8BE22B876B1200611C58 /* TemplateFormPresenterMock.swift in Sources */,
+				ED3B8C162B8C9FF900611C58 /* BillDetailPresenterMock.swift in Sources */,
+				ED3B8C2D2B8CA82400611C58 /* BillDetailRouterTests.swift in Sources */,
+				EDF976952B506E8900133036 /* HomePresenterTests.swift in Sources */,
+				ED621FBB2B7CE49500E4867E /* AddAnnualCalendarRouterMock.swift in Sources */,
+				EDF976BF2B521D7C00133036 /* AddAnnualCalendarViewControllerMock.swift in Sources */,
+				ED3B8BDC2B87640300611C58 /* TemplateFormPresenterTests.swift in Sources */,
+				ED621FB52B7B9F7E00E4867E /* AddAnnualCalendarPresenterMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EDDAD70E2B4CC2DB00C0BCB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = ED13B76C2AFEBB65003161D7 /* MonthlyBills */;
+			targetProxy = EDDAD70D2B4CC2DB00C0BCB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		ED13B7742AFEBB65003161D7 /* Debug */ = {
@@ -405,6 +1390,7 @@
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -417,9 +1403,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.MonthlyBills;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -437,6 +1426,7 @@
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,7 +1439,49 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.MonthlyBills;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EDDAD7102B4CC2DB00C0BCB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EABD483C49CA17BDD6C27C2E /* Pods-MonthlyBillsTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9Y7M54NCKD;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.MonthlyBillsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDDAD7112B4CC2DB00C0BCB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9A4EA3A1AACF72B64D25685 /* Pods-MonthlyBillsTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9Y7M54NCKD;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.MonthlyBillsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -472,6 +1504,15 @@
 			buildConfigurations = (
 				ED13B7772AFEBB65003161D7 /* Debug */,
 				ED13B7782AFEBB65003161D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDDAD70F2B4CC2DB00C0BCB6 /* Build configuration list for PBXNativeTarget "MonthlyBillsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDDAD7102B4CC2DB00C0BCB6 /* Debug */,
+				EDDAD7112B4CC2DB00C0BCB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

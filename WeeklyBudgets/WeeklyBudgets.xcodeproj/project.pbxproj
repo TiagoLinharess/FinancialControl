@@ -60,7 +60,6 @@
 		ED8D230B2B0A6598009E8326 /* WeeklyReviewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D230A2B0A6598009E8326 /* WeeklyReviewViewModelTests.swift */; };
 		ED8D230E2B0AB54D009E8326 /* AddWeeklyExpenseViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D230D2B0AB54D009E8326 /* AddWeeklyExpenseViewTests.swift */; };
 		ED8D23112B0AB611009E8326 /* AddWeeklyExpenseViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23102B0AB611009E8326 /* AddWeeklyExpenseViewModelMock.swift */; };
-		ED8D231A2B0CDBDB009E8326 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23192B0CDBDB009E8326 /* XCTestCase+Extensions.swift */; };
 		ED8D231C2B0CEB8F009E8326 /* AddWeeklyExpenseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D231B2B0CEB8F009E8326 /* AddWeeklyExpenseViewModelTests.swift */; };
 		ED8D231F2B0F82C4009E8326 /* WeeklyDetailRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D231E2B0F82C4009E8326 /* WeeklyDetailRouterTests.swift */; };
 		ED8D23212B0F88A8009E8326 /* WeeklyDetailNavigationOptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23202B0F88A8009E8326 /* WeeklyDetailNavigationOptionTests.swift */; };
@@ -151,7 +150,6 @@
 		ED8D230D2B0AB54D009E8326 /* AddWeeklyExpenseViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseViewTests.swift; sourceTree = "<group>"; };
 		ED8D23102B0AB611009E8326 /* AddWeeklyExpenseViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseViewModelMock.swift; sourceTree = "<group>"; };
 		ED8D23142B0AB757009E8326 /* test_snapshot.1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_snapshot.1.png; sourceTree = "<group>"; };
-		ED8D23192B0CDBDB009E8326 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		ED8D231B2B0CEB8F009E8326 /* AddWeeklyExpenseViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseViewModelTests.swift; sourceTree = "<group>"; };
 		ED8D231E2B0F82C4009E8326 /* WeeklyDetailRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailRouterTests.swift; sourceTree = "<group>"; };
 		ED8D23202B0F88A8009E8326 /* WeeklyDetailNavigationOptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyDetailNavigationOptionTests.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 			children = (
 				ED13B7342AFEB958003161D7 /* Mocks */,
 				ED13B73D2AFEB958003161D7 /* Tests */,
-				ED8D23192B0CDBDB009E8326 /* XCTestCase+Extensions.swift */,
 			);
 			path = WeeklyBudgetsTests;
 			sourceTree = "<group>";
@@ -975,7 +972,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8D23232B0F9C9C009E8326 /* WeeklyRouterTests.swift in Sources */,
-				ED8D231A2B0CDBDB009E8326 /* XCTestCase+Extensions.swift in Sources */,
 				ED8D23112B0AB611009E8326 /* AddWeeklyExpenseViewModelMock.swift in Sources */,
 				ED8D231F2B0F82C4009E8326 /* WeeklyDetailRouterTests.swift in Sources */,
 				ED13B75B2AFEB958003161D7 /* WeeklyBudgetsHomeViewModelTests.swift in Sources */,
@@ -1063,9 +1059,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.WeeklyBudgetsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1081,9 +1080,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.WeeklyBudgetsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1227,6 +1229,7 @@
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1239,9 +1242,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.WeeklyBudgets;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1260,6 +1266,7 @@
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1272,9 +1279,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.WeeklyBudgets;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

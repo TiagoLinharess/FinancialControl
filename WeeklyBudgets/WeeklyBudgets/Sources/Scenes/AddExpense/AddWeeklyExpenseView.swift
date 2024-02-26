@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 30/10/23.
 //
 
+import Core
 import CurrencyText
 import SharpnezCore
 import SwiftUI
@@ -44,7 +45,7 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
             }
             Section(Constants.AddWeeklyExpenseView.value) {
                 CurrencyTextField(configuration: .init(
-                    placeholder: Constants.Commons.currencyPlaceholder,
+                    placeholder: CoreConstants.Commons.currencyPlaceholder,
                     text: $viewModel.value,
                     formatter: $currencyFormatter,
                     textFieldConfiguration: nil
@@ -57,14 +58,14 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
             Button {
                 submit()
             } label: {
-                Label(String(), systemImage: Constants.Icons.check)
+                Label(String(), systemImage: CoreConstants.Icons.check)
             }
         }
-        .alert(Constants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
+        .alert(CoreConstants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
             Button {
                 viewModel.alertAction?()
             } label: {
-                Text(Constants.Commons.ok)
+                Text(CoreConstants.Commons.ok)
             }
         } message: {
             Text(viewModel.alertMessage)

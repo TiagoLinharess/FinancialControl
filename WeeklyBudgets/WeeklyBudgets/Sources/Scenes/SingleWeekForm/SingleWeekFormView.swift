@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 30/08/23.
 //
 
+import Core
 import CurrencyText
 import SharpnezCore
 import SharpnezDesignSystem
@@ -35,11 +36,12 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
                         Text($0)
                     }
                 }
-                .pickerStyle(.navigationLink)
+                .pickerStyle(.wheel)
+                .frame(height: CoreConstants.Sizes.pickerHeight)
             }
             Section(header: Text(Constants.SingleWeekForm.budgetPlaceholder)) {
                 CurrencyTextField(configuration: .init(
-                    placeholder: Constants.Commons.currencyPlaceholder,
+                    placeholder: CoreConstants.Commons.currencyPlaceholder,
                     text: $viewModel.weekBudget,
                     formatter: $currencyFormatter,
                     textFieldConfiguration: nil
@@ -47,7 +49,7 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
             }
             Section(header: Text(Constants.SingleWeekForm.creditCardPlaceholder)) {
                 CurrencyTextField(configuration: .init(
-                    placeholder: Constants.Commons.currencyPlaceholder,
+                    placeholder: CoreConstants.Commons.currencyPlaceholder,
                     text: $viewModel.creditCardLimit,
                     formatter: $currencyFormatter,
                     textFieldConfiguration: nil
@@ -59,14 +61,14 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
             Button {
                 submit()
             } label: {
-                Label(String(), systemImage: Constants.Icons.check)
+                Label(String(), systemImage: CoreConstants.Icons.check)
             }
         }
-        .alert(Constants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
+        .alert(CoreConstants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
             Button {
                 viewModel.presentAlert = false
             } label: {
-                Text(Constants.Commons.ok)
+                Text(CoreConstants.Commons.ok)
             }
         } message: {
             Text(viewModel.alertMessage)

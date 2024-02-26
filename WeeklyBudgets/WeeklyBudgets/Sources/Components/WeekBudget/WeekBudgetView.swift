@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 05/09/23.
 //
 
+import Core
 import SwiftUI
 
 struct WeekBudgetView: View {
@@ -26,7 +27,7 @@ struct WeekBudgetView: View {
                     Spacer()
                     Text(weekBudget.week)
                 } icon: {
-                    Image(systemName: Constants.Icons.monthlyCalendar)
+                    Image(systemName: CoreConstants.Icons.calendar)
                 }
                 Label {
                     Text(Constants.WeekBudgetView.budgetTitle)
@@ -38,7 +39,7 @@ struct WeekBudgetView: View {
                                 current: weekBudget.currentBudget
                             ))
                 } icon: {
-                    Image(systemName: Constants.Icons.cash)
+                    Image(systemName: CoreConstants.Icons.cash)
                 }
                 Label {
                     Text(Constants.WeekBudgetView.creditCardTitle)
@@ -50,7 +51,7 @@ struct WeekBudgetView: View {
                                 current: weekBudget.creditCardRemainingLimit
                             ))
                 } icon: {
-                    Image(systemName: Constants.Icons.creditCard)
+                    Image(systemName: CoreConstants.Icons.creditCard)
                 }
             }
             .contentShape(Rectangle())

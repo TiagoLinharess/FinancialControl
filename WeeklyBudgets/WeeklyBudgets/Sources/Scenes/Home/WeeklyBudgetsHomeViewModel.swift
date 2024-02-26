@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 30/08/23.
 //
 
+import Core
 import SwiftUI
 import SharpnezCore
 import SharpnezDesignSystem
@@ -59,7 +60,7 @@ final class WeeklyBudgetsHomeViewModel: WeeklyBudgetsHomeViewModelProtocol {
             viewStatus = .error(error.message)
             budgets = []
         } catch {
-            viewStatus = .error(Constants.Commons.defaultErrorMessage)
+            viewStatus = .error(CoreConstants.Commons.defaultErrorMessage)
             budgets = []
         }
     }
@@ -74,7 +75,7 @@ final class WeeklyBudgetsHomeViewModel: WeeklyBudgetsHomeViewModelProtocol {
         } catch let error as CoreError {
             viewStatus = .error(error.message)
         } catch {
-            viewStatus = .error(Constants.Commons.defaultErrorMessage)
+            viewStatus = .error(CoreConstants.Commons.defaultErrorMessage)
         }
     }
 }

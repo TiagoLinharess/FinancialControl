@@ -11,6 +11,16 @@ import SharpnezCore
 
 final class WeeklyBudgetsRepositoryTests: XCTestCase {
     
+    override func setUpWithError() throws {
+        UserDefaults.standard.removeObject(forKey: "WeeklyBudgetsRepository_test_create")
+        UserDefaults.standard.removeObject(forKey: "WeeklyBudgetsRepository_test_create_existent_week")
+        UserDefaults.standard.removeObject(forKey: "WeeklyBudgetsRepository_test_read")
+        UserDefaults.standard.removeObject(forKey: "WeeklyBudgetsRepository_test_read_empty")
+        UserDefaults.standard.removeObject(forKey: "WeeklyBudgetsRepository_test_update")
+        UserDefaults.standard.removeObject(forKey: "WeeklyBudgetsRepository_test_update_do_not_exist_week")
+        UserDefaults.standard.removeObject(forKey: "WeeklyBudgetsRepository_test_delete")
+    }
+    
     func test_key() throws {
         let sut = WeeklyBudgetsRepository(key: "WeeklyBudgetsRepository_test_key")
         XCTAssertTrue(sut.key == "WeeklyBudgetsRepository_test_key")

@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 07/09/23.
 //
 
+import Core
 import SharpnezDesignSystem
 import SwiftUI
 
@@ -24,7 +25,7 @@ struct HomeErrorView: View {
             Button {
                 action()
             } label: {
-                Text(Constants.Commons.tryAgain)
+                Text(CoreConstants.Commons.tryAgain)
             }
             .primarySHStyle(backgroundColor: .blue, foregroundColor: .white, font: .body)
         }

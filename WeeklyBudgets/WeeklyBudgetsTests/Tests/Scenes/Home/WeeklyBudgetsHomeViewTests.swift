@@ -4,6 +4,8 @@
 //
 //  Created by Tiago Linhares on 02/09/23.
 //
+
+import Core
 @testable import WeeklyBudgets
 import SnapshotTesting
 import SwiftUI
@@ -29,7 +31,7 @@ final class WeeklyBudgetsHomeViewTests: XCTestCase {
     }
 
     func test_snapshot_empty() throws {
-        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
+        let vc = TestUtils.get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
     
@@ -37,14 +39,14 @@ final class WeeklyBudgetsHomeViewTests: XCTestCase {
         mock.viewStatus = .success
         mock.budgets = WeeklyBudgetViewModelMock.getThree()
         
-        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
+        let vc = TestUtils.get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
     
     func test_snapshot_with_error() throws {
         mock.viewStatus = .error("Error")
         
-        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
+        let vc = TestUtils.get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
     
@@ -52,7 +54,7 @@ final class WeeklyBudgetsHomeViewTests: XCTestCase {
         mock.viewStatus = .error("Error")
         mock.addBudgetFlowPresented = true
         
-        let vc = get_swiftui_view_ready_for_snapshot(view: sut)
+        let vc = TestUtils.get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)
     }
 }
