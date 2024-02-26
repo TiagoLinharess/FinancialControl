@@ -112,7 +112,7 @@ final class BillsWorkerTests: XCTestCase {
     }
     
     func test_edit_bill_success() throws {
-        XCTAssertNoThrow(try sut.updateBill(bill: BillsMock.billComplete))
+        XCTAssertNoThrow(try sut.updateBill(bill: BillsMock.billCompleteWithInstallment))
     }
     
     func test_edit_bill_error() throws {
