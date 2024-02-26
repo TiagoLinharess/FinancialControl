@@ -13,7 +13,7 @@ def sharpnez_core_pod
 end
 
 def  sharpnez_pods
-  pod 'SharpnezDesignSystem', :path => '~/Documents/ProjetosPessoais/IOSSDK'
+  pod 'SharpnezDesignSystem', '1.2.0'
   sharpnez_core_pod
 end
 
