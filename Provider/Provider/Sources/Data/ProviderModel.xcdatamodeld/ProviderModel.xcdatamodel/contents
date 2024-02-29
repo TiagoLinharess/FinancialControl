@@ -2,5 +2,11 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="AnnualCalendarEntity" representedClassName="AnnualCalendarEntity" syncable="YES" codeGenerationType="class">
         <attribute name="year" optional="YES" attributeType="String"/>
+        <relationship name="months" optional="YES" toMany="YES" minCount="12" maxCount="12" deletionRule="Nullify" destinationEntity="MonthlyBillsEntity" inverseName="year" inverseEntity="MonthlyBillsEntity"/>
+    </entity>
+    <entity name="MonthlyBillsEntity" representedClassName="MonthlyBillsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="month" optional="YES" attributeType="String"/>
+        <relationship name="year" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AnnualCalendarEntity" inverseName="months" inverseEntity="AnnualCalendarEntity"/>
     </entity>
 </model>

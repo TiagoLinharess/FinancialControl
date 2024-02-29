@@ -39,16 +39,8 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     // MARK: Create
     
     public func create(annualCalendar: AnnualCalendarResponse) throws {
-        var currentCalendars = try read()
-        
-        if compareCalendars(calendar: annualCalendar, currentCalendars: currentCalendars) {
-            throw CoreError.customError(Constants.MonthlyBillsRepository.existentCalendar)
-        }
-        
-        currentCalendars.insert(annualCalendar, at: .zero)
-        
-        let data = try JSONEncoder().encode(currentCalendars)
-        UserDefaults.standard.set(data, forKey: key)
+        let repository = CalendarsRepository()
+        try repository.create(annualCalendar: annualCalendar)
     }
     
     public func createBillItem(item: BillItemResponse, billId: String, billType: BillSectionResponse.BillType) throws {
@@ -88,21 +80,13 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     // MARK: Read
     
     public func read() throws -> [AnnualCalendarResponse] {
-        guard let data = UserDefaults.standard.data(forKey: key) else { return [] }
-        let response = try JSONDecoder().decode([AnnualCalendarResponse].self, from: data)
-        return response
+        let repository = CalendarsRepository()
+        return try repository.read()
     }
     
     public func readAtYear(year: String) throws -> AnnualCalendarResponse {
-        let currentCalendars = try read()
-        
-        guard let calendar = currentCalendars.first(where: { calendar in
-            calendar.year == year
-        }) else {
-            throw CoreError.customError(Constants.MonthlyBillsRepository.calendarNotFound)
-        }
-        
-        return calendar
+        let repository = CalendarsRepository()
+        return try repository.readAtYear(year: year)
     }
     
     public func readAtMonth(id: String) throws -> MonthlyBillsResponse {
@@ -216,12 +200,6 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
 private extension MonthlyBillsRepository {
     
     // MARK: Private Methods
-    
-    func compareCalendars(calendar: AnnualCalendarResponse, currentCalendars: [AnnualCalendarResponse]) -> Bool {
-        currentCalendars.contains { currentCalendar in
-            return currentCalendar.year == calendar.year
-        }
-    }
     
     func findCalendarAndBillIndices(for billId: String) throws -> (calendarIndex: Int, billIndex: Int) {
         let calendars = try read()

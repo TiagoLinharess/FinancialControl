@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		02DACDA5139EC8121C2A0750 /* Pods_ProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BB52891D16D858EFDDFE4A /* Pods_ProviderTests.framework */; };
 		D281A1C55C0B04F90D1B1EC3 /* Pods_Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5886F081BF1E5448EE06A63D /* Pods_Provider.framework */; };
+		ED0CD1F12B91053800A0A8BB /* CalendarsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CD1F02B91053800A0A8BB /* CalendarsRepository.swift */; };
+		ED0CD1F72B91170200A0A8BB /* BillsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CD1F62B91170200A0A8BB /* BillsRepository.swift */; };
 		ED11D26E2B02484000514D7C /* Provider.docc in Sources */ = {isa = PBXBuildFile; fileRef = ED11D26D2B02484000514D7C /* Provider.docc */; };
 		ED11D26F2B02484000514D7C /* Provider.h in Headers */ = {isa = PBXBuildFile; fileRef = ED11D26C2B02484000514D7C /* Provider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED11D27B2B02489F00514D7C /* WeeklyBudgetsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D27A2B02489F00514D7C /* WeeklyBudgetsRepository.swift */; };
@@ -45,6 +47,8 @@
 		5886F081BF1E5448EE06A63D /* Pods_Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BB52891D16D858EFDDFE4A /* Pods_ProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB240ACB2383411E3DD440EA /* Pods-ProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProviderTests.release.xcconfig"; path = "Target Support Files/Pods-ProviderTests/Pods-ProviderTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED0CD1F02B91053800A0A8BB /* CalendarsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsRepository.swift; sourceTree = "<group>"; };
+		ED0CD1F62B91170200A0A8BB /* BillsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsRepository.swift; sourceTree = "<group>"; };
 		ED11D2692B02484000514D7C /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D26C2B02484000514D7C /* Provider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
 		ED11D26D2B02484000514D7C /* Provider.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Provider.docc; sourceTree = "<group>"; };
@@ -107,6 +111,24 @@
 				E8BB52891D16D858EFDDFE4A /* Pods_ProviderTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED0CD1F22B910A3800A0A8BB /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */,
+				ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */,
+				EDF976F92B61D97C00133036 /* BillSectionResponse.swift */,
+				EDF976FB2B61DAFE00133036 /* BillItemResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		ED0CD1F32B910A4300A0A8BB /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		ED11D25F2B02484000514D7C = {
@@ -264,6 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				ED2C680C2B194F8900B831C6 /* MonthlyBillsRepository.swift */,
+				ED0CD1F02B91053800A0A8BB /* CalendarsRepository.swift */,
+				ED0CD1F62B91170200A0A8BB /* BillsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -271,10 +295,8 @@
 		ED2C680E2B194F9300B831C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */,
-				ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */,
-				EDF976F92B61D97C00133036 /* BillSectionResponse.swift */,
-				EDF976FB2B61DAFE00133036 /* BillItemResponse.swift */,
+				ED0CD1F32B910A4300A0A8BB /* Entity */,
+				ED0CD1F22B910A3800A0A8BB /* Response */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -483,6 +505,7 @@
 			files = (
 				ED11D2812B02492900514D7C /* WeeklyBudgetResponse.swift in Sources */,
 				ED2C68102B194FC400B831C6 /* MonthlyBillsResponse.swift in Sources */,
+				ED0CD1F72B91170200A0A8BB /* BillsRepository.swift in Sources */,
 				ED11D2802B02492900514D7C /* WeeklyBudgetListResponse.swift in Sources */,
 				EDF976FA2B61D97C00133036 /* BillSectionResponse.swift in Sources */,
 				ED11D26E2B02484000514D7C /* Provider.docc in Sources */,
@@ -490,6 +513,7 @@
 				ED5134602B9005EF00F7B0DA /* ProviderContainer.swift in Sources */,
 				ED11D27F2B02492900514D7C /* WeeklyExpenseResponse.swift in Sources */,
 				ED11D27B2B02489F00514D7C /* WeeklyBudgetsRepository.swift in Sources */,
+				ED0CD1F12B91053800A0A8BB /* CalendarsRepository.swift in Sources */,
 				ED2C68122B1950BA00B831C6 /* AnnualCalendarResponse.swift in Sources */,
 				ED11D28C2B0267C200514D7C /* Constants.swift in Sources */,
 				ED51345E2B90030200F7B0DA /* ProviderModel.xcdatamodeld in Sources */,

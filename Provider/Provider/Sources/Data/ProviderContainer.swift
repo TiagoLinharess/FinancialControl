@@ -13,9 +13,16 @@ final class ProviderContainer {
     // MARK: Container
     
     lazy var persistentContainer: NSPersistentContainer = {
-        guard let modelDir = Bundle(for: type(of: self)).url(forResource: Constants.Entity.model, withExtension: Constants.Entity.modelExtension) else { fatalError() }
-        guard let mom = NSManagedObjectModel(contentsOf: modelDir) else { fatalError() }
+        guard let modelDir = Bundle(
+            for: type(of: self)).url(
+                forResource: Constants.Entity.model,
+                withExtension: Constants.Entity.modelExtension
+            )
+        else {
+            fatalError()
+        }
         
+        guard let mom = NSManagedObjectModel(contentsOf: modelDir) else { fatalError() }
         let container = NSPersistentContainer(name: Constants.Entity.model, managedObjectModel: mom)
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -29,7 +36,7 @@ final class ProviderContainer {
     
     // MARK: Context
     
-    func saveContext () {
+    func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {

@@ -14,6 +14,8 @@ enum Constants {
     enum Entity {
         static let model: String = "ProviderModel"
         static let modelExtension: String = "momd"
+        static let calendar: String = "AnnualCalendarEntity"
+        static let bill: String = "MonthlyBillsEntity"
     }
     
     // MARK: User Defaults Keys

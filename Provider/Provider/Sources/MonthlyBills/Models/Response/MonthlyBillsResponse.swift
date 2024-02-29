@@ -26,5 +26,13 @@ public struct MonthlyBillsResponse: Codable {
         self.month = month
         self.sections = sections
     }
+    
+    // MARK: Init From Entity
+    
+    init(from monthlyBillsEntity: MonthlyBillsEntity) {
+        self.id = monthlyBillsEntity.id ?? String()
+        self.month = monthlyBillsEntity.month ?? String()
+        self.sections = []
+    }
 }
 
