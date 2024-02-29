@@ -10,7 +10,6 @@
 		02DACDA5139EC8121C2A0750 /* Pods_ProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BB52891D16D858EFDDFE4A /* Pods_ProviderTests.framework */; };
 		D281A1C55C0B04F90D1B1EC3 /* Pods_Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5886F081BF1E5448EE06A63D /* Pods_Provider.framework */; };
 		ED0CD1F12B91053800A0A8BB /* CalendarsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CD1F02B91053800A0A8BB /* CalendarsRepository.swift */; };
-		ED0CD1F72B91170200A0A8BB /* BillsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CD1F62B91170200A0A8BB /* BillsRepository.swift */; };
 		ED11D26E2B02484000514D7C /* Provider.docc in Sources */ = {isa = PBXBuildFile; fileRef = ED11D26D2B02484000514D7C /* Provider.docc */; };
 		ED11D26F2B02484000514D7C /* Provider.h in Headers */ = {isa = PBXBuildFile; fileRef = ED11D26C2B02484000514D7C /* Provider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED11D27B2B02489F00514D7C /* WeeklyBudgetsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D27A2B02489F00514D7C /* WeeklyBudgetsRepository.swift */; };
@@ -48,7 +47,6 @@
 		E8BB52891D16D858EFDDFE4A /* Pods_ProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB240ACB2383411E3DD440EA /* Pods-ProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProviderTests.release.xcconfig"; path = "Target Support Files/Pods-ProviderTests/Pods-ProviderTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED0CD1F02B91053800A0A8BB /* CalendarsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsRepository.swift; sourceTree = "<group>"; };
-		ED0CD1F62B91170200A0A8BB /* BillsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsRepository.swift; sourceTree = "<group>"; };
 		ED11D2692B02484000514D7C /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D26C2B02484000514D7C /* Provider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
 		ED11D26D2B02484000514D7C /* Provider.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Provider.docc; sourceTree = "<group>"; };
@@ -287,7 +285,6 @@
 			children = (
 				ED2C680C2B194F8900B831C6 /* MonthlyBillsRepository.swift */,
 				ED0CD1F02B91053800A0A8BB /* CalendarsRepository.swift */,
-				ED0CD1F62B91170200A0A8BB /* BillsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -505,7 +502,6 @@
 			files = (
 				ED11D2812B02492900514D7C /* WeeklyBudgetResponse.swift in Sources */,
 				ED2C68102B194FC400B831C6 /* MonthlyBillsResponse.swift in Sources */,
-				ED0CD1F72B91170200A0A8BB /* BillsRepository.swift in Sources */,
 				ED11D2802B02492900514D7C /* WeeklyBudgetListResponse.swift in Sources */,
 				EDF976FA2B61D97C00133036 /* BillSectionResponse.swift in Sources */,
 				ED11D26E2B02484000514D7C /* Provider.docc in Sources */,
