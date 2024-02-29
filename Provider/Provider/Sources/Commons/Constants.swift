@@ -9,6 +9,13 @@ import Foundation
 
 enum Constants {
     
+    // MARK: Entity
+    
+    enum Entity {
+        static let model: String = "ProviderModel"
+        static let modelExtension: String = "momd"
+    }
+    
     // MARK: User Defaults Keys
     
     enum UserDefaultsKeys {
