@@ -56,7 +56,7 @@ final class CalendarsRepository: CalendarsRepositoryProtocol {
         monthlyBillsRequest.predicate = NSPredicate(format: "year = %@", annualCalendarEntity)
         let monthlyBillsEntities = try container.persistentContainer.viewContext.fetch(monthlyBillsRequest)
         
-        return AnnualCalendarResponse(from: annualCalendarEntity, with: monthlyBillsEntities)
+        return sortMonths(of: AnnualCalendarResponse(from: annualCalendarEntity, with: monthlyBillsEntities))
     }
 }
 
@@ -77,5 +77,20 @@ private extension CalendarsRepository {
             monthlyBillsEntity.month = month
             annualCalendarEntity.addToMonths(monthlyBillsEntity)
         }
+    }
+    
+    func sortMonths(of annualCalendarResponse: AnnualCalendarResponse) -> AnnualCalendarResponse {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM"
+        
+        let sortedMonths = annualCalendarResponse.monthlyBills.sorted {
+            guard let month0 = formatter.date(from: $0.month),
+                  let month1 = formatter.date(from: $1.month)
+            else { return false }
+            
+            return month0 < month1
+        }
+        
+        return AnnualCalendarResponse(year: annualCalendarResponse.year, monthlyBills: sortedMonths)
     }
 }
