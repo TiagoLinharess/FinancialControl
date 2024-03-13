@@ -37,22 +37,32 @@ final class BillsService: BillsServiceProtocol {
     
     func readAtMonth(id: String) throws -> MonthlyBillsResponse {
         let monthlyBillsEntity = try billsRepository.readAtMonth(id: id)
-        let sectionsEntities = try sectionsRepository.read(from: monthlyBillsEntity)
-        
-        let sectionsResponses = try sectionsEntities.compactMap { billSectionEntity -> BillSectionResponse? in
-            let itemsEntities = try itemsRepository.read(from: billSectionEntity)
-            
-            if itemsEntities.isEmpty {
-                return nil
-            }
-            
-            var billSectionResponse = BillSectionResponse(from: billSectionEntity)
-            billSectionResponse.items = itemsEntities.map { itemEntity -> BillItemResponse in return BillItemResponse(from: itemEntity) }
-            return billSectionResponse
-        }
+        let sectionsResponses = try fetchSections(for: monthlyBillsEntity)
         
         var monthlyBillsResponse = MonthlyBillsResponse(from: monthlyBillsEntity)
         monthlyBillsResponse.sections = sectionsResponses
         return monthlyBillsResponse
+    }
+}
+
+private extension BillsService {
+    
+    // MARK: Private Methods
+    
+    private func fetchSections(for monthlyBillsEntity: MonthlyBillsEntity) throws -> [BillSectionResponse] {
+        return try sectionsRepository.read(from: monthlyBillsEntity)
+            .compactMap { try billSectionEntityToResponse(billSectionEntity: $0) }
+            .sorted { $0.type.order < $1.type.order }
+    }
+    
+    private func fetchItems(for sectionEntity: BillSectionEntity) throws -> [BillItemResponse] {
+        let itemsEntities = try itemsRepository.read(from: sectionEntity)
+        return itemsEntities.map(BillItemResponse.init)
+    }
+    
+    private func billSectionEntityToResponse(billSectionEntity: BillSectionEntity) throws -> BillSectionResponse? {
+        var billSectionResponse = BillSectionResponse(from: billSectionEntity)
+        billSectionResponse.items = try fetchItems(for: billSectionEntity)
+        return billSectionResponse.items.isEmpty ? nil : billSectionResponse
     }
 }
