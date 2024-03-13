@@ -16,6 +16,19 @@ public struct BillSectionResponse: Codable {
         case investment
         case expense
         case creditCard
+        
+        var order: Int {
+            switch self {
+            case .income:
+                return 0
+            case .investment:
+                return 1
+            case .expense:
+                return 2
+            case .creditCard:
+                return 3
+            }
+        }
     }
     
     // MARK: Properties
