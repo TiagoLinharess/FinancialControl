@@ -31,6 +31,10 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     let key: String
     let templateKey: String
     
+    private let calendarsService: CalendarsServiceProtocol = CalendarsService()
+    private let billsService: BillsServiceProtocol = BillsService()
+    private let itemsService: ItemsServiceProtocol = ItemsService()
+    
     public init(key: String? = nil, templateKey: String? = nil) {
         self.key = key ?? Constants.UserDefaultsKeys.bills
         self.templateKey = templateKey ?? Constants.UserDefaultsKeys.billsTemplate
@@ -39,27 +43,11 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     // MARK: Create
     
     public func create(annualCalendar: AnnualCalendarResponse) throws {
-        let repository = CalendarsRepository()
-        try repository.create(annualCalendar: annualCalendar)
+        try calendarsService.create(annualCalendar: annualCalendar)
     }
     
     public func createBillItem(item: BillItemResponse, billId: String, billType: BillSectionResponse.BillType) throws {
-        var calendars = try read()
-        let (calendarIndex, billIndex) = try findCalendarAndBillIndices(for: billId)
-        var bill = calendars[calendarIndex].monthlyBills[billIndex]
-        
-        if let sectionIndex = bill.sections.firstIndex(where: { $0.type == billType }) {
-            bill.sections[sectionIndex].items.append(item)
-        } else if billType == .income {
-            bill.sections.insert(BillSectionResponse(items: [item], type: billType), at: 0)
-        } else {
-            bill.sections.append(BillSectionResponse(items: [item], type: billType))
-        }
-        
-        calendars[calendarIndex].monthlyBills[billIndex] = bill
-        
-        let data = try JSONEncoder().encode(calendars)
-        UserDefaults.standard.set(data, forKey: key)
+        try itemsService.create(item: item, billId: billId, billType: billType)
     }
     
     public func createTemplateItem(item: BillItemResponse, billType: BillSectionResponse.BillType) throws {
@@ -80,25 +68,15 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     // MARK: Read
     
     public func read() throws -> [AnnualCalendarResponse] {
-        let repository = CalendarsRepository()
-        return try repository.read()
+        return try calendarsService.read()
     }
     
     public func readAtYear(year: String) throws -> AnnualCalendarResponse {
-        let repository = CalendarsRepository()
-        return try repository.readAtYear(year: year)
+        return try calendarsService.readAtYear(year: year)
     }
     
     public func readAtMonth(id: String) throws -> MonthlyBillsResponse {
-        let calendars = try read()
-        
-        for calendar in calendars {
-            if let bill = calendar.monthlyBills.first(where: { $0.id == id }) {
-                return bill
-            }
-        }
-        
-        throw CoreError.customError(Constants.MonthlyBillsRepository.billNotFound)
+        return try billsService.readAtMonth(id: id)
     }
     
     public func readAtMonthWithTemplates(billId: String) throws -> MonthlyBillsResponse {
