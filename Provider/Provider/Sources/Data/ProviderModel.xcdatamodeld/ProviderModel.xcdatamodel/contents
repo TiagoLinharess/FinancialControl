@@ -4,9 +4,23 @@
         <attribute name="year" optional="YES" attributeType="String"/>
         <relationship name="months" optional="YES" toMany="YES" minCount="12" maxCount="12" deletionRule="Nullify" destinationEntity="MonthlyBillsEntity" inverseName="year" inverseEntity="MonthlyBillsEntity"/>
     </entity>
+    <entity name="BillItemEntity" representedClassName="BillItemEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="section" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BillSectionEntity" inverseName="items" inverseEntity="BillSectionEntity"/>
+    </entity>
+    <entity name="BillSectionEntity" representedClassName="BillSectionEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="bill" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MonthlyBillsEntity" inverseName="sections" inverseEntity="MonthlyBillsEntity"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BillItemEntity" inverseName="section" inverseEntity="BillItemEntity"/>
+    </entity>
     <entity name="MonthlyBillsEntity" representedClassName="MonthlyBillsEntity" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="month" optional="YES" attributeType="String"/>
+        <relationship name="sections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BillSectionEntity" inverseName="bill" inverseEntity="BillSectionEntity"/>
         <relationship name="year" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AnnualCalendarEntity" inverseName="months" inverseEntity="AnnualCalendarEntity"/>
     </entity>
 </model>
