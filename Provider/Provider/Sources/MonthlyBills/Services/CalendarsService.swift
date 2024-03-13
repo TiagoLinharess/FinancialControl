@@ -40,7 +40,7 @@ final class CalendarsService: CalendarsServiceProtocol {
     func create(annualCalendar: AnnualCalendarResponse) throws {
         let currentAnnualCalendarsResponses = try read()
         
-        if compareCalendars(calendar: annualCalendar, currentCalendars: currentAnnualCalendarsResponses) {
+        guard !calendarExists(annualCalendar, in: currentAnnualCalendarsResponses) else {
             throw CoreError.customError(Constants.MonthlyBillsRepository.existentCalendar)
         }
         
@@ -49,32 +49,12 @@ final class CalendarsService: CalendarsServiceProtocol {
     }
     
     func read() throws -> [AnnualCalendarResponse] {
-        let annualCalendarEntities = try calendarsRepository.read()
-        return annualCalendarEntities.map { entity -> AnnualCalendarResponse in return AnnualCalendarResponse(from: entity) }
+        return try calendarsRepository.read().map(AnnualCalendarResponse.init)
     }
     
     func readAtYear(year: String) throws -> AnnualCalendarResponse {
         let annualCalendarEntity = try calendarsRepository.readAtYear(year: year)
-        let monthlyBillsEntities = try billsRepository.read(from: annualCalendarEntity)
-        
-        let monthlyBillsResponses = try monthlyBillsEntities.map { monthlyBillsEntity -> MonthlyBillsResponse in
-            let sectionsEntities = try sectionsRepository.read(from: monthlyBillsEntity)
-            let sectionsResponses = try sectionsEntities.compactMap { billSectionEntity -> BillSectionResponse? in
-                let itemsEntities = try itemsRepository.read(from: billSectionEntity)
-                
-                if itemsEntities.isEmpty {
-                    return nil
-                }
-                
-                var billSectionResponse = BillSectionResponse(from: billSectionEntity)
-                billSectionResponse.items = itemsEntities.map { itemEntity -> BillItemResponse in return BillItemResponse(from: itemEntity) }
-                return billSectionResponse
-            }
-            
-            var monthlyBillsResponse = MonthlyBillsResponse(from: monthlyBillsEntity)
-            monthlyBillsResponse.sections = sectionsResponses
-            return monthlyBillsResponse
-        }
+        let monthlyBillsResponses = try buildMonthlyBillsResponses(from: annualCalendarEntity)
         
         var annualCalendarResponse = AnnualCalendarResponse(from: annualCalendarEntity)
         annualCalendarResponse.monthlyBills = monthlyBillsResponses
@@ -87,9 +67,27 @@ private extension CalendarsService {
     
     // MARK: Private Methods
     
-    func compareCalendars(calendar: AnnualCalendarResponse, currentCalendars: [AnnualCalendarResponse]) -> Bool {
-        currentCalendars.contains { currentCalendar in
-            return currentCalendar.year == calendar.year
+    func calendarExists(_ calendar: AnnualCalendarResponse, in calendars: [AnnualCalendarResponse]) -> Bool {
+        return calendars.contains { $0.year == calendar.year }
+    }
+    
+    func buildMonthlyBillsResponses(from annualCalendarEntity: AnnualCalendarEntity) throws -> [MonthlyBillsResponse] {
+        return try billsRepository.read(from: annualCalendarEntity).map { monthlyBillsEntity in
+            let sectionsResponses = try buildSectionsResponses(from: monthlyBillsEntity)
+            var monthlyBillsResponse = MonthlyBillsResponse(from: monthlyBillsEntity)
+            monthlyBillsResponse.sections = sectionsResponses
+            return monthlyBillsResponse
+        }
+    }
+    
+    func buildSectionsResponses(from monthlyBillsEntity: MonthlyBillsEntity) throws -> [BillSectionResponse] {
+        return try sectionsRepository.read(from: monthlyBillsEntity).compactMap { billSectionEntity in
+            let itemsEntities = try itemsRepository.read(from: billSectionEntity)
+            guard !itemsEntities.isEmpty else { return nil }
+            
+            var billSectionResponse = BillSectionResponse(from: billSectionEntity)
+            billSectionResponse.items = itemsEntities.map(BillItemResponse.init)
+            return billSectionResponse
         }
     }
     
@@ -101,7 +99,6 @@ private extension CalendarsService {
             guard let month0 = formatter.date(from: $0.month),
                   let month1 = formatter.date(from: $1.month)
             else { return false }
-            
             return month0 < month1
         }
         
