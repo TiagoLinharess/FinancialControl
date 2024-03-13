@@ -10,6 +10,10 @@ import UIKit
 
 final class ProviderContainer {
     
+    // MARK: Singleton
+    
+    static let shared: ProviderContainer = ProviderContainer()
+    
     // MARK: Container
     
     lazy var persistentContainer: NSPersistentContainer = {
