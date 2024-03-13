@@ -29,4 +29,17 @@ public struct BillSectionResponse: Codable {
         self.items = items
         self.type = type
     }
+    
+    // MARK: Init From Entity
+    
+    public init(from entity: BillSectionEntity) {
+        self.items = []
+        
+        guard let typeString = entity.type else {
+            self.type = .expense
+            return
+        }
+        
+        self.type = BillType(rawValue: typeString) ?? .expense
+    }
 }

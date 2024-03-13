@@ -23,10 +23,8 @@ public struct AnnualCalendarResponse: Codable {
     
     // MARK: Init From Entity
     
-    init(from annualCalendarEntity: AnnualCalendarEntity, with monthlyBillsEntities: [MonthlyBillsEntity]) {
+    init(from annualCalendarEntity: AnnualCalendarEntity) {
         self.year = annualCalendarEntity.year ?? String()
-        self.monthlyBills = monthlyBillsEntities.map { monthlyBillsEntity -> MonthlyBillsResponse in
-            return MonthlyBillsResponse(from: monthlyBillsEntity)
-        }
+        self.monthlyBills = []
     }
 }
