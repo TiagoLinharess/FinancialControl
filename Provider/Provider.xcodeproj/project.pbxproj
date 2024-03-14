@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		02DACDA5139EC8121C2A0750 /* Pods_ProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8BB52891D16D858EFDDFE4A /* Pods_ProviderTests.framework */; };
 		D281A1C55C0B04F90D1B1EC3 /* Pods_Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5886F081BF1E5448EE06A63D /* Pods_Provider.framework */; };
+		ED0CD1F12B91053800A0A8BB /* CalendarsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CD1F02B91053800A0A8BB /* CalendarsRepository.swift */; };
+		ED0CD1FD2B9F0D8C00A0A8BB /* BillsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CD1FC2B9F0D8C00A0A8BB /* BillsRepository.swift */; };
+		ED0CD1FF2B9F11AF00A0A8BB /* ItemsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0CD1FE2B9F11AF00A0A8BB /* ItemsRepository.swift */; };
 		ED11D26E2B02484000514D7C /* Provider.docc in Sources */ = {isa = PBXBuildFile; fileRef = ED11D26D2B02484000514D7C /* Provider.docc */; };
 		ED11D26F2B02484000514D7C /* Provider.h in Headers */ = {isa = PBXBuildFile; fileRef = ED11D26C2B02484000514D7C /* Provider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED11D27B2B02489F00514D7C /* WeeklyBudgetsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D27A2B02489F00514D7C /* WeeklyBudgetsRepository.swift */; };
@@ -19,10 +22,16 @@
 		ED11D2952B02716C00514D7C /* Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2692B02484000514D7C /* Provider.framework */; };
 		ED11D2A12B0271C500514D7C /* WeeklyBudgetsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2A02B0271C500514D7C /* WeeklyBudgetsRepositoryTests.swift */; };
 		ED11D2A52B02762D00514D7C /* WeeklyResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2A42B02762C00514D7C /* WeeklyResponseMock.swift */; };
+		ED1E3F132BA1161A00BEA7AF /* SectionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1E3F122BA1161A00BEA7AF /* SectionsRepository.swift */; };
+		ED1E3F162BA11EE600BEA7AF /* CalendarsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1E3F152BA11EE600BEA7AF /* CalendarsService.swift */; };
+		ED1E3F182BA123F800BEA7AF /* BillsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1E3F172BA123F800BEA7AF /* BillsService.swift */; };
+		ED1E3F1A2BA125DE00BEA7AF /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1E3F192BA125DE00BEA7AF /* ItemsService.swift */; };
 		ED2C680D2B194F8900B831C6 /* MonthlyBillsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C680C2B194F8900B831C6 /* MonthlyBillsRepository.swift */; };
 		ED2C68102B194FC400B831C6 /* MonthlyBillsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */; };
 		ED2C68122B1950BA00B831C6 /* AnnualCalendarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */; };
 		ED2C68222B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68212B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift */; };
+		ED51345E2B90030200F7B0DA /* ProviderModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED51345C2B90030200F7B0DA /* ProviderModel.xcdatamodeld */; };
+		ED5134602B9005EF00F7B0DA /* ProviderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED51345F2B9005EF00F7B0DA /* ProviderContainer.swift */; };
 		EDF976FA2B61D97C00133036 /* BillSectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976F92B61D97C00133036 /* BillSectionResponse.swift */; };
 		EDF976FC2B61DAFE00133036 /* BillItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976FB2B61DAFE00133036 /* BillItemResponse.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +52,9 @@
 		5886F081BF1E5448EE06A63D /* Pods_Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BB52891D16D858EFDDFE4A /* Pods_ProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB240ACB2383411E3DD440EA /* Pods-ProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProviderTests.release.xcconfig"; path = "Target Support Files/Pods-ProviderTests/Pods-ProviderTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED0CD1F02B91053800A0A8BB /* CalendarsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsRepository.swift; sourceTree = "<group>"; };
+		ED0CD1FC2B9F0D8C00A0A8BB /* BillsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsRepository.swift; sourceTree = "<group>"; };
+		ED0CD1FE2B9F11AF00A0A8BB /* ItemsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRepository.swift; sourceTree = "<group>"; };
 		ED11D2692B02484000514D7C /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D26C2B02484000514D7C /* Provider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
 		ED11D26D2B02484000514D7C /* Provider.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Provider.docc; sourceTree = "<group>"; };
@@ -54,10 +66,16 @@
 		ED11D2912B02716C00514D7C /* ProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D2A02B0271C500514D7C /* WeeklyBudgetsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsRepositoryTests.swift; sourceTree = "<group>"; };
 		ED11D2A42B02762C00514D7C /* WeeklyResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyResponseMock.swift; sourceTree = "<group>"; };
+		ED1E3F122BA1161A00BEA7AF /* SectionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsRepository.swift; sourceTree = "<group>"; };
+		ED1E3F152BA11EE600BEA7AF /* CalendarsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsService.swift; sourceTree = "<group>"; };
+		ED1E3F172BA123F800BEA7AF /* BillsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsService.swift; sourceTree = "<group>"; };
+		ED1E3F192BA125DE00BEA7AF /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
 		ED2C680C2B194F8900B831C6 /* MonthlyBillsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsRepository.swift; sourceTree = "<group>"; };
 		ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsResponse.swift; sourceTree = "<group>"; };
 		ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualCalendarResponse.swift; sourceTree = "<group>"; };
 		ED2C68212B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsRepositoryTests.swift; sourceTree = "<group>"; };
+		ED51345D2B90030200F7B0DA /* ProviderModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProviderModel.xcdatamodel; sourceTree = "<group>"; };
+		ED51345F2B9005EF00F7B0DA /* ProviderContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderContainer.swift; sourceTree = "<group>"; };
 		EDF976F92B61D97C00133036 /* BillSectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSectionResponse.swift; sourceTree = "<group>"; };
 		EDF976FB2B61DAFE00133036 /* BillItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemResponse.swift; sourceTree = "<group>"; };
 		F96A48CC6AB8D00F99294C60 /* Pods-ProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProviderTests.debug.xcconfig"; path = "Target Support Files/Pods-ProviderTests/Pods-ProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +123,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		ED0CD1F22B910A3800A0A8BB /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */,
+				ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */,
+				EDF976F92B61D97C00133036 /* BillSectionResponse.swift */,
+				EDF976FB2B61DAFE00133036 /* BillItemResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		ED11D25F2B02484000514D7C = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +175,7 @@
 		ED11D2762B02485900514D7C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				ED51345B2B9002E100F7B0DA /* Data */,
 				ED11D28A2B0267B100514D7C /* Commons */,
 				ED2C680A2B194CCB00B831C6 /* MonthlyBills */,
 				ED11D2772B02486400514D7C /* WeeklyBudgets */,
@@ -246,9 +276,20 @@
 			path = WeeklyBudgets;
 			sourceTree = "<group>";
 		};
+		ED1E3F142BA11C7C00BEA7AF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ED1E3F152BA11EE600BEA7AF /* CalendarsService.swift */,
+				ED1E3F172BA123F800BEA7AF /* BillsService.swift */,
+				ED1E3F192BA125DE00BEA7AF /* ItemsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		ED2C680A2B194CCB00B831C6 /* MonthlyBills */ = {
 			isa = PBXGroup;
 			children = (
+				ED1E3F142BA11C7C00BEA7AF /* Services */,
 				ED2C680E2B194F9300B831C6 /* Models */,
 				ED2C680B2B194F4000B831C6 /* Repository */,
 			);
@@ -259,6 +300,10 @@
 			isa = PBXGroup;
 			children = (
 				ED2C680C2B194F8900B831C6 /* MonthlyBillsRepository.swift */,
+				ED0CD1F02B91053800A0A8BB /* CalendarsRepository.swift */,
+				ED0CD1FC2B9F0D8C00A0A8BB /* BillsRepository.swift */,
+				ED1E3F122BA1161A00BEA7AF /* SectionsRepository.swift */,
+				ED0CD1FE2B9F11AF00A0A8BB /* ItemsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -266,10 +311,7 @@
 		ED2C680E2B194F9300B831C6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */,
-				ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */,
-				EDF976F92B61D97C00133036 /* BillSectionResponse.swift */,
-				EDF976FB2B61DAFE00133036 /* BillItemResponse.swift */,
+				ED0CD1F22B910A3800A0A8BB /* Response */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -288,6 +330,15 @@
 				ED2C68212B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		ED51345B2B9002E100F7B0DA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ED51345C2B90030200F7B0DA /* ProviderModel.xcdatamodeld */,
+				ED51345F2B9005EF00F7B0DA /* ProviderContainer.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,14 +520,23 @@
 			files = (
 				ED11D2812B02492900514D7C /* WeeklyBudgetResponse.swift in Sources */,
 				ED2C68102B194FC400B831C6 /* MonthlyBillsResponse.swift in Sources */,
+				ED0CD1FF2B9F11AF00A0A8BB /* ItemsRepository.swift in Sources */,
+				ED0CD1FD2B9F0D8C00A0A8BB /* BillsRepository.swift in Sources */,
 				ED11D2802B02492900514D7C /* WeeklyBudgetListResponse.swift in Sources */,
 				EDF976FA2B61D97C00133036 /* BillSectionResponse.swift in Sources */,
 				ED11D26E2B02484000514D7C /* Provider.docc in Sources */,
 				ED2C680D2B194F8900B831C6 /* MonthlyBillsRepository.swift in Sources */,
+				ED5134602B9005EF00F7B0DA /* ProviderContainer.swift in Sources */,
+				ED1E3F182BA123F800BEA7AF /* BillsService.swift in Sources */,
+				ED1E3F162BA11EE600BEA7AF /* CalendarsService.swift in Sources */,
 				ED11D27F2B02492900514D7C /* WeeklyExpenseResponse.swift in Sources */,
+				ED1E3F1A2BA125DE00BEA7AF /* ItemsService.swift in Sources */,
 				ED11D27B2B02489F00514D7C /* WeeklyBudgetsRepository.swift in Sources */,
+				ED0CD1F12B91053800A0A8BB /* CalendarsRepository.swift in Sources */,
+				ED1E3F132BA1161A00BEA7AF /* SectionsRepository.swift in Sources */,
 				ED2C68122B1950BA00B831C6 /* AnnualCalendarResponse.swift in Sources */,
 				ED11D28C2B0267C200514D7C /* Constants.swift in Sources */,
+				ED51345E2B90030200F7B0DA /* ProviderModel.xcdatamodeld in Sources */,
 				EDF976FC2B61DAFE00133036 /* BillItemResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -771,6 +831,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ED51345C2B90030200F7B0DA /* ProviderModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ED51345D2B90030200F7B0DA /* ProviderModel.xcdatamodel */,
+			);
+			currentVersion = ED51345D2B90030200F7B0DA /* ProviderModel.xcdatamodel */;
+			path = ProviderModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ED11D2602B02484000514D7C /* Project object */;
 }

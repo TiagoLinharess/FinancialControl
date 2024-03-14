@@ -35,7 +35,7 @@ public struct BillItemResponse: Codable {
     public let name: String
     public let value: Double
     public let status: BillStatus
-    public let installment: BillInstallment?
+    public var installment: BillInstallment?
     
     // MARK: Init
     
@@ -45,5 +45,21 @@ public struct BillItemResponse: Codable {
         self.value = value
         self.status = status
         self.installment = installment
+    }
+    
+    // MARK: Init From Entity
+    
+    public init(from entity: BillItemEntity) {
+        self.id = entity.id ?? String()
+        self.name = entity.name ?? String()
+        self.value = entity.value
+        self.installment = nil
+        
+        guard let statusString = entity.status else {
+            self.status = .pending
+            return
+        }
+        
+        self.status = BillStatus(rawValue: statusString) ?? .pending
     }
 }
