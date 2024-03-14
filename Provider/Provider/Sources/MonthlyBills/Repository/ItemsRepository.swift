@@ -13,6 +13,7 @@ protocol ItemsRepositoryProtocol {
     func create(item: BillItemResponse, billId: String, billSectionEntity: BillSectionEntity) throws
     func read(from billSectionEntity: BillSectionEntity) throws -> [BillItemEntity]
     func update(item: BillItemResponse) throws
+    func delete(id: String) throws
 }
 
 final class ItemsRepository: ItemsRepositoryProtocol {
@@ -58,5 +59,18 @@ final class ItemsRepository: ItemsRepositoryProtocol {
         itemEntity.setValue(item.status.rawValue, forKey: "status")
         
         container.saveContext()
+    }
+    
+    // MARK: Delete
+    
+    func delete(id: String) throws {
+        let billItemRequest: NSFetchRequest<BillItemEntity> = BillItemEntity.fetchRequest()
+        billItemRequest.predicate = NSPredicate(format: "id = %@", id)
+        
+        guard let itemEntity = try container.persistentContainer.viewContext.fetch(billItemRequest).first else {
+            throw CoreError.customError(Constants.MonthlyBillsRepository.itemNotFound)
+        }
+        
+        container.persistentContainer.viewContext.delete(itemEntity)
     }
 }

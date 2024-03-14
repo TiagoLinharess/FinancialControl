@@ -12,6 +12,7 @@ import SharpnezCore
 protocol ItemsServiceProtocol {
     func create(item: BillItemResponse, billId: String, billType: BillSectionResponse.BillType) throws
     func update(item: BillItemResponse) throws
+    func delete(id: String) throws
 }
 
 final class ItemsService: ItemsServiceProtocol {
@@ -47,6 +48,12 @@ final class ItemsService: ItemsServiceProtocol {
     
     func update(item: BillItemResponse) throws {
         try itemsRepository.update(item: item)
+    }
+    
+    // MARK: Delete
+    
+    func delete(id: String) throws {
+        try itemsRepository.delete(id: id)
     }
 }
 

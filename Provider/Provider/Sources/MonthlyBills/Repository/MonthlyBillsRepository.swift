@@ -140,18 +140,7 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     // MARK: Delete
     
     public func deleteItem(itemId: String, billId: String) throws {
-        var calendars = try read()
-        let (calendarIndex, billIndex) = try findCalendarAndBillIndices(for: billId)
-        let (sectionIndex, itemIndex) = try findSectionAndItemIndices(itemId: itemId, billId: billId)
-        
-        if calendars[calendarIndex].monthlyBills[billIndex].sections[sectionIndex].items.count == 1 {
-            calendars[calendarIndex].monthlyBills[billIndex].sections.remove(at: sectionIndex)
-        } else {
-            calendars[calendarIndex].monthlyBills[billIndex].sections[sectionIndex].items.remove(at: itemIndex)
-        }
-        
-        let data = try JSONEncoder().encode(calendars)
-        UserDefaults.standard.set(data, forKey: key)
+        try itemsService.delete(id: itemId)
     }
     
     public func deleteTemplateItem(itemId: String) throws {
@@ -183,18 +172,6 @@ private extension MonthlyBillsRepository {
         }
         
         throw CoreError.customError(Constants.MonthlyBillsRepository.billNotFound)
-    }
-    
-    func findSectionAndItemIndices(itemId: String, billId: String) throws -> (sectionIndex: Int, itemIndex: Int) {
-        let bill = try readAtMonth(id: billId)
-        
-        for (sectionIndex, section) in bill.sections.enumerated() {
-            if let itemIndex = section.items.firstIndex(where: { $0.id == itemId }) {
-                return (sectionIndex, itemIndex)
-            }
-        }
-        
-        throw CoreError.customError(Constants.MonthlyBillsRepository.itemNotFound)
     }
     
     func findTemplateAndItemIndices(itemId: String) throws -> (sectionIndex: Int, itemIndex: Int) {
