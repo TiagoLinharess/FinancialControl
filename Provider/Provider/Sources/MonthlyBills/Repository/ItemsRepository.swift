@@ -12,6 +12,7 @@ import SharpnezCore
 protocol ItemsRepositoryProtocol {
     func create(item: BillItemResponse, billId: String, billSectionEntity: BillSectionEntity) throws
     func read(from billSectionEntity: BillSectionEntity) throws -> [BillItemEntity]
+    func update(item: BillItemResponse) throws
 }
 
 final class ItemsRepository: ItemsRepositoryProtocol {
@@ -40,5 +41,22 @@ final class ItemsRepository: ItemsRepositoryProtocol {
         billItemRequest.predicate = NSPredicate(format: "section = %@", billSectionEntity)
         
         return try container.persistentContainer.viewContext.fetch(billItemRequest)
+    }
+    
+    // MARK: Update
+    
+    func update(item: BillItemResponse) throws {
+        let billItemRequest: NSFetchRequest<BillItemEntity> = BillItemEntity.fetchRequest()
+        billItemRequest.predicate = NSPredicate(format: "id = %@", item.id)
+        
+        guard let itemEntity = try container.persistentContainer.viewContext.fetch(billItemRequest).first else {
+            throw CoreError.customError(Constants.MonthlyBillsRepository.itemNotFound)
+        }
+        
+        itemEntity.setValue(item.name, forKey: "name")
+        itemEntity.setValue(item.value, forKey: "value")
+        itemEntity.setValue(item.status.rawValue, forKey: "status")
+        
+        container.saveContext()
     }
 }

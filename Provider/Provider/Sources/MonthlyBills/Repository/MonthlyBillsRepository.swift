@@ -124,13 +124,7 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     }
     
     public func updateBillItem(item: BillItemResponse, billId: String) throws {
-        var calendars = try read()
-        let (calendarIndex, billIndex) = try findCalendarAndBillIndices(for: billId)
-        let (sectionIndex, itemIndex) = try findSectionAndItemIndices(itemId: item.id, billId: billId)
-        
-        calendars[calendarIndex].monthlyBills[billIndex].sections[sectionIndex].items[itemIndex] = item
-        let data = try JSONEncoder().encode(calendars)
-        UserDefaults.standard.set(data, forKey: key)
+        try itemsService.update(item: item)
     }
     
     public func updateTemplateItem(item: BillItemResponse) throws {

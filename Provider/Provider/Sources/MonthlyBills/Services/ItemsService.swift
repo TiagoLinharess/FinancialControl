@@ -11,6 +11,7 @@ import SharpnezCore
 
 protocol ItemsServiceProtocol {
     func create(item: BillItemResponse, billId: String, billType: BillSectionResponse.BillType) throws
+    func update(item: BillItemResponse) throws
 }
 
 final class ItemsService: ItemsServiceProtocol {
@@ -40,6 +41,12 @@ final class ItemsService: ItemsServiceProtocol {
         let billSectionEntity = try fetchOrCreateSection(monthlyBillsEntity: monthlyBillsEntity, billType: billType)
         
         try itemsRepository.create(item: item, billId: billId, billSectionEntity: billSectionEntity)
+    }
+    
+    // MARK: Update
+    
+    func update(item: BillItemResponse) throws {
+        try itemsRepository.update(item: item)
     }
 }
 
