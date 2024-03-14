@@ -19,7 +19,6 @@ protocol BillsWorking {
     func readAtMonthWithTemplates(billId: String) throws -> MonthlyBillsViewModel
     func readTemplates() throws -> [BillSectionViewModel]
     func readTemplateAt(id: String) throws -> BillItemProtocol
-    func updateBill(bill: MonthlyBillsViewModel) throws
     func updateBillItem(item: BillItemProtocol, billId: String) throws
     func updateTemplateItem(item: BillItemProtocol) throws
     func deleteItem(itemId: String, billId: String) throws
@@ -87,10 +86,6 @@ final class BillsWorker: BillsWorking {
     }
     
     // MARK: Update
-    
-    func updateBill(bill: MonthlyBillsViewModel) throws {
-        try repository.updateBill(bill: bill.getResponse())
-    }
     
     func updateBillItem(item: BillItemProtocol, billId: String) throws {
         try repository.updateBillItem(item: item.getResponse(), billId: billId)

@@ -11,6 +11,7 @@ import SharpnezCore
 
 protocol BillsServiceProtocol {
     func readAtMonth(id: String) throws -> MonthlyBillsResponse
+    func readAtMonthWithTemplates(billId: String) throws -> MonthlyBillsResponse
 }
 
 final class BillsService: BillsServiceProtocol {
@@ -20,17 +21,20 @@ final class BillsService: BillsServiceProtocol {
     private let billsRepository: BillsRepositoryProtocol
     private let sectionsRepository: SectionsRepositoryProtocol
     private let itemsRepository: ItemsRepositoryProtocol
+    private let templatesRepository: TemplatesRepositoryProtocol
     
     // MARK: Init
     
     init(
         billsRepository: BillsRepositoryProtocol = BillsRepository(),
         sectionsRepository: SectionsRepositoryProtocol = SectionsRepository(),
-        itemsRepository: ItemsRepositoryProtocol = ItemsRepository()
+        itemsRepository: ItemsRepositoryProtocol = ItemsRepository(),
+        templatesRepository: TemplatesRepositoryProtocol = TemplatesRepository()
     ) {
         self.billsRepository = billsRepository
         self.sectionsRepository = sectionsRepository
         self.itemsRepository = itemsRepository
+        self.templatesRepository = templatesRepository
     }
     
     // MARK: Read
@@ -42,6 +46,25 @@ final class BillsService: BillsServiceProtocol {
         var monthlyBillsResponse = MonthlyBillsResponse(from: monthlyBillsEntity)
         monthlyBillsResponse.sections = sectionsResponses
         return monthlyBillsResponse
+    }
+    
+    func readAtMonthWithTemplates(billId: String) throws -> MonthlyBillsResponse {
+        let templates = try templatesRepository.read()
+        let monthlyBillsEntity = try billsRepository.readAtMonth(id: billId)
+        
+        try templates.forEach { sectionResponse in
+            let sectionEntity = try sectionsRepository.readAt(
+                billType: sectionResponse.type,
+                monthlyBillsEntity: monthlyBillsEntity
+            ) ?? sectionsRepository.createAndRead(
+                billType: sectionResponse.type,
+                monthlyBillsEntity: monthlyBillsEntity
+            )
+            
+            try createItems(items: sectionResponse.items, billId: billId, billSectionEntity: sectionEntity)
+        }
+
+        return try readAtMonth(id: billId)
     }
 }
 
@@ -64,5 +87,11 @@ private extension BillsService {
         var billSectionResponse = BillSectionResponse(from: billSectionEntity)
         billSectionResponse.items = try fetchItems(for: billSectionEntity)
         return billSectionResponse.items.isEmpty ? nil : billSectionResponse
+    }
+    
+    private func createItems(items: [BillItemResponse], billId: String, billSectionEntity: BillSectionEntity) throws {
+        try items.forEach { itemResponse in
+            try itemsRepository.create(item: itemResponse, billId: billId, billSectionEntity: billSectionEntity)
+        }
     }
 }

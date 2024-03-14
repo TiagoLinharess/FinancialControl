@@ -19,7 +19,6 @@ public protocol MonthlyBillsRepositoryProtocol {
     func readAtMonthWithTemplates(billId: String) throws -> MonthlyBillsResponse
     func readTemplates() throws -> [BillSectionResponse]
     func readTemplateAt(id: String) throws -> BillItemResponse
-    func updateBill(bill: MonthlyBillsResponse) throws
     func updateBillItem(item: BillItemResponse, billId: String) throws
     func updateTemplateItem(item: BillItemResponse) throws
     func deleteItem(itemId: String, billId: String) throws
@@ -28,16 +27,28 @@ public protocol MonthlyBillsRepositoryProtocol {
 
 public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     
-    let key: String
-    let templateKey: String
+    private let calendarsService: CalendarsServiceProtocol
+    private let billsService: BillsServiceProtocol
+    private let itemsService: ItemsServiceProtocol
+    private let templatesService: TemplatesServiceProtocol
     
-    private let calendarsService: CalendarsServiceProtocol = CalendarsService()
-    private let billsService: BillsServiceProtocol = BillsService()
-    private let itemsService: ItemsServiceProtocol = ItemsService()
+    init(
+        calendarsService: CalendarsServiceProtocol = CalendarsService(),
+        billsService: BillsServiceProtocol = BillsService(),
+        itemsService: ItemsServiceProtocol = ItemsService(),
+        templatesService: TemplatesServiceProtocol = TemplatesService()
+    ) {
+        self.calendarsService = calendarsService
+        self.billsService = billsService
+        self.itemsService = itemsService
+        self.templatesService = templatesService
+    }
     
-    public init(key: String? = nil, templateKey: String? = nil) {
-        self.key = key ?? Constants.UserDefaultsKeys.bills
-        self.templateKey = templateKey ?? Constants.UserDefaultsKeys.billsTemplate
+    public init() {
+        self.calendarsService = CalendarsService()
+        self.billsService = BillsService()
+        self.itemsService = ItemsService()
+        self.templatesService = TemplatesService()
     }
     
     // MARK: Create
@@ -51,18 +62,7 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     }
     
     public func createTemplateItem(item: BillItemResponse, billType: BillSectionResponse.BillType) throws {
-        var templates = try readTemplates()
-        
-        if let sectionIndex = templates.firstIndex(where: { $0.type == billType }) {
-            templates[sectionIndex].items.append(item)
-        } else if billType == .income {
-            templates.insert(BillSectionResponse(items: [item], type: billType), at: 0)
-        } else {
-            templates.append(BillSectionResponse(items: [item], type: billType))
-        }
-        
-        let data = try JSONEncoder().encode(templates)
-        UserDefaults.standard.set(data, forKey: templateKey)
+        try templatesService.create(item: item, billType: billType)
     }
     
     // MARK: Read
@@ -80,61 +80,25 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     }
     
     public func readAtMonthWithTemplates(billId: String) throws -> MonthlyBillsResponse {
-        let calendars = try read()
-        let templates = try readTemplates()
-        
-        for calendar in calendars {
-            if var bill = calendar.monthlyBills.first(where: { $0.id == billId }) {
-                bill.sections = templates
-                try updateBill(bill: bill)
-                return bill
-            }
-        }
-        
-        throw CoreError.customError(Constants.MonthlyBillsRepository.billNotFound)
+        return try billsService.readAtMonthWithTemplates(billId: billId)
     }
     
     public func readTemplates() throws -> [BillSectionResponse] {
-        guard let data = UserDefaults.standard.data(forKey: templateKey) else { return [] }
-        let response = try JSONDecoder().decode([BillSectionResponse].self, from: data)
-        return response
+        return try templatesService.read()
     }
     
     public func readTemplateAt(id: String) throws -> BillItemResponse {
-        let templates = try readTemplates()
-        
-        for template in templates {
-            if let bill = template.items.first(where: { $0.id == id }) {
-                return bill
-            }
-        }
-        
-        throw CoreError.customError(Constants.MonthlyBillsRepository.templateNotFound)
+        return try templatesService.readAt(id: id)
     }
     
     // MARK: Update
-    
-    public func updateBill(bill: MonthlyBillsResponse) throws {
-        var calendars = try read()
-        let (calendarIndex, billIndex) = try findCalendarAndBillIndices(for: bill.id)
-        
-        calendars[calendarIndex].monthlyBills[billIndex] = bill
-        let data = try JSONEncoder().encode(calendars)
-        UserDefaults.standard.set(data, forKey: key)
-    }
     
     public func updateBillItem(item: BillItemResponse, billId: String) throws {
         try itemsService.update(item: item)
     }
     
     public func updateTemplateItem(item: BillItemResponse) throws {
-        var templates = try readTemplates()
-        let (templateIndex, itemIndex) = try findTemplateAndItemIndices(itemId: item.id)
-        
-        templates[templateIndex].items[itemIndex] = item
-        
-        let data = try JSONEncoder().encode(templates)
-        UserDefaults.standard.set(data, forKey: templateKey)
+        try templatesService.update(item: item)
     }
     
     // MARK: Delete
@@ -144,45 +108,6 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     }
     
     public func deleteTemplateItem(itemId: String) throws {
-        var templates = try readTemplates()
-        let (templateIndex, itemIndex) = try findTemplateAndItemIndices(itemId: itemId)
-        
-        if templates[templateIndex].items.count == 1 {
-            templates.remove(at: templateIndex)
-        } else {
-            templates[templateIndex].items.remove(at: itemIndex)
-        }
-        
-        let data = try JSONEncoder().encode(templates)
-        UserDefaults.standard.set(data, forKey: templateKey)
-    }
-}
-
-private extension MonthlyBillsRepository {
-    
-    // MARK: Private Methods
-    
-    func findCalendarAndBillIndices(for billId: String) throws -> (calendarIndex: Int, billIndex: Int) {
-        let calendars = try read()
-        
-        for (calendarIndex, calendar) in calendars.enumerated() {
-            if let billIndex = calendar.monthlyBills.firstIndex(where: { $0.id == billId }) {
-                return (calendarIndex, billIndex)
-            }
-        }
-        
-        throw CoreError.customError(Constants.MonthlyBillsRepository.billNotFound)
-    }
-    
-    func findTemplateAndItemIndices(itemId: String) throws -> (sectionIndex: Int, itemIndex: Int) {
-        let templates = try readTemplates()
-        
-        for (templateIndex, template) in templates.enumerated() {
-            if let itemIndex = template.items.firstIndex(where: { $0.id == itemId }) {
-                return (templateIndex, itemIndex)
-            }
-        }
-        
-        throw CoreError.customError(Constants.MonthlyBillsRepository.itemNotFound)
+        try templatesService.delete(itemId: itemId)
     }
 }

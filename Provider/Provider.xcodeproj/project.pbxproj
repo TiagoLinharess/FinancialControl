@@ -26,6 +26,8 @@
 		ED1E3F162BA11EE600BEA7AF /* CalendarsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1E3F152BA11EE600BEA7AF /* CalendarsService.swift */; };
 		ED1E3F182BA123F800BEA7AF /* BillsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1E3F172BA123F800BEA7AF /* BillsService.swift */; };
 		ED1E3F1A2BA125DE00BEA7AF /* ItemsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1E3F192BA125DE00BEA7AF /* ItemsService.swift */; };
+		ED22C15F2BA3018B004177DB /* TemplatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22C15E2BA3018B004177DB /* TemplatesService.swift */; };
+		ED22C1612BA3027F004177DB /* TemplatesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22C1602BA3027F004177DB /* TemplatesRepository.swift */; };
 		ED2C680D2B194F8900B831C6 /* MonthlyBillsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C680C2B194F8900B831C6 /* MonthlyBillsRepository.swift */; };
 		ED2C68102B194FC400B831C6 /* MonthlyBillsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */; };
 		ED2C68122B1950BA00B831C6 /* AnnualCalendarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */; };
@@ -70,6 +72,8 @@
 		ED1E3F152BA11EE600BEA7AF /* CalendarsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarsService.swift; sourceTree = "<group>"; };
 		ED1E3F172BA123F800BEA7AF /* BillsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsService.swift; sourceTree = "<group>"; };
 		ED1E3F192BA125DE00BEA7AF /* ItemsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsService.swift; sourceTree = "<group>"; };
+		ED22C15E2BA3018B004177DB /* TemplatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesService.swift; sourceTree = "<group>"; };
+		ED22C1602BA3027F004177DB /* TemplatesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesRepository.swift; sourceTree = "<group>"; };
 		ED2C680C2B194F8900B831C6 /* MonthlyBillsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsRepository.swift; sourceTree = "<group>"; };
 		ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsResponse.swift; sourceTree = "<group>"; };
 		ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualCalendarResponse.swift; sourceTree = "<group>"; };
@@ -282,6 +286,7 @@
 				ED1E3F152BA11EE600BEA7AF /* CalendarsService.swift */,
 				ED1E3F172BA123F800BEA7AF /* BillsService.swift */,
 				ED1E3F192BA125DE00BEA7AF /* ItemsService.swift */,
+				ED22C15E2BA3018B004177DB /* TemplatesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				ED0CD1FC2B9F0D8C00A0A8BB /* BillsRepository.swift */,
 				ED1E3F122BA1161A00BEA7AF /* SectionsRepository.swift */,
 				ED0CD1FE2B9F11AF00A0A8BB /* ItemsRepository.swift */,
+				ED22C1602BA3027F004177DB /* TemplatesRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -523,6 +529,7 @@
 				ED0CD1FF2B9F11AF00A0A8BB /* ItemsRepository.swift in Sources */,
 				ED0CD1FD2B9F0D8C00A0A8BB /* BillsRepository.swift in Sources */,
 				ED11D2802B02492900514D7C /* WeeklyBudgetListResponse.swift in Sources */,
+				ED22C15F2BA3018B004177DB /* TemplatesService.swift in Sources */,
 				EDF976FA2B61D97C00133036 /* BillSectionResponse.swift in Sources */,
 				ED11D26E2B02484000514D7C /* Provider.docc in Sources */,
 				ED2C680D2B194F8900B831C6 /* MonthlyBillsRepository.swift in Sources */,
@@ -538,6 +545,7 @@
 				ED11D28C2B0267C200514D7C /* Constants.swift in Sources */,
 				ED51345E2B90030200F7B0DA /* ProviderModel.xcdatamodeld in Sources */,
 				EDF976FC2B61DAFE00133036 /* BillItemResponse.swift in Sources */,
+				ED22C1612BA3027F004177DB /* TemplatesRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
