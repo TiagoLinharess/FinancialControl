@@ -12,6 +12,7 @@ import SharpnezCore
 protocol ItemsRepositoryProtocol {
     func create(item: BillItemResponse, billId: String, billSectionEntity: BillSectionEntity) throws
     func read(from billSectionEntity: BillSectionEntity) throws -> [BillItemEntity]
+    func readAt(id: String) throws -> BillItemEntity?
     func update(item: BillItemResponse) throws
     func delete(id: String) throws
 }
@@ -25,6 +26,10 @@ final class ItemsRepository: ItemsRepositoryProtocol {
     // MARK: Create
     
     func create(item: BillItemResponse, billId: String, billSectionEntity: BillSectionEntity) throws {
+        if try readAt(id: item.id) != nil {
+            throw CoreError.customError(Constants.MonthlyBillsRepository.existentItem)
+        }
+        
         let billItemEntity = BillItemEntity(context: container.persistentContainer.viewContext)
         billItemEntity.id = item.id
         billItemEntity.name = item.name
@@ -42,6 +47,13 @@ final class ItemsRepository: ItemsRepositoryProtocol {
         billItemRequest.predicate = NSPredicate(format: "section = %@", billSectionEntity)
         
         return try container.persistentContainer.viewContext.fetch(billItemRequest)
+    }
+    
+    func readAt(id: String) throws -> BillItemEntity? {
+        let billItemRequest: NSFetchRequest<BillItemEntity> = BillItemEntity.fetchRequest()
+        billItemRequest.predicate = NSPredicate(format: "id = %@", id)
+        
+        return try container.persistentContainer.viewContext.fetch(billItemRequest).first
     }
     
     // MARK: Update
@@ -72,5 +84,6 @@ final class ItemsRepository: ItemsRepositoryProtocol {
         }
         
         container.persistentContainer.viewContext.delete(itemEntity)
+        container.saveContext()
     }
 }

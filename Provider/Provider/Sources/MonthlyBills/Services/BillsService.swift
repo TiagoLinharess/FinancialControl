@@ -21,6 +21,7 @@ final class BillsService: BillsServiceProtocol {
     private let billsRepository: BillsRepositoryProtocol
     private let sectionsRepository: SectionsRepositoryProtocol
     private let itemsRepository: ItemsRepositoryProtocol
+    private let installmentsRepository: InstallmentsRepositoryProtocol
     private let templatesRepository: TemplatesRepositoryProtocol
     
     // MARK: Init
@@ -29,11 +30,13 @@ final class BillsService: BillsServiceProtocol {
         billsRepository: BillsRepositoryProtocol = BillsRepository(),
         sectionsRepository: SectionsRepositoryProtocol = SectionsRepository(),
         itemsRepository: ItemsRepositoryProtocol = ItemsRepository(),
+        installmentsRepository: InstallmentsRepositoryProtocol = InstallmentsRepository(),
         templatesRepository: TemplatesRepositoryProtocol = TemplatesRepository()
     ) {
         self.billsRepository = billsRepository
         self.sectionsRepository = sectionsRepository
         self.itemsRepository = itemsRepository
+        self.installmentsRepository = installmentsRepository
         self.templatesRepository = templatesRepository
     }
     
@@ -80,7 +83,16 @@ private extension BillsService {
     
     private func fetchItems(for sectionEntity: BillSectionEntity) throws -> [BillItemResponse] {
         let itemsEntities = try itemsRepository.read(from: sectionEntity)
-        return itemsEntities.map(BillItemResponse.init)
+        return try itemsEntities.map { billItemEntity -> BillItemResponse in
+            var itemResponse = BillItemResponse(from: billItemEntity)
+            itemResponse.installment = try fetchInstallment(billItemEntity: billItemEntity)
+            return itemResponse
+        }
+    }
+    
+    private func fetchInstallment(billItemEntity: BillItemEntity) throws -> BillItemResponse.BillInstallment? {
+        guard let entity = try installmentsRepository.read(from: billItemEntity) else { return nil }
+        return BillItemResponse.BillInstallment(from: entity)
     }
     
     private func billSectionEntityToResponse(billSectionEntity: BillSectionEntity) throws -> BillSectionResponse? {
@@ -92,6 +104,11 @@ private extension BillsService {
     private func createItems(items: [BillItemResponse], billId: String, billSectionEntity: BillSectionEntity) throws {
         try items.forEach { itemResponse in
             try itemsRepository.create(item: itemResponse, billId: billId, billSectionEntity: billSectionEntity)
+            
+            if let installmentResponse = itemResponse.installment,
+               let billItemEntity = try? itemsRepository.readAt(id: itemResponse.id) {
+                try installmentsRepository.create(installmentResponse: installmentResponse, billItemEntity: billItemEntity)
+            }
         }
     }
 }

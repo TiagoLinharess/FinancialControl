@@ -9,6 +9,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="status" optional="YES" attributeType="String"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="installment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InstallmentEntity" inverseName="bill" inverseEntity="InstallmentEntity"/>
         <relationship name="section" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BillSectionEntity" inverseName="items" inverseEntity="BillSectionEntity"/>
     </entity>
     <entity name="BillSectionEntity" representedClassName="BillSectionEntity" syncable="YES" codeGenerationType="class">
@@ -16,6 +17,11 @@
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="bill" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MonthlyBillsEntity" inverseName="sections" inverseEntity="MonthlyBillsEntity"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BillItemEntity" inverseName="section" inverseEntity="BillItemEntity"/>
+    </entity>
+    <entity name="InstallmentEntity" representedClassName="InstallmentEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="current" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="max" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="bill" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BillItemEntity" inverseName="installment" inverseEntity="BillItemEntity"/>
     </entity>
     <entity name="MonthlyBillsEntity" representedClassName="MonthlyBillsEntity" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String"/>

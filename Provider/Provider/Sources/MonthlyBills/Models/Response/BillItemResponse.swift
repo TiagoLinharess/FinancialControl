@@ -27,6 +27,11 @@ public struct BillItemResponse: Codable {
             self.current = current
             self.max = max
         }
+        
+        public init(from entity: InstallmentEntity) {
+            self.current = Int(entity.current)
+            self.max = Int(entity.max)
+        }
     }
     
     // MARK: Properties
