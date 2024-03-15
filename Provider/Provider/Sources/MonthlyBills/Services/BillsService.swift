@@ -103,6 +103,13 @@ private extension BillsService {
     
     private func createItems(items: [BillItemResponse], billId: String, billSectionEntity: BillSectionEntity) throws {
         try items.forEach { itemResponse in
+            let itemResponse = BillItemResponse(
+                id: UUID().uuidString,
+                name: itemResponse.name,
+                value: itemResponse.value,
+                status: itemResponse.status,
+                installment: itemResponse.installment
+            )
             try itemsRepository.create(item: itemResponse, billId: billId, billSectionEntity: billSectionEntity)
             
             if let installmentResponse = itemResponse.installment,
