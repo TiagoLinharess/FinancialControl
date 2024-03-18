@@ -10,10 +10,10 @@ import Provider
 import SharpnezCore
 
 protocol BillsWorking {
-    func create(annualCalendar: AnnualCalendarViewModel) throws
+    func createCalendar(annualCalendar: AnnualCalendarViewModel) throws
     func createBillItem(item: BillItemProtocol, billId: String, billType: BillType) throws
     func createTemplateItem(item: BillItemProtocol, billType: BillType) throws
-    func read() throws -> [AnnualCalendarViewModel]
+    func readCalendar() throws -> [AnnualCalendarViewModel]
     func readAtYear(year: String) throws -> AnnualCalendarViewModel
     func readAtMonth(id: String) throws -> MonthlyBillsViewModel
     func readAtMonthWithTemplates(billId: String) throws -> MonthlyBillsViewModel
@@ -29,18 +29,18 @@ final class BillsWorker: BillsWorking {
     
     // MARK: Properties
     
-    let repository: MonthlyBillsRepositoryProtocol
+    let repository: MonthlyBillsProviderProtocol
     
     // MARK: Init
     
-    init(repository: MonthlyBillsRepositoryProtocol = MonthlyBillsRepository()) {
+    init(repository: MonthlyBillsProviderProtocol = MonthlyBillsProvider()) {
         self.repository = repository
     }
     
     // MARK: Create
     
-    func create(annualCalendar: AnnualCalendarViewModel) throws {
-        try repository.create(annualCalendar: annualCalendar.getResponse())
+    func createCalendar(annualCalendar: AnnualCalendarViewModel) throws {
+        try repository.createCalendar(annualCalendar: annualCalendar.getResponse())
     }
     
     func createBillItem(item: BillItemProtocol, billId: String, billType: BillType) throws {
@@ -53,8 +53,8 @@ final class BillsWorker: BillsWorking {
     
     // MARK: Read
     
-    func read() throws -> [AnnualCalendarViewModel] {
-        let annualCalendars = try repository.read()
+    func readCalendar() throws -> [AnnualCalendarViewModel] {
+        let annualCalendars = try repository.readCalendar()
         
         return annualCalendars.map { response -> AnnualCalendarViewModel in
             return .init(from: response)

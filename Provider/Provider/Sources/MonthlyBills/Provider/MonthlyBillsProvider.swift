@@ -9,11 +9,11 @@
 import Foundation
 import SharpnezCore
 
-public protocol MonthlyBillsRepositoryProtocol {
-    func create(annualCalendar: AnnualCalendarResponse) throws
+public protocol MonthlyBillsProviderProtocol {
+    func createCalendar(annualCalendar: AnnualCalendarResponse) throws
     func createBillItem(item: BillItemResponse, billId: String, billType: BillSectionResponse.BillType) throws
     func createTemplateItem(item: BillItemResponse, billType: BillSectionResponse.BillType) throws
-    func read() throws -> [AnnualCalendarResponse]
+    func readCalendar() throws -> [AnnualCalendarResponse]
     func readAtYear(year: String) throws -> AnnualCalendarResponse
     func readAtMonth(id: String) throws -> MonthlyBillsResponse
     func readAtMonthWithTemplates(billId: String) throws -> MonthlyBillsResponse
@@ -25,7 +25,7 @@ public protocol MonthlyBillsRepositoryProtocol {
     func deleteTemplateItem(itemId: String) throws
 }
 
-public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
+public final class MonthlyBillsProvider: MonthlyBillsProviderProtocol {
     
     private let calendarsService: CalendarsServiceProtocol
     private let billsService: BillsServiceProtocol
@@ -53,7 +53,7 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     
     // MARK: Create
     
-    public func create(annualCalendar: AnnualCalendarResponse) throws {
+    public func createCalendar(annualCalendar: AnnualCalendarResponse) throws {
         try calendarsService.create(annualCalendar: annualCalendar)
     }
     
@@ -67,7 +67,7 @@ public final class MonthlyBillsRepository: MonthlyBillsRepositoryProtocol {
     
     // MARK: Read
     
-    public func read() throws -> [AnnualCalendarResponse] {
+    public func readCalendar() throws -> [AnnualCalendarResponse] {
         return try calendarsService.read()
     }
     

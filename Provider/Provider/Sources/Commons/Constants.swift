@@ -33,7 +33,7 @@ enum Constants {
         static let weekDoesNotExist: String = "The item you are editing does not exist"
     }
     
-    // MARK: MonthlyBillsRepository
+    // MARK: MonthlyBillsProvider
     
     enum MonthlyBillsRepository {
         static let existentCalendar: String = "Calendar already been added"
