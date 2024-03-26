@@ -30,9 +30,9 @@
 		ED22C1612BA3027F004177DB /* TemplatesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22C1602BA3027F004177DB /* TemplatesRepository.swift */; };
 		ED2C68102B194FC400B831C6 /* MonthlyBillsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */; };
 		ED2C68122B1950BA00B831C6 /* AnnualCalendarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */; };
-		ED2C68222B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68212B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift */; };
 		ED3F3DFC2BA452B800858591 /* InstallmentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F3DFB2BA452B800858591 /* InstallmentsRepository.swift */; };
 		ED3F3DFE2BA8FB9900858591 /* MonthlyBillsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F3DFD2BA8FB9900858591 /* MonthlyBillsProvider.swift */; };
+		ED3F3E022BA8FD1C00858591 /* MonthlyBillsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F3E012BA8FD1C00858591 /* MonthlyBillsProviderTests.swift */; };
 		ED51345E2B90030200F7B0DA /* ProviderModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED51345C2B90030200F7B0DA /* ProviderModel.xcdatamodeld */; };
 		ED5134602B9005EF00F7B0DA /* ProviderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED51345F2B9005EF00F7B0DA /* ProviderContainer.swift */; };
 		EDF976FA2B61D97C00133036 /* BillSectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976F92B61D97C00133036 /* BillSectionResponse.swift */; };
@@ -77,9 +77,9 @@
 		ED22C1602BA3027F004177DB /* TemplatesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesRepository.swift; sourceTree = "<group>"; };
 		ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsResponse.swift; sourceTree = "<group>"; };
 		ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualCalendarResponse.swift; sourceTree = "<group>"; };
-		ED2C68212B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsRepositoryTests.swift; sourceTree = "<group>"; };
 		ED3F3DFB2BA452B800858591 /* InstallmentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallmentsRepository.swift; sourceTree = "<group>"; };
 		ED3F3DFD2BA8FB9900858591 /* MonthlyBillsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyBillsProvider.swift; sourceTree = "<group>"; };
+		ED3F3E012BA8FD1C00858591 /* MonthlyBillsProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsProviderTests.swift; sourceTree = "<group>"; };
 		ED51345D2B90030200F7B0DA /* ProviderModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProviderModel.xcdatamodel; sourceTree = "<group>"; };
 		ED51345F2B9005EF00F7B0DA /* ProviderContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderContainer.swift; sourceTree = "<group>"; };
 		EDF976F92B61D97C00133036 /* BillSectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSectionResponse.swift; sourceTree = "<group>"; };
@@ -236,7 +236,8 @@
 		ED11D29C2B02718D00514D7C /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
-				ED11D2A22B02760100514D7C /* Models */,
+				ED3F3E042BA8FD7F00858591 /* MonthlyBills */,
+				ED11D2A32B02761100514D7C /* WeeklyBudgets */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -269,7 +270,7 @@
 		ED11D2A22B02760100514D7C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ED11D2A32B02761100514D7C /* WeeklyBudgets */,
+				ED11D2A42B02762C00514D7C /* WeeklyResponseMock.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,7 +278,7 @@
 		ED11D2A32B02761100514D7C /* WeeklyBudgets */ = {
 			isa = PBXGroup;
 			children = (
-				ED11D2A42B02762C00514D7C /* WeeklyResponseMock.swift */,
+				ED11D2A22B02760100514D7C /* Models */,
 			);
 			path = WeeklyBudgets;
 			sourceTree = "<group>";
@@ -328,17 +329,9 @@
 		ED2C681D2B1A10BD00B831C6 /* MonthlyBills */ = {
 			isa = PBXGroup;
 			children = (
-				ED2C681E2B1A10C700B831C6 /* Repository */,
+				ED3F3E002BA8FD0C00858591 /* Provider */,
 			);
 			path = MonthlyBills;
-			sourceTree = "<group>";
-		};
-		ED2C681E2B1A10C700B831C6 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				ED2C68212B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift */,
-			);
-			path = Repository;
 			sourceTree = "<group>";
 		};
 		ED3F3DFF2BA8FBCB00858591 /* Provider */ = {
@@ -347,6 +340,29 @@
 				ED3F3DFD2BA8FB9900858591 /* MonthlyBillsProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		ED3F3E002BA8FD0C00858591 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				ED3F3E012BA8FD1C00858591 /* MonthlyBillsProviderTests.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		ED3F3E032BA8FD6700858591 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ED3F3E042BA8FD7F00858591 /* MonthlyBills */ = {
+			isa = PBXGroup;
+			children = (
+				ED3F3E032BA8FD6700858591 /* Services */,
+			);
+			path = MonthlyBills;
 			sourceTree = "<group>";
 		};
 		ED51345B2B9002E100F7B0DA /* Data */ = {
@@ -565,9 +581,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED3F3E022BA8FD1C00858591 /* MonthlyBillsProviderTests.swift in Sources */,
 				ED11D2A12B0271C500514D7C /* WeeklyBudgetsRepositoryTests.swift in Sources */,
 				ED11D2A52B02762D00514D7C /* WeeklyResponseMock.swift in Sources */,
-				ED2C68222B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

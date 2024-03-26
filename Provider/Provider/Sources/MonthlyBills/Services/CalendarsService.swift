@@ -37,6 +37,8 @@ final class CalendarsService: CalendarsServiceProtocol {
         self.itemsRepository = itemsRepository
     }
     
+    // MARK: Create
+    
     func create(annualCalendar: AnnualCalendarResponse) throws {
         let currentAnnualCalendarsResponses = try read()
         
@@ -47,6 +49,8 @@ final class CalendarsService: CalendarsServiceProtocol {
         try calendarsRepository.create(annualCalendar: annualCalendar)
         try billsRepository.createMonths(for: try calendarsRepository.readAtYear(year: annualCalendar.year))
     }
+    
+    // MARK: Read
     
     func read() throws -> [AnnualCalendarResponse] {
         return try calendarsRepository.read().map(AnnualCalendarResponse.init)
