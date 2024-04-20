@@ -12,16 +12,6 @@
 		ED753C1A2AFE6176002B469D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C192AFE6176002B469D /* SceneDelegate.swift */; };
 		ED753C212AFE6177002B469D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED753C202AFE6177002B469D /* Assets.xcassets */; };
 		ED753C3E2AFE642E002B469D /* TabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C3D2AFE642E002B469D /* TabBarFactory.swift */; };
-		ED8D23612B18F991009E8326 /* WeeklyBudgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED753D022AFE751A002B469D /* WeeklyBudgets.framework */; };
-		ED8D23622B18F991009E8326 /* WeeklyBudgets.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED753D022AFE751A002B469D /* WeeklyBudgets.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ED8D23642B18F995009E8326 /* Pods_FinancialControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA95495461BDB8B9B3F2C315 /* Pods_FinancialControl.framework */; };
-		ED8D23652B18F995009E8326 /* Pods_FinancialControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA95495461BDB8B9B3F2C315 /* Pods_FinancialControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ED8D23662B18F996009E8326 /* MonthlyBills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D23382B14224D009E8326 /* MonthlyBills.framework */; };
-		ED8D23672B18F996009E8326 /* MonthlyBills.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D23382B14224D009E8326 /* MonthlyBills.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ED8D23692B18FAFC009E8326 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D23682B18FAFC009E8326 /* Core.framework */; };
-		ED8D236A2B18FAFC009E8326 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D23682B18FAFC009E8326 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ED8D236C2B18FB03009E8326 /* Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D236B2B18FB03009E8326 /* Provider.framework */; };
-		ED8D236D2B18FB03009E8326 /* Provider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED8D236B2B18FB03009E8326 /* Provider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,11 +31,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				ED8D236D2B18FB03009E8326 /* Provider.framework in Embed Frameworks */,
-				ED8D23652B18F995009E8326 /* Pods_FinancialControl.framework in Embed Frameworks */,
-				ED8D23672B18F996009E8326 /* MonthlyBills.framework in Embed Frameworks */,
-				ED8D23622B18F991009E8326 /* WeeklyBudgets.framework in Embed Frameworks */,
-				ED8D236A2B18FAFC009E8326 /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,21 +38,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B6F430FE0FE4A944CBEF8653 /* Pods-FinancialControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.release.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.release.xcconfig"; sourceTree = "<group>"; };
-		E06AACB87B243CA7C918DC65 /* Pods-FinancialControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.debug.xcconfig"; sourceTree = "<group>"; };
-		EA95495461BDB8B9B3F2C315 /* Pods_FinancialControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D2DF2B02BA7700514D7C /* TabBarFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFactoryTests.swift; sourceTree = "<group>"; };
-		ED753C142AFE6176002B469D /* FinancialControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED753C172AFE6176002B469D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED753C192AFE6176002B469D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ED753C202AFE6177002B469D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED753C252AFE6177002B469D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED753C2F2AFE6222002B469D /* FinancialControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinancialControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED753C3D2AFE642E002B469D /* TabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFactory.swift; sourceTree = "<group>"; };
-		ED753D022AFE751A002B469D /* WeeklyBudgets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeeklyBudgets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED8D23382B14224D009E8326 /* MonthlyBills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MonthlyBills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED8D23682B18FAFC009E8326 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED8D236B2B18FB03009E8326 /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDDFD3452BD402BA0027141C /* FinancialControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = FinancialControl.app; path = "/Users/tiagolinhares/Documents/ProjetosPessoais/FinancialControl/FinancialControl/build/Debug-iphoneos/FinancialControl.app"; sourceTree = "<absolute>"; };
+		EDDFD3462BD402BA0027141C /* FinancialControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FinancialControlTests.xctest; path = "/Users/tiagolinhares/Documents/ProjetosPessoais/FinancialControl/FinancialControl/build/Debug-iphoneos/FinancialControlTests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +53,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED8D236C2B18FB03009E8326 /* Provider.framework in Frameworks */,
-				ED8D23642B18F995009E8326 /* Pods_FinancialControl.framework in Frameworks */,
-				ED8D23662B18F996009E8326 /* MonthlyBills.framework in Frameworks */,
-				ED8D23612B18F991009E8326 /* WeeklyBudgets.framework in Frameworks */,
-				ED8D23692B18FAFC009E8326 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,28 +66,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		84449ACFAF3D656EC09445DC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E06AACB87B243CA7C918DC65 /* Pods-FinancialControl.debug.xcconfig */,
-				B6F430FE0FE4A944CBEF8653 /* Pods-FinancialControl.release.xcconfig */,
-			);
-			name = Pods;
-			path = ../Pods;
-			sourceTree = "<group>";
-		};
-		A5D97DD6453E2D704546D890 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				ED8D236B2B18FB03009E8326 /* Provider.framework */,
-				ED8D23682B18FAFC009E8326 /* Core.framework */,
-				ED8D23382B14224D009E8326 /* MonthlyBills.framework */,
-				ED753D022AFE751A002B469D /* WeeklyBudgets.framework */,
-				EA95495461BDB8B9B3F2C315 /* Pods_FinancialControl.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		ED11D2DC2B02BA4900514D7C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,19 +95,7 @@
 			children = (
 				ED753C162AFE6176002B469D /* FinancialControl */,
 				ED753C302AFE6222002B469D /* FinancialControlTests */,
-				ED753C152AFE6176002B469D /* Products */,
-				A5D97DD6453E2D704546D890 /* Frameworks */,
-				84449ACFAF3D656EC09445DC /* Pods */,
 			);
-			sourceTree = "<group>";
-		};
-		ED753C152AFE6176002B469D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				ED753C142AFE6176002B469D /* FinancialControl.app */,
-				ED753C2F2AFE6222002B469D /* FinancialControlTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		ED753C162AFE6176002B469D /* FinancialControl */ = {
@@ -239,7 +178,7 @@
 			);
 			name = FinancialControl;
 			productName = FinancialControl;
-			productReference = ED753C142AFE6176002B469D /* FinancialControl.app */;
+			productReference = EDDFD3452BD402BA0027141C /* FinancialControl.app */;
 			productType = "com.apple.product-type.application";
 		};
 		ED753C2E2AFE6222002B469D /* FinancialControlTests */ = {
@@ -257,7 +196,7 @@
 			);
 			name = FinancialControlTests;
 			productName = FinancialControlTests;
-			productReference = ED753C2F2AFE6222002B469D /* FinancialControlTests.xctest */;
+			productReference = EDDFD3462BD402BA0027141C /* FinancialControlTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -289,7 +228,7 @@
 				Base,
 			);
 			mainGroup = ED753C0B2AFE6176002B469D;
-			productRefGroup = ED753C152AFE6176002B469D /* Products */;
+			productRefGroup = ED753C0B2AFE6176002B469D;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -510,7 +449,6 @@
 		};
 		ED753C292AFE6177002B469D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E06AACB87B243CA7C918DC65 /* Pods-FinancialControl.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -544,7 +482,6 @@
 		};
 		ED753C2A2AFE6177002B469D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6F430FE0FE4A944CBEF8653 /* Pods-FinancialControl.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
