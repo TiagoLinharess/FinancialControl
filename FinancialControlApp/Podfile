@@ -6,6 +6,7 @@ end
 
 target 'FinancialControlApp' do
   privateSource('Core', '0.1.0-core')
+  privateSource('Provider', '0.1.0-provider')
 
   target 'FinancialControlAppTests' do
     inherit! :search_paths
