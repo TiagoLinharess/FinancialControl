@@ -209,6 +209,7 @@
 				EDDFD39C2BD407660027141C /* Sources */,
 				EDDFD39D2BD407660027141C /* Frameworks */,
 				EDDFD39E2BD407660027141C /* Resources */,
+				EB163A3AE6E35EBF9CD78107 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,6 +247,7 @@
 				EDDFD3BC2BD407680027141C /* Sources */,
 				EDDFD3BD2BD407680027141C /* Frameworks */,
 				EDDFD3BE2BD407680027141C /* Resources */,
+				80E66E9198AA04A67892EE27 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -368,6 +370,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80E66E9198AA04A67892EE27 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinancialControlApp-FinancialControlAppUITests/Pods-FinancialControlApp-FinancialControlAppUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinancialControlApp-FinancialControlAppUITests/Pods-FinancialControlApp-FinancialControlAppUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinancialControlApp-FinancialControlAppUITests/Pods-FinancialControlApp-FinancialControlAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB163A3AE6E35EBF9CD78107 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinancialControlApp/Pods-FinancialControlApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinancialControlApp/Pods-FinancialControlApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinancialControlApp/Pods-FinancialControlApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F10CFB2B5DCCE270F119A89C /* [CP] Check Pods Manifest.lock */ = {
