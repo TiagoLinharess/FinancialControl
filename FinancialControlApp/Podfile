@@ -1,9 +1,11 @@
 platform :ios, '17.0'
 
+def privateSource(name, version)
+  pod name, :git => 'https://github.com/TiagoLinharess/FinancialControl.git', :tag => version
+end
+
 target 'FinancialControlApp' do
-  use_frameworks!
-  
-  pod 'Core', :git => 'https://github.com/TiagoLinharess/FinancialControl.git', :tag => '0.1.0-core'
+  privateSource('Core', '0.1.0-core')
 
   target 'FinancialControlAppTests' do
     inherit! :search_paths
@@ -14,7 +16,3 @@ target 'FinancialControlApp' do
   end
 
 end
-
-#def private_source(name, version)
-#  return pod name, :git => 'https://github.com/TiagoLinharess/FinancialControl.git', :tag => version
-#end

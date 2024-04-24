@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07B98CCECDC876C1AD8921B0 /* Pods_FinancialControlApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD0F9561ED4781F208E467D0 /* Pods_FinancialControlApp.framework */; };
-		366C40C9E302BE81ECB3AAF7 /* Pods_FinancialControlApp_FinancialControlAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007AC771DFF70DCE984FB5D4 /* Pods_FinancialControlApp_FinancialControlAppUITests.framework */; };
+		03A38F2D8115C57F697C7E8D /* libPods-FinancialControlApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821EE9AB1580ADA1D6B8038E /* libPods-FinancialControlApp.a */; };
+		6068A7E461DCDEACF58A285C /* libPods-FinancialControlApp-FinancialControlAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F789BA7C365951B68A1A6428 /* libPods-FinancialControlApp-FinancialControlAppUITests.a */; };
+		B4A257735A5C16ADB0782838 /* libPods-FinancialControlAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 487D7DF068A01C39E4B48941 /* libPods-FinancialControlAppTests.a */; };
 		EDDFD3C52BD407680027141C /* FinancialControlAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDFD3C42BD407680027141C /* FinancialControlAppUITests.swift */; };
 		EDDFD3C72BD407680027141C /* FinancialControlAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDFD3C62BD407680027141C /* FinancialControlAppUITestsLaunchTests.swift */; };
 		EDDFD3DC2BD4094D0027141C /* TabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDFD3D62BD4094D0027141C /* TabBarFactory.swift */; };
 		EDDFD3DD2BD4094D0027141C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDFD3D82BD4094D0027141C /* AppDelegate.swift */; };
 		EDDFD3DE2BD4094D0027141C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDFD3D92BD4094D0027141C /* SceneDelegate.swift */; };
 		EDDFD3DF2BD4094D0027141C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDDFD3DB2BD4094D0027141C /* Assets.xcassets */; };
-		FFCE43F37F1CF5271FBF24DE /* Pods_FinancialControlAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033581BA0BDDF49AA601C5BE /* Pods_FinancialControlAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,15 +36,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		007AC771DFF70DCE984FB5D4 /* Pods_FinancialControlApp_FinancialControlAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControlApp_FinancialControlAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		033581BA0BDDF49AA601C5BE /* Pods_FinancialControlAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControlAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1CA34F7146AF61BB657C31 /* Pods-FinancialControlApp-FinancialControlAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControlApp-FinancialControlAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControlApp-FinancialControlAppUITests/Pods-FinancialControlApp-FinancialControlAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		12C1F74EC549D588658DEE3F /* Pods-FinancialControlAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControlAppTests.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControlAppTests/Pods-FinancialControlAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		487D7DF068A01C39E4B48941 /* libPods-FinancialControlAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinancialControlAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B47BB02FB212032768179F /* Pods-FinancialControlApp-FinancialControlAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControlApp-FinancialControlAppUITests.release.xcconfig"; path = "Target Support Files/Pods-FinancialControlApp-FinancialControlAppUITests/Pods-FinancialControlApp-FinancialControlAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		821EE9AB1580ADA1D6B8038E /* libPods-FinancialControlApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinancialControlApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AF685037789B65FB48658C /* Pods-FinancialControlApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControlApp.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControlApp/Pods-FinancialControlApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8BA6488D3151236BCA9E7252 /* Pods-FinancialControlAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControlAppTests.release.xcconfig"; path = "Target Support Files/Pods-FinancialControlAppTests/Pods-FinancialControlAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		90D856269262D215E8FF720D /* Pods-FinancialControlApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControlApp.release.xcconfig"; path = "Target Support Files/Pods-FinancialControlApp/Pods-FinancialControlApp.release.xcconfig"; sourceTree = "<group>"; };
-		DD0F9561ED4781F208E467D0 /* Pods_FinancialControlApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControlApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDFD3A02BD407660027141C /* FinancialControlApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialControlApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDFD3B12BD407680027141C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDDFD3B62BD407680027141C /* FinancialControlAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinancialControlAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +54,7 @@
 		EDDFD3D82BD4094D0027141C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDDFD3D92BD4094D0027141C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EDDFD3DB2BD4094D0027141C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F789BA7C365951B68A1A6428 /* libPods-FinancialControlApp-FinancialControlAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FinancialControlApp-FinancialControlAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07B98CCECDC876C1AD8921B0 /* Pods_FinancialControlApp.framework in Frameworks */,
+				03A38F2D8115C57F697C7E8D /* libPods-FinancialControlApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFCE43F37F1CF5271FBF24DE /* Pods_FinancialControlAppTests.framework in Frameworks */,
+				B4A257735A5C16ADB0782838 /* libPods-FinancialControlAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				366C40C9E302BE81ECB3AAF7 /* Pods_FinancialControlApp_FinancialControlAppUITests.framework in Frameworks */,
+				6068A7E461DCDEACF58A285C /* libPods-FinancialControlApp-FinancialControlAppUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,9 +88,9 @@
 		8D8FE6FE21C98FE3C2220C4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DD0F9561ED4781F208E467D0 /* Pods_FinancialControlApp.framework */,
-				007AC771DFF70DCE984FB5D4 /* Pods_FinancialControlApp_FinancialControlAppUITests.framework */,
-				033581BA0BDDF49AA601C5BE /* Pods_FinancialControlAppTests.framework */,
+				821EE9AB1580ADA1D6B8038E /* libPods-FinancialControlApp.a */,
+				F789BA7C365951B68A1A6428 /* libPods-FinancialControlApp-FinancialControlAppUITests.a */,
+				487D7DF068A01C39E4B48941 /* libPods-FinancialControlAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,7 +210,6 @@
 				EDDFD39C2BD407660027141C /* Sources */,
 				EDDFD39D2BD407660027141C /* Frameworks */,
 				EDDFD39E2BD407660027141C /* Resources */,
-				BBD0E867C4C4AC982B771E08 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -248,7 +247,6 @@
 				EDDFD3BC2BD407680027141C /* Sources */,
 				EDDFD3BD2BD407680027141C /* Frameworks */,
 				EDDFD3BE2BD407680027141C /* Resources */,
-				6B86B29661F18A9545AC937A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -371,40 +369,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6B86B29661F18A9545AC937A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FinancialControlApp-FinancialControlAppUITests/Pods-FinancialControlApp-FinancialControlAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FinancialControlApp-FinancialControlAppUITests/Pods-FinancialControlApp-FinancialControlAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinancialControlApp-FinancialControlAppUITests/Pods-FinancialControlApp-FinancialControlAppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BBD0E867C4C4AC982B771E08 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FinancialControlApp/Pods-FinancialControlApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FinancialControlApp/Pods-FinancialControlApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinancialControlApp/Pods-FinancialControlApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F10CFB2B5DCCE270F119A89C /* [CP] Check Pods Manifest.lock */ = {
