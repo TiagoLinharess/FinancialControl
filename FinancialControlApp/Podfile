@@ -5,7 +5,7 @@ def privateSource(name, version)
 end
 
 target 'FinancialControlApp' do
-  privateSource('Core', '0.2.0-core')
+  privateSource('Core', '0.2.1-core')
 
   target 'FinancialControlAppTests' do
     inherit! :search_paths
