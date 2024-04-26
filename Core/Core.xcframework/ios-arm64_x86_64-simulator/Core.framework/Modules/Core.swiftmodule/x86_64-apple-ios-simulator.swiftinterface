@@ -1,0 +1,92 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target x86_64-apple-ios17.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name Core
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+import Swift
+import SwiftUI
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+extension Swift.Double {
+  public func toCurrency() -> Swift.String
+}
+extension Swift.String {
+  public var currencyToDouble: Swift.Double? {
+    get
+  }
+}
+public enum CoreConstants {
+  public enum Commons {
+    public static let bills: Swift.String
+    public static let weekly: Swift.String
+    public static let budgets: Swift.String
+    public static let pickerSelect: Swift.String
+    public static let AlertTitle: Swift.String
+    public static let edit: Swift.String
+    public static let ok: Swift.String
+    public static let create: Swift.String
+    public static let cancel: Swift.String
+    public static let download: Swift.String
+    public static let cash: Swift.String
+    public static let key: Swift.String
+    public static let percentageIcon: Swift.String
+    public static let divider: Swift.String
+    public static let barCompletion: Swift.String
+    public static let spaceCompletion: Swift.String
+    public static let incomesKey: Swift.String
+    public static let salaryKey: Swift.String
+    public static let bonusKey: Swift.String
+    public static let extraKey: Swift.String
+    public static let otherKey: Swift.String
+    public static let investmentsKey: Swift.String
+    public static let sharesKey: Swift.String
+    public static let privatePensionKey: Swift.String
+    public static let fixedIncomeKey: Swift.String
+    public static let expensesKey: Swift.String
+    public static let housingKey: Swift.String
+    public static let transportKey: Swift.String
+    public static let feedKey: Swift.String
+    public static let healthKey: Swift.String
+    public static let educationKey: Swift.String
+    public static let taxesKey: Swift.String
+    public static let laisureKey: Swift.String
+    public static let clothingKey: Swift.String
+    public static let creditCardKey: Swift.String
+    public static let total: Swift.String
+    public static let percentage: Swift.String
+    public static let tryAgain: Swift.String
+    public static let defaultErrorMessage: Swift.String
+    public static let currencyPlaceholder: Swift.String
+    public static let emptyTitle: Swift.String
+    public static let success: Swift.String
+  }
+  public enum Init {
+    public static let coder: Swift.String
+  }
+  public enum Error {
+    public static let indexOutOfBounds: Swift.String
+    public static let generic: Swift.String
+  }
+  public enum Icons {
+    public static let calendar: Swift.String
+    public static let close: Swift.String
+    public static let check: Swift.String
+    public static let cash: Swift.String
+    public static let creditCard: Swift.String
+    public static let add: Swift.String
+    public static let week: Swift.String
+  }
+  public enum Sizes {
+    public static let pickerHeight: CoreFoundation.CGFloat
+  }
+}
+public enum TestUtils {
+  public static func get_swiftui_view_ready_for_snapshot(view: some View) -> UIKit.UIViewController
+  public static func get_window_for_snapshot(controller: UIKit.UIViewController) -> UIKit.UIWindow
+}
+extension Foundation.Date {
+  public var localeFormat: Swift.String {
+    get
+  }
+}

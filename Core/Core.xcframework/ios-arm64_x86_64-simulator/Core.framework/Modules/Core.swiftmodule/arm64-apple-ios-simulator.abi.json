@@ -1,0 +1,4420 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Core",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Core",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Core",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CoreConstants",
+        "printedName": "CoreConstants",
+        "children": [
+          {
+            "kind": "TypeDecl",
+            "name": "Commons",
+            "printedName": "Commons",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "bills",
+                "printedName": "bills",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO5billsSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO5billsSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO5billsSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO5billsSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "weekly",
+                "printedName": "weekly",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO6weeklySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO6weeklySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO6weeklySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO6weeklySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "budgets",
+                "printedName": "budgets",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO7budgetsSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO7budgetsSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO7budgetsSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO7budgetsSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "pickerSelect",
+                "printedName": "pickerSelect",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO12pickerSelectSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO12pickerSelectSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO12pickerSelectSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO12pickerSelectSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "AlertTitle",
+                "printedName": "AlertTitle",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO10AlertTitleSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO10AlertTitleSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO10AlertTitleSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO10AlertTitleSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "edit",
+                "printedName": "edit",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO4editSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO4editSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO4editSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO4editSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "ok",
+                "printedName": "ok",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO2okSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO2okSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO2okSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO2okSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "create",
+                "printedName": "create",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO6createSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO6createSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO6createSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO6createSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "cancel",
+                "printedName": "cancel",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO6cancelSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO6cancelSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO6cancelSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO6cancelSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "download",
+                "printedName": "download",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO8downloadSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO8downloadSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO8downloadSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO8downloadSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "cash",
+                "printedName": "cash",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO4cashSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO4cashSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO4cashSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO4cashSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "key",
+                "printedName": "key",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO3keySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO3keySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO3keySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO3keySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "percentageIcon",
+                "printedName": "percentageIcon",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO14percentageIconSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO14percentageIconSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO14percentageIconSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO14percentageIconSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "divider",
+                "printedName": "divider",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO7dividerSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO7dividerSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO7dividerSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO7dividerSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "barCompletion",
+                "printedName": "barCompletion",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO13barCompletionSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO13barCompletionSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO13barCompletionSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO13barCompletionSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "spaceCompletion",
+                "printedName": "spaceCompletion",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO15spaceCompletionSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO15spaceCompletionSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO15spaceCompletionSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO15spaceCompletionSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "incomesKey",
+                "printedName": "incomesKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO10incomesKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO10incomesKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO10incomesKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO10incomesKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "salaryKey",
+                "printedName": "salaryKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO9salaryKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO9salaryKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO9salaryKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO9salaryKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "bonusKey",
+                "printedName": "bonusKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO8bonusKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO8bonusKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO8bonusKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO8bonusKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "extraKey",
+                "printedName": "extraKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO8extraKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO8extraKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO8extraKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO8extraKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "otherKey",
+                "printedName": "otherKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO8otherKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO8otherKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO8otherKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO8otherKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "investmentsKey",
+                "printedName": "investmentsKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO14investmentsKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO14investmentsKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO14investmentsKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO14investmentsKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "sharesKey",
+                "printedName": "sharesKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO9sharesKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO9sharesKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO9sharesKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO9sharesKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "privatePensionKey",
+                "printedName": "privatePensionKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO17privatePensionKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO17privatePensionKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO17privatePensionKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO17privatePensionKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "fixedIncomeKey",
+                "printedName": "fixedIncomeKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO14fixedIncomeKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO14fixedIncomeKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO14fixedIncomeKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO14fixedIncomeKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "expensesKey",
+                "printedName": "expensesKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO11expensesKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO11expensesKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO11expensesKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO11expensesKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "housingKey",
+                "printedName": "housingKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO10housingKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO10housingKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO10housingKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO10housingKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "transportKey",
+                "printedName": "transportKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO12transportKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO12transportKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO12transportKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO12transportKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "feedKey",
+                "printedName": "feedKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO7feedKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO7feedKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO7feedKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO7feedKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "healthKey",
+                "printedName": "healthKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO9healthKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO9healthKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO9healthKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO9healthKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "educationKey",
+                "printedName": "educationKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO12educationKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO12educationKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO12educationKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO12educationKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "taxesKey",
+                "printedName": "taxesKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO8taxesKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO8taxesKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO8taxesKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO8taxesKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "laisureKey",
+                "printedName": "laisureKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO10laisureKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO10laisureKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO10laisureKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO10laisureKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "clothingKey",
+                "printedName": "clothingKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO11clothingKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO11clothingKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO11clothingKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO11clothingKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "creditCardKey",
+                "printedName": "creditCardKey",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO13creditCardKeySSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO13creditCardKeySSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO13creditCardKeySSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO13creditCardKeySSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "total",
+                "printedName": "total",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO5totalSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO5totalSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO5totalSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO5totalSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "percentage",
+                "printedName": "percentage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO10percentageSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO10percentageSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO10percentageSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO10percentageSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "tryAgain",
+                "printedName": "tryAgain",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO8tryAgainSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO8tryAgainSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO8tryAgainSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO8tryAgainSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "defaultErrorMessage",
+                "printedName": "defaultErrorMessage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO19defaultErrorMessageSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO19defaultErrorMessageSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO19defaultErrorMessageSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO19defaultErrorMessageSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "currencyPlaceholder",
+                "printedName": "currencyPlaceholder",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO19currencyPlaceholderSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO19currencyPlaceholderSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO19currencyPlaceholderSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO19currencyPlaceholderSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "emptyTitle",
+                "printedName": "emptyTitle",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO10emptyTitleSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO10emptyTitleSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO10emptyTitleSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO10emptyTitleSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "success",
+                "printedName": "success",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO7CommonsO7successSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO7CommonsO7successSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO7CommonsO7successSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO7CommonsO7successSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:4Core0A9ConstantsO7CommonsO",
+            "mangledName": "$s4Core0A9ConstantsO7CommonsO",
+            "moduleName": "Core",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "Init",
+            "printedName": "Init",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "coder",
+                "printedName": "coder",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO4InitO5coderSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO4InitO5coderSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO4InitO5coderSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO4InitO5coderSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:4Core0A9ConstantsO4InitO",
+            "mangledName": "$s4Core0A9ConstantsO4InitO",
+            "moduleName": "Core",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "Error",
+            "printedName": "Error",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "indexOutOfBounds",
+                "printedName": "indexOutOfBounds",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO5ErrorO16indexOutOfBoundsSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO5ErrorO16indexOutOfBoundsSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO5ErrorO16indexOutOfBoundsSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO5ErrorO16indexOutOfBoundsSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "generic",
+                "printedName": "generic",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO5ErrorO7genericSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO5ErrorO7genericSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO5ErrorO7genericSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO5ErrorO7genericSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:4Core0A9ConstantsO5ErrorO",
+            "mangledName": "$s4Core0A9ConstantsO5ErrorO",
+            "moduleName": "Core",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "Icons",
+            "printedName": "Icons",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "calendar",
+                "printedName": "calendar",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO5IconsO8calendarSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO5IconsO8calendarSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO5IconsO8calendarSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO5IconsO8calendarSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "close",
+                "printedName": "close",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO5IconsO5closeSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO5IconsO5closeSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO5IconsO5closeSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO5IconsO5closeSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "check",
+                "printedName": "check",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO5IconsO5checkSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO5IconsO5checkSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO5IconsO5checkSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO5IconsO5checkSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "cash",
+                "printedName": "cash",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO5IconsO4cashSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO5IconsO4cashSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO5IconsO4cashSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO5IconsO4cashSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "creditCard",
+                "printedName": "creditCard",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO5IconsO10creditCardSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO5IconsO10creditCardSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO5IconsO10creditCardSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO5IconsO10creditCardSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "add",
+                "printedName": "add",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO5IconsO3addSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO5IconsO3addSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO5IconsO3addSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO5IconsO3addSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "week",
+                "printedName": "week",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO5IconsO4weekSSvpZ",
+                "mangledName": "$s4Core0A9ConstantsO5IconsO4weekSSvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO5IconsO4weekSSvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO5IconsO4weekSSvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:4Core0A9ConstantsO5IconsO",
+            "mangledName": "$s4Core0A9ConstantsO5IconsO",
+            "moduleName": "Core",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "Sizes",
+            "printedName": "Sizes",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "pickerHeight",
+                "printedName": "pickerHeight",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:4Core0A9ConstantsO5SizesO12pickerHeight0A10Foundation7CGFloatVvpZ",
+                "mangledName": "$s4Core0A9ConstantsO5SizesO12pickerHeight0A8Graphics7CGFloatVvpZ",
+                "moduleName": "Core",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CGFloat",
+                        "printedName": "CoreGraphics.CGFloat",
+                        "usr": "s:14CoreFoundation7CGFloatV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:4Core0A9ConstantsO5SizesO12pickerHeight0A10Foundation7CGFloatVvgZ",
+                    "mangledName": "$s4Core0A9ConstantsO5SizesO12pickerHeight0A8Graphics7CGFloatVvgZ",
+                    "moduleName": "Core",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:4Core0A9ConstantsO5SizesO",
+            "mangledName": "$s4Core0A9ConstantsO5SizesO",
+            "moduleName": "Core",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:4Core0A9ConstantsO",
+        "mangledName": "$s4Core0A9ConstantsO",
+        "moduleName": "Core",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "Core",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TestUtils",
+        "printedName": "TestUtils",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "get_swiftui_view_ready_for_snapshot",
+            "printedName": "get_swiftui_view_ready_for_snapshot(view:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:4Core9TestUtilsO35get_swiftui_view_ready_for_snapshot0F0So16UIViewControllerCx_t7SwiftUI4ViewRzlFZ",
+            "mangledName": "$s4Core9TestUtilsO35get_swiftui_view_ready_for_snapshot0F0So16UIViewControllerCx_t7SwiftUI4ViewRzlFZ",
+            "moduleName": "Core",
+            "genericSig": "<τ_0_0 where τ_0_0 : SwiftUI.View>",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "get_window_for_snapshot",
+            "printedName": "get_window_for_snapshot(controller:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIWindow",
+                "printedName": "UIKit.UIWindow",
+                "usr": "c:objc(cs)UIWindow"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:4Core9TestUtilsO23get_window_for_snapshot10controllerSo8UIWindowCSo16UIViewControllerC_tFZ",
+            "mangledName": "$s4Core9TestUtilsO23get_window_for_snapshot10controllerSo8UIWindowCSo16UIViewControllerC_tFZ",
+            "moduleName": "Core",
+            "static": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:4Core9TestUtilsO",
+        "mangledName": "$s4Core9TestUtilsO",
+        "moduleName": "Core",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Core",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Double",
+        "printedName": "Double",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "toCurrency",
+            "printedName": "toCurrency()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:Sd4CoreE10toCurrencySSyF",
+            "mangledName": "$sSd4CoreE10toCurrencySSyF",
+            "moduleName": "Core",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:Sd",
+        "mangledName": "$sSd",
+        "moduleName": "Swift",
+        "declAttributes": [
+          "Frozen"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CustomPlaygroundQuickLookable",
+            "printedName": "_CustomPlaygroundQuickLookable",
+            "usr": "s:s30_CustomPlaygroundQuickLookableP",
+            "mangledName": "$ss30_CustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CVarArgPassedAsDouble",
+            "printedName": "_CVarArgPassedAsDouble",
+            "usr": "s:s22_CVarArgPassedAsDoubleP",
+            "mangledName": "$ss22_CVarArgPassedAsDoubleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CVarArgAligned",
+            "printedName": "_CVarArgAligned",
+            "usr": "s:s15_CVarArgAlignedP",
+            "mangledName": "$ss15_CVarArgAlignedP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LosslessStringConvertible",
+            "printedName": "LosslessStringConvertible",
+            "usr": "s:s25LosslessStringConvertibleP",
+            "mangledName": "$ss25LosslessStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TextOutputStreamable",
+            "printedName": "TextOutputStreamable",
+            "usr": "s:s20TextOutputStreamableP",
+            "mangledName": "$ss20TextOutputStreamableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BinaryFloatingPoint",
+            "printedName": "BinaryFloatingPoint",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawSignificand",
+                "printedName": "RawSignificand",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt64",
+                    "printedName": "Swift.UInt64",
+                    "usr": "s:s6UInt64V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "RawExponent",
+                "printedName": "RawExponent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt",
+                    "printedName": "Swift.UInt",
+                    "usr": "s:Su"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SB",
+            "mangledName": "$sSB"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByFloatLiteral",
+            "printedName": "ExpressibleByFloatLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "FloatLiteralType",
+                "printedName": "FloatLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s25ExpressibleByFloatLiteralP",
+            "mangledName": "$ss25ExpressibleByFloatLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "FloatingPoint",
+            "printedName": "FloatingPoint",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Exponent",
+                "printedName": "Exponent",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SF",
+            "mangledName": "$sSF"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SignedNumeric",
+            "printedName": "SignedNumeric",
+            "usr": "s:s13SignedNumericP",
+            "mangledName": "$ss13SignedNumericP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Numeric",
+            "printedName": "Numeric",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Magnitude",
+                "printedName": "Magnitude",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sj",
+            "mangledName": "$sSj"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AdditiveArithmetic",
+            "printedName": "AdditiveArithmetic",
+            "usr": "s:s18AdditiveArithmeticP",
+            "mangledName": "$ss18AdditiveArithmeticP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinIntegerLiteral",
+            "printedName": "_ExpressibleByBuiltinIntegerLiteral",
+            "usr": "s:s35_ExpressibleByBuiltinIntegerLiteralP",
+            "mangledName": "$ss35_ExpressibleByBuiltinIntegerLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByIntegerLiteral",
+            "printedName": "ExpressibleByIntegerLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "IntegerLiteralType",
+                "printedName": "IntegerLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s27ExpressibleByIntegerLiteralP",
+            "mangledName": "$ss27ExpressibleByIntegerLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinFloatLiteral",
+            "printedName": "_ExpressibleByBuiltinFloatLiteral",
+            "usr": "s:s33_ExpressibleByBuiltinFloatLiteralP",
+            "mangledName": "$ss33_ExpressibleByBuiltinFloatLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_HasCustomAnyHashableRepresentation",
+            "printedName": "_HasCustomAnyHashableRepresentation",
+            "usr": "s:s35_HasCustomAnyHashableRepresentationP",
+            "mangledName": "$ss35_HasCustomAnyHashableRepresentationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Strideable",
+            "printedName": "Strideable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Stride",
+                "printedName": "Stride",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sx",
+            "mangledName": "$sSx"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Comparable",
+            "printedName": "Comparable",
+            "usr": "s:SL",
+            "mangledName": "$sSL"
+          },
+          {
+            "kind": "Conformance",
+            "name": "SIMDScalar",
+            "printedName": "SIMDScalar",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "SIMDMaskScalar",
+                "printedName": "SIMDMaskScalar",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD2Storage",
+                "printedName": "SIMD2Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD2Storage",
+                    "printedName": "Swift.Double.SIMD2Storage",
+                    "usr": "s:Sd12SIMD2StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD4Storage",
+                "printedName": "SIMD4Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD4Storage",
+                    "printedName": "Swift.Double.SIMD4Storage",
+                    "usr": "s:Sd12SIMD4StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD8Storage",
+                "printedName": "SIMD8Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD8Storage",
+                    "printedName": "Swift.Double.SIMD8Storage",
+                    "usr": "s:Sd12SIMD8StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD16Storage",
+                "printedName": "SIMD16Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD16Storage",
+                    "printedName": "Swift.Double.SIMD16Storage",
+                    "usr": "s:Sd13SIMD16StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD32Storage",
+                "printedName": "SIMD32Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD32Storage",
+                    "printedName": "Swift.Double.SIMD32Storage",
+                    "usr": "s:Sd13SIMD32StorageV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SIMD64Storage",
+                "printedName": "SIMD64Storage",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SIMD64Storage",
+                    "printedName": "Swift.Double.SIMD64Storage",
+                    "usr": "s:Sd13SIMD64StorageV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s10SIMDScalarP",
+            "mangledName": "$ss10SIMDScalarP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_FormatSpecifiable",
+            "printedName": "_FormatSpecifiable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_Arg",
+                "printedName": "_Arg",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation18_FormatSpecifiableP",
+            "mangledName": "$s10Foundation18_FormatSpecifiableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "VectorArithmetic",
+            "printedName": "VectorArithmetic",
+            "usr": "s:7SwiftUI16VectorArithmeticP",
+            "mangledName": "$s7SwiftUI16VectorArithmeticP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_FormatSpecifiable",
+            "printedName": "_FormatSpecifiable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_Arg",
+                "printedName": "_Arg",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7SwiftUI18_FormatSpecifiableP",
+            "mangledName": "$s7SwiftUI18_FormatSpecifiableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Animatable",
+            "printedName": "Animatable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "AnimatableData",
+                "printedName": "AnimatableData",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:7SwiftUI10AnimatableP",
+            "mangledName": "$s7SwiftUI10AnimatableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "String",
+        "printedName": "String",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "currencyToDouble",
+            "printedName": "currencyToDouble",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:SS4CoreE16currencyToDoubleSdSgvp",
+            "mangledName": "$sSS4CoreE16currencyToDoubleSdSgvp",
+            "moduleName": "Core",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Double?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:SS4CoreE16currencyToDoubleSdSgvg",
+                "mangledName": "$sSS4CoreE16currencyToDoubleSdSgvg",
+                "moduleName": "Core",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:SS",
+        "mangledName": "$sSS",
+        "moduleName": "Swift",
+        "declAttributes": [
+          "Frozen"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CodingKeyRepresentable",
+            "printedName": "CodingKeyRepresentable",
+            "usr": "s:s22CodingKeyRepresentableP",
+            "mangledName": "$ss22CodingKeyRepresentableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_HasContiguousBytes",
+            "printedName": "_HasContiguousBytes",
+            "usr": "s:s19_HasContiguousBytesP",
+            "mangledName": "$ss19_HasContiguousBytesP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CustomPlaygroundQuickLookable",
+            "printedName": "_CustomPlaygroundQuickLookable",
+            "usr": "s:s30_CustomPlaygroundQuickLookableP",
+            "mangledName": "$ss30_CustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TextOutputStream",
+            "printedName": "TextOutputStream",
+            "usr": "s:s16TextOutputStreamP",
+            "mangledName": "$ss16TextOutputStreamP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TextOutputStreamable",
+            "printedName": "TextOutputStreamable",
+            "usr": "s:s20TextOutputStreamableP",
+            "mangledName": "$ss20TextOutputStreamableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinUnicodeScalarLiteral",
+            "printedName": "_ExpressibleByBuiltinUnicodeScalarLiteral",
+            "usr": "s:s41_ExpressibleByBuiltinUnicodeScalarLiteralP",
+            "mangledName": "$ss41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
+            "printedName": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
+            "usr": "s:s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP",
+            "mangledName": "$ss51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinStringLiteral",
+            "printedName": "_ExpressibleByBuiltinStringLiteral",
+            "usr": "s:s34_ExpressibleByBuiltinStringLiteralP",
+            "mangledName": "$ss34_ExpressibleByBuiltinStringLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByStringLiteral",
+            "printedName": "ExpressibleByStringLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "StringLiteralType",
+                "printedName": "StringLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s26ExpressibleByStringLiteralP",
+            "mangledName": "$ss26ExpressibleByStringLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByExtendedGraphemeClusterLiteral",
+            "printedName": "ExpressibleByExtendedGraphemeClusterLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ExtendedGraphemeClusterLiteralType",
+                "printedName": "ExtendedGraphemeClusterLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s43ExpressibleByExtendedGraphemeClusterLiteralP",
+            "mangledName": "$ss43ExpressibleByExtendedGraphemeClusterLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByUnicodeScalarLiteral",
+            "printedName": "ExpressibleByUnicodeScalarLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "UnicodeScalarLiteralType",
+                "printedName": "UnicodeScalarLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s33ExpressibleByUnicodeScalarLiteralP",
+            "mangledName": "$ss33ExpressibleByUnicodeScalarLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BidirectionalCollection",
+            "printedName": "BidirectionalCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Index",
+                    "printedName": "Swift.String.Index",
+                    "usr": "s:SS5IndexV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultIndices",
+                    "printedName": "Swift.DefaultIndices<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SI"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SK",
+            "mangledName": "$sSK"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Collection",
+            "printedName": "Collection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Index",
+                    "printedName": "Swift.String.Index",
+                    "usr": "s:SS5IndexV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Swift.String.Iterator",
+                    "usr": "s:SS8IteratorV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultIndices",
+                    "printedName": "Swift.DefaultIndices<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SI"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sl",
+            "mangledName": "$sSl"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Swift.String.Iterator",
+                    "usr": "s:SS8IteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Comparable",
+            "printedName": "Comparable",
+            "usr": "s:SL",
+            "mangledName": "$sSL"
+          },
+          {
+            "kind": "Conformance",
+            "name": "StringProtocol",
+            "printedName": "StringProtocol",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "UTF8View",
+                "printedName": "UTF8View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTF8View",
+                    "printedName": "Swift.String.UTF8View",
+                    "usr": "s:SS8UTF8ViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "UTF16View",
+                "printedName": "UTF16View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTF16View",
+                    "printedName": "Swift.String.UTF16View",
+                    "usr": "s:SS9UTF16ViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "UnicodeScalarView",
+                "printedName": "UnicodeScalarView",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UnicodeScalarView",
+                    "printedName": "Swift.String.UnicodeScalarView",
+                    "usr": "s:SS17UnicodeScalarViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sy",
+            "mangledName": "$sSy"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByStringInterpolation",
+            "printedName": "ExpressibleByStringInterpolation",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "StringInterpolation",
+                "printedName": "StringInterpolation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultStringInterpolation",
+                    "printedName": "Swift.DefaultStringInterpolation",
+                    "usr": "s:s26DefaultStringInterpolationV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s32ExpressibleByStringInterpolationP",
+            "mangledName": "$ss32ExpressibleByStringInterpolationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LosslessStringConvertible",
+            "printedName": "LosslessStringConvertible",
+            "usr": "s:s25LosslessStringConvertibleP",
+            "mangledName": "$ss25LosslessStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RangeReplaceableCollection",
+            "printedName": "RangeReplaceableCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sm",
+            "mangledName": "$sSm"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MirrorPath",
+            "printedName": "MirrorPath",
+            "usr": "s:s10MirrorPathP",
+            "mangledName": "$ss10MirrorPathP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSString",
+                    "printedName": "Foundation.NSString",
+                    "usr": "c:objc(cs)NSString"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Transferable",
+            "printedName": "Transferable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Representation",
+                "printedName": "Representation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OpaqueTypeArchetype",
+                    "printedName": "some CoreTransferable.TransferRepresentation",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "TransferRepresentation",
+                        "printedName": "CoreTransferable.TransferRepresentation",
+                        "usr": "s:16CoreTransferable22TransferRepresentationP"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Sendable",
+                        "printedName": "Swift.Sendable",
+                        "usr": "s:s8SendableP"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "usr": "s:16CoreTransferable0B0P",
+            "mangledName": "$s16CoreTransferable0B0P"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Date",
+        "printedName": "Date",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "localeFormat",
+            "printedName": "localeFormat",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10Foundation4DateV4CoreE12localeFormatSSvp",
+            "mangledName": "$s10Foundation4DateV4CoreE12localeFormatSSvp",
+            "moduleName": "Core",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10Foundation4DateV4CoreE12localeFormatSSvg",
+                "mangledName": "$s10Foundation4DateV4CoreE12localeFormatSSvg",
+                "moduleName": "Core",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:10Foundation4DateV",
+        "mangledName": "$s10Foundation4DateV",
+        "moduleName": "Foundation",
+        "intro_Macosx": "10.10",
+        "intro_iOS": "8.0",
+        "intro_tvOS": "9.0",
+        "intro_watchOS": "2.0",
+        "declAttributes": [
+          "Available",
+          "Available",
+          "Available",
+          "Available"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Comparable",
+            "printedName": "Comparable",
+            "usr": "s:SL",
+            "mangledName": "$sSL"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ReferenceConvertible",
+            "printedName": "ReferenceConvertible",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ReferenceType",
+                "printedName": "ReferenceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDate",
+                    "printedName": "Foundation.NSDate",
+                    "usr": "c:objc(cs)NSDate"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation20ReferenceConvertibleP",
+            "mangledName": "$s10Foundation20ReferenceConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSDate",
+                    "printedName": "Foundation.NSDate",
+                    "usr": "c:objc(cs)NSDate"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CustomPlaygroundQuickLookable",
+            "printedName": "_CustomPlaygroundQuickLookable",
+            "usr": "s:s30_CustomPlaygroundQuickLookableP",
+            "mangledName": "$ss30_CustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Strideable",
+            "printedName": "Strideable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Stride",
+                "printedName": "Stride",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sx",
+            "mangledName": "$sSx"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 232,
+      "length": 7,
+      "value": "\"Bills\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 283,
+      "length": 8,
+      "value": "\"Weekly\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 336,
+      "length": 9,
+      "value": "\"Budgets\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 395,
+      "length": 8,
+      "value": "\"select\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 451,
+      "length": 9,
+      "value": "\"Message\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 502,
+      "length": 6,
+      "value": "\"Edit\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 548,
+      "length": 4,
+      "value": "\"ok\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 596,
+      "length": 8,
+      "value": "\"Create\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 648,
+      "length": 8,
+      "value": "\"Cancel\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 702,
+      "length": 10,
+      "value": "\"Download\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 754,
+      "length": 5,
+      "value": "\"$%@\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 800,
+      "length": 5,
+      "value": "\"%@:\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 857,
+      "length": 6,
+      "value": "\"%@%%\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 908,
+      "length": 9,
+      "value": "\"%@ | %@\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 968,
+      "length": 7,
+      "value": "\"%@\/%@\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1028,
+      "length": 7,
+      "value": "\"%@ %@\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1083,
+      "length": 9,
+      "value": "\"Incomes\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1139,
+      "length": 8,
+      "value": "\"Salary\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1193,
+      "length": 7,
+      "value": "\"Bonus\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1246,
+      "length": 7,
+      "value": "\"Extra\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1299,
+      "length": 7,
+      "value": "\"Other\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1358,
+      "length": 13,
+      "value": "\"Investments\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1418,
+      "length": 8,
+      "value": "\"Shares\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1481,
+      "length": 17,
+      "value": "\"Private pension\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1550,
+      "length": 14,
+      "value": "\"Fixed income\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1613,
+      "length": 10,
+      "value": "\"Expenses\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1671,
+      "length": 9,
+      "value": "\"Housing\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1730,
+      "length": 11,
+      "value": "\"Transport\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1786,
+      "length": 6,
+      "value": "\"Feed\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1839,
+      "length": 8,
+      "value": "\"Health\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1897,
+      "length": 11,
+      "value": "\"Education\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1954,
+      "length": 7,
+      "value": "\"Taxes\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2009,
+      "length": 9,
+      "value": "\"Laisure\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2067,
+      "length": 10,
+      "value": "\"Clothing\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2128,
+      "length": 13,
+      "value": "\"Credit card\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2184,
+      "length": 7,
+      "value": "\"Total\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2239,
+      "length": 12,
+      "value": "\"Percentage\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2297,
+      "length": 11,
+      "value": "\"Try again\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2365,
+      "length": 46,
+      "value": "\"Something went wrong, please try again later\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2540,
+      "length": 22,
+      "value": "\"There is nothing yet\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2607,
+      "length": 9,
+      "value": "\"success\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2716,
+      "length": 39,
+      "value": "\"init(coder:) has not been implemented\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2868,
+      "length": 21,
+      "value": "\"index out of bounds\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 2934,
+      "length": 37,
+      "value": "\"Something happened, try again later\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3076,
+      "length": 10,
+      "value": "\"calendar\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3129,
+      "length": 7,
+      "value": "\"xmark\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3179,
+      "length": 11,
+      "value": "\"checkmark\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3232,
+      "length": 12,
+      "value": "\"dollarsign\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3292,
+      "length": 12,
+      "value": "\"creditcard\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3345,
+      "length": 6,
+      "value": "\"plus\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 3393,
+      "length": 28,
+      "value": "\"calendar.day.timeline.left\""
+    },
+    {
+      "filePath": "\/Users\/tiagolinhares\/Documents\/ProjetosPessoais\/FinancialControl\/Core\/Core\/Sources\/Models\/Constants\/CoreConstants.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3531,
+      "length": 3,
+      "value": "140"
+    }
+  ]
+}

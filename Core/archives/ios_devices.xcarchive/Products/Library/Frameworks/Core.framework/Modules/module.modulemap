@@ -1,0 +1,4 @@
+framework module Core {
+  header "Core-Swift.h"
+  requires objc
+}
