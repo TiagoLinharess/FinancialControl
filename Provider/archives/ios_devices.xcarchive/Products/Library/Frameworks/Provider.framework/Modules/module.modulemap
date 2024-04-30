@@ -1,0 +1,4 @@
+framework module Provider {
+  header "Provider-Swift.h"
+  requires objc
+}

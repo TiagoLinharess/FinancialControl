@@ -1,0 +1,316 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
+// swift-module-flags: -target arm64-apple-ios17.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name Provider
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CoreData
+import Foundation
+import SharpnezCore
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol MonthlyBillsProviderProtocol {
+  func createCalendar(annualCalendar: Provider.AnnualCalendarResponse) throws
+  func createBillItem(item: Provider.BillItemResponse, billId: Swift.String, billType: Provider.BillSectionResponse.BillType) throws
+  func createTemplateItem(item: Provider.BillItemResponse, billType: Provider.BillSectionResponse.BillType) throws
+  func readCalendar() throws -> [Provider.AnnualCalendarResponse]
+  func readAtYear(year: Swift.String) throws -> Provider.AnnualCalendarResponse
+  func readAtMonth(id: Swift.String) throws -> Provider.MonthlyBillsResponse
+  func readAtMonthWithTemplates(billId: Swift.String) throws -> Provider.MonthlyBillsResponse
+  func readTemplates() throws -> [Provider.BillSectionResponse]
+  func readTemplateAt(id: Swift.String) throws -> Provider.BillItemResponse
+  func updateBillItem(item: Provider.BillItemResponse, billId: Swift.String) throws
+  func updateTemplateItem(item: Provider.BillItemResponse) throws
+  func deleteItem(itemId: Swift.String, billId: Swift.String) throws
+  func deleteTemplateItem(itemId: Swift.String) throws
+}
+@_hasMissingDesignatedInitializers final public class MonthlyBillsProvider : Provider.MonthlyBillsProviderProtocol {
+  public init()
+  final public func createCalendar(annualCalendar: Provider.AnnualCalendarResponse) throws
+  final public func createBillItem(item: Provider.BillItemResponse, billId: Swift.String, billType: Provider.BillSectionResponse.BillType) throws
+  final public func createTemplateItem(item: Provider.BillItemResponse, billType: Provider.BillSectionResponse.BillType) throws
+  final public func readCalendar() throws -> [Provider.AnnualCalendarResponse]
+  final public func readAtYear(year: Swift.String) throws -> Provider.AnnualCalendarResponse
+  final public func readAtMonth(id: Swift.String) throws -> Provider.MonthlyBillsResponse
+  final public func readAtMonthWithTemplates(billId: Swift.String) throws -> Provider.MonthlyBillsResponse
+  final public func readTemplates() throws -> [Provider.BillSectionResponse]
+  final public func readTemplateAt(id: Swift.String) throws -> Provider.BillItemResponse
+  final public func updateBillItem(item: Provider.BillItemResponse, billId: Swift.String) throws
+  final public func updateTemplateItem(item: Provider.BillItemResponse) throws
+  final public func deleteItem(itemId: Swift.String, billId: Swift.String) throws
+  final public func deleteTemplateItem(itemId: Swift.String) throws
+  @objc deinit
+}
+public struct WeeklyBudgetListResponse : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct BillItemResponse : Swift.Codable {
+  public enum BillStatus : Swift.String, Swift.Codable {
+    case payed
+    case pending
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public struct BillInstallment : Swift.Codable {
+    public let current: Swift.Int
+    public let max: Swift.Int
+    public init(current: Swift.Int, max: Swift.Int)
+    public init(from entity: Provider.InstallmentEntity)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public let id: Swift.String
+  public let name: Swift.String
+  public let value: Swift.Double
+  public let status: Provider.BillItemResponse.BillStatus
+  public var installment: Provider.BillItemResponse.BillInstallment?
+  public init(id: Swift.String, name: Swift.String, value: Swift.Double, status: Provider.BillItemResponse.BillStatus, installment: Provider.BillItemResponse.BillInstallment?)
+  public init(from entity: Provider.BillItemEntity)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct WeeklyBudgetResponse : Swift.Identifiable, Swift.Codable {
+  public let id: Swift.String
+  public let week: Swift.String
+  public let originalBudget: Swift.Double
+  public let currentBudget: Swift.Double
+  public let creditCardWeekLimit: Swift.Double
+  public let creditCardRemainingLimit: Swift.Double
+  public var expenses: [Provider.WeeklyExpenseResponse]
+  public init(id: Swift.String, week: Swift.String, originalBudget: Swift.Double, currentBudget: Swift.Double, creditCardWeekLimit: Swift.Double, creditCardRemainingLimit: Swift.Double, expenses: [Provider.WeeklyExpenseResponse])
+  public typealias ID = Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct WeeklyExpenseResponse : Swift.Identifiable, Swift.Codable {
+  public enum PaymentMode : Swift.String, Swift.Codable, Swift.CaseIterable {
+    case debit
+    case credit
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [Provider.WeeklyExpenseResponse.PaymentMode]
+    public typealias RawValue = Swift.String
+    public static var allCases: [Provider.WeeklyExpenseResponse.PaymentMode] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public let id: Swift.String
+  public let date: Foundation.Date
+  public let title: Swift.String
+  public let description: Swift.String
+  public let paymentMode: Provider.WeeklyExpenseResponse.PaymentMode
+  public let value: Swift.Double
+  public init(id: Swift.String, date: Foundation.Date, title: Swift.String, description: Swift.String, paymentMode: Provider.WeeklyExpenseResponse.PaymentMode, value: Swift.Double)
+  public typealias ID = Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct AnnualCalendarResponse : Swift.Codable {
+  public let year: Swift.String
+  public var monthlyBills: [Provider.MonthlyBillsResponse]
+  public init(year: Swift.String, monthlyBills: [Provider.MonthlyBillsResponse])
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct MonthlyBillsResponse : Swift.Codable {
+  public let id: Swift.String
+  public let month: Swift.String
+  public var sections: [Provider.BillSectionResponse]
+  public init(id: Swift.String, month: Swift.String, sections: [Provider.BillSectionResponse])
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol WeeklyBudgetsRepositoryProtocol {
+  func create(weekBudgets: [Provider.WeeklyBudgetResponse]) throws
+  func read() throws -> [Provider.WeeklyBudgetResponse]
+  func update(weekBudget: Provider.WeeklyBudgetResponse) throws
+  func delete(at offsets: Foundation.IndexSet) throws -> Swift.Int
+}
+final public class WeeklyBudgetsRepository : Provider.WeeklyBudgetsRepositoryProtocol {
+  public init(key: Swift.String? = nil)
+  final public func create(weekBudgets: [Provider.WeeklyBudgetResponse]) throws
+  final public func read() throws -> [Provider.WeeklyBudgetResponse]
+  final public func update(weekBudget: Provider.WeeklyBudgetResponse) throws
+  final public func delete(at offsets: Foundation.IndexSet) throws -> Swift.Int
+  @objc deinit
+}
+public struct BillSectionResponse : Swift.Codable {
+  public enum BillType : Swift.String, Swift.Codable {
+    case income
+    case investment
+    case expense
+    case creditCard
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var items: [Provider.BillItemResponse]
+  public let type: Provider.BillSectionResponse.BillType
+  public init(items: [Provider.BillItemResponse], type: Provider.BillSectionResponse.BillType)
+  public init(from entity: Provider.BillSectionEntity)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc(AnnualCalendarEntity) public class AnnualCalendarEntity : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension Provider.AnnualCalendarEntity {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<Provider.AnnualCalendarEntity>
+  @objc @NSManaged dynamic public var year: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var months: Foundation.NSSet? {
+    @objc get
+    @objc set
+  }
+}
+extension Provider.AnnualCalendarEntity {
+  @objc(addMonthsObject:) @NSManaged dynamic public func addToMonths(_ value: Provider.MonthlyBillsEntity)
+  @objc(removeMonthsObject:) @NSManaged dynamic public func removeFromMonths(_ value: Provider.MonthlyBillsEntity)
+  @objc(addMonths:) @NSManaged dynamic public func addToMonths(_ values: Foundation.NSSet)
+  @objc(removeMonths:) @NSManaged dynamic public func removeFromMonths(_ values: Foundation.NSSet)
+}
+extension Provider.AnnualCalendarEntity : Swift.Identifiable {
+  public typealias ID = Swift.ObjectIdentifier
+}
+@_inheritsConvenienceInitializers @objc(BillItemEntity) public class BillItemEntity : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension Provider.BillItemEntity {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<Provider.BillItemEntity>
+  @objc @NSManaged dynamic public var id: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var name: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var status: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var value: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var installment: Provider.InstallmentEntity? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var section: Provider.BillSectionEntity? {
+    @objc get
+    @objc set
+  }
+}
+extension Provider.BillItemEntity : Swift.Identifiable {
+  public typealias ID = Swift.String?
+}
+@_inheritsConvenienceInitializers @objc(BillSectionEntity) public class BillSectionEntity : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension Provider.BillSectionEntity {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<Provider.BillSectionEntity>
+  @objc @NSManaged dynamic public var id: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var type: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var bill: Provider.MonthlyBillsEntity? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var items: Foundation.NSSet? {
+    @objc get
+    @objc set
+  }
+}
+extension Provider.BillSectionEntity {
+  @objc(addItemsObject:) @NSManaged dynamic public func addToItems(_ value: Provider.BillItemEntity)
+  @objc(removeItemsObject:) @NSManaged dynamic public func removeFromItems(_ value: Provider.BillItemEntity)
+  @objc(addItems:) @NSManaged dynamic public func addToItems(_ values: Foundation.NSSet)
+  @objc(removeItems:) @NSManaged dynamic public func removeFromItems(_ values: Foundation.NSSet)
+}
+extension Provider.BillSectionEntity : Swift.Identifiable {
+  public typealias ID = Swift.String?
+}
+@_inheritsConvenienceInitializers @objc(InstallmentEntity) public class InstallmentEntity : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension Provider.InstallmentEntity {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<Provider.InstallmentEntity>
+  @objc @NSManaged dynamic public var current: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var max: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var bill: Provider.BillItemEntity? {
+    @objc get
+    @objc set
+  }
+}
+extension Provider.InstallmentEntity : Swift.Identifiable {
+  public typealias ID = Swift.ObjectIdentifier
+}
+@_inheritsConvenienceInitializers @objc(MonthlyBillsEntity) public class MonthlyBillsEntity : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension Provider.MonthlyBillsEntity {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<Provider.MonthlyBillsEntity>
+  @objc @NSManaged dynamic public var id: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var month: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var sections: Foundation.NSSet? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var year: Provider.AnnualCalendarEntity? {
+    @objc get
+    @objc set
+  }
+}
+extension Provider.MonthlyBillsEntity {
+  @objc(addSectionsObject:) @NSManaged dynamic public func addToSections(_ value: Provider.BillSectionEntity)
+  @objc(removeSectionsObject:) @NSManaged dynamic public func removeFromSections(_ value: Provider.BillSectionEntity)
+  @objc(addSections:) @NSManaged dynamic public func addToSections(_ values: Foundation.NSSet)
+  @objc(removeSections:) @NSManaged dynamic public func removeFromSections(_ values: Foundation.NSSet)
+}
+extension Provider.MonthlyBillsEntity : Swift.Identifiable {
+  public typealias ID = Swift.String?
+}
+extension Provider.BillItemResponse.BillStatus : Swift.Equatable {}
+extension Provider.BillItemResponse.BillStatus : Swift.Hashable {}
+extension Provider.BillItemResponse.BillStatus : Swift.RawRepresentable {}
+extension Provider.WeeklyExpenseResponse.PaymentMode : Swift.Equatable {}
+extension Provider.WeeklyExpenseResponse.PaymentMode : Swift.Hashable {}
+extension Provider.WeeklyExpenseResponse.PaymentMode : Swift.RawRepresentable {}
+extension Provider.BillSectionResponse.BillType : Swift.Equatable {}
+extension Provider.BillSectionResponse.BillType : Swift.Hashable {}
+extension Provider.BillSectionResponse.BillType : Swift.RawRepresentable {}
