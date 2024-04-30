@@ -8,6 +8,6 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => 'https://github.com/TiagoLinharess/FinancialControl.git', :tag => '0.1.6-provider' }
   spec.platforms    = { :ios => "17.0" }
   spec.swift_version = '5.8.1'
-  spec.vendored_frameworks = 'Provider.xcframework'
+  spec.vendored_frameworks = 'Provider/Provider.xcframework'
   spec.framework    = 'SystemConfiguration'
 end
