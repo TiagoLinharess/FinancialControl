@@ -1,11 +1,12 @@
 platform :ios, '17.0'
 
-def privateSource(name, version)
-  pod name, :git => 'https://github.com/TiagoLinharess/FinancialControl.git', :tag => version
+def privateSource(name, version, url='https://github.com/TiagoLinharess/FinancialControl.git')
+  pod name, :git => url, :tag => version
 end
 
 target 'FinancialControlApp' do
   privateSource('Core', '0.2.1-core')
+  privateSource('SharpnezCore', '2.0.0', 'https://github.com/TiagoLinharess/sdk-ios-sharpnez-core.git')
 
   target 'FinancialControlAppTests' do
     inherit! :search_paths
