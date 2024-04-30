@@ -10,6 +10,4 @@ Pod::Spec.new do |spec|
   spec.swift_version = '5.8.1'
   spec.vendored_frameworks = 'Provider/Provider.xcframework'
   spec.framework    = 'SystemConfiguration'
-  
-  spec.dependency 'SharpnezCore', :podspec => "https://github.com/TiagoLinharess/sdk-ios-sharpnez-core/SharpnezCore.podspec"
 end
