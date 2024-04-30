@@ -8,9 +8,7 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => 'https://github.com/TiagoLinharess/FinancialControl.git', :tag => '0.1.6-provider' }
   spec.platforms    = { :ios => "17.0" }
   spec.swift_version = '5.8.1'
-  spec.source_files = 'Provider/Provider/**/*.{swift,xcdatamodeld}', 'Provider/Provider/**/*.xcdatamodeld/*.xcdatamodeld'
-  spec.resources = 'Provider/Provider/**/*.xcdatamodeld'
-  spec.preserve_paths = 'Provider/Provider/**/*.xcdatamodeld'
+  spec.vendored_frameworks = 'Provider/Provider.xcframework'
   spec.framework    = 'SystemConfiguration'
   
   spec.dependency 'SharpnezCore', :podspec => "https://github.com/TiagoLinharess/sdk-ios-sharpnez-core/SharpnezCore.podspec"
