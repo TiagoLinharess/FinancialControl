@@ -6,19 +6,9 @@ def sharpnez_core_pod
 end
 
 target 'Provider' do
-  # Comment the next line if you don't want to use dynamic frameworks
   sharpnez_core_pod
-
-  target 'ProviderTests' do
-    # Pods for testing
-  end
-
 end
 
 target 'ProviderSample' do
-  # Comment the next line if you don't want to use dynamic frameworks
   sharpnez_core_pod
-
-  # Pods for ProviderSample
-
 end
