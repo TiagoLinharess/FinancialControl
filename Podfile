@@ -7,7 +7,10 @@ use_frameworks!
 
 workspace 'FinancialControlApp'
 
-## Pods Def
+##############
+## Pods Def ##
+##############
+
 def sharpnez_core_pod
   pod 'SharpnezCore', '1.1.0'
 end
@@ -29,13 +32,19 @@ def snapkit_pod
   pod 'SnapKit', '~> 5.6'
 end
 
-## Cores Targets
+###################
+## Cores Targets ##
+###################
+
 target 'Provider' do
     sharpnez_core_pod
     project 'Provider/Provider.project'
 end
 
-## Main Target
+#################
+## Main Target ##
+#################
+
 target 'FinancialControl' do
     currency_pod
     sharpnez_pods
@@ -43,7 +52,10 @@ target 'FinancialControl' do
     project 'FinancialControl/FinancialControl.project'
 end
 
-## Modules Targets
+#####################
+## Modules Targets ##
+#####################
+
 target 'WeeklyBudgets' do
     currency_pod
     sharpnez_pods
@@ -57,7 +69,16 @@ target 'MonthlyBills' do
     project 'MonthlyBills/MonthlyBills.project'
 end
 
-## Tests Targets
+target 'Login' do
+    sharpnez_pods
+    snapkit_pod
+    project 'Login/Login.project'
+end
+
+###################
+## Tests Targets ##
+###################
+
 target 'ProviderTests' do
     sharpnez_core_pod
     project 'Provider/Provider.project'

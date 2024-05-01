@@ -11,6 +11,9 @@
       location = "group:Provider/Provider.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Login/Login.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:MonthlyBills/MonthlyBills.xcodeproj">
    </FileRef>
    <FileRef

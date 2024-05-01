@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		ED11D2E02B02BA7700514D7C /* TabBarFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2DF2B02BA7700514D7C /* TabBarFactoryTests.swift */; };
+		ED60AE752BE18ABE0046DBD0 /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED60AE742BE18ABE0046DBD0 /* Login.framework */; };
+		ED60AE762BE18ABE0046DBD0 /* Login.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED60AE742BE18ABE0046DBD0 /* Login.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED60AE992BE1C1870046DBD0 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE982BE1C1870046DBD0 /* HomeTabBarController.swift */; };
 		ED753C182AFE6176002B469D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C172AFE6176002B469D /* AppDelegate.swift */; };
 		ED753C1A2AFE6176002B469D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753C192AFE6176002B469D /* SceneDelegate.swift */; };
 		ED753C212AFE6177002B469D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED753C202AFE6177002B469D /* Assets.xcassets */; };
@@ -45,6 +48,7 @@
 				ED8D23652B18F995009E8326 /* Pods_FinancialControl.framework in Embed Frameworks */,
 				ED8D23672B18F996009E8326 /* MonthlyBills.framework in Embed Frameworks */,
 				ED8D23622B18F991009E8326 /* WeeklyBudgets.framework in Embed Frameworks */,
+				ED60AE762BE18ABE0046DBD0 /* Login.framework in Embed Frameworks */,
 				ED8D236A2B18FAFC009E8326 /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -57,6 +61,8 @@
 		E06AACB87B243CA7C918DC65 /* Pods-FinancialControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinancialControl.debug.xcconfig"; path = "Target Support Files/Pods-FinancialControl/Pods-FinancialControl.debug.xcconfig"; sourceTree = "<group>"; };
 		EA95495461BDB8B9B3F2C315 /* Pods_FinancialControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinancialControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D2DF2B02BA7700514D7C /* TabBarFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFactoryTests.swift; sourceTree = "<group>"; };
+		ED60AE742BE18ABE0046DBD0 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED60AE982BE1C1870046DBD0 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		ED753C142AFE6176002B469D /* FinancialControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED753C172AFE6176002B469D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED753C192AFE6176002B469D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,7 @@
 				ED8D23642B18F995009E8326 /* Pods_FinancialControl.framework in Frameworks */,
 				ED8D23662B18F996009E8326 /* MonthlyBills.framework in Frameworks */,
 				ED8D23612B18F991009E8326 /* WeeklyBudgets.framework in Frameworks */,
+				ED60AE752BE18ABE0046DBD0 /* Login.framework in Frameworks */,
 				ED8D23692B18FAFC009E8326 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +113,7 @@
 		A5D97DD6453E2D704546D890 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED60AE742BE18ABE0046DBD0 /* Login.framework */,
 				ED8D236B2B18FB03009E8326 /* Provider.framework */,
 				ED8D23682B18FAFC009E8326 /* Core.framework */,
 				ED8D23382B14224D009E8326 /* MonthlyBills.framework */,
@@ -137,6 +145,14 @@
 				ED11D2DF2B02BA7700514D7C /* TabBarFactoryTests.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		ED60AE8B2BE1C0FA0046DBD0 /* HomeTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				ED60AE982BE1C1870046DBD0 /* HomeTabBarController.swift */,
+			);
+			path = HomeTabBar;
 			sourceTree = "<group>";
 		};
 		ED753C0B2AFE6176002B469D = {
@@ -206,6 +222,7 @@
 		ED753C3B2AFE63F3002B469D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				ED60AE8B2BE1C0FA0046DBD0 /* HomeTabBar */,
 				ED753C3C2AFE63FA002B469D /* TabBar */,
 			);
 			path = Scenes;
@@ -365,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED753C182AFE6176002B469D /* AppDelegate.swift in Sources */,
+				ED60AE992BE1C1870046DBD0 /* HomeTabBarController.swift in Sources */,
 				ED753C3E2AFE642E002B469D /* TabBarFactory.swift in Sources */,
 				ED753C1A2AFE6176002B469D /* SceneDelegate.swift in Sources */,
 			);
@@ -525,7 +543,6 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -559,7 +576,6 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

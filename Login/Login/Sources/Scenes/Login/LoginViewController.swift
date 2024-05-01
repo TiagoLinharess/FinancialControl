@@ -23,10 +23,15 @@ final class LoginViewController: UIVIPBaseViewController<LoginView, LoginInterac
         configure()
     }
     
+    override func loadView() {
+        super.loadView()
+        customView.delegate = self
+    }
+    
     // MARK: Configure
     
     private func configure() {
-        title = "title"
+        title = "Login"
     }
 }
 
@@ -35,4 +40,17 @@ extension LoginViewController: LoginViewControlling {
     // MARK: Controller Input
     
     // TODO: controller code
+}
+
+extension LoginViewController: LoginViewDelegate {
+    
+    // MARK: LoginViewDelegate
+    
+    func submit() {
+        print("login")
+    }
+    
+    func register() {
+        print("register")
+    }
 }
