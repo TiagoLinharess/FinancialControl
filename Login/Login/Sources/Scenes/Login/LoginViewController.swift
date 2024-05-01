@@ -51,6 +51,6 @@ extension LoginViewController: LoginViewDelegate {
     }
     
     func register() {
-        print("register")
+        router.routeToRegister(animated: true)
     }
 }

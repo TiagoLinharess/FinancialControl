@@ -20,6 +20,12 @@
 		ED60AE842BE18C5F0046DBD0 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE7E2BE18C5F0046DBD0 /* LoginInteractor.swift */; };
 		ED60AE852BE18C5F0046DBD0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE7F2BE18C5F0046DBD0 /* LoginView.swift */; };
 		ED60AE8A2BE1AB8D0046DBD0 /* FCUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE892BE1AB8D0046DBD0 /* FCUITextField.swift */; };
+		ED60AEAE2BE1D3360046DBD0 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEA82BE1D3360046DBD0 /* RegisterPresenter.swift */; };
+		ED60AEAF2BE1D3360046DBD0 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEA92BE1D3360046DBD0 /* RegisterRouter.swift */; };
+		ED60AEB02BE1D3360046DBD0 /* RegisterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEAA2BE1D3360046DBD0 /* RegisterFactory.swift */; };
+		ED60AEB12BE1D3360046DBD0 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEAB2BE1D3360046DBD0 /* RegisterInteractor.swift */; };
+		ED60AEB22BE1D3360046DBD0 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEAC2BE1D3360046DBD0 /* RegisterView.swift */; };
+		ED60AEB32BE1D3360046DBD0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEAD2BE1D3360046DBD0 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		ED60AE7E2BE18C5F0046DBD0 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		ED60AE7F2BE18C5F0046DBD0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		ED60AE892BE1AB8D0046DBD0 /* FCUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCUITextField.swift; sourceTree = "<group>"; };
+		ED60AEA82BE1D3360046DBD0 /* RegisterPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		ED60AEA92BE1D3360046DBD0 /* RegisterRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		ED60AEAA2BE1D3360046DBD0 /* RegisterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterFactory.swift; sourceTree = "<group>"; };
+		ED60AEAB2BE1D3360046DBD0 /* RegisterInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		ED60AEAC2BE1D3360046DBD0 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		ED60AEAD2BE1D3360046DBD0 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +168,7 @@
 		ED60AE782BE18C350046DBD0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				ED60AEA72BE1D3360046DBD0 /* Register */,
 				ED60AE792BE18C440046DBD0 /* Login */,
 			);
 			path = Scenes;
@@ -188,6 +201,20 @@
 				ED60AE892BE1AB8D0046DBD0 /* FCUITextField.swift */,
 			);
 			path = FCUITextField;
+			sourceTree = "<group>";
+		};
+		ED60AEA72BE1D3360046DBD0 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				ED60AEA82BE1D3360046DBD0 /* RegisterPresenter.swift */,
+				ED60AEA92BE1D3360046DBD0 /* RegisterRouter.swift */,
+				ED60AEAA2BE1D3360046DBD0 /* RegisterFactory.swift */,
+				ED60AEAB2BE1D3360046DBD0 /* RegisterInteractor.swift */,
+				ED60AEAC2BE1D3360046DBD0 /* RegisterView.swift */,
+				ED60AEAD2BE1D3360046DBD0 /* RegisterViewController.swift */,
+			);
+			name = Register;
+			path = "../../../../../../../.Trash/FinancialControl 22.24.27/Login/Login/Sources/Scenes/Register";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,10 +355,16 @@
 				ED60AE832BE18C5F0046DBD0 /* LoginViewController.swift in Sources */,
 				ED60AE8A2BE1AB8D0046DBD0 /* FCUITextField.swift in Sources */,
 				ED60AE812BE18C5F0046DBD0 /* LoginPresenter.swift in Sources */,
+				ED60AEB22BE1D3360046DBD0 /* RegisterView.swift in Sources */,
 				ED60AE842BE18C5F0046DBD0 /* LoginInteractor.swift in Sources */,
+				ED60AEAF2BE1D3360046DBD0 /* RegisterRouter.swift in Sources */,
+				ED60AEB32BE1D3360046DBD0 /* RegisterViewController.swift in Sources */,
 				ED60AE5A2BE189660046DBD0 /* Login.docc in Sources */,
+				ED60AEAE2BE1D3360046DBD0 /* RegisterPresenter.swift in Sources */,
 				ED60AE732BE189B20046DBD0 /* LoginFacade.swift in Sources */,
 				ED60AE822BE18C5F0046DBD0 /* LoginRouter.swift in Sources */,
+				ED60AEB02BE1D3360046DBD0 /* RegisterFactory.swift in Sources */,
+				ED60AEB12BE1D3360046DBD0 /* RegisterInteractor.swift in Sources */,
 				ED60AE852BE18C5F0046DBD0 /* LoginView.swift in Sources */,
 				ED60AE802BE18C5F0046DBD0 /* LoginFactory.swift in Sources */,
 			);
