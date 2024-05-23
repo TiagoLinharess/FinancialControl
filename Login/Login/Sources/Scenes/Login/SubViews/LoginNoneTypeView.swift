@@ -20,7 +20,7 @@ final class LoginNoneTypeView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Account access"
+        label.text = LoginConstants.LoginNoneType.title
         label.font = .systemFont(ofSize: .big, weight: .bold)
         label.numberOfLines = .zero
         return label
@@ -28,14 +28,14 @@ final class LoginNoneTypeView: UIView {
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "To access your account you must create a password, or access with yor FaceID and iPhone's password."
+        label.text = LoginConstants.LoginNoneType.description
         label.numberOfLines = .zero
         return label
     }()
     
     private lazy var faceIDButton: UISHButton = {
         let button = UISHButton(
-            text: "FaceID",
+            text: LoginConstants.Commons.localAuth,
             style: .init(
                 type: .primary,
                 mainColor: .blue,
@@ -51,7 +51,7 @@ final class LoginNoneTypeView: UIView {
     
     private lazy var passwordButton: UISHButton = {
         let button = UISHButton(
-            text: "Create password",
+            text: LoginConstants.LoginNoneType.createPassword,
             style: .init(
                 type: .secondary,
                 mainColor: .blue,

@@ -34,7 +34,7 @@ final class LoginViewController: UIVIPBaseViewController<LoginView, LoginInterac
     // MARK: Configure
     
     private func configure() {
-        title = "Login"
+        title = LoginConstants.Commons.login
         interactor.verifyAuthSelection()
     }
 }
@@ -52,8 +52,7 @@ extension LoginViewController: LoginViewControlling {
     }
     
     func registerPassword() {
-        // TODO: Avisar que vai direcionar pra senha custom (sem alert)
-        print("error")
+        // TODO: Avisar que vai direcionar pra senha custom
         password()
     }
     
@@ -61,11 +60,11 @@ extension LoginViewController: LoginViewControlling {
         customView.showError()
         presentFeedbackDialog(
             with: FeedbackModel(
-                title: "Error",
-                description: "An error has occurred",
+                title: LoginConstants.Commons.error,
+                description: LoginConstants.Commons.errorDescription,
                 buttons: [
                     UIAlertAction(
-                        title: "Try Again",
+                        title: LoginConstants.Commons.tryAgain,
                         style: .default,
                         handler: { [weak self] _ in
                             self?.interactor.verifyAuthSelection()
@@ -86,7 +85,7 @@ extension LoginViewController: LoginViewDelegate {
     }
     
     func password() {
-        router.routeToRegister(animated: true)
+        
     }
     
     func retry() {

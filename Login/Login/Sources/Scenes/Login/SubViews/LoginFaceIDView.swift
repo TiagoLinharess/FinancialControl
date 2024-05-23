@@ -19,7 +19,7 @@ final class LoginFaceIDView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "FaceID and iPhone's password"
+        label.text = LoginConstants.Commons.localAuth
         label.font = .systemFont(ofSize: .big, weight: .bold)
         label.numberOfLines = .zero
         return label
@@ -27,14 +27,14 @@ final class LoginFaceIDView: UIView {
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "To access your account you must do it with yor FaceID and iPhone's password."
+        label.text = LoginConstants.LoginFaceID.description
         label.numberOfLines = .zero
         return label
     }()
     
     private lazy var faceIDButton: UISHButton = {
         let button = UISHButton(
-            text: "Access",
+            text: LoginConstants.Commons.access,
             style: .init(
                 type: .primary,
                 mainColor: .blue,

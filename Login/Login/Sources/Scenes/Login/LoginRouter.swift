@@ -12,7 +12,6 @@ import UIKit
 
 protocol LoginRouting {
     func loginSuccess(animated: Bool)
-    func routeToRegister(animated: Bool)
 }
 
 final class LoginRouter: UIVIPRouter, LoginRouting {
@@ -21,9 +20,5 @@ final class LoginRouter: UIVIPRouter, LoginRouting {
     
     func loginSuccess(animated: Bool) {
         viewController?.navigationController?.dismiss(animated: animated)
-    }
-    
-    func routeToRegister(animated: Bool) {
-        //
     }
 }
