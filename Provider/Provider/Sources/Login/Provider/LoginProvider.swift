@@ -55,6 +55,7 @@ public final class LoginProvider: LoginProviderProtocol {
     }
     
     public func makeFaceID(onLogin: @escaping (Bool) -> Void) {
+        try? authTypeService.save(authType: .localAuthentication)
         faceIDService.make(onLogin: onLogin)
     }
     

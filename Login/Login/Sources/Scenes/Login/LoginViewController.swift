@@ -48,7 +48,6 @@ extension LoginViewController: LoginViewControlling {
     }
     
     func faceIDSuccess() {
-        LoginSingleton.shared?.makeCallBack()
         router.loginSuccess(animated: true)
     }
     

@@ -49,5 +49,6 @@ enum Constants {
     enum Login {
         static let reason: String = "Account access"
         static let sessionQueryKey: String = "financial_control_login_session_key"
+        static let authTypeQueryKey: String = "financial_control_login_auth_type_key"
     }
 }

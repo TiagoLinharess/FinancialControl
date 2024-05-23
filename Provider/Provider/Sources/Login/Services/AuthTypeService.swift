@@ -8,6 +8,7 @@
 import Foundation
 
 protocol AuthTypeServiceProtocol {
+    func save(authType: AuthTypeResponse) throws
     func verify() throws -> AuthTypeResponse
 }
 
@@ -15,21 +16,23 @@ final class AuthTypeService: AuthTypeServiceProtocol {
     
     // MARK: Properties
     
-    private let sessionRepository: SessionRepositoryProtocol
+    private let authTypeRepository: AuthTypeRepositoryProtocol
     
     // MARK: Init
     
-    init(sessionRepository: SessionRepositoryProtocol = SessionRepository()) {
-        self.sessionRepository = sessionRepository
+    init(
+        authTypeRepository: AuthTypeRepositoryProtocol = AuthTypeRepository()
+    ) {
+        self.authTypeRepository = authTypeRepository
     }
     
     // MARK: Methods
     
+    func save(authType: AuthTypeResponse) throws {
+        try authTypeRepository.createAuthType(authType: authType)
+    }
+    
     func verify() throws -> AuthTypeResponse {
-        if let _ = try? sessionRepository.getSession() {
-            return .localAuthentication
-        }
-        
-        return .none
+        return try authTypeRepository.getAuthType() ?? .none
     }
 }

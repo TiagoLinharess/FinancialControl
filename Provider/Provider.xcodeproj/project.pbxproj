@@ -32,6 +32,7 @@
 		ED2C68122B1950BA00B831C6 /* AnnualCalendarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */; };
 		ED3C1BA62BFC076C00E3603E /* AuthTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C1BA52BFC076C00E3603E /* AuthTypeService.swift */; };
 		ED3C1BA92BFF75DA00E3603E /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C1BA82BFF75DA00E3603E /* SessionService.swift */; };
+		ED3C1BB12BFF912A00E3603E /* AuthTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C1BB02BFF912A00E3603E /* AuthTypeRepository.swift */; };
 		ED3F3DFC2BA452B800858591 /* InstallmentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F3DFB2BA452B800858591 /* InstallmentsRepository.swift */; };
 		ED3F3DFE2BA8FB9900858591 /* MonthlyBillsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F3DFD2BA8FB9900858591 /* MonthlyBillsProvider.swift */; };
 		ED3F3E022BA8FD1C00858591 /* MonthlyBillsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F3E012BA8FD1C00858591 /* MonthlyBillsProviderTests.swift */; };
@@ -85,6 +86,7 @@
 		ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualCalendarResponse.swift; sourceTree = "<group>"; };
 		ED3C1BA52BFC076C00E3603E /* AuthTypeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTypeService.swift; sourceTree = "<group>"; };
 		ED3C1BA82BFF75DA00E3603E /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
+		ED3C1BB02BFF912A00E3603E /* AuthTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTypeRepository.swift; sourceTree = "<group>"; };
 		ED3F3DFB2BA452B800858591 /* InstallmentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallmentsRepository.swift; sourceTree = "<group>"; };
 		ED3F3DFD2BA8FB9900858591 /* MonthlyBillsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyBillsProvider.swift; sourceTree = "<group>"; };
 		ED3F3E012BA8FD1C00858591 /* MonthlyBillsProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsProviderTests.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				ED60AEC72BE630CC0046DBD0 /* SessionRepository.swift */,
+				ED3C1BB02BFF912A00E3603E /* AuthTypeRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED11D2812B02492900514D7C /* WeeklyBudgetResponse.swift in Sources */,
+				ED3C1BB12BFF912A00E3603E /* AuthTypeRepository.swift in Sources */,
 				ED2C68102B194FC400B831C6 /* MonthlyBillsResponse.swift in Sources */,
 				ED0CD1FF2B9F11AF00A0A8BB /* ItemsRepository.swift in Sources */,
 				ED0CD1FD2B9F0D8C00A0A8BB /* BillsRepository.swift in Sources */,

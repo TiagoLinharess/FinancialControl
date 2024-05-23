@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum AuthTypeResponse {
+public enum AuthTypeResponse: String {
     case localAuthentication
     case password
     case none
