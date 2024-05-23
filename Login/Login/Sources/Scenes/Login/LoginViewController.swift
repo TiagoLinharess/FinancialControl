@@ -11,7 +11,10 @@ import SharpnezDesignSystem
 import UIKit
 
 protocol LoginViewControlling {
-    // TODO: protocol code
+    func presentAuthType(authType: AuthType)
+    func presentError()
+    func faceIDSuccess()
+    func registerPassword()
 }
 
 final class LoginViewController: UIVIPBaseViewController<LoginView, LoginInteracting, LoginRouting> {
@@ -32,6 +35,7 @@ final class LoginViewController: UIVIPBaseViewController<LoginView, LoginInterac
     
     private func configure() {
         title = "Login"
+        interactor.verifyAuthSelection()
     }
 }
 
@@ -39,18 +43,54 @@ extension LoginViewController: LoginViewControlling {
     
     // MARK: Controller Input
     
-    // TODO: controller code
+    func presentAuthType(authType: AuthType) {
+        customView.showAuthType(authType: authType)
+    }
+    
+    func faceIDSuccess() {
+        LoginSingleton.shared?.makeCallBack()
+        router.loginSuccess(animated: true)
+    }
+    
+    func registerPassword() {
+        // TODO: Avisar que vai direcionar pra senha custom (sem alert)
+        print("error")
+        password()
+    }
+    
+    func presentError() {
+        customView.showError()
+        presentFeedbackDialog(
+            with: FeedbackModel(
+                title: "Error",
+                description: "An error has occurred",
+                buttons: [
+                    UIAlertAction(
+                        title: "Try Again",
+                        style: .default,
+                        handler: { [weak self] _ in
+                            self?.interactor.verifyAuthSelection()
+                        }
+                    )
+                ]
+            )
+        )
+    }
 }
 
 extension LoginViewController: LoginViewDelegate {
     
     // MARK: LoginViewDelegate
     
-    func submit() {
-        print("login")
+    func faceID() {
+        interactor.useFaceID()
     }
     
-    func register() {
+    func password() {
         router.routeToRegister(animated: true)
+    }
+    
+    func retry() {
+        interactor.verifyAuthSelection()
     }
 }

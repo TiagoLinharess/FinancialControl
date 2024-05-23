@@ -10,8 +10,9 @@ import SnapKit
 import UIKit
 
 protocol LoginViewDelegate: AnyObject {
-    func submit()
-    func register()
+    func faceID()
+    func password()
+    func retry()
 }
 
 final class LoginView: UIView {
@@ -22,65 +23,17 @@ final class LoginView: UIView {
     
     // MARK: UI Elements
     
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Financial Control"
-        label.font = .systemFont(ofSize: .big, weight: .bold)
-        label.numberOfLines = .zero
-        label.textAlignment = .center
-        return label
+    private lazy var noneView: LoginNoneTypeView = {
+        let view = LoginNoneTypeView(
+            onSelectFaceID: faceID,
+            onSelectPassword: password
+        )
+        return view
     }()
     
-    private lazy var emailTextField: FCUITextField = {
-        let textField = FCUITextField(
-            title: "E-mail",
-            placeholder: "example@example.com"
-        )
-        textField.keyboardType = .emailAddress
-        
-        return textField
-    }()
-    
-    private lazy var passwordTextField: FCUITextField = {
-        let textField = FCUITextField(
-            title: "Password",
-            placeholder: "a@!#35"
-        )
-        textField.isSecureTextEntry = true
-        
-        return textField
-    }()
-    
-    private lazy var loginButton: UISHButton = {
-        let button = UISHButton(
-            text: "Login",
-            style: .init(
-                type: .secondary,
-                mainColor: .blue,
-                alternativeColor: .clear,
-                font: .body(.montserrat, .regular)
-            ),
-            action: .init(handler: { [weak self] _ in
-                self?.delegate?.submit()
-            })
-        )
-        return button
-    }()
-    
-    private lazy var registerButton: UISHButton = {
-        let button = UISHButton(
-            text: "Don't have an account? Regiter here.",
-            style: .init(
-                type: .ghost,
-                mainColor: .blue,
-                alternativeColor: .clear,
-                font: .body(.montserrat, .regular)
-            ),
-            action: .init(handler: { [weak self] _ in
-                self?.delegate?.register()
-            })
-        )
-        return button
+    private lazy var faceIDView: LoginFaceIDView = {
+        let view = LoginFaceIDView(onAccess: faceID)
+        return view
     }()
     
     // MARK: Init
@@ -93,6 +46,24 @@ final class LoginView: UIView {
     required init?(coder: NSCoder) {
         fatalError()
     }
+    
+    // MARK: Public Methods
+    
+    func showAuthType(authType: AuthType) {
+        switch authType {
+        case .localAuthentication:
+            showFaceID()
+        case .password:
+            showLocalPassword()
+        case .none:
+            showNoneType()
+        }
+    }
+    
+    func showError() {
+        noneView.isHidden = true
+        faceIDView.isHidden = true
+    }
 }
 
 extension LoginView: UIViewCode {
@@ -104,37 +75,46 @@ extension LoginView: UIViewCode {
     }
     
     func setupHierarchy() {
-        addSubview(titleLabel)
-        addSubview(emailTextField)
-        addSubview(passwordTextField)
-        addSubview(loginButton)
-        addSubview(registerButton)
+        addSubview(noneView)
+        addSubview(faceIDView)
     }
     
     func setupConstraints() {
-        titleLabel.snp.makeConstraints {
-            $0.top.leading.trailing.equalTo(safeAreaLayoutGuide).inset(CGFloat.xLarge)
+        noneView.snp.makeConstraints {
+            $0.edges.equalTo(safeAreaLayoutGuide)
         }
         
-        emailTextField.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(CGFloat.big)
-            $0.leading.trailing.equalTo(safeAreaLayoutGuide).inset(CGFloat.big)
+        faceIDView.snp.makeConstraints {
+            $0.edges.equalTo(safeAreaLayoutGuide)
         }
-        
-        passwordTextField.snp.makeConstraints {
-            $0.top.equalTo(emailTextField.snp.bottom).offset(CGFloat.big)
-            $0.leading.trailing.equalTo(safeAreaLayoutGuide).inset(CGFloat.big)
-        }
-        
-        loginButton.snp.makeConstraints {
-            $0.top.equalTo(passwordTextField.snp.bottom).offset(CGFloat.big)
-            $0.leading.trailing.equalTo(safeAreaLayoutGuide).inset(CGFloat.big)
-        }
-        
-        registerButton.snp.makeConstraints {
-            $0.top.greaterThanOrEqualTo(loginButton.snp.bottom).offset(CGFloat.big)
-            $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(CGFloat.big)
-            $0.leading.trailing.equalTo(safeAreaLayoutGuide).inset(CGFloat.big)
-        }
+    }
+}
+
+private extension LoginView {
+    
+    // MARK: Private Methods
+    
+    func showNoneType() {
+        noneView.isHidden = false
+        faceIDView.isHidden = true
+    }
+    
+    func showLocalPassword() {
+        noneView.isHidden = true
+        faceIDView.isHidden = true
+    }
+    
+    func showFaceID() {
+        noneView.isHidden = true
+        faceIDView.isHidden = false
+        delegate?.faceID()
+    }
+    
+    func faceID() {
+        delegate?.faceID()
+    }
+    
+    func password() {
+        delegate?.password()
     }
 }

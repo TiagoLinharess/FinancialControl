@@ -43,4 +43,11 @@ enum Constants {
         static let existentItem: String = "item already been added"
         static let templateNotFound: String = "Template not found"
     }
+    
+    // MARK: Login
+    
+    enum Login {
+        static let reason: String = "Account access"
+        static let sessionQueryKey: String = "financial_control_login_session_key"
+    }
 }

@@ -17,11 +17,6 @@ final class HomeTabBarController: UITabBarController {
         configure()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        verifySession()
-    }
-    
     // MARK: Configure
     
     private func configure() {
@@ -33,16 +28,8 @@ final class HomeTabBarController: UITabBarController {
     
     // MARK: Session
     
-    private func verifySession() {
+    func verifySession() {
         let loginFacade = LoginFacade(navigationController: navigationController ?? UINavigationController())
-        
-        loginFacade.start { [weak self] result in
-            switch result {
-            case .success:
-                self?.navigationController?.popViewController(animated: true)
-            case let .failure(failure):
-                print(failure)
-            }
-        }
+        loginFacade.start()
     }
 }

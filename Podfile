@@ -12,7 +12,7 @@ workspace 'FinancialControlApp'
 ##############
 
 def sharpnez_core_pod
-  pod 'SharpnezCore', '1.1.0'
+  pod 'SharpnezCore/Debug', :path => "~/Documents/ProjetosPessoais/sdk-ios-sharpnez-core/SharpnezCore.podspec"
 end
 
 def  sharpnez_pods

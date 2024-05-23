@@ -11,12 +11,37 @@ import Foundation
 import SharpnezDesignSystem
 
 protocol LoginPresenting {
-    // TODO: protocol code
+    func presentAuthType(authType: AuthType)
+    func presentError()
+    func faceIDSuccess()
+    func faceIDError()
 }
 
 final class LoginPresenter: UIVIPPresenter<LoginViewControlling>, LoginPresenting {
     
     // MARK: Methods
     
-    // TODO: presenter code
+    func presentAuthType(authType: AuthType) {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.presentAuthType(authType: authType)
+        }
+    }
+    
+    func faceIDSuccess() {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.faceIDSuccess()
+        }
+    }
+    
+    func faceIDError() {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.registerPassword()
+        }
+    }
+    
+    func presentError() {
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.presentError()
+        }
+    }
 }

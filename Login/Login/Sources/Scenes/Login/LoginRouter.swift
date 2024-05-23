@@ -11,6 +11,7 @@ import SharpnezDesignSystem
 import UIKit
 
 protocol LoginRouting {
+    func loginSuccess(animated: Bool)
     func routeToRegister(animated: Bool)
 }
 
@@ -18,8 +19,11 @@ final class LoginRouter: UIVIPRouter, LoginRouting {
     
     // MARK: Methods
     
+    func loginSuccess(animated: Bool) {
+        viewController?.navigationController?.dismiss(animated: animated)
+    }
+    
     func routeToRegister(animated: Bool) {
-        let controller = RegisterFactory.configure()
-        viewController?.navigationController?.pushViewController(controller, animated: animated)
+        //
     }
 }
