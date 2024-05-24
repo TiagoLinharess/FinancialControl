@@ -31,7 +31,7 @@ final class LoginWorker: LoginWorking {
     // MARK: Methods
     
     func verifySessionType() throws -> AuthType {
-        return .none//AuthType(response: try provider.verifySessionType())
+        return AuthType(response: try provider.verifySessionType())
     }
     
     func verifySession() -> Bool {

@@ -36,6 +36,11 @@ final class LoginView: UIView {
         return view
     }()
     
+    private lazy var passwordView: LoginPasswordView = {
+        let view = LoginPasswordView(onPassword: password)
+        return view
+    }()
+    
     // MARK: Init
     
     init() {
@@ -63,6 +68,7 @@ final class LoginView: UIView {
     func showError() {
         noneView.isHidden = true
         faceIDView.isHidden = true
+        passwordView.isHidden = true
     }
 }
 
@@ -77,6 +83,7 @@ extension LoginView: UIViewCode {
     func setupHierarchy() {
         addSubview(noneView)
         addSubview(faceIDView)
+        addSubview(passwordView)
     }
     
     func setupConstraints() {
@@ -85,6 +92,10 @@ extension LoginView: UIViewCode {
         }
         
         faceIDView.snp.makeConstraints {
+            $0.edges.equalTo(safeAreaLayoutGuide)
+        }
+        
+        passwordView.snp.makeConstraints {
             $0.edges.equalTo(safeAreaLayoutGuide)
         }
     }
@@ -97,16 +108,19 @@ private extension LoginView {
     func showNoneType() {
         noneView.isHidden = false
         faceIDView.isHidden = true
+        passwordView.isHidden = true
     }
     
     func showLocalPassword() {
         noneView.isHidden = true
         faceIDView.isHidden = true
+        passwordView.isHidden = false
     }
     
     func showFaceID() {
         noneView.isHidden = true
         faceIDView.isHidden = false
+        passwordView.isHidden = true
         delegate?.faceID()
     }
     

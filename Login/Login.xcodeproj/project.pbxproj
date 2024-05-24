@@ -26,6 +26,7 @@
 		ED60AEBA2BE3E29B0046DBD0 /* Provider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED60AEB82BE3E29B0046DBD0 /* Provider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED60AEC12BE3E4500046DBD0 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEC02BE3E4500046DBD0 /* LoginWorker.swift */; };
 		ED60AECA2BF17E120046DBD0 /* AuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEC92BF17E120046DBD0 /* AuthType.swift */; };
+		EDE214142C00B65E00CEE262 /* LoginPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE214132C00B65E00CEE262 /* LoginPasswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		ED60AEB82BE3E29B0046DBD0 /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED60AEC02BE3E4500046DBD0 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
 		ED60AEC92BF17E120046DBD0 /* AuthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthType.swift; sourceTree = "<group>"; };
+		EDE214132C00B65E00CEE262 /* LoginPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				ED3C1BA12BFBEB9600E3603E /* LoginNoneTypeView.swift */,
 				ED3C1BA32BFBEFB100E3603E /* LoginFaceIDView.swift */,
+				EDE214132C00B65E00CEE262 /* LoginPasswordView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				ED60AE5A2BE189660046DBD0 /* Login.docc in Sources */,
 				ED60AE732BE189B20046DBD0 /* LoginFacade.swift in Sources */,
 				ED3C1BA22BFBEB9600E3603E /* LoginNoneTypeView.swift in Sources */,
+				EDE214142C00B65E00CEE262 /* LoginPasswordView.swift in Sources */,
 				ED60AE822BE18C5F0046DBD0 /* LoginRouter.swift in Sources */,
 				ED60AE852BE18C5F0046DBD0 /* LoginView.swift in Sources */,
 				ED3C1BA42BFBEFB100E3603E /* LoginFaceIDView.swift in Sources */,
