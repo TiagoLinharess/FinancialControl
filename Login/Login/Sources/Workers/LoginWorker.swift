@@ -13,7 +13,7 @@ protocol LoginWorking {
     func verifySessionType() throws -> AuthType
     func verifySession() -> Bool
     func makeFaceID(onLogin: @escaping (Bool) -> Void)
-    func makeCustomPassword()
+    func makeCustomPassword(password: String) throws
 }
 
 final class LoginWorker: LoginWorking {
@@ -31,7 +31,7 @@ final class LoginWorker: LoginWorking {
     // MARK: Methods
     
     func verifySessionType() throws -> AuthType {
-        return AuthType(response: try provider.verifySessionType())
+        return .none//AuthType(response: try provider.verifySessionType())
     }
     
     func verifySession() -> Bool {
@@ -42,7 +42,7 @@ final class LoginWorker: LoginWorking {
         provider.makeFaceID(onLogin: onLogin)
     }
     
-    func makeCustomPassword() {
-        provider.makeCustomPassword()
+    func makeCustomPassword(password: String) throws {
+        try provider.makeCustomPassword(password: password)
     }
 }

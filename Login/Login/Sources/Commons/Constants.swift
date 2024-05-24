@@ -19,6 +19,8 @@ enum LoginConstants {
         static let error: String = "Error"
         static let errorDescription: String = "An error has occurred"
         static let tryAgain: String = "Try Again"
+        static let save: String = "Save"
+        static let cancel: String = "Cancel"
     }
     
     enum LoginNoneType {
@@ -35,5 +37,15 @@ enum LoginConstants {
         // MARK: LoginFaceID
         
         static let description: String = "To access your account you must do it with yor FaceID and iPhone's password."
+    }
+    
+    enum LoginPassword {
+        
+        // MARK: LoginPassword
+        
+        static let title: String = "Custom password"
+        static let description: String = "To access your account you must enter your password."
+        static let errorMessage: String = "Unable to use faceid please enter a custom password:"
+        static let message: String = "Enter a custom password:"
     }
 }

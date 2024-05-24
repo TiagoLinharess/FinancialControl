@@ -8,11 +8,13 @@
 //
 
 import Foundation
+import SharpnezCore
 import SharpnezDesignSystem
 
 protocol LoginInteracting { 
     func verifyAuthSelection()
     func useFaceID()
+    func usePassword(password: String)
 }
 
 final class LoginInteractor: UIVIPInteractor<LoginPresenting>, LoginInteracting {
@@ -42,11 +44,20 @@ final class LoginInteractor: UIVIPInteractor<LoginPresenting>, LoginInteracting 
     func useFaceID() {
         worker.makeFaceID { [weak self] success in
             if success {
-                self?.presenter.faceIDSuccess()
+                self?.presenter.presentFaceIDSuccess()
                 return
             }
             
-            self?.presenter.faceIDError()
+            self?.presenter.presentFaceIDError()
+        }
+    }
+    
+    func usePassword(password: String) {
+        do {
+            try worker.makeCustomPassword(password: password)
+            presenter.presentPasswordSuccess()
+        } catch {
+            presenter.presentPasswordError(error: (error as? CoreError) ?? .genericError)
         }
     }
 }
