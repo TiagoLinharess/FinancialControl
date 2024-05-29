@@ -36,15 +36,18 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
                 }
             }
             .navigationTitle(CoreConstants.Commons.budgets)
-            .onAppear {
-                viewModel.fetchBudgets()
-            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color(uiColor: .clear), for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
                 Button {
                     viewModel.didTapAddBudget()
                 } label: {
                     Label(String(), systemImage: CoreConstants.Icons.add)
                 }
+            }
+            .onAppear {
+                viewModel.fetchBudgets()
             }
             .sheet(isPresented: $viewModel.addBudgetFlowPresented) {
                 viewModel.fetchBudgets()

@@ -606,7 +606,6 @@
 				ED753CBD2AFE712E002B469D /* Routers */,
 				ED753CC02AFE712E002B469D /* Home */,
 				ED753CC32AFE712E002B469D /* SingleWeekForm */,
-				ED753CC62AFE712E002B469D /* Edit */,
 				ED753CC72AFE712E002B469D /* Detail */,
 				ED753CCA2AFE712E002B469D /* Review */,
 				ED753CCD2AFE712E002B469D /* AddExpense */,
@@ -641,13 +640,6 @@
 				ED753CC52AFE712E002B469D /* SingleWeekFormViewModel.swift */,
 			);
 			path = SingleWeekForm;
-			sourceTree = "<group>";
-		};
-		ED753CC62AFE712E002B469D /* Edit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Edit;
 			sourceTree = "<group>";
 		};
 		ED753CC72AFE712E002B469D /* Detail */ = {

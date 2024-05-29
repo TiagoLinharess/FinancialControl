@@ -14,7 +14,9 @@ final class HomeTabBarController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         configure()
+        configureAppearance()
     }
     
     // MARK: Configure
@@ -24,6 +26,15 @@ final class HomeTabBarController: UITabBarController {
         let budgetsController = TabBarFactory.getWeeklyBudgetsController()
         
         viewControllers = [budgetsController, billsController]
+    }
+    
+    private func configureAppearance() {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground
+        
+        tabBar.standardAppearance = appearance
+        tabBar.scrollEdgeAppearance = appearance
     }
     
     // MARK: Session
