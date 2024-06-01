@@ -15,63 +15,64 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     
     // MARK: Properties
     
+    @Environment(\.weeklyModalMode) private var flowPresented
     @StateObject private var viewModel: ViewModel
-    @StateObject private var router: WeeklyRouter
     @State private var currencyFormatter = CurrencyFormatter.internationalDefault
     
     // MARK: Init
     
-    init(viewModel: ViewModel, router: WeeklyRouter) {
+    init(viewModel: ViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
-        self._router = StateObject(wrappedValue: router)
     }
     
     // MARK: Body
     
     var body: some View {
-        List {
-            Section(header: Text(Constants.SingleWeekForm.pickerTitle)) {
-                Picker(Constants.WeekBudgetView.weekTitle, selection: $viewModel.weekSelected) {
-                    ForEach(viewModel.weeks, id: \.self) {
-                        Text($0)
+        NavigationView {
+            List {
+                Section(header: Text(Constants.SingleWeekForm.pickerTitle)) {
+                    Picker(Constants.WeekBudgetView.weekTitle, selection: $viewModel.weekSelected) {
+                        ForEach(viewModel.weeks, id: \.self) {
+                            Text($0)
+                        }
                     }
+                    .pickerStyle(.wheel)
+                    .frame(height: CoreConstants.Sizes.pickerHeight)
                 }
-                .pickerStyle(.wheel)
-                .frame(height: CoreConstants.Sizes.pickerHeight)
+                Section(header: Text(Constants.SingleWeekForm.budgetPlaceholder)) {
+                    CurrencyTextField(configuration: .init(
+                        placeholder: CoreConstants.Commons.currencyPlaceholder,
+                        text: $viewModel.weekBudget,
+                        formatter: $currencyFormatter,
+                        textFieldConfiguration: nil
+                    ))
+                }
+                Section(header: Text(Constants.SingleWeekForm.creditCardPlaceholder)) {
+                    CurrencyTextField(configuration: .init(
+                        placeholder: CoreConstants.Commons.currencyPlaceholder,
+                        text: $viewModel.creditCardLimit,
+                        formatter: $currencyFormatter,
+                        textFieldConfiguration: nil
+                    ))
+                }
             }
-            Section(header: Text(Constants.SingleWeekForm.budgetPlaceholder)) {
-                CurrencyTextField(configuration: .init(
-                    placeholder: CoreConstants.Commons.currencyPlaceholder,
-                    text: $viewModel.weekBudget,
-                    formatter: $currencyFormatter,
-                    textFieldConfiguration: nil
-                ))
+            .navigationTitle(Constants.SingleWeekForm.title)
+            .toolbar {
+                Button {
+                    submit()
+                } label: {
+                    Label(String(), systemImage: CoreConstants.Icons.check)
+                }
             }
-            Section(header: Text(Constants.SingleWeekForm.creditCardPlaceholder)) {
-                CurrencyTextField(configuration: .init(
-                    placeholder: CoreConstants.Commons.currencyPlaceholder,
-                    text: $viewModel.creditCardLimit,
-                    formatter: $currencyFormatter,
-                    textFieldConfiguration: nil
-                ))
+            .alert(CoreConstants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
+                Button {
+                    viewModel.presentAlert = false
+                } label: {
+                    Text(CoreConstants.Commons.ok)
+                }
+            } message: {
+                Text(viewModel.alertMessage)
             }
-        }
-        .navigationTitle(Constants.SingleWeekForm.title)
-        .toolbar {
-            Button {
-                submit()
-            } label: {
-                Label(String(), systemImage: CoreConstants.Icons.check)
-            }
-        }
-        .alert(CoreConstants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
-            Button {
-                viewModel.presentAlert = false
-            } label: {
-                Text(CoreConstants.Commons.ok)
-            }
-        } message: {
-            Text(viewModel.alertMessage)
         }
     }
     
@@ -79,8 +80,8 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     
     func submit() {
         do {
-            let budget = try viewModel.submit()
-            router.push(.review([budget]))
+            try viewModel.submit()
+            flowPresented.wrappedValue.toggle()
         } catch {
             handleError(error: error)
         }

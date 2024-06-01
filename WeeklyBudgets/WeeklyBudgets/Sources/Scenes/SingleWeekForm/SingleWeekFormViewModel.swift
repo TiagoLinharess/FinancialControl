@@ -19,7 +19,7 @@ protocol SingleWeekFormViewModelProtocol: AnyObject, ObservableObject {
     var weekSelected: String { get set }
     var weekBudget: String { get set }
     var weeks: [String] { get }
-    func submit() throws -> WeeklyBudgetViewModel
+    func submit() throws
 }
 
 // MARK: View Model
@@ -33,6 +33,8 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
     @Published var weekBudget: String = String()
     @Published var presentAlert: Bool = false
     @Published var alertMessage: String = String()
+    
+    private let worker: WeeklyWorkerProtocol
     
     var weeks: [String] {
         var weeksDate: [Date] = []
@@ -51,9 +53,15 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
         return weeks
     }
     
+    // MARK: Init
+    
+    init(worker: WeeklyWorkerProtocol = WeeklyWorker()) {
+        self.worker = worker
+    }
+    
     // MARK: Methods
     
-    func submit() throws -> WeeklyBudgetViewModel {
+    func submit() throws {
         if weekSelected == CoreConstants.Commons.pickerSelect {
             throw CoreError.customError(Constants.SingleWeekForm.selectWeekError)
         }
@@ -62,10 +70,12 @@ final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
             throw CoreError.customError(Constants.SingleWeekForm.fillAllFieldsCorrectly)
         }
         
-        return WeeklyBudgetViewModel(
+        let viewModel = WeeklyBudgetViewModel(
             week: weekSelected,
             originalBudget: weekBudget,
             creditCardWeekLimit: creditCardLimit
         )
+        
+        try worker.save(weekBudgets: [viewModel])
     }
 }
