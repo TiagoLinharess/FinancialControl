@@ -77,12 +77,7 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
     func submit() {
         do {
             try viewModel.submit()
-            viewModel.alertAction = {
-                viewModel.presentAlert = false
-                router.pop()
-            }
-            viewModel.alertMessage = Constants.AddWeeklyExpenseView.successMessage
-            viewModel.presentAlert = true
+            router.pop()
         } catch {
             handleError(error: error)
         }
