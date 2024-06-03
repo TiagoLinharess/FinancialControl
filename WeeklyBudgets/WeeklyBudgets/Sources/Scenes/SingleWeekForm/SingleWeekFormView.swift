@@ -34,6 +34,7 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
                 creditCardLimit: $viewModel.creditCardLimit
             )
             .navigationTitle(Constants.SingleWeekForm.title)
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 Button {
                     submit()

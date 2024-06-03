@@ -19,16 +19,16 @@ struct WeekForm: View {
     
     var body: some View {
         List {
-            Section(header: Text(Constants.SingleWeekForm.pickerTitle)) {
-                Picker(Constants.WeekBudgetView.weekTitle, selection: $weekSelected) {
-                    ForEach(weeks, id: \.self) {
-                        Text($0)
-                    }
+            Picker(Constants.WeekBudgetView.weekTitle, selection: $weekSelected) {
+                ForEach(weeks, id: \.self) {
+                    Text($0)
                 }
-                .pickerStyle(.wheel)
-                .frame(height: CoreConstants.Sizes.pickerHeight)
             }
-            Section(header: Text(Constants.SingleWeekForm.budgetPlaceholder)) {
+            .pickerStyle(.wheel)
+            .frame(height: CoreConstants.Sizes.pickerHeight)
+            HStack {
+                Text(Constants.SingleWeekForm.budgetPlaceholder)
+                Spacer()
                 CurrencyTextField(configuration: .init(
                     placeholder: CoreConstants.Commons.currencyPlaceholder,
                     text: $weekBudget,
@@ -36,7 +36,9 @@ struct WeekForm: View {
                     textFieldConfiguration: nil
                 ))
             }
-            Section(header: Text(Constants.SingleWeekForm.creditCardPlaceholder)) {
+            HStack {
+                Text(Constants.SingleWeekForm.creditCardPlaceholder)
+                Spacer()
                 CurrencyTextField(configuration: .init(
                     placeholder: CoreConstants.Commons.currencyPlaceholder,
                     text: $creditCardLimit,
