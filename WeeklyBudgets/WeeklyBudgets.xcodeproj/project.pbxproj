@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A6083CAAE95B0DD3AD15C020 /* Pods_WeeklyBudgetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BE456B892A562790F3621B /* Pods_WeeklyBudgetsTests.framework */; };
 		B2CBBC7A3998F5403460573D /* Pods_WeeklyBudgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC7AC38D631D20DE88D2A31 /* Pods_WeeklyBudgets.framework */; };
+		ED0B086F2C0D45EE00177A41 /* WeekForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B086E2C0D45EE00177A41 /* WeekForm.swift */; };
 		ED11D2872B025EFB00514D7C /* Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2862B025EFB00514D7C /* Provider.framework */; };
 		ED11D2D32B02B02300514D7C /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2D22B02B02300514D7C /* Core.framework */; };
 		ED11D2E62B02C16200514D7C /* Date+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2E52B02C16200514D7C /* Date+ExtensionsTests.swift */; };
@@ -83,6 +84,7 @@
 		8AC7AC38D631D20DE88D2A31 /* Pods_WeeklyBudgets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeklyBudgets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F2CB64CAB69DFAAAF289A0 /* Pods-WeeklyBudgetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyBudgetsTests.debug.xcconfig"; path = "Target Support Files/Pods-WeeklyBudgetsTests/Pods-WeeklyBudgetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9CAB98D6243823ABB595C077 /* Pods-WeeklyBudgets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyBudgets.debug.xcconfig"; path = "Target Support Files/Pods-WeeklyBudgets/Pods-WeeklyBudgets.debug.xcconfig"; sourceTree = "<group>"; };
+		ED0B086E2C0D45EE00177A41 /* WeekForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekForm.swift; sourceTree = "<group>"; };
 		ED1077152AFE7DEC0062A6B1 /* WeeklyBudgetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeeklyBudgetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D2822B0250ED00514D7C /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D2862B025EFB00514D7C /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +199,14 @@
 			);
 			name = Pods;
 			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		ED0B086D2C0D45BC00177A41 /* WeekForm */ = {
+			isa = PBXGroup;
+			children = (
+				ED0B086E2C0D45EE00177A41 /* WeekForm.swift */,
+			);
+			path = WeekForm;
 			sourceTree = "<group>";
 		};
 		ED1077162AFE7DEC0062A6B1 /* WeeklyBudgetsTests */ = {
@@ -488,11 +498,12 @@
 		ED753C952AFE712E002B469D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				ED753C962AFE712E002B469D /* WeekBudget */,
 				ED753C982AFE712E002B469D /* Empty */,
-				ED753C9A2AFE712E002B469D /* WeekExpense */,
 				ED753C9C2AFE712E002B469D /* Error */,
+				ED753C962AFE712E002B469D /* WeekBudget */,
 				ED753CA02AFE712E002B469D /* WeekBudgetList */,
+				ED753C9A2AFE712E002B469D /* WeekExpense */,
+				ED0B086D2C0D45BC00177A41 /* WeekForm */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -978,6 +989,7 @@
 				ED753CFB2AFE712E002B469D /* WeeklyWorker.swift in Sources */,
 				ED753C8C2AFE7061002B469D /* WeeklyBudgets.docc in Sources */,
 				ED753CE62AFE712E002B469D /* WeeklyExpenseViewModel.swift in Sources */,
+				ED0B086F2C0D45EE00177A41 /* WeekForm.swift in Sources */,
 				ED753CDA2AFE712E002B469D /* HomeEmptyView.swift in Sources */,
 				ED753CF42AFE712E002B469D /* WeeklyBudgetDetailView.swift in Sources */,
 				ED753CFF2AFE726B002B469D /* WBFacade.swift in Sources */,

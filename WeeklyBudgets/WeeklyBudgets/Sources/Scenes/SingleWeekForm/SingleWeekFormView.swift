@@ -17,7 +17,6 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     
     @Environment(\.weeklyModalMode) private var flowPresented
     @StateObject private var viewModel: ViewModel
-    @State private var currencyFormatter = CurrencyFormatter.internationalDefault
     
     // MARK: Init
     
@@ -29,33 +28,11 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     
     var body: some View {
         NavigationView {
-            List {
-                Section(header: Text(Constants.SingleWeekForm.pickerTitle)) {
-                    Picker(Constants.WeekBudgetView.weekTitle, selection: $viewModel.weekSelected) {
-                        ForEach(viewModel.weeks, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                    .pickerStyle(.wheel)
-                    .frame(height: CoreConstants.Sizes.pickerHeight)
-                }
-                Section(header: Text(Constants.SingleWeekForm.budgetPlaceholder)) {
-                    CurrencyTextField(configuration: .init(
-                        placeholder: CoreConstants.Commons.currencyPlaceholder,
-                        text: $viewModel.weekBudget,
-                        formatter: $currencyFormatter,
-                        textFieldConfiguration: nil
-                    ))
-                }
-                Section(header: Text(Constants.SingleWeekForm.creditCardPlaceholder)) {
-                    CurrencyTextField(configuration: .init(
-                        placeholder: CoreConstants.Commons.currencyPlaceholder,
-                        text: $viewModel.creditCardLimit,
-                        formatter: $currencyFormatter,
-                        textFieldConfiguration: nil
-                    ))
-                }
-            }
+            WeekForm(
+                weeks: viewModel.weeks, weekSelected: $viewModel.weekSelected,
+                weekBudget: $viewModel.weekBudget,
+                creditCardLimit: $viewModel.creditCardLimit
+            )
             .navigationTitle(Constants.SingleWeekForm.title)
             .toolbar {
                 Button {
