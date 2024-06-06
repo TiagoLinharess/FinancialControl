@@ -89,7 +89,6 @@ private extension WeeklyWorker {
             id: viewModel.id,
             date: viewModel.date,
             title: viewModel.title,
-            description: viewModel.description,
             paymentMode: .init(rawValue: viewModel.paymentMode.rawValue) ?? .debit,
             value: viewModel.value
         )

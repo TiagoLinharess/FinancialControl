@@ -38,7 +38,7 @@ struct AddWeekFormView<ViewModel: AddWeekFormViewModelProtocol>: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button {
-                        flowPresented.wrappedValue.toggle()
+                        close()
                     } label: {
                         Label(String(), systemImage: CoreConstants.Icons.close)
                     }
@@ -64,6 +64,10 @@ struct AddWeekFormView<ViewModel: AddWeekFormViewModelProtocol>: View {
     }
     
     // MARK: Methods
+    
+    func close() {
+        flowPresented.wrappedValue.toggle()
+    }
     
     func submit() {
         do {

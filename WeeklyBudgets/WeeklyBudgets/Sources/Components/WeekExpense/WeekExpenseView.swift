@@ -12,7 +12,6 @@ import SwiftUI
 struct WeekExpenseView: View {
     
     let expense: WeeklyExpenseViewModel
-    @State private var showDescription: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: .small) {
@@ -27,15 +26,7 @@ struct WeekExpenseView: View {
                 Image(systemName: expense.paymentMode == .debit ? CoreConstants.Icons.cash : CoreConstants.Icons.creditCard)
             }
             .frame(height: .xxBig)
-            if showDescription && !expense.description.isEmpty {
-                Text(expense.description)
-            }
         }
         .contentShape(Rectangle())
-        .onTapGesture {
-            withAnimation {
-                showDescription.toggle()
-            }
-        }
     }
 }

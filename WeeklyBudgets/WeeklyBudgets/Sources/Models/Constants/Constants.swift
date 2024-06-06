@@ -63,7 +63,7 @@ enum Constants {
         static let description = "Description"
         static let descriptionPlaceholder = "Purchased from the Apple store"
         static let selectPaymentMode = "Select payment mode*"
-        static let paymentMode = "Payment mode"
+        static let paymentMode = "Payment mode*"
         static let value = "Value*"
         static let successMessage: String = "Expense added with success"
     }
