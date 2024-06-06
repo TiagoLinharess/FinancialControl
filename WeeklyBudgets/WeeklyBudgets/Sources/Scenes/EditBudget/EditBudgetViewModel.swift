@@ -25,32 +25,22 @@ final class EditBudgetViewModel: EditBudgetViewModelProtocol {
     // MARK: Properties
     
     @Binding var budget: WeeklyBudgetViewModel
-    @Published var creditCardLimit: String = String()
-    @Published var weekSelected: String = String()
-    @Published var weekBudget: String = String()
+    @Published var creditCardLimit: String = ""
+    @Published var weekSelected: String = ""
+    @Published var weekBudget: String = ""
     @Published var presentAlert: Bool = false
-    @Published var alertMessage: String = String()
+    @Published var alertMessage: String = ""
     
     private let worker: WeeklyWorkerProtocol
+    private var cachedWeeks: [String]?
     
     var weeks: [String] {
-        var weeksDate: [Date] = []
-        
-        for i in 0..<12 {
-            guard let month = Calendar.current.date(byAdding: .month, value: i, to: Date()) else { break }
-            weeksDate.append(contentsOf: month.firstWeekDayOfMonth(with: 1))
+        if let cachedWeeks = cachedWeeks {
+            return cachedWeeks
         }
-        
-        var weeks = weeksDate.map { date -> String in
-            return date.localeFormat
-        }
-        
-        weeks.insert(
-            weeks.contains(budget.week) ? CoreConstants.Commons.pickerSelect : budget.week,
-            at: .zero
-        )
-        
-        return weeks
+        let generatedWeeks = generateWeeks()
+        cachedWeeks = generatedWeeks
+        return generatedWeeks
     }
     
     // MARK: Init
@@ -63,31 +53,49 @@ final class EditBudgetViewModel: EditBudgetViewModelProtocol {
     
     // MARK: Methods
     
-    func setup() {
+    private func setup() {
         weekBudget = budget.originalBudget.toCurrency()
         creditCardLimit = budget.creditCardWeekLimit.toCurrency()
         weekSelected = budget.week
     }
     
+    private func generateWeeks() -> [String] {
+        var weeksDate: [Date] = []
+        
+        for i in 0..<12 {
+            if let month = Calendar.current.date(byAdding: .month, value: i, to: Date()) {
+                weeksDate.append(contentsOf: month.firstWeekDayOfMonth(with: 1))
+            }
+        }
+        
+        var weeks = weeksDate.map { $0.localeFormat }
+        
+        if !weeks.contains(budget.week) {
+            weeks.insert(budget.week, at: 0)
+        } else {
+            weeks.insert(CoreConstants.Commons.pickerSelect, at: 0)
+        }
+        
+        return weeks
+    }
+    
     func submit() throws {
-        guard let weekBudget = weekBudget.currencyToDouble, let creditCardLimit = creditCardLimit.currencyToDouble else {
+        guard let weekBudgetValue = weekBudget.currencyToDouble, let creditCardLimitValue = creditCardLimit.currencyToDouble else {
             throw CoreError.customError(Constants.SingleWeekForm.fillAllFieldsCorrectly)
         }
         
-        var viewModel = WeeklyBudgetViewModel(
+        var updatedBudget = WeeklyBudgetViewModel(
             id: budget.id,
             week: weekSelected,
-            originalBudget: weekBudget,
-            currentBudget: weekBudget,
-            creditCardWeekLimit: creditCardLimit,
-            creditCardRemainingLimit: creditCardLimit
+            originalBudget: weekBudgetValue,
+            currentBudget: weekBudgetValue,
+            creditCardWeekLimit: creditCardLimitValue,
+            creditCardRemainingLimit: creditCardLimitValue
         )
         
-        budget.expenses.forEach { expense in
-            viewModel.addExpense(expense: expense)
-        }
+        budget.expenses.forEach { updatedBudget.addExpense(expense: $0) }
         
-        try worker.update(weekBudget: viewModel)
-        budget = viewModel
+        try worker.update(weekBudget: updatedBudget)
+        budget = updatedBudget
     }
 }
