@@ -37,12 +37,12 @@ final class WeeklyRouterTests: XCTestCase {
     func test_get_destination_singleWeekForm() throws {
         let view = sut.getDestination(from: .singleWeekForm)
         
-        XCTAssertTrue(view is _ConditionalContent<AddWeekFormView<AddWeekFormViewModel>, WeeklyReviewView<WeeklyReviewViewModel>>)
+        XCTAssertTrue(view is _ConditionalContent<AddBudgetView<AddBudgetFormViewModel>, WeeklyReviewView<WeeklyReviewViewModel>>)
     }
     
     func test_get_destination_review() throws {
         let view = sut.getDestination(from: .review([]))
         
-        XCTAssertTrue(view is _ConditionalContent<AddWeekFormView<AddWeekFormViewModel>, WeeklyReviewView<WeeklyReviewViewModel>>)
+        XCTAssertTrue(view is _ConditionalContent<AddBudgetView<AddBudgetFormViewModel>, WeeklyReviewView<WeeklyReviewViewModel>>)
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import SharpnezCore
 
-final class SingleWeekFormViewModelMock: AddWeekFormViewModelProtocol {
+final class SingleWeekFormViewModelMock: AddBudgetViewModelProtocol {
 
     var presentAlert: Bool = false
     

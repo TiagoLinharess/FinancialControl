@@ -1,18 +1,16 @@
 //
-//  AddWeekFormViewModel.swift
-//  FinancialControl
+//  EditBudgetViewModel.swift
+//  WeeklyBudgets
 //
-//  Created by Tiago Linhares on 31/08/23.
+//  Created by Tiago Linhares on 06/06/24.
 //
 
+import Combine
 import Core
 import SharpnezCore
-import SharpnezDesignSystem
 import SwiftUI
 
-// MARK: Protocol
-
-protocol AddWeekFormViewModelProtocol: AnyObject, ObservableObject {
+protocol EditBudgetViewModelProtocol: AnyObject, ObservableObject {
     var presentAlert: Bool { get set }
     var alertMessage: String { get set }
     var creditCardLimit: String { get set }
@@ -22,14 +20,13 @@ protocol AddWeekFormViewModelProtocol: AnyObject, ObservableObject {
     func submit() throws
 }
 
-// MARK: View Model
-
-final class AddWeekFormViewModel: AddWeekFormViewModelProtocol {
+final class EditBudgetViewModel: EditBudgetViewModelProtocol {
     
     // MARK: Properties
     
+    @Binding var budget: WeeklyBudgetViewModel
     @Published var creditCardLimit: String = String()
-    @Published var weekSelected: String = CoreConstants.Commons.pickerSelect
+    @Published var weekSelected: String = String()
     @Published var weekBudget: String = String()
     @Published var presentAlert: Bool = false
     @Published var alertMessage: String = String()
@@ -48,34 +45,49 @@ final class AddWeekFormViewModel: AddWeekFormViewModelProtocol {
             return date.localeFormat
         }
         
-        weeks.insert(CoreConstants.Commons.pickerSelect, at: .zero)
+        weeks.insert(
+            weeks.contains(budget.week) ? CoreConstants.Commons.pickerSelect : budget.week,
+            at: .zero
+        )
         
         return weeks
     }
     
     // MARK: Init
     
-    init(worker: WeeklyWorkerProtocol = WeeklyWorker()) {
+    init(budget: Binding<WeeklyBudgetViewModel>, worker: WeeklyWorkerProtocol = WeeklyWorker()) {
+        self._budget = budget
         self.worker = worker
+        setup()
     }
     
     // MARK: Methods
     
+    func setup() {
+        weekBudget = budget.originalBudget.toCurrency()
+        creditCardLimit = budget.creditCardWeekLimit.toCurrency()
+        weekSelected = budget.week
+    }
+    
     func submit() throws {
-        if weekSelected == CoreConstants.Commons.pickerSelect {
-            throw CoreError.customError(Constants.SingleWeekForm.selectWeekError)
-        }
-        
         guard let weekBudget = weekBudget.currencyToDouble, let creditCardLimit = creditCardLimit.currencyToDouble else {
             throw CoreError.customError(Constants.SingleWeekForm.fillAllFieldsCorrectly)
         }
         
-        let viewModel = WeeklyBudgetViewModel(
+        var viewModel = WeeklyBudgetViewModel(
+            id: budget.id,
             week: weekSelected,
             originalBudget: weekBudget,
-            creditCardWeekLimit: creditCardLimit
+            currentBudget: weekBudget,
+            creditCardWeekLimit: creditCardLimit,
+            creditCardRemainingLimit: creditCardLimit
         )
         
-        try worker.save(weekBudgets: [viewModel])
+        budget.expenses.forEach { expense in
+            viewModel.addExpense(expense: expense)
+        }
+        
+        try worker.update(weekBudget: viewModel)
+        budget = viewModel
     }
 }

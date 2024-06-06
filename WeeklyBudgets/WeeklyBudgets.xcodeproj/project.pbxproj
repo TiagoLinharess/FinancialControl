@@ -10,6 +10,8 @@
 		A6083CAAE95B0DD3AD15C020 /* Pods_WeeklyBudgetsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30BE456B892A562790F3621B /* Pods_WeeklyBudgetsTests.framework */; };
 		B2CBBC7A3998F5403460573D /* Pods_WeeklyBudgets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AC7AC38D631D20DE88D2A31 /* Pods_WeeklyBudgets.framework */; };
 		ED0B086F2C0D45EE00177A41 /* WeekForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B086E2C0D45EE00177A41 /* WeekForm.swift */; };
+		ED0B08722C11FAE000177A41 /* EditBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B08712C11FAE000177A41 /* EditBudgetView.swift */; };
+		ED0B08742C11FB5700177A41 /* EditBudgetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B08732C11FB5700177A41 /* EditBudgetViewModel.swift */; };
 		ED11D2872B025EFB00514D7C /* Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2862B025EFB00514D7C /* Provider.framework */; };
 		ED11D2D32B02B02300514D7C /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2D22B02B02300514D7C /* Core.framework */; };
 		ED11D2E62B02C16200514D7C /* Date+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2E52B02C16200514D7C /* Date+ExtensionsTests.swift */; };
@@ -42,8 +44,8 @@
 		ED753CEE2AFE712E002B469D /* WeeklyDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CBF2AFE712E002B469D /* WeeklyDetailRouter.swift */; };
 		ED753CEF2AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC12AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift */; };
 		ED753CF02AFE712E002B469D /* WeeklyBudgetsHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC22AFE712E002B469D /* WeeklyBudgetsHomeView.swift */; };
-		ED753CF12AFE712E002B469D /* AddWeekFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC42AFE712E002B469D /* AddWeekFormView.swift */; };
-		ED753CF22AFE712E002B469D /* AddWeekFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC52AFE712E002B469D /* AddWeekFormViewModel.swift */; };
+		ED753CF12AFE712E002B469D /* AddBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC42AFE712E002B469D /* AddBudgetView.swift */; };
+		ED753CF22AFE712E002B469D /* AddBudgetFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC52AFE712E002B469D /* AddBudgetFormViewModel.swift */; };
 		ED753CF32AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC82AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift */; };
 		ED753CF42AFE712E002B469D /* WeeklyBudgetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC92AFE712E002B469D /* WeeklyBudgetDetailView.swift */; };
 		ED753CF72AFE712E002B469D /* AddWeeklyExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CCE2AFE712E002B469D /* AddWeeklyExpenseView.swift */; };
@@ -85,6 +87,8 @@
 		97F2CB64CAB69DFAAAF289A0 /* Pods-WeeklyBudgetsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyBudgetsTests.debug.xcconfig"; path = "Target Support Files/Pods-WeeklyBudgetsTests/Pods-WeeklyBudgetsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9CAB98D6243823ABB595C077 /* Pods-WeeklyBudgets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyBudgets.debug.xcconfig"; path = "Target Support Files/Pods-WeeklyBudgets/Pods-WeeklyBudgets.debug.xcconfig"; sourceTree = "<group>"; };
 		ED0B086E2C0D45EE00177A41 /* WeekForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekForm.swift; sourceTree = "<group>"; };
+		ED0B08712C11FAE000177A41 /* EditBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBudgetView.swift; sourceTree = "<group>"; };
+		ED0B08732C11FB5700177A41 /* EditBudgetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBudgetViewModel.swift; sourceTree = "<group>"; };
 		ED1077152AFE7DEC0062A6B1 /* WeeklyBudgetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeeklyBudgetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D2822B0250ED00514D7C /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D2862B025EFB00514D7C /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,8 +131,8 @@
 		ED753CBF2AFE712E002B469D /* WeeklyDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyDetailRouter.swift; sourceTree = "<group>"; };
 		ED753CC12AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeViewModel.swift; sourceTree = "<group>"; };
 		ED753CC22AFE712E002B469D /* WeeklyBudgetsHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeView.swift; sourceTree = "<group>"; };
-		ED753CC42AFE712E002B469D /* AddWeekFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeekFormView.swift; sourceTree = "<group>"; };
-		ED753CC52AFE712E002B469D /* AddWeekFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeekFormViewModel.swift; sourceTree = "<group>"; };
+		ED753CC42AFE712E002B469D /* AddBudgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBudgetView.swift; sourceTree = "<group>"; };
+		ED753CC52AFE712E002B469D /* AddBudgetFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBudgetFormViewModel.swift; sourceTree = "<group>"; };
 		ED753CC82AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetDetailViewModel.swift; sourceTree = "<group>"; };
 		ED753CC92AFE712E002B469D /* WeeklyBudgetDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetDetailView.swift; sourceTree = "<group>"; };
 		ED753CCE2AFE712E002B469D /* AddWeeklyExpenseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseView.swift; sourceTree = "<group>"; };
@@ -207,6 +211,15 @@
 				ED0B086E2C0D45EE00177A41 /* WeekForm.swift */,
 			);
 			path = WeekForm;
+			sourceTree = "<group>";
+		};
+		ED0B08702C11FACC00177A41 /* EditBudget */ = {
+			isa = PBXGroup;
+			children = (
+				ED0B08712C11FAE000177A41 /* EditBudgetView.swift */,
+				ED0B08732C11FB5700177A41 /* EditBudgetViewModel.swift */,
+			);
+			path = EditBudget;
 			sourceTree = "<group>";
 		};
 		ED1077162AFE7DEC0062A6B1 /* WeeklyBudgetsTests */ = {
@@ -608,7 +621,8 @@
 			children = (
 				ED753CBD2AFE712E002B469D /* Routers */,
 				ED753CC02AFE712E002B469D /* Home */,
-				ED753CC32AFE712E002B469D /* AddWeekForm */,
+				ED753CC32AFE712E002B469D /* AddBudget */,
+				ED0B08702C11FACC00177A41 /* EditBudget */,
 				ED753CC72AFE712E002B469D /* Detail */,
 				ED753CCD2AFE712E002B469D /* AddExpense */,
 			);
@@ -633,13 +647,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		ED753CC32AFE712E002B469D /* AddWeekForm */ = {
+		ED753CC32AFE712E002B469D /* AddBudget */ = {
 			isa = PBXGroup;
 			children = (
-				ED753CC42AFE712E002B469D /* AddWeekFormView.swift */,
-				ED753CC52AFE712E002B469D /* AddWeekFormViewModel.swift */,
+				ED753CC42AFE712E002B469D /* AddBudgetView.swift */,
+				ED753CC52AFE712E002B469D /* AddBudgetFormViewModel.swift */,
 			);
-			path = AddWeekForm;
+			path = AddBudget;
 			sourceTree = "<group>";
 		};
 		ED753CC72AFE712E002B469D /* Detail */ = {
@@ -989,6 +1003,7 @@
 				ED753CFB2AFE712E002B469D /* WeeklyWorker.swift in Sources */,
 				ED753C8C2AFE7061002B469D /* WeeklyBudgets.docc in Sources */,
 				ED753CE62AFE712E002B469D /* WeeklyExpenseViewModel.swift in Sources */,
+				ED0B08742C11FB5700177A41 /* EditBudgetViewModel.swift in Sources */,
 				ED0B086F2C0D45EE00177A41 /* WeekForm.swift in Sources */,
 				ED753CDA2AFE712E002B469D /* HomeEmptyView.swift in Sources */,
 				ED753CF42AFE712E002B469D /* WeeklyBudgetDetailView.swift in Sources */,
@@ -996,15 +1011,16 @@
 				ED753CD92AFE712E002B469D /* WeekBudgetView.swift in Sources */,
 				ED753CEF2AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift in Sources */,
 				ED753CDB2AFE712E002B469D /* WeekExpenseView.swift in Sources */,
-				ED753CF12AFE712E002B469D /* AddWeekFormView.swift in Sources */,
+				ED753CF12AFE712E002B469D /* AddBudgetView.swift in Sources */,
 				ED753CDF2AFE712E002B469D /* PaymentMode.swift in Sources */,
 				ED753CE02AFE712E002B469D /* Constants.swift in Sources */,
-				ED753CF22AFE712E002B469D /* AddWeekFormViewModel.swift in Sources */,
+				ED753CF22AFE712E002B469D /* AddBudgetFormViewModel.swift in Sources */,
 				ED753CE22AFE712E002B469D /* WeeklyModalModeKey.swift in Sources */,
 				ED753CE72AFE712E002B469D /* WeeklyBudgetViewModel.swift in Sources */,
 				ED753CF32AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift in Sources */,
 				ED753CE32AFE712E002B469D /* Color+Extensions.swift in Sources */,
 				ED753CF82AFE712E002B469D /* AddWeeklyExpenseViewModel.swift in Sources */,
+				ED0B08722C11FAE000177A41 /* EditBudgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,7 +11,7 @@ import XCTest
 
 final class SingleWeekFormViewModelTests: XCTestCase {
     
-    var sut: AddWeekFormViewModel!
+    var sut: AddBudgetFormViewModel!
     
     override func setUpWithError() throws {
         sut = .init()

@@ -29,8 +29,8 @@ final class WeeklyDetailRouter: ObservableObject {
         switch destination {
         case let .addExpense(budget):
             AddWeeklyExpenseView(viewModel: AddWeeklyExpenseViewModel(weekBudget: budget), router: self)
-        case .editBudget:
-            Text("editBudget")
+        case let .editBudget(budget):
+            EditBudgetView(viewModel: EditBudgetViewModel(budget: budget), router: self)
         }
     }
 }

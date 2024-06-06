@@ -1,5 +1,5 @@
 //
-//  SingleWeekFormView.swift
+//  AddBudgetView.swift
 //  FinancialControl
 //
 //  Created by Tiago Linhares on 30/08/23.
@@ -11,7 +11,7 @@ import SharpnezCore
 import SharpnezDesignSystem
 import SwiftUI
 
-struct AddWeekFormView<ViewModel: AddWeekFormViewModelProtocol>: View {
+struct AddBudgetView<ViewModel: AddBudgetViewModelProtocol>: View {
     
     // MARK: Properties
     
@@ -29,7 +29,8 @@ struct AddWeekFormView<ViewModel: AddWeekFormViewModelProtocol>: View {
     var body: some View {
         NavigationView {
             WeekForm(
-                weeks: viewModel.weeks, weekSelected: $viewModel.weekSelected,
+                weeks: viewModel.weeks,
+                weekSelected: $viewModel.weekSelected,
                 weekBudget: $viewModel.weekBudget,
                 creditCardLimit: $viewModel.creditCardLimit
             )
@@ -72,7 +73,7 @@ struct AddWeekFormView<ViewModel: AddWeekFormViewModelProtocol>: View {
     func submit() {
         do {
             try viewModel.submit()
-            flowPresented.wrappedValue.toggle()
+            close()
         } catch {
             handleError(error: error)
         }
