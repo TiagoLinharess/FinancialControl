@@ -52,7 +52,7 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
             .sheet(isPresented: $viewModel.addBudgetFlowPresented) {
                 viewModel.fetchBudgets()
             } content: {
-                SingleWeekFormView(viewModel: SingleWeekFormViewModel())
+                AddWeekFormView(viewModel: AddWeekFormViewModel())
                     .environment(\.weeklyModalMode, $viewModel.addBudgetFlowPresented)
             }
         }

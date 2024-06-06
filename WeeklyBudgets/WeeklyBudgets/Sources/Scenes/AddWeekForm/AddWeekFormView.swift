@@ -11,7 +11,7 @@ import SharpnezCore
 import SharpnezDesignSystem
 import SwiftUI
 
-struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
+struct AddWeekFormView<ViewModel: AddWeekFormViewModelProtocol>: View {
     
     // MARK: Properties
     
@@ -35,6 +35,15 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
             )
             .navigationTitle(Constants.SingleWeekForm.title)
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        flowPresented.wrappedValue.toggle()
+                    } label: {
+                        Label(String(), systemImage: CoreConstants.Icons.close)
+                    }
+                }
+            }
             .toolbar {
                 Button {
                     submit()

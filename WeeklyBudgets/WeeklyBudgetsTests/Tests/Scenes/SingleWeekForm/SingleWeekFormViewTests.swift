@@ -14,7 +14,7 @@ import XCTest
 
 final class SingleWeekFormViewTests: XCTestCase {
     
-    var sut: SingleWeekFormView<SingleWeekFormViewModelMock>!
+    var sut: AddWeekFormView<SingleWeekFormViewModelMock>!
     var mock: SingleWeekFormViewModelMock!
     var router: WeeklyRouter!
     

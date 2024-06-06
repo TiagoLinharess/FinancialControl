@@ -1,5 +1,5 @@
 //
-//  SingleWeekFormViewModel.swift
+//  AddWeekFormViewModel.swift
 //  FinancialControl
 //
 //  Created by Tiago Linhares on 31/08/23.
@@ -12,7 +12,7 @@ import SwiftUI
 
 // MARK: Protocol
 
-protocol SingleWeekFormViewModelProtocol: AnyObject, ObservableObject {
+protocol AddWeekFormViewModelProtocol: AnyObject, ObservableObject {
     var presentAlert: Bool { get set }
     var alertMessage: String { get set }
     var creditCardLimit: String { get set }
@@ -24,7 +24,7 @@ protocol SingleWeekFormViewModelProtocol: AnyObject, ObservableObject {
 
 // MARK: View Model
 
-final class SingleWeekFormViewModel: SingleWeekFormViewModelProtocol {
+final class AddWeekFormViewModel: AddWeekFormViewModelProtocol {
     
     // MARK: Properties
     

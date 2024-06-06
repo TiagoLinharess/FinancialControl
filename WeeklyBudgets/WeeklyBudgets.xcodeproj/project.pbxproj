@@ -42,8 +42,8 @@
 		ED753CEE2AFE712E002B469D /* WeeklyDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CBF2AFE712E002B469D /* WeeklyDetailRouter.swift */; };
 		ED753CEF2AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC12AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift */; };
 		ED753CF02AFE712E002B469D /* WeeklyBudgetsHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC22AFE712E002B469D /* WeeklyBudgetsHomeView.swift */; };
-		ED753CF12AFE712E002B469D /* SingleWeekFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC42AFE712E002B469D /* SingleWeekFormView.swift */; };
-		ED753CF22AFE712E002B469D /* SingleWeekFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC52AFE712E002B469D /* SingleWeekFormViewModel.swift */; };
+		ED753CF12AFE712E002B469D /* AddWeekFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC42AFE712E002B469D /* AddWeekFormView.swift */; };
+		ED753CF22AFE712E002B469D /* AddWeekFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC52AFE712E002B469D /* AddWeekFormViewModel.swift */; };
 		ED753CF32AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC82AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift */; };
 		ED753CF42AFE712E002B469D /* WeeklyBudgetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CC92AFE712E002B469D /* WeeklyBudgetDetailView.swift */; };
 		ED753CF72AFE712E002B469D /* AddWeeklyExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED753CCE2AFE712E002B469D /* AddWeeklyExpenseView.swift */; };
@@ -127,8 +127,8 @@
 		ED753CBF2AFE712E002B469D /* WeeklyDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyDetailRouter.swift; sourceTree = "<group>"; };
 		ED753CC12AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeViewModel.swift; sourceTree = "<group>"; };
 		ED753CC22AFE712E002B469D /* WeeklyBudgetsHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsHomeView.swift; sourceTree = "<group>"; };
-		ED753CC42AFE712E002B469D /* SingleWeekFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleWeekFormView.swift; sourceTree = "<group>"; };
-		ED753CC52AFE712E002B469D /* SingleWeekFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleWeekFormViewModel.swift; sourceTree = "<group>"; };
+		ED753CC42AFE712E002B469D /* AddWeekFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeekFormView.swift; sourceTree = "<group>"; };
+		ED753CC52AFE712E002B469D /* AddWeekFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeekFormViewModel.swift; sourceTree = "<group>"; };
 		ED753CC82AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetDetailViewModel.swift; sourceTree = "<group>"; };
 		ED753CC92AFE712E002B469D /* WeeklyBudgetDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetDetailView.swift; sourceTree = "<group>"; };
 		ED753CCE2AFE712E002B469D /* AddWeeklyExpenseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWeeklyExpenseView.swift; sourceTree = "<group>"; };
@@ -608,7 +608,7 @@
 			children = (
 				ED753CBD2AFE712E002B469D /* Routers */,
 				ED753CC02AFE712E002B469D /* Home */,
-				ED753CC32AFE712E002B469D /* SingleWeekForm */,
+				ED753CC32AFE712E002B469D /* AddWeekForm */,
 				ED753CC72AFE712E002B469D /* Detail */,
 				ED753CCD2AFE712E002B469D /* AddExpense */,
 			);
@@ -633,13 +633,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		ED753CC32AFE712E002B469D /* SingleWeekForm */ = {
+		ED753CC32AFE712E002B469D /* AddWeekForm */ = {
 			isa = PBXGroup;
 			children = (
-				ED753CC42AFE712E002B469D /* SingleWeekFormView.swift */,
-				ED753CC52AFE712E002B469D /* SingleWeekFormViewModel.swift */,
+				ED753CC42AFE712E002B469D /* AddWeekFormView.swift */,
+				ED753CC52AFE712E002B469D /* AddWeekFormViewModel.swift */,
 			);
-			path = SingleWeekForm;
+			path = AddWeekForm;
 			sourceTree = "<group>";
 		};
 		ED753CC72AFE712E002B469D /* Detail */ = {
@@ -996,10 +996,10 @@
 				ED753CD92AFE712E002B469D /* WeekBudgetView.swift in Sources */,
 				ED753CEF2AFE712E002B469D /* WeeklyBudgetsHomeViewModel.swift in Sources */,
 				ED753CDB2AFE712E002B469D /* WeekExpenseView.swift in Sources */,
-				ED753CF12AFE712E002B469D /* SingleWeekFormView.swift in Sources */,
+				ED753CF12AFE712E002B469D /* AddWeekFormView.swift in Sources */,
 				ED753CDF2AFE712E002B469D /* PaymentMode.swift in Sources */,
 				ED753CE02AFE712E002B469D /* Constants.swift in Sources */,
-				ED753CF22AFE712E002B469D /* SingleWeekFormViewModel.swift in Sources */,
+				ED753CF22AFE712E002B469D /* AddWeekFormViewModel.swift in Sources */,
 				ED753CE22AFE712E002B469D /* WeeklyModalModeKey.swift in Sources */,
 				ED753CE72AFE712E002B469D /* WeeklyBudgetViewModel.swift in Sources */,
 				ED753CF32AFE712E002B469D /* WeeklyBudgetDetailViewModel.swift in Sources */,
