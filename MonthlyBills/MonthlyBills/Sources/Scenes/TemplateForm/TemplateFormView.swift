@@ -38,6 +38,7 @@ final class TemplateFormView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.backgroundColor = .clear
         return tableView
     }()
     
@@ -64,7 +65,7 @@ extension TemplateFormView: UIViewCode {
     // MARK: View Setup
     
     func setupView() {
-        backgroundColor = .systemBackground
+        backgroundColor = .systemGroupedBackground
     }
     
     func setupHierarchy() {

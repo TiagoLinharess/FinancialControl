@@ -1,28 +1,33 @@
 //
-//  CalendarDetailView.swift
+//  ConfigurationView.swift
 //  MonthlyBills
 //
-//  Created by Tiago Linhares on 01/12/23.
+//  Created by Tiago Linhares on 07/06/24.
 //
 
 import SharpnezDesignSystem
 import SnapKit
 import UIKit
 
-final class CalendarDetailView: UIView {
+protocol ConfigurationViewDelegate {
+    func didSelect(configuration: Configurations)
+}
+
+final class ConfigurationView: UIView {
     
     // MARK: Properties
     
-    var delegate: CalendarDetailViewControllerDelegate?
-    let reuseIdentifier: String = Constants.CalendarDetailView.reuseIdentifier
+    var delegate: ConfigurationViewDelegate?
+    let reuseIdentifier: String = Constants.Configurations.reuseIdentifier
     
     // MARK: UI Elements
     
-    lazy var tableView: UITableView = {
+    private(set) lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.backgroundColor = .clear
         return tableView
     }()
     
@@ -36,15 +41,9 @@ final class CalendarDetailView: UIView {
     required init?(coder: NSCoder) {
         fatalError()
     }
-    
-    // MARK: Public Methods
-    
-    func reloadData() {
-        tableView.reloadData()
-    }
 }
 
-extension CalendarDetailView: UIViewCode {
+extension ConfigurationView: UIViewCode {
     
     // MARK: View Setup
     
@@ -63,24 +62,20 @@ extension CalendarDetailView: UIViewCode {
     }
 }
 
-extension CalendarDetailView: UITableViewDelegate, UITableViewDataSource {
+extension ConfigurationView: UITableViewDelegate, UITableViewDataSource {
     
     // MARK: UITableview Delegate & DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return delegate?.getCalendar()?.monthlyBills.count ?? .zero
+        return Configurations.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let calendar = delegate?.getCalendar() else { return UITableViewCell() }
-        
+        guard let item = Configurations(rawValue: indexPath.row) else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath)
-        let monthlyBill = calendar.monthlyBills[indexPath.row]
         
         var content = cell.defaultContentConfiguration()
-        content.text = monthlyBill.month
-        content.secondaryText = monthlyBill.balance.toCurrency()
-        content.prefersSideBySideTextAndSecondaryText = true
+        content.text = item.getName()
         
         cell.contentConfiguration = content
         cell.selectionStyle = .none
@@ -88,6 +83,7 @@ extension CalendarDetailView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didSelectMonthlyBill(at: indexPath.row)
+        guard let item = Configurations(rawValue: indexPath.row) else { return }
+        delegate?.didSelect(configuration: item)
     }
 }

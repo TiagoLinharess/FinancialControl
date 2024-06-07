@@ -27,6 +27,6 @@ enum TemplateFormFactory {
         presenter.viewController = controller
         view.delegate = controller
         
-        return UINavigationController(rootViewController: controller)
+        return controller
     }
 }

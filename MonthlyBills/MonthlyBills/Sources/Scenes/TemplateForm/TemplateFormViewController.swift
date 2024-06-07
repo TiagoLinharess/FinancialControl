@@ -47,9 +47,6 @@ final class TemplateFormViewController: UIVIPBaseViewController<TemplateFormView
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
         navigationItem.rightBarButtonItems = [addButton]
-        
-        let cancelButton = UIBarButtonItem(image: .init(systemName: CoreConstants.Icons.close), style: .plain, target: self, action: #selector(cancelAction))
-        navigationItem.leftBarButtonItems = [cancelButton]
     }
     
     // MARK: Actions
@@ -57,11 +54,6 @@ final class TemplateFormViewController: UIVIPBaseViewController<TemplateFormView
     @objc
     func didTapAddButton() {
         router.routeToItemForm(at: .template, animated: true)
-    }
-    
-    @objc
-    func cancelAction() {
-        router.close(animated: true)
     }
 }
 

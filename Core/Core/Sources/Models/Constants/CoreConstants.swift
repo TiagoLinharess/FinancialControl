@@ -54,6 +54,7 @@ public enum CoreConstants {
         public static let currencyPlaceholder: String = Double.zero.toCurrency()
         public static let emptyTitle: String = "There is nothing yet"
         public static let success: String = "success"
+        public static let configurations: String = "Configurations"
     }
     
     // MARK: Init
@@ -79,6 +80,7 @@ public enum CoreConstants {
         public static let creditCard: String = "creditcard"
         public static let add: String = "plus"
         public static let week: String = "calendar.day.timeline.left"
+        public static let gear: String = "gear"
     }
     
     // MARK: Sizes

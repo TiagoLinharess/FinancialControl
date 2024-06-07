@@ -11,7 +11,7 @@ import SharpnezDesignSystem
 protocol HomeRouting {
     func routeToAdd(delegate: AddBillDelegate)
     func routeToDetail(year: String)
-    func routeToTemplate()
+    func routeToConfiguration()
 }
 
 final class HomeRouter: UIVIPRouter, HomeRouting {
@@ -28,8 +28,8 @@ final class HomeRouter: UIVIPRouter, HomeRouting {
         viewController?.navigationController?.present(controller, animated: true)
     }
     
-    func routeToTemplate() {
-        let controller = TemplateFormFactory.configure()
+    func routeToConfiguration() {
+        let controller = ConfigurationFactory.configure()
         viewController?.navigationController?.present(controller, animated: true)
     }
 }
