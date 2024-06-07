@@ -14,50 +14,19 @@ struct WeekBudgetView: View {
     
     @Binding var weekBudget: WeeklyBudgetViewModel
     @State private var presentDetail: Bool = false
-    var detailDisabled: Bool
     let onUpdate: (() -> Void)?
     
     // MARK: Body
     
     var body: some View {
-        Section {
-            VStack(alignment: .leading, spacing: .small) {
-                Label {
-                    Text(Constants.WeekBudgetView.weekTitle)
-                    Spacer()
-                    Text(weekBudget.week)
-                } icon: {
-                    Image(systemName: CoreConstants.Icons.calendar)
-                }
-                Label {
-                    Text(Constants.WeekBudgetView.budgetTitle)
-                    Spacer()
-                    Text(weekBudget.currentBudget.toCurrency())
-                        .lineLimit(1)
-                        .foregroundColor(.budgetColor(
-                                total: weekBudget.originalBudget,
-                                current: weekBudget.currentBudget
-                            ))
-                } icon: {
-                    Image(systemName: CoreConstants.Icons.cash)
-                }
-                Label {
-                    Text(Constants.WeekBudgetView.creditCardTitle)
-                    Spacer()
-                    Text(weekBudget.creditCardRemainingLimit.toCurrency())
-                        .lineLimit(1)
-                        .foregroundColor(.budgetColor(
-                                total: weekBudget.creditCardWeekLimit,
-                                current: weekBudget.creditCardRemainingLimit
-                            ))
-                } icon: {
-                    Image(systemName: CoreConstants.Icons.creditCard)
-                }
-            }
-            .contentShape(Rectangle())
-            .onTapGesture {
-                presentDetail = !detailDisabled
-            }
+        VStack(alignment: .leading, spacing: .nano) {
+            titleView
+            budgetView
+            creditView
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            presentDetail.toggle()
         }
         .sheet(isPresented: $presentDetail) {
             onUpdate?()
@@ -65,5 +34,42 @@ struct WeekBudgetView: View {
             WeeklyBudgetDetailView(viewModel: WeeklyBudgetDetailViewModel(weekBudget: weekBudget))
                 .environment(\.weeklyDetailMode, $presentDetail)
         }
+    }
+    
+    // MARK: Subviews
+    
+    private var titleView: some View {
+        HStack {
+            Text(Constants.WeekBudgetView.weekTitle)
+            Text(weekBudget.week)
+        }
+        .fontWeight(.bold)
+        .font(.title3)
+    }
+    
+    private var budgetView: some View {
+        HStack {
+            Text(Constants.WeekBudgetView.budgetTitle)
+            Text(weekBudget.currentBudget.toCurrency())
+                .lineLimit(1)
+                .foregroundColor(.budgetColor(
+                    total: weekBudget.originalBudget,
+                    current: weekBudget.currentBudget
+                ))
+        }
+        .font(.caption)
+    }
+    
+    private var creditView: some View {
+        HStack {
+            Text(Constants.WeekBudgetView.creditCardTitle)
+            Text(weekBudget.creditCardRemainingLimit.toCurrency())
+                .lineLimit(1)
+                .foregroundColor(.budgetColor(
+                    total: weekBudget.creditCardWeekLimit,
+                    current: weekBudget.creditCardRemainingLimit
+                ))
+        }
+        .font(.caption2)
     }
 }

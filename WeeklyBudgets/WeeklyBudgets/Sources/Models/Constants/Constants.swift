@@ -51,6 +51,7 @@ enum Constants {
         static let limit: String = "Limit"
         static let remainingLimit: String = "Remaining"
         static let expenses: String = "Expenses"
+        static let options: String = "Options"
         static let addExpense: String = "Add expense"
         static let editBudget: String = "Edit budget"
     }

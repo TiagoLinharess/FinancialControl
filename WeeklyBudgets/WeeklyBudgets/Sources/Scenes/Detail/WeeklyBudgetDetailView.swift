@@ -60,11 +60,11 @@ struct WeeklyBudgetDetailView<ViewModel: WeeklyBudgetDetailViewModelProtocol>: V
                         WeekExpenseView(expense: expense)
                     }
                     .onDelete(perform: deleteExpense)
+                }
+                Section(Constants.WeeklyBudgetDetailView.options) {
                     NavigationLink(value: WeeklyDetailNavigationOption.addExpense($viewModel.weekBudget)) {
                         Text(Constants.WeeklyBudgetDetailView.addExpense)
                     }
-                }
-                Section {
                     NavigationLink(value: WeeklyDetailNavigationOption.editBudget($viewModel.weekBudget)) {
                         Text(Constants.WeeklyBudgetDetailView.editBudget)
                     }

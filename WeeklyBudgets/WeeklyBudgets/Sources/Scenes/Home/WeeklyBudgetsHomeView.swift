@@ -28,7 +28,7 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
             VStack(spacing: .small) {
                 switch viewModel.viewStatus {
                 case .success:
-                    WeekBudgetListView(weeks: $viewModel.budgets, deleteDisabled: false, detailDisabled: false, onDelete: viewModel.delete, onUpdate: viewModel.fetchBudgets)
+                    WeekBudgetListView(weeks: $viewModel.budgets, onDelete: viewModel.delete, onUpdate: viewModel.fetchBudgets)
                 case .empty:
                     HomeEmptyView()
                 case let .error(message):
