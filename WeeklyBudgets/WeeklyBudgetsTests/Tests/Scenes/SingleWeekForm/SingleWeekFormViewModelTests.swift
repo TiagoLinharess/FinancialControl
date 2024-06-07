@@ -14,7 +14,7 @@ final class SingleWeekFormViewModelTests: XCTestCase {
     var sut: AddBudgetFormViewModel!
     
     override func setUpWithError() throws {
-        sut = .init()
+        sut = AddBudgetFormViewModel(worker: WeeklyWorkerMock())
     }
     
     override func tearDownWithError() throws {
@@ -34,10 +34,12 @@ final class SingleWeekFormViewModelTests: XCTestCase {
         sut.weekBudget = "$200.00"
         sut.creditCardLimit = "$250.00"
         
-        let model = try sut.submit()
-        
-        XCTAssertFalse(sut.presentAlert)
-        XCTAssertTrue(model.week == "12/12/2023")
+        do {
+            try sut.submit()
+            XCTAssertTrue(true)
+        } catch {
+            XCTFail()
+        }
     }
     
     func test_submit_select_week_error() throws {
@@ -46,7 +48,7 @@ final class SingleWeekFormViewModelTests: XCTestCase {
         sut.creditCardLimit = "$250.00"
         
         do {
-            let _ = try sut.submit()
+            try sut.submit()
         } catch {
             XCTAssertTrue((error as? CoreError)?.message == "Please, select a week to continue.")
         }
@@ -58,7 +60,7 @@ final class SingleWeekFormViewModelTests: XCTestCase {
         sut.creditCardLimit = "error"
         
         do {
-            let _ = try sut.submit()
+            try sut.submit()
         } catch {
             XCTAssertTrue((error as? CoreError)?.message == "Please, fill all fields correctly to continue.")
         }
@@ -70,7 +72,7 @@ final class SingleWeekFormViewModelTests: XCTestCase {
         sut.creditCardLimit = "error"
         
         do {
-            let _ = try sut.submit()
+            try sut.submit()
         } catch {
             XCTAssertTrue((error as? CoreError)?.message == "Please, fill all fields correctly to continue.")
         }

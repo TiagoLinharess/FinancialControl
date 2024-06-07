@@ -22,7 +22,9 @@ final class WeeklyDetailRouter: ObservableObject {
     }
     
     func pop(_ viewsCount: Int = 1) {
-        path.removeLast(viewsCount)
+        if !path.isEmpty {
+            path.removeLast(viewsCount)
+        }
     }
     
     @ViewBuilder func getDestination(from destination: WeeklyDetailNavigationOption) -> some View {
