@@ -37,4 +37,16 @@ class WeeklyExpenseViewModel: Identifiable, Codable {
         self.paymentMode = .init(rawValue: response.paymentMode.rawValue) ?? .debit
         self.value = response.value
     }
+    
+    // MARK: Methods
+    
+    func getResponse() -> WeeklyExpenseResponse {
+        return WeeklyExpenseResponse(
+            id: id,
+            date: date,
+            title: title,
+            paymentMode: .init(rawValue: paymentMode.rawValue) ?? .debit,
+            value: value
+        )
+    }
 }

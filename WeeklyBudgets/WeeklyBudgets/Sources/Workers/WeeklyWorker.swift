@@ -31,77 +31,31 @@ final class WeeklyWorker: WeeklyWorkerProtocol {
     // MARK: Save
     
     func save(weekBudgets: [WeeklyBudgetViewModel]) throws {
-        try repository.create(weekBudgets: viewModelBudgetListToResponseList(viewModels: weekBudgets))
+        try repository.create(
+            weekBudgets: weekBudgets.map { viewModel -> WeeklyBudgetResponse in
+                return viewModel.getResponse()
+            }
+        )
     }
     
     // MARK: Fetch
     
     func fetch() throws -> [WeeklyBudgetViewModel] {
         let responseList = try repository.read()
-        return responseBudgetListToViewModelList(responseList: responseList)
+        return responseList.map { response -> WeeklyBudgetViewModel in
+            return WeeklyBudgetViewModel(from: response)
+        }
     }
     
     // MARK: Update
     
     func update(weekBudget: WeeklyBudgetViewModel) throws {
-        try repository.update(weekBudget: viewModelBudgetToResponse(viewModel: weekBudget))
+        try repository.update(weekBudget: weekBudget.getResponse())
     }
     
     // MARK: Delete
     
     func delete(at offsets: IndexSet) throws -> Int {
         return try repository.delete(at: offsets)
-    }
-}
-
-// MARK: Private Methods
-
-private extension WeeklyWorker {
-    
-    // MARK: View Model To Response
-    
-    func viewModelBudgetListToResponseList(viewModels: [WeeklyBudgetViewModel]) -> [WeeklyBudgetResponse] {
-        return viewModels.map { viewModel -> WeeklyBudgetResponse in
-            return viewModelBudgetToResponse(viewModel: viewModel)
-        }
-    }
-    
-    func viewModelBudgetToResponse(viewModel: WeeklyBudgetViewModel) -> WeeklyBudgetResponse {
-        return WeeklyBudgetResponse(
-            id: viewModel.id,
-            week: viewModel.week,
-            originalBudget: viewModel.originalBudget,
-            currentBudget: viewModel.currentBudget,
-            creditCardWeekLimit: viewModel.creditCardWeekLimit,
-            creditCardRemainingLimit: viewModel.creditCardRemainingLimit,
-            expenses: viewModelExpenseListToResponseList(viewModels: viewModel.expenses)
-        )
-    }
-    
-    func viewModelExpenseListToResponseList(viewModels: [WeeklyExpenseViewModel]) -> [WeeklyExpenseResponse] {
-        return viewModels.map { viewModel -> WeeklyExpenseResponse in
-            return viewModelExpenseToResponse(viewModel: viewModel)
-        }
-    }
-    
-    func viewModelExpenseToResponse(viewModel: WeeklyExpenseViewModel) -> WeeklyExpenseResponse {
-        return WeeklyExpenseResponse(
-            id: viewModel.id,
-            date: viewModel.date,
-            title: viewModel.title,
-            paymentMode: .init(rawValue: viewModel.paymentMode.rawValue) ?? .debit,
-            value: viewModel.value
-        )
-    }
-}
-
-private extension WeeklyWorker {
-    
-    // MARK: Response To View Model
-    
-    func responseBudgetListToViewModelList(responseList: [WeeklyBudgetResponse]) -> [WeeklyBudgetViewModel] {
-        return responseList.map { response -> WeeklyBudgetViewModel in
-            return WeeklyBudgetViewModel(from: response)
-        }
     }
 }
