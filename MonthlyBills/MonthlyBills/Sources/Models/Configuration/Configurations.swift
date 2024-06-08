@@ -21,7 +21,7 @@ enum Configurations: Int, CaseIterable {
         case .templates:
             return TemplateFormFactory.configure()
         case .billTypes:
-            return UIViewController()
+            return BillTypeListFactory.configure()
         }
     }
     
