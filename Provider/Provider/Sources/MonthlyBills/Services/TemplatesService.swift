@@ -23,6 +23,8 @@ final class TemplatesService: TemplatesServiceProtocol {
     
     private let templatesRepository: TemplatesRepositoryProtocol
     
+    // MARK: Init
+    
     init(
         templatesRepository: TemplatesRepositoryProtocol = TemplatesRepository()
     ) {

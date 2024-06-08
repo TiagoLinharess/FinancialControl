@@ -9,12 +9,18 @@ import SharpnezDesignSystem
 import SnapKit
 import UIKit
 
+protocol BillTypeListViewDelegate {
+    func toggle(id: String)
+    func delete(with id: String)
+    func organize(billTypes: [BillTypeViewModel])
+}
+
 final class BillTypeListView: UIView {
     
     // MARK: Properties
     
-    let reuseIdentifier: String = Constants.BilltypesList.reuseIdentifier
-    var items: [String] = ["a", "b", "c", "d", "e", "f"]
+    var delegate: BillTypeListViewDelegate?
+    private var billTypes: [BillTypeViewModel] = []
     
     // MARK: UI Elements
     
@@ -23,9 +29,10 @@ final class BillTypeListView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.dragDelegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(BillTypeTableViewCell.self, forCellReuseIdentifier: BillTypeTableViewCell.identifier)
         tableView.backgroundColor = .clear
         tableView.dragInteractionEnabled = true
+        tableView.isUserInteractionEnabled = true
         return tableView
     }()
     
@@ -38,6 +45,13 @@ final class BillTypeListView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    
+    // MARK: Public Methods
+    
+    func presentSuccess(billTypes: [BillTypeViewModel]) {
+        self.billTypes = billTypes
+        tableView.reloadData()
     }
 }
 
@@ -65,28 +79,41 @@ extension BillTypeListView: UITableViewDelegate, UITableViewDataSource, UITableV
     // MARK: UITableview Delegate & DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return billTypes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath)
-        
-        var content = cell.defaultContentConfiguration()
-        content.text = items[indexPath.row]
-        
-        cell.contentConfiguration = content
-        cell.selectionStyle = .none
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: BillTypeTableViewCell.identifier,
+            for: indexPath
+        ) as? BillTypeTableViewCell
+        else {
+            return UITableViewCell()
+        }
+
+        let billType = billTypes[indexPath.row]
+        cell.configure(viewModel: billType)
+        cell.onToggleSwitch = delegate?.toggle
         return cell
     }
     
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let dragItem = UIDragItem(itemProvider: NSItemProvider())
-        dragItem.localObject = items[indexPath.row]
+        dragItem.localObject = billTypes[indexPath.row]
         return [dragItem]
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let mover = items.remove(at: sourceIndexPath.row)
-        items.insert(mover, at: destinationIndexPath.row)
+        delegate?.organize(billTypes: billTypes)
+        let mover = billTypes.remove(at: sourceIndexPath.row)
+        billTypes.insert(mover, at: destinationIndexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            delegate?.delete(with: billTypes[indexPath.row].id)
+            billTypes.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
     }
 }

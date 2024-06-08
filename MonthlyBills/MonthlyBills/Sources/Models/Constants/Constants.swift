@@ -72,5 +72,7 @@ enum Constants {
     enum BilltypesList {
         static let reuseIdentifier: String = "BillTypesIdentifier"
         static let title: String = "Bill Types"
+        static let add: String = "Add Bill Type"
+        static let incomes: String = "Incomes"
     }
 }

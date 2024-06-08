@@ -10,19 +10,32 @@ import Provider
 import SharpnezCore
 
 protocol BillsWorking {
+    
+    /// Create
     func createCalendar(annualCalendar: AnnualCalendarViewModel) throws
     func createBillItem(item: BillItemProtocol, billId: String, billType: BillType) throws
     func createTemplateItem(item: BillItemProtocol, billType: BillType) throws
+    func createBillType(name: String) throws
+    
+    /// Read
     func readCalendar() throws -> [AnnualCalendarViewModel]
     func readAtYear(year: String) throws -> AnnualCalendarViewModel
     func readAtMonth(id: String) throws -> MonthlyBillsViewModel
     func readAtMonthWithTemplates(billId: String) throws -> MonthlyBillsViewModel
     func readTemplates() throws -> [BillSectionViewModel]
     func readTemplateAt(id: String) throws -> BillItemProtocol
+    func readBillTypes() throws -> [BillTypeViewModel]
+    
+    /// Update
     func updateBillItem(item: BillItemProtocol, billId: String) throws
     func updateTemplateItem(item: BillItemProtocol) throws
+    func updateBillType(id: String) throws
+    func updateBillTypesOrder(billTypes: [BillTypeViewModel]) throws
+    
+    /// Delete
     func deleteItem(itemId: String, billId: String) throws
     func deleteTemplateItem(itemId: String) throws
+    func deleteBillType(id: String) throws
 }
 
 final class BillsWorker: BillsWorking {
@@ -49,6 +62,10 @@ final class BillsWorker: BillsWorking {
     
     func createTemplateItem(item: BillItemProtocol, billType: BillType) throws {
         try repository.createTemplateItem(item: item.getResponse(), billType: billType.getResponse())
+    }
+    
+    func createBillType(name: String) throws {
+        try repository.createBillType(name: name)
     }
     
     // MARK: Read
@@ -85,6 +102,12 @@ final class BillsWorker: BillsWorking {
         return try BillItemViewModel(from: repository.readTemplateAt(id: id))
     }
     
+    func readBillTypes() throws -> [BillTypeViewModel] {
+        return try repository.readBillTypes().map { response -> BillTypeViewModel in
+            return BillTypeViewModel(from: response)
+        }
+    }
+    
     // MARK: Update
     
     func updateBillItem(item: BillItemProtocol, billId: String) throws {
@@ -95,6 +118,16 @@ final class BillsWorker: BillsWorking {
         try repository.updateTemplateItem(item: item.getResponse())
     }
     
+    func updateBillType(id: String) throws {
+        try repository.updateBillType(id: id)
+    }
+    
+    func updateBillTypesOrder(billTypes: [BillTypeViewModel]) throws {
+        try repository.updateBillTypesOrder(billTypes: billTypes.map { viewModel -> BillTypeResponse in
+            return viewModel.getResponse()
+        })
+    }
+    
     // MARK: Delete
     
     func deleteItem(itemId: String, billId: String) throws {
@@ -103,5 +136,9 @@ final class BillsWorker: BillsWorking {
     
     func deleteTemplateItem(itemId: String) throws {
         try repository.deleteTemplateItem(itemId: itemId)
+    }
+    
+    func deleteBillType(id: String) throws {
+        try repository.deleteBillType(id: id)
     }
 }

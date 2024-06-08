@@ -23,6 +23,7 @@ enum BillTypeListFactory {
             router: router
         )
         
+        view.delegate = controller
         router.viewController = controller
         presenter.viewController = controller
         
