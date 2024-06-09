@@ -78,15 +78,7 @@ extension BillItemFormViewController: BillItemFormViewControlling {
     }
     
     func presentSuccess() {
-        presentFeedbackDialog(
-            with: FeedbackModel(
-                title: CoreConstants.Commons.AlertTitle,
-                description: CoreConstants.Commons.success,
-                buttons: [.init(title: CoreConstants.Commons.ok, style: .default, handler: { [weak self] _ in
-                    self?.router.close(animated: true)
-                })]
-            )
-        )
+        router.close(animated: true)
     }
     
     func presentError(errorMessage: String) {
