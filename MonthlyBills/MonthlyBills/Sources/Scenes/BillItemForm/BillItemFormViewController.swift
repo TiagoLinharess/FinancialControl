@@ -17,6 +17,7 @@ protocol BillItemFormViewControllerDelegate {
 
 protocol BillItemFormViewControlling {
     func presentItem(viewModel: BillItemFormViewModel)
+    func presentBillTypes(billTypesViewModel: [BillTypeViewModel])
     func presentSuccess()
     func presentError(errorMessage: String)
 }
@@ -70,6 +71,10 @@ extension BillItemFormViewController: BillItemFormViewControlling {
     
     func presentItem(viewModel: BillItemFormViewModel) {
         customView.configureItem(viewModel: viewModel)
+    }
+    
+    func presentBillTypes(billTypesViewModel: [BillTypeViewModel]) {
+        customView.presentBillTypes(billTypesViewModel: billTypesViewModel)
     }
     
     func presentSuccess() {

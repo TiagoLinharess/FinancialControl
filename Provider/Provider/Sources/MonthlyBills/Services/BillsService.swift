@@ -83,8 +83,8 @@ private extension BillsService {
         return try sectionsRepository.read(from: monthlyBillsEntity)
             .compactMap { try billSectionEntityToResponse(billSectionEntity: $0) }
             .sorted { item1, item2 in
-                let order1 = billTypes.firstIndex(where: { type in type.name == item1.type.name }) ?? .zero
-                let order2 = billTypes.firstIndex(where: { type in type.name == item2.type.name }) ?? .zero
+                let order1 = billTypes.firstIndex(where: { type in type.name.lowercased() == item1.type.name.lowercased() }) ?? .zero
+                let order2 = billTypes.firstIndex(where: { type in type.name.lowercased() == item2.type.name.lowercased() }) ?? .zero
                 return order1 < order2
             }
     }
@@ -104,6 +104,10 @@ private extension BillsService {
     }
     
     private func billSectionEntityToResponse(billSectionEntity: BillSectionEntity) throws -> BillSectionResponse? {
+        let billTypes = try billTypeRepository.read()
+        let billType = billTypes.first(where: { $0.name.lowercased() == billSectionEntity.type?.lowercased() })
+        billSectionEntity.isIncome = billType?.isIncome ?? billSectionEntity.isIncome
+        
         guard var billSectionResponse = BillSectionResponse(from: billSectionEntity) else { throw CoreError.parseError }
         billSectionResponse.items = try fetchItems(for: billSectionEntity)
         return billSectionResponse.items.isEmpty ? nil : billSectionResponse

@@ -46,6 +46,7 @@ final class SectionsRepository: SectionsRepositoryProtocol {
         let billSectionEntity = BillSectionEntity(context: container.persistentContainer.viewContext)
         billSectionEntity.id = UUID().uuidString
         billSectionEntity.type = billType.name
+        billSectionEntity.isIncome = billType.isIncome
         monthlyBillsEntity.addToSections(billSectionEntity)
         
         container.saveContext()

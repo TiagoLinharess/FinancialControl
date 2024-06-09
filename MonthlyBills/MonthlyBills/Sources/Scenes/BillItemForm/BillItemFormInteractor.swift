@@ -40,6 +40,7 @@ final class BillItemFormInteractor: UIVIPInteractor<BillItemFormPresenting>, Bil
         case let .templateEdit(itemId, billType):
             fetchTemplate(id: itemId, sectionType: billType)
         }
+        fetchBillTypes()
     }
     
     func submit(viewModel: BillItemFormViewModel) {
@@ -66,7 +67,7 @@ private extension BillItemFormInteractor {
     
     // MARK: Configure Methods
     
-    func fetchItem(billId: String, itemId: String, sectionType: BillType) {
+    func fetchItem(billId: String, itemId: String, sectionType: BillTypeViewModel) {
         do {
             let bill = try worker.readAtMonth(id: billId)
             presenter.presentItem(bill: bill, itemId: itemId, sectionType: sectionType)
@@ -75,10 +76,19 @@ private extension BillItemFormInteractor {
         }
     }
     
-    func fetchTemplate(id: String, sectionType: BillType) {
+    func fetchTemplate(id: String, sectionType: BillTypeViewModel) {
         do {
             let item = try worker.readTemplateAt(id: id)
             presenter.presentTemplate(templateItem: item, sectionType: sectionType)
+        } catch {
+            presenter.presentError(error: error)
+        }
+    }
+    
+    func fetchBillTypes() {
+        do {
+            let billTypes = try worker.readBillTypes()
+            presenter.presentBillTypes(billTypesViewModel: billTypes)
         } catch {
             presenter.presentError(error: error)
         }
@@ -99,21 +109,17 @@ private extension BillItemFormInteractor {
             throw CoreError.customError(Constants.BillItemFormView.fieldsError)
         }
         
-        if billType == .income {
-            item = BillIncomeItemViewModel(id: itemId, name: name, value: value, status: status)
-        } else {
-            let installment = viewModel.validateInstallment ? viewModel.installment : nil
-            
-            if viewModel.validateInstallment && installment == nil {
-                throw CoreError.customError(Constants.BillItemFormView.fieldsError)
-            }
-            
-            if let installment = installment, viewModel.validateInstallment, !installment.isValid() {
-                throw CoreError.customError(Constants.BillItemFormView.installmentError)
-            }
-            
-            item = BillItemViewModel(id: itemId, name: name, value: value, status: status, installment: installment)
+        let installment = viewModel.validateInstallment ? viewModel.installment : nil
+        
+        if viewModel.validateInstallment && installment == nil {
+            throw CoreError.customError(Constants.BillItemFormView.fieldsError)
         }
+        
+        if let installment = installment, viewModel.validateInstallment, !installment.isValid() {
+            throw CoreError.customError(Constants.BillItemFormView.installmentError)
+        }
+        
+        item = BillItemViewModel(id: itemId, name: name, value: value, status: status, installment: installment)
         
         if currentItemId != nil {
             try worker.updateBillItem(item: item, billId: billId)
@@ -138,21 +144,17 @@ private extension BillItemFormInteractor {
             throw CoreError.customError(Constants.BillItemFormView.fieldsError)
         }
         
-        if billType == .income {
-            item = BillIncomeItemViewModel(id: itemId, name: name, value: value, status: .pending)
-        } else {
-            let installment = viewModel.validateInstallment ? viewModel.installment : nil
-            
-            if viewModel.validateInstallment && installment == nil {
-                throw CoreError.customError(Constants.BillItemFormView.fieldsError)
-            }
-            
-            if let installment = installment, viewModel.validateInstallment, !installment.isValid() {
-                throw CoreError.customError(Constants.BillItemFormView.installmentError)
-            }
-            
-            item = BillItemViewModel(id: itemId, name: name, value: value, status: .pending, installment: installment)
+        let installment = viewModel.validateInstallment ? viewModel.installment : nil
+        
+        if viewModel.validateInstallment && installment == nil {
+            throw CoreError.customError(Constants.BillItemFormView.fieldsError)
         }
+        
+        if let installment = installment, viewModel.validateInstallment, !installment.isValid() {
+            throw CoreError.customError(Constants.BillItemFormView.installmentError)
+        }
+        
+        item = BillItemViewModel(id: itemId, name: name, value: value, status: .pending, installment: installment)
         
         if currentItemId != nil {
             try worker.updateTemplateItem(item: item)

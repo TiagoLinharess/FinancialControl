@@ -14,6 +14,8 @@ final class BillItemFormView: UIView {
     
     // MARK: Properties
     
+    private var items: [BillTypeViewModel] = []
+    
     var delegate: BillItemFormViewControllerDelegate? {
         didSet {
             guard let delegate else { return }
@@ -58,9 +60,10 @@ final class BillItemFormView: UIView {
     }()
     
     private lazy var sectionPickerView: FCUIPickerView = {
-        let items = BillType.allCases.map({ $0.rawValue })
-        let picker = FCUIPickerView(title: Constants.BillItemFormView.billTypeTitle, items: items)
-        picker.didSelect = { [weak self] value in self?.didsSelectSection(section: .init(rawValue: value))}
+        let picker = FCUIPickerView(title: Constants.BillItemFormView.billTypeTitle, items: items.map { viewModel -> String in
+            return viewModel.name
+        })
+        picker.didSelect = { [weak self] value in self?.didsSelectSection(section: value)}
         return picker
     }()
     
@@ -129,7 +132,7 @@ final class BillItemFormView: UIView {
         
         return BillItemFormViewModel(
             formType: delegate?.getFormType(),
-            billType: BillType(rawValue: sectionPickerView.selectedItem),
+            billType: items.first(where: { $0.name == sectionPickerView.selectedItem }),
             status: BillStatus(rawValue: statusPickerView.selectedItem),
             name: nameTextField.text,
             validateTemplateValue: valueSwitch.isOn,
@@ -140,12 +143,12 @@ final class BillItemFormView: UIView {
     }
     
     func configureItem(viewModel: BillItemFormViewModel) {
-        sectionPickerView.select(item: viewModel.billType?.rawValue)
+        sectionPickerView.select(item: viewModel.billType?.name)
         statusPickerView.select(item: viewModel.status?.rawValue)
         nameTextField.text = viewModel.name
         valueTextField.text = viewModel.value?.toCurrency()
-        installmentSwitch.isHidden = viewModel.billType == .income
-        installmentStackView.isHidden = viewModel.billType == .income
+        installmentSwitch.isHidden = viewModel.billType?.isIncome ?? false
+        installmentStackView.isHidden = viewModel.billType?.isIncome ?? false
         
         if let installment = viewModel.installment {
             installmentSwitch.isOn = viewModel.validateInstallment
@@ -153,6 +156,13 @@ final class BillItemFormView: UIView {
             maxMonthTextField.text = String(installment.max)
             currentMonthTextField.isEnable = true
             maxMonthTextField.isEnable = true
+        }
+    }
+    
+    func presentBillTypes(billTypesViewModel: [BillTypeViewModel]) {
+        self.items = billTypesViewModel
+        sectionPickerView.items = items.map { viewModel in
+            return viewModel.name
         }
     }
 }
@@ -256,10 +266,10 @@ private extension BillItemFormView {
     
     // MARK: Handle Picker
     
-    func didsSelectSection(section: BillType?) {
-        guard let section else { return }
-        installmentSwitch.isHidden = section == .income
-        installmentStackView.isHidden = section == .income
+    func didsSelectSection(section: String) {
+        guard let item = items.first(where: { $0.name == section }) else { return }
+        installmentSwitch.isHidden = item.isIncome
+        installmentStackView.isHidden = item.isIncome
     }
 }
 

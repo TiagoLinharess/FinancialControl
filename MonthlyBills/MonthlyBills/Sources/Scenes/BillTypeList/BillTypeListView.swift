@@ -108,9 +108,9 @@ extension BillTypeListView: UITableViewDelegate, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        delegate?.organize(billTypes: billTypes)
         let mover = billTypes.remove(at: sourceIndexPath.row)
         billTypes.insert(mover, at: destinationIndexPath.row)
+        delegate?.organize(billTypes: billTypes)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

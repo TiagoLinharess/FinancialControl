@@ -13,8 +13,8 @@ protocol BillsWorking {
     
     /// Create
     func createCalendar(annualCalendar: AnnualCalendarViewModel) throws
-    func createBillItem(item: BillItemProtocol, billId: String, billType: BillType) throws
-    func createTemplateItem(item: BillItemProtocol, billType: BillType) throws
+    func createBillItem(item: BillItemProtocol, billId: String, billType: BillTypeViewModel) throws
+    func createTemplateItem(item: BillItemProtocol, billType: BillTypeViewModel) throws
     func createBillType(name: String) throws
     
     /// Read
@@ -56,11 +56,11 @@ final class BillsWorker: BillsWorking {
         try repository.createCalendar(annualCalendar: annualCalendar.getResponse())
     }
     
-    func createBillItem(item: BillItemProtocol, billId: String, billType: BillType) throws {
+    func createBillItem(item: BillItemProtocol, billId: String, billType: BillTypeViewModel) throws {
         try repository.createBillItem(item: item.getResponse(), billId: billId, billType: billType.getResponse())
     }
     
-    func createTemplateItem(item: BillItemProtocol, billType: BillType) throws {
+    func createTemplateItem(item: BillItemProtocol, billType: BillTypeViewModel) throws {
         try repository.createTemplateItem(item: item.getResponse(), billType: billType.getResponse())
     }
     

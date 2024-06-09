@@ -134,7 +134,6 @@
 		EDF976C92B5847DF00133036 /* BillStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976C82B5847DF00133036 /* BillStatus.swift */; };
 		EDF976CB2B58483200133036 /* BillInstallment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976CA2B58483200133036 /* BillInstallment.swift */; };
 		EDF976CD2B58492500133036 /* BillIncomeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976CC2B58492500133036 /* BillIncomeItemViewModel.swift */; };
-		EDF976D12B58528300133036 /* BillType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976D02B58528300133036 /* BillType.swift */; };
 		EDF976D32B58593400133036 /* BillItemFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976D22B58593400133036 /* BillItemFormType.swift */; };
 		EDF976E12B594F4900133036 /* BillItemFormFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DB2B594F4900133036 /* BillItemFormFactory.swift */; };
 		EDF976E22B594F4900133036 /* BillItemFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976DC2B594F4900133036 /* BillItemFormPresenter.swift */; };
@@ -315,7 +314,6 @@
 		EDF976C82B5847DF00133036 /* BillStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillStatus.swift; sourceTree = "<group>"; };
 		EDF976CA2B58483200133036 /* BillInstallment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillInstallment.swift; sourceTree = "<group>"; };
 		EDF976CC2B58492500133036 /* BillIncomeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillIncomeItemViewModel.swift; sourceTree = "<group>"; };
-		EDF976D02B58528300133036 /* BillType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillType.swift; sourceTree = "<group>"; };
 		EDF976D22B58593400133036 /* BillItemFormType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormType.swift; sourceTree = "<group>"; };
 		EDF976DB2B594F4900133036 /* BillItemFormFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormFactory.swift; sourceTree = "<group>"; };
 		EDF976DC2B594F4900133036 /* BillItemFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemFormPresenter.swift; sourceTree = "<group>"; };
@@ -694,7 +692,6 @@
 				EDF976C62B58473B00133036 /* BillItemProtocol.swift */,
 				EDF976C82B5847DF00133036 /* BillStatus.swift */,
 				EDF976CA2B58483200133036 /* BillInstallment.swift */,
-				EDF976D02B58528300133036 /* BillType.swift */,
 				EDF976CC2B58492500133036 /* BillIncomeItemViewModel.swift */,
 				EDF976C02B5807A700133036 /* BillItemViewModel.swift */,
 				EDF976D22B58593400133036 /* BillItemFormType.swift */,
@@ -1258,7 +1255,6 @@
 				EDDAD6A32B1F6D4500C0BCB6 /* BillDetailView.swift in Sources */,
 				EDF976E12B594F4900133036 /* BillItemFormFactory.swift in Sources */,
 				EDF976CB2B58483200133036 /* BillInstallment.swift in Sources */,
-				EDF976D12B58528300133036 /* BillType.swift in Sources */,
 				ED8D233E2B1428F4009E8326 /* MonthlyBillsViewModel.swift in Sources */,
 				ED789E7D2B6DD8E000A4E188 /* TemplateFormView.swift in Sources */,
 				ED2C68792B1A4A0200B831C6 /* CalendarDetailView.swift in Sources */,

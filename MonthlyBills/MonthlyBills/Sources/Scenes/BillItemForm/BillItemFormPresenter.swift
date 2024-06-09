@@ -15,8 +15,9 @@ import SharpnezDesignSystem
 protocol BillItemFormPresenting {
     func presentError(error: Error)
     func presentSuccess()
-    func presentItem(bill: MonthlyBillsViewModel, itemId: String, sectionType: BillType)
-    func presentTemplate(templateItem: BillItemProtocol, sectionType: BillType)
+    func presentItem(bill: MonthlyBillsViewModel, itemId: String, sectionType: BillTypeViewModel)
+    func presentTemplate(templateItem: BillItemProtocol, sectionType: BillTypeViewModel)
+    func presentBillTypes(billTypesViewModel: [BillTypeViewModel])
 }
 
 final class BillItemFormPresenter: UIVIPPresenter<BillItemFormViewControlling>, BillItemFormPresenting {
@@ -31,9 +32,9 @@ final class BillItemFormPresenter: UIVIPPresenter<BillItemFormViewControlling>, 
         viewController?.presentSuccess()
     }
     
-    func presentItem(bill: MonthlyBillsViewModel, itemId: String, sectionType: BillType) {
+    func presentItem(bill: MonthlyBillsViewModel, itemId: String, sectionType: BillTypeViewModel) {
         if let item = bill.sections
-            .first(where: { $0.type == sectionType })?.items
+            .first(where: { $0.type.name == sectionType.name })?.items
             .first(where: { $0.id == itemId }) {
             let viewModel = BillItemFormViewModel(
                 billType: sectionType,
@@ -50,7 +51,7 @@ final class BillItemFormPresenter: UIVIPPresenter<BillItemFormViewControlling>, 
         }
     }
     
-    func presentTemplate(templateItem: BillItemProtocol, sectionType: BillType) {
+    func presentTemplate(templateItem: BillItemProtocol, sectionType: BillTypeViewModel) {
         let viewModel = BillItemFormViewModel(
             formType: .templateEdit(templateItem.id, sectionType),
             billType: sectionType,
@@ -62,5 +63,9 @@ final class BillItemFormPresenter: UIVIPPresenter<BillItemFormViewControlling>, 
             installment: templateItem.installment
         )
         viewController?.presentItem(viewModel: viewModel)
+    }
+    
+    func presentBillTypes(billTypesViewModel: [BillTypeViewModel]) {
+        viewController?.presentBillTypes(billTypesViewModel: billTypesViewModel)
     }
 }

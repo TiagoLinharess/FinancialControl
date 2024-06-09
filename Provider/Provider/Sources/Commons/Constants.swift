@@ -43,9 +43,9 @@ enum Constants {
         static let itemNotFound: String = "Could not find item"
         static let existentItem: String = "item already been added"
         static let templateNotFound: String = "Template not found"
-        static let incomes: String = "Incomes"
-        static let investment: String = "Investments"
-        static let expenses: String = "Expenses"
+        static let incomes: String = "Income"
+        static let investment: String = "Investment"
+        static let expenses: String = "Expense"
         static let creditCard: String = "CreditCard"
     }
     

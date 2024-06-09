@@ -37,7 +37,11 @@ final class TemplatesService: TemplatesServiceProtocol {
     // MARK: Create
     
     func create(item: BillItemResponse, billType: BillTypeResponse) throws {
-        var templates = try read()
+        var templates: [BillSectionResponse] = []
+        
+        if let templatesRead = try? read() {
+            templates = templatesRead
+        }
         
         if let sectionIndex = templates.firstIndex(where: { $0.type.name == billType.name }) {
             templates[sectionIndex].items.append(item)
@@ -53,8 +57,8 @@ final class TemplatesService: TemplatesServiceProtocol {
     func read() throws -> [BillSectionResponse] {
         let billTypes = try billTypeRepository.read()
         let a = try templatesRepository.read().sorted { item1, item2 in
-            let order1 = billTypes.firstIndex(where: { type in type.name == item1.type.name }) ?? .zero
-            let order2 = billTypes.firstIndex(where: { type in type.name == item2.type.name }) ?? .zero
+            let order1 = billTypes.firstIndex(where: { type in type.name.lowercased() == item1.type.name.lowercased() }) ?? .zero
+            let order2 = billTypes.firstIndex(where: { type in type.name.lowercased() == item2.type.name.lowercased() }) ?? .zero
             return order1 < order2
         }
         return a
