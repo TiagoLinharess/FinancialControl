@@ -23,6 +23,7 @@ final class BillsService: BillsServiceProtocol {
     private let itemsRepository: ItemsRepositoryProtocol
     private let installmentsRepository: InstallmentsRepositoryProtocol
     private let templatesRepository: TemplatesRepositoryProtocol
+    private let billTypeRepository: BillTypeRepositoryProtocol
     
     // MARK: Init
     
@@ -31,13 +32,15 @@ final class BillsService: BillsServiceProtocol {
         sectionsRepository: SectionsRepositoryProtocol = SectionsRepository(),
         itemsRepository: ItemsRepositoryProtocol = ItemsRepository(),
         installmentsRepository: InstallmentsRepositoryProtocol = InstallmentsRepository(),
-        templatesRepository: TemplatesRepositoryProtocol = TemplatesRepository()
+        templatesRepository: TemplatesRepositoryProtocol = TemplatesRepository(),
+        billTypeRepository: BillTypeRepositoryProtocol = BillTypeRepository()
     ) {
         self.billsRepository = billsRepository
         self.sectionsRepository = sectionsRepository
         self.itemsRepository = itemsRepository
         self.installmentsRepository = installmentsRepository
         self.templatesRepository = templatesRepository
+        self.billTypeRepository = billTypeRepository
     }
     
     // MARK: Read
@@ -76,9 +79,14 @@ private extension BillsService {
     // MARK: Private Methods
     
     private func fetchSections(for monthlyBillsEntity: MonthlyBillsEntity) throws -> [BillSectionResponse] {
+        let billTypes = try billTypeRepository.read()
         return try sectionsRepository.read(from: monthlyBillsEntity)
             .compactMap { try billSectionEntityToResponse(billSectionEntity: $0) }
-            .sorted { $0.type.order < $1.type.order }
+            .sorted { item1, item2 in
+                let order1 = billTypes.firstIndex(where: { type in type.name == item1.type.name }) ?? .zero
+                let order2 = billTypes.firstIndex(where: { type in type.name == item2.type.name }) ?? .zero
+                return order1 < order2
+            }
     }
     
     private func fetchItems(for sectionEntity: BillSectionEntity) throws -> [BillItemResponse] {
@@ -96,7 +104,7 @@ private extension BillsService {
     }
     
     private func billSectionEntityToResponse(billSectionEntity: BillSectionEntity) throws -> BillSectionResponse? {
-        var billSectionResponse = BillSectionResponse(from: billSectionEntity)
+        guard var billSectionResponse = BillSectionResponse(from: billSectionEntity) else { throw CoreError.parseError }
         billSectionResponse.items = try fetchItems(for: billSectionEntity)
         return billSectionResponse.items.isEmpty ? nil : billSectionResponse
     }

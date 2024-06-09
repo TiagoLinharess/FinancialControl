@@ -90,7 +90,7 @@ private extension CalendarsService {
             guard !itemsEntities.isEmpty else { return nil }
             
             var billSectionResponse = BillSectionResponse(from: billSectionEntity)
-            billSectionResponse.items = itemsEntities.map(BillItemResponse.init)
+            billSectionResponse?.items = itemsEntities.map(BillItemResponse.init)
             return billSectionResponse
         }
     }

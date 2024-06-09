@@ -74,5 +74,6 @@ enum Constants {
         static let title: String = "Bill Types"
         static let add: String = "Add Bill Type"
         static let incomes: String = "Incomes"
+        static let listTips: String = "You can drag and drop all itens in this list."
     }
 }

@@ -13,8 +13,8 @@ public protocol MonthlyBillsProviderProtocol {
     
     /// Create
     func createCalendar(annualCalendar: AnnualCalendarResponse) throws
-    func createBillItem(item: BillItemResponse, billId: String, billType: BillSectionResponse.BillType) throws
-    func createTemplateItem(item: BillItemResponse, billType: BillSectionResponse.BillType) throws
+    func createBillItem(item: BillItemResponse, billId: String, billType: BillTypeResponse) throws
+    func createTemplateItem(item: BillItemResponse, billType: BillTypeResponse) throws
     func createBillType(name: String) throws
     
     /// Read
@@ -74,11 +74,11 @@ public final class MonthlyBillsProvider: MonthlyBillsProviderProtocol {
         try calendarsService.create(annualCalendar: annualCalendar)
     }
     
-    public func createBillItem(item: BillItemResponse, billId: String, billType: BillSectionResponse.BillType) throws {
+    public func createBillItem(item: BillItemResponse, billId: String, billType: BillTypeResponse) throws {
         try itemsService.create(item: item, billId: billId, billType: billType)
     }
     
-    public func createTemplateItem(item: BillItemResponse, billType: BillSectionResponse.BillType) throws {
+    public func createTemplateItem(item: BillItemResponse, billType: BillTypeResponse) throws {
         try templatesService.create(item: item, billType: billType)
     }
     

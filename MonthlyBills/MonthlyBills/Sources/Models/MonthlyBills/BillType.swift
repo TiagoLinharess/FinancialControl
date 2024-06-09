@@ -28,11 +28,11 @@ enum BillType: String, CaseIterable {
         }
     }
     
-    init(from response: BillSectionResponse.BillType) {
-        self = .init(rawValue: response.rawValue) ?? .expense
+    init(from response: BillTypeResponse) {
+        self = .init(rawValue: response.name.lowercased()) ?? .expense
     }
     
-    func getResponse() -> BillSectionResponse.BillType {
-        return .init(rawValue: self.rawValue) ?? .expense
+    func getResponse() -> BillTypeResponse {
+        return .init(id: UUID().uuidString, name: self.rawValue, isIncome: self == .income)
     }
 }

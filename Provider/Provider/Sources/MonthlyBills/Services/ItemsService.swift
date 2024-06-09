@@ -10,7 +10,7 @@ import Foundation
 import SharpnezCore
 
 protocol ItemsServiceProtocol {
-    func create(item: BillItemResponse, billId: String, billType: BillSectionResponse.BillType) throws
+    func create(item: BillItemResponse, billId: String, billType: BillTypeResponse) throws
     func update(item: BillItemResponse) throws
     func delete(id: String) throws
 }
@@ -40,7 +40,7 @@ final class ItemsService: ItemsServiceProtocol {
     
     // MARK: Create
     
-    func create(item: BillItemResponse, billId: String, billType: BillSectionResponse.BillType) throws {
+    func create(item: BillItemResponse, billId: String, billType: BillTypeResponse) throws {
         let monthlyBillsEntity = try billsRepository.readAtMonth(id: billId)
         let billSectionEntity = try fetchOrCreateSection(monthlyBillsEntity: monthlyBillsEntity, billType: billType)
         
@@ -86,7 +86,7 @@ private extension ItemsService {
     
     // MARK: Private Mehtods
     
-    func fetchOrCreateSection(monthlyBillsEntity: MonthlyBillsEntity, billType: BillSectionResponse.BillType) throws -> BillSectionEntity {
+    func fetchOrCreateSection(monthlyBillsEntity: MonthlyBillsEntity, billType: BillTypeResponse) throws -> BillSectionEntity {
         if let billSectionEntity = try sectionsRepository.readAt(billType: billType, monthlyBillsEntity: monthlyBillsEntity) {
             return billSectionEntity
         }

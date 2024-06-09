@@ -14,6 +14,7 @@
     </entity>
     <entity name="BillSectionEntity" representedClassName="BillSectionEntity" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="isIncome" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="bill" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MonthlyBillsEntity" inverseName="sections" inverseEntity="MonthlyBillsEntity"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BillItemEntity" inverseName="section" inverseEntity="BillItemEntity"/>

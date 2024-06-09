@@ -97,6 +97,10 @@ extension BillTypeListView: UITableViewDelegate, UITableViewDataSource, UITableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        Constants.BilltypesList.listTips
+    }
+    
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
         let dragItem = UIDragItem(itemProvider: NSItemProvider())
         dragItem.localObject = billTypes[indexPath.row]

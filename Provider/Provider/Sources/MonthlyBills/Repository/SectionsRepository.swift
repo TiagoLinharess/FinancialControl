@@ -11,8 +11,8 @@ import SharpnezCore
 
 protocol SectionsRepositoryProtocol {
     func read(from monthlyBillsEntity: MonthlyBillsEntity) throws -> [BillSectionEntity]
-    func readAt(billType: BillSectionResponse.BillType, monthlyBillsEntity: MonthlyBillsEntity) throws -> BillSectionEntity?
-    func createAndRead(billType: BillSectionResponse.BillType, monthlyBillsEntity: MonthlyBillsEntity) throws -> BillSectionEntity
+    func readAt(billType: BillTypeResponse, monthlyBillsEntity: MonthlyBillsEntity) throws -> BillSectionEntity?
+    func createAndRead(billType: BillTypeResponse, monthlyBillsEntity: MonthlyBillsEntity) throws -> BillSectionEntity
 }
 
 final class SectionsRepository: SectionsRepositoryProtocol {
@@ -30,10 +30,10 @@ final class SectionsRepository: SectionsRepositoryProtocol {
         return try container.persistentContainer.viewContext.fetch(billSectionRequest)
     }
     
-    func readAt(billType: BillSectionResponse.BillType, monthlyBillsEntity: MonthlyBillsEntity) throws -> BillSectionEntity? {
+    func readAt(billType: BillTypeResponse, monthlyBillsEntity: MonthlyBillsEntity) throws -> BillSectionEntity? {
         let billSectionRequest: NSFetchRequest<BillSectionEntity> = BillSectionEntity.fetchRequest()
         billSectionRequest.predicate = NSCompoundPredicate(type: .and, subpredicates: [
-            NSPredicate(format: "type = %@", billType.rawValue),
+            NSPredicate(format: "type = %@", billType.name),
             NSPredicate(format: "bill = %@", monthlyBillsEntity)
         ])
         
@@ -42,10 +42,10 @@ final class SectionsRepository: SectionsRepositoryProtocol {
     
     // MARK: Create
     
-    func createAndRead(billType: BillSectionResponse.BillType, monthlyBillsEntity: MonthlyBillsEntity) throws -> BillSectionEntity {
+    func createAndRead(billType: BillTypeResponse, monthlyBillsEntity: MonthlyBillsEntity) throws -> BillSectionEntity {
         let billSectionEntity = BillSectionEntity(context: container.persistentContainer.viewContext)
         billSectionEntity.id = UUID().uuidString
-        billSectionEntity.type = billType.rawValue
+        billSectionEntity.type = billType.name
         monthlyBillsEntity.addToSections(billSectionEntity)
         
         container.saveContext()

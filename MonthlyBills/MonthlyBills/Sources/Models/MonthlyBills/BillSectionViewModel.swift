@@ -48,7 +48,7 @@ struct BillSectionViewModel {
     init(from response: BillSectionResponse) {
         self.type = .init(from: response.type)
         self.items = response.items.map({ itemResponse -> BillItemProtocol in
-            if response.type == .income {
+            if response.type.name == BillType.income.rawValue {
                 return BillIncomeItemViewModel(from: itemResponse)
             } else {
                 return BillItemViewModel(from: itemResponse)
@@ -61,7 +61,7 @@ struct BillSectionViewModel {
     func getResponse() -> BillSectionResponse {
         return BillSectionResponse(
             items: items.map({ viewModel -> BillItemResponse in return viewModel.getResponse() }),
-            type: .init(rawValue: type.rawValue) ?? .expense
+            type: .init(id: UUID().uuidString, name: type.rawValue, isIncome: type == .income)
         )
     }
     
