@@ -8,25 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		39515EE1F989D4E5C0B97089 /* Pods_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16F59992BC7FEE6FCF873FC /* Pods_Login.framework */; };
-		ED3C1BA22BFBEB9600E3603E /* LoginNoneTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C1BA12BFBEB9600E3603E /* LoginNoneTypeView.swift */; };
-		ED3C1BA42BFBEFB100E3603E /* LoginFaceIDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C1BA32BFBEFB100E3603E /* LoginFaceIDView.swift */; };
 		ED3C1BB42BFFEC3900E3603E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C1BB32BFFEC3900E3603E /* Constants.swift */; };
 		ED60AE5A2BE189660046DBD0 /* Login.docc in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE592BE189660046DBD0 /* Login.docc */; };
 		ED60AE602BE189660046DBD0 /* Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED60AE552BE189660046DBD0 /* Login.framework */; };
 		ED60AE652BE189660046DBD0 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE642BE189660046DBD0 /* LoginTests.swift */; };
 		ED60AE662BE189660046DBD0 /* Login.h in Headers */ = {isa = PBXBuildFile; fileRef = ED60AE582BE189660046DBD0 /* Login.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED60AE732BE189B20046DBD0 /* LoginFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE722BE189B20046DBD0 /* LoginFacade.swift */; };
-		ED60AE802BE18C5F0046DBD0 /* LoginFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE7A2BE18C5F0046DBD0 /* LoginFactory.swift */; };
-		ED60AE812BE18C5F0046DBD0 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE7B2BE18C5F0046DBD0 /* LoginPresenter.swift */; };
-		ED60AE822BE18C5F0046DBD0 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE7C2BE18C5F0046DBD0 /* LoginRouter.swift */; };
-		ED60AE832BE18C5F0046DBD0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE7D2BE18C5F0046DBD0 /* LoginViewController.swift */; };
-		ED60AE842BE18C5F0046DBD0 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE7E2BE18C5F0046DBD0 /* LoginInteractor.swift */; };
-		ED60AE852BE18C5F0046DBD0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AE7F2BE18C5F0046DBD0 /* LoginView.swift */; };
 		ED60AEB92BE3E29B0046DBD0 /* Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED60AEB82BE3E29B0046DBD0 /* Provider.framework */; };
 		ED60AEBA2BE3E29B0046DBD0 /* Provider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED60AEB82BE3E29B0046DBD0 /* Provider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED60AEC12BE3E4500046DBD0 /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEC02BE3E4500046DBD0 /* LoginWorker.swift */; };
-		ED60AECA2BF17E120046DBD0 /* AuthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEC92BF17E120046DBD0 /* AuthType.swift */; };
-		EDE214142C00B65E00CEE262 /* LoginPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE214132C00B65E00CEE262 /* LoginPasswordView.swift */; };
+		EDC9005A2C2714450096CA9D /* LocalSessionHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC900592C2714450096CA9D /* LocalSessionHostingController.swift */; };
+		EDC9005D2C27149C0096CA9D /* LocalSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9005C2C27149C0096CA9D /* LocalSessionView.swift */; };
+		EDC9005F2C2714D90096CA9D /* LocalSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC9005E2C2714D90096CA9D /* LocalSessionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +50,6 @@
 		12A0E4EC099AD228762B5259 /* Pods-Login.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.release.xcconfig"; path = "Target Support Files/Pods-Login/Pods-Login.release.xcconfig"; sourceTree = "<group>"; };
 		D16F59992BC7FEE6FCF873FC /* Pods_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7565CEF5F3A85E40C12DAE /* Pods-Login.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login.debug.xcconfig"; path = "Target Support Files/Pods-Login/Pods-Login.debug.xcconfig"; sourceTree = "<group>"; };
-		ED3C1BA12BFBEB9600E3603E /* LoginNoneTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNoneTypeView.swift; sourceTree = "<group>"; };
-		ED3C1BA32BFBEFB100E3603E /* LoginFaceIDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFaceIDView.swift; sourceTree = "<group>"; };
 		ED3C1BB32BFFEC3900E3603E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ED60AE552BE189660046DBD0 /* Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED60AE582BE189660046DBD0 /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
@@ -66,16 +57,11 @@
 		ED60AE5F2BE189660046DBD0 /* LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED60AE642BE189660046DBD0 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		ED60AE722BE189B20046DBD0 /* LoginFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFacade.swift; sourceTree = "<group>"; };
-		ED60AE7A2BE18C5F0046DBD0 /* LoginFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFactory.swift; sourceTree = "<group>"; };
-		ED60AE7B2BE18C5F0046DBD0 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
-		ED60AE7C2BE18C5F0046DBD0 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
-		ED60AE7D2BE18C5F0046DBD0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		ED60AE7E2BE18C5F0046DBD0 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
-		ED60AE7F2BE18C5F0046DBD0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		ED60AEB82BE3E29B0046DBD0 /* Provider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Provider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED60AEC02BE3E4500046DBD0 /* LoginWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWorker.swift; sourceTree = "<group>"; };
-		ED60AEC92BF17E120046DBD0 /* AuthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthType.swift; sourceTree = "<group>"; };
-		EDE214132C00B65E00CEE262 /* LoginPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordView.swift; sourceTree = "<group>"; };
+		EDC900592C2714450096CA9D /* LocalSessionHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSessionHostingController.swift; sourceTree = "<group>"; };
+		EDC9005C2C27149C0096CA9D /* LocalSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSessionView.swift; sourceTree = "<group>"; };
+		EDC9005E2C2714D90096CA9D /* LocalSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSessionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,16 +102,6 @@
 			);
 			name = Pods;
 			path = ../Pods;
-			sourceTree = "<group>";
-		};
-		ED3C1BA02BFBEB7A00E3603E /* SubViews */ = {
-			isa = PBXGroup;
-			children = (
-				ED3C1BA12BFBEB9600E3603E /* LoginNoneTypeView.swift */,
-				ED3C1BA32BFBEFB100E3603E /* LoginFaceIDView.swift */,
-				EDE214132C00B65E00CEE262 /* LoginPasswordView.swift */,
-			);
-			path = SubViews;
 			sourceTree = "<group>";
 		};
 		ED3C1BB22BFFEC1F00E3603E /* Commons */ = {
@@ -178,7 +154,6 @@
 			children = (
 				ED3C1BB22BFFEC1F00E3603E /* Commons */,
 				ED60AE712BE189980046DBD0 /* Facade */,
-				ED60AEB42BE3DC470046DBD0 /* Models */,
 				ED60AE782BE18C350046DBD0 /* Scenes */,
 				ED60AEBF2BE3E41F0046DBD0 /* Workers */,
 			);
@@ -205,31 +180,9 @@
 		ED60AE782BE18C350046DBD0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				ED60AE792BE18C440046DBD0 /* Login */,
+				EDC9005B2C27145B0096CA9D /* Session */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		ED60AE792BE18C440046DBD0 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				ED3C1BA02BFBEB7A00E3603E /* SubViews */,
-				ED60AE7A2BE18C5F0046DBD0 /* LoginFactory.swift */,
-				ED60AE7B2BE18C5F0046DBD0 /* LoginPresenter.swift */,
-				ED60AE7C2BE18C5F0046DBD0 /* LoginRouter.swift */,
-				ED60AE7D2BE18C5F0046DBD0 /* LoginViewController.swift */,
-				ED60AE7E2BE18C5F0046DBD0 /* LoginInteractor.swift */,
-				ED60AE7F2BE18C5F0046DBD0 /* LoginView.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		ED60AEB42BE3DC470046DBD0 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				ED60AEC92BF17E120046DBD0 /* AuthType.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		ED60AEBF2BE3E41F0046DBD0 /* Workers */ = {
@@ -238,6 +191,16 @@
 				ED60AEC02BE3E4500046DBD0 /* LoginWorker.swift */,
 			);
 			path = Workers;
+			sourceTree = "<group>";
+		};
+		EDC9005B2C27145B0096CA9D /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				EDC900592C2714450096CA9D /* LocalSessionHostingController.swift */,
+				EDC9005C2C27149C0096CA9D /* LocalSessionView.swift */,
+				EDC9005E2C2714D90096CA9D /* LocalSessionViewModel.swift */,
+			);
+			path = Session;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,19 +340,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED60AEC12BE3E4500046DBD0 /* LoginWorker.swift in Sources */,
-				ED60AE832BE18C5F0046DBD0 /* LoginViewController.swift in Sources */,
-				ED60AE812BE18C5F0046DBD0 /* LoginPresenter.swift in Sources */,
-				ED60AE842BE18C5F0046DBD0 /* LoginInteractor.swift in Sources */,
+				EDC9005F2C2714D90096CA9D /* LocalSessionViewModel.swift in Sources */,
 				ED60AE5A2BE189660046DBD0 /* Login.docc in Sources */,
 				ED60AE732BE189B20046DBD0 /* LoginFacade.swift in Sources */,
-				ED3C1BA22BFBEB9600E3603E /* LoginNoneTypeView.swift in Sources */,
-				EDE214142C00B65E00CEE262 /* LoginPasswordView.swift in Sources */,
-				ED60AE822BE18C5F0046DBD0 /* LoginRouter.swift in Sources */,
-				ED60AE852BE18C5F0046DBD0 /* LoginView.swift in Sources */,
-				ED3C1BA42BFBEFB100E3603E /* LoginFaceIDView.swift in Sources */,
+				EDC9005A2C2714450096CA9D /* LocalSessionHostingController.swift in Sources */,
+				EDC9005D2C27149C0096CA9D /* LocalSessionView.swift in Sources */,
 				ED3C1BB42BFFEC3900E3603E /* Constants.swift in Sources */,
-				ED60AECA2BF17E120046DBD0 /* AuthType.swift in Sources */,
-				ED60AE802BE18C5F0046DBD0 /* LoginFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
