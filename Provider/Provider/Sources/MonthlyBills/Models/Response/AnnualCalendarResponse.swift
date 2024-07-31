@@ -20,4 +20,11 @@ public struct AnnualCalendarResponse: Codable {
         self.year = year
         self.monthlyBills = monthlyBills
     }
+    
+    // MARK: Init From Entity
+    
+    init(from annualCalendarEntity: AnnualCalendarEntity) {
+        self.year = annualCalendarEntity.year ?? String()
+        self.monthlyBills = []
+    }
 }

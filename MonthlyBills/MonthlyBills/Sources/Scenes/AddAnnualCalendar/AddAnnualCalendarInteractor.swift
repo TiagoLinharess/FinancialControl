@@ -49,7 +49,7 @@ final class AddAnnualCalendarInteractor: UIVIPInteractor<AddAnnualCalendarPresen
         }
         
         do {
-            try worker.create(annualCalendar: AnnualCalendarViewModel(year: year))
+            try worker.createCalendar(annualCalendar: AnnualCalendarViewModel(year: year))
             presenter.presentSuccess()
         } catch {
             presenter.presentError(error: error)

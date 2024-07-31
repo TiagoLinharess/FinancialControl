@@ -10,7 +10,7 @@ import Provider
 import SharpnezCore
 @testable import MonthlyBills
 
-final class MonthlyBillsRepositoryMock: MonthlyBillsRepositoryProtocol {
+final class MonthlyBillsRepositoryMock: MonthlyBillsProviderProtocol {
     lazy var billId = UUID().uuidString
     
     private lazy var monthlyBillsMock: MonthlyBillsResponse = .init(id: billId, month: "January", sections: [])

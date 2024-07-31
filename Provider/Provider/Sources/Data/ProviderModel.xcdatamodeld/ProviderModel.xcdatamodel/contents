@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23B81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="AnnualCalendarEntity" representedClassName="AnnualCalendarEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="year" optional="YES" attributeType="String"/>
+        <relationship name="months" optional="YES" toMany="YES" minCount="12" maxCount="12" deletionRule="Nullify" destinationEntity="MonthlyBillsEntity" inverseName="year" inverseEntity="MonthlyBillsEntity"/>
+    </entity>
+    <entity name="BillItemEntity" representedClassName="BillItemEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="installment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InstallmentEntity" inverseName="bill" inverseEntity="InstallmentEntity"/>
+        <relationship name="section" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BillSectionEntity" inverseName="items" inverseEntity="BillSectionEntity"/>
+    </entity>
+    <entity name="BillSectionEntity" representedClassName="BillSectionEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="bill" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MonthlyBillsEntity" inverseName="sections" inverseEntity="MonthlyBillsEntity"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BillItemEntity" inverseName="section" inverseEntity="BillItemEntity"/>
+    </entity>
+    <entity name="InstallmentEntity" representedClassName="InstallmentEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="current" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="max" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="bill" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BillItemEntity" inverseName="installment" inverseEntity="BillItemEntity"/>
+    </entity>
+    <entity name="MonthlyBillsEntity" representedClassName="MonthlyBillsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="month" optional="YES" attributeType="String"/>
+        <relationship name="sections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BillSectionEntity" inverseName="bill" inverseEntity="BillSectionEntity"/>
+        <relationship name="year" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AnnualCalendarEntity" inverseName="months" inverseEntity="AnnualCalendarEntity"/>
+    </entity>
+</model>
