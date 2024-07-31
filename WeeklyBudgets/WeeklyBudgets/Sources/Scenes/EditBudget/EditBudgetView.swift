@@ -1,22 +1,22 @@
 //
-//  AddWeeklyExpenseView.swift
-//  FinancialControl
+//  EditBudgetView.swift
+//  WeeklyBudgets
 //
-//  Created by Tiago Linhares on 30/10/23.
+//  Created by Tiago Linhares on 06/06/24.
 //
 
 import Core
 import CurrencyText
 import SharpnezCore
+import SharpnezDesignSystem
 import SwiftUI
 
-struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View {
+struct EditBudgetView<ViewModel: EditBudgetViewModelProtocol>: View {
     
     // MARK: Properties
     
     @StateObject private var viewModel: ViewModel
     @StateObject private var router: WeeklyDetailRouter
-    @State private var currencyFormatter = CurrencyFormatter.internationalDefault
     
     // MARK: Init
     
@@ -28,30 +28,13 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
     // MARK: Body
     
     var body: some View {
-        List {
-            HStack {
-                Picker(Constants.AddWeeklyExpenseView.paymentMode, selection: $viewModel.paymentMode) {
-                    ForEach(viewModel.paymentModes, id: \.self) {
-                        Text($0)
-                    }
-                }
-                .pickerStyle(.wheel)
-            }
-            HStack {
-                Text(Constants.AddWeeklyExpenseView.title)
-                TextField(Constants.AddWeeklyExpenseView.titlePlaceholder, text: $viewModel.title)
-            }
-            HStack {
-                Text(Constants.AddWeeklyExpenseView.value)
-                CurrencyTextField(configuration: .init(
-                    placeholder: CoreConstants.Commons.currencyPlaceholder,
-                    text: $viewModel.value,
-                    formatter: $currencyFormatter,
-                    textFieldConfiguration: nil
-                ))
-            }
-        }
-        .navigationTitle(Constants.WeeklyBudgetDetailView.addExpense)
+        WeekForm(
+            weeks: viewModel.weeks,
+            weekSelected: $viewModel.weekSelected,
+            weekBudget: $viewModel.weekBudget,
+            creditCardLimit: $viewModel.creditCardLimit
+        )
+        .navigationTitle(Constants.WeekBudgetView.budgetTitle)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             Button {
@@ -62,7 +45,7 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
         }
         .alert(CoreConstants.Commons.AlertTitle, isPresented: $viewModel.presentAlert) {
             Button {
-                viewModel.alertAction?()
+                viewModel.presentAlert = false
             } label: {
                 Text(CoreConstants.Commons.ok)
             }
@@ -87,9 +70,6 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
             viewModel.alertMessage = error.message
         } else {
             viewModel.alertMessage = error.localizedDescription
-        }
-        viewModel.alertAction = {
-            viewModel.presentAlert = false
         }
         viewModel.presentAlert = true
     }

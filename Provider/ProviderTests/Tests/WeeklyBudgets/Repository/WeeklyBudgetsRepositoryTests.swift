@@ -82,7 +82,7 @@ final class WeeklyBudgetsRepositoryTests: XCTestCase {
             currentBudget: 54.27,
             creditCardWeekLimit: 200,
             creditCardRemainingLimit: 160.20,
-            expenses: [.init(id: "AAAAALLLLLLLL", date: Date(), title: "iphone", description: String(), paymentMode: .credit, value: 1000)]
+            expenses: [.init(id: "AAAAALLLLLLLL", date: Date(), title: "iphone", paymentMode: .credit, value: 1000)]
         )
         
         try sut.update(weekBudget: responseToEdit)

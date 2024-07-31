@@ -21,7 +21,7 @@ class HomeView: UIView {
     // MARK: UI Elements
     
     lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        let tableView = UITableView(frame: .zero, style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
@@ -127,6 +127,7 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
         
         var content = cell.defaultContentConfiguration()
         content.text = calendar.year
+        content.textProperties.font = .boldSystemFont(ofSize: .medium)
         
         cell.contentConfiguration = content
         cell.selectionStyle = .none

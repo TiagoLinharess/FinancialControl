@@ -27,10 +27,10 @@ enum Constants {
     // MARK: SingleWeekForm
     
     enum SingleWeekForm {
-        static let title: String = "Single week"
+        static let title: String = "New week budget"
         static let pickerTitle: String = "Select a week"
-        static let budgetPlaceholder: String = "Week budget"
-        static let creditCardPlaceholder: String = "Credit card week limit"
+        static let budgetPlaceholder: String = "Budget limit"
+        static let creditCardPlaceholder: String = "Credit limit"
         
         static let selectWeekError: String = "Please, select a week to continue."
         static let fillAllFieldsCorrectly: String = "Please, fill all fields correctly to continue."
@@ -51,6 +51,7 @@ enum Constants {
         static let limit: String = "Limit"
         static let remainingLimit: String = "Remaining"
         static let expenses: String = "Expenses"
+        static let options: String = "Options"
         static let addExpense: String = "Add expense"
         static let editBudget: String = "Edit budget"
     }
@@ -63,7 +64,7 @@ enum Constants {
         static let description = "Description"
         static let descriptionPlaceholder = "Purchased from the Apple store"
         static let selectPaymentMode = "Select payment mode*"
-        static let paymentMode = "Payment mode"
+        static let paymentMode = "Payment mode*"
         static let value = "Value*"
         static let successMessage: String = "Expense added with success"
     }

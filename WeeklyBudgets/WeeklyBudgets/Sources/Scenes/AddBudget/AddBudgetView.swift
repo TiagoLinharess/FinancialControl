@@ -1,5 +1,5 @@
 //
-//  SingleWeekFormView.swift
+//  AddBudgetView.swift
 //  FinancialControl
 //
 //  Created by Tiago Linhares on 30/08/23.
@@ -11,13 +11,12 @@ import SharpnezCore
 import SharpnezDesignSystem
 import SwiftUI
 
-struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
+struct AddBudgetView<ViewModel: AddBudgetViewModelProtocol>: View {
     
     // MARK: Properties
     
     @Environment(\.weeklyModalMode) private var flowPresented
     @StateObject private var viewModel: ViewModel
-    @State private var currencyFormatter = CurrencyFormatter.internationalDefault
     
     // MARK: Init
     
@@ -29,34 +28,23 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     
     var body: some View {
         NavigationView {
-            List {
-                Section(header: Text(Constants.SingleWeekForm.pickerTitle)) {
-                    Picker(Constants.WeekBudgetView.weekTitle, selection: $viewModel.weekSelected) {
-                        ForEach(viewModel.weeks, id: \.self) {
-                            Text($0)
-                        }
+            WeekForm(
+                weeks: viewModel.weeks,
+                weekSelected: $viewModel.weekSelected,
+                weekBudget: $viewModel.weekBudget,
+                creditCardLimit: $viewModel.creditCardLimit
+            )
+            .navigationTitle(Constants.SingleWeekForm.title)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                        close()
+                    } label: {
+                        Label(String(), systemImage: CoreConstants.Icons.close)
                     }
-                    .pickerStyle(.wheel)
-                    .frame(height: CoreConstants.Sizes.pickerHeight)
-                }
-                Section(header: Text(Constants.SingleWeekForm.budgetPlaceholder)) {
-                    CurrencyTextField(configuration: .init(
-                        placeholder: CoreConstants.Commons.currencyPlaceholder,
-                        text: $viewModel.weekBudget,
-                        formatter: $currencyFormatter,
-                        textFieldConfiguration: nil
-                    ))
-                }
-                Section(header: Text(Constants.SingleWeekForm.creditCardPlaceholder)) {
-                    CurrencyTextField(configuration: .init(
-                        placeholder: CoreConstants.Commons.currencyPlaceholder,
-                        text: $viewModel.creditCardLimit,
-                        formatter: $currencyFormatter,
-                        textFieldConfiguration: nil
-                    ))
                 }
             }
-            .navigationTitle(Constants.SingleWeekForm.title)
             .toolbar {
                 Button {
                     submit()
@@ -78,10 +66,14 @@ struct SingleWeekFormView<ViewModel: SingleWeekFormViewModelProtocol>: View {
     
     // MARK: Methods
     
+    func close() {
+        flowPresented.wrappedValue.toggle()
+    }
+    
     func submit() {
         do {
             try viewModel.submit()
-            flowPresented.wrappedValue.toggle()
+            close()
         } catch {
             handleError(error: error)
         }

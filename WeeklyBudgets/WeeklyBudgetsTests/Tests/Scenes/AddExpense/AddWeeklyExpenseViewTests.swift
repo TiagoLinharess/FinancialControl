@@ -39,8 +39,7 @@ final class AddWeeklyExpenseViewTests: XCTestCase {
         mock.isError = false
         sut.submit()
         
-        XCTAssertTrue(mock.presentAlert)
-        XCTAssertTrue(mock.alertMessage == "Expense added with success")
+        XCTAssertFalse(mock.presentAlert)
     }
     
     func test_submit_error() throws {
