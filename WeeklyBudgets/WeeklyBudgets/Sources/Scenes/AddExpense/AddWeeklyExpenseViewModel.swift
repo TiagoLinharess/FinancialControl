@@ -14,7 +14,6 @@ import SwiftUI
 protocol AddWeeklyExpenseViewModelProtocol: ObservableObject {
     var weekBudget: WeeklyBudgetViewModel { get set }
     var title: String { get set }
-    var description: String { get set }
     var paymentMode: String { get set }
     var value: String { get set }
     var paymentModes: [String] { get }
@@ -32,7 +31,6 @@ final class AddWeeklyExpenseViewModel: AddWeeklyExpenseViewModelProtocol {
     
     @Binding var weekBudget: WeeklyBudgetViewModel
     @Published var title: String = String()
-    @Published var description: String = String()
     @Published var paymentMode: String = CoreConstants.Commons.pickerSelect
     @Published var value: String = String()
     @Published var presentAlert: Bool = false
@@ -67,7 +65,6 @@ final class AddWeeklyExpenseViewModel: AddWeeklyExpenseViewModelProtocol {
         
         let expense = WeeklyExpenseViewModel(
             title: title,
-            description: description,
             paymentMode: paymentMode,
             value: value
         )

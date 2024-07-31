@@ -9,7 +9,7 @@
 import Foundation
 import SharpnezCore
 
-final class SingleWeekFormViewModelMock: SingleWeekFormViewModelProtocol {
+final class SingleWeekFormViewModelMock: AddBudgetViewModelProtocol {
 
     var presentAlert: Bool = false
     
@@ -25,11 +25,12 @@ final class SingleWeekFormViewModelMock: SingleWeekFormViewModelProtocol {
     
     var showError: Bool = false
     
-    func submit() throws -> WeeklyBudgets.WeeklyBudgetViewModel {
+    var error: CoreError?
+    
+    func submit() throws {
         if showError {
+            error = CoreError.genericError
             throw CoreError.genericError
-        } else {
-            return WeeklyBudgetViewModelMock.getOne()
         }
     }
 }

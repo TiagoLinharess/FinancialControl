@@ -14,18 +14,15 @@ import XCTest
 
 final class SingleWeekFormViewTests: XCTestCase {
     
-    var sut: SingleWeekFormView<SingleWeekFormViewModelMock>!
+    var sut: AddBudgetView<SingleWeekFormViewModelMock>!
     var mock: SingleWeekFormViewModelMock!
-    var router: WeeklyRouter!
     
     override func setUpWithError() throws {
-        router = .init()
         mock = .init()
-        sut = .init(viewModel: mock, router: router)
+        sut = .init(viewModel: mock)
     }
     
     override func tearDownWithError() throws {
-        router = nil
         mock = nil
         sut = nil
     }
@@ -37,7 +34,7 @@ final class SingleWeekFormViewTests: XCTestCase {
     
     func test_submit_success() throws {
         sut.submit()
-        XCTAssertFalse(router.path.isEmpty)
+        XCTAssertNil(mock.error)
     }
     
     func test_submit_error() throws {

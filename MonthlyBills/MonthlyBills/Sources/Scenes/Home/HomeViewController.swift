@@ -43,8 +43,14 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
     
     private func configure() {
         title = CoreConstants.Commons.bills
-        navigationItem.largeTitleDisplayMode = .always
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.prefersLargeTitles = false
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .none
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
         let templateButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapTemplateButton))

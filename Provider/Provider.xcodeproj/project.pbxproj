@@ -30,11 +30,20 @@
 		ED22C1612BA3027F004177DB /* TemplatesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22C1602BA3027F004177DB /* TemplatesRepository.swift */; };
 		ED2C68102B194FC400B831C6 /* MonthlyBillsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */; };
 		ED2C68122B1950BA00B831C6 /* AnnualCalendarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */; };
+		ED3C1BA62BFC076C00E3603E /* AuthTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C1BA52BFC076C00E3603E /* AuthTypeService.swift */; };
+		ED3C1BA92BFF75DA00E3603E /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C1BA82BFF75DA00E3603E /* SessionService.swift */; };
+		ED3C1BB12BFF912A00E3603E /* AuthTypeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C1BB02BFF912A00E3603E /* AuthTypeRepository.swift */; };
+		ED3C1BB62C000EEA00E3603E /* PasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C1BB52C000EEA00E3603E /* PasswordService.swift */; };
+		ED3C1BB82C0011D500E3603E /* PasswordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3C1BB72C0011D500E3603E /* PasswordRepository.swift */; };
 		ED3F3DFC2BA452B800858591 /* InstallmentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F3DFB2BA452B800858591 /* InstallmentsRepository.swift */; };
 		ED3F3DFE2BA8FB9900858591 /* MonthlyBillsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F3DFD2BA8FB9900858591 /* MonthlyBillsProvider.swift */; };
 		ED3F3E022BA8FD1C00858591 /* MonthlyBillsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3F3E012BA8FD1C00858591 /* MonthlyBillsProviderTests.swift */; };
 		ED51345E2B90030200F7B0DA /* ProviderModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED51345C2B90030200F7B0DA /* ProviderModel.xcdatamodeld */; };
 		ED5134602B9005EF00F7B0DA /* ProviderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED51345F2B9005EF00F7B0DA /* ProviderContainer.swift */; };
+		ED60AEBE2BE3E3280046DBD0 /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEBD2BE3E3280046DBD0 /* LoginProvider.swift */; };
+		ED60AEC52BE3E5D10046DBD0 /* FaceIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEC42BE3E5D10046DBD0 /* FaceIDService.swift */; };
+		ED60AEC82BE630CC0046DBD0 /* SessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AEC72BE630CC0046DBD0 /* SessionRepository.swift */; };
+		ED60AECD2BF17EDC0046DBD0 /* AuthTypeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED60AECC2BF17EDC0046DBD0 /* AuthTypeResponse.swift */; };
 		EDF976FA2B61D97C00133036 /* BillSectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976F92B61D97C00133036 /* BillSectionResponse.swift */; };
 		EDF976FC2B61DAFE00133036 /* BillItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976FB2B61DAFE00133036 /* BillItemResponse.swift */; };
 /* End PBXBuildFile section */
@@ -77,11 +86,20 @@
 		ED22C1602BA3027F004177DB /* TemplatesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesRepository.swift; sourceTree = "<group>"; };
 		ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsResponse.swift; sourceTree = "<group>"; };
 		ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualCalendarResponse.swift; sourceTree = "<group>"; };
+		ED3C1BA52BFC076C00E3603E /* AuthTypeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTypeService.swift; sourceTree = "<group>"; };
+		ED3C1BA82BFF75DA00E3603E /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
+		ED3C1BB02BFF912A00E3603E /* AuthTypeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTypeRepository.swift; sourceTree = "<group>"; };
+		ED3C1BB52C000EEA00E3603E /* PasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordService.swift; sourceTree = "<group>"; };
+		ED3C1BB72C0011D500E3603E /* PasswordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRepository.swift; sourceTree = "<group>"; };
 		ED3F3DFB2BA452B800858591 /* InstallmentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallmentsRepository.swift; sourceTree = "<group>"; };
 		ED3F3DFD2BA8FB9900858591 /* MonthlyBillsProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyBillsProvider.swift; sourceTree = "<group>"; };
 		ED3F3E012BA8FD1C00858591 /* MonthlyBillsProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsProviderTests.swift; sourceTree = "<group>"; };
 		ED51345D2B90030200F7B0DA /* ProviderModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProviderModel.xcdatamodel; sourceTree = "<group>"; };
 		ED51345F2B9005EF00F7B0DA /* ProviderContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderContainer.swift; sourceTree = "<group>"; };
+		ED60AEBD2BE3E3280046DBD0 /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
+		ED60AEC42BE3E5D10046DBD0 /* FaceIDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDService.swift; sourceTree = "<group>"; };
+		ED60AEC72BE630CC0046DBD0 /* SessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRepository.swift; sourceTree = "<group>"; };
+		ED60AECC2BF17EDC0046DBD0 /* AuthTypeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTypeResponse.swift; sourceTree = "<group>"; };
 		EDF976F92B61D97C00133036 /* BillSectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSectionResponse.swift; sourceTree = "<group>"; };
 		EDF976FB2B61DAFE00133036 /* BillItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemResponse.swift; sourceTree = "<group>"; };
 		F96A48CC6AB8D00F99294C60 /* Pods-ProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProviderTests.debug.xcconfig"; path = "Target Support Files/Pods-ProviderTests/Pods-ProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -183,6 +201,7 @@
 			children = (
 				ED51345B2B9002E100F7B0DA /* Data */,
 				ED11D28A2B0267B100514D7C /* Commons */,
+				ED60AEBC2BE3E3090046DBD0 /* Login */,
 				ED2C680A2B194CCB00B831C6 /* MonthlyBills */,
 				ED11D2772B02486400514D7C /* WeeklyBudgets */,
 			);
@@ -374,6 +393,54 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		ED60AEBC2BE3E3090046DBD0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				ED60AECB2BF17EC20046DBD0 /* Models */,
+				ED60AEC62BE630B60046DBD0 /* Repositories */,
+				ED60AEC32BE3E4E60046DBD0 /* Services */,
+				ED60AEC22BE3E4DF0046DBD0 /* Provider */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		ED60AEC22BE3E4DF0046DBD0 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				ED60AEBD2BE3E3280046DBD0 /* LoginProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		ED60AEC32BE3E4E60046DBD0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ED60AEC42BE3E5D10046DBD0 /* FaceIDService.swift */,
+				ED3C1BA52BFC076C00E3603E /* AuthTypeService.swift */,
+				ED3C1BA82BFF75DA00E3603E /* SessionService.swift */,
+				ED3C1BB52C000EEA00E3603E /* PasswordService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ED60AEC62BE630B60046DBD0 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				ED60AEC72BE630CC0046DBD0 /* SessionRepository.swift */,
+				ED3C1BB02BFF912A00E3603E /* AuthTypeRepository.swift */,
+				ED3C1BB72C0011D500E3603E /* PasswordRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		ED60AECB2BF17EC20046DBD0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED60AECC2BF17EDC0046DBD0 /* AuthTypeResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -415,7 +482,7 @@
 				ED11D28D2B02716C00514D7C /* Sources */,
 				ED11D28E2B02716C00514D7C /* Frameworks */,
 				ED11D28F2B02716C00514D7C /* Resources */,
-				E86C4E276174B1BC6E3C1A9F /* [CP] Embed Pods Frameworks */,
+				76EE6699736D9D3EA25CABFE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -505,6 +572,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		76EE6699736D9D3EA25CABFE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProviderTests/Pods-ProviderTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProviderTests/Pods-ProviderTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProviderTests/Pods-ProviderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A54861920E08841F6F422BE7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -527,23 +611,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E86C4E276174B1BC6E3C1A9F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProviderTests/Pods-ProviderTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ProviderTests/Pods-ProviderTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProviderTests/Pods-ProviderTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -552,22 +619,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED11D2812B02492900514D7C /* WeeklyBudgetResponse.swift in Sources */,
+				ED3C1BB12BFF912A00E3603E /* AuthTypeRepository.swift in Sources */,
 				ED2C68102B194FC400B831C6 /* MonthlyBillsResponse.swift in Sources */,
 				ED0CD1FF2B9F11AF00A0A8BB /* ItemsRepository.swift in Sources */,
 				ED0CD1FD2B9F0D8C00A0A8BB /* BillsRepository.swift in Sources */,
 				ED11D2802B02492900514D7C /* WeeklyBudgetListResponse.swift in Sources */,
+				ED3C1BB82C0011D500E3603E /* PasswordRepository.swift in Sources */,
 				ED22C15F2BA3018B004177DB /* TemplatesService.swift in Sources */,
 				EDF976FA2B61D97C00133036 /* BillSectionResponse.swift in Sources */,
+				ED60AEC52BE3E5D10046DBD0 /* FaceIDService.swift in Sources */,
 				ED11D26E2B02484000514D7C /* Provider.docc in Sources */,
 				ED5134602B9005EF00F7B0DA /* ProviderContainer.swift in Sources */,
 				ED1E3F182BA123F800BEA7AF /* BillsService.swift in Sources */,
+				ED60AEBE2BE3E3280046DBD0 /* LoginProvider.swift in Sources */,
 				ED1E3F162BA11EE600BEA7AF /* CalendarsService.swift in Sources */,
 				ED11D27F2B02492900514D7C /* WeeklyExpenseResponse.swift in Sources */,
 				ED1E3F1A2BA125DE00BEA7AF /* ItemsService.swift in Sources */,
 				ED3F3DFE2BA8FB9900858591 /* MonthlyBillsProvider.swift in Sources */,
 				ED3F3DFC2BA452B800858591 /* InstallmentsRepository.swift in Sources */,
+				ED3C1BA92BFF75DA00E3603E /* SessionService.swift in Sources */,
 				ED11D27B2B02489F00514D7C /* WeeklyBudgetsRepository.swift in Sources */,
+				ED60AECD2BF17EDC0046DBD0 /* AuthTypeResponse.swift in Sources */,
+				ED60AEC82BE630CC0046DBD0 /* SessionRepository.swift in Sources */,
 				ED0CD1F12B91053800A0A8BB /* CalendarsRepository.swift in Sources */,
+				ED3C1BB62C000EEA00E3603E /* PasswordService.swift in Sources */,
+				ED3C1BA62BFC076C00E3603E /* AuthTypeService.swift in Sources */,
 				ED1E3F132BA1161A00BEA7AF /* SectionsRepository.swift in Sources */,
 				ED2C68122B1950BA00B831C6 /* AnnualCalendarResponse.swift in Sources */,
 				ED11D28C2B0267C200514D7C /* Constants.swift in Sources */,

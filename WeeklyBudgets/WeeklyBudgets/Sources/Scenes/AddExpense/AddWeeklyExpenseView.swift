@@ -29,21 +29,20 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
     
     var body: some View {
         List {
-            Section(Constants.AddWeeklyExpenseView.title) {
-                TextField(Constants.AddWeeklyExpenseView.titlePlaceholder, text: $viewModel.title)
-            }
-            Section(Constants.AddWeeklyExpenseView.description) {
-                TextField(Constants.AddWeeklyExpenseView.descriptionPlaceholder, text: $viewModel.description)
-            }
-            Section(Constants.AddWeeklyExpenseView.selectPaymentMode) {
+            HStack {
                 Picker(Constants.AddWeeklyExpenseView.paymentMode, selection: $viewModel.paymentMode) {
                     ForEach(viewModel.paymentModes, id: \.self) {
                         Text($0)
                     }
                 }
-                .pickerStyle(.navigationLink)
+                .pickerStyle(.wheel)
             }
-            Section(Constants.AddWeeklyExpenseView.value) {
+            HStack {
+                Text(Constants.AddWeeklyExpenseView.title)
+                TextField(Constants.AddWeeklyExpenseView.titlePlaceholder, text: $viewModel.title)
+            }
+            HStack {
+                Text(Constants.AddWeeklyExpenseView.value)
                 CurrencyTextField(configuration: .init(
                     placeholder: CoreConstants.Commons.currencyPlaceholder,
                     text: $viewModel.value,
@@ -77,12 +76,7 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
     func submit() {
         do {
             try viewModel.submit()
-            viewModel.alertAction = {
-                viewModel.presentAlert = false
-                router.pop()
-            }
-            viewModel.alertMessage = Constants.AddWeeklyExpenseView.successMessage
-            viewModel.presentAlert = true
+            router.pop()
         } catch {
             handleError(error: error)
         }

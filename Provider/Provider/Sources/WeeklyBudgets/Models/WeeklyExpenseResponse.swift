@@ -21,17 +21,15 @@ public struct WeeklyExpenseResponse: Identifiable, Codable {
     public let id: String
     public let date: Date
     public let title: String
-    public let description: String
     public let paymentMode: PaymentMode
     public let value: Double
     
     // MARK: Init
     
-    public init(id: String, date: Date, title: String, description: String, paymentMode: PaymentMode, value: Double) {
+    public init(id: String, date: Date, title: String, paymentMode: PaymentMode, value: Double) {
         self.id = id
         self.date = date
         self.title = title
-        self.description = description
         self.paymentMode = paymentMode
         self.value = value
     }

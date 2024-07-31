@@ -37,12 +37,12 @@ final class WeeklyDetailRouterTests: XCTestCase {
     func test_get_destination_addExpense() throws {
         let view = sut.getDestination(from: .addExpense(Binding(get: { return WeeklyBudgetViewModelMock.getOne() }, set: { _,_ in })))
         
-        XCTAssertTrue(view is _ConditionalContent<AddWeeklyExpenseView<AddWeeklyExpenseViewModel>, Text>)
+        XCTAssertTrue(view is _ConditionalContent<AddWeeklyExpenseView<AddWeeklyExpenseViewModel>, EditBudgetView<EditBudgetViewModel>>)
     }
     
     func test_get_destination_edit() throws {
         let view = sut.getDestination(from: .editBudget(Binding(get: { return WeeklyBudgetViewModelMock.getOne() }, set: { _,_ in })))
         
-        XCTAssertTrue(view is _ConditionalContent<AddWeeklyExpenseView<AddWeeklyExpenseViewModel>, Text>)
+        XCTAssertTrue(view is _ConditionalContent<AddWeeklyExpenseView<AddWeeklyExpenseViewModel>, EditBudgetView<EditBudgetViewModel>>)
     }
 }
