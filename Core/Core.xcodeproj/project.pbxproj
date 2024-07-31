@@ -16,6 +16,8 @@
 		ED11D2DB2B02B59500514D7C /* Date+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2DA2B02B59500514D7C /* Date+ExtensionsTests.swift */; };
 		ED3718342B07A37100477C6C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3718332B07A37100477C6C /* String+Extensions.swift */; };
 		ED3718362B07AA5400477C6C /* String+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3718352B07AA5400477C6C /* String+ExtensionsTests.swift */; };
+		ED8D23732B190B0E009E8326 /* CoreConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8D23722B190B0E009E8326 /* CoreConstants.swift */; };
+		EDF976A92B51E26100133036 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976A82B51E26100133036 /* TestUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		ED11D2DA2B02B59500514D7C /* Date+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ExtensionsTests.swift"; sourceTree = "<group>"; };
 		ED3718332B07A37100477C6C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		ED3718352B07AA5400477C6C /* String+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		ED8D23722B190B0E009E8326 /* CoreConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreConstants.swift; sourceTree = "<group>"; };
+		EDF976A82B51E26100133036 /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 		ED11D2CC2B02AEF100514D7C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EDF976AA2B51E42D00133036 /* TestUtils */,
+				ED8D23712B190AFB009E8326 /* Constants */,
 				ED11D2CD2B02AEF800514D7C /* Extensions */,
 			);
 			path = Models;
@@ -154,6 +160,22 @@
 				ED3718352B07AA5400477C6C /* String+ExtensionsTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED8D23712B190AFB009E8326 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				ED8D23722B190B0E009E8326 /* CoreConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		EDF976AA2B51E42D00133036 /* TestUtils */ = {
+			isa = PBXGroup;
+			children = (
+				EDF976A82B51E26100133036 /* TestUtils.swift */,
+			);
+			path = TestUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +288,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8D23732B190B0E009E8326 /* CoreConstants.swift in Sources */,
 				ED3718342B07A37100477C6C /* String+Extensions.swift in Sources */,
 				ED11D2CF2B02AF2900514D7C /* Double+Extensions.swift in Sources */,
 				ED11D2B52B02AE4D00514D7C /* Core.docc in Sources */,
+				EDF976A92B51E26100133036 /* TestUtils.swift in Sources */,
 				ED11D2D12B02AF6C00514D7C /* Date+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,9 +468,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.Core;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -475,9 +502,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.Core;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -493,10 +523,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.CoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -512,9 +545,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.CoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

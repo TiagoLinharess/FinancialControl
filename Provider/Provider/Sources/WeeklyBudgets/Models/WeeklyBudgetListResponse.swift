@@ -8,5 +8,8 @@
 import Foundation
 
 public struct WeeklyBudgetListResponse: Codable {
+    
+    // MARK: Init
+    
     let weekBudgets: [WeeklyBudgetResponse]
 }

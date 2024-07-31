@@ -19,6 +19,12 @@
 		ED11D2952B02716C00514D7C /* Provider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED11D2692B02484000514D7C /* Provider.framework */; };
 		ED11D2A12B0271C500514D7C /* WeeklyBudgetsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2A02B0271C500514D7C /* WeeklyBudgetsRepositoryTests.swift */; };
 		ED11D2A52B02762D00514D7C /* WeeklyResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11D2A42B02762C00514D7C /* WeeklyResponseMock.swift */; };
+		ED2C680D2B194F8900B831C6 /* MonthlyBillsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C680C2B194F8900B831C6 /* MonthlyBillsRepository.swift */; };
+		ED2C68102B194FC400B831C6 /* MonthlyBillsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */; };
+		ED2C68122B1950BA00B831C6 /* AnnualCalendarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */; };
+		ED2C68222B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2C68212B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift */; };
+		EDF976FA2B61D97C00133036 /* BillSectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976F92B61D97C00133036 /* BillSectionResponse.swift */; };
+		EDF976FC2B61DAFE00133036 /* BillItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF976FB2B61DAFE00133036 /* BillItemResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,12 @@
 		ED11D2912B02716C00514D7C /* ProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED11D2A02B0271C500514D7C /* WeeklyBudgetsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyBudgetsRepositoryTests.swift; sourceTree = "<group>"; };
 		ED11D2A42B02762C00514D7C /* WeeklyResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyResponseMock.swift; sourceTree = "<group>"; };
+		ED2C680C2B194F8900B831C6 /* MonthlyBillsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsRepository.swift; sourceTree = "<group>"; };
+		ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsResponse.swift; sourceTree = "<group>"; };
+		ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnualCalendarResponse.swift; sourceTree = "<group>"; };
+		ED2C68212B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyBillsRepositoryTests.swift; sourceTree = "<group>"; };
+		EDF976F92B61D97C00133036 /* BillSectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSectionResponse.swift; sourceTree = "<group>"; };
+		EDF976FB2B61DAFE00133036 /* BillItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillItemResponse.swift; sourceTree = "<group>"; };
 		F96A48CC6AB8D00F99294C60 /* Pods-ProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProviderTests.debug.xcconfig"; path = "Target Support Files/Pods-ProviderTests/Pods-ProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				ED11D28A2B0267B100514D7C /* Commons */,
+				ED2C680A2B194CCB00B831C6 /* MonthlyBills */,
 				ED11D2772B02486400514D7C /* WeeklyBudgets */,
 			);
 			path = Sources;
@@ -195,6 +208,7 @@
 		ED11D29D2B02719300514D7C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				ED2C681D2B1A10BD00B831C6 /* MonthlyBills */,
 				ED11D29E2B02719C00514D7C /* WeeklyBudgets */,
 			);
 			path = Tests;
@@ -230,6 +244,50 @@
 				ED11D2A42B02762C00514D7C /* WeeklyResponseMock.swift */,
 			);
 			path = WeeklyBudgets;
+			sourceTree = "<group>";
+		};
+		ED2C680A2B194CCB00B831C6 /* MonthlyBills */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C680E2B194F9300B831C6 /* Models */,
+				ED2C680B2B194F4000B831C6 /* Repository */,
+			);
+			path = MonthlyBills;
+			sourceTree = "<group>";
+		};
+		ED2C680B2B194F4000B831C6 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C680C2B194F8900B831C6 /* MonthlyBillsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		ED2C680E2B194F9300B831C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C68112B1950BA00B831C6 /* AnnualCalendarResponse.swift */,
+				ED2C680F2B194FC400B831C6 /* MonthlyBillsResponse.swift */,
+				EDF976F92B61D97C00133036 /* BillSectionResponse.swift */,
+				EDF976FB2B61DAFE00133036 /* BillItemResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED2C681D2B1A10BD00B831C6 /* MonthlyBills */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C681E2B1A10C700B831C6 /* Repository */,
+			);
+			path = MonthlyBills;
+			sourceTree = "<group>";
+		};
+		ED2C681E2B1A10C700B831C6 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				ED2C68212B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,11 +468,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED11D2812B02492900514D7C /* WeeklyBudgetResponse.swift in Sources */,
+				ED2C68102B194FC400B831C6 /* MonthlyBillsResponse.swift in Sources */,
 				ED11D2802B02492900514D7C /* WeeklyBudgetListResponse.swift in Sources */,
+				EDF976FA2B61D97C00133036 /* BillSectionResponse.swift in Sources */,
 				ED11D26E2B02484000514D7C /* Provider.docc in Sources */,
+				ED2C680D2B194F8900B831C6 /* MonthlyBillsRepository.swift in Sources */,
 				ED11D27F2B02492900514D7C /* WeeklyExpenseResponse.swift in Sources */,
 				ED11D27B2B02489F00514D7C /* WeeklyBudgetsRepository.swift in Sources */,
+				ED2C68122B1950BA00B831C6 /* AnnualCalendarResponse.swift in Sources */,
 				ED11D28C2B0267C200514D7C /* Constants.swift in Sources */,
+				EDF976FC2B61DAFE00133036 /* BillItemResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +487,7 @@
 			files = (
 				ED11D2A12B0271C500514D7C /* WeeklyBudgetsRepositoryTests.swift in Sources */,
 				ED11D2A52B02762D00514D7C /* WeeklyResponseMock.swift in Sources */,
+				ED2C68222B1A112500B831C6 /* MonthlyBillsRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,9 +653,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.Provider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -621,9 +688,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.Provider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -639,10 +709,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.ProviderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -658,9 +731,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiagolinharess.ProviderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

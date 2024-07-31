@@ -13,7 +13,7 @@ def sharpnez_core_pod
 end
 
 def  sharpnez_pods
-  pod 'SharpnezDesignSystem', '1.1.1'
+  pod 'SharpnezDesignSystem', '1.2.0'
   sharpnez_core_pod
 end
 
@@ -23,6 +23,10 @@ end
 
 def currency_pod
   pod 'CurrencyText', :git => 'https://github.com/TiagoLinharess/CurrencyText.git'
+end
+
+def snapkit_pod
+  pod 'SnapKit', '~> 5.6'
 end
 
 ## Cores Targets
@@ -35,6 +39,7 @@ end
 target 'FinancialControl' do
     currency_pod
     sharpnez_pods
+    snapkit_pod
     project 'FinancialControl/FinancialControl.project'
 end
 
@@ -46,7 +51,9 @@ target 'WeeklyBudgets' do
 end
 
 target 'MonthlyBills' do
+    currency_pod
     sharpnez_pods
+    snapkit_pod
     project 'MonthlyBills/MonthlyBills.project'
 end
 
@@ -59,4 +66,10 @@ end
 target 'WeeklyBudgetsTests' do
     pods_for_tests
     project 'WeeklyBudgets/WeeklyBudgets.project'
+end
+
+target 'MonthlyBillsTests' do
+    sharpnez_core_pod
+    pods_for_tests
+    project 'MonthlyBills/MonthlyBills.project'
 end

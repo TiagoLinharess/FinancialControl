@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 30/08/23.
 //
 
+import Core
 import SwiftUI
 
 struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: View {
@@ -34,7 +35,7 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
                     HomeErrorView(message: message, action: viewModel.fetchBudgets)
                 }
             }
-            .navigationTitle(Constants.WeeklyHome.title)
+            .navigationTitle(CoreConstants.Commons.budgets)
             .onAppear {
                 viewModel.fetchBudgets()
             }
@@ -42,7 +43,7 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
                 Button {
                     viewModel.didTapAddBudget()
                 } label: {
-                    Label(String(), systemImage: Constants.Icons.add)
+                    Label(String(), systemImage: CoreConstants.Icons.add)
                 }
             }
             .sheet(isPresented: $viewModel.addBudgetFlowPresented) {

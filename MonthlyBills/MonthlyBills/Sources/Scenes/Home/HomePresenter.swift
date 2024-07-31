@@ -6,10 +6,28 @@
 //
 
 import Foundation
+import SharpnezCore
 import SharpnezDesignSystem
 
-protocol HomePresenting { }
+protocol HomePresenting {
+    func presentSuccess(calendars: [AnnualCalendarViewModel])
+    func presentError(error: Error)
+}
 
 final class HomePresenter: UIVIPPresenter<HomeViewControlling>, HomePresenting {
     
+    // MARK: Methods
+    
+    func presentSuccess(calendars: [AnnualCalendarViewModel]) {
+        if calendars.isEmpty {
+            viewController?.presentEmpty()
+            return
+        }
+        
+        viewController?.presentSuccess(calendars: calendars)
+    }
+    
+    func presentError(error: Error) {
+        viewController?.presentError(message: (error as? CoreError)?.message)
+    }
 }
