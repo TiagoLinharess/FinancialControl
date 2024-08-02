@@ -14,7 +14,7 @@ struct BillSectionViewModel {
     // MARK: Properties
     
     let items: [BillItemProtocol]
-    let type: BillType
+    let type: BillTypeViewModel
     
     var totalPending: Double {
         return total(for: .pending)
@@ -38,7 +38,7 @@ struct BillSectionViewModel {
     
     // MARK: Init
     
-    init(items: [BillItemProtocol], type: BillType) {
+    init(items: [BillItemProtocol], type: BillTypeViewModel) {
         self.items = items
         self.type = type
     }
@@ -48,11 +48,7 @@ struct BillSectionViewModel {
     init(from response: BillSectionResponse) {
         self.type = .init(from: response.type)
         self.items = response.items.map({ itemResponse -> BillItemProtocol in
-            if response.type == .income {
-                return BillIncomeItemViewModel(from: itemResponse)
-            } else {
-                return BillItemViewModel(from: itemResponse)
-            }
+            return BillItemViewModel(from: itemResponse)
         })
     }
     
@@ -61,7 +57,7 @@ struct BillSectionViewModel {
     func getResponse() -> BillSectionResponse {
         return BillSectionResponse(
             items: items.map({ viewModel -> BillItemResponse in return viewModel.getResponse() }),
-            type: .init(rawValue: type.rawValue) ?? .expense
+            type: .init(id: type.id, name: type.name, isIncome: type.isIncome)
         )
     }
     

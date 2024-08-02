@@ -65,17 +65,7 @@ extension AddAnnualCalendarViewController: AddAnnualCalendarViewControlling {
     }
     
     func presentSuccess() {
-        presentFeedbackDialog(
-            with: .init(
-                title: CoreConstants.Commons.AlertTitle,
-                description: Constants.AddAnnualCalendarView.successMessage,
-                buttons: [
-                    .init(title: CoreConstants.Commons.ok, style: .default) { [weak self] _ in
-                        self?.finishAction()
-                    }
-                ]
-            )
-        )
+        finishAction()
     }
     
     func presentError(message: String?) {

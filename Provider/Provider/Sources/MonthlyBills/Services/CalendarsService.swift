@@ -22,6 +22,7 @@ final class CalendarsService: CalendarsServiceProtocol {
     private let billsRepository: BillsRepositoryProtocol
     private let sectionsRepository: SectionsRepositoryProtocol
     private let itemsRepository: ItemsRepositoryProtocol
+    private let billTypeRepository: BillTypeRepositoryProtocol
     
     // MARK: Init
     
@@ -29,12 +30,14 @@ final class CalendarsService: CalendarsServiceProtocol {
         calendarsRepository: CalendarsRepositoryProtocol = CalendarsRepository(),
         billsRepository: BillsRepositoryProtocol = BillsRepository(),
         sectionsRepository: SectionsRepositoryProtocol = SectionsRepository(),
-        itemsRepository: ItemsRepositoryProtocol = ItemsRepository()
+        itemsRepository: ItemsRepositoryProtocol = ItemsRepository(),
+        billTypeRepository: BillTypeRepositoryProtocol = BillTypeRepository()
     ) {
         self.calendarsRepository = calendarsRepository
         self.billsRepository = billsRepository
         self.sectionsRepository = sectionsRepository
         self.itemsRepository = itemsRepository
+        self.billTypeRepository = billTypeRepository
     }
     
     // MARK: Create
@@ -86,11 +89,14 @@ private extension CalendarsService {
     
     func buildSectionsResponses(from monthlyBillsEntity: MonthlyBillsEntity) throws -> [BillSectionResponse] {
         return try sectionsRepository.read(from: monthlyBillsEntity).compactMap { billSectionEntity in
+            let billTypes = try billTypeRepository.read()
+            let billType = billTypes.first(where: { $0.name.lowercased() == billSectionEntity.type?.lowercased() })
             let itemsEntities = try itemsRepository.read(from: billSectionEntity)
             guard !itemsEntities.isEmpty else { return nil }
-            
+        
+            billSectionEntity.isIncome = billType?.isIncome ?? billSectionEntity.isIncome
             var billSectionResponse = BillSectionResponse(from: billSectionEntity)
-            billSectionResponse.items = itemsEntities.map(BillItemResponse.init)
+            billSectionResponse?.items = itemsEntities.map(BillItemResponse.init)
             return billSectionResponse
         }
     }

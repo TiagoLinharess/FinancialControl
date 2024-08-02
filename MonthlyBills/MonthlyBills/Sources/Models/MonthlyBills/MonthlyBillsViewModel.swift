@@ -22,12 +22,12 @@ struct MonthlyBillsViewModel {
     }
     
     var payedBalance: Double {
-        let incomesTotal = getSection(at: .income)?.totalPayed ?? .zero
+        let incomesTotal = getIncomes(for: .payed) ?? .zero
         return incomesTotal - total(for: .payed)
     }
     
     var pendingBalance: Double {
-        let incomesTotal = getSection(at: .income)?.totalPending ?? .zero
+        let incomesTotal = getIncomes(for: .pending) ?? .zero
         return incomesTotal - total(for: .pending)
     }
     
@@ -66,9 +66,9 @@ struct MonthlyBillsViewModel {
     
     func sectionFooter(at section: Int) -> String? {
         let section = sections[section]
-        let incomesTotal = getSection(at: .income)?.total ?? .zero
+        let incomesTotal = getIncomes(for: nil) ?? .zero
         
-        if section.type == .income {
+        if section.type.isIncome {
             return nil
         }
         
@@ -85,15 +85,26 @@ private extension MonthlyBillsViewModel {
     
     // MARK: Private Methods
     
-    func getSection(at billType: BillType) -> BillSectionViewModel? {
-        return sections.first { section in
-            section.type == billType
-        }
+    func getIncomes(for status: BillStatus?) -> Double? {
+        return sections
+            .filter { $0.type.isIncome }
+            .reduce(0) {
+                
+                if status == nil {
+                    return $0 + $1.total
+                }
+                
+                if status == .payed {
+                    return $0 + $1.totalPayed
+                }
+            
+                return $0 + $1.totalPending
+            }
     }
     
     func total(for status: BillStatus) -> Double {
         return sections
-            .filter { $0.type != .income }
+            .filter { !$0.type.isIncome }
             .reduce(0) {
                 if status == .payed {
                     return $0 + $1.totalPayed

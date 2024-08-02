@@ -12,7 +12,7 @@ struct BillItemFormViewModel {
     // MARK: Properties
     
     var formType: BillItemFormType?
-    var billType: BillType?
+    var billType: BillTypeViewModel?
     var status: BillStatus?
     var name: String?
     var validateTemplateValue: Bool

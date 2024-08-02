@@ -9,50 +9,31 @@ import Foundation
 
 public struct BillSectionResponse: Codable {
     
-    // MARK: Bill Type
-    
-    public enum BillType: String, Codable {
-        case income
-        case investment
-        case expense
-        case creditCard
-        
-        var order: Int {
-            switch self {
-            case .income:
-                return 0
-            case .investment:
-                return 1
-            case .expense:
-                return 2
-            case .creditCard:
-                return 3
-            }
-        }
-    }
-    
     // MARK: Properties
     
     public var items: [BillItemResponse]
-    public let type: BillType
+    public let type: BillTypeResponse
     
     // MARK: Init
     
-    public init(items: [BillItemResponse], type: BillType) {
+    public init(items: [BillItemResponse], type: BillTypeResponse) {
         self.items = items
         self.type = type
     }
     
     // MARK: Init From Entity
     
-    public init(from entity: BillSectionEntity) {
+    public init?(from entity: BillSectionEntity) {
         self.items = []
         
-        guard let typeString = entity.type else {
-            self.type = .expense
-            return
+        guard let name = entity.type, let id = entity.id else {
+            return nil
         }
         
-        self.type = BillType(rawValue: typeString) ?? .expense
+        self.type = BillTypeResponse(
+            id: id,
+            name: name,
+            isIncome: entity.isIncome
+        )
     }
 }

@@ -36,7 +36,7 @@ enum LoginConstants {
         
         // MARK: LoginFaceID
         
-        static let description: String = "To access your account you must do it with yor FaceID and iPhone's password."
+        static let description: String = "To access your account with your FaceID and iPhone's password."
     }
     
     enum LoginPassword {

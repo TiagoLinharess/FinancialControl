@@ -38,7 +38,7 @@ final class FCUIPickerView: UIView {
         return label
     }()
     
-    private lazy var pickerView: UIPickerView = {
+    lazy var pickerView: UIPickerView = {
         let picker = UIPickerView()
         picker.delegate = self
         picker.dataSource = self

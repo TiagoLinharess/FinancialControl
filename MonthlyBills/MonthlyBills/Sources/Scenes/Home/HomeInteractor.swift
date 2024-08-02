@@ -31,6 +31,7 @@ final class HomeInteractor: UIVIPInteractor<HomePresenting>, HomeInteracting {
     func fetchCalendars() {
         do {
             let calendars = try worker.readCalendar()
+            let _ = try worker.readBillTypes()
             presenter.presentSuccess(calendars: calendars)
         } catch {
             presenter.presentError(error: error)

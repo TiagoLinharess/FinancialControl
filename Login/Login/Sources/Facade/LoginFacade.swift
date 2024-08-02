@@ -25,12 +25,15 @@ public final class LoginFacade {
     // MARK: Start
     
     public func start() {
-        if verifySession() {
+        if hasSession() {
             return
         }
         
-        let controller = LoginFactory.configure()
+        let viewModel = LocalSessionViewModel()
+        let controller = LocalSessionHostingController(rootView: .init(viewModel: viewModel))
         controller.modalPresentationStyle = .overFullScreen
+        viewModel.onClose = close
+        
         navigationController.present(controller, animated: true)
     }
 }
@@ -39,7 +42,13 @@ private extension LoginFacade {
     
     // MARK: Private Methods
     
-    func verifySession() -> Bool {
+    func close(animated: Bool) {
+        DispatchQueue.main.async {
+            self.navigationController.dismiss(animated: animated)
+        }
+    }
+    
+    func hasSession() -> Bool {
         return worker.verifySession()
     }
 }

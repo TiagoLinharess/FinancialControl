@@ -19,19 +19,11 @@ final class AddAnnualCalendarView: UIView {
     
     // MARK: UI Elements
     
-    private lazy var label: UILabel = {
-        let label = UILabel()
-        label.text = Constants.AddAnnualCalendarView.mainLabel
-        label.font = .systemFont(ofSize: .big, weight: .regular)
-        label.numberOfLines = .zero
-        return label
-    }()
-    
     private lazy var pickerView: UIPickerView = {
         let picker = UIPickerView()
         picker.delegate = self
         picker.dataSource = self
-        picker.backgroundColor = .secondarySystemBackground
+        picker.backgroundColor = .systemBackground
         picker.layer.cornerRadius = .smaller
         return picker
     }()
@@ -64,22 +56,16 @@ extension AddAnnualCalendarView: UIViewCode {
     // MARK: View Setup
     
     func setupView() {
-        backgroundColor = .systemBackground
+        backgroundColor = .systemGroupedBackground
     }
     
     func setupHierarchy() {
-        addSubview(label)
         addSubview(pickerView)
     }
     
     func setupConstraints() {
-        label.snp.makeConstraints {
-            $0.top.equalTo(safeAreaLayoutGuide).inset(CGFloat.small)
-            $0.horizontalEdges.equalToSuperview().inset(CGFloat.small)
-        }
-        
         pickerView.snp.makeConstraints {
-            $0.top.equalTo(self.label.snp.bottom).offset(CGFloat.xBig)
+            $0.top.equalTo(safeAreaLayoutGuide).inset(CGFloat.small)
             $0.horizontalEdges.equalToSuperview().inset(CGFloat.small)
             $0.height.equalTo(CoreConstants.Sizes.pickerHeight)
         }

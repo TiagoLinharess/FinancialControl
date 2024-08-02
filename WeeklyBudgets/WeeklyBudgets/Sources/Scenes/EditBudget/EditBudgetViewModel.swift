@@ -84,7 +84,7 @@ final class EditBudgetViewModel: EditBudgetViewModelProtocol {
             throw CoreError.customError(Constants.SingleWeekForm.fillAllFieldsCorrectly)
         }
         
-        var updatedBudget = WeeklyBudgetViewModel(
+        let updatedBudget = WeeklyBudgetViewModel(
             id: budget.id,
             week: weekSelected,
             originalBudget: weekBudgetValue,

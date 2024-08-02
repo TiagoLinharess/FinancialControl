@@ -10,7 +10,7 @@ import Foundation
 import SharpnezCore
 
 protocol TemplatesServiceProtocol {
-    func create(item: BillItemResponse, billType: BillSectionResponse.BillType) throws
+    func create(item: BillItemResponse, billType: BillTypeResponse) throws
     func read() throws -> [BillSectionResponse]
     func readAt(id: String) throws -> BillItemResponse
     func update(item: BillItemResponse) throws
@@ -22,19 +22,28 @@ final class TemplatesService: TemplatesServiceProtocol {
     // MARK: Properties
     
     private let templatesRepository: TemplatesRepositoryProtocol
+    private let billTypeRepository: BillTypeRepositoryProtocol
+    
+    // MARK: Init
     
     init(
-        templatesRepository: TemplatesRepositoryProtocol = TemplatesRepository()
+        templatesRepository: TemplatesRepositoryProtocol = TemplatesRepository(),
+        billTypeRepository: BillTypeRepositoryProtocol = BillTypeRepository()
     ) {
         self.templatesRepository = templatesRepository
+        self.billTypeRepository = billTypeRepository
     }
     
     // MARK: Create
     
-    func create(item: BillItemResponse, billType: BillSectionResponse.BillType) throws {
-        var templates = try read()
+    func create(item: BillItemResponse, billType: BillTypeResponse) throws {
+        var templates: [BillSectionResponse] = []
         
-        if let sectionIndex = templates.firstIndex(where: { $0.type == billType }) {
+        if let templatesRead = try? read() {
+            templates = templatesRead
+        }
+        
+        if let sectionIndex = templates.firstIndex(where: { $0.type.name == billType.name }) {
             templates[sectionIndex].items.append(item)
         } else {
             templates.append(BillSectionResponse(items: [item], type: billType))
@@ -46,7 +55,13 @@ final class TemplatesService: TemplatesServiceProtocol {
     // MARK: Read
     
     func read() throws -> [BillSectionResponse] {
-        return try templatesRepository.read().sorted { $0.type.order < $1.type.order }
+        let billTypes = try billTypeRepository.read()
+        let a = try templatesRepository.read().sorted { item1, item2 in
+            let order1 = billTypes.firstIndex(where: { type in type.name.lowercased() == item1.type.name.lowercased() }) ?? .zero
+            let order2 = billTypes.firstIndex(where: { type in type.name.lowercased() == item2.type.name.lowercased() }) ?? .zero
+            return order1 < order2
+        }
+        return a
     }
     
     func readAt(id: String) throws -> BillItemResponse {

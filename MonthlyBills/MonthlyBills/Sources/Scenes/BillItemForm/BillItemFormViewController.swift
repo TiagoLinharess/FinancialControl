@@ -17,6 +17,7 @@ protocol BillItemFormViewControllerDelegate {
 
 protocol BillItemFormViewControlling {
     func presentItem(viewModel: BillItemFormViewModel)
+    func presentBillTypes(billTypesViewModel: [BillTypeViewModel])
     func presentSuccess()
     func presentError(errorMessage: String)
 }
@@ -72,16 +73,12 @@ extension BillItemFormViewController: BillItemFormViewControlling {
         customView.configureItem(viewModel: viewModel)
     }
     
+    func presentBillTypes(billTypesViewModel: [BillTypeViewModel]) {
+        customView.presentBillTypes(billTypesViewModel: billTypesViewModel)
+    }
+    
     func presentSuccess() {
-        presentFeedbackDialog(
-            with: FeedbackModel(
-                title: CoreConstants.Commons.AlertTitle,
-                description: CoreConstants.Commons.success,
-                buttons: [.init(title: CoreConstants.Commons.ok, style: .default, handler: { [weak self] _ in
-                    self?.router.close(animated: true)
-                })]
-            )
-        )
+        router.close(animated: true)
     }
     
     func presentError(errorMessage: String) {

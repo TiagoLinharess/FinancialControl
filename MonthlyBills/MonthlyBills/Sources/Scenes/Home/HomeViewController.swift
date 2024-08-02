@@ -52,22 +52,26 @@ final class HomeViewController: UIVIPBaseViewController<HomeView, HomeInteractin
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
-        let templateButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapTemplateButton))
+        let addButton = UIBarButtonItem(
+            image: UIImage(systemName: CoreConstants.Icons.add),
+            primaryAction: UIAction(handler: { _ in self.didTapAddButton() })
+        )
+        let templateButton = UIBarButtonItem(
+            image: UIImage(systemName: CoreConstants.Icons.gear),
+            primaryAction: UIAction(handler: { _ in self.didTapConfigurationButton() })
+        )
         
         navigationItem.rightBarButtonItems = [addButton, templateButton]
     }
     
     // MARK: Actions
     
-    @objc
     func didTapAddButton() {
         router.routeToAdd(delegate: self)
     }
     
-    @objc
-    func didTapTemplateButton() {
-        router.routeToTemplate()
+    func didTapConfigurationButton() {
+        router.routeToConfiguration()
     }
 }
 

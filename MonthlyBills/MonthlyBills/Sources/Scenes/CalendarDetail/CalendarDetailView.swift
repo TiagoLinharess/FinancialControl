@@ -49,7 +49,7 @@ extension CalendarDetailView: UIViewCode {
     // MARK: View Setup
     
     func setupView() {
-        backgroundColor = .systemBackground
+        backgroundColor = .systemGroupedBackground
     }
     
     func setupHierarchy() {

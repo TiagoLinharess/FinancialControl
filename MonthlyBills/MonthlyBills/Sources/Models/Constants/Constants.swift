@@ -62,4 +62,18 @@ enum Constants {
         static let subTitle: String = "Here you can create your bills template"
         static let description: String = "For example, when creating a template for fixed bills with a fixed or variable value, this can help you always remember to pay and fill them in a simpler and faster way"
     }
+    
+    enum Configurations {
+        static let reuseIdentifier: String = "ConfigurationIdentifier"
+        static let templates: String = "Templates"
+        static let billType: String = "Bill Types"
+    }
+    
+    enum BilltypesList {
+        static let reuseIdentifier: String = "BillTypesIdentifier"
+        static let title: String = "Bill Types"
+        static let add: String = "Add Bill Type"
+        static let incomes: String = "Incomes"
+        static let listTips: String = "You can drag and drop all itens in this list."
+    }
 }
