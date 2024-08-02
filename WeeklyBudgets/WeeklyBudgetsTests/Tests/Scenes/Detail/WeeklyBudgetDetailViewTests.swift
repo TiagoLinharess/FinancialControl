@@ -32,7 +32,7 @@ final class WeeklyBudgetDetailViewTests: XCTestCase {
     }
     
     func test_snapshot_with_expenses() throws {
-        mock.addExpense(expense: .init(title: "iphone", description: "", paymentMode: .credit, value: 10))
+        mock.addExpense(expense: .init(title: "iphone", paymentMode: .credit, value: 10))
         
         let vc = TestUtils.get_swiftui_view_ready_for_snapshot(view: sut)
         assertSnapshot(matching: vc, as: .image)

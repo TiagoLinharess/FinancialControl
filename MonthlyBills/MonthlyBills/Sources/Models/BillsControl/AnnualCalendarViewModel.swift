@@ -21,9 +21,7 @@ class AnnualCalendarViewModel {
     
     init(year: String) {
         self.year = year
-        self.monthlyBills = Calendar.current.monthSymbols.map { month -> MonthlyBillsViewModel in
-            return .init(month: month)
-        }
+        self.monthlyBills = []
     }
     
     // MARK: Init from response

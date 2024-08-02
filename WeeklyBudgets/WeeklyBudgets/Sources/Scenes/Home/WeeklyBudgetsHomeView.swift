@@ -28,7 +28,7 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
             VStack(spacing: .small) {
                 switch viewModel.viewStatus {
                 case .success:
-                    WeekBudgetListView(weeks: $viewModel.budgets, deleteDisabled: false, detailDisabled: false, onDelete: viewModel.delete, onUpdate: viewModel.fetchBudgets)
+                    WeekBudgetListView(weeks: $viewModel.budgets, onDelete: viewModel.delete, onUpdate: viewModel.fetchBudgets)
                 case .empty:
                     HomeEmptyView()
                 case let .error(message):
@@ -36,9 +36,9 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
                 }
             }
             .navigationTitle(CoreConstants.Commons.budgets)
-            .onAppear {
-                viewModel.fetchBudgets()
-            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color(uiColor: .clear), for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
                 Button {
                     viewModel.didTapAddBudget()
@@ -46,10 +46,13 @@ struct WeeklyBudgetsHomeView<ViewModel: WeeklyBudgetsHomeViewModelProtocol>: Vie
                     Label(String(), systemImage: CoreConstants.Icons.add)
                 }
             }
+            .onAppear {
+                viewModel.fetchBudgets()
+            }
             .sheet(isPresented: $viewModel.addBudgetFlowPresented) {
                 viewModel.fetchBudgets()
             } content: {
-                AddWeeklyBudgetStartView()
+                AddBudgetView(viewModel: AddBudgetFormViewModel())
                     .environment(\.weeklyModalMode, $viewModel.addBudgetFlowPresented)
             }
         }

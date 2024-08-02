@@ -50,7 +50,7 @@ struct WeeklyBudgetViewModelMock {
         )
         
         if addExpense {
-            mock.addExpense(expense: .init(title: "iphone", description: "", paymentMode: .debit, value: 1000.99))
+            mock.addExpense(expense: .init(title: "iphone", paymentMode: .debit, value: 1000.99))
         }
         
         return mock

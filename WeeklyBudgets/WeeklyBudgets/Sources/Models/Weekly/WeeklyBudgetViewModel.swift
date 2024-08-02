@@ -90,4 +90,18 @@ class WeeklyBudgetViewModel: Identifiable {
         
         expenses.remove(atOffsets: offsets)
     }
+    
+    func getResponse() -> WeeklyBudgetResponse {
+        return WeeklyBudgetResponse(
+            id: id,
+            week: week,
+            originalBudget: originalBudget,
+            currentBudget: currentBudget,
+            creditCardWeekLimit: creditCardWeekLimit,
+            creditCardRemainingLimit: creditCardRemainingLimit,
+            expenses: expenses.map { viewModel -> WeeklyExpenseResponse in
+                return viewModel.getResponse()
+            }
+        )
+    }
 }

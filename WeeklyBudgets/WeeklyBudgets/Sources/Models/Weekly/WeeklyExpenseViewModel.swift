@@ -15,17 +15,15 @@ class WeeklyExpenseViewModel: Identifiable, Codable {
     let id: String
     var date: Date
     var title: String
-    var description: String
     var paymentMode: PaymentMode
     var value: Double
     
     // MARK: Init
     
-    init(title: String, description: String, paymentMode: PaymentMode, value: Double) {
+    init(title: String, paymentMode: PaymentMode, value: Double) {
         self.id = UUID().uuidString
         self.date = Date.now
         self.title = title
-        self.description = description
         self.paymentMode = paymentMode
         self.value = value
     }
@@ -36,8 +34,19 @@ class WeeklyExpenseViewModel: Identifiable, Codable {
         self.id = response.id
         self.date = response.date
         self.title = response.title
-        self.description = response.description
         self.paymentMode = .init(rawValue: response.paymentMode.rawValue) ?? .debit
         self.value = response.value
+    }
+    
+    // MARK: Methods
+    
+    func getResponse() -> WeeklyExpenseResponse {
+        return WeeklyExpenseResponse(
+            id: id,
+            date: date,
+            title: title,
+            paymentMode: .init(rawValue: paymentMode.rawValue) ?? .debit,
+            value: value
+        )
     }
 }
