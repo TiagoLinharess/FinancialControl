@@ -27,7 +27,18 @@ final class BillDetailView: UIView {
         return tableView
     }()
     
-    private lazy var separatorView: UIView = {
+    private lazy var creditSeparatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        return view
+    }()
+    
+    private lazy var totalCreditView: FCTotalView = {
+        let view = FCTotalView(title: Constants.BillDetailView.totalCredit, value: CoreConstants.Commons.currencyPlaceholder)
+        return view
+    }()
+    
+    private lazy var totalSeparatorView: UIView = {
         let view = UIView()
         view.backgroundColor = .gray
         return view
@@ -63,6 +74,7 @@ final class BillDetailView: UIView {
     
     func configure() {
         tableView.reloadData()
+        totalCreditView.valueText = delegate?.getBill()?.creditTotal.toCurrency()
         totalPayedView.valueText = delegate?.getBill()?.payedBalance.toCurrency()
         totalPendingView.valueText = delegate?.getBill()?.pendingBalance.toCurrency()
         totalView.valueText = delegate?.getBill()?.balance.toCurrency()
@@ -74,12 +86,14 @@ extension BillDetailView: UIViewCode {
     // MARK: View Setup
     
     func setupView() {
-        backgroundColor = .systemGroupedBackground
+        backgroundColor = .systemBackground
     }
     
     func setupHierarchy() {
         addSubview(tableView)
-        addSubview(separatorView)
+        addSubview(creditSeparatorView)
+        addSubview(totalCreditView)
+        addSubview(totalSeparatorView)
         addSubview(totalPayedView)
         addSubview(totalPendingView)
         addSubview(totalView)
@@ -90,14 +104,25 @@ extension BillDetailView: UIViewCode {
             $0.horizontalEdges.top.equalToSuperview()
         }
         
-        separatorView.snp.makeConstraints {
+        creditSeparatorView.snp.makeConstraints {
             $0.top.equalTo(self.tableView.snp.bottom)
             $0.horizontalEdges.equalToSuperview().inset(CGFloat.small)
             $0.height.equalTo(CGFloat.one)
         }
         
+        totalCreditView.snp.makeConstraints {
+            $0.top.equalTo(self.creditSeparatorView.snp.bottom).offset(CGFloat.extraSmall)
+            $0.horizontalEdges.equalToSuperview().inset(CGFloat.xBig)
+        }
+        
+        totalSeparatorView.snp.makeConstraints {
+            $0.top.equalTo(self.totalCreditView.snp.bottom).offset(CGFloat.extraSmall)
+            $0.horizontalEdges.equalToSuperview().inset(CGFloat.small)
+            $0.height.equalTo(CGFloat.one)
+        }
+        
         totalPayedView.snp.makeConstraints {
-            $0.top.equalTo(self.separatorView.snp.bottom).offset(CGFloat.extraSmall)
+            $0.top.equalTo(self.totalSeparatorView.snp.bottom).offset(CGFloat.extraSmall)
             $0.horizontalEdges.equalToSuperview().inset(CGFloat.xBig)
         }
         

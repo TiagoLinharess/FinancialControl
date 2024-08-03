@@ -34,8 +34,11 @@ enum Constants {
     enum BillDetailView {
         static let reuseIdentifier: String = "billDetailIdentifier"
         static let zeroIncomePercentage: String = "100%"
+        static let totalCredit: String = "My total Credit Card"
         static let totalPayed: String = "Total payed"
         static let totalPending: String = "Total pending"
+        static let creditcard: String = "creditcard"
+        static let creditcardloan: String = "credircard loan"
         static let templateWraning: String = "You already have bills implemented, if you download the templates, the current bills will be deleted to implement your template, are you sure?"
     }
     

@@ -17,6 +17,22 @@ struct MonthlyBillsViewModel {
     let month: String
     let sections: [BillSectionViewModel]
     
+    var creditTotal: Double {
+        var creditTotal: Double = .zero
+        
+        let sections = sections.filter { section in
+            section.type.name.lowercased().contains("creditcard")
+        }
+        
+        sections.forEach { viewModel in
+            if !viewModel.title.lowercased().contains("creditcard loan") {
+                creditTotal += viewModel.total
+            }
+        }
+        
+        return creditTotal
+    }
+    
     var balance: Double {
         return payedBalance + pendingBalance
     }
