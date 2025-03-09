@@ -16,7 +16,7 @@ struct AddWeeklyExpenseView<ViewModel: AddWeeklyExpenseViewModelProtocol>: View 
     
     @StateObject private var viewModel: ViewModel
     @StateObject private var router: WeeklyDetailRouter
-    @State private var currencyFormatter = CurrencyFormatter.internationalDefault
+    @State private var currencyFormatter = Constants.Currency.formatter
     
     // MARK: Init
     

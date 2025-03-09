@@ -12,7 +12,7 @@ import SwiftUI
 struct WeekForm: View {
     
     var weeks: [String]
-    @State private var currencyFormatter = CurrencyFormatter.internationalDefault
+    @State private var currencyFormatter = Constants.Currency.formatter
     @Binding var weekSelected: String
     @Binding var weekBudget: String
     @Binding var creditCardLimit: String

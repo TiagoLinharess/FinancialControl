@@ -70,7 +70,7 @@ extension FCUICurrencyFieldView: UIViewCode {
     // MARK: View Setup
     
     func setupView() {
-        currencyDelegate = CurrencyUITextFieldDelegate(formatter: .internationalDefault)
+        currencyDelegate = CurrencyUITextFieldDelegate(formatter: Constants.Currency.formatter)
         currencyDelegate?.clearsWhenValueIsZero = true
         currencyDelegate?.passthroughDelegate = self
         backgroundColor = .clear

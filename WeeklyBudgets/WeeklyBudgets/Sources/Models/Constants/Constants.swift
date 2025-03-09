@@ -5,6 +5,7 @@
 //  Created by Tiago Linhares on 30/08/23.
 //
 
+import CurrencyText
 import Foundation
 import Core
 
@@ -75,5 +76,18 @@ enum Constants {
         static let weekTitle: String = "Week"
         static let budgetTitle: String = "Budget"
         static let creditCardTitle: String = "Credit"
+    }
+    
+    // MARK: Currency
+    
+    enum Currency {
+        static let formatter = CurrencyFormatter {
+            let currency = Locale.current.currency?.identifier ?? "BRL"
+            $0.currency = .init(rawValue: currency) ?? .brazilianReal
+            $0.locale = Locale.current
+            $0.hasDecimals = true
+            $0.minValue = .zero
+            $0.maxValue = 999999999999.99
+        }
     }
 }
